@@ -82,51 +82,364 @@ Cancer biology
 \end_layout
 
 \begin_layout Subsection
-Somatic mutations (SNV, CNV)
+Significance and Etiology
+\end_layout
+
+\begin_layout Itemize
+number of patients affected
+\end_layout
+
+\begin_layout Itemize
+survival changes in the last 40 years
+\end_layout
+
+\begin_layout Itemize
+disease of the genes
+\end_layout
+
+\begin_layout Itemize
+mutations: germline and somatic
 \end_layout
 
 \begin_layout Subsection
-Oncogenes, tumor suppressors
+Mutational Processes
+\end_layout
+
+\begin_layout Itemize
+ludmil's paper
+\end_layout
+
+\begin_layout Itemize
+different tissues: different forces
+\end_layout
+
+\begin_layout Subsection
+Cellular Coping Mechanisms
+\end_layout
+
+\begin_layout Itemize
+DNA repair
+\end_layout
+
+\begin_layout Itemize
+senescence
+\end_layout
+
+\begin_layout Itemize
+apoptosis
+\end_layout
+
+\begin_layout Itemize
+immune clearance
+\end_layout
+
+\begin_layout Subsection
+Oncogenes and Tumor Suppressors
+\end_layout
+
+\begin_layout Itemize
+not all genes equally important
+\end_layout
+
+\begin_layout Itemize
+mutations switch on+off genes
 \end_layout
 
 \begin_layout Subsection
 Hallmarks
 \end_layout
 
-\begin_layout Section
-Biological models
-\end_layout
-
-\begin_layout Subsection
-Cell lines, animal models (KO, xenografts), organoids, patients
+\begin_layout Itemize
+go through all hanahan & weinberg
 \end_layout
 
 \begin_layout Section
-Types of data
+A Molecular Point of View
 \end_layout
 
 \begin_layout Subsection
-Molecular: DNA, RNA, methylation
+Transcription
+\end_layout
+
+\begin_layout Itemize
+RNA
 \end_layout
 
 \begin_layout Subsection
-Drug response: screening concentration, drug response curve, IC50s
+Translation
+\end_layout
+
+\begin_layout Itemize
+proteins
 \end_layout
 
 \begin_layout Subsection
-Clinical: patient cohorts, survival 
+Cell Signaling
+\end_layout
+
+\begin_layout Itemize
+actual activity
 \end_layout
 
 \begin_layout Section
-Assays
+Therapeutic Interventions
+\end_layout
+
+\begin_layout Itemize
+Early Detection is Key (maybe not too relevant)
 \end_layout
 
 \begin_layout Subsection
-Molecular: DNA/RNA-seq, RNA array, Methylation array/seq, ChIP-seq
+Cytotoxic Drugs
+\end_layout
+
+\begin_layout Itemize
+based on cells growing quicker/consuming more resources
 \end_layout
 
 \begin_layout Subsection
-Drug response: sensitivity screening, automated setup at Sanger
+Targeted Therapies
+\end_layout
+
+\begin_layout Itemize
+specific blockade of signaling pathway
+\end_layout
+
+\begin_layout Subsection
+Immune Therapy
+\end_layout
+
+\begin_layout Itemize
+PD-1, PD-L1 inhibitors
+\end_layout
+
+\begin_layout Section
+Disease models
+\end_layout
+
+\begin_layout Subsection
+Cancer Patients
+\end_layout
+
+\begin_layout Itemize
+data from treatment directly
+\end_layout
+
+\begin_layout Itemize
+can't try out stuff
+\end_layout
+
+\begin_layout Itemize
+anything that is not best known treatment unethical
+\end_layout
+
+\begin_layout Subsection
+Animal models
+\end_layout
+
+\begin_layout Itemize
+KO
+\end_layout
+
+\begin_layout Itemize
+xenografts
+\end_layout
+
+\begin_layout Itemize
+similar but not the same to human
+\end_layout
+
+\begin_layout Subsection
+Cell Lines
+\end_layout
+
+\begin_layout Itemize
+once established, easy to grow
+\end_layout
+
+\begin_layout Itemize
+unlimited supply
+\end_layout
+
+\begin_layout Itemize
+easy handling (plastic dishes)
+\end_layout
+
+\begin_layout Itemize
+compared to others: uniform
+\end_layout
+
+\begin_layout Subsection
+Organoids
+\end_layout
+
+\begin_layout Itemize
+some signaling pathways that are important in patients not captured in cell
+ lines, but potentially here
+\end_layout
+
+\begin_layout Itemize
+generating much more diversity than there can be cell lines
+\end_layout
+
+\begin_layout Section
+Data Types and Assays
+\end_layout
+
+\begin_layout Subsection
+DNA
+\end_layout
+
+\begin_layout Itemize
+sanger seq of few genes
+\end_layout
+
+\begin_layout Itemize
+NGS
+\end_layout
+
+\begin_layout Subsection
+RNA
+\end_layout
+
+\begin_layout Itemize
+microarrays
+\end_layout
+
+\begin_layout Itemize
+RNA-seq
+\end_layout
+
+\begin_layout Subsection
+DNA Methylation
+\end_layout
+
+\begin_layout Itemize
+bisulphite seq
+\end_layout
+
+\begin_layout Subsection
+Drug Response
+\end_layout
+
+\begin_layout Itemize
+GDSC and CCLE
+\end_layout
+
+\begin_layout Itemize
+screening concentration
+\end_layout
+
+\begin_layout Itemize
+drug response curve
+\end_layout
+
+\begin_layout Itemize
+IC50s
+\end_layout
+
+\begin_layout Subsection
+Clinical Data
+\end_layout
+
+\begin_layout Itemize
+patient cohorts
+\end_layout
+
+\begin_layout Itemize
+survival
+\end_layout
+
+\begin_layout Section
+Computational Methods and Reproducibility
+\end_layout
+
+\begin_layout Itemize
+bio moving to quant sci
+\end_layout
+
+\begin_layout Itemize
+comp analyses get more complex
+\end_layout
+
+\begin_layout Itemize
+methods desc inadequate -> need code
+\end_layout
+
+\begin_layout Subsection
+Algorithms and availability
+\end_layout
+
+\begin_layout Itemize
+programming language: not too high-/low-level
+\end_layout
+
+\begin_layout Itemize
+availability of support packages: huge progress with R, python
+\end_layout
+
+\begin_layout Subsection
+Documentation
+\end_layout
+
+\begin_layout Itemize
+roxygen
+\end_layout
+
+\begin_layout Itemize
+markdown
+\end_layout
+
+\begin_layout Subsection
+Revision Control
+\end_layout
+
+\begin_layout Itemize
+why keeping old version is important
+\end_layout
+
+\begin_layout Itemize
+tools to support
+\end_layout
+
+\begin_layout Itemize
+how github really put it together
+\end_layout
+
+\begin_layout Subsection
+Reproducible Workflows
+\end_layout
+
+\begin_layout Itemize
+automation
+\end_layout
+
+\begin_layout Itemize
+single entry point for analyses
+\end_layout
+
+\begin_layout Itemize
+Makefiles
+\end_layout
+
+\begin_layout Subsection
+Limitations of Reproducibility
+\end_layout
+
+\begin_layout Itemize
+run -> paper would be nice, but:
+\end_layout
+
+\begin_layout Itemize
+computing time for large analyses
+\end_layout
+
+\begin_layout Itemize
+complex software setup req'd, may not be available later
+\end_layout
+
+\begin_layout Itemize
+figures need manual tweaking (or lot of time)
 \end_layout
 
 \end_body
