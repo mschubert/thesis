@@ -137,6 +137,10 @@ mutations switch on+off genes
 cell signaling
 \end_layout
 
+\begin_layout Standard
+
+\end_layout
+
 \begin_layout Subsection
 Cellular Coping Mechanisms
 \end_layout
@@ -428,6 +432,14 @@ usually in the interactome
 
 \begin_layout Itemize
 PCSTs, etc.
+\end_layout
+
+\begin_layout Subsection
+Transcription Factor Networks
+\end_layout
+
+\begin_layout Itemize
+signaling/via TFs points
 \end_layout
 
 \begin_layout Subsection
