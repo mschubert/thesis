@@ -78,7 +78,7 @@ Introduction
 \end_layout
 
 \begin_layout Section
-Cancer biology
+Cancer Biology
 \end_layout
 
 \begin_layout Subsection
@@ -106,11 +106,35 @@ Mutational Processes
 \end_layout
 
 \begin_layout Itemize
+SNVs vs structural rearrangements
+\end_layout
+
+\begin_layout Itemize
 ludmil's paper
 \end_layout
 
 \begin_layout Itemize
 different tissues: different forces
+\end_layout
+
+\begin_layout Subsection
+Consequences
+\end_layout
+
+\begin_layout Itemize
+Oncogenes and Tumor Suppressors
+\end_layout
+
+\begin_layout Itemize
+not all genes equally important
+\end_layout
+
+\begin_layout Itemize
+mutations switch on+off genes
+\end_layout
+
+\begin_layout Itemize
+cell signaling
 \end_layout
 
 \begin_layout Subsection
@@ -134,51 +158,11 @@ immune clearance
 \end_layout
 
 \begin_layout Subsection
-Oncogenes and Tumor Suppressors
+Uncontrolled Growth
 \end_layout
 
 \begin_layout Itemize
-not all genes equally important
-\end_layout
-
-\begin_layout Itemize
-mutations switch on+off genes
-\end_layout
-
-\begin_layout Subsection
-Hallmarks
-\end_layout
-
-\begin_layout Itemize
-go through all hanahan & weinberg
-\end_layout
-
-\begin_layout Section
-A Molecular Point of View
-\end_layout
-
-\begin_layout Subsection
-Transcription
-\end_layout
-
-\begin_layout Itemize
-RNA
-\end_layout
-
-\begin_layout Subsection
-Translation
-\end_layout
-
-\begin_layout Itemize
-proteins
-\end_layout
-
-\begin_layout Subsection
-Cell Signaling
-\end_layout
-
-\begin_layout Itemize
-actual activity
+go through all hanahan & weinberg Hallmarks
 \end_layout
 
 \begin_layout Section
@@ -205,6 +189,10 @@ Targeted Therapies
 specific blockade of signaling pathway
 \end_layout
 
+\begin_layout Itemize
+small molecules vs antibodies
+\end_layout
+
 \begin_layout Subsection
 Immune Therapy
 \end_layout
@@ -213,8 +201,24 @@ Immune Therapy
 PD-1, PD-L1 inhibitors
 \end_layout
 
+\begin_layout Subsection
+Development of Resistance
+\end_layout
+
+\begin_layout Itemize
+kills most cells, but some survive and repopulate
+\end_layout
+
+\begin_layout Itemize
+cancer stem cells
+\end_layout
+
 \begin_layout Section
 Disease models
+\end_layout
+
+\begin_layout Itemize
+mirror the disease inception, progression, and treatment
 \end_layout
 
 \begin_layout Subsection
@@ -231,22 +235,6 @@ can't try out stuff
 
 \begin_layout Itemize
 anything that is not best known treatment unethical
-\end_layout
-
-\begin_layout Subsection
-Animal models
-\end_layout
-
-\begin_layout Itemize
-KO
-\end_layout
-
-\begin_layout Itemize
-xenografts
-\end_layout
-
-\begin_layout Itemize
-similar but not the same to human
 \end_layout
 
 \begin_layout Subsection
@@ -282,8 +270,28 @@ some signaling pathways that are important in patients not captured in cell
 generating much more diversity than there can be cell lines
 \end_layout
 
+\begin_layout Subsection
+Animal models
+\end_layout
+
+\begin_layout Itemize
+KO
+\end_layout
+
+\begin_layout Itemize
+xenografts
+\end_layout
+
+\begin_layout Itemize
+similar but not the same to human
+\end_layout
+
 \begin_layout Section
-Data Types and Assays
+Molecular Data Types and Assays
+\end_layout
+
+\begin_layout Itemize
+this is the data we get from the models
 \end_layout
 
 \begin_layout Subsection
@@ -347,11 +355,11 @@ patient cohorts
 \end_layout
 
 \begin_layout Itemize
-survival
+mostly survival: OS, progression-free survival
 \end_layout
 
 \begin_layout Section
-Computational Methods and Reproducibility
+Computational Methods
 \end_layout
 
 \begin_layout Itemize
@@ -359,15 +367,112 @@ bio moving to quant sci
 \end_layout
 
 \begin_layout Itemize
+more data available
+\end_layout
+
+\begin_layout Itemize
 comp analyses get more complex
+\end_layout
+
+\begin_layout Subsection
+Goal
+\end_layout
+
+\begin_layout Itemize
+Treatment by Tissue of Origin
+\end_layout
+
+\begin_layout Itemize
+stratification for prognosis and treatment
+\end_layout
+
+\begin_layout Itemize
+understanding molecular mechanisms
+\end_layout
+
+\begin_layout Subsection
+Patterns of Mutations
+\end_layout
+
+\begin_layout Itemize
+biomarkers for drug response
+\end_layout
+
+\begin_layout Itemize
+long tail of mutations
+\end_layout
+
+\begin_layout Subsection
+Gene Expression Clustering
+\end_layout
+
+\begin_layout Itemize
+mostly subtype clustering
+\end_layout
+
+\begin_layout Itemize
+heterogeneity
+\end_layout
+
+\begin_layout Itemize
+global clustering
+\end_layout
+
+\begin_layout Subsection
+Differentially Expression Subnetworks
+\end_layout
+
+\begin_layout Itemize
+usually in the interactome
+\end_layout
+
+\begin_layout Itemize
+PCSTs, etc.
+\end_layout
+
+\begin_layout Subsection
+Quantifying Signaling Aberrations
+\end_layout
+
+\begin_layout Itemize
+Transcription: DNA->RNA, RNA data
+\end_layout
+
+\begin_layout Itemize
+proteins
+\end_layout
+
+\begin_layout Itemize
+Cell Signaling: actual activity
+\end_layout
+
+\begin_layout Itemize
+pathway expression vs activity
+\end_layout
+
+\begin_layout Section
+Reproducibility of Results
 \end_layout
 
 \begin_layout Itemize
 methods desc inadequate -> need code
 \end_layout
 
+\begin_layout Itemize
+also this thesis will inadequately describe what was done
+\end_layout
+
 \begin_layout Subsection
-Algorithms and availability
+Experimental vs.
+ Computational
+\end_layout
+
+\begin_layout Itemize
+focussing on comp reproducibility here
+\end_layout
+
+\begin_layout Subsection
+Scientific Software Ecosystem
 \end_layout
 
 \begin_layout Itemize
@@ -391,7 +496,7 @@ markdown
 \end_layout
 
 \begin_layout Subsection
-Revision Control
+Versioning
 \end_layout
 
 \begin_layout Itemize
@@ -422,8 +527,8 @@ single entry point for analyses
 Makefiles
 \end_layout
 
-\begin_layout Subsection
-Limitations of Reproducibility
+\begin_layout Itemize
+LIMITATIONS:
 \end_layout
 
 \begin_layout Itemize
@@ -440,6 +545,10 @@ complex software setup req'd, may not be available later
 
 \begin_layout Itemize
 figures need manual tweaking (or lot of time)
+\end_layout
+
+\begin_layout Itemize
+holy grail would be something like shiny
 \end_layout
 
 \end_body
