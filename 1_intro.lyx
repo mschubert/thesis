@@ -97,10 +97,6 @@ survival changes in the last 40 years
 disease of the genes
 \end_layout
 
-\begin_layout Itemize
-mutations: germline and somatic
-\end_layout
-
 \begin_layout Subsection
 Mutational Processes
 \end_layout
@@ -115,6 +111,79 @@ ludmil's paper
 
 \begin_layout Itemize
 different tissues: different forces
+\end_layout
+
+\begin_layout Subsubsection
+Germline variation
+\end_layout
+
+\begin_layout Standard
+In the human population, there is natural variation in the genome from one
+ individual to another, which gets passed down through generations in the
+ process of reproduction.
+ Each human being has got two copies of their DNA, one passed down from
+ their mother and the other passed down from their father.
+ Disregarding of where the copies that an individal actually inherits came
+ from, they may harbor the same sequence (that is, the individual is homozygous
+ in a given base or gene) or may be different between those (that is, the
+ individual is heterozygous).
+ This is (in part) what makes us look different, but also what may cause
+ us to be more or less susceptible to a certain disease or treatment thereof.
+ Since the genes were assembled in the fertilized egg already that afterwards
+ underwent cell divisions (in a process also called mitosis), all the cells
+ in our body in theory harbour the same DNA sequence, with the exception
+ that sex cells only contain one copy that was assembled in a cut-and-paste
+ process (called meiosis) of the two somatic ones.
+\end_layout
+
+\begin_layout Subsubsection
+Somatic variation
+\end_layout
+
+\begin_layout Standard
+Should we sequence each cell in an individual, we would not find that all
+ of their consecutive bases made up of As, Ts, Cs, and Gs are indeed identical,
+ but there also variation within each individual.
+ There may be a change that is common to cells that derive from the same
+ precursor, or a change may have been introduced in a single cell by an
+ internal or external process.
+ In the former case, we need to realize that the DNA copy mechanism (also
+ called DNA replication) that ensures that that wenn a cell splits both
+ its daughter cells inherit two full copies of its DNA is not infinitely
+ accurate, but this process may introduce reading- (from the ancestral or
+ template strand) and writing (the newly synthesised strand) errors.
+ In fact, in each cell division there is an average of *** errors that are
+ introduced while copying the each of the three billion bases (times the
+ two alleles) that is our genome.
+\end_layout
+
+\begin_layout Standard
+Such an error may manifest itself in multiple ways.
+ The replication apparatus (DNA polymerase) may miss the insertion of a
+ base or a couple of bases that was in the ancestral in the newly synthesised
+ strand, which produces a small deletion.
+ In contrast, it also may insert a base that was not in the original strand,
+ thereby producing an insertion.
+ It may also insert the wrong base, which leads to a substitution.
+ Even when the replication process produced a perfect copy of the ancestral
+ strands, there may still be cell-internal or external processes that affect
+ the DNA's integrity - called mutations.
+\end_layout
+
+\begin_layout Standard
+While discussing theses mutational processes one should keep in mind that
+ those errors introduced do manifest itself only on one of the two strands
+ in an allele, which will lead to a base not perfectly matching its opposite
+ base anymore, which means they do not pair as well as they were if there
+ had been no error.
+\end_layout
+
+\begin_layout Subsubsection
+Mutations
+\end_layout
+
+\begin_layout Standard
+...
 \end_layout
 
 \begin_layout Subsection
@@ -138,7 +207,70 @@ cell signaling
 \end_layout
 
 \begin_layout Standard
+Genes that are relevant for cancer development and progression have long
+ been classified in Oncogenes and Tumor Suppressor Genes.
+ In broad terms, this classification represents the following: does a mutation
+ introduce a gene function that was not there before, or it loses sensitivty
+ to an inhibitory signal that kept it in check, this gene is called an Oncogene
+ in its active (mutated) form, or Proto-Oncogene in its wild-type form;
+ conversely, if a mutation causes a gene a lose its function as e.g.
+ a negative regulator of cell growth, it is called an Tumour Suppressor
+ Gene.
+ The first Tumour Suppressor Gene that has been found was TP53 in ***, now
+ termed 
+\begin_inset Quotes eld
+\end_inset
 
+Guardian of the Cell Cycle
+\begin_inset Quotes erd
+\end_inset
+
+ for its numerous functions maintaining DNA integrity, managing DNA repair,
+ and causing apoptosis or senescence of the former fail.
+ More recently, mutations that actively contribute to either development
+ of progression of a cancer have been called drivers, while the mutations
+ introduced by e.g.
+ a faulty DNA replication machinery (that a cancer may have caused) that
+ bear no functional impact on the cell are called passenger mutations.
+ Driver genes are usually either activated Oncogenes or Tumour suppressor
+ genes, but may also have both functions.
+\end_layout
+
+\begin_layout Standard
+A gene that has an erroneous sequence somewhere on the DNA is, by itself,
+ not a cause for a cell to alter its function.
+ Instead, genes only store the information, like having a template, that
+ is required to form an active compound from it.
+ This may be a regulatory RNA, or a messenger RNA (mRNA; both derived from
+ DNA by a process called transcription) that is later used by the Ribosome
+ to chain amino acids together to a functional protein in a process called
+ translation.
+ The path from mRNA to protein may involve additional steps, such as cutting
+ out unneeded parts or pasting together different building blocks (splicing),
+ or covalently attaching sugars or other chemical groups (post-translational
+ modifications) to yield the functional protein and/or to regulate  its
+ activity.
+\end_layout
+
+\begin_layout Standard
+Take, for instance, a protein is involed in relaying a signal from the cell
+ surface, such as a signal to grow and divide, to another protein that in
+ turn activates some other proteins which ultimately induces the expression
+ of genes that are needed for the cell's replication machinery.
+ These signals are usually relayed by post-translational modifications from
+ one protein to another.
+ One of the best-studied processes is that of phosphorylation (the addition
+ of a phosphate group - proteins that do that are called kinases, the ones
+ that remove phosphatases) on Serines or Threonines (that have an OH group
+ in their side chain and are thus susceptible to it).
+\end_layout
+
+\begin_layout Standard
+This protein now may be affected by a mutation so that it no longer waits
+ for an upstream signal to transduce, but sends the downstream signal to
+ grow and divide irrespective of what the upstream input is.
+ One such example is the well-known BRAF_V600E mutation, where a Valine
+ on position 600 (the 600th amino acid) is replaced by Glutamic Acid.
 \end_layout
 
 \begin_layout Subsection
@@ -159,6 +291,13 @@ apoptosis
 
 \begin_layout Itemize
 immune clearance
+\end_layout
+
+\begin_layout Standard
+There are however, cellular mechanisms that identify and try to fix those
+ issues.
+ The only problem is: how will they recognise which is the correct and which
+ is the faulty strand?
 \end_layout
 
 \begin_layout Subsection
