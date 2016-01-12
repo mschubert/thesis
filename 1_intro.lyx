@@ -248,8 +248,7 @@ A gene that has an erroneous sequence somewhere on the DNA is, by itself,
  The path from mRNA to protein may involve additional steps, such as cutting
  out unneeded parts or pasting together different building blocks (splicing),
  or covalently attaching sugars or other chemical groups (post-translational
- modifications) to yield the functional protein and/or to regulate  its
- activity.
+ modifications) to yield the functional protein and/or to regulate its activity.
 \end_layout
 
 \begin_layout Standard
@@ -275,6 +274,11 @@ This protein now may be affected by a mutation so that it no longer waits
 
 \begin_layout Subsection
 Cellular Coping Mechanisms
+\end_layout
+
+\begin_layout Itemize
+peter campbell's non-cancerous skin high depth -> Q should be: not how it
+ develops, but how does it not?
 \end_layout
 
 \begin_layout Itemize
@@ -356,16 +360,66 @@ kills most cells, but some survive and repopulate
 cancer stem cells
 \end_layout
 
+\begin_layout Standard
+Let us revisit one of the most well-known examples in targeted therapies,
+ the inhibitor Plexicon (PLX4720) specifically targeted to BRAF-V600E mutants.
+ In a seminal paper, *** et al.
+ showed that this example of targeted therapy works with the intended effect
+ in such that it kills cancer cells to an extent that makes multiple from
+ the outside clearly visible tumours completely disappear for months, which
+ could be hailed as a success for identifying a target and rationally designing
+ an inhibitor that abrogates oncogenic signaling.
+ However, there was one drawback: after a couple more weeks after the initial
+ success, the tumour cells were able to overcome the effects of the inhibitor,
+ start to grow again, and ultimately lead to the recurrence of the tumours
+ that the patient later died from.
+\end_layout
+
+\begin_layout Standard
+This, together with multiple other examples, proved to show that targeted
+ therapies work for a while, but they are, in a lot of cases, unable to
+ prevent recurrence.
+ But how does this work? In order for a tumour to regrow, there need to
+ be some cancerous cells left alive after treatment, as this rapid regrowth
+ of mass can not be explained by an idependent inception, so some cells
+ must have survived the process of therapy.
+ More specifically, there are two possibilities of these cells that later
+ repopulate a tumour can be formed (and a spectrum in between): (1) the
+ applied selection pressure (the therapy killing off sensitive cells) caused,
+ together with a rapid accumulation new mutations, different pools or cells
+ to emerge where a subset was no longer affected by the drug and that could
+ later expand, or (2) those resistant cells were there all along, just expanding
+ their niche once the predominant clones were gone.
+\end_layout
+
+\begin_layout Standard
+This debate lasted for a while, evidence presented for both one [*] and
+ the other [*]: surely, if there are cells present that harbor a mutation
+ that confers resistance to a given drug at the beginning of treatment,
+ sequencing the tumour must show a minor frequency of this mutation that
+ later takes over already at that stage.
+ However, there are a couple of challenges when trying to assess the whole
+ genetic diversity of a sample.
+ For instance, tumours are often histologically quite different already
+ across different section, implying that the molecular makeup is not uniformly
+ distributed.
+ Thus, it is important to sample not only in one place, but either mush
+ the whole thing up or selectively take small samples in different subsections.
+ Another challenge is that for detecting very minor frequencies, one needs
+ to sequence at a high depth and be sure that the resulting variants are
+ not only due to sequencing errors (if there is little enough DNA that it
+ needs to be amplified, errors introduced by PCR need also be considered).
+ It eventually settled when some groups [*] were able to overcome those
+ challenges and show that the resistant clone is indeed present at low frequency
+ at the beginning of therapy.
+\end_layout
+
 \begin_layout Section
 Disease models
 \end_layout
 
-\begin_layout Itemize
-mirror the disease inception, progression, and treatment
-\end_layout
-
 \begin_layout Subsection
-Cancer Patients
+Rationale
 \end_layout
 
 \begin_layout Itemize
@@ -378,6 +432,53 @@ can't try out stuff
 
 \begin_layout Itemize
 anything that is not best known treatment unethical
+\end_layout
+
+\begin_layout Itemize
+mirror the disease inception, progression, and treatment
+\end_layout
+
+\begin_layout Itemize
+clinical trials
+\end_layout
+
+\begin_layout Standard
+It is easy to argue that in order to find better cancer treatments, we first
+ need to understand better the molecular mechanisms that drive it.
+ This is especially true because the mechanisms involved from the inception
+ of cancer up the its progression and spreading are in fact molecular mechanisms
+ that have spun out of the normal biological control that cells of an organism
+ excert on each other.
+ In order to improve our understanding, it is required to collect data about
+ the different types, stages, treatments, and similar.
+\end_layout
+
+\begin_layout Standard
+This poses a problem: it is not possible to perform all of the assays required
+ on the actual patients.
+ There is just no justification for a patient to undergo surgery if we want
+ to know if protein A interacts with protein B.
+ Also with treatments, we can not try new treatments not having a strong
+ indication that this might be the best known possibility of curing a patient,
+ as this would be highly unethical.
+ It follows that there is a requirement for some biological system that
+ mirrors the disease while, at the same time, is easy to handle in the laborator
+y.
+ Therein, the points mentioned involve a tradeoff: a system that mirrors
+ the disease perfectly and is easy to handle does not exist, but there are
+ multiple systems (outlined in the sections below) that are closer to one
+ or the other.
+ Which one to use must be decided in each experiment individually - considering
+ its goals, effort, conclusiveness and applicability to the question studied.
+\end_layout
+
+\begin_layout Standard
+However, if there is a strong indication given those model systems that
+ a certain treatment approach is truly beneficial to a certain patient or
+ patient group, this needs to be thoroughly tested to make sure that those
+ indications previously shown using a model system - that are known to mirror
+ a lot of aspects of the actual disease, but never all - actually hold in
+ humans as well.
 \end_layout
 
 \begin_layout Subsection
@@ -398,6 +499,34 @@ easy handling (plastic dishes)
 
 \begin_layout Itemize
 compared to others: uniform
+\end_layout
+
+\begin_layout Standard
+One of the easiest model systems that provide a reasonable accurate mirror
+ of a lot of the biology involved in the disease are cell lines, which is
+ basically taking a bunch of cells from a tumour, and growing them in a
+ petri dish for multiple generations (passages).
+ An obvious advantage of this method is that the biological material that
+ assays can be performed on is virtually unlimited, easy to produce and
+ maintain (the cells grow in the dishes as long as they are supplied with
+ nutrients and potentially growth factors or cytokines), while still reflecting
+ a lot of the properties that cells in a tumour would.
+ However, by passaging cells consecutively in petri dishes for many generations,
+ the evolutionary pressure that they are selected by is essentially the
+ growth rate on the dish, which will not reflect the proportions that one
+ would find in a real tumour.
+ In fact, the fastest growing clone will outcompete all others in a couple
+ of generations - which gives a relatively uniform molecular phenotype across
+ all cells, but in turn also loses the heterogeneity found in a primary
+ sample.
+\end_layout
+
+\begin_layout Standard
+Today, there is a multitude of cell lines available from commercial suppliers.
+\end_layout
+
+\begin_layout Standard
+.......
 \end_layout
 
 \begin_layout Subsection
@@ -509,14 +638,6 @@ Computational Methods
 bio moving to quant sci
 \end_layout
 
-\begin_layout Itemize
-more data available
-\end_layout
-
-\begin_layout Itemize
-comp analyses get more complex
-\end_layout
-
 \begin_layout Subsection
 Goal
 \end_layout
@@ -531,6 +652,10 @@ stratification for prognosis and treatment
 
 \begin_layout Itemize
 understanding molecular mechanisms
+\end_layout
+
+\begin_layout Standard
+[lopez-bigas: in silico perscription]
 \end_layout
 
 \begin_layout Subsection
@@ -562,7 +687,7 @@ global clustering
 \end_layout
 
 \begin_layout Subsection
-Differentially Expression Subnetworks
+Differentially Expressed Subnetworks
 \end_layout
 
 \begin_layout Itemize
@@ -574,7 +699,7 @@ PCSTs, etc.
 \end_layout
 
 \begin_layout Subsection
-Transcription Factor Networks
+Gene Regulatory Networks
 \end_layout
 
 \begin_layout Itemize
@@ -611,6 +736,14 @@ methods desc inadequate -> need code
 
 \begin_layout Itemize
 also this thesis will inadequately describe what was done
+\end_layout
+
+\begin_layout Itemize
+more data available
+\end_layout
+
+\begin_layout Itemize
+comp analyses get more complex
 \end_layout
 
 \begin_layout Subsection
