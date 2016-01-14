@@ -97,6 +97,10 @@ survival changes in the last 40 years
 disease of the genes
 \end_layout
 
+\begin_layout Itemize
+early detection is key
+\end_layout
+
 \begin_layout Subsection
 Mutational Processes
 \end_layout
@@ -316,8 +320,16 @@ go through all hanahan & weinberg Hallmarks
 Therapeutic Interventions
 \end_layout
 
+\begin_layout Subsection
+The Therapeutic Window
+\end_layout
+
 \begin_layout Itemize
-Early Detection is Key (maybe not too relevant)
+bioavailability
+\end_layout
+
+\begin_layout Itemize
+difference in killing normal vs target cells
 \end_layout
 
 \begin_layout Subsection
@@ -326,6 +338,10 @@ Cytotoxic Drugs
 
 \begin_layout Itemize
 based on cells growing quicker/consuming more resources
+\end_layout
+
+\begin_layout Standard
+...put some examples of clinical cyototoxic here...
 \end_layout
 
 \begin_layout Subsection
@@ -338,6 +354,52 @@ specific blockade of signaling pathway
 
 \begin_layout Itemize
 small molecules vs antibodies
+\end_layout
+
+\begin_layout Itemize
+put some intro to chem bio in here?
+\end_layout
+
+\begin_layout Standard
+A recurrent theme of cancer development and progression is the aberrant
+ activation of specific molecular cues in cell signaling.
+ An example of this is the well-known BRAF-V600E mutation, already mentioned
+ in section [consequences].
+ But there are many more instances where a mutation in a gene yields a gene
+ product that is abnormally active- or inactive.
+ This often includes members of the MAP kinase pathway (like EGFR, RAS,
+ RAF, MEK, or ERK), but frequently - and often strongly correlated with
+ the general cell state as is defined by, for instance, the tissue of origin
+ - other proteins and pathways that confer a selective advantage in a given
+ context.
+ An important aspect in that regard is the concept of oncogene addiction:
+ Once a cell, or a population of cells, suffers a molecular lesion that
+ causes aberrant signaling, the cell (or cells) become dependent on exactly
+ that signal.
+ Turn it off, and those cells are likely to die.
+\end_layout
+
+\begin_layout Standard
+This has an important implication for cancer therapy: if we are able to
+ find (or design) a compound that specifically turns off one of those abnormally
+ active proteins, we can kill cells that have it active.
+ 
+\end_layout
+
+\begin_layout Standard
+Coming back to our example of the BRAF-V600E mutation, [* et al] indeed
+ designed and developed a small-molecule inhibitor called Plexicon (more
+ specifically, PLX4720) that proved to bind the mutation version of the
+ BRAF protein with a much higher affinity than the one found in unmutated
+ cells.
+ This, in some ways, could be considered the perfect drug for cancer therapy,
+ because it has it has favourable uptake in the body [*], and once it is
+ there the therapeutic window is much larger compared to other compounds
+ due to this difference in binding affinity.
+\end_layout
+
+\begin_layout Standard
+...put some examples of clinical targeted therapies here...
 \end_layout
 
 \begin_layout Subsection
@@ -523,10 +585,28 @@ One of the easiest model systems that provide a reasonable accurate mirror
 
 \begin_layout Standard
 Today, there is a multitude of cell lines available from commercial suppliers.
+ The maybe best-known example is that of the HeLa cell line that was derived
+ from a patient of cervical cancer in 1973, named Henrietta Lacks.
+ This cell line, however, with how long it has been kept in culture as well
+ as its high mutation rate have produced a genotype that no longer resembles
+ primary cancer samples in many ways.
+ One property is that a normal human cell has two copies of the genome (the
+ two alleles), whereas HeLa cells have four copies.
 \end_layout
 
 \begin_layout Standard
-.......
+In contrast to this cell line, most on which experiments are performed on
+ more closely resemble their origin: they have, albeit with aberrations,
+ a genome that somewhat resembles primary tumours; they also in many cases
+ still resemble their tissue of origin in terms of gene expression patterns
+ and transcription factor activities.
+ However, there are biological dynamics involved in a real tumour that can
+ not be recapitulated by cell lines.
+ These include interactions with other cell types (where a co-culture is
+ possible, but not anywhere close in complexity), interactions with the
+ extracellular matrix (remember the flat plastic dishes they are grown in).
+ Another one, which can be seen as a special case of the former, is the
+ lacking interaction with immune cells.
 \end_layout
 
 \begin_layout Subsection
@@ -558,12 +638,27 @@ xenografts
 similar but not the same to human
 \end_layout
 
+\begin_layout Subsection
+Models used in this work
+\end_layout
+
 \begin_layout Section
 Molecular Data Types and Assays
 \end_layout
 
+\begin_layout Subsection
+Role of Molecular Data
+\end_layout
+
 \begin_layout Itemize
 this is the data we get from the models
+\end_layout
+
+\begin_layout Standard
+One of the issues of both understanding as well as preventing or treating
+ cancer development and progression is that it is a process in such complexity
+ that a simple observation of patients with the disease will not suffice
+ to come up with effective models (or treatments for that matter).
 \end_layout
 
 \begin_layout Subsection
@@ -634,12 +729,12 @@ mostly survival: OS, progression-free survival
 Computational Methods
 \end_layout
 
-\begin_layout Itemize
-bio moving to quant sci
+\begin_layout Subsection
+Rationale
 \end_layout
 
-\begin_layout Subsection
-Goal
+\begin_layout Itemize
+bio moving to quant sci
 \end_layout
 
 \begin_layout Itemize
@@ -656,6 +751,63 @@ understanding molecular mechanisms
 
 \begin_layout Standard
 [lopez-bigas: in silico perscription]
+\end_layout
+
+\begin_layout Standard
+Over the last decades and years, biology moved from an observational, qualitativ
+e science to a very much quantitative one.
+ This can largely be attributed by high throughput assays, led by the advance
+ of DNA sequencing and followed by its derivates as well as other approaches,
+ like high-content phenotypic screening - each allowing for measuring not
+ one data point, but hundreds and sometimes thousands at a time.
+ The magic component in this process is automation: the bulk of the data
+ generated by scientific laboratories are not longer carried out by individual
+ scientists pipetting together reagens, but by machines controlled by computers
+ and designed by both scientists and industry alike.
+ This shift of paradigm has not only produced much more data, but arguably
+ led to an increase in the quality of such data as well, by removing the
+ human element (mood, ability to concentrate, etc.) from large parts of the
+ outcome of an experiment.
+\end_layout
+
+\begin_layout Standard
+This transformation has not only come with its benefits, but also with its
+ challenges.
+ Setting aside the view of some prominent scientists that each experiment
+ needs to have a specific question or hypothesis in mind and that generating
+ data first and using the data itself as a hypothesis generator is an inferior
+ approach (as best demonstrated by Sidney Brenner's quote 
+\begin_inset Quotes eld
+\end_inset
+
+low input, high throughput, not output
+\begin_inset Quotes erd
+\end_inset
+
+), a biomedical scientist's skill requirements have moved from knowing,
+ for instance, as many details about a given gene as possible to understanding
+ how to set up reproducible assays, generate reliable data, but especially
+ treating the resulting data in a way that yielded biological insights.
+\end_layout
+
+\begin_layout Standard
+There are two crucial parts to this: one is algorithms, that transform the
+ raw data generated by a given experiment into biologically interpretable
+ indications, and the second is statistics, to make sure the effect observed
+ is due to the data and not due to random chance while analysing the results.
+ I will outline some very successful ideas that in turn led to algorithms
+ and usable software packages for invesitating molecular data, both in terms
+ of cancer as well as in general, in the sections of this chapter.
+\end_layout
+
+\begin_layout Standard
+However, first let us reconsider the goal we are trying to achieve in terms
+ of this thesis as well as a lot of the related work: we ultimately want
+ to improve how cancer is diagnosed and treated for patients, and those
+ algorithms help us to define markers of their pathogenesis or how they
+ could reap benefits from being offered a particular treatment.
+ We thus want to transform the numbers comprising the molecular data we
+ have in a meaningful way so they connect to this endeavour.
 \end_layout
 
 \begin_layout Subsection
