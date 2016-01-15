@@ -332,6 +332,46 @@ bioavailability
 difference in killing normal vs target cells
 \end_layout
 
+\begin_layout Standard
+Within a therapeutic intervention, our goal is to selectively treat (or
+ kill) the diseased cells while not impacting the normal function of other
+ cells in the body.
+ If at first we assume that a treatment can be delivered to all cells of
+ the body in the same amount, the question is whether the impact it has
+ is impacting the cells we want to act on more than all the other cells
+ we want to impact as little as possible.
+ If we take the simple example of killing cells, we want a drug that kills
+ all the bad cells and leaves the good cells alone.
+ An effective drug will work on the bad cells at a lower concentration than
+ on the good ones.
+ If the concentration is too high, it will undoubtely affect other cells
+ as well.
+ This range of concentration, where a given drug already acts on the target
+ cells but does not confer toxicity to other cells is called the therapeutic
+ window.
+ The broader it is, the easier it is to work with this drug.
+\end_layout
+
+\begin_layout Standard
+Elaborating on our simplification, it is of course not the case that an
+ administered compound will be available to all cells at the same concentration.
+ Instead, it first needs to reach the bloodstream (which includes uptake
+ and resorption, then modification in the liver [*?] and pancreas if taken
+ orally), then be distributed by the flow of blood into all the capillaries
+ (which the exception of the brain that has an additional barrier), until
+ finally cells are able to absorb it.
+ As a rule of thumb whether a drug can be orally absorbed or not, a common
+ measure is 
+\begin_inset Quotes eld
+\end_inset
+
+Lipinsky's Rule of Five
+\begin_inset Quotes erd
+\end_inset
+
+, that states the following: 
+\end_layout
+
 \begin_layout Subsection
 Cytotoxic Drugs
 \end_layout
@@ -627,7 +667,7 @@ Animal models
 \end_layout
 
 \begin_layout Itemize
-KO
+KO/KI: making more prone
 \end_layout
 
 \begin_layout Itemize
@@ -638,8 +678,80 @@ xenografts
 similar but not the same to human
 \end_layout
 
+\begin_layout Standard
+Of course, there are aspects missing when relying on models that handle
+ individual cells or the interaction of a couple of cell of the same type
+ when trying to assess either mechanisms of pathogenesis or in vivo response
+ to a compound, which makes it necessary to perform experiments in a whole
+ organism.
+ For this purpose animals have long been used, down from a simple multicellular
+ worm (Caenorhabdilis elegans, mostly for development and its simple central
+ nervous system) to frogs (Xenopus, for induced pluripotency), up to mammals
+ (mice, rats, and chimps).
+ Just as the complexity of these organisms increases, they also mirror more
+ and more aspects of human physiology.
+ However, experiments performed in the latter organisms also takes much
+ more time, they are more difficult (and expensive) to set up, and there
+ are ethical concerns on keeping, handling, and killing animals for the
+ purpose of ultimately saving human lives.
+ Still, none of the animals mentioned is human, so there the unknown factors
+ as to whether a certain drug that has been shown to work in cell lines
+ and mice does indeed have the same effect in humans remains.
+ Looking at the number of articles published about a specific molecular
+ mechanism or the detailed characterisation of a compound and its usability
+ as a drug, mice seem to be considered a reasonable tradeoff between providing
+ a close enough match of human biology and being not too difficult to keep.
+\end_layout
+
+\begin_layout Standard
+One line of experiments that can be done with mice but not humans is to
+ edit genes in their germline, and then breed them with a reporter or until
+ their offspring is homozygous for a desired mutation.
+ The gene introduced can either be a reporter, to see where a it is expressed,
+ or for instance a mutated version of a human gene that is known to induce
+ the formation of tumors.
+\end_layout
+
+\begin_layout Standard
+Another method of invastigation are xenografts, where an immunodeficient
+ [*?*] mouse is inoculated with cancerous cells derived from either a cell
+ line or a patient, to study effects like how cancerous cells influence
+ and modify the microenvironment around them, how they can sustain themselves
+ and grow, attract the formation of blood vessels, and ultimately metastisise.
+\end_layout
+
 \begin_layout Subsection
 Models used in this work
+\end_layout
+
+\begin_layout Itemize
+drug screening
+\end_layout
+
+\begin_layout Itemize
+perturbed expr
+\end_layout
+
+\begin_layout Itemize
+patient survival
+\end_layout
+
+\begin_layout Standard
+All drug screening experiments and analysis based thereon in this work,
+ while there are potentially many drawbacks associated with it, have been
+ carried out on data that was derived from cell lines.
+ This can easily explained by the fact that the amount that needed to be
+ generated in order to make general statements about perturbed gene expression
+ and especially drug response is not feasable with any other model system.
+\end_layout
+
+\begin_layout Standard
+For cancer-specific gene expression, I used either used the same cell lines,
+ or patient data directly from a consortium whose aim it is to molecularly
+ characterise a multitude of cancers (The Cancer Genome Atlas consortium,
+ TCGA).
+ It is also the latter where I obtained survival data from, as more thorougly
+ described in section *.
 \end_layout
 
 \begin_layout Section
@@ -810,6 +922,10 @@ However, first let us reconsider the goal we are trying to achieve in terms
  have in a meaningful way so they connect to this endeavour.
 \end_layout
 
+\begin_layout Standard
+...much has been done, more is missing...
+\end_layout
+
 \begin_layout Subsection
 Patterns of Mutations
 \end_layout
@@ -859,7 +975,7 @@ signaling/via TFs points
 \end_layout
 
 \begin_layout Subsection
-Quantifying Signaling Aberrations
+Signaling Aberrations
 \end_layout
 
 \begin_layout Itemize
@@ -882,6 +998,14 @@ pathway expression vs activity
 Reproducibility of Results
 \end_layout
 
+\begin_layout Subsection
+Experimental and Computational
+\end_layout
+
+\begin_layout Itemize
+focussing on comp reproducibility here
+\end_layout
+
 \begin_layout Itemize
 methods desc inadequate -> need code
 \end_layout
@@ -898,13 +1022,22 @@ more data available
 comp analyses get more complex
 \end_layout
 
-\begin_layout Subsection
-Experimental vs.
- Computational
+\begin_layout Standard
+* exp repro
 \end_layout
 
-\begin_layout Itemize
-focussing on comp reproducibility here
+\begin_layout Standard
+* comp repro
+\end_layout
+
+\begin_layout Standard
+Since I did not perform any experiments to produce data myself, the focus
+ of this chapter shall be to ensure that the results obtained by transforming
+ raw (or in some cases already processed) data into other types of data,
+ plots, and ultimately interpretation are reproducible in a sense that a
+ person not involved in the projects could arrive at the same conclusion,
+ being provided this thesis, the code used, and the technical documentation
+ written in conjunction with it.
 \end_layout
 
 \begin_layout Subsection
@@ -985,6 +1118,16 @@ figures need manual tweaking (or lot of time)
 
 \begin_layout Itemize
 holy grail would be something like shiny
+\end_layout
+
+\begin_layout Standard
+A challenge that often is underestimated is that even when all of the code
+ that was used in order to generate the is provided, it is often not trivial
+ know which script generates which part of the analysis, which other scripts,
+ analyses, or data it depends on.
+ Thus it is not only important to provide the code as it is, but also informatio
+n on how to run it, so to not only have all the bits and pieces but to connect
+ them to a workflow from the data to the results.
 \end_layout
 
 \end_body
