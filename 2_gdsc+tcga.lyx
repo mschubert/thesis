@@ -74,27 +74,72 @@ Gene expression methods for cancer cell line drug sensitivity and patient
 \end_layout
 
 \begin_layout Part
-Full characterisation of pathway scores for GDSC and TCGA
+A Pathway-Centric View of Drug Sensitivity and Patient Survival
 \end_layout
 
 \begin_layout Section
-Data sources
+Data Sets
 \end_layout
 
 \begin_layout Subsection
-GCSC
+The Cancer Genome Atlas (TCGA)
+\end_layout
+
+\begin_layout Itemize
+incpetion
+\end_layout
+
+\begin_layout Itemize
+cohorts
+\end_layout
+
+\begin_layout Itemize
+data access regulations
+\end_layout
+
+\begin_layout Itemize
+secondary dbs that simplify access: e.g.
+ BROAD GDAC firehose
 \end_layout
 
 \begin_layout Subsection
-TCGA
+International Cancer Genome Consortium (ICGC)
+\end_layout
+
+\begin_layout Itemize
+umbrella effort
+\end_layout
+
+\begin_layout Itemize
+more cohorts
+\end_layout
+
+\begin_layout Itemize
+horrible metadata
 \end_layout
 
 \begin_layout Subsection
-GEO/ArrayExpress: role of a central expression repository, MIAME standards
+Cancer Cell Line Encyclopedia (CCLE)
+\end_layout
+
+\begin_layout Itemize
+status 2002
+\end_layout
+
+\begin_layout Subsection
+Genomics of Drug Sensitivity in Cancer (GDSC)
+\end_layout
+
+\begin_layout Itemize
+status 2002
+\end_layout
+
+\begin_layout Itemize
+now: new dataset
 \end_layout
 
 \begin_layout Section
-Curated databases
+Pathway-related Databases
 \end_layout
 
 \begin_layout Subsection
@@ -102,7 +147,7 @@ Gene Ontology
 \end_layout
 
 \begin_layout Subsection
-Pathway databases
+Pathway Databases
 \end_layout
 
 \begin_layout Subsubsection
@@ -117,75 +162,100 @@ BioCarta
 KEGG
 \end_layout
 
-\begin_layout Section
-Available methods
+\begin_layout Subsection
+ChEA
 \end_layout
 
 \begin_layout Subsection
-GDSC data
+Protein-Protein Interactions
 \end_layout
 
-\begin_layout Subsection
-Correlation: Pearson, Spearman
-\end_layout
-
-\begin_layout Subsection
-Methods used: Linear model (ANOVA), machine learning (Elastic Net)
-\end_layout
-
-\begin_layout Subsection
-Problems with unbiased GO/pathway analysis: e.g.
- blood coagulation top hit for cell line drug associations
+\begin_layout Itemize
+difference between pathway and interactome
 \end_layout
 
 \begin_layout Section
-A pathway view of drug response
+Quantifying Pathway Activity
 \end_layout
 
 \begin_layout Subsection
-Pathway databases: Reactome, WikiPathways, BioCarta MSigDB Gene Ontology
- ChEA, KEA, CORUM
+GSEA
+\end_layout
+
+\begin_layout Itemize
+inception, history
+\end_layout
+
+\begin_layout Itemize
+how it works
+\end_layout
+
+\begin_layout Itemize
+maybe: leading edge analysis
+\end_layout
+
+\begin_layout Itemize
+with any of the pathway gene sets
+\end_layout
+
+\begin_layout Subsection
+SPIA
+\end_layout
+
+\begin_layout Subsection
+Pathifier
+\end_layout
+
+\begin_layout Subsection
+PARADIGM
 \end_layout
 
 \begin_layout Section
-Gene set performance on drug response and survival
+Drug Response
 \end_layout
 
-\begin_layout Subsection
-Drug associations
+\begin_layout Itemize
+how IC50 is derived
 \end_layout
 
-\begin_layout Subsection
-Modelling patient survival
+\begin_layout Itemize
+linear model, ANOVA
 \end_layout
 
-\begin_layout Subsection
-Models used: Cox, AFT incl.
- assumptions made
+\begin_layout Itemize
+for GDSC and pathway-rel dbs in (2): the unbiased associations
 \end_layout
 
-\begin_layout Subsection
-Batch-correcting cell lines and tumors
+\begin_layout Itemize
+multivariate: explaining power
+\end_layout
+
+\begin_layout Itemize
+unbiased appraoch: spurious results
+\end_layout
+
+\begin_layout Section
+Patient Survival
+\end_layout
+
+\begin_layout Itemize
+where data comes from
+\end_layout
+
+\begin_layout Itemize
+OS, PFS
+\end_layout
+
+\begin_layout Itemize
+coxph, AFT + assumptions
+\end_layout
+
+\begin_layout Itemize
+again: unbiased approach = spurious results
 \end_layout
 
 \begin_layout Section
 Use case: COREAD proteomics
-\end_layout
-
-\begin_layout Subsection
-TF regulon enrichment 
-\end_layout
-
-\begin_layout Section
-Pathway methods for gene expression
-\end_layout
-
-\begin_layout Subsection
-Gene Set Enrichment Analysis on pathway sets
-\end_layout
-
-\begin_layout Subsection
-Advanced methods: SPIA, Pathifier, PARADIGM
 \end_layout
 
 \end_body
