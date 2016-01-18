@@ -246,18 +246,6 @@ Pan-Cancer Models
 \end_layout
 
 \begin_layout Subsection
-Pan-Cancer Models including a Covariate
-\end_layout
-
-\begin_layout Itemize
-the issue we encountered
-\end_layout
-
-\begin_layout Itemize
-how to solve it
-\end_layout
-
-\begin_layout Subsection
 Tissue-specific Models
 \end_layout
 
@@ -269,8 +257,32 @@ Models for Individual Cell Lines
 Predicting Effective Drug Combinations
 \end_layout
 
+\begin_layout Subsection
+Choosing the right Model
+\end_layout
+
+\begin_layout Itemize
+lots of different ways to derive them, no idea what is best
+\end_layout
+
 \begin_layout Itemize
 optimisation modelling (ILP)
+\end_layout
+
+\begin_layout Subsection
+Models including a Covariate
+\end_layout
+
+\begin_layout Itemize
+pan-can assocs
+\end_layout
+
+\begin_layout Itemize
+the issue we encountered
+\end_layout
+
+\begin_layout Itemize
+how to solve it
 \end_layout
 
 \begin_layout Subsection
