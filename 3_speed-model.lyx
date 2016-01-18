@@ -97,6 +97,10 @@ mRNA expression as proxy for protein activity
 describe the goal (find known pancan drug assocs?)
 \end_layout
 
+\begin_layout Itemize
+applicability to basal expression
+\end_layout
+
 \begin_layout Subsection
 Challenges with Gene Expression Signatures
 \end_layout
@@ -110,7 +114,7 @@ Goals of the Appraoch
 \end_layout
 
 \begin_layout Itemize
-we need to show that it's actually better
+we need to show if it's actually better
 \end_layout
 
 \begin_layout Subsection
