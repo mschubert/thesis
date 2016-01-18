@@ -82,27 +82,47 @@ GEO/ArrayExpress: role of a central expression repository, MIAME standards
 \end_layout
 
 \begin_layout Section
-Rationale for choosing responsive genes instead of pathway expression
+Responsive Genes instead of Pathway Expression
+\end_layout
+
+\begin_layout Subsection
+Rationale
 \end_layout
 
 \begin_layout Itemize
 mRNA expression as proxy for protein activity
 \end_layout
 
-\begin_layout Section
-Previously Developed Methods
-\end_layout
-
-\begin_layout Subsection
-...
-\end_layout
-
 \begin_layout Itemize
 describe the goal (find known pancan drug assocs?)
 \end_layout
 
+\begin_layout Subsection
+Challenges with Gene Expression Signatures
+\end_layout
+
+\begin_layout Itemize
+said to be badly reproducible [we will show that in later section]
+\end_layout
+
+\begin_layout Subsection
+Goals of the Appraoch
+\end_layout
+
+\begin_layout Itemize
+we need to show that it's actually better
+\end_layout
+
+\begin_layout Subsection
+Benchmarking
+\end_layout
+
 \begin_layout Itemize
 defining a data set to benchmark in first instance
+\end_layout
+
+\begin_layout Section
+Previously Developed Methods
 \end_layout
 
 \begin_layout Subsection
@@ -111,6 +131,10 @@ Gatza
 
 \begin_layout Itemize
 line of papers: potti, bild, gatza
+\end_layout
+
+\begin_layout Subsection
+Limitations of Gatza
 \end_layout
 
 \begin_layout Itemize
@@ -143,16 +167,35 @@ Extended version by Blüthgen lab: additional experiments and pathways
 \end_layout
 
 \begin_layout Subsection
-Performance of Available Methods
+Limitations of SPEED
 \end_layout
 
 \begin_layout Itemize
-Issues with the platform: arbitrary cutoffs, highly correlated sets, not
- meaningful drug associations
+gatza: we have no idea if the sigs are stable
+\end_layout
+
+\begin_layout Itemize
+speed: Issues with the platform: arbitrary cutoffs, highly correlated sets
+\end_layout
+
+\begin_layout Itemize
+speed: not meaningful drug associations
+\end_layout
+
+\begin_layout Itemize
+speed: processed data w/ no idea what authors did
+\end_layout
+
+\begin_layout Subsection
+Improving SPEED within its framework
+\end_layout
+
+\begin_layout Itemize
+the results of the GDSC2016 screening paper
 \end_layout
 
 \begin_layout Section
-Extended data curation
+Extended Data Curation
 \end_layout
 
 \begin_layout Subsection
@@ -163,8 +206,28 @@ Defining Relevant Pathways
 pathways: cancer relevant
 \end_layout
 
+\begin_layout Itemize
+this has been done quite well by the initial platform, stick with it
+\end_layout
+
+\begin_layout Itemize
+reference to hallmarks and how we map it
+\end_layout
+
 \begin_layout Subsection
-Finding suitable experiments
+Finding suitable Experiments
+\end_layout
+
+\begin_layout Itemize
+at least 2 normals to get sense of variability
+\end_layout
+
+\begin_layout Itemize
+at least 1 perturbed
+\end_layout
+
+\begin_layout Itemize
+AE vs GEO
 \end_layout
 
 \begin_layout Itemize
@@ -172,7 +235,7 @@ arrayexpress searches
 \end_layout
 
 \begin_layout Subsection
-From exeriments to expression data
+From Experiments to Expression Data
 \end_layout
 
 \begin_layout Itemize
@@ -180,7 +243,7 @@ GEO vs AE
 \end_layout
 
 \begin_layout Itemize
-reproducibility
+reproducibility, pipeline
 \end_layout
 
 \begin_layout Itemize
@@ -189,6 +252,10 @@ data format: yaml
 
 \begin_layout Itemize
 AE package updates
+\end_layout
+
+\begin_layout Itemize
+we want raw data
 \end_layout
 
 \begin_layout Section
@@ -215,6 +282,10 @@ biases by platform
 imputation vs selecting common subset
 \end_layout
 
+\begin_layout Itemize
+need to summarize by gene symbols, different probes on different platforms
+\end_layout
+
 \begin_layout Subsection
 Batch Effects and Correction
 \end_layout
@@ -224,8 +295,7 @@ Sources of variation: by lab, platform, cell types, pathway perturbed
 \end_layout
 
 \begin_layout Itemize
-Batch correction methods: Combat, DWD Z-scores: distribution across experiments
- and pathways
+Batch correction methods: Combat, DWD
 \end_layout
 
 \begin_layout Itemize
@@ -233,8 +303,16 @@ we don't really see anything when integrating many exps on the global patterns
  (neither for z-scores)
 \end_layout
 
+\begin_layout Subsection
+Z-scores
+\end_layout
+
+\begin_layout Itemize
+distribution across experiments and pathways
+\end_layout
+
 \begin_layout Section
-Building a model of pathway activity by responsive genes
+Building a Model
 \end_layout
 
 \begin_layout Itemize
@@ -244,6 +322,10 @@ write how it happened: some ideas, tried them out and check how they perform
 
 \begin_layout Subsection
 Linear model
+\end_layout
+
+\begin_layout Itemize
+regression per gene: we get around different num of obs
 \end_layout
 
 \begin_layout Subsection
@@ -262,8 +344,20 @@ Ridge Regression and Elastic Net
 sort of works, but not for all pathways
 \end_layout
 
+\begin_layout Subsection
+Penalised Support Vector Machines (SVMs)
+\end_layout
+
+\begin_layout Itemize
+this didn't work at all
+\end_layout
+
 \begin_layout Section
 Discussion
+\end_layout
+
+\begin_layout Itemize
+not tissue-specific (although gex is)
 \end_layout
 
 \end_body
