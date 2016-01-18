@@ -77,8 +77,16 @@ Gene expression methods for cancer cell line drug sensitivity and patient
 Drug response signature matching
 \end_layout
 
+\begin_layout Itemize
+introduce CMap, LINCS CMap here
+\end_layout
+
+\begin_layout Itemize
+MSigDB
+\end_layout
+
 \begin_layout Section
-Rationale
+Black Box Models
 \end_layout
 
 \begin_layout Section
@@ -120,6 +128,10 @@ Synthetic lethal network
 \begin_layout Itemize
 Signature matching for combinations: QC, linear model, covariate approach,
  optimisation modelling (ILP) 
+\end_layout
+
+\begin_layout Section
+Discussion
 \end_layout
 
 \end_body

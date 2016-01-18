@@ -806,35 +806,27 @@ bisulphite seq
 \end_layout
 
 \begin_layout Subsection
-Drug Response
+Protein and Phosphorylation
 \end_layout
 
 \begin_layout Itemize
-GDSC and CCLE
+MS, RPPA
 \end_layout
 
 \begin_layout Itemize
-screening concentration
-\end_layout
-
-\begin_layout Itemize
-drug response curve
-\end_layout
-
-\begin_layout Itemize
-IC50s
+phospho = closest to activity from what we have
 \end_layout
 
 \begin_layout Subsection
-Clinical Data
+Protein Interactions
 \end_layout
 
 \begin_layout Itemize
-patient cohorts
+with DNA
 \end_layout
 
 \begin_layout Itemize
-mostly survival: OS, progression-free survival
+with other proteins + different types + different networks
 \end_layout
 
 \begin_layout Section
@@ -954,6 +946,10 @@ heterogeneity
 global clustering
 \end_layout
 
+\begin_layout Itemize
+Visualising global expression patterns: PCA, t-SNE
+\end_layout
+
 \begin_layout Subsection
 Differentially Expressed Subnetworks
 \end_layout
@@ -971,7 +967,7 @@ Gene Regulatory Networks
 \end_layout
 
 \begin_layout Itemize
-signaling/via TFs points
+ARACNE, etc.
 \end_layout
 
 \begin_layout Subsection
@@ -980,6 +976,10 @@ Signaling Aberrations
 
 \begin_layout Itemize
 Transcription: DNA->RNA, RNA data
+\end_layout
+
+\begin_layout Itemize
+signaling/via TFs points
 \end_layout
 
 \begin_layout Itemize

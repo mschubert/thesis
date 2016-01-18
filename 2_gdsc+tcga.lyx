@@ -211,7 +211,11 @@ implementations
 \end_layout
 
 \begin_layout Subsection
-Alternative Approaches
+Pathway Methods Beyond GSEA
+\end_layout
+
+\begin_layout Itemize
+limitations to the set
 \end_layout
 
 \begin_layout Subsubsection
@@ -232,6 +236,10 @@ Transcription Factor Activity
 
 \begin_layout Itemize
 take the regulons, more or less
+\end_layout
+
+\begin_layout Itemize
+assume most is upregulated?
 \end_layout
 
 \begin_layout Subsection
@@ -404,6 +412,10 @@ chea results on TCGA data
 
 \begin_layout Subsection
 Pathway Methods
+\end_layout
+
+\begin_layout Section
+Discussion
 \end_layout
 
 \end_body

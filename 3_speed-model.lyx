@@ -74,68 +74,172 @@ Gene expression methods for cancer cell line drug sensitivity and patient
 \end_layout
 
 \begin_layout Part
-Building a consensus model of perturbation-responsive genes 
+Building a consensus model of perturbation-responsive genes
+\end_layout
+
+\begin_layout Itemize
+GEO/ArrayExpress: role of a central expression repository, MIAME standards
 \end_layout
 
 \begin_layout Section
 Rationale for choosing responsive genes instead of pathway expression
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Itemize
 mRNA expression as proxy for protein activity
 \end_layout
 
 \begin_layout Section
-SPEED
+Previously Developed Methods
 \end_layout
 
 \begin_layout Subsection
+...
+\end_layout
+
+\begin_layout Itemize
+describe the goal (find known pancan drug assocs?)
+\end_layout
+
+\begin_layout Itemize
+defining a data set to benchmark in first instance
+\end_layout
+
+\begin_layout Subsection
+Gatza
+\end_layout
+
+\begin_layout Itemize
+line of papers: potti, bild, gatza
+\end_layout
+
+\begin_layout Itemize
+limited applicability because only 1 exp MCF10A
+\end_layout
+
+\begin_layout Itemize
+we don't know how representative that is
+\end_layout
+
+\begin_layout Itemize
+reproducibility issues with those sigs (baggerly)
+\end_layout
+
+\begin_layout Subsection
+Signaling Pathway Enrichment using Experimental Datasets (SPEED)
+\end_layout
+
+\begin_layout Itemize
+more exps together
+\end_layout
+
+\begin_layout Itemize
 Initial version by Blüthgen lab: z-score, overlap, expression level, GO
  validation
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Itemize
 Extended version by Blüthgen lab: additional experiments and pathways
 \end_layout
 
 \begin_layout Subsection
+Performance of Available Methods
+\end_layout
+
+\begin_layout Itemize
 Issues with the platform: arbitrary cutoffs, highly correlated sets, not
  meaningful drug associations
 \end_layout
 
+\begin_layout Section
+Extended data curation
+\end_layout
+
 \begin_layout Subsection
-Search for suitable perturbation experiments Reasons for re-curation of
- data: using of processed arrays, z-scores from one control only Metadata
- and file formats 
+Defining Relevant Pathways
+\end_layout
+
+\begin_layout Itemize
+pathways: cancer relevant
+\end_layout
+
+\begin_layout Subsection
+Finding suitable experiments
+\end_layout
+
+\begin_layout Itemize
+arrayexpress searches
+\end_layout
+
+\begin_layout Subsection
+From exeriments to expression data
+\end_layout
+
+\begin_layout Itemize
+GEO vs AE
+\end_layout
+
+\begin_layout Itemize
+reproducibility
+\end_layout
+
+\begin_layout Itemize
+data format: yaml
+\end_layout
+
+\begin_layout Itemize
+AE package updates
 \end_layout
 
 \begin_layout Section
-Raw data
+Processing experimental data
 \end_layout
 
 \begin_layout Subsection
-Quality control: RLE and NUSE, filters based on those scores
+Quality control
+\end_layout
+
+\begin_layout Itemize
+RLE and NUSE, filters based on those scores
 \end_layout
 
 \begin_layout Subsection
-Challenges when combining different data sources: biases by platform, imputation
+Challenges when combining different data sources
+\end_layout
+
+\begin_layout Itemize
+biases by platform
+\end_layout
+
+\begin_layout Itemize
+imputation vs selecting common subset
 \end_layout
 
 \begin_layout Subsection
-Batch effects and correction
+Batch Effects and Correction
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Itemize
 Sources of variation: by lab, platform, cell types, pathway perturbed
 \end_layout
 
-\begin_layout Subsubsection
-Visualising global expression patterns: PCA, t-SNE
-\end_layout
-
-\begin_layout Subsubsection
+\begin_layout Itemize
 Batch correction methods: Combat, DWD Z-scores: distribution across experiments
  and pathways
+\end_layout
+
+\begin_layout Itemize
+we don't really see anything when integrating many exps on the global patterns
+ (neither for z-scores)
+\end_layout
+
+\begin_layout Section
+Building a model of pathway activity by responsive genes
+\end_layout
+
+\begin_layout Itemize
+write how it happened: some ideas, tried them out and check how they perform
+ for drug assocs?
 \end_layout
 
 \begin_layout Subsection
@@ -143,7 +247,23 @@ Linear model
 \end_layout
 
 \begin_layout Subsection
-Machine learning models
+LASSO
+\end_layout
+
+\begin_layout Itemize
+doesn't work
+\end_layout
+
+\begin_layout Subsection
+Ridge Regression and Elastic Net
+\end_layout
+
+\begin_layout Itemize
+sort of works, but not for all pathways
+\end_layout
+
+\begin_layout Section
+Discussion
 \end_layout
 
 \end_body
