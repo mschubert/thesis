@@ -853,7 +853,7 @@ stratification for prognosis and treatment
 understanding molecular mechanisms
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 [lopez-bigas: in silico perscription]
 \end_layout
 
@@ -950,6 +950,113 @@ global clustering
 Visualising global expression patterns: PCA, t-SNE
 \end_layout
 
+\begin_layout Standard
+Cancer is known to be a heterogeneous disease, with individual tumours forming
+ different subtypes within the same tissue.
+ In turn, cells in the same tumour mediate different functions essential
+ to its survival and growth.
+ One of the arguably most effective ways of eludicating the state of individual
+ tumours and cell populations therein is its transcriptome, where transcription
+ of individual genes and regulatory RNAs can be assessed using methods such
+ as microarrays or RNA sequencing.
+\end_layout
+
+\begin_layout Standard
+Disregarding the effect of different cell types (by making the assumption
+ that we sampled a tumour evenly and uniformly while excluding neighboring
+ non-cancerous cells, which is not really the case), we can use the global
+ pattern of gene expression to identify different subtypes of the disease
+ in a given tissue (or even between tissues).
+ A challenge with this is is that the transcriptome could be comprised of
+ up to 22,000 genes without even considering most regulatory or ribosomal
+ RNAs.
+ This space needs to be reduced to something more manageable for visual
+ inspection, as well as different subgroups within assigned that have prognostic
+ or therapeutic relevance.
+ Approaches the allow for visual inspection of a high-dimensional data set
+ are called dimensionality reduction techniques, while methods assigning
+ the different samples to different subtypes are called clustering algorithms.
+\end_layout
+
+\begin_layout Subsubsection
+Visualising Patterns in High-Dimensional Data
+\end_layout
+
+\begin_layout Standard
+Principal Component Analysis (PCA).
+ PCA is one of the simplest linear transformations that rotates samples
+ in N-dimensional space (where N is the number of observations per sample)
+ in a way that its projection to M-dimensional space (the target dimensions
+ - for interpretability usually two or three) maximises the variance contained
+ in M.
+ The rotation is calculated using the matrix factorisation [add fact here],
+ which can be simplified to [add here] and yields a unique solution.
+ [params] provide the position of a sample in M space where the axes are
+ principal components, and the latter's projection back into N called loadings
+ (which represent how much of each original axis is contained within the
+ new axes).
+ It is important to note the meaining and interpretability of such a decompositi
+on is strongly dependent on the amount of variance captured in the reduced
+ space.
+ PCA is closely related to Singular Value Decomposition (SVD), which has
+ applications in dimensionality reduction as well.
+\end_layout
+
+\begin_layout Standard
+T-distributed Stochastic Neighbor Embedding (t-SNE).
+ Instead of relying on the most variable global structures, this method
+ visualises local structures in a given data set: Starting from a point
+ in space (the sample), additional samples are distributed in its vicinity
+ depending on their distance to the original sample, as well as the other
+ points considered (that are a subset of the total number of points).
+ Using this method, one can only trust the points neighbouring each other
+ up to a certain number for which they were considered, as specified by
+ the perplexity parameter.
+ This method has been re-branded as vi-SNE [cite] by Dana Pe'er in their
+ cyt software tool [cite], and later extended by the original author to
+ use the Barnes-Hut method [cite] that is usually used in large N-body simulatio
+n in astrophysics.
+\end_layout
+
+\begin_layout Subsubsection
+Clustering
+\end_layout
+
+\begin_layout Standard
+K-Nearest Neighbors.
+ This is one of the simplest clustering algorithms that requires the number
+ of clusters to be known a priori.
+ It starts with assigning N cluster centres randomly in a given data set,
+ and then assigning all samples that have a smaller distance to a given
+ centre than the others to that centre.
+ These assignments are iterative, which means that once the cluster centres
+ have been determined and the samples assigned, the centres are updated
+ to correspond to the centre of the samples each cluster is associated with.
+ In turn, which samples are associated with which clusters is also updated
+ after each time clusters get new samples assigned, until the process converges
+ and further updating steps do not change cluster assignments anymore.
+ This method is not used in this work.
+\end_layout
+
+\begin_layout Standard
+Non-Negative Matrix Factorisation (NMF).
+ As the name already suggests, this is another matrix factorisation method
+ that decomposes the matrix V (usually with observations in rows and samples
+ in columns) into the matrices W (with samples in columns and weights for
+ each cluster in rows) multiplied with the matrix H (cluster assignment
+ vectors in columns and samples in rows).
+ It does not determine the optimal number of clusters by itself, but can
+ be run with different numbers of clusters that is later evaluated using
+ the cophenetic coefficient (a measure of goodness of fit of the samples
+ to the cluster centres).
+\end_layout
+
+\begin_layout Standard
+Latent Dirichlet Allocation.
+ A modern, Bayesian method for clustering that is an active research topic
+ but not used in this work.
+\end_layout
+
 \begin_layout Subsection
 Differentially Expressed Subnetworks
 \end_layout
@@ -968,6 +1075,10 @@ Gene Regulatory Networks
 
 \begin_layout Itemize
 ARACNE, etc.
+\end_layout
+
+\begin_layout Itemize
+TF logic
 \end_layout
 
 \begin_layout Subsection
