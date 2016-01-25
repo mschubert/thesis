@@ -1066,19 +1066,115 @@ usually in the interactome
 \end_layout
 
 \begin_layout Itemize
-PCSTs, etc.
+PCSTs (BioNet), etc.
+\end_layout
+
+\begin_layout Standard
+Instead of or in addition to investigating global differences in the patterns
+ of gene expression, one might be interested in how a subset of interacting
+ proteins differs between known groups of samples.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Minimum Spanning Trees
+\end_layout
+
+\begin_layout Standard
+The problem of finding a differentially expressed connected subnetwork in
+ the network of interacting proteins is similar to the problem of a Minimum
+ Spanning Tree, that is, selecting only edges and nodes in a graph that
+ maximise a score where each nodes adds to and each edge subtracts from
+ it.
+ 
 \end_layout
 
 \begin_layout Subsection
 Gene Regulatory Networks
 \end_layout
 
+\begin_layout Standard
+An important aspect of gene expression is that its patterns are not randomly
+ but hierarchically organised.
+ On perturbations on a cell's surface or its interior a signal is propagated
+ from its origin up to proteins that bind to DNA and change their expression
+ as a response to the stimulus (more on this in the next section).
+ The terminal nodes of this signal transduction are called transcription
+ factors, that upon binding on the DNA mediate and direct (either in a promoting
+ or in an inhibiting fashion) binding of DNA-dependent RNA polymerase (PolII
+ [?]) that forms a complex with available factors in order to start transcrition
+ of a factor's target genes.
+ The genes transcribed upon activation of transcription factors may in turn
+ be transcription factors themselves that cause increased or decreased transcrip
+tion of other genes.
+ These interactions between different transcription factors are usually
+ referred to as a Transcription Factor Network or Gene Regulatory Network.
+\end_layout
+
+\begin_layout Standard
+There are multiple ways these can be investigated: by characterising which
+ transcription factors bind to which genes (which can be done either experimenta
+lly, as outlined in section *, or computationally by looking at which sequence
+ of nucleotides a given factor is likely to bind), by finding genes that
+ change in a coordinated fashion and hypothesise that those might be regulated
+ by the same set of factors, or by making inferences which combination of
+ which factors is required for a certain gene to be transcribed.
+\end_layout
+
+\begin_layout Subsubsection
+Binding Motifs
+\end_layout
+
 \begin_layout Itemize
-ARACNE, etc.
+JASPAR, TRANSFAC
+\end_layout
+
+\begin_layout Standard
+Some, albeit not all, transcription factors prefer to bind a specific sequence
+ of nucleotides that the recognize on the DNA strands.
+ Depending on how strong this preference is, it may require a certain amount
+ of experiments to find a statistical enrichment in the regions it was found
+ to bind in terms of the nucleotide sequences that peaks are found in ChIP-seq.
+ This preference for a certain string of nucleotides is called a motif.
+ The enrichment in ChIP-seq peaks can be found using tools such as MEME
+ [*] that will report different weight matrices for nucleotides around the
+ binding region (which correspond to how often a given nucleotide is found
+ in a given position).
+ These motifs in turn can be used to scan the genome for the same or a similar
+ sequence using a sliding window approach that may indicate sites a transcriptio
+n factor could bind but did not in the original experiment.
+ Such can for instance be the case if the chromatin is too densely packed
+ in a region (but may not be if the cell was in a different state or from
+ a different tissue), or the binding site is occupied by another transcription
+ factor blocking the binding of the one we are looking at.
+\end_layout
+
+\begin_layout Subsubsection
+Mutual Information for Transcription Factor Networks
+\end_layout
+
+\begin_layout Itemize
+ARACNE
 \end_layout
 
 \begin_layout Itemize
 TF logic
+\end_layout
+
+\begin_layout Subsubsection
+Including Modulators
+\end_layout
+
+\begin_layout Itemize
+MINDy
+\end_layout
+
+\begin_layout Subsubsection
+Modeling Transcription Factor Interactions
+\end_layout
+
+\begin_layout Itemize
+MARINA
 \end_layout
 
 \begin_layout Subsection
