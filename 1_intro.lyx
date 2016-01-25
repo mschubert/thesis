@@ -1147,6 +1147,9 @@ n factor could bind but did not in the original experiment.
  in a region (but may not be if the cell was in a different state or from
  a different tissue), or the binding site is occupied by another transcription
  factor blocking the binding of the one we are looking at.
+ There are databases that collect and store those motifs from experimental
+ data and their known and predicted binding in different cell types, such
+ as JASPAR [*],TRANSFAC [*], or the Ensembl Regulatory Build [*].
 \end_layout
 
 \begin_layout Subsubsection
