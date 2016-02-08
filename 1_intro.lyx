@@ -770,7 +770,16 @@ this is the data we get from the models
 One of the issues of both understanding as well as preventing or treating
  cancer development and progression is that it is a process in such complexity
  that a simple observation of patients with the disease will not suffice
- to come up with effective models (or treatments for that matter).
+ to come up with effective models of disease inception and progression,
+ or treatmants for that matter.
+ Fortunately, we have got a battery of tests available, quantifying different
+ molecular aspects of a biological sample.
+ Examples of these data include the sequence, structure, and modification
+ of DNA, but also the expression of RNA or proteins, including modifications.
+ These different layers, able to quantify different projections of a cell's
+ state, have provided us with an unprecedented opportunity to truly understand
+ many molecular mechanisms that govern the processes running in both a normal
+ and a diseased cell, and the differences between them.
 \end_layout
 
 \begin_layout Subsection
@@ -785,24 +794,87 @@ sanger seq of few genes
 NGS
 \end_layout
 
+\begin_layout Itemize
+methylation
+\end_layout
+
 \begin_layout Subsection
 RNA
 \end_layout
 
 \begin_layout Itemize
-microarrays
+microarrays: single vs dual channel
 \end_layout
 
 \begin_layout Itemize
+RNA-seq: unbiased, alignment to genome vs assembly, alignment-free methods
+\end_layout
+
+\begin_layout Standard
+In contrast to DNA, which is stable in sequence, and its chromatin structure
+ and methylation that are still, albeit a bit less stable, the RNA that
+ is transcribed in order to perform some regulatory functions as well as
+ produce the proteins that will carry out the bulk, represents more the
+ state a cell is currently in and functions that need to be performed at
+ a given time and in a given context.
+ While there are housekeeping genes whose expression will not change fundamental
+ly between different tissue types and situations that a cell is in, the
+ specific RNAs whose proteins will mediate specific functions such as cell
+ division or response to a stimulus will.
+ It can thus be argued that the sum of RNAs (the transcriptome), or more
+ specifically mRNAs provides an overview of the state a cell is currently
+ in.
+ Hence, measuring those RNAs will allow us to get a picture of the processes
+ going on in a cell at a given time.
+\end_layout
+
+\begin_layout Subsubsection
+Microarrays
+\end_layout
+
+\begin_layout Standard
+The classic way to measure RNA expression is using microarrays.
+ These are, in the simplest case, a carrier matrix (glass can be used but
+ the more recent chips all feature a polymer matrix) that has fixed single-stran
+ded oligonucleotides spotted on them.
+ For our sample, we would then extract and clean the RNA while simultaneously
+ degrading any DNA that it contains, and label the RNA either with one dye
+ (if we want to quantify the expression levels of transcripts in a given
+ sample) or two different dyes (if we want to quantify the difference between
+ two samples).
+ Such fluorescent dyes used are e.g.
+ Cy3 and Cy5, that emit light in the green and red wave lengths upon stimulation
+, respectively.
+ Note that if the technical reproducibility of the platform is good enough,
+ it is also possible to compare conditions by using two different arrays
+ where we measure each sample individually and then compare the outcome.
+ - A technique that has been favoured by companies like Affymetrix as it
+ allowed chips at much higher density and the comparison between each sample
+ in a control- and in a experimental condition, as well as between them.
+\end_layout
+
+\begin_layout Standard
+An obvious drawback of this technology is that we need to know in advance
+ which oligonucleotides to spot, so in turn which genes we are looking for.
+ There needs to be different chips for different organisms, depending on
+ the gene sequences that they carry.
+ This selection of genes that we look at can of course introduce bias, in
+ such that we can't look for transcripts that we don't know exist, but also
+ we might focus on transcripts and isoforms that we think are important
+ before carrying out an experiment.
+ Another possible issue is their detection threshold.
+ As the readout is fluorescence based and there will always be a base-line
+ level of it, it is hard to quantify the amount of RNA bound on a spot of
+ the total number of molecules are so low that a few molecules do not significan
+tly change the readout.
+ Turning this argument around, RNA binding to spots also has its point of
+ saturation, where it does not matter if there is more RNA present or not
+ once all probes bind to their complementary sequence and thus produce a
+ signal.
+\end_layout
+
+\begin_layout Subsubsection
 RNA-seq
-\end_layout
-
-\begin_layout Subsection
-DNA Methylation
-\end_layout
-
-\begin_layout Itemize
-bisulphite seq
 \end_layout
 
 \begin_layout Subsection
