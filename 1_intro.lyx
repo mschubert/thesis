@@ -826,6 +826,8 @@ ly between different tissue types and situations that a cell is in, the
  in.
  Hence, measuring those RNAs will allow us to get a picture of the processes
  going on in a cell at a given time.
+ The two ways by which this is usually done are either microarrays or RNA
+ sequencing, as outlined below.
 \end_layout
 
 \begin_layout Subsubsection
@@ -875,6 +877,48 @@ tly change the readout.
 
 \begin_layout Subsubsection
 RNA-seq
+\end_layout
+
+\begin_layout Standard
+An alternative approach that has become more popular recently with the falling
+ costs of DNA sequencing is to apply this technology to RNA as well.
+ In this case, we can use the RNA that we isolated from a sample, reverse-transc
+ribe it into DNA, and sequence this DNA like we would normally.
+ This has got the advantange that it can be used even if there is no genome
+ sequence or chip available where as a consequence we are also not biasing
+ or selection of genes by previously knowing what to look at, with the exception
+ of sections in the RNA that can be more or easily transcribed into DNA
+ (like GC-rich regions that also pose challenges for sequencing).
+ Another advantage is that the dynamic range this technology is able to
+ quantify transcripts is much higher when looking at the reads it produces
+ than it is for microarrays, both on the lower as well as on the upper bound:
+ we can detect a single read, but also having a lot of reads won't saturate
+ our reads the same way that spots on the microarray do (although if a large
+ proportion of the reads is from a highly abundant molecule, this will decrease
+ sensitivity for detecting other RNAs).
+\end_layout
+
+\begin_layout Standard
+The way RNA-seq quantification is usually done is to align the reads to
+ a known genome, allowing gaps in the alignment for splicing and differential
+ use of exons.
+ The transcription level of a gene, transcript or exon are then quantified
+ by how many reads align to the corresponding section in the genome.
+ As this is computationally very expensive, there have been efforts recently
+ to get around performing the alignment step by k-mer counting and so-called
+ pseudo-alignments.
+ Methods for the latter include Sailfish [*], Salmon [*], or Kallisto [*].
+\end_layout
+
+\begin_layout Standard
+The data produced by RNA-sequencing is different to the one from microarrays,
+ as it is based on read numbers that thus counts (so discrete data) instead
+ of the continuous fluorescence signal that microarrays provide.
+ These counts are well-known to be negatively binomially distributed, and
+ require specialised software packages to call e.g.
+ differential expression (the most well-known of which are edgeR, DEseq,
+ and DEseq2) or transformation before they can be used in standard linear
+ modeling techniques (for instance provided by voom in the limma package).
 \end_layout
 
 \begin_layout Subsection
