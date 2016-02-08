@@ -198,6 +198,99 @@ Improving SPEED within its framework
 the results of the GDSC2016 screening paper
 \end_layout
 
+\begin_layout Itemize
+the text + table/figure legends is from the GDSC paper (and avail in /home/mschu
+/Dropbox/Schubert/sanger_paper_speed)
+\end_layout
+
+\begin_layout Standard
+For the original SPEED publication [1], the authors suggested to use a constant
+ cutoff if z<1%, expression>50%, overlap>20% and allowing non-unique genes.
+ However, they only evaluated gene lists by their overlap with Gene Ontology
+ categories, and not how well its enrichment scores are able to differentiate
+ between microarrays where a given pathway perturbation is present and those
+ where it is absent.
+ This resulted in pathways that were highly correlated, as shown in figure
+ 1.
+\end_layout
+
+\begin_layout Standard
+To counteract this, we performed a scan of the four adjustable platform
+ parameters to optimize the order obtained by GSEA scores between control
+ and stimulated experiments.
+ The set of control arrays comprised all the un-stimulated arrays in the
+ database, and the stimulated set all arrays in the database where a certain
+ pathway was perturbed.
+ This way, we allow cross-activation of pathways while minimizing the fit
+ to random differences in gene expression by different initial conditions.
+ We trained the parameters using 5x cross validation and selected the model
+ with the best fit on the part of the data set not used for training.
+ As a performance measure we used the area under the precision-recall curve
+ that was obtained by the order of raw GSEA scores.
+ Table 1 shows the improved separation between basal and pathway-perturbed
+ arrays.
+\end_layout
+
+\begin_layout Standard
+We calculated the raw basal GSEA scores for all cell lines using the gene
+ lists obtained.
+ As we do not have a background set, we transformed the resulting bimodal
+ distribution for each pathway across all cell lines into a normal distribution
+ using a kernel density estimator (kCDF function from the R package sROC
+ ) followed by the transformation log(x/(1 − x)).
+ We calculated a linear regression for all cell lines and each pathway,
+ with tissues either as a blocking factor or calculating the associations
+ for each tissue separately.
+ We adjusted p-values by controlling the false discovery rate and visualized
+ the result as volcano plots and individual fits.
+ For separate fits between tissues, we only calculated associations that
+ had at least two sensitive cell lines (defined as it being in the top 10%
+ of responders, not 100x less sensitive than the most sensitive overall,
+ and having an IC50 below 1 uM).
+\end_layout
+
+\begin_layout Standard
+Table 1: Parameter selection overview for each pathway.
+ Z: Z-value cutoff (0.25-20), O: array overlap (20-80); E: overall expression
+ cutoff (5-100), U: unique (+) or all (-) genes considered.
+ Gene lists had to be between 50 and 250 genes to be considered, values
+ for optimized and original lists are shown.
+ Precision-recall AUC shown for training, cross-training for optimized lists
+ and whole data set for optimized lists vs.
+ the one obtained by using the original lists.
+\end_layout
+
+\begin_layout Standard
+Table 2: Normalized GSEA scores for 1018 cell lines in the GDSC panel.
+ Each row is a cell line (as indicated by its COSMIC ID), with the columns
+ representing different pathways.
+\end_layout
+
+\begin_layout Standard
+Figure 1: Correlation plots for GSEA scores per pathway across cell lines
+ for the original SPEED lists (panel a) and our separation-optimized version
+ (panel b).
+\end_layout
+
+\begin_layout Standard
+Figure 2: Volcano plot of linear associations of inferred pathway activity
+ within all tissues and drug response.
+ Tissue of origin used as a covarate in the regression.
+ P-values FDR-adjusted.
+ Negative regression slopes (left side of the graph, green) indicate sensitivity
+ markers, i.e.
+ a higher pathway activation score correlates with a lower IC50.
+ Positive regression slopes (right side, red) indicate resistance markers,
+ i.e.
+ higher activation scores correlate with higher IC50s.
+\end_layout
+
+\begin_layout Standard
+Figure 3: Volcano plot of linear associations of inferred pathway activity
+ for each tissue.
+ Legend as in figure 2.
+\end_layout
+
 \begin_layout Section
 Extended Data Curation
 \end_layout
