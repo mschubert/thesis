@@ -110,6 +110,29 @@ Taken together, our results suggest that mutation-based biomarkers should
 \end_layout
 
 \begin_layout Section
+Sections discarded from the paper draft (maybe to be added to the thesis
+ again after)
+\end_layout
+
+\begin_layout Standard
+To our knowledge, the only similar efforts are the SPEED database (Parikh
+ et al.
+ 2010) and two studies MCF10A breast signatures (Bild et al.
+ 2005; Gatza et al.
+ 2010).
+ Whereas the former used a smaller but still significant set of publicly
+ available experiments, the only analysis they did using their signatures
+ was to compute the overlap between genes present in their signatures and
+ Gene Ontology categories, and genes between their pathways.
+ In the latter article the authors experimentally derived pathway-response
+ signatures for a single condition (MCF10A cell line, one perturbation/time
+ point per experiment).
+ We can not claim that those signatures are transferable to other cancer
+ types, nor that they don’t suffer from the same drawbacks as expression
+ signatures in terms of general stability and reproducibility.
+\end_layout
+
+\begin_layout Section
 Introduction
 \end_layout
 
@@ -218,7 +241,7 @@ Results
 \end_layout
 
 \begin_layout Subsection
-A curated database of pathway perturbation experiments
+A curated Database of Pathway Perturbation Experiments
 \end_layout
 
 \begin_layout Standard
@@ -236,7 +259,7 @@ Our method is dependent on a sufficiently large number publicly available
 \end_layout
 
 \begin_layout Subsection
-Consensus gene signatures reveal pathway-response transcriptional modules
+Consensus Gene Signatures reveal Pathway-Response Transcriptional Modules
 \end_layout
 
 \begin_layout Itemize
@@ -275,7 +298,7 @@ tal conditions (t-test of current pathway vs.
 \end_layout
 
 \begin_layout Subsection
-Transcriptional footprints are different to pathway expression
+Transcriptional Footprints are different to Pathway Expression
 \end_layout
 
 \begin_layout Itemize
@@ -289,6 +312,14 @@ should compare mutation assocs in TCGA here
 \begin_layout Itemize
 if we get better mutation assocs than pathway expr, we are sorted for making
  step to basal expression enrichment as well
+\end_layout
+
+\begin_layout Itemize
+rationale for going from perturbed to basal exp
+\end_layout
+
+\begin_layout Itemize
+scores of GDSC, TCGA samples
 \end_layout
 
 \begin_layout Standard
@@ -357,54 +388,15 @@ extend explanation here, use GO associations in 2C
 \end_layout
 
 \begin_layout Subsection
-Transcriptional footprints in basal expression
+Recovering Mechanisms of known Driver Mutations
 \end_layout
 
 \begin_layout Standard
 if we can show
 \end_layout
 
-\begin_layout Itemize
-rationale for going from perturbed to basal exp
-\end_layout
-
-\begin_layout Itemize
-scores of GDSC, TCGA samples
-\end_layout
-
 \begin_layout Subsection
-Differential pathway impact of TP53 variants with implications in BRCA
-\end_layout
-
-\begin_layout Standard
-TP53 is the most abundantly mutated gene in the TCGA cohorts.
- As a well-known tumor suppressor, it is responsible for G1/S transition
- cell cycle arrest on DNA damage.
- Recently, variants of TP53 have been shown to not only lose its original
- function but also to activate expression of oncogenes in Li-Fraumeni syndrome
- (Do et al.
- 2012) and breast cancer cell lines (Zhu et al.
- 2015).
-\end_layout
-
-\begin_layout Standard
-We were interested in whether mutations in TP53 can substitute for pathway-activ
-ating mutations in signaling proteins in terms of increasing the expression
- of pathway-responsive genes.
-\end_layout
-
-\begin_layout Subsection
-Differential pathway impact of KRAS variants with implications in ***??
-\end_layout
-
-\begin_layout Itemize
-figure out which other mutated gene + variant we can get similar info from
- (there are quite some sign assocs, check if they fit pathway activation
- + in which cancer) 
-\end_layout
-
-\begin_layout Subsection
-Pan-cancer associations between pathway scores and cell line drug response
+Pan-cancer Associations with Drug Response
 \end_layout
 
 \begin_layout Itemize
@@ -462,7 +454,7 @@ e (absence of TP53 activity) to this drug that our method recovers but neither
 \end_layout
 
 \begin_layout Subsection
-Tissue-specific associations of drug response
+Tissue-specific Associations with Drug Response
 \end_layout
 
 \begin_layout Itemize
@@ -475,6 +467,24 @@ stratifications avail: clinical (x2) + experimental
 
 \begin_layout Itemize
 significance of stratifications compared to tissues, pathway methods
+\end_layout
+
+\begin_layout Itemize
+why we think we need the pancan assocs in order to say something about the
+ tissue-specific
+\end_layout
+
+\begin_layout Itemize
+GSEA, Reactome enrichment
+\end_layout
+
+\begin_layout Itemize
+conditioned association performance (figure in suppl)
+\end_layout
+
+\begin_layout Itemize
+will not do SPIA, pathifier, PARADIGM here because they need normals + we
+ don’t have
 \end_layout
 
 \begin_layout Standard
@@ -518,23 +528,6 @@ Furthermore, we could show (figure 3D) that our method improves upon using
  strength to MAPK mutations (a mutation in either MAP2K1, K-Ras, N-Ras or
  B-Raf), but they can be used in combination to yield a better biomarker
  than any single method.
-\end_layout
-
-\begin_layout Subsection
-Drug response improvement over other methods
-\end_layout
-
-\begin_layout Itemize
-GSEA, Reactome enrichment
-\end_layout
-
-\begin_layout Itemize
-conditioned association performance (figure in suppl)
-\end_layout
-
-\begin_layout Itemize
-will not do SPIA, pathifier, PARADIGM here because they need normals + we
- don’t have
 \end_layout
 
 \begin_layout Standard
