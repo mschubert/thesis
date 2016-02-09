@@ -957,10 +957,6 @@ with other proteins + different types + different networks
 Computational Methods
 \end_layout
 
-\begin_layout Subsection
-Rationale
-\end_layout
-
 \begin_layout Itemize
 bio moving to quant sci
 \end_layout
@@ -1405,6 +1401,10 @@ Cell Signaling: actual activity
 pathway expression vs activity
 \end_layout
 
+\begin_layout Subsection
+Signature Matching
+\end_layout
+
 \begin_layout Section
 Reproducibility of Results
 \end_layout
@@ -1434,21 +1434,71 @@ comp analyses get more complex
 \end_layout
 
 \begin_layout Standard
-* exp repro
+Reproducibility of scientific experiments has recently gotten into the spotlight
+ when [someone] published a high-profile study that tried to independently
+ validate findings of [40?] findings reported by different groups in the
+ journals Nature, Science and Cell.
+ For half of the studies that they invesigated, they could not obtain the
+ same results and thus conclusions that the respective authors reported.
+ Needless to say, this raised some concerns about the current paradigm of
+ publishing new results quickly instead of thoroughly and overclaiming the
+ effect or significance of a study in order to have an article accepted
+ in the top tier journals.
+ Follow-up studies have pointed a part of the blame on use of different
+ antibodies [nat news+refs] that did not always show the affinity and specificit
+y to their target as the vendors claimed, which has resulted in the creation
+ of a registry for validated antibodies at [somewhere].
 \end_layout
 
 \begin_layout Standard
-* comp repro
+It is easy to argue that experimental reproducibility is a hard issue to
+ tackle, as the potential for confounding variables is huge and a lab will
+ hardly ever have the resources to account for all of them.
+ In general, good study design, that is proper controls and randomisation,
+ should go a long way (especially in the case of clinical trials), but even
+ then, there may be confounding effects unknown to the experimenters and
+ not properly controlled for, as has been shown in the case where male vs.
+ female stewards in a mouse facility produced different reactions of the
+ animals, potentially influencing the results obtained from a very large
+ number of studies.
 \end_layout
 
 \begin_layout Standard
-Since I did not perform any experiments to produce data myself, the focus
+Apart from experimental reproducibility, computational reproducibility should
+ be an issue that is easier to tackle, because at least for deterministic
+ algorithms the same input should always produce the same output using the
+ same tools.
+ However, this is also easier said than done because the tools will depend
+ on other tools, maybe with different versions, and each version may change
+ the way they treat the data to go from input to output in a slighly different
+ way.
+ This is especially true with computational analyses, as well as the tools
+ employed, are getting more and more complex.
+ However, even if the potential confounding factors are smaller than for
+ experimental scientists, computational analysis also has its high-profile
+ fraught with issues.
+ The most well-known example of this is maybe Anil Potti's cancer gene signature
+s [*] that Keith Baggerly later spent six months trying to reproduce - and
+ failed [*], but in the process found considerable errors that later caused
+ the original article to be retracted.
+\end_layout
+
+\begin_layout Standard
+To summarise, ensuring that a subsequent study has the possibility to arrive
+ at the same conclusions given the same starting point, and in turn build
+ on the results in a more confident way, has gotten a big enough issue to
+ dedicate an introductory chapter to it.
+ Since I did not perform any experiments to produce data myself, the focus
  of this chapter shall be to ensure that the results obtained by transforming
  raw (or in some cases already processed) data into other types of data,
  plots, and ultimately interpretation are reproducible in a sense that a
  person not involved in the projects could arrive at the same conclusion,
  being provided this thesis, the code used, and the technical documentation
  written in conjunction with it.
+ This is especially true because the maybe best known retraction caused
+ by computational irreproducibility handled a top very similar to the one
+ I investigate in this thesis: the effect of signaling pathway signatures
+ of different cancers (chapter X) and their significance (chapter Y).
 \end_layout
 
 \begin_layout Subsection
@@ -1461,6 +1511,45 @@ programming language: not too high-/low-level
 
 \begin_layout Itemize
 availability of support packages: huge progress with R, python
+\end_layout
+
+\begin_layout Standard
+With computational analyses getting more complex, it is no longer enough
+ to just apply a simple statistical test for a number of obervations of
+ one condition vs.
+ another.
+ The wealth of data that has become available needs preprocessing, normalising,
+ statistical analysis, and interpretation of results.
+ No one scientist can perform all of these tasks completely independently,
+ as some of them may detailed knowledge of all the algorithms involved,
+ up to an extent that is prohibitory.
+ It is thus required to package repeated steps together in a higher-order
+ functionality.
+\end_layout
+
+\begin_layout Standard
+This is where the scientific software ecosystem comes in.
+ And, to a larger extent, the ecosystem of general software.
+ For instance, I want to obtain, preprocess, and normalise microarray data
+ to then compute differentially expressed genes in two conditions.
+ The concepts of obtain, preprocess, and normalise are well enough defined
+ that I should not have to worry about their exact implementation.
+ I just need to know what these concepts mean and there is a software that
+ abstracts the low-level implementation to a higher-level function that
+ I can just apply.
+ And, in addition, I want to script those steps together without needing
+ to worry about things like the exact memory allocation in each step.
+\end_layout
+
+\begin_layout Standard
+Two programming languages, along with the packages they themselves as well
+ as their users provide, have been fundamental in providing a toolset that
+ allows processing, exploration, and analysis of the amount of data contemporary
+ experiments provide.
+ These are R and Python, along with packages hosted on CRAN/BioConductor
+ and PyPI, respectively.
+ Without those tools, performing analysis like I do to obtain the results
+ shown later would not be possible.
 \end_layout
 
 \begin_layout Subsection
