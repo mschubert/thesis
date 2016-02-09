@@ -1545,6 +1545,20 @@ n on how to run it, so to not only have all the bits and pieces but to connect
 Motivation and Outlook
 \end_layout
 
+\begin_layout Itemize
+aberrations on cell signaling level, we want to make inferences about that
+\end_layout
+
+\begin_layout Itemize
+because that's what should be causing our phenotype (drug response or patient
+ survival)
+\end_layout
+
+\begin_layout Itemize
+and it should be better than methods looking at other proxies that represent
+ something that is somewhat correlated with it, but not as directly
+\end_layout
+
 \begin_layout Standard
 Cancer sequencing projects (ICGC, TCGA) are giving us an unprecedented view
  on the mutational landscape of human cancers.
