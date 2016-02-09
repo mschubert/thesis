@@ -933,6 +933,14 @@ MS, RPPA
 phospho = closest to activity from what we have
 \end_layout
 
+\begin_layout Subsubsection
+RPPA
+\end_layout
+
+\begin_layout Subsubsection
+Mass Spectroscopy
+\end_layout
+
 \begin_layout Subsection
 Protein Interactions
 \end_layout
@@ -1044,6 +1052,83 @@ biomarkers for drug response
 
 \begin_layout Itemize
 long tail of mutations
+\end_layout
+
+\begin_layout Standard
+The concept of a cell being unable to acquire two mutations that together
+ have a damaging effect up to the level of cell death has been termed synthetic
+ lethality and has been used to study genetic interactions in model organisms
+ for a long time [*], where the loss of both genes in a synthetic lethal
+ pair is, as the name suggests, lethal to the organism, but the loss of
+ each individual gene is not.
+ More recently, these interactions have been used to infer drug sensitivity
+ in cancer by mapping orthologous genes to human [*], by using evolutionary
+ patterns of metabolic networks [*], or by identifying si/sh-RNA probes
+ that are purified from a starting population [*].
+ These interactions can then be transformed in a network of synthetic lethal
+ pairs [Jerby-Arnon2014], which can then be used to predict sensitivity
+ of cancer cell lines to a certain drug treatment, as well as clinical outcome
+ given the level of co- expression of its pairs.
+ Examples of such pairs are a VHL LoF mutation that is associated with increased
+ sensitivity to not previously associated with cancer as shown in their
+ article, or the well-known BRCA1/2 loss of function and PARP inhibitors
+ [*].
+\end_layout
+
+\begin_layout Standard
+As all things in biology, things (a) need a p-value and (b) are a bit more
+ complicated than they first seem.
+ It is such that synthetic lethal pairs can be conditional to a third factor
+ (the kind of mutation, a co-ocurring germline variant, a certain environment
+ that it is valid in, etc.) that in addition to making sure that the effect
+ observed is not due to coincidence alone, examples of gene pairs can not
+ be determined with absolute certainty.
+ We thus need a way to compare the observed distribution to the one expected
+ by chance and quantify our level of certainty about it.
+ Unfortunately, there is no easy analytical solution for this.
+ Fortunately, there has been some amount of work in defining the right backgroun
+d set to compare our observed instance to using numerical simulations.
+ To obtain one model sampled from our background distribution, it is not
+ enough to randomize the presence or absence of mutations in a matrix –
+ the degree distribution of both the occurrence of a mutation per gene as
+ well as the occurrence of a mutated gene per sample need to be taken into
+ account.
+ In order to do this, a number of authors developed random versions of presence-
+absence matrices, and more Ciriello et al.
+ transformed the problem into one of switching edges on a bipartite network
+ that proved favorably by means of computational resources required.
+\end_layout
+
+\begin_layout Standard
+So how do we take advantage of the recent advances in cancer pharmacogenomics
+ with regard to co-occurence and mutual exclusivity analysis?
+\end_layout
+
+\begin_layout Standard
+First, use the already experimentally verified synthetic lethal pairs.
+ Then look at them a bit more critically than the original authors who wanted
+ to get their results published: Does the change in drug response by leveraging
+ on a mutation or an ME pair actually correspond to a treatment difference
+ that is applicable, or does it just make a cell line that was resistant
+ to a drug a bit less resistant but not in the order of magnitude where
+ it would actually be usable? Are we using drugs at concentrations where
+ the corresponding ED50/LD50 in vivo is still acceptable? Is the effect
+ observed true for only the context that the authors investigated or is
+ it more generally applicable? If these conditions are met, candidates and
+ candidate combinations should be validated using the appropriate platforms
+ and depending on this picked up by pharma companies for further development.
+ Second, combine the idea of ME with the idea of network drugs and polypharmacol
+ogy.
+ One way to reconcile ME pairs with perturbations being propagated in a
+ cell's signaling network is to study the dynamic nature of inhibition both
+ genes in a pair as opposed to either gene individually.
+ Is there a common principle that we can distill in order to get a novel
+ kind of understanding in how to rationally design drug therapies? Another
+ aspect of this is to study the difference between a knockdown approach
+ targeted at the gene to the inhibition of a protein's activity, as the
+ mapping between them is not necessarily one-to-one.
+ Inhibiting the latter may not reflect the full nature of the protein being
+ absent entirely.
 \end_layout
 
 \begin_layout Subsection
@@ -1454,6 +1539,61 @@ A challenge that often is underestimated is that even when all of the code
  Thus it is not only important to provide the code as it is, but also informatio
 n on how to run it, so to not only have all the bits and pieces but to connect
  them to a workflow from the data to the results.
+\end_layout
+
+\begin_layout Section
+Motivation and Outlook
+\end_layout
+
+\begin_layout Standard
+Cancer sequencing projects (ICGC, TCGA) are giving us an unprecedented view
+ on the mutational landscape of human cancers.
+ In addition, this information is augmented by genomic and general molecular
+ characterisation of cell lines and their responses to anticancer compounds
+ (GDSC, CCLE), or by selection viable genotypes under a selective constraint
+ (Achilles projects).
+ These projects have led us to believe that, while this landscape is vast,
+ mutations tend to occur in a limited set of pathways, often exhibiting
+ a pattern different from the ones one would expect by random chance.
+ As these modules deviate from a randomly expected distributions, it is
+ commonly accepted that they represent the pattern of evolutionary adaption
+ that enabled a cancer to obtain its hallmarks (Hanahan2000,2011).
+ Mutations that are generally selected for and often functionally characterised
+ to be tumorigenic are often referred to as driver mutations, while those
+ following the background pattern are likely to occur just by replication-
+ and DNA repair defects.
+\end_layout
+
+\begin_layout Standard
+When looking at sets of mutations instead of individual ones, the occurrence
+ of those patterns has been quantified by a couple of approaches, identifying
+ modules that are either co-occurring or mutually exclusive.
+ In the event of co-occurring mutations, this might mean that a given mutation
+ is not sufficient to obtain a certain trait and thus a second mutation
+ is necessary to confer it.
+ In the case of mutual exclusivity, a second mutation is not conferring
+ a growth advantage after the first arose.
+ This may be due to evolutionary parsimony or a fitness defect.
+ In the first case, a second mutation that inactivates, for example, an
+ already inactivated tumour suppressor pathway is unlikely to happen on
+ the population-level by the pure fact that it is not selected for, as the
+ required trait has already been acquired by the cell.
+ In the second case, the growth advantage conferred by one mutation might
+ be cancelled out or counteracted by the presence of a second one, thereby
+ mediating a selection growth disadvantage (fitness defect) of the cells
+ carrying both mutations as opposed to either one of them.
+ Much focus has been on identifying driver mutations in different cancer
+ types, that, combined with oncogene addition (i.e., the tendency of a transformed
+ cell to become dependent on sustained impact of the lesion it first obtained)
+ forms the basis of many targeted therapies: if you can inhibit signaling
+ stemming from a mutation that drives a cancer's development and progression,
+ the affected cells' growth will be severely inhibited.
+ Unfortunately, targeted therapies often can not kill all cells before they
+ acquire a resistance mechanism to the treatment, or a sub-population of
+ cells were resistant to begin with and then outgrow their competitors.
+ This is one of the reasons why targeting mutations in driver genes is a
+ good start, but needs to be augmented with knowledge of the dynamic changes
+ it induces in the cellular signaling network.
 \end_layout
 
 \end_body
