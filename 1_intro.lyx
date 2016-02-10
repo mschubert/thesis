@@ -450,6 +450,13 @@ Immune Therapy
 PD-1, PD-L1 inhibitors
 \end_layout
 
+\begin_layout Standard
+When the President of the United States announced the so-called Moonshot
+ effort that promised funding for developing and improving personalised
+ cancer treatment by targeted therapies, immune therapies were set to play
+ a profound role in it.
+\end_layout
+
 \begin_layout Subsection
 Development of Resistance
 \end_layout
@@ -1361,20 +1368,44 @@ ARACNE
 TF logic
 \end_layout
 
-\begin_layout Subsubsection
-Including Modulators
+\begin_layout Standard
+Another question that we might be interested in is which genes share a common
+ regulator.
+ In the simplest case this is a transcription factor that, upon activation,
+ transcribes a set of genes in a coordinated fashion.
+ Target genes of this transcription factors may act in that capacity themselves,
+ so we come back to the construction of a GRN.
+ Turning the argument on its head, we can look genes that are expressed
+ in a coordinated fashion across different conditions (which includes e.g.
+ different patient samples, as long as we can assume that the transcription
+ factor-target relationship is the same) by calculating the mutual information
+ of all gene pairs, setting a lower bound to consider, and the pruning the
+ edges in the resulting network by postulating that a link between genes
+ A and C is indirect if the mutual information of A and B, as well as B
+ and C is higher than the one of A and C (a concept called Data Processing
+ Inequality).
+ On top of ARACNE, the authors also propose a method they call Master Regulator
+ Analysis (MRA) [basso, nat.gen] to identify the regulatory network in human
+ B cells.
 \end_layout
 
-\begin_layout Itemize
-MINDy
+\begin_layout Standard
+In an extension proposed by the same group is to condition the mutual informatio
+n on the expression of a modulator that they call MINDy.
+ The idea here is to look at the upper and lower third of the modulator
+ expression, and calculate mutual information for both of theses sets.
+ Afterwards, instead of inferring the network, the authors look for the
+ strongest changes in mutual information between the two subsets: if that
+ is the case, the modulator can be seen as a cofactor required for transcription
+ factor regulation.
+ If a high modulator expression corresponds with increased mutual information
+ that will likely be activating, or inactivating if in corresponds to decreased
+ mutual information.
 \end_layout
 
-\begin_layout Subsubsection
-Modeling Transcription Factor Interactions
-\end_layout
-
-\begin_layout Itemize
-MARINA
+\begin_layout Standard
+In another extension, they proposed a method call Master Regulator Inference
+ Analysis (MaRInA), which ***
 \end_layout
 
 \begin_layout Subsection
@@ -1401,8 +1432,102 @@ Cell Signaling: actual activity
 pathway expression vs activity
 \end_layout
 
+\begin_layout Standard
+The transduction of a signal from a cue either binding to a receptor on
+ a cell's surface or intracellularly, is how a cell responds to changes
+ in its environment.
+ In turn, this signal is relayed through the network of kinases and phosphatases
+ (there are other chemical modifications, but those are the best studied)
+ until it reaches the terminal nodes that are the transcription factors,
+ acting in conjunction with polymerase III and other cofactors to initiate
+ changes in gene expression.
+ Those genes are in turn transcribed into RNA, and if they are protein-coding
+ consequently translated into those.
+ The process of transcription and translation is referred to the central
+ dogma of molecular biology.
+\end_layout
+
+\begin_layout Standard
+Cell signaling is deregulated in many diseases, including cancer that we
+ focus on here because of the sheer wealth of available data.
+ But how to best quantify the signaling activity? The closest proxy we have
+ would be to quantify post-translational modifications that are known to
+ confer activity.
+ In the simplest case this could be a phosphate group on a certain position
+ that is known to make a kinase active, that is that it in turn phosphorylates
+ its downstream targets.
+ But phosphorylation data, and to a lesser extent protein data in general
+ is much harder to come by than sequencing data.
+ Mass spectrometry and Reverse Phase Protein Arrays just do not produce
+ the same clarity that a DNA sequence or RNA level provides, plus is much
+ harder to generate because the technology that could to it with the same
+ throughput as sequencing technologies just does not exist.
+\end_layout
+
+\begin_layout Standard
+We can thus argue that computational methods are required to make statements
+ about cell signaling, starting from DNA and RNA instead of protein and
+ PTM data.
+ The simplest approach to this is looking how much mRNA of signaling molecules
+ are expressed that comprise a pathway, and designate a high expression
+ a high activity and vice versa.
+ This, however, is at odds with the way cell signaling works and is regulated.
+ Inferring the protein levels from mRNA levels may indeed be viable [60%
+ paper], but two steps removed from the PTMs.
+ Methods have been developed to address the issue of taking the expression
+ level of a gene set as activity proxy by considering the structure and
+ signs of the different pathway molecules, e.g.
+ Signaling Pathway Impact Analysis [ref] or Pathifier [ref].
+ They, however, do still not distinguish between expression level and activity.
+ Another method, PARADIGM [ref] could in theory support it, depending the
+ pathway structure supplied for inference.
+ Yet, the focus has never been to tell apart activity from expression.
+ I elaborate on these issues further in chapter 4, with a possible way to
+ resolve them.
+\end_layout
+
 \begin_layout Subsection
 Signature Matching
+\end_layout
+
+\begin_layout Itemize
+Old Connectivity Map
+\end_layout
+
+\begin_layout Itemize
+requirement for suitable experiments
+\end_layout
+
+\begin_layout Standard
+When investigating the effect small molecules (i.e., drugs) have on a system,
+ we might not want to look at the mechanism by which this happens at all,
+ but instead rely on the changes of gene expression upon treatment with
+ it.
+ Then we could use the downstream genes that are changing as a signature
+ of treatment with that drug.
+ This has got two applications that have indeed been used, which are the
+ following: (1) matching a drug's signature with another drug's signature,
+ and if they are a close match but have e.g.
+ different indications, suggest that each drug may be used for the other
+ indication (where directionality may be limited by additional factors),
+ or (2) matching a drug's signature with the inverse gene expression changes
+ that a disease exhibits over normal controls, we can suggest that this
+ drug may be used to counteract the effects of the disease [MANTRA, DvD],
+ i.e.
+ be a potential treatment if the disesase is indeed caused by the gene expressio
+n changes that the drug reverses.
+ Of course, those matches should rather be seen as hypothesis generators
+ than definite indications for repurposing and treating diseases.
+\end_layout
+
+\begin_layout Standard
+Of course, this kind of approach relies on the availability of signatures
+ of the drugs we look at, or of a given drug and disease, respectively.
+ That first large-scale project providing signatures of drug-perturbed gene
+ expression changes in the MCF-7 cell line was the Connectivity Map [Lamb2006],
+ which was subsequently extended and the current version features 1.4 million
+ conditions where 978 transcripts are quantified using the L1000 platform
+ - more on this in chapter 3.
 \end_layout
 
 \begin_layout Section
@@ -1479,8 +1604,8 @@ Apart from experimental reproducibility, computational reproducibility should
  fraught with issues.
  The most well-known example of this is maybe Anil Potti's cancer gene signature
 s [*] that Keith Baggerly later spent six months trying to reproduce - and
- failed [*], but in the process found considerable errors that later caused
- the original article to be retracted.
+ failed, but in the process found considerable errors that later caused
+ the original article to be retracted [*].
 \end_layout
 
 \begin_layout Standard
