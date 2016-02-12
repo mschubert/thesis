@@ -1275,9 +1275,31 @@ PCSTs (BioNet), etc.
 
 \begin_layout Standard
 Instead of or in addition to investigating global differences in the patterns
- of gene expression, one might be interested in how a subset of interacting
+ of gene expression, we might be interested in how a subset of interacting
  proteins differs between known groups of samples.
- 
+ So if, for instance, we know that global gene expression clustering is
+ partitioning our samples in two groups, we might be interested in which
+ genes may be the mediating effectors in a differential phenotype like drug
+ response.
+ We could of course just compute differential expression for each gene separatel
+y and then look at our ranked list (by p-value and effect size of each gene)
+ to determine which are the genes that are most deregulated.
+ This, however, may miss a group of interacting genes (or proteins, after
+ translation) that all change moderately by themselves, but in combination
+ will give a stronger signal than any one gene itself.
+\end_layout
+
+\begin_layout Standard
+In this case we require an algorithm that summarises differential expression
+ within a group of interacting genes (or proteins), while providing us with
+ a combined score for a given subnetwork.
+ If we are looking gene regulatory networks we would use those interactions
+ to map gene expression on.
+ If we are looking for likely effector complexes of interacting proteins
+ we would ideally use proteomics data, but since [*] have shown that most
+ variability in protein expression can be explained by variability in the
+ mRNA of the corresponding gene, we could also make a good case for looking
+ for the gene expression level of interacting proteins.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1290,7 +1312,16 @@ The problem of finding a differentially expressed connected subnetwork in
  Spanning Tree, that is, selecting only edges and nodes in a graph that
  maximise a score where each nodes adds to and each edge subtracts from
  it.
- 
+ As the exhaustive search for an exact solution to this problem is NP-hard,
+ there are several approximate solutions that were developed to solve that
+ problem.
+ One of those is an algorithm called the Prize Collecting Steiner Tree (PCST),
+ which expands and shrinks the tree base on an initial assessment of connected
+ scores, and whether or not it adds or subtracts a score (the prize) by
+ doing that.
+ An example of an implementation that uses a PCST on interacting proteins
+ is the BioNet R package, intially used to analyse deregulated subnetworks
+ in Diffuse Large B Cell Lymphoma (DLBC).
 \end_layout
 
 \begin_layout Subsection
@@ -1675,6 +1706,8 @@ Two programming languages, along with the packages they themselves as well
  and PyPI, respectively.
  Without those tools, performing analysis like I do to obtain the results
  shown later would not be possible.
+ Note that there are others, but they do not play a similarly important
+ role in contemporary data analysis.
 \end_layout
 
 \begin_layout Subsection
@@ -1687,6 +1720,11 @@ roxygen
 
 \begin_layout Itemize
 markdown
+\end_layout
+
+\begin_layout Standard
+Another, in a scientific context often overlooked requirement for software
+ is technical documentation of how to run it or call its API.
 \end_layout
 
 \begin_layout Subsection
