@@ -73,20 +73,65 @@ Gene expression methods for cancer cell line drug sensitivity and patient
  outcome
 \end_layout
 
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+main work for this chapter is the SPEED optimisation done for the GDSC paper
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Part
-Building a consensus model of perturbation-responsive genes
+Additional Data vs Methods for Drug Response
+\end_layout
+
+\begin_layout Section
+A Proteomic Layer for COREAD
+\end_layout
+
+\begin_layout Subsection
+Introduction
+\end_layout
+
+\begin_layout Itemize
+interaction networks
+\end_layout
+
+\begin_layout Itemize
+and what we can do with them
+\end_layout
+
+\begin_layout Itemize
+what info we get on proteomics vs genomics <-> drug assocs
+\end_layout
+
+\begin_layout Itemize
+it somewhat depends what I do the next couple of weeks
 \end_layout
 
 \begin_layout Itemize
 GEO/ArrayExpress: role of a central expression repository, MIAME standards
 \end_layout
 
-\begin_layout Section
-Responsive Genes instead of Pathway Expression
+\begin_layout Subsection
+Methods
 \end_layout
 
 \begin_layout Subsection
-Rationale
+Discussion
+\end_layout
+
+\begin_layout Section
+Evaluating Pathway-Response Methods
+\end_layout
+
+\begin_layout Subsection
+Introduction
 \end_layout
 
 \begin_layout Itemize
@@ -101,44 +146,16 @@ describe the goal (find known pancan drug assocs?)
 applicability to basal expression
 \end_layout
 
-\begin_layout Subsection
-Challenges with Gene Expression Signatures
-\end_layout
-
 \begin_layout Itemize
-said to be badly reproducible [we will show that in later section]
+gex sigs said to be badly reproducible [we will show that in later section]
 \end_layout
 
-\begin_layout Subsection
-Goals of the Appraoch
-\end_layout
-
-\begin_layout Itemize
-we need to show if it's actually better
-\end_layout
-
-\begin_layout Subsection
-Benchmarking
-\end_layout
-
-\begin_layout Itemize
-defining a data set to benchmark in first instance
-\end_layout
-
-\begin_layout Section
-Previously Developed Methods
-\end_layout
-
-\begin_layout Subsection
+\begin_layout Subsubsection
 Gatza
 \end_layout
 
 \begin_layout Itemize
 line of papers: potti, bild, gatza
-\end_layout
-
-\begin_layout Subsection
-Limitations of Gatza
 \end_layout
 
 \begin_layout Itemize
@@ -153,7 +170,7 @@ we don't know how representative that is
 reproducibility issues with those sigs (baggerly)
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Signaling Pathway Enrichment using Experimental Datasets (SPEED)
 \end_layout
 
@@ -170,7 +187,95 @@ Initial version by Blüthgen lab: z-score, overlap, expression level, GO
 Extended version by Blüthgen lab: additional experiments and pathways
 \end_layout
 
+\begin_layout Subsubsection
+Challenges when combining different data sources
+\end_layout
+
+\begin_layout Itemize
+biases by platform
+\end_layout
+
+\begin_layout Itemize
+imputation vs selecting common subset
+\end_layout
+
+\begin_layout Itemize
+need to summarize by gene symbols, different probes on different platforms
+\end_layout
+
 \begin_layout Subsection
+Methods
+\end_layout
+
+\begin_layout Subsubsection
+Defining Relevant Pathways
+\end_layout
+
+\begin_layout Itemize
+pathways: cancer relevant
+\end_layout
+
+\begin_layout Itemize
+this has been done quite well by the initial platform, stick with it
+\end_layout
+
+\begin_layout Itemize
+reference to hallmarks and how we map it
+\end_layout
+
+\begin_layout Subsubsection
+Finding suitable Experiments
+\end_layout
+
+\begin_layout Itemize
+at least 2 normals to get sense of variability
+\end_layout
+
+\begin_layout Itemize
+at least 1 perturbed
+\end_layout
+
+\begin_layout Itemize
+AE vs GEO
+\end_layout
+
+\begin_layout Itemize
+arrayexpress searches
+\end_layout
+
+\begin_layout Subsubsection
+From Experiments to Expression Data
+\end_layout
+
+\begin_layout Itemize
+GEO vs AE
+\end_layout
+
+\begin_layout Itemize
+reproducibility, pipeline
+\end_layout
+
+\begin_layout Itemize
+data format: yaml
+\end_layout
+
+\begin_layout Itemize
+AE package updates
+\end_layout
+
+\begin_layout Itemize
+we want raw data
+\end_layout
+
+\begin_layout Subsection
+Results
+\end_layout
+
+\begin_layout Subsubsection
+A fixed R package to query ArrayExpress experiments
+\end_layout
+
+\begin_layout Subsubsection
 Limitations of SPEED
 \end_layout
 
@@ -190,7 +295,40 @@ speed: not meaningful drug associations
 speed: processed data w/ no idea what authors did
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
+Quality control
+\end_layout
+
+\begin_layout Itemize
+RLE and NUSE, filters based on those scores
+\end_layout
+
+\begin_layout Subsubsection
+Z-scores
+\end_layout
+
+\begin_layout Itemize
+distribution across experiments and pathways
+\end_layout
+
+\begin_layout Subsubsection
+Batch Effects and Correction
+\end_layout
+
+\begin_layout Itemize
+Sources of variation: by lab, platform, cell types, pathway perturbed
+\end_layout
+
+\begin_layout Itemize
+Batch correction methods: Combat, DWD
+\end_layout
+
+\begin_layout Itemize
+we don't really see anything when integrating many exps on the global patterns
+ (neither for z-scores)
+\end_layout
+
+\begin_layout Subsubsection
 Improving SPEED within its framework
 \end_layout
 
@@ -291,170 +429,16 @@ Figure 3: Volcano plot of linear associations of inferred pathway activity
  Legend as in figure 2.
 \end_layout
 
-\begin_layout Section
-Extended Data Curation
-\end_layout
-
 \begin_layout Subsection
-Defining Relevant Pathways
-\end_layout
-
-\begin_layout Itemize
-pathways: cancer relevant
-\end_layout
-
-\begin_layout Itemize
-this has been done quite well by the initial platform, stick with it
-\end_layout
-
-\begin_layout Itemize
-reference to hallmarks and how we map it
-\end_layout
-
-\begin_layout Subsection
-Finding suitable Experiments
-\end_layout
-
-\begin_layout Itemize
-at least 2 normals to get sense of variability
-\end_layout
-
-\begin_layout Itemize
-at least 1 perturbed
-\end_layout
-
-\begin_layout Itemize
-AE vs GEO
-\end_layout
-
-\begin_layout Itemize
-arrayexpress searches
-\end_layout
-
-\begin_layout Subsection
-From Experiments to Expression Data
-\end_layout
-
-\begin_layout Itemize
-GEO vs AE
-\end_layout
-
-\begin_layout Itemize
-reproducibility, pipeline
-\end_layout
-
-\begin_layout Itemize
-data format: yaml
-\end_layout
-
-\begin_layout Itemize
-AE package updates
-\end_layout
-
-\begin_layout Itemize
-we want raw data
-\end_layout
-
-\begin_layout Section
-Processing experimental data
-\end_layout
-
-\begin_layout Subsection
-Quality control
-\end_layout
-
-\begin_layout Itemize
-RLE and NUSE, filters based on those scores
-\end_layout
-
-\begin_layout Subsection
-Challenges when combining different data sources
-\end_layout
-
-\begin_layout Itemize
-biases by platform
-\end_layout
-
-\begin_layout Itemize
-imputation vs selecting common subset
-\end_layout
-
-\begin_layout Itemize
-need to summarize by gene symbols, different probes on different platforms
-\end_layout
-
-\begin_layout Subsection
-Batch Effects and Correction
-\end_layout
-
-\begin_layout Itemize
-Sources of variation: by lab, platform, cell types, pathway perturbed
-\end_layout
-
-\begin_layout Itemize
-Batch correction methods: Combat, DWD
-\end_layout
-
-\begin_layout Itemize
-we don't really see anything when integrating many exps on the global patterns
- (neither for z-scores)
-\end_layout
-
-\begin_layout Subsection
-Z-scores
-\end_layout
-
-\begin_layout Itemize
-distribution across experiments and pathways
-\end_layout
-
-\begin_layout Section
-Building a Model
-\end_layout
-
-\begin_layout Itemize
-write how it happened: some ideas, tried them out and check how they perform
- for drug assocs?
-\end_layout
-
-\begin_layout Subsection
-Linear model
-\end_layout
-
-\begin_layout Itemize
-regression per gene: we get around different num of obs
-\end_layout
-
-\begin_layout Subsection
-LASSO
-\end_layout
-
-\begin_layout Itemize
-doesn't work
-\end_layout
-
-\begin_layout Subsection
-Ridge Regression and Elastic Net
-\end_layout
-
-\begin_layout Itemize
-sort of works, but not for all pathways
-\end_layout
-
-\begin_layout Subsection
-Penalised Support Vector Machines (SVMs)
-\end_layout
-
-\begin_layout Itemize
-this didn't work at all
-\end_layout
-
-\begin_layout Section
 Discussion
 \end_layout
 
 \begin_layout Itemize
-not tissue-specific (although gex is)
+the method with (z,o,e,u) is still clumsy
+\end_layout
+
+\begin_layout Itemize
+should come up with a better one: regression model, LASSO, Ridge Regression
 \end_layout
 
 \end_body

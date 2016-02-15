@@ -73,8 +73,44 @@ Gene expression methods for cancer cell line drug sensitivity and patient
  outcome
 \end_layout
 
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+main work for this chapter are investigating the COREAD data set with available
+ methods
+\end_layout
+
+\begin_layout Plain Layout
+(not sure to remove patient survival)
+\end_layout
+
+\begin_layout Plain Layout
+- intro: while intro chapter had overview of all methods used, these are
+ the methods we use here
+\end_layout
+
+\begin_layout Plain Layout
+- include all methods here that are common to the next chapters
+\end_layout
+
+\begin_layout Plain Layout
+- describe how I actually obtained scores per method and how I ran it
+\end_layout
+
+\begin_layout Plain Layout
+- reproduce already published results that are easy (e.g.
+ have got all the utils for gdsc mutation assocs)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Part
-A Pathway-Centric View of Cell Line Drug Sensitivity and Patient Survival
+Data and Methods for a Pathway-Centric View of Cancer
 \end_layout
 
 \begin_layout Section
@@ -86,7 +122,7 @@ The Cancer Genome Atlas (TCGA)
 \end_layout
 
 \begin_layout Itemize
-incpetion
+inception
 \end_layout
 
 \begin_layout Itemize
@@ -136,6 +172,34 @@ status 2002
 
 \begin_layout Itemize
 now: new dataset
+\end_layout
+
+\begin_layout Subsection
+The Connectivity Map
+\end_layout
+
+\begin_layout Subsubsection
+Original Microarray-based version
+\end_layout
+
+\begin_layout Itemize
+Justin Lamb's paper in 2006
+\end_layout
+
+\begin_layout Subsubsection
+LINCS
+\end_layout
+
+\begin_layout Itemize
+L1000 platform
+\end_layout
+
+\begin_layout Itemize
+Projection from landmarks to full microarray gene sets
+\end_layout
+
+\begin_layout Itemize
+Controversy about publication (there is still no paper)
 \end_layout
 
 \begin_layout Section
@@ -218,12 +282,28 @@ Pathway Methods Beyond GSEA
 limitations to the set
 \end_layout
 
+\begin_layout Standard
+While GSEA is able to detect groups of genes that are differentially expressed
+ per condition, it does not take into account the structure of the pathway
+ whose expression it quantifies.
+ What this means is that a member than has a central role is not weighted
+ differently from a member that does not mediate any particular function
+ somewhere on the periphery.
+\end_layout
+
 \begin_layout Subsubsection
 SPIA
 \end_layout
 
 \begin_layout Subsubsection
 Pathifier
+\end_layout
+
+\begin_layout Standard
+Pathifier takes as input a gene set that could represent a pathway or GO
+ category, and then calculates the importance of individual members from
+ a control set, where the authors claim to approximate the potential signal
+ flow through the nodes in the network using Principal Curves.
 \end_layout
 
 \begin_layout Subsubsection
@@ -262,7 +342,47 @@ elastic net
 not sure if to include this at all
 \end_layout
 
+\begin_layout Subsection
+Black Box Models and Signature Matching
+\end_layout
+
+\begin_layout Subsubsection
+Drug repurposing
+\end_layout
+
+\begin_layout Subsubsection
+Matching Drug and Disease Signatures
+\end_layout
+
+\begin_layout Itemize
+MSigDB
+\end_layout
+
+\begin_layout Itemize
+maybe mention: 2 sigs to match 1 disease
+\end_layout
+
+\begin_layout Itemize
+MANTRA
+\end_layout
+
+\begin_layout Itemize
+DvD
+\end_layout
+
+\begin_layout Subsubsection
+Predicting Drug Combinations
+\end_layout
+
+\begin_layout Itemize
+maybe mention: 2 sigs to match 1 disease (same or in prev?)
+\end_layout
+
 \begin_layout Section
+Variables for Outcome
+\end_layout
+
+\begin_layout Subsection
 Drug Response
 \end_layout
 
@@ -278,7 +398,7 @@ for GDSC and pathway-rel dbs in (2): the unbiased associations
 multivariate: explaining power
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 The Half-Maximum Inhibitory Concentration (IC50)
 \end_layout
 
@@ -294,7 +414,7 @@ how IC50 is derived
 screening concentration vs extrapolated IC50
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Impact of Driver Mutations
 \end_layout
 
@@ -310,7 +430,7 @@ definition of drivers
 do drug assocs for mutations
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Transcription Factor Activities
 \end_layout
 
@@ -322,7 +442,7 @@ do the TF scores make sense for tissues?
 chea results on GDSC data
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Pathway Methods
 \end_layout
 
@@ -330,27 +450,7 @@ Pathway Methods
 unbiased appraoch: spurious results
 \end_layout
 
-\begin_layout Section
-Use case: COREAD proteomics
-\end_layout
-
-\begin_layout Itemize
-interaction networks
-\end_layout
-
-\begin_layout Itemize
-and what we can do with them
-\end_layout
-
-\begin_layout Itemize
-what info we get on proteomics vs genomics <-> drug assocs
-\end_layout
-
-\begin_layout Itemize
-it somewhat depends what I do the next couple of weeks
-\end_layout
-
-\begin_layout Section
+\begin_layout Subsection
 Patient Survival
 \end_layout
 
@@ -362,7 +462,7 @@ where data comes from
 again: unbiased approach = spurious results
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Measuring Survival Times
 \end_layout
 
@@ -374,7 +474,7 @@ OS, PFS
 how the data we get from the TCGA/ICGC looks like
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Statistical Methods
 \end_layout
 
@@ -382,7 +482,7 @@ Statistical Methods
 coxph, AFT + assumptions
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Impact of Driver Mutations
 \end_layout
 
@@ -398,7 +498,7 @@ definition of drivers
 do drug assocs for mutations
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Transcription Factor Activities
 \end_layout
 
@@ -410,7 +510,7 @@ do the TF scores make sense for tissues?
 chea results on TCGA data
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Pathway Methods
 \end_layout
 

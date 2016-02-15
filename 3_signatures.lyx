@@ -86,71 +86,11 @@ MSigDB
 \end_layout
 
 \begin_layout Section
-The Connectivity Map and Applications
-\end_layout
-
-\begin_layout Subsection
-Introduction to Signature Matching
-\end_layout
-
-\begin_layout Itemize
-Old Connectivity Map
-\end_layout
-
-\begin_layout Itemize
-requirement for suitable experiments
-\end_layout
-
-\begin_layout Subsection
-The Connectivity Map
-\end_layout
-
-\begin_layout Itemize
-Justin Lamb's paper in 2006
-\end_layout
-
-\begin_layout Subsection
-Drug Repurposing
-\end_layout
-
-\begin_layout Itemize
-matching drug sigs with other drug sigs
-\end_layout
-
-\begin_layout Subsection
-Maching Drug and Disease Signatures
-\end_layout
-
-\begin_layout Itemize
-MSigDB
-\end_layout
-
-\begin_layout Itemize
-maybe mention: 2 sigs to match 1 disease
-\end_layout
-
-\begin_layout Itemize
-MANTRA
-\end_layout
-
-\begin_layout Itemize
-DvD
-\end_layout
-
-\begin_layout Subsection
-Predicting Drug Combinations
-\end_layout
-
-\begin_layout Itemize
-maybe mention: 2 sigs to match 1 disease (same or in prev?)
-\end_layout
-
-\begin_layout Section
 Using MANTRA in a KRAS-driven Mouse Tumour
 \end_layout
 
 \begin_layout Subsection
-A Model System for KRAS-driven Tumours
+Introduction
 \end_layout
 
 \begin_layout Itemize
@@ -158,6 +98,10 @@ bio behind MJ's model
 \end_layout
 
 \begin_layout Subsection
+Methods
+\end_layout
+
+\begin_layout Subsubsection
 Two-Tailed GSEA using MANTRA
 \end_layout
 
@@ -165,7 +109,7 @@ Two-Tailed GSEA using MANTRA
 take the top- and bottom genes of the sig
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Orthology Mapping
 \end_layout
 
@@ -173,7 +117,7 @@ Orthology Mapping
 Work for Martin Jechlinger: two tailed GSEA for top/bottom MANTRA hits
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Predicting a Compound that stops Transformation
 \end_layout
 
@@ -181,40 +125,16 @@ Predicting a Compound that stops Transformation
 basically, the results where the PI3K inhibitor came out
 \end_layout
 
-\begin_layout Section
-LINCS Connectivity Map
+\begin_layout Subsection
+Results
 \end_layout
 
 \begin_layout Subsection
-L1000 Platform
-\end_layout
-
-\begin_layout Itemize
-L1000 platform
-\end_layout
-
-\begin_layout Subsection
-Projections
-\end_layout
-
-\begin_layout Itemize
-Projection from landmarks to full microarray gene sets
-\end_layout
-
-\begin_layout Subsection
-Data Coverage
-\end_layout
-
-\begin_layout Subsection
-Limitations
-\end_layout
-
-\begin_layout Itemize
-Controversy about publication (there is still no paper)
+Discussion
 \end_layout
 
 \begin_layout Section
-Signatures of Drug Treatment using the L1000 Platform
+Predicting Effective Drug Combinations
 \end_layout
 
 \begin_layout Itemize
@@ -222,7 +142,7 @@ Synthetic lethal network?
 \end_layout
 
 \begin_layout Subsection
-Data Coverage
+Introduction
 \end_layout
 
 \begin_layout Itemize
@@ -230,6 +150,10 @@ if we take GDSC-only drugs, we have 150x150
 \end_layout
 
 \begin_layout Subsection
+Methods
+\end_layout
+
+\begin_layout Subsubsection
 Quality Control of Signatures
 \end_layout
 
@@ -237,23 +161,23 @@ Quality Control of Signatures
 diff between toxicity and targeted signature
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Pan-Cancer Models
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Tissue-specific Models
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Models for Individual Cell Lines
 \end_layout
 
-\begin_layout Section
-Predicting Effective Drug Combinations
+\begin_layout Subsection
+Results
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Choosing the right Model
 \end_layout
 
@@ -265,7 +189,7 @@ lots of different ways to derive them, no idea what is best
 optimisation modelling (ILP)
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Models including a Covariate
 \end_layout
 
@@ -282,14 +206,6 @@ how to solve it
 \end_layout
 
 \begin_layout Subsection
-Drug-specific Predictions
-\end_layout
-
-\begin_layout Subsection
-Target-specific Predictions
-\end_layout
-
-\begin_layout Section
 Discussion
 \end_layout
 

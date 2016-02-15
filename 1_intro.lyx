@@ -1658,6 +1658,18 @@ To summarise, ensuring that a subsequent study has the possibility to arrive
 \end_layout
 
 \begin_layout Subsection
+Inadequacy of Journal Articles
+\end_layout
+
+\begin_layout Itemize
+clarify: the articles are not the problem
+\end_layout
+
+\begin_layout Itemize
+but the suppl is
+\end_layout
+
+\begin_layout Subsection
 Scientific Software Ecosystem
 \end_layout
 
@@ -1667,6 +1679,16 @@ programming language: not too high-/low-level
 
 \begin_layout Itemize
 availability of support packages: huge progress with R, python
+\end_layout
+
+\begin_layout Itemize
+we are working on more or less the same tools, should be easy to exchange
+ ideas
+\end_layout
+
+\begin_layout Itemize
+need to focus more on collaboration -> code repos that accept patches, etc.
+ email is bad
 \end_layout
 
 \begin_layout Standard
@@ -1711,24 +1733,11 @@ Two programming languages, along with the packages they themselves as well
 \end_layout
 
 \begin_layout Subsection
-Documentation
+Reproducible Workflows
 \end_layout
 
 \begin_layout Itemize
-roxygen
-\end_layout
-
-\begin_layout Itemize
-markdown
-\end_layout
-
-\begin_layout Standard
-Another, in a scientific context often overlooked requirement for software
- is technical documentation of how to run it or call its API.
-\end_layout
-
-\begin_layout Subsection
-Versioning
+versioning
 \end_layout
 
 \begin_layout Itemize
@@ -1741,10 +1750,6 @@ tools to support
 
 \begin_layout Itemize
 how github really put it together
-\end_layout
-
-\begin_layout Subsection
-Reproducible Workflows
 \end_layout
 
 \begin_layout Itemize
