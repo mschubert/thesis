@@ -199,6 +199,50 @@ Controversy about publication (there is still no paper)
 \end_layout
 
 \begin_layout Subsection
+From Genes to Gene Sets
+\end_layout
+
+\begin_layout Subsubsection
+Gene Ontology
+\end_layout
+
+\begin_layout Subsubsection
+Pathway Databases
+\end_layout
+
+\begin_layout Itemize
+reactome
+\end_layout
+
+\begin_layout Itemize
+biocarta
+\end_layout
+
+\begin_layout Itemize
+kegg
+\end_layout
+
+\begin_layout Subsubsection
+Transcription Factor Binding
+\end_layout
+
+\begin_layout Itemize
+encode
+\end_layout
+
+\begin_layout Itemize
+chea
+\end_layout
+
+\begin_layout Subsubsection
+Interaction Networks
+\end_layout
+
+\begin_layout Itemize
+difference between pathway and interactome
+\end_layout
+
+\begin_layout Subsection
 Drug Response
 \end_layout
 
@@ -311,47 +355,35 @@ Pathway Methods
 \end_layout
 
 \begin_layout Subsection
-From Genes to Gene Sets
+Drug repurposing
 \end_layout
 
 \begin_layout Subsubsection
-Gene Ontology
+Matching Drug and Disease Signatures
+\end_layout
+
+\begin_layout Itemize
+MSigDB
+\end_layout
+
+\begin_layout Itemize
+maybe mention: 2 sigs to match 1 disease
+\end_layout
+
+\begin_layout Itemize
+MANTRA
+\end_layout
+
+\begin_layout Itemize
+DvD
 \end_layout
 
 \begin_layout Subsubsection
-Pathway Databases
+Predicting Drug Combinations
 \end_layout
 
 \begin_layout Itemize
-reactome
-\end_layout
-
-\begin_layout Itemize
-biocarta
-\end_layout
-
-\begin_layout Itemize
-kegg
-\end_layout
-
-\begin_layout Subsubsection
-Transcription Factor Binding
-\end_layout
-
-\begin_layout Itemize
-encode
-\end_layout
-
-\begin_layout Itemize
-chea
-\end_layout
-
-\begin_layout Subsubsection
-Interaction Networks
-\end_layout
-
-\begin_layout Itemize
-difference between pathway and interactome
+maybe mention: 2 sigs to match 1 disease (same or in prev?)
 \end_layout
 
 \begin_layout Section
@@ -431,55 +463,11 @@ assume most is upregulated?
 \end_layout
 
 \begin_layout Subsection
-Linear Models
+Linear Associations
 \end_layout
 
 \begin_layout Itemize
 ANOVA, etc
-\end_layout
-
-\begin_layout Subsection
-Machine Learning Models
-\end_layout
-
-\begin_layout Itemize
-elastic net
-\end_layout
-
-\begin_layout Itemize
-not sure if to include this at all
-\end_layout
-
-\begin_layout Subsection
-Drug repurposing
-\end_layout
-
-\begin_layout Subsubsection
-Matching Drug and Disease Signatures
-\end_layout
-
-\begin_layout Itemize
-MSigDB
-\end_layout
-
-\begin_layout Itemize
-maybe mention: 2 sigs to match 1 disease
-\end_layout
-
-\begin_layout Itemize
-MANTRA
-\end_layout
-
-\begin_layout Itemize
-DvD
-\end_layout
-
-\begin_layout Subsubsection
-Predicting Drug Combinations
-\end_layout
-
-\begin_layout Itemize
-maybe mention: 2 sigs to match 1 disease (same or in prev?)
 \end_layout
 
 \begin_layout Section
