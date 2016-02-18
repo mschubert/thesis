@@ -110,14 +110,18 @@ main work for this chapter are investigating the COREAD data set with available
 \end_layout
 
 \begin_layout Part
-Data and Methods for a Pathway-Centric View of Cancer
+Data, Methods and an unbiased Approach
 \end_layout
 
 \begin_layout Section
-Data Sets
+Introduction
 \end_layout
 
 \begin_layout Subsection
+Data Sets
+\end_layout
+
+\begin_layout Subsubsection
 The Cancer Genome Atlas (TCGA)
 \end_layout
 
@@ -138,7 +142,7 @@ secondary dbs that simplify access: e.g.
  BROAD GDAC firehose
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 International Cancer Genome Consortium (ICGC)
 \end_layout
 
@@ -154,7 +158,7 @@ more cohorts
 horrible metadata
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Cancer Cell Line Encyclopedia (CCLE)
 \end_layout
 
@@ -162,7 +166,7 @@ Cancer Cell Line Encyclopedia (CCLE)
 status 2002
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Genomics of Drug Sensitivity in Cancer (GDSC)
 \end_layout
 
@@ -174,20 +178,12 @@ status 2002
 now: new dataset
 \end_layout
 
-\begin_layout Subsection
-The Connectivity Map
-\end_layout
-
 \begin_layout Subsubsection
-Original Microarray-based version
+The Connectivity Map
 \end_layout
 
 \begin_layout Itemize
 Justin Lamb's paper in 2006
-\end_layout
-
-\begin_layout Subsubsection
-LINCS
 \end_layout
 
 \begin_layout Itemize
@@ -202,43 +198,155 @@ Projection from landmarks to full microarray gene sets
 Controversy about publication (there is still no paper)
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
+Drug Response
+\end_layout
+
+\begin_layout Itemize
+linear model, ANOVA
+\end_layout
+
+\begin_layout Itemize
+for GDSC and pathway-rel dbs in (2): the unbiased associations
+\end_layout
+
+\begin_layout Itemize
+multivariate: explaining power
+\end_layout
+
+\begin_layout Subsubsection
+The Half-Maximum Inhibitory Concentration (IC50)
+\end_layout
+
+\begin_layout Itemize
+need for one value
+\end_layout
+
+\begin_layout Itemize
+how IC50 is derived
+\end_layout
+
+\begin_layout Itemize
+screening concentration vs extrapolated IC50
+\end_layout
+
+\begin_layout Subsubsection
+Impact of Driver Mutations
+\end_layout
+
+\begin_layout Itemize
+problem of multiple testing
+\end_layout
+
+\begin_layout Itemize
+definition of drivers
+\end_layout
+
+\begin_layout Itemize
+do drug assocs for mutations
+\end_layout
+
+\begin_layout Subsection
+Patient Survival
+\end_layout
+
+\begin_layout Itemize
+where data comes from
+\end_layout
+
+\begin_layout Itemize
+again: unbiased approach = spurious results
+\end_layout
+
+\begin_layout Subsubsection
+Measuring Survival Times
+\end_layout
+
+\begin_layout Itemize
+OS, PFS
+\end_layout
+
+\begin_layout Itemize
+how the data we get from the TCGA/ICGC looks like
+\end_layout
+
+\begin_layout Subsubsection
+Statistical Methods
+\end_layout
+
+\begin_layout Itemize
+coxph, AFT + assumptions
+\end_layout
+
+\begin_layout Subsubsection
+Impact of Driver Mutations
+\end_layout
+
+\begin_layout Itemize
+problem of multiple testing
+\end_layout
+
+\begin_layout Itemize
+definition of drivers
+\end_layout
+
+\begin_layout Itemize
+do drug assocs for mutations
+\end_layout
+
+\begin_layout Subsubsection
+Transcription Factor Activities
+\end_layout
+
+\begin_layout Itemize
+do the TF scores make sense for tissues?
+\end_layout
+
+\begin_layout Itemize
+chea results on TCGA data
+\end_layout
+
+\begin_layout Subsubsection
+Pathway Methods
+\end_layout
+
+\begin_layout Subsection
 From Genes to Gene Sets
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Gene Ontology
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Pathway Databases
 \end_layout
 
-\begin_layout Subsubsection
-Reactome
+\begin_layout Itemize
+reactome
+\end_layout
+
+\begin_layout Itemize
+biocarta
+\end_layout
+
+\begin_layout Itemize
+kegg
 \end_layout
 
 \begin_layout Subsubsection
-BioCarta
-\end_layout
-
-\begin_layout Subsubsection
-KEGG
-\end_layout
-
-\begin_layout Subsection
 Transcription Factor Binding
 \end_layout
 
-\begin_layout Subsubsection
-ENCODE
+\begin_layout Itemize
+encode
+\end_layout
+
+\begin_layout Itemize
+chea
 \end_layout
 
 \begin_layout Subsubsection
-ChEA
-\end_layout
-
-\begin_layout Subsection
 Interaction Networks
 \end_layout
 
@@ -247,7 +355,7 @@ difference between pathway and interactome
 \end_layout
 
 \begin_layout Section
-Quantifying Pathway Activity
+Methods
 \end_layout
 
 \begin_layout Subsection
@@ -343,10 +451,6 @@ not sure if to include this at all
 \end_layout
 
 \begin_layout Subsection
-Black Box Models and Signature Matching
-\end_layout
-
-\begin_layout Subsubsection
 Drug repurposing
 \end_layout
 
@@ -379,58 +483,10 @@ maybe mention: 2 sigs to match 1 disease (same or in prev?)
 \end_layout
 
 \begin_layout Section
-Variables for Outcome
+Results
 \end_layout
 
 \begin_layout Subsection
-Drug Response
-\end_layout
-
-\begin_layout Itemize
-linear model, ANOVA
-\end_layout
-
-\begin_layout Itemize
-for GDSC and pathway-rel dbs in (2): the unbiased associations
-\end_layout
-
-\begin_layout Itemize
-multivariate: explaining power
-\end_layout
-
-\begin_layout Subsubsection
-The Half-Maximum Inhibitory Concentration (IC50)
-\end_layout
-
-\begin_layout Itemize
-need for one value
-\end_layout
-
-\begin_layout Itemize
-how IC50 is derived
-\end_layout
-
-\begin_layout Itemize
-screening concentration vs extrapolated IC50
-\end_layout
-
-\begin_layout Subsubsection
-Impact of Driver Mutations
-\end_layout
-
-\begin_layout Itemize
-problem of multiple testing
-\end_layout
-
-\begin_layout Itemize
-definition of drivers
-\end_layout
-
-\begin_layout Itemize
-do drug assocs for mutations
-\end_layout
-
-\begin_layout Subsubsection
 Transcription Factor Activities
 \end_layout
 
@@ -442,7 +498,7 @@ do the TF scores make sense for tissues?
 chea results on GDSC data
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 Pathway Methods
 \end_layout
 
@@ -451,67 +507,7 @@ unbiased appraoch: spurious results
 \end_layout
 
 \begin_layout Subsection
-Patient Survival
-\end_layout
-
-\begin_layout Itemize
-where data comes from
-\end_layout
-
-\begin_layout Itemize
-again: unbiased approach = spurious results
-\end_layout
-
-\begin_layout Subsubsection
-Measuring Survival Times
-\end_layout
-
-\begin_layout Itemize
-OS, PFS
-\end_layout
-
-\begin_layout Itemize
-how the data we get from the TCGA/ICGC looks like
-\end_layout
-
-\begin_layout Subsubsection
-Statistical Methods
-\end_layout
-
-\begin_layout Itemize
-coxph, AFT + assumptions
-\end_layout
-
-\begin_layout Subsubsection
-Impact of Driver Mutations
-\end_layout
-
-\begin_layout Itemize
-problem of multiple testing
-\end_layout
-
-\begin_layout Itemize
-definition of drivers
-\end_layout
-
-\begin_layout Itemize
-do drug assocs for mutations
-\end_layout
-
-\begin_layout Subsubsection
-Transcription Factor Activities
-\end_layout
-
-\begin_layout Itemize
-do the TF scores make sense for tissues?
-\end_layout
-
-\begin_layout Itemize
-chea results on TCGA data
-\end_layout
-
-\begin_layout Subsubsection
-Pathway Methods
+Drug combinations
 \end_layout
 
 \begin_layout Section

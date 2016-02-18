@@ -73,16 +73,25 @@ Gene expression methods for cancer cell line drug sensitivity and patient
  outcome
 \end_layout
 
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+this is the easiest way - we don't have to make many assumptions
+\end_layout
+
+\begin_layout Plain Layout
+also, we don't care about pathways
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Part
-Drug response signature matching
-\end_layout
-
-\begin_layout Itemize
-introduce CMap, LINCS CMap here
-\end_layout
-
-\begin_layout Itemize
-MSigDB
+Minimal Assumptions - Drug Response Signature Matching
 \end_layout
 
 \begin_layout Section
@@ -207,6 +216,18 @@ how to solve it
 
 \begin_layout Subsection
 Discussion
+\end_layout
+
+\begin_layout Itemize
+drug-level analysis is great, but:
+\end_layout
+
+\begin_layout Itemize
+might have off-target effects
+\end_layout
+
+\begin_layout Itemize
+and we don't take any bio into account
 \end_layout
 
 \end_body
