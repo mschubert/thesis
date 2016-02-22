@@ -149,59 +149,19 @@ To our knowledge, the only similar efforts are the SPEED database (Parikh
  signatures in terms of general stability and reproducibility.
 \end_layout
 
-\begin_layout Subsubsection
-Gatza
-\end_layout
-
-\begin_layout Itemize
-line of papers: potti, bild, gatza
-\end_layout
-
-\begin_layout Itemize
-limited applicability because only 1 exp MCF10A
-\end_layout
-
-\begin_layout Itemize
-we don't know how representative that is
-\end_layout
-
-\begin_layout Itemize
-reproducibility issues with those sigs (baggerly)
-\end_layout
-
-\begin_layout Subsubsection
-Signaling Pathway Enrichment using Experimental Datasets (SPEED)
-\end_layout
-
-\begin_layout Itemize
-more exps together
-\end_layout
-
-\begin_layout Itemize
-Initial version by Blüthgen lab: z-score, overlap, expression level, GO
- validation
-\end_layout
-
-\begin_layout Itemize
-Extended version by Blüthgen lab: additional experiments and pathways
-\end_layout
-
 \begin_layout Subsection
 Methods
+\end_layout
+
+\begin_layout Subsubsection
+Generating Gene Lists
 \end_layout
 
 \begin_layout Standard
 
 \lang british
-Gene lists were generated from the SPEED SQLite database (
-\begin_inset CommandInset href
-LatexCommand href
-name "http://speed.sys-bio.net/SPEED_db.zip"
-target "http://speed.sys-bio.net/SPEED_db.zip"
-
-\end_inset
-
-) and the author's Python query tools, with the following parameters specified:
+The authors of the original SPEED publication used four parameters to generate
+ gene lists from their input experiments:
 \end_layout
 
 \begin_layout Itemize
@@ -231,28 +191,209 @@ Uniqueness: whether only genes should be returned that were unique to the
  stimulation of a specific pathway
 \end_layout
 
-\begin_layout Subsection
-Results
+\begin_layout Standard
+
+\lang british
+With the SQLite database (
+\begin_inset CommandInset href
+LatexCommand href
+name "http://speed.sys-bio.net/SPEED_db.zip"
+target "http://speed.sys-bio.net/SPEED_db.zip"
+
+\end_inset
+
+) and Python query tools the authors provided, I extracted gene lists with
+ the given cutoff.
+ First, I used the default parameters in their implementation, which was
+ to include all genes that were top 5% of up-regulated genes by z-score,
+ overall top 50% of expressed genes, in at least 20% of the experiments
+ per pathway, and disregarding whether the gene was in any other pathway
+ or not.
 \end_layout
 
-\begin_layout Itemize
-the results of the GDSC2016 screening paper
-\end_layout
+\begin_layout Subsubsection
 
-\begin_layout Itemize
-the text + table/figure legends is from the GDSC paper (and avail in /home/mschu
-/Dropbox/Schubert/sanger_paper_speed)
+\lang british
+Pathway Scores for all Experiments
 \end_layout
 
 \begin_layout Standard
-For the original SPEED publication [1], the authors suggested to use a constant
- cutoff if z<1%, expression>50%, overlap>20% and allowing non-unique genes.
- However, they only evaluated gene lists by their overlap with Gene Ontology
- categories, and not how well its enrichment scores are able to differentiate
- between microarrays where a given pathway perturbation is present and those
- where it is absent.
- This resulted in pathways that were highly correlated, as shown in figure
- 1.
+I calculated the raw basal GSEA scores (using the wGSEA function of the
+ script provided by the BROAD institute) for all cell lines and basal gene
+ expression in the GDSC panel using the default gene list as described in
+ the previous section.
+ As we do not have a background set, we transformed the resulting bimodal
+ distribution for each pathway across all cell lines into a normal distribution
+ using a kernel density estimator (kCDF function from the R package sROC
+ [cite!]).
+ The result of this resembled a uniform distribution, with the exception
+ that it took into account local differences with the kernel function.
+ I then transformed the resulting distribution into a normal distribution
+ using the formula
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+log(x/(1\text{−}x))
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+which yielded normally distributed GSEA scores without performing any test
+ of significance in terms of up- or down-regulated of the individual cell
+ lines.
+\end_layout
+
+\begin_layout Subsubsection
+
+\lang british
+Running the Cross-Validation
+\end_layout
+
+\begin_layout Standard
+
+\lang british
+With the SQLite database (
+\begin_inset CommandInset href
+LatexCommand href
+name "http://speed.sys-bio.net/SPEED_db.zip"
+target "http://speed.sys-bio.net/SPEED_db.zip"
+
+\end_inset
+
+) and Python query tools the authors provided, we extracted gene lists for
+ different combinations of those four parameters:
+\end_layout
+
+\begin_layout Itemize
+
+\lang british
+Z-score: 0.25, 0.5, 0.75, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7, 7.5,
+ 8, 9, 10, 11, 12, 15, 20, 25
+\end_layout
+
+\begin_layout Itemize
+
+\lang british
+Total expression: 5, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100
+\end_layout
+
+\begin_layout Itemize
+
+\lang british
+Overlap: 5, 10, 20, 30, 40, 50, 60, 70, 80
+\end_layout
+
+\begin_layout Itemize
+
+\lang british
+Uniqueness: True or False
+\end_layout
+
+\begin_layout Standard
+For each combination, I performed a scan of the four adjustable platform
+ parameters to optimize the order obtained by GSEA scores between control
+ and stimulated experiments.
+ For combination of parameters, so for each of the 4950 gene lists, I calculated
+ the raw enrichment score for each pathway and cell line, yielding a total
+ of 55 million enrichment scores.
+ I then went on to, for each pathway, construct a precision-recall curve
+ that quantified how well the GSEA scores were able assign lower pathway
+ activation scores to the control arrays than the perturbed arrays (where,
+ in the case of an inhibition I performed GSEA using negative z-scores).
+\end_layout
+
+\begin_layout Standard
+The set of control arrays comprised all the un-stimulated arrays in the
+ database, and the stimulated set all arrays in the database where a certain
+ pathway was perturbed.
+ I used as a measure of performance the area under the precision-recall
+ curve.
+ A perfect ordering (that is, all control arrays and then all stimulated
+ arrays) corresponded to a precision-recall AUC (prAUC) of 1, while a random
+ ordering would respond to a prAUC about 0.5.
+ 
+\end_layout
+
+\begin_layout Standard
+By using not only the matched control arrays to the perturbed arrays but
+ all arrays present in the data set, we allow cross-activation of pathways
+ while minimizing the fit to random differences in gene expression by different
+ initial conditions.
+\end_layout
+
+\begin_layout Standard
+I split the data set (both control and perturbed arrays) in five different
+ subsets, where four of the five were the designated training set and the
+ fifth the designed test set.
+ I calculated the prAUC for all the parameters described in the previous
+ section, and chose the set with the highest score.
+ I then went on to the part that was not used in training and quantified
+ the prAUC there as well.
+ I performed the whole process five times, with another subset functioning
+ as the test set each time.
+ I then chose the set that the highest prAUC:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+selected=max^{all\,runs}(min^{per\,run}(prAUC^{train},prAUC^{test}))
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+I did not simply select the highest highest AUC in the test set because
+ I would not want to select a model that performed badly on the training
+ set to begin with.
+\end_layout
+
+\begin_layout Subsubsection
+
+\lang british
+Linear Associations
+\end_layout
+
+\begin_layout Standard
+
+\lang british
+As a control and sanity check, I compared the inferred pathway activation
+ scores between different tissues.
+ If the assigned scores per tissue are biologically meaningful, we would
+ expect to find well-established literature evidence for backing them up.
+ A heatmap overview of pathway activation scores is shown in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:tissue-heatmap"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+I calculated a linear regression using the obtained pathway scores the IC50s
+ or drug response for all cell lines and each pathway, with tissues either
+ as a blocking factor or calculating the associations for each tissue separately.
+ I adjusted p-values by controlling the false discovery rate and visualized
+ the result as volcano plots and individual fits.
+ For separate fits between tissues, I only calculated associations that
+ had at least two sensitive cell lines (defined as it being in the top 10%
+ of responders, not 100x less sensitive than the most sensitive overall,
+ and having an IC50 below 1 uM).
+\end_layout
+
+\begin_layout Subsection
+Results
 \end_layout
 
 \begin_layout Subsubsection
@@ -260,38 +401,126 @@ Separability-optimised Gene Sets
 \end_layout
 
 \begin_layout Standard
-To counteract this, we performed a scan of the four adjustable platform
- parameters to optimize the order obtained by GSEA scores between control
- and stimulated experiments.
- The set of control arrays comprised all the un-stimulated arrays in the
- database, and the stimulated set all arrays in the database where a certain
- pathway was perturbed.
- This way, we allow cross-activation of pathways while minimizing the fit
- to random differences in gene expression by different initial conditions.
- We trained the parameters using 5x cross validation and selected the model
- with the best fit on the part of the data set not used for training.
- As a performance measure we used the area under the precision-recall curve
- that was obtained by the order of raw GSEA scores.
- Table 1 shows the improved separation between basal and pathway-perturbed
- arrays.
+Using the default parameters of the SPEED query tools (constant cutoff if
+ z<1%, expression>50%, overlap>20% and allowing non-unique genes), I obtained
+ scores that were highly correlated between the different pathways.
+ The Pearson correlations for each of the pathways across all cell lines
+ is shown in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cor-before"
+
+\end_inset
+
+.
+ For the optimised lists, I observed a much lower overall correlation of
+ the pathway scores (figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cor-after"
+
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Standard
-We calculated the raw basal GSEA scores for all cell lines using the gene
- lists obtained.
- As we do not have a background set, we transformed the resulting bimodal
- distribution for each pathway across all cell lines into a normal distribution
- using a kernel density estimator (kCDF function from the R package sROC
- ) followed by the transformation log(x/(1 − x)).
- We calculated a linear regression for all cell lines and each pathway,
- with tissues either as a blocking factor or calculating the associations
- for each tissue separately.
- We adjusted p-values by controlling the false discovery rate and visualized
- the result as volcano plots and individual fits.
- For separate fits between tissues, we only calculated associations that
- had at least two sensitive cell lines (defined as it being in the top 10%
- of responders, not 100x less sensitive than the most sensitive overall,
- and having an IC50 below 1 uM).
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/4.1_correlation_original.jpg
+	lyxscale 50
+	width 50col%
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "cor-before"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename figures/4.1_correlation_optimized.jpg
+	lyxscale 50
+	width 50col%
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "cor-after"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Correlation plots for GSEA scores per pathway across cell lines for the
+ original SPEED lists (panel a) and our separation-optimized version (panel
+ b).
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The values for the different gene list cutoff parameters that I selected
+ after optimisation are listed in table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Parameter-selection-overview"
+
+\end_inset
+
+, including the number of genes in the signature and prAUC (training and
+ test set) compared between the original cutoffs used in the query tool
+ and my selection.
+ Pathways where the optimisation of paramters yielded a better separation
+ of control- vs.
+ perturbed arrays are shown in bold (all of them).
 \end_layout
 
 \begin_layout Standard
@@ -312,6 +541,13 @@ Parameter selection overview for each pathway.
  Precision-recall AUC shown for training, cross-training for optimized lists
  and whole data set for optimized lists vs.
  the one obtained by using the original lists.
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Parameter-selection-overview"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1945,78 +2181,8 @@ Wnt
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Correlation plots for GSEA scores per pathway across cell lines for the
- original SPEED lists (panel a) and our separation-optimized version (panel
- b).
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Subsubsection
 Obtaining Pathway Scores from Gene Sets
-\end_layout
-
-\begin_layout Standard
-
-\lang british
-We calculated the raw basal GSEA scores for all cell lines using the gene
- lists obtained.
- As we do not have a background set, we transformed the resulting bimodal
- distribution for each pathway across all cell lines into a normal distribution
- using a kernel density estimator (
-\shape italic
-kCDF
-\shape default
- function from the R package 
-\shape italic
-sROC
-\shape default
-) followed by the transformation:
-\end_layout
-
-\begin_layout Standard
-
-\lang british
-\begin_inset Formula 
-\[
-log(x/(1-x))
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\lang british
-We calculated a linear regression for all cell lines and each pathway, with
- tissues either as a blocking factor or calculating the associations for
- each tissue separately.
- We adjusted p-values by controlling the false discovery rate and visualised
- the result as volcano plots and individual fits.
- For separate fits between tissues, we only calculated associations that
- had at least two sensitive cell lines (defined as it being in the top 10%
- of responders, not 100x less sensitive than the most sensitive overall,
- and having an IC50 below 1 uM).
 \end_layout
 
 \begin_layout Standard
@@ -2026,6 +2192,13 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/4.1_heatmap.pdf
+	width 100col%
+
+\end_inset
+
 
 \end_layout
 
@@ -2059,11 +2232,9 @@ Associations between Pathway Scores and Tissues
 \begin_layout Standard
 
 \lang british
-As a control and sanity check, we compared the inferred pathway activation
- scores between different tissues.
- If the assigned scores per tissue are biologically meaningful, we would
- expect to find well-established literature evidence for backing them up.
- A heatmap overview of pathway activation scores is shown in figure 
+An overview of up- and down-regulated pathways (in terms of the inferred
+ pathway scores by the SPEED platform with my modifications) is shown in
+ figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:tissue-heatmap"
@@ -2085,6 +2256,13 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/4.1_speed_tissue.pdf
+	width 80col%
+
+\end_inset
+
 
 \end_layout
 
@@ -2108,10 +2286,6 @@ name "fig:tissue-heatmap"
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -2259,7 +2433,7 @@ Linear associations of inferred pathway activity within all tissues and
  drug response are shown in figure 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:drug-assocs-2"
+reference "fig:pancan-volcano"
 
 \end_inset
 
@@ -2279,6 +2453,13 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/4.1_volcano_pancan.pdf
+	width 100col%
+
+\end_inset
+
 
 \end_layout
 
@@ -2296,6 +2477,13 @@ Volcano plot of linear associations of inferred pathway activity within
  Positive regression slopes (right side, red) indicate resistance markers,
  i.e.
  higher activation scores correlate with higher IC50s.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:pancan-volcano"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2538,12 +2726,34 @@ Tissue-specific Drug Associations
 \end_layout
 
 \begin_layout Standard
+
+\lang british
+In addition to calculating the strongest associations within all tissues,
+ we also calculated the ones for each tissue separately, associations for
+ which are shown in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:tissue-drug-assocs"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/4.1_volcano_tissue.pdf
+	width 100col%
+
+\end_inset
+
 
 \end_layout
 
@@ -2575,47 +2785,74 @@ name "fig:tissue-drug-assocs"
 
 \end_layout
 
-\begin_layout Standard
-
-\lang british
-In addition to calculating the strongest associations within all tissues,
- we also calculated the ones for each tissue separately, associations for
- which are shown in figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:tissue-drug-assocs"
-
-\end_inset
-
-.
-\end_layout
-
 \begin_layout Subsection
 Discussion
 \end_layout
 
-\begin_layout Itemize
-processed data w/ no idea what authors did
+\begin_layout Standard
+Using pathway-responsive genes instead of pathway expression to infer signaling
+ activity makes a lot of sense: we look at the footprint of the actual signaling
+ activity (the expression changes downstream of a signaling pathway) and
+ not the potential mediators (protein kinases, among others) by mRNA expression
+ level that is a lot further removed from the actual signaling going on
+ in a cell.
+ However, the SPEED platform has some issues in terms of the level in which
+ its pathways are correlated to one another: If we did calculate drug associatio
+ns with the original scores, hits would be groups where a given drug is
+ correlated with all pathways in about the same extent.
+ This is likely due to how they only evaluated gene lists by their overlap
+ with Gene Ontology categories, and not how well its enrichment scores are
+ able to differentiate between microarrays where a given pathway perturbation
+ is present and those where it is absent.
+ And it is not useful for our purposes.
 \end_layout
 
-\begin_layout Itemize
-the method with (z,o,e,u) is still clumsy
+\begin_layout Standard
+We thus have a need for scores that are more potent in distinguishing the
+ gene expression footprints from one pathway to another.
+ A way to do this in the existing platform is to no longer require that
+ the signature genes from all pathways are obtained using the same cutoffs
+ of the author's 4 parameters, but instead optimise them in way so that
+ they are best able to tell apart the pathways one from another.
+ Looking at the correlations between the original cutoffs and the ones I
+ suggest after the cross-validated optimisation, I know that this worked
+ at least on those terms.
 \end_layout
 
-\begin_layout Itemize
-should come up with a better one: regression model, LASSO, Ridge Regression
+\begin_layout Standard
+The next question to answer is whether we get more meaningful drug associations.
+ Looking at the volcano plot for both pan-cancer and individual tissues,
+ associations are, for one, not between a drug and all pathways, and for
+ the other much better supported when searching for literature corresponding
+ to the top hits.
 \end_layout
 
-\begin_layout Itemize
-gatza: we have no idea if the sigs are stable
+\begin_layout Standard
+However, there is still a wealth of potential issues with the current model,
+ many of which can be traced back to using the original platform: (1) The
+ authors use raw microarray data as well as processed data.
+ For the processed data, we have no idea of what the original authors did
+ with their data to arrive at the expression levels they report.
+ Sometimes they report this in their respective experimental or data analysis
+ procedures, but often they don't.
+ There is a potential of all sorts of biases that we can not control for.
+ (2) The platform as it currently stands needs four paramters to be speficied,
+ each of which corresponds to a somewhat arbitrary cutoff.
+ Even if we ignore this, they limit that method in a way that does not support
+ down-regulated genes at all (as the z-scores are filtered by top percentile
+ only).
+ (3) We bias the selection of genes to the ones most commonly found in microarra
+ys.
+ If a gene is highly upregulated but not present in arrays and thus failing
+ the overlap cutoff, we would lose it.
 \end_layout
 
-\begin_layout Itemize
-Issues with the platform: arbitrary cutoffs, highly correlated sets
-\end_layout
-
-\begin_layout Itemize
-not meaningful drug associations (well, they seem quite ok??!)
+\begin_layout Standard
+I am thus inclined to argue that, while the optimisation of paramters yielded
+ vast improvements in terms of correlatedness of scores and resulting drug
+ associations, it still has enough drawbacks the warrant a different approach
+ while keeping the overall idea of using pathway-responsive genes as signature
+ for pathway activity.
 \end_layout
 
 \begin_layout Section
@@ -2626,8 +2863,105 @@ Improving the Model
 Introduction
 \end_layout
 
-\begin_layout Itemize
-take GO, pathways, gex clusters and do associations
+\begin_layout Standard
+In the previous section, I have already argued that for inferring pathway
+ activity from gene expression, we need a platform as provided by [cite]:
+ using stimulation-response genes is much more in line with common knowledge
+ about how signaling and pathway activation works as opposed to pathway
+ expression.
+ I have, however, also outlined the potential drawbacks of the method in
+ the previous discussion section.
+\end_layout
+
+\begin_layout Standard
+To my knowledge and after thorough review of the available literature, there
+ are only lines of publications that made use of this reasoning.
+ One is the SPEED platform that I already covered, and the other was published
+ about the same time by [gatza].
+ Both have got their good and bad points, that I outline below.
+ Even given their availability, I think that taking the idea of pathway-response
+ genes, extend the data set used, and properly benchmark it against other
+ available pathway methods has merit.
+\end_layout
+
+\begin_layout Standard
+When deciding to choose between the two, it is good to remind ourselves
+ about the goal we have in mind, the bigger picture, so to speak.
+ That goal is to derive generally applicable signatures of pathway activation
+ that are helpful and predictive of drug response in cell lines, as well
+ as potentially in a clinical settings (e.g.
+ in terms of associations with patient survival).
+\end_layout
+
+\begin_layout Subsubsection
+SPEED
+\end_layout
+
+\begin_layout Standard
+The original SPEED platform consists of signatures of 11 pathways, derived
+ and comprised of the genes responsive to a total of XX contrasts (the perturbat
+ions between a control and a perturbed condition).
+ They use a consensus gene signature across multiple experiments, perturbagens,
+ and other conditions to arrive at a gene list that corresponds to pathway
+ activation in a wide condition.
+ Of course, by doing this average, they might lose tissue-specific or condition-
+specific gene expression patterns.
+\end_layout
+
+\begin_layout Standard
+The authors performed no analysis in terms of either drug associations,
+ patient survival, or really anything else besides the overlap of their
+ pathway-associated genes with Gene Ontology categories and each other.
+ It has not been applied in a cancer-specific context before, except in
+ the previous chapter.
+\end_layout
+
+\begin_layout Subsubsection
+Gatza
+\end_layout
+
+\begin_layout Standard
+Apart from the SPEED platform, there was a second string of articles published
+ between 2009 and 2014, the main author of which developed gene-response
+ signatures using a single condition (time point, concentration, agent)
+ but three biological replicates of perturbations in the MCF10A cell line.
+ The authors validated their signatures using correlation of different pathways
+ or genes expressed as it was available in literature.
+ The first article in this series is about a small set of signatures 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Bild2005-tk"
+
+\end_inset
+
+ published in Nature in 2005.
+ Without claiming a direct connection, one of the senior authors on this
+ article had his medical license revoked and multiple articles retracted
+ because of irreproducibility of results, as investigated by 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Baggerly2009-xc"
+
+\end_inset
+
+.
+ A later generation of signatures [gatza2009] still had this author involved,
+ but the signatures themselves seem to be well documented and the raw data
+ was deposited in a public microarray respository.
+ Finally, in 2014 the main author [gatza2014] linked the inferred pathway
+ activity to drug response in a handful of breast cancer cell lines.
+\end_layout
+
+\begin_layout Standard
+The MCF10A cell line itself is non-cancerous, so it will represent the behaviour
+ of cells without cancer-causing molecular alterations.
+ However, while the data in general seems to be of high quality, I am not
+ confident to make any statements about the genes responsive in this cell
+ line can be extrapolated to other tissues.
+ It has also previously been shown that signatures generated in a certain
+ lab correlate more with the lab they were produced in than the biological
+ condition [cite], which we can not control for if there is only one lab
+ producing them.
 \end_layout
 
 \begin_layout Subsection
@@ -2635,7 +2969,7 @@ Methods
 \end_layout
 
 \begin_layout Subsubsection
-Defining Relevant Pathways
+Defining Relevant Pathways and Experiments
 \end_layout
 
 \begin_layout Itemize
@@ -2648,6 +2982,45 @@ this has been done quite well by the initial platform, stick with it
 
 \begin_layout Itemize
 reference to hallmarks and how we map it
+\end_layout
+
+\begin_layout Standard
+Because the experiments in the SPEED database were curated in a first iteration
+ in 2009 and other pathways were added in 2012, it is quite likely that
+ there are many more relevant experiments that were deposited after the
+ data was curated.
+ Also, previous efforts made no distinction based on the availability of
+ raw data or how many arrays were indeed available in a given contrast.
+ For the latter, the requirement was at least two arrays in the control
+ condition to be able to obtain an estimate of the variability of the expressed
+ genes without a pathway perturbation, and one perturbed array to compare
+ to the controls.
+\end_layout
+
+\begin_layout Standard
+I decided on focussing on the pathway set of the original SPEED publication,
+ with the following modifications:
+\end_layout
+
+\begin_layout Itemize
+Focus on EGFR-related signatures instead of MAPK_PI3K, which could be either
+ any of EGFR, MAPK, or PI3K where in the latter two the respective other
+ was inhibited
+\end_layout
+
+\begin_layout Itemize
+MAPK inhibition should be interpreted as inhibition of MAPK, not activation
+ of PI3K (which may happen and we do indeed see this in a couple of cases,
+ but this is not generally true)
+\end_layout
+
+\begin_layout Itemize
+Remove TLR, instead use TNFa and NFkB
+\end_layout
+
+\begin_layout Standard
+Taking into account these modifications, the final pathway sets I re-curated
+ were: EGFR, H2O2, JAK-STAT, MAPK, NFkB, p53, PI3K, Trail, VEGF, and TGFb.
 \end_layout
 
 \begin_layout Subsubsection
@@ -2668,6 +3041,95 @@ AE vs GEO
 
 \begin_layout Itemize
 arrayexpress searches
+\end_layout
+
+\begin_layout Standard
+I used the following searches on the ArrayExpress database to find experiments:
+\end_layout
+
+\begin_layout Itemize
+EGFR: (egf* OR "growth factor" OR TGF*Î± OR epiregulin OR heregulin OR neureguli
+n OR epigen OR betacellulin OR amphiregulin OR iressa OR gefitinib OR cetuximab
+ OR erlotinib OR lapatinib OR AG1478 OR trastuzumab OR herceptin) organism:sapie
+ns samplecount:[4 TO 10000] raw:true exptype:"Transcription profiling"
+\end_layout
+
+\begin_layout Itemize
+H2O2: (h2o2 OR *peroxide) organism:sapiens samplecount:[4 TO 10000] raw:true
+ exptype:"Transcription profiling"
+\end_layout
+
+\begin_layout Itemize
+Hypoxia: (hypoxia* OR HIF1 OR HIF-1) organism:sapiens samplecount:[4 TO
+ 10000] raw:true exptype:"Transcription profiling"
+\end_layout
+
+\begin_layout Itemize
+JAK-STAT: (ifn* OR interferon OR JAK OR STAT OR prolaktin OR EPO OR IL-2
+ OR IL2 OR IL-3 OR IL3 OR IL-6 OR IL6 OR IL-10 OR IL10 OR IL-13 OR IL13)
+ organism:sapiens samplecount:[4 TO 10000] raw:true exptype:"Transcription
+ profiling"
+\end_layout
+
+\begin_layout Itemize
+MAPK: (b-raf OR braf OR raf* OR mek* OR erk* OR PD*0325901 OR CI*1040 OR
+ PLX* OR U0126 OR AZD6244 OR GSK1120212 OR *metinib OR PD*325901) organism:sapie
+ns samplecount:[4 TO 10000] raw:true exptype:"Transcription profiling"
+\end_layout
+
+\begin_layout Itemize
+NFkB: (LPS OR sa:lps OR tlr OR sa:lipopolysaccharide OR pam3c* OR zymosan
+ OR parthenolide OR sa:11-7082 OR CAY10512 OR sa:*salicyl*) organism:sapiens
+ samplecount:[4 TO 10000] raw:true exptype:"Transcription profiling"
+\end_layout
+
+\begin_layout Itemize
+p53: (sa:*p53 OR sa:mdm2 OR sa:nutlin* OR sa:*radiation OR sa:*radiated
+ OR sa:"dna damage" OR sa:ddr OR sa:*rubicin OR sa:*platin OR sa:docetaxel
+ OR sa:gamma) organism:sapiens samplecount:[4 TO 10000] raw:true exptype:"Transc
+ription profiling"
+\end_layout
+
+\begin_layout Itemize
+PI3K: (SF1126 OR LY294002 OR TGR*1202 OR SAR2454* OR GSK1059615 OR 80*6946
+ OR Perifosine OR Idelalisib OR PI3K OR PIK3* OR PTEN OR BEZ235 OR RP6530
+ OR GDC*941 OR INK1117 ) organism:sapiens samplecount:[4 TO 10000] raw:true
+ exptype:"Transcription profiling"
+\end_layout
+
+\begin_layout Itemize
+TNFa: (tnf* OR "necrosis factor") organism:sapiens samplecount:[4 TO 10000]
+ raw:true exptype:"Transcription profiling"
+\end_layout
+
+\begin_layout Itemize
+Trail: (rtrail OR trail* OR fas OR fasl) organism:sapiens samplecount:[4
+ TO 10000] raw:true exptype:"Transcription profiling" array:(A-AFFY-33 OR
+ A-AFFY-44 OR A-AFFY-37 OR A-AFFY-141)
+\end_layout
+
+\begin_layout Itemize
+Trail (alternative): (Genasense OR ABT-737 OR ABT-199 OR obatoclax OR GX15-070
+ OR casp8 OR caspase) organism:sapiens samplecount:[4 TO 10000] raw:true
+ exptype:"Transcription profiling"
+\end_layout
+
+\begin_layout Itemize
+VEGF: (VEGF* OR sunitinib OR nexavar OR sutent OR pazopanib OR everolimus
+ OR afinitor OR votrient OR Bevacizumab OR sorafenib OR itraconazole OR
+ PDGF* OR PGF OR FIGF OR Withaferin) organism:sapiens samplecount:[4 TO
+ 10000] raw:true exptype:"Transcription profiling"
+\end_layout
+
+\begin_layout Itemize
+TGFb: (tgf OR "tgf-*" OR "bmp*" OR "SMAD*" "transforming growth factor"
+ OR "A 83-01" OR "A-83-01" OR "A83-01" OR "D 4476" OR "D4476" OR "D-4476"
+ OR "GW 788388" OR "GW788388" OR "GW-788388" OR "LY 364947" OR "LY-364947"
+ OR "LY364947" OR "R 268712" OR "R-268712" OR "R268712" OR RepSox OR "SB
+ 431542" OR "SB-431542" OR "SB431542" OR "SB 505124" OR "SB-505124" OR "SB505124
+" OR "SB 525334" OR "SB-525334" OR "SB525334" OR "SD 208" OR "SD208" OR
+ "SD-208") organism:sapiens samplecount:[4 TO 10000] raw:true exptype:"Transcrip
+tion profiling"
 \end_layout
 
 \begin_layout Subsubsection
