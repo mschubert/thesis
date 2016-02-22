@@ -3035,10 +3035,11 @@ I used the following searches on the ArrayExpress database to find experiments:
 \end_layout
 
 \begin_layout Itemize
-EGFR: (egf* OR "growth factor" OR TGF*Î± OR epiregulin OR heregulin OR neureguli
-n OR epigen OR betacellulin OR amphiregulin OR iressa OR gefitinib OR cetuximab
- OR erlotinib OR lapatinib OR AG1478 OR trastuzumab OR herceptin) organism:sapie
-ns samplecount:[4 TO 10000] raw:true exptype:"Transcription profiling"
+EGFR: (egf* OR "growth factor" OR TGF*alpha OR epiregulin OR heregulin OR
+ neuregulin OR epigen OR betacellulin OR amphiregulin OR iressa OR gefitinib
+ OR cetuximab OR erlotinib OR lapatinib OR AG1478 OR trastuzumab OR herceptin)
+ organism:sapiens samplecount:[4 TO 10000] raw:true exptype:"Transcription
+ profiling"
 \end_layout
 
 \begin_layout Itemize
@@ -3188,19 +3189,76 @@ reproducibility, pipeline
 \end_layout
 
 \begin_layout Itemize
-data format: yaml
-\end_layout
-
-\begin_layout Itemize
-AE package updates
-\end_layout
-
-\begin_layout Itemize
 we want raw data
 \end_layout
 
 \begin_layout Itemize
+RLE and NUSE, filters based on those scores
+\end_layout
+
+\begin_layout Itemize
 RMA, mapping to HGNC
+\end_layout
+
+\begin_layout Standard
+To go from an experiment accession in the ArrayExpress database to the actual
+ expression values of the arrays referenced in the curated data set, I planned
+ to use the ArrayExpress package with its main function that should do exactly
+ that: take an accession, and return an annotated data.frame with probe IDs
+ in rows and samples in columns - with the annotation containing the metadata
+ of the experiment.
+ This was not working for the majority of experiments however, so I rewrote
+ parts of the package and gave the patches to the original maintainers (for
+ detailed list of changes, see the Bioconductor VCS diff between 1.28.1 and
+ 1.30.1).
+\end_layout
+
+\begin_layout Standard
+With the R package patched, I was able to download the associated data with
+ all the Affymetrix accessions.
+ I fitted a probe-level model (PLM) for each accession, calculating the
+ NUSE and RLE scores for each array.
+ Arrays that had a NUSE or RLE over 0.1 were discarded as quality control
+ failures.
+ If less than two control and one perturbed array were remaining after QC,
+ I removed the whole contrast.
+ If there were enough, I performed background correction, normalisation,
+ and probe summarisation using the rma function in the oligo 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Carvalho2010-xu"
+
+\end_inset
+
+ or affy 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Gautier2004-bx"
+
+\end_inset
+
+ package (depending on whether the object was a FeatureSet or AffyBatch,
+ respectively) using the corresponding platform design package.
+ I then mapped the probe set identifiers to Human Genome Nomenclature Consortium
+ (HGNC) symbols using the respective annotation packages (platform design
+ and annotation package see table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:ma-platforms"
+
+\end_inset
+
+).
+ I discarded probe identifiers mapping to more then one HGNC symbol, and
+ averaged multiple probe sets that belonged to the same HGNC symbol using
+ the avereps function in the limma 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Smyth2005-mw"
+
+\end_inset
+
+ package.
 \end_layout
 
 \begin_layout Standard
@@ -3214,6 +3272,13 @@ status open
 
 \begin_layout Plain Layout
 Microarray platforms used in the curated experiments
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:ma-platforms"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -3224,9 +3289,8 @@ Microarray platforms used in the curated experiments
 \begin_layout Plain Layout
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="18" columns="5">
+<lyxtabular version="3" rows="18" columns="4">
 <features rotate="0" tabularvalignment="middle">
-<column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
@@ -3264,15 +3328,6 @@ Platform design package
 
 \begin_layout Plain Layout
 Annotation package
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-# Genes
 \end_layout
 
 \end_inset
@@ -3315,15 +3370,6 @@ hgu95a.db
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
 </row>
 <row>
 <cell alignment="center" valignment="top" usebox="none">
@@ -3358,15 +3404,6 @@ pd.hg.u95b
 
 \begin_layout Plain Layout
 hgu95b.db
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
 \end_layout
 
 \end_inset
@@ -3409,15 +3446,6 @@ hgu95av2.db
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
 </row>
 <row>
 <cell alignment="center" valignment="top" usebox="none">
@@ -3452,15 +3480,6 @@ pd.hg.u133a
 
 \begin_layout Plain Layout
 hgu133a.db
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
 \end_layout
 
 \end_inset
@@ -3503,15 +3522,6 @@ hgu133b.db
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
 </row>
 <row>
 <cell alignment="center" valignment="top" usebox="none">
@@ -3546,15 +3556,6 @@ pd.hg.u133.plus.2
 
 \begin_layout Plain Layout
 hgu133plus2.db
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
 \end_layout
 
 \end_inset
@@ -3597,15 +3598,6 @@ hgu133a2.db
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
 </row>
 <row>
 <cell alignment="center" valignment="top" usebox="none">
@@ -3640,15 +3632,6 @@ pd.hg.u219
 
 \begin_layout Plain Layout
 hgu219.db
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
 \end_layout
 
 \end_inset
@@ -3691,15 +3674,6 @@ hugene10sttranscriptcluster.db
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
 </row>
 <row>
 <cell alignment="center" valignment="top" usebox="none">
@@ -3734,15 +3708,6 @@ pd.hugene.1.1.st.v1
 
 \begin_layout Plain Layout
 hugene11sttranscriptcluster.db
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
 \end_layout
 
 \end_inset
@@ -3785,15 +3750,6 @@ hugene20sttranscriptcluster.db
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
 </row>
 <row>
 <cell alignment="center" valignment="top" usebox="none">
@@ -3828,15 +3784,6 @@ pd.hugene.2.1.st
 
 \begin_layout Plain Layout
 hugene21sttranscriptcluster.db
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
 \end_layout
 
 \end_inset
@@ -3879,15 +3826,6 @@ huex10sttranscriptcluster.db
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
 </row>
 <row>
 <cell alignment="center" valignment="top" usebox="none">
@@ -3922,15 +3860,6 @@ pd.huex.1.0.st.v2
 
 \begin_layout Plain Layout
 huex10sttranscriptcluster.db
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
 \end_layout
 
 \end_inset
@@ -3973,15 +3902,6 @@ hthgu133a.db
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
 </row>
 <row>
 <cell alignment="center" valignment="top" usebox="none">
@@ -4016,15 +3936,6 @@ pd.ht.hg.u133.plus.pm
 
 \begin_layout Plain Layout
 ?
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
 \end_layout
 
 \end_inset
@@ -4067,15 +3978,6 @@ hta20sttranscriptcluster.db
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
 </row>
 </lyxtabular>
 
@@ -4087,14 +3989,6 @@ hta20sttranscriptcluster.db
 \end_inset
 
 
-\end_layout
-
-\begin_layout Subsubsection
-Quality control
-\end_layout
-
-\begin_layout Itemize
-RLE and NUSE, filters based on those scores
 \end_layout
 
 \begin_layout Subsubsection
@@ -4132,6 +4026,14 @@ Results
 
 \begin_layout Subsubsection
 A fixed R package to query ArrayExpress experiments
+\end_layout
+
+\begin_layout Subsubsection
+A Database of Pathway Perturbation Experiments
+\end_layout
+
+\begin_layout Itemize
+summary stats
 \end_layout
 
 \begin_layout Subsubsection
