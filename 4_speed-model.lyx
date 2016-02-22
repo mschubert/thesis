@@ -25,6 +25,7 @@
 \bibtex_command default
 \index_command default
 \paperfontsize default
+\spacing single
 \use_hyperref false
 \papersize default
 \use_geometry false
@@ -115,6 +116,22 @@ gex sigs said to be badly reproducible [we will show that in later section]
 \end_layout
 
 \begin_layout Standard
+
+\lang british
+There are numerous examples of using Gene Set Enrichment Analysis (GSEA)
+ for a set of signaling molecules in order to infer signaling activity.
+ Most of them, however, use the expression of those proteins directly as
+ a proxy for their activity.
+ In contrast to that, the SPEED platform extracted differentially expressed
+ genes upon pathway stimulation for a set of 11 pathways, and defined the
+ gene sets as those that were upregulated in each experiment.
+ We argue that using this footprint of signaling activity is a better proxy
+ than assuming that it is proportional to the expression of the proteins
+ involved in the signal transduction pathway, which assumes the latter accuratel
+y represent not only the protein levels but their activity.
+\end_layout
+
+\begin_layout Standard
 To our knowledge, the only similar efforts are the SPEED database (Parikh
  et al.
  2010) and two studies MCF10A breast signatures (Bild et al.
@@ -173,6 +190,47 @@ Extended version by Blüthgen lab: additional experiments and pathways
 Methods
 \end_layout
 
+\begin_layout Standard
+
+\lang british
+Gene lists were generated from the SPEED SQLite database (
+\begin_inset CommandInset href
+LatexCommand href
+name "http://speed.sys-bio.net/SPEED_db.zip"
+target "http://speed.sys-bio.net/SPEED_db.zip"
+
+\end_inset
+
+) and the author's Python query tools, with the following parameters specified:
+\end_layout
+
+\begin_layout Itemize
+
+\lang british
+Z-score cutoff: the top n% of upregulated genes
+\end_layout
+
+\begin_layout Itemize
+
+\lang british
+Total expression cutoff: the top m% of genes considering their basal expression
+ in each experiment
+\end_layout
+
+\begin_layout Itemize
+
+\lang british
+Experiment overlap: the percentage of experiments for which the other two
+ conditions must be met
+\end_layout
+
+\begin_layout Itemize
+
+\lang british
+Uniqueness: whether only genes should be returned that were unique to the
+ stimulation of a specific pathway
+\end_layout
+
 \begin_layout Subsection
 Results
 \end_layout
@@ -195,6 +253,10 @@ For the original SPEED publication [1], the authors suggested to use a constant
  where it is absent.
  This resulted in pathways that were highly correlated, as shown in figure
  1.
+\end_layout
+
+\begin_layout Subsubsection
+Separability-optimised Gene Sets
 \end_layout
 
 \begin_layout Standard
@@ -233,7 +295,16 @@ We calculated the raw basal GSEA scores for all cell lines using the gene
 \end_layout
 
 \begin_layout Standard
-Table 1: Parameter selection overview for each pathway.
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Parameter selection overview for each pathway.
  Z: Z-value cutoff (0.25-20), O: array overlap (20-80); E: overall expression
  cutoff (5-100), U: unique (+) or all (-) genes considered.
  Gene lists had to be between 50 and 250 genes to be considered, values
@@ -243,21 +314,1980 @@ Table 1: Parameter selection overview for each pathway.
  the one obtained by using the original lists.
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+
+\lang british
+\begin_inset Tabular
+<lyxtabular version="3" rows="13" columns="11">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell multirow="3" alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+pathway
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+cutoffs used
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+# genes in list
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+precision-recall AUC
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+all arrays
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+Z
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+O
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+E
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+U
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+opt
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+original
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+train
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+cv
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+opt
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+original
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+H2O2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+20
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+50
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+20
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
++
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+191
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+60
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+0.99
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+1.00
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\lang british
+0.99
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+0.66
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+IL-1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+20
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+60
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+20
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
++
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+75
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+141
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+0.91
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+0.99
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\lang british
+0.93
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+0.85
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+JAK-STAT
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+20
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+20
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+70
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
++
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+162
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+114
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+0.78
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+0.87
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\lang british
+0.81
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+0.68
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+MAPK_only
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+20
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+70
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+10
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+-
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+65
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+559
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+0.94
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+0.97
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\lang british
+0.95
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+0.46
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+MAPK_PI3K
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+15
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+20
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+-
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+171
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+118
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+0.82
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+0.89
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\lang british
+0.84
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+0.63
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+TLR
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+6.5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+40
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+50
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
++
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+78
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+181
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+0.88
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+0.91
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\lang british
+0.89
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+0.81
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+PI3K_only
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+15
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+20
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+30
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
++
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+227
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+67
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+0.80
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+0.97
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\lang british
+0.83
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+0.49
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+TGFB
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+20
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+20
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+60
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
++
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+119
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+142
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+0.78
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+0.88
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\lang british
+0.80
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+0.68
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+TNFa
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+1.5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+50
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+70
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+-
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+56
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+259
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+0.77
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+0.99
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\lang british
+0.81
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+0.66
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+VEGF
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+12
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+20
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+30
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
++
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+121
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+56
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+0.92
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+0.94
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\lang british
+0.92
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+0.84
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+Wnt
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+7.5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+30
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
++
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+195
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+83
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+0.93
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+0.94
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\lang british
+0.93
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang british
+0.65
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
-Table 2: Normalized GSEA scores for 1018 cell lines in the GDSC panel.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Correlation plots for GSEA scores per pathway across cell lines for the
+ original SPEED lists (panel a) and our separation-optimized version (panel
+ b).
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Obtaining Pathway Scores from Gene Sets
+\end_layout
+
+\begin_layout Standard
+
+\lang british
+We calculated the raw basal GSEA scores for all cell lines using the gene
+ lists obtained.
+ As we do not have a background set, we transformed the resulting bimodal
+ distribution for each pathway across all cell lines into a normal distribution
+ using a kernel density estimator (
+\shape italic
+kCDF
+\shape default
+ function from the R package 
+\shape italic
+sROC
+\shape default
+) followed by the transformation:
+\end_layout
+
+\begin_layout Standard
+
+\lang british
+\begin_inset Formula 
+\[
+log(x/(1-x))
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang british
+We calculated a linear regression for all cell lines and each pathway, with
+ tissues either as a blocking factor or calculating the associations for
+ each tissue separately.
+ We adjusted p-values by controlling the false discovery rate and visualised
+ the result as volcano plots and individual fits.
+ For separate fits between tissues, we only calculated associations that
+ had at least two sensitive cell lines (defined as it being in the top 10%
+ of responders, not 100x less sensitive than the most sensitive overall,
+ and having an IC50 below 1 uM).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Normalized GSEA scores for 1018 cell lines in the GDSC panel.
  Each row is a cell line (as indicated by its COSMIC ID), with the columns
  representing different pathways.
 \end_layout
 
-\begin_layout Standard
-Figure 1: Correlation plots for GSEA scores per pathway across cell lines
- for the original SPEED lists (panel a) and our separation-optimized version
- (panel b).
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Associations between Pathway Scores and Tissues
 \end_layout
 
 \begin_layout Standard
-Figure 2: Volcano plot of linear associations of inferred pathway activity
- within all tissues and drug response.
+
+\lang british
+As a control and sanity check, we compared the inferred pathway activation
+ scores between different tissues.
+ If the assigned scores per tissue are biologically meaningful, we would
+ expect to find well-established literature evidence for backing them up.
+ A heatmap overview of pathway activation scores is shown in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:tissue-heatmap"
+
+\end_inset
+
+.
+ Relating this to known biology, the scores seem well supported by previously
+ known evidence.
+ A couple of examples to illustrate this are listed below.
+\end_layout
+
+\begin_layout Standard
+
+\lang british
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang british
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\lang british
+Heatmap of inferred pathway activation scores for different tissues
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:tissue-heatmap"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\lang british
+JAK-STAT signalling is well-known to be upregulated in blood cancer cells
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Dutta2013-fg,Vainchenker2012-sv"
+
+\end_inset
+
+, including in particular AML 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Lee2012-ts,Danial2000-xd"
+
+\end_inset
+
+, CML 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Danial2000-xd"
+
+\end_inset
+
+, ALL 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Vainchenker2012-sv"
+
+\end_inset
+
+, and DLBC 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Gupta2012-zp"
+
+\end_inset
+
+.
+ This correlates well with the inferred activity scores for JAK-STAT signalling.
+ Similarly, TLR signalling has been shown to be induced by CpG oxydinucleotides
+ in B- (DLBC, MM) and dentritic myeloid, but not T-cells 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Rothenfusser2002-gi"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+
+\lang british
+High production of reactive oxygen species has been shown to occur in certain
+ mesotheliomas 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Kahlos1999-py"
+
+\end_inset
+
+, and gliomas 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Drukala2010-kj"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+
+\lang british
+TGFB 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Yamada1995-yi,Kjellman2000-om"
+
+\end_inset
+
+ and VEGF 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Reardon2008-ot"
+
+\end_inset
+
+ expression have been shown to be increased gliomas, correlating with malignancy
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Kjellman2000-om,Leon1996-zu"
+
+\end_inset
+
+.
+ Both were also increased in mesothelioma 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Kuwahara2001-ru,Aoe2006-vc"
+
+\end_inset
+
+, and VEGF in melanoma 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Rajabi2012-fj,Gajanin2010-ff"
+
+\end_inset
+
+ as well.
+\end_layout
+
+\begin_layout Itemize
+
+\lang british
+MAPK_only/MAPK_PI3K signalling seems to evenly distributed among non-blood
+ cancer tissues.
+ We found the highest activity of MAPK and MAPK_PI3K can be found in KIRC
+ and BLCA/PAAD, respectively.
+ However, the difference was a lot less apparent than for other pathways.
+\end_layout
+
+\begin_layout Subsubsection
+
+\lang british
+Pan-Cancer Drug Associations
+\end_layout
+
+\begin_layout Standard
+
+\lang british
+Linear associations of inferred pathway activity within all tissues and
+ drug response are shown in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:drug-assocs-2"
+
+\end_inset
+
+.
+ Negative regression slopes (left side of the graph, green) indicate sensitivity
+ markers, i.e.
+ a higher pathway activation score correlates with a lower IC50.
+ Positive regression slopes (right side, red) indicate resistance markers,
+ i.e.
+ higher activation scores correlate with higher IC50s.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Volcano plot of linear associations of inferred pathway activity within
+ all tissues and drug response.
  Tissue of origin used as a covarate in the regression.
  P-values FDR-adjusted.
  Negative regression slopes (left side of the graph, green) indicate sensitivity
@@ -268,10 +2298,296 @@ Figure 2: Volcano plot of linear associations of inferred pathway activity
  higher activation scores correlate with higher IC50s.
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
-Figure 3: Volcano plot of linear associations of inferred pathway activity
- for each tissue.
- Legend as in figure 2.
+
+\lang british
+Sensitivity markers:
+\end_layout
+
+\begin_layout Itemize
+
+\lang british
+RDEA119 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Iverson2009-uu"
+
+\end_inset
+
+, PD-0325901 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Ciuffreda2009-iz"
+
+\end_inset
+
+, and CI-1040 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Allen2003-pz"
+
+\end_inset
+
+ are all MEK inhibitors and are thus to be expected to be more effective
+ in cell lines where MAPK signalling is more active.
+ In fact, the strongest associations are between those drugs and MAPK_PI3K
+ signalling.
+ However, MAPK and PI3K are difficult to distinguish in expression response
+ due to pathway crosstalk 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Parikh2010-uj"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+
+\lang british
+BIBW2992 and Gefitinib showed higher efficacy with PI3K_only activity.
+ As both are are EGFR inhibitors and PI3K is known to cause resistance to
+ those 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Jeannot2014-av"
+
+\end_inset
+
+, this result is surprising because the association is stronger than with
+ MAPK_only or MAPK_PI3K.
+\end_layout
+
+\begin_layout Itemize
+
+\lang british
+We found sensitivity correlating with Wnt activity for the drugs Etoposide,
+ QS11, and GSK-650394.
+ QS11 modulates ARF activity and B-catenin localisation 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Zhang2007-fu"
+
+\end_inset
+
+, which may offer a treatment strategy for Wnt-driven tumours.
+ GSK-650394 targets SGK1, which is activated by Wnt/B-catenin signalling
+ and has been shown to inhibit ROS-induced apoptosis in liver cells 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Tao2013-sj"
+
+\end_inset
+
+.
+ Etoposide induces DNA damage and senescence, where this process may be
+ inhibited by negative feedback by SFRP1 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Elzi2012-mv"
+
+\end_inset
+
+ due to Wnt signalling.
+\end_layout
+
+\begin_layout Itemize
+
+\lang british
+FTI-277 is more effective when reactive oxygen response (H2O2) is active.
+ Farnesyl transferase inhibitors are known to induce DNA damage via ROS
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Pan2005-on"
+
+\end_inset
+
+, which may cause growth arrest or apoptosis in cells that already suffer
+ ROS damage.
+\end_layout
+
+\begin_layout Itemize
+
+\lang british
+AZD6482 is a PI3K inhibitor 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Nylander2012-cl"
+
+\end_inset
+
+, for which cells show increased sensitivity in our study when TNFa signalling
+ is active.
+ While the latter can be both oncogenic and tumour-suppressive 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Pikarsky2006-ba"
+
+\end_inset
+
+, it has been shown that PI3K activation is necessary for NFKb-mediated
+ cell survival in DLBC 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Kloo2011-ut"
+
+\end_inset
+
+ and the combination of PI3K inhibition and active TNFa causes apoptosis
+ in vitiligous keratinocytes 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Kim2007-db"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+
+\lang british
+TNFalpha 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Sleijfer1998-vs"
+
+\end_inset
+
+ signalling has been shown to be increased after Bleomycin treatment, thereby
+ mediating cytotoxicity.
+ It can be hypothesised that if this pathway is active in cell lines, they
+ are more likely to be affected by this.
+\end_layout
+
+\begin_layout Standard
+
+\lang british
+Resistance markers:
+\end_layout
+
+\begin_layout Itemize
+
+\lang british
+EHT 1864 is a Rac-family GTPase inhibitor 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Shutes2007-mi"
+
+\end_inset
+
+, and MAPK_PI3K signalling is associated with resistance to this drug.
+ Rac1 is known to be involved in MAPK signalling specifically for cancer
+ development 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Khosravi-Far1995-mk"
+
+\end_inset
+
+, so cells with a higher MAPK activity may be less susceptible to Rac1 inhibitio
+n.
+\end_layout
+
+\begin_layout Standard
+
+\lang british
+To give an example of the relationship between inferred pathway activity
+ and drug response for different tissues, a linear fit of MAPK_PI3K activity
+ is shown in relation to the log IC50 of RDEA119 in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:RDEA-MAPK"
+
+\end_inset
+
+.
+ For low grad glioma (LGG), neuroblastoma (NB), and cervical carcinoma,
+ the inferred activity explains about a third of the total variance in drug
+ response.
+ This is slightly lower for the rest of tissues, with 8 tissues showing
+ a significant association between the drug and the pathway.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang british
+compare to a mutation here?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Tissue-specific Drug Associations
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\lang british
+Associations between inferred pathway activity and drug response for individual
+ tissues.
+ FDR set at 20%.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:tissue-drug-assocs"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang british
+In addition to calculating the strongest associations within all tissues,
+ we also calculated the ones for each tissue separately, associations for
+ which are shown in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:tissue-drug-assocs"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsection
@@ -299,7 +2615,7 @@ Issues with the platform: arbitrary cutoffs, highly correlated sets
 \end_layout
 
 \begin_layout Itemize
-not meaningful drug associations
+not meaningful drug associations (well, they seem quite ok??!)
 \end_layout
 
 \begin_layout Section
@@ -419,8 +2735,24 @@ Results
 A fixed R package to query ArrayExpress experiments
 \end_layout
 
+\begin_layout Subsubsection
+Batch correction results
+\end_layout
+
+\begin_layout Itemize
+not sufficient to correct global patterns
+\end_layout
+
 \begin_layout Subsection
 Discussion
+\end_layout
+
+\begin_layout Subsubsection
+Value of curated perturbation experiments
+\end_layout
+
+\begin_layout Itemize
+over what was already there
 \end_layout
 
 \begin_layout Subsubsection
@@ -441,6 +2773,17 @@ need to summarize by gene symbols, different probes on different platforms
 
 \begin_layout Itemize
 this doesn't work, we need bias by prior knowledge
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "references"
+options "plain"
+
+\end_inset
+
+
 \end_layout
 
 \end_body
