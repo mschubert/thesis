@@ -2182,6 +2182,18 @@ Wnt
 \end_layout
 
 \begin_layout Subsubsection
+Overlap of Gene Lists
+\end_layout
+
+\begin_layout Itemize
+old with new cutoffs
+\end_layout
+
+\begin_layout Itemize
+new with other gene lists (GO, pathway)
+\end_layout
+
+\begin_layout Subsubsection
 Obtaining Pathway Scores from Gene Sets
 \end_layout
 
@@ -3992,23 +4004,6 @@ hta20sttranscriptcluster.db
 \end_layout
 
 \begin_layout Subsubsection
-Batch Effects and Correction
-\end_layout
-
-\begin_layout Itemize
-Sources of variation: by lab, platform, cell types, pathway perturbed
-\end_layout
-
-\begin_layout Itemize
-Batch correction methods: Combat, DWD
-\end_layout
-
-\begin_layout Itemize
-we don't really see anything when integrating many exps on the global patterns
- (neither for z-scores)
-\end_layout
-
-\begin_layout Subsubsection
 Transformation of Z-scores
 \end_layout
 
@@ -4028,24 +4023,221 @@ Results
 A fixed R package to query ArrayExpress experiments
 \end_layout
 
+\begin_layout Itemize
+how many exps the package could process before+after patches
+\end_layout
+
 \begin_layout Subsubsection
 A Database of Pathway Perturbation Experiments
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/4.2_size.pdf
+	lyxscale 50
+	width 80col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Size of the data set in comparison to the two published methods
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
 summary stats
 \end_layout
 
-\begin_layout Subsubsection
-Batch correction results
+\begin_layout Itemize
+include number of pathways, contrasts, arrays here
 \end_layout
 
 \begin_layout Itemize
-not sufficient to correct global patterns
+compared to speed1, gatza, speed_martina
+\end_layout
+
+\begin_layout Itemize
+gatza: use only their pathways (and not all sigs in ng2014)?
+\end_layout
+
+\begin_layout Subsubsection
+A linear Transformation for inferring Signaling Activity
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/4.2_tsne.pdf
+	lyxscale 50
+	width 120col%
+	BoundingBox 70bp 150bp 771bp 440bp
+	clip
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+asd
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/4.2_heatmap.pdf
+	lyxscale 50
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+asd *compare this to speed_fullmat heatmap?*
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+the actual matrix we get
+\end_layout
+
+\begin_layout Itemize
+the scores for TCGA and GDSC? (more in next chapter - focus on sigs only
+ here - ?-> but I need for stability anyway)
+\end_layout
+
+\begin_layout Itemize
+wordle cloud of the genes selected in the bootstraps? (or: just GSEA with
+ p-values?)
+\end_layout
+
+\begin_layout Itemize
+GO associations with the genes selected?
+\end_layout
+
+\begin_layout Subsubsection
+Stability of scores
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/4.2_stability.pdf
+	width 80col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Variance of pathway scores in different cell lines vs.
+ bootstraps of input experiments for different pathways
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+this is confidence how much scores change with different input experiments
+\end_layout
+
+\begin_layout Itemize
+over 5x, we should be fine; 2x might be an issue
+\end_layout
+
+\begin_layout Itemize
+spell out formulas here
 \end_layout
 
 \begin_layout Subsection
 Discussion
+\end_layout
+
+\begin_layout Itemize
+too much variability for batch correction: each sample would be its own
+ batch (lab, platform, cells, etc.)
 \end_layout
 
 \begin_layout Subsubsection
