@@ -103,43 +103,15 @@ Minimal Assumptions - Drug Response Signature Matching
 \end_layout
 
 \begin_layout Section
-Matching a Cell Death Signature
-\end_layout
-
-\begin_layout Itemize
-Synthetic lethal network?
-\end_layout
-
-\begin_layout Subsection
-Aim
-\end_layout
-
-\begin_layout Subsection
 Introduction
-\end_layout
-
-\begin_layout Subsection
-Methods
-\end_layout
-
-\begin_layout Subsection
-Results
-\end_layout
-
-\begin_layout Subsection
-Discussion
 \end_layout
 
 \begin_layout Section
-Predicting sensitising Agents
+A Pan-Cancer View of Drug Sensitisation
 \end_layout
 
 \begin_layout Subsection
 Aim
-\end_layout
-
-\begin_layout Subsection
-Introduction
 \end_layout
 
 \begin_layout Itemize
@@ -202,7 +174,91 @@ the issue we encountered
 how to solve it
 \end_layout
 
+\begin_layout Subsection
+Discussion
+\end_layout
+
+\begin_layout Itemize
+drug-level analysis is great, but:
+\end_layout
+
+\begin_layout Itemize
+might have off-target effects
+\end_layout
+
+\begin_layout Itemize
+and we don't take any bio into account
+\end_layout
+
 \begin_layout Section
+Tissue-specific synergistic compounds
+\end_layout
+
+\begin_layout Subsection
+Aim
+\end_layout
+
+\begin_layout Itemize
+if we take GDSC-only drugs, we have 150x150
+\end_layout
+
+\begin_layout Subsection
+Methods
+\end_layout
+
+\begin_layout Subsubsection
+Quality Control of Signatures
+\end_layout
+
+\begin_layout Itemize
+diff between toxicity and targeted signature
+\end_layout
+
+\begin_layout Subsubsection
+Pan-Cancer Models
+\end_layout
+
+\begin_layout Subsubsection
+Tissue-specific Models
+\end_layout
+
+\begin_layout Subsubsection
+Models for Individual Cell Lines
+\end_layout
+
+\begin_layout Subsection
+Results
+\end_layout
+
+\begin_layout Subsubsection
+Choosing the right Model
+\end_layout
+
+\begin_layout Itemize
+lots of different ways to derive them, no idea what is best
+\end_layout
+
+\begin_layout Itemize
+optimisation modelling (ILP)
+\end_layout
+
+\begin_layout Subsubsection
+Models including a Covariate
+\end_layout
+
+\begin_layout Itemize
+pan-can assocs
+\end_layout
+
+\begin_layout Itemize
+the issue we encountered
+\end_layout
+
+\begin_layout Itemize
+how to solve it
+\end_layout
+
+\begin_layout Subsection
 Discussion
 \end_layout
 
