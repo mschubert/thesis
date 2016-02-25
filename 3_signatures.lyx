@@ -106,6 +106,14 @@ Minimal Assumptions - Drug Response Signature Matching
 Matching a Cell Death Signature
 \end_layout
 
+\begin_layout Itemize
+Synthetic lethal network?
+\end_layout
+
+\begin_layout Subsection
+Aim
+\end_layout
+
 \begin_layout Subsection
 Introduction
 \end_layout
@@ -123,11 +131,11 @@ Discussion
 \end_layout
 
 \begin_layout Section
-Predicting synergistic Drug Combinations
+Predicting sensitising Agents
 \end_layout
 
-\begin_layout Itemize
-Synthetic lethal network?
+\begin_layout Subsection
+Aim
 \end_layout
 
 \begin_layout Subsection
@@ -194,7 +202,7 @@ the issue we encountered
 how to solve it
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Discussion
 \end_layout
 
