@@ -103,43 +103,15 @@ Minimal Assumptions - Drug Response Signature Matching
 \end_layout
 
 \begin_layout Section
-Using MANTRA in a KRAS-driven Mouse Tumour
+Matching a Cell Death Signature
 \end_layout
 
 \begin_layout Subsection
 Introduction
 \end_layout
 
-\begin_layout Itemize
-bio behind MJ's model
-\end_layout
-
 \begin_layout Subsection
 Methods
-\end_layout
-
-\begin_layout Subsubsection
-Two-Tailed GSEA using MANTRA
-\end_layout
-
-\begin_layout Itemize
-take the top- and bottom genes of the sig
-\end_layout
-
-\begin_layout Subsubsection
-Orthology Mapping
-\end_layout
-
-\begin_layout Itemize
-Work for Martin Jechlinger: two tailed GSEA for top/bottom MANTRA hits
-\end_layout
-
-\begin_layout Subsubsection
-Predicting a Compound that stops Transformation
-\end_layout
-
-\begin_layout Itemize
-basically, the results where the PI3K inhibitor came out
 \end_layout
 
 \begin_layout Subsection
@@ -151,7 +123,7 @@ Discussion
 \end_layout
 
 \begin_layout Section
-Predicting Effective Drug Combinations
+Predicting synergistic Drug Combinations
 \end_layout
 
 \begin_layout Itemize

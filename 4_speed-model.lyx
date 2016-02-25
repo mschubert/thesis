@@ -92,10 +92,6 @@ Inferring Pathway Activity from Gene Expression
 \end_layout
 
 \begin_layout Section
-Pathway-responsive genes: The SPEED Platform
-\end_layout
-
-\begin_layout Subsection
 Introduction
 \end_layout
 
@@ -147,6 +143,115 @@ To our knowledge, the only similar efforts are the SPEED database (Parikh
  We can not claim that those signatures are transferable to other cancer
  types, nor that they don’t suffer from the same drawbacks as expression
  signatures in terms of general stability and reproducibility.
+\end_layout
+
+\begin_layout Subsection
+some heading
+\end_layout
+
+\begin_layout Standard
+In the previous section, I have already argued that for inferring pathway
+ activity from gene expression, we need a platform as provided by [cite]:
+ using stimulation-response genes is much more in line with common knowledge
+ about how signaling and pathway activation works as opposed to pathway
+ expression.
+ I have, however, also outlined the potential drawbacks of the method in
+ the previous discussion section.
+\end_layout
+
+\begin_layout Standard
+To my knowledge and after thorough review of the available literature, there
+ are only lines of publications that made use of this reasoning.
+ One is the SPEED platform that I already covered, and the other was published
+ about the same time by [gatza].
+ Both have got their good and bad points, that I outline below.
+ Even given their availability, I think that taking the idea of pathway-response
+ genes, extend the data set used, and properly benchmark it against other
+ available pathway methods has merit.
+\end_layout
+
+\begin_layout Standard
+When deciding to choose between the two, it is good to remind ourselves
+ about the goal we have in mind, the bigger picture, so to speak.
+ That goal is to derive generally applicable signatures of pathway activation
+ that are helpful and predictive of drug response in cell lines, as well
+ as potentially in a clinical settings (e.g.
+ in terms of associations with patient survival).
+\end_layout
+
+\begin_layout Subsection
+SPEED
+\end_layout
+
+\begin_layout Standard
+The original SPEED platform consists of signatures of 11 pathways, derived
+ and comprised of the genes responsive to a total of XX contrasts (the perturbat
+ions between a control and a perturbed condition).
+ They use a consensus gene signature across multiple experiments, perturbagens,
+ and other conditions to arrive at a gene list that corresponds to pathway
+ activation in a wide condition.
+ Of course, by doing this average, they might lose tissue-specific or condition-
+specific gene expression patterns.
+\end_layout
+
+\begin_layout Standard
+The authors performed no analysis in terms of either drug associations,
+ patient survival, or really anything else besides the overlap of their
+ pathway-associated genes with Gene Ontology categories and each other.
+ It has not been applied in a cancer-specific context before, except in
+ the previous chapter.
+\end_layout
+
+\begin_layout Subsection
+Gatza
+\end_layout
+
+\begin_layout Standard
+Apart from the SPEED platform, there was a second string of articles published
+ between 2009 and 2014, the main author of which developed gene-response
+ signatures using a single condition (time point, concentration, agent)
+ but three biological replicates of perturbations in the MCF10A cell line.
+ The authors validated their signatures using correlation of different pathways
+ or genes expressed as it was available in literature.
+ The first article in this series is about a small set of signatures 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Bild2005-tk"
+
+\end_inset
+
+ published in Nature in 2005.
+ Without claiming a direct connection, one of the senior authors on this
+ article had his medical license revoked and multiple articles retracted
+ because of irreproducibility of results, as investigated by 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Baggerly2009-xc"
+
+\end_inset
+
+.
+ A later generation of signatures [gatza2009] still had this author involved,
+ but the signatures themselves seem to be well documented and the raw data
+ was deposited in a public microarray respository.
+ Finally, in 2014 the main author [gatza2014] linked the inferred pathway
+ activity to drug response in a handful of breast cancer cell lines.
+\end_layout
+
+\begin_layout Standard
+The MCF10A cell line itself is non-cancerous, so it will represent the behaviour
+ of cells without cancer-causing molecular alterations.
+ However, while the data in general seems to be of high quality, I am not
+ confident to make any statements about the genes responsive in this cell
+ line can be extrapolated to other tissues.
+ It has also previously been shown that signatures generated in a certain
+ lab correlate more with the lab they were produced in than the biological
+ condition [cite], which we can not control for if there is only one lab
+ producing them.
+\end_layout
+
+\begin_layout Section
+Pathway-responsive genes: The SPEED Platform
 \end_layout
 
 \begin_layout Subsection
@@ -2882,111 +2987,6 @@ Improving the Model
 \end_layout
 
 \begin_layout Subsection
-Introduction
-\end_layout
-
-\begin_layout Standard
-In the previous section, I have already argued that for inferring pathway
- activity from gene expression, we need a platform as provided by [cite]:
- using stimulation-response genes is much more in line with common knowledge
- about how signaling and pathway activation works as opposed to pathway
- expression.
- I have, however, also outlined the potential drawbacks of the method in
- the previous discussion section.
-\end_layout
-
-\begin_layout Standard
-To my knowledge and after thorough review of the available literature, there
- are only lines of publications that made use of this reasoning.
- One is the SPEED platform that I already covered, and the other was published
- about the same time by [gatza].
- Both have got their good and bad points, that I outline below.
- Even given their availability, I think that taking the idea of pathway-response
- genes, extend the data set used, and properly benchmark it against other
- available pathway methods has merit.
-\end_layout
-
-\begin_layout Standard
-When deciding to choose between the two, it is good to remind ourselves
- about the goal we have in mind, the bigger picture, so to speak.
- That goal is to derive generally applicable signatures of pathway activation
- that are helpful and predictive of drug response in cell lines, as well
- as potentially in a clinical settings (e.g.
- in terms of associations with patient survival).
-\end_layout
-
-\begin_layout Subsubsection
-SPEED
-\end_layout
-
-\begin_layout Standard
-The original SPEED platform consists of signatures of 11 pathways, derived
- and comprised of the genes responsive to a total of XX contrasts (the perturbat
-ions between a control and a perturbed condition).
- They use a consensus gene signature across multiple experiments, perturbagens,
- and other conditions to arrive at a gene list that corresponds to pathway
- activation in a wide condition.
- Of course, by doing this average, they might lose tissue-specific or condition-
-specific gene expression patterns.
-\end_layout
-
-\begin_layout Standard
-The authors performed no analysis in terms of either drug associations,
- patient survival, or really anything else besides the overlap of their
- pathway-associated genes with Gene Ontology categories and each other.
- It has not been applied in a cancer-specific context before, except in
- the previous chapter.
-\end_layout
-
-\begin_layout Subsubsection
-Gatza
-\end_layout
-
-\begin_layout Standard
-Apart from the SPEED platform, there was a second string of articles published
- between 2009 and 2014, the main author of which developed gene-response
- signatures using a single condition (time point, concentration, agent)
- but three biological replicates of perturbations in the MCF10A cell line.
- The authors validated their signatures using correlation of different pathways
- or genes expressed as it was available in literature.
- The first article in this series is about a small set of signatures 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Bild2005-tk"
-
-\end_inset
-
- published in Nature in 2005.
- Without claiming a direct connection, one of the senior authors on this
- article had his medical license revoked and multiple articles retracted
- because of irreproducibility of results, as investigated by 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Baggerly2009-xc"
-
-\end_inset
-
-.
- A later generation of signatures [gatza2009] still had this author involved,
- but the signatures themselves seem to be well documented and the raw data
- was deposited in a public microarray respository.
- Finally, in 2014 the main author [gatza2014] linked the inferred pathway
- activity to drug response in a handful of breast cancer cell lines.
-\end_layout
-
-\begin_layout Standard
-The MCF10A cell line itself is non-cancerous, so it will represent the behaviour
- of cells without cancer-causing molecular alterations.
- However, while the data in general seems to be of high quality, I am not
- confident to make any statements about the genes responsive in this cell
- line can be extrapolated to other tissues.
- It has also previously been shown that signatures generated in a certain
- lab correlate more with the lab they were produced in than the biological
- condition [cite], which we can not control for if there is only one lab
- producing them.
-\end_layout
-
-\begin_layout Subsection
 Methods
 \end_layout
 
@@ -4196,6 +4196,203 @@ asd *compare this to speed_fullmat heatmap?* -- *precision-recall curves
 
 \end_layout
 
+\begin_layout Itemize
+precision-recall curves for all methods, plot per pathway
+\end_layout
+
+\begin_layout Itemize
+linear associations and/or heatmaps from S1?
+\end_layout
+
+\begin_layout Subsubsection
+Pathway scores in basal Expression
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/4.2_cor_speed-matrix.pdf
+	lyxscale 50
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Signaling Footprints
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Stability of Scores
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/4.2_stability.pdf
+	lyxscale 50
+	width 80col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Variance of pathway scores in different cell lines vs.
+ bootstraps of input experiments for different pathways
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+this is confidence how much scores change with different input experiments
+\end_layout
+
+\begin_layout Itemize
+over 5x, we should be fine; 2x might be an issue
+\end_layout
+
+\begin_layout Itemize
+spell out formulas here
+\end_layout
+
+\begin_layout Itemize
+maybe do another plot for TCGA (more variability in scores -> higher numbers?)
+\end_layout
+
+\begin_layout Subsection
+Discussion
+\end_layout
+
+\begin_layout Itemize
+too much variability for batch correction: each sample would be its own
+ batch (lab, platform, cells, etc.)
+\end_layout
+
+\begin_layout Subsubsection
+Value of curated perturbation experiments
+\end_layout
+
+\begin_layout Itemize
+over what was already there
+\end_layout
+
+\begin_layout Subsubsection
+Challenges when integrating different data sets
+\end_layout
+
+\begin_layout Itemize
+biases by platform
+\end_layout
+
+\begin_layout Itemize
+imputation vs selecting common subset
+\end_layout
+
+\begin_layout Itemize
+need to summarize by gene symbols, different probes on different platforms
+\end_layout
+
+\begin_layout Itemize
+this doesn't work, we need bias by prior knowledge
+\end_layout
+
+\begin_layout Section
+Inferred Pathway Scores by different Methods
+\end_layout
+
+\begin_layout Subsection
+Methods
+\end_layout
+
+\begin_layout Itemize
+how I actually calculate the different scores for different methods
+\end_layout
+
+\begin_layout Subsection
+Results
+\end_layout
+
+\begin_layout Subsubsection
+Recall of Perturbations for different Pathway Methods
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/4.2_recall_speed-matrix.pdf
+	lyxscale 50
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+asd *compare this to speed_fullmat heatmap?* -- *precision-recall curves
+ for all pathways??? => would be nice* (but then to compare other pathway
+ methods as well - should rather put this in the next chapter!!)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 \begin_inset Float figure
 wide false
@@ -4467,51 +4664,8 @@ would be nice to have AUCs for each curve here
 
 \end_layout
 
-\begin_layout Itemize
-precision-recall curves for all methods, plot per pathway
-\end_layout
-
-\begin_layout Itemize
-linear associations and/or heatmaps from S1?
-\end_layout
-
 \begin_layout Subsubsection
 Pathway Scores in basal Expression
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename figures/4.2_cor_speed-matrix.pdf
-	lyxscale 50
-	width 100col%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Signaling Footprints
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -4784,97 +4938,8 @@ scores of different methods
 correlation matrices from S1?
 \end_layout
 
-\begin_layout Subsubsection
-Stability of Scores
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename figures/4.2_stability.pdf
-	lyxscale 50
-	width 80col%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Variance of pathway scores in different cell lines vs.
- bootstraps of input experiments for different pathways
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-this is confidence how much scores change with different input experiments
-\end_layout
-
-\begin_layout Itemize
-over 5x, we should be fine; 2x might be an issue
-\end_layout
-
-\begin_layout Itemize
-spell out formulas here
-\end_layout
-
-\begin_layout Itemize
-maybe do another plot for TCGA (more variability in scores -> higher numbers?)
-\end_layout
-
 \begin_layout Subsection
 Discussion
-\end_layout
-
-\begin_layout Itemize
-too much variability for batch correction: each sample would be its own
- batch (lab, platform, cells, etc.)
-\end_layout
-
-\begin_layout Subsubsection
-Value of curated perturbation experiments
-\end_layout
-
-\begin_layout Itemize
-over what was already there
-\end_layout
-
-\begin_layout Subsubsection
-Challenges when integrating different data sets
-\end_layout
-
-\begin_layout Itemize
-biases by platform
-\end_layout
-
-\begin_layout Itemize
-imputation vs selecting common subset
-\end_layout
-
-\begin_layout Itemize
-need to summarize by gene symbols, different probes on different platforms
-\end_layout
-
-\begin_layout Itemize
-this doesn't work, we need bias by prior knowledge
 \end_layout
 
 \begin_layout Standard

@@ -81,13 +81,37 @@ status open
 this is basically the main speed2 paper
 \end_layout
 
+\begin_layout Plain Layout
+.
+\end_layout
+
+\begin_layout Plain Layout
+split this in:
+\end_layout
+
+\begin_layout Plain Layout
+- tcga mutations
+\end_layout
+
+\begin_layout Plain Layout
+- gdsc drug assocs
+\end_layout
+
+\begin_layout Plain Layout
+- tcga survival
+\end_layout
+
+\begin_layout Plain Layout
+sections
+\end_layout
+
 \end_inset
 
 
 \end_layout
 
 \begin_layout Part
-Applications to Drug Response and Survival
+Functional Relevance of different Pathway Methods
 \end_layout
 
 \begin_layout Author
