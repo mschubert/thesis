@@ -162,7 +162,7 @@ Introduction
 \end_layout
 
 \begin_layout Section
-Pathways and Drug Response
+Pathways and Cell Line Drug Response
 \end_layout
 
 \begin_layout Subsection
@@ -249,100 +249,8 @@ definition of drivers
 do drug assocs for mutations
 \end_layout
 
-\begin_layout Subsubsection
-Patient Survival
-\end_layout
-
-\begin_layout Itemize
-where data comes from
-\end_layout
-
-\begin_layout Itemize
-again: unbiased approach = spurious results
-\end_layout
-
-\begin_layout Paragraph
-Measuring Survival Times
-\end_layout
-
-\begin_layout Itemize
-OS, PFS
-\end_layout
-
-\begin_layout Itemize
-how the data we get from the TCGA/ICGC looks like
-\end_layout
-
-\begin_layout Paragraph
-Statistical Methods
-\end_layout
-
-\begin_layout Itemize
-coxph, AFT + assumptions
-\end_layout
-
-\begin_layout Paragraph
-Impact of Driver Mutations
-\end_layout
-
-\begin_layout Itemize
-problem of multiple testing
-\end_layout
-
-\begin_layout Itemize
-definition of drivers
-\end_layout
-
-\begin_layout Itemize
-do drug assocs for mutations
-\end_layout
-
-\begin_layout Paragraph
-Transcription Factor Activities
-\end_layout
-
-\begin_layout Itemize
-do the TF scores make sense for tissues?
-\end_layout
-
-\begin_layout Itemize
-chea results on TCGA data
-\end_layout
-
 \begin_layout Paragraph
 Pathway Methods
-\end_layout
-
-\begin_layout Subsubsection
-Drug repurposing
-\end_layout
-
-\begin_layout Paragraph
-Matching Drug and Disease Signatures
-\end_layout
-
-\begin_layout Itemize
-MSigDB
-\end_layout
-
-\begin_layout Itemize
-maybe mention: 2 sigs to match 1 disease
-\end_layout
-
-\begin_layout Itemize
-MANTRA
-\end_layout
-
-\begin_layout Itemize
-DvD
-\end_layout
-
-\begin_layout Paragraph
-Predicting Drug Combinations
-\end_layout
-
-\begin_layout Itemize
-maybe mention: 2 sigs to match 1 disease (same or in prev?)
 \end_layout
 
 \begin_layout Subsection
@@ -401,10 +309,6 @@ with any of the pathway gene sets
 implementations
 \end_layout
 
-\begin_layout Subsubsection
-Pathway Methods Beyond GSEA
-\end_layout
-
 \begin_layout Itemize
 limitations to the set
 \end_layout
@@ -418,11 +322,11 @@ While GSEA is able to detect groups of genes that are differentially expressed
  somewhere on the periphery.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Subsubsection
 SPIA
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Subsubsection
 Pathifier
 \end_layout
 
@@ -433,7 +337,7 @@ Pathifier takes as input a gene set that could represent a pathway or GO
  flow through the nodes in the network using Principal Curves.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Subsubsection
 PARADIGM
 \end_layout
 
@@ -494,7 +398,7 @@ available methods are shite
 \end_layout
 
 \begin_layout Section
-Pathways and Patient Survival
+Pathways and primary Tumours
 \end_layout
 
 \begin_layout Subsection
@@ -542,6 +446,62 @@ more cohorts
 horrible metadata
 \end_layout
 
+\begin_layout Itemize
+where data comes from
+\end_layout
+
+\begin_layout Itemize
+again: unbiased approach = spurious results
+\end_layout
+
+\begin_layout Subsubsection
+Measuring Survival Times
+\end_layout
+
+\begin_layout Itemize
+OS, PFS
+\end_layout
+
+\begin_layout Itemize
+how the data we get from the TCGA/ICGC looks like
+\end_layout
+
+\begin_layout Subsubsection
+Statistical Methods
+\end_layout
+
+\begin_layout Itemize
+coxph, AFT + assumptions
+\end_layout
+
+\begin_layout Subsubsection
+Impact of Driver Mutations
+\end_layout
+
+\begin_layout Itemize
+problem of multiple testing
+\end_layout
+
+\begin_layout Itemize
+definition of drivers
+\end_layout
+
+\begin_layout Itemize
+do drug assocs for mutations
+\end_layout
+
+\begin_layout Subsubsection
+Transcription Factor Activities
+\end_layout
+
+\begin_layout Itemize
+do the TF scores make sense for tissues?
+\end_layout
+
+\begin_layout Itemize
+chea results on TCGA data
+\end_layout
+
 \begin_layout Subsection
 Discussion
 \end_layout
@@ -576,6 +536,34 @@ Projection from landmarks to full microarray gene sets
 
 \begin_layout Itemize
 Controversy about publication (there is still no paper)
+\end_layout
+
+\begin_layout Subsubsection
+Matching Drug and Disease Signatures
+\end_layout
+
+\begin_layout Itemize
+MSigDB
+\end_layout
+
+\begin_layout Itemize
+maybe mention: 2 sigs to match 1 disease
+\end_layout
+
+\begin_layout Itemize
+MANTRA
+\end_layout
+
+\begin_layout Itemize
+DvD
+\end_layout
+
+\begin_layout Subsubsection
+Predicting Drug Combinations
+\end_layout
+
+\begin_layout Itemize
+maybe mention: 2 sigs to match 1 disease (same or in prev?)
 \end_layout
 
 \begin_layout Subsection
