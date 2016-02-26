@@ -338,9 +338,6 @@ We matched our defined set of pathways to the publicly available pathway
  2011) and KEGG (Kanehisa & Goto 2000), and Gene Ontology (GO) (Gene Ontology
  Consortium 2004) categories (for the detailed mapping, see table S0), to
  obtain a uniform set across pathway resources that makes them comparable.
- We calculated pathway scores as raw gene set enrichment (GSEA) scores that
- we transformed into a normal distribution using a kernel density estimator
- (R package sROC) and a normal transformation.
  
 \end_layout
 
