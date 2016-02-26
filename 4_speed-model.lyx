@@ -4337,7 +4337,7 @@ this doesn't work, we need bias by prior knowledge
 \end_layout
 
 \begin_layout Section
-Inferred Pathway Scores by different Methods
+Pathway Scores by different Methods
 \end_layout
 
 \begin_layout Subsection
@@ -4887,7 +4887,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename figures/4.2_cor_pathifier.pdf
+	filename figures/4.2_cor_paradigm.pdf
 	lyxscale 50
 	width 100col%
 

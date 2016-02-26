@@ -1867,5 +1867,16 @@ When looking at sets of mutations instead of individual ones, the occurrence
  it induces in the cellular signaling network.
 \end_layout
 
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "references"
+options "plain"
+
+\end_inset
+
+
+\end_layout
+
 \end_body
 \end_document

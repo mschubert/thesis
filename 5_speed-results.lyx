@@ -329,39 +329,6 @@ Each column of the SPEED matrix corresponds to a plane in gene expression
 \end_layout
 
 \begin_layout Subsection
-GDSC and TCGA data
-\end_layout
-
-\begin_layout Standard
-We used the GDSC data published in (Iorio2015, in revision), comprised of
- molecular data for 1,001 cell lines and 265 anticancer drugs, specifically
- microarray gene expression data and the IC50 values for each drug-cell
- line combination.
-\end_layout
-
-\begin_layout Standard
-For TCGA data, we used the Firehose tool from the BROAD institute (http://gdac.br
-oadinstitute.org/) to download data labelled level 3 RNA-seq v2.
- We extracted the raw counts from the text files for each gene, discarded
- those that did not have a valid HGNC symbol, and averaged expression levels
- where more than one row corresponded to a given gene.
- We then performed a voom transformation (limma package, BioConductor) for
- each TCGA study separately, to be able to use linear modeling techniques
- with the count-based RNA-seq data.
- The data used corresponds to 00 tissues and a total of 00000 tumor and
- 0000 matched normal samples.
-\end_layout
-
-\begin_layout Standard
-Also from Firehose we downloaded clinical data for each TCGA patient in
- the same cohorts as above.
- We extracted the vital status and used known survival time or known time
- of last follow-up as the survival time for the downstream analyses.
- The overlap of TCGA data where we could obtain both mRNA expression levels
- as well as survival times is 0000 distributed across 00 tissues.
-\end_layout
-
-\begin_layout Subsection
 Pathway and Gene Ontology scores
 \end_layout
 
@@ -945,6 +912,17 @@ status open
 \begin_layout Plain Layout
 as per Julio's comment: limitations,future directions
 \end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "references"
+options "plain"
 
 \end_inset
 

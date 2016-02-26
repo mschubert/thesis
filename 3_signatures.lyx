@@ -99,7 +99,7 @@ split out intro to separate section?
 \end_layout
 
 \begin_layout Part
-Minimal Assumptions - Drug Response Signature Matching
+Modeling Drug Interactions
 \end_layout
 
 \begin_layout Section
@@ -272,6 +272,17 @@ might have off-target effects
 
 \begin_layout Itemize
 and we don't take any bio into account
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "references"
+options "plain"
+
+\end_inset
+
+
 \end_layout
 
 \end_body

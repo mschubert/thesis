@@ -161,16 +161,8 @@ Gene Expression Methods using an unbiased Approach
 Introduction
 \end_layout
 
-\begin_layout Section
-Pathways and Cell Line Drug Response
-\end_layout
-
 \begin_layout Subsection
-Aim
-\end_layout
-
-\begin_layout Subsection
-Introduction
+Data sets
 \end_layout
 
 \begin_layout Subsubsection
@@ -191,222 +183,6 @@ status 2002
 
 \begin_layout Itemize
 now: new dataset
-\end_layout
-
-\begin_layout Subsubsection
-From Genes to Gene Sets
-\end_layout
-
-\begin_layout Paragraph
-Gene Ontology
-\end_layout
-
-\begin_layout Paragraph
-Pathway Databases
-\end_layout
-
-\begin_layout Itemize
-reactome
-\end_layout
-
-\begin_layout Itemize
-biocarta
-\end_layout
-
-\begin_layout Itemize
-kegg
-\end_layout
-
-\begin_layout Paragraph
-Transcription Factor Binding
-\end_layout
-
-\begin_layout Itemize
-encode
-\end_layout
-
-\begin_layout Itemize
-chea
-\end_layout
-
-\begin_layout Paragraph
-Interaction Networks
-\end_layout
-
-\begin_layout Itemize
-difference between pathway and interactome
-\end_layout
-
-\begin_layout Paragraph
-Impact of Driver Mutations
-\end_layout
-
-\begin_layout Itemize
-problem of multiple testing
-\end_layout
-
-\begin_layout Itemize
-definition of drivers
-\end_layout
-
-\begin_layout Itemize
-do drug assocs for mutations
-\end_layout
-
-\begin_layout Paragraph
-Pathway Methods
-\end_layout
-
-\begin_layout Subsection
-Methods
-\end_layout
-
-\begin_layout Subsubsection
-Drug Response: The Half-Maximum Inhibitory Concentration (IC50)
-\end_layout
-
-\begin_layout Itemize
-linear model, ANOVA
-\end_layout
-
-\begin_layout Itemize
-for GDSC and pathway-rel dbs in (2): the unbiased associations
-\end_layout
-
-\begin_layout Itemize
-multivariate: explaining power
-\end_layout
-
-\begin_layout Itemize
-need for one value
-\end_layout
-
-\begin_layout Itemize
-how IC50 is derived
-\end_layout
-
-\begin_layout Itemize
-screening concentration vs extrapolated IC50
-\end_layout
-
-\begin_layout Subsubsection
-Gene Set Enrichment Analysis (GSEA)
-\end_layout
-
-\begin_layout Itemize
-inception, history
-\end_layout
-
-\begin_layout Itemize
-how it works
-\end_layout
-
-\begin_layout Itemize
-maybe: leading edge analysis
-\end_layout
-
-\begin_layout Itemize
-with any of the pathway gene sets
-\end_layout
-
-\begin_layout Itemize
-implementations
-\end_layout
-
-\begin_layout Itemize
-limitations to the set
-\end_layout
-
-\begin_layout Standard
-While GSEA is able to detect groups of genes that are differentially expressed
- per condition, it does not take into account the structure of the pathway
- whose expression it quantifies.
- What this means is that a member than has a central role is not weighted
- differently from a member that does not mediate any particular function
- somewhere on the periphery.
-\end_layout
-
-\begin_layout Subsubsection
-SPIA
-\end_layout
-
-\begin_layout Subsubsection
-Pathifier
-\end_layout
-
-\begin_layout Standard
-Pathifier takes as input a gene set that could represent a pathway or GO
- category, and then calculates the importance of individual members from
- a control set, where the authors claim to approximate the potential signal
- flow through the nodes in the network using Principal Curves.
-\end_layout
-
-\begin_layout Subsubsection
-PARADIGM
-\end_layout
-
-\begin_layout Subsubsection
-Transcription Factor Activity
-\end_layout
-
-\begin_layout Itemize
-take the regulons, more or less
-\end_layout
-
-\begin_layout Itemize
-assume most is upregulated?
-\end_layout
-
-\begin_layout Subsubsection
-Linear Associations
-\end_layout
-
-\begin_layout Itemize
-ANOVA, etc
-\end_layout
-
-\begin_layout Subsection
-Results
-\end_layout
-
-\begin_layout Subsubsection
-Transcription Factor Activities
-\end_layout
-
-\begin_layout Itemize
-do the TF scores make sense for tissues?
-\end_layout
-
-\begin_layout Itemize
-chea results on GDSC data
-\end_layout
-
-\begin_layout Subsubsection
-Pathway Methods
-\end_layout
-
-\begin_layout Itemize
-unbiased appraoch: spurious results
-\end_layout
-
-\begin_layout Subsection
-Discussion
-\end_layout
-
-\begin_layout Itemize
-available methods are shite
-\end_layout
-
-\begin_layout Section
-Pathways and primary Tumours
-\end_layout
-
-\begin_layout Subsection
-Aim
-\end_layout
-
-\begin_layout Subsection
-Methods
 \end_layout
 
 \begin_layout Subsubsection
@@ -455,70 +231,6 @@ again: unbiased approach = spurious results
 \end_layout
 
 \begin_layout Subsubsection
-Measuring Survival Times
-\end_layout
-
-\begin_layout Itemize
-OS, PFS
-\end_layout
-
-\begin_layout Itemize
-how the data we get from the TCGA/ICGC looks like
-\end_layout
-
-\begin_layout Subsubsection
-Statistical Methods
-\end_layout
-
-\begin_layout Itemize
-coxph, AFT + assumptions
-\end_layout
-
-\begin_layout Subsubsection
-Impact of Driver Mutations
-\end_layout
-
-\begin_layout Itemize
-problem of multiple testing
-\end_layout
-
-\begin_layout Itemize
-definition of drivers
-\end_layout
-
-\begin_layout Itemize
-do drug assocs for mutations
-\end_layout
-
-\begin_layout Subsubsection
-Transcription Factor Activities
-\end_layout
-
-\begin_layout Itemize
-do the TF scores make sense for tissues?
-\end_layout
-
-\begin_layout Itemize
-chea results on TCGA data
-\end_layout
-
-\begin_layout Subsection
-Discussion
-\end_layout
-
-\begin_layout Section
-Drug Sensitisation using Signatures
-\end_layout
-
-\begin_layout Subsection
-Aim
-\end_layout
-
-\begin_layout Subsection
-Methods
-\end_layout
-
-\begin_layout Subsubsection
 The Connectivity Map
 \end_layout
 
@@ -536,6 +248,839 @@ Projection from landmarks to full microarray gene sets
 
 \begin_layout Itemize
 Controversy about publication (there is still no paper)
+\end_layout
+
+\begin_layout Subsection
+Gene Sets and Pathways
+\end_layout
+
+\begin_layout Subsubsection
+Gene Ontology
+\end_layout
+
+\begin_layout Standard
+Gene Ontology (GO) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Ashburner2000-xl,Gene_Ontology_Consortium2004-sn"
+
+\end_inset
+
+ is 
+\begin_inset Quotes eld
+\end_inset
+
+a major bioinformatics initiative to develop a computational representation
+ of our evolving knowledge of how genes encode biological functions at the
+ molecular, cellular and tissue system levels
+\begin_inset Quotes erd
+\end_inset
+
+.
+ It has encoded over 40,000 biological concepts based on experiments reported
+ in over 100,000 publications according to its web portal at http://geneontology.
+org/.
+\end_layout
+
+\begin_layout Subsubsection
+KEGG
+\end_layout
+
+\begin_layout Standard
+KEGG 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Kanehisa2000-mp"
+
+\end_inset
+
+ was one of the first pathway databases with its inception in XXXX.
+ To provide an idea of how widely it was (and still is) used, Google Scholar
+ (query 25th February 2016) reported 6863 publications that cited the original
+ article.
+ However, in 2XXX the platform went commercial, allowing access only via
+ a subscription-based portal.
+ While the authors removed public access also to earlier versions of the
+ database, its pre-commercial license (OICR by Pathway Solutions, Inc) allowed
+ it to still be used.
+ The public version, however, will not receive any more updates.
+\end_layout
+
+\begin_layout Subsubsection
+Reactome
+\end_layout
+
+\begin_layout Standard
+Reactome 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Croft2011-po"
+
+\end_inset
+
+ is a 
+\begin_inset Quotes eld
+\end_inset
+
+a free, open-source, curated and peer reviewed pathway database
+\begin_inset Quotes erd
+\end_inset
+
+ hosted and curated by the European Binformatics Institute (EBI).
+ It has a web portal at http://www.reactome.org/, and the current version
+ is v55 released in December, 2015.
+ It has an open license (Creative Commons Attribution 4.0) for its own data
+ and the pre-commercial license for imported KEGG data.
+\end_layout
+
+\begin_layout Subsection
+Pathway Methods
+\end_layout
+
+\begin_layout Subsubsection
+Gene Set Enrichment Analysis (GSEA)
+\end_layout
+
+\begin_layout Itemize
+inception, history
+\end_layout
+
+\begin_layout Itemize
+how it works
+\end_layout
+
+\begin_layout Itemize
+maybe: leading edge analysis
+\end_layout
+
+\begin_layout Itemize
+with any of the pathway gene sets
+\end_layout
+
+\begin_layout Itemize
+implementations
+\end_layout
+
+\begin_layout Itemize
+limitations to the set
+\end_layout
+
+\begin_layout Subsubsection
+Other Pathway Methods
+\end_layout
+
+\begin_layout Standard
+While GSEA is able to detect groups of genes that are differentially expressed
+ per condition, it does not take into account the structure of the pathway
+ whose expression it quantifies.
+ What this means is that a member than has a central role is not weighted
+ differently from a member that does not mediate any particular function
+ somewhere on the periphery.
+\end_layout
+
+\begin_layout Section
+Pathways and Cell Line Drug Response
+\end_layout
+
+\begin_layout Subsection
+Aim
+\end_layout
+
+\begin_layout Standard
+After the impact of driver mutations on drug response of cell lines in the
+ GDSC panel has been quantified 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Garnett2012-dk,Iorio2016-gh"
+
+\end_inset
+
+, an additional question that I wanted to ask was how this drug response
+ related to gene expression, in terms of either gene sets with a defined
+ function or biological pathways.
+\end_layout
+
+\begin_layout Subsection
+Methods
+\end_layout
+
+\begin_layout Subsubsection
+Obtaining Gene Sets
+\end_layout
+
+\begin_layout Standard
+To obtian Gene Ontology sets, I used the BioMart R package [cite] to query
+ the Ensembl [cite] hsapiens_gene_ensembl database for all HGNC symbols
+ that had a Gene Ontology 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Ashburner2000-xl,Gene_Ontology_Consortium2004-sn"
+
+\end_inset
+
+ ID (go_id field) associated with them, yielding three main categories (biologic
+al process, molecular function, cellular compartment) with XX, XX, and XX
+ gene sets respecively.
+ I performed the subsequent analyses using gene sets from the biological
+ process category only.
+ For Reactome 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Croft2011-po"
+
+\end_inset
+
+, I downloaded the file ReactomePathways.gmt
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+http://www.reactome.org/pages/download-data/
+\end_layout
+
+\end_inset
+
+.
+ There were a total of XX pathways covering YY genes.
+ 
+\end_layout
+
+\begin_layout Standard
+For other gene sets, I used the Enrichr platform [cite] and the gene sets
+ the authors assembled in their Github repository
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+https://github.com/yokuyuki/Enrichr
+\end_layout
+
+\end_inset
+
+.
+ They encompassed gene sets for 35 pathway and pathway-related sources,
+ including Gene Ontology, Reactome (where I queried the original databases
+ to obtain more up-to-date gene lists), as well as KEGG 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Kanehisa2000-mp"
+
+\end_inset
+
+ (that does not suffer from such a drawback as the last public release was
+ in 2001, before it went commercial).
+ This data source of KEGG gene sets had the advantage that it was in .gmt
+ format that was readily accessible and easily machine readable (unlike
+ the KGML present in the last official public KEGG release).
+\end_layout
+
+\begin_layout Subsubsection
+Using Gene Set Enrichment Analysis (GSEA) to obtain scores
+\end_layout
+
+\begin_layout Standard
+I used the function wGSEA 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Subramanian2005-pd"
+
+\end_inset
+
+ from the original BROAD weighted GSEA R script (http://software.broadinstitute.or
+g/gsea/index.jsp) modified by Fracesco Iorio to work with the current version
+ of R.
+ I supplied as gene sets the Gene Ontology and pathway sets described above.
+ I performed 1,000 resampling steps for score normalisation for all subsequent
+ analyses unless otherwise indicated.
+ I used the normalised enrichment score (NES) for all subsequent associations,
+ which was a continuous numerical value that represented the expression
+ level of the gene set in a given sample.
+ I did not perform any statistical test to quantify the enrichment of this
+ set compared to other sets, as at this point I was only interested in the
+ expression level itself, not how it compares to other samples.
+\end_layout
+
+\begin_layout Standard
+I transformed the resulting distribution of NES scores into a normal distributio
+n using a kernel density estimator (R package sROC 
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+https://cran.r-project.org/web/packages/sROC/index.html
+\end_layout
+
+\end_inset
+
+) to obtain uniformly distributed scores and a normal transformation afterwards.
+ I used those transformed scores in subsequent linear (ANOVA-like) associations
+ for drug response.
+\end_layout
+
+\begin_layout Subsubsection
+Drug Associations using the Half-Maximum Inhibitory Concentration (IC50)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/2.1_ic50.gif
+	lyxscale 50
+	width 50col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+IC50 values
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The original GDSC data set contained different dilutions of drugs that the
+ cell lines in the panel were subjected, measuring how much it interfered
+ with their growth.
+ Since I have got a pathway score for each cell line, I also need a single
+ value corresponding to the sensitivity to a given drug.
+ On way to do this is to measure the growth inhibition at different concentratio
+ns, and then fit a dose-response curve to the data points, interpolating
+ (or extrapolating, if necessary) the concentration at which the half-maximal
+ inhibition occured.
+ This term is referred to the IC50 value, and has already been calculated
+ in 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Iorio2016-gh"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+I obtained already processed gene expression matrix from the GDSC cell lines
+ and their fitted IC50 values to 265 public drugs from 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Iorio2016-gh"
+
+\end_inset
+
+.
+ I performed an ANOVA using the gene set score as an independent variable
+ (
+\begin_inset Formula $S_{j}$
+\end_inset
+
+, where 
+\begin_inset Formula $j$
+\end_inset
+
+ is the index of the cell line from 
+\begin_inset Formula $1$
+\end_inset
+
+ to 
+\begin_inset Formula $k$
+\end_inset
+
+) and the log10 of the IC50 in micro-molar as the response variable (
+\begin_inset Formula $D_{i}$
+\end_inset
+
+, where 
+\begin_inset Formula $i$
+\end_inset
+
+ is the drug index).
+ I regressed out the contribution of individual tissues by including it
+ as a covariate in the fit.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+D_{i}\sim T_{j=1..k}+S_{j=1..k}|_{i=1..m}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+I performed this association between every drug and all gene set scores,
+ yielding an effect size (how many units of drug response changed per unit
+ of enrichment score) and p-value for each pair.
+ I corrected the p-values for each pair using the False Discovery Rate (FDR)
+ [cite].
+ In addition, I performed these associations using each tissue separately:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+D_{i}\sim S_{j=1..l,t\in T}|_{i=1..m,t\forall T}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In this formula, the scores 
+\begin_inset Formula $S$
+\end_inset
+
+ have a different index from 
+\begin_inset Formula $1$
+\end_inset
+
+ to 
+\begin_inset Formula $l$
+\end_inset
+
+, where 
+\begin_inset Formula $t$
+\end_inset
+
+ corresponds to all cell lines that are in tissue 
+\begin_inset Formula $T$
+\end_inset
+
+.
+ In this case, I corredted the p-values using the FDR methods for each subset
+ of tissues separately.
+\end_layout
+
+\begin_layout Subsubsection
+Volcano Plots
+\end_layout
+
+\begin_layout Subsection
+Results
+\end_layout
+
+\begin_layout Itemize
+basically, better versions of the volcano plots that are already there
+\end_layout
+
+\begin_layout Itemize
+add table of top hits
+\end_layout
+
+\begin_layout Itemize
+list them in text, implying the ridiculousness
+\end_layout
+
+\begin_layout Itemize
+probably see where pathways that should be causing this are (=the ones we
+ use in speed2 anyway)
+\end_layout
+
+\begin_layout Subsubsection
+Associations using Mutations
+\end_layout
+
+\begin_layout Itemize
+ca.
+ re-plot of the paper
+\end_layout
+
+\begin_layout Subsubsection
+Associations using Gene Ontology
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/2.1_go_pan.png
+	lyxscale 50
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Gene Ontology Pan-Cancer associations
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/2.1_go_tissue.png
+	lyxscale 50
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Gene Ontology tissue-specific associations
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Associations using KEGG
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/2.1_kegg_pan.png
+	lyxscale 50
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Gene Ontology Pan-Cancer associations
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/2.1_kegg_tissue.png
+	lyxscale 50
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Gene Ontology tissue-specific associations
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Associations using Reactome
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/2.1_reactome_pan.png
+	lyxscale 50
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Gene Ontology Pan-Cancer associations
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/2.1_reactome_tissue.png
+	lyxscale 50
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Gene Ontology tissue-specific associations
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Discussion
+\end_layout
+
+\begin_layout Standard
+The importance of mutations, especially when they are drivers, and the associati
+on with the cell lines' response to the different drugs is well established.
+ Also with the new data set, there are previously unknown links that may
+ ultimately lead to new clinical indications, or prioritise the development
+ of certain drugs over others.
+\end_layout
+
+\begin_layout Standard
+In contrast to this, the biological meaning of the top associations between
+ gene set or pathway scores and drug response I obtained is doubtful at
+ best.
+ What does it mean to have an association of the 
+\begin_inset Quotes eld
+\end_inset
+
+T cell receptor
+\begin_inset Quotes erd
+\end_inset
+
+ in Head and Neck Squamous Carcinoma (HNSC)? There are no immune cells involved
+ in the culturing of HNSC cell lines.
+ [add about a q per plot here]
+\end_layout
+
+\begin_layout Standard
+We thus have two options: we either need to link seemingly unrelated gene
+ sets back to the process that actually caused a difference in drug response,
+ or we need to pre-select gene sets that may be relevant for drug response.
+ Needless to say, the first approach may in mose cases prove impossible,
+ as we can not easily follow the chain of causality between a biological
+ process that mediates differential drug response and its downstream readout
+ as change of gene expression.
+ The second alternative does not solve this, but leads to a much higher
+ probability to catch causative gene sets when we already select candidates
+ of exactly this by prior knowledge.
+\end_layout
+
+\begin_layout Section
+Pathways and primary Tumours
+\end_layout
+
+\begin_layout Subsection
+Aim
+\end_layout
+
+\begin_layout Subsection
+Methods
+\end_layout
+
+\begin_layout Subsubsection
+Gene Expression Data from the TCGA
+\end_layout
+
+\begin_layout Standard
+I used the Firehose tool
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+http://gdac.broadinstitute.org/
+\end_layout
+
+\end_inset
+
+ from the BROAD institute to download data labelled level 3 RNA-seq v2 (files
+ names including RSEM_genes__data.Level_3, unpacked them, selected all files
+ contained in the archive that contained the name rnaseqv2) for all cancer
+ types for which it was available.
+ I extracted the raw counts from each of the text files for each gene.
+ I then performed a voom transformation (R package limma 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Smyth2005-mw"
+
+\end_inset
+
+) for each TCGA study separately.
+ The result of this transformation are expression values that I can use
+ linear modeling techniques on, unlike the raw RNA-seq read counts.
+ With the resulting expression matrix, I selected only genes that had an
+ HGNC symbol associated with them.
+ I used the function avereps (R package limma) to average rows that had
+ the same gene symbol.
+ This resulted in one expression matrix per TCGA tissue, for a total of
+ 00 tissues including 00000 tumor and 0000 matched normal samples.
+\end_layout
+
+\begin_layout Subsubsection
+Clinical Data from the TCGA
+\end_layout
+
+\begin_layout Standard
+Also using the Firehose tool, I downloaded clinical data (file names including
+ Merge_Clinical.Level_1, unpack them, select all clin.merged.txt files) for
+ all cancer types for which it was available.
+ I extracted the fields for study (admin.disease_code), age of the patient
+ (age_days), their vital status (where a field days_to_death with a missing
+ value indicated that the patient was alive, encoded with 0 if the patient
+ is alive and 1 if they are not), days that they survived (either patient.days_to
+_death or if that was not available patient.days_to_last_followup), the TCGA
+ patient barcode (patient.bcr_patient_barcode), and their sex (patient.gender).
+ I converted the days of survival to months by dividing by 30.4.
+ I discarded all patients that had a negative survival time.
+ I removed duplicates, and in the case there were multiple records of the
+ same patient I took the one recorded latest (the row where the field patient.day
+s_to_birth had the highest number).
+\end_layout
+
+\begin_layout Subsubsection
+Cox Proportional Hazard Model for Survival Associations
+\end_layout
+
+\begin_layout Subsection
+Results
+\end_layout
+
+\begin_layout Subsubsection
+Associations using Mutations
+\end_layout
+
+\begin_layout Subsubsection
+Associations using Gene Ontology
+\end_layout
+
+\begin_layout Subsubsection
+Associations using KEGG
+\end_layout
+
+\begin_layout Subsubsection
+Associations using Reactome
+\end_layout
+
+\begin_layout Subsection
+Discussion
+\end_layout
+
+\begin_layout Section
+Drug Sensitisation using Signatures
+\end_layout
+
+\begin_layout Subsection
+Aim
+\end_layout
+
+\begin_layout Subsection
+Methods
 \end_layout
 
 \begin_layout Subsubsection
@@ -567,7 +1112,100 @@ maybe mention: 2 sigs to match 1 disease (same or in prev?)
 \end_layout
 
 \begin_layout Subsection
+Results
+\end_layout
+
+\begin_layout Subsubsection
+Pan-cancer predictions
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/2.3_mantra_pan.png
+	lyxscale 50
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Gene Ontology Pan-Cancer associations
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Tissue-specific predictions
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/2.3_mantra_tissue.png
+	lyxscale 50
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Gene Ontology tissue-specific associations
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
 Discussion
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "references"
+options "plain"
+
+\end_inset
+
+
 \end_layout
 
 \end_body
