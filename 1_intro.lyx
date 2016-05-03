@@ -807,6 +807,13 @@ methylation
 
 \begin_layout Subsection
 RNA
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:assay_RNA"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
@@ -940,12 +947,62 @@ MS, RPPA
 phospho = closest to activity from what we have
 \end_layout
 
-\begin_layout Subsubsection
-RPPA
+\begin_layout Standard
+It can easily be argued that in order to get an appropriate picture of what
+ goes on in a cell it would be better to look at the proteins that perform
+ most functions, as opposed to the mRNA levels of genes.
+ The latter will in many cases be translated into proteins that then excert
+ their activity, yet mRNA measurements are one more step removed from the
+ functional process than proteins, and measuring post-translational modification
+s (PTMs) that modify activity already gives us a lot of functional informatioin
+ - as long as we know how to interpret them.
+\end_layout
+
+\begin_layout Standard
+Taking these facts together, one might want to look at proteins instead
+ of gene expression.
+ Yet, gene expression is a lot cheaper and easier to measure, as well as
+ providing more coverage than the proteomic methods currently can.
+ Also, the publicly available gene expression data far exceeds the one of
+ proteomic data.
 \end_layout
 
 \begin_layout Subsubsection
-Mass Spectroscopy
+Reverse-Phase Protein Arrays (RPPA)
+\end_layout
+
+\begin_layout Standard
+In this method, there is an array of spotted antibodies, similar to the
+ nucleic acids on a microarray.
+ A labelled cell lysate (or other sample) is incubated with the antibodies,
+ and we can quantify the amount of the proteins (or phospho-proteins) correspond
+ing to each antibody afterwards.
+ In contrast to microarrays, however, this is relatively low throughput
+ as antibodies can not be as readily synthesized as nucleic acids.
+\end_layout
+
+\begin_layout Subsubsection
+Mass Spectrometry
+\end_layout
+
+\begin_layout Standard
+Mass spectrometry is based on fragmenting proteins into peptides that are
+ then ionized and sprayed into an electrical field in vacuum tube, where
+ their mass-to-charge ratio causes them to behave in a certain way.
+ For instance, in Time of Flight (TOF) instruments, the electrical field
+ is used to accelerate the peptides; the force that accelerates them is
+ then proportional to their charge, and their inertia to their mass - hence
+ the time it takes to reaches the detector is proportional to the ratio
+ of the two.
+\end_layout
+
+\begin_layout Standard
+For more complex samples, there are too many peptides to detect at any given
+ time, so the Mass Spectrometry is often coupled with another technology
+ that first separates proteins contained in a sample using some other property
+ (e.g.
+ their hydrophilicity/hydrophobicity) in columns of gas (gas chromatography
+ - GC) or liquid (high performance liquid chromatography - HPLC).
 \end_layout
 
 \begin_layout Subsection
@@ -958,6 +1015,206 @@ with DNA
 
 \begin_layout Itemize
 with other proteins + different types + different networks
+\end_layout
+
+\begin_layout Section
+Data sets
+\end_layout
+
+\begin_layout Subsection
+Public Gene Expression Repositories
+\end_layout
+
+\begin_layout Subsection
+Gene Sets and Pathways
+\end_layout
+
+\begin_layout Standard
+With about 22,000 human genes whose transcription can be all measured simultaneo
+usly using the methods described in section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:assay_RNA"
+
+\end_inset
+
+, it is important to put genes together into functional groups for several
+ reasons: (1) groups of higher level processes are more interpretable, (2)
+ gene level measurements in microarrays (and to a lesser extent RNA-seqeuencing)
+ are inherently noisy and the more measurements we combine the clearer the
+ signal gets, and (3) it may be possible to solve statistical problems where
+ the number of observations per sample is greater than the number of samples.
+\end_layout
+
+\begin_layout Standard
+There are multiple databases available that link gene sets into function
+ groups.
+ The most well known are Gene Ontology and the pathway resources KEGG and
+ Reactome, as listed below.
+\end_layout
+
+\begin_layout Subsubsection
+Gene Ontology
+\end_layout
+
+\begin_layout Standard
+Gene Ontology (GO) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Ashburner2000-xl,Gene_Ontology_Consortium2004-sn"
+
+\end_inset
+
+ is 
+\begin_inset Quotes eld
+\end_inset
+
+a major bioinformatics initiative to develop a computational representation
+ of our evolving knowledge of how genes encode biological functions at the
+ molecular, cellular and tissue system levels
+\begin_inset Quotes erd
+\end_inset
+
+.
+ It has encoded over 40,000 biological concepts based on experiments reported
+ in over 100,000 publications according to its web portal at http://geneontology.
+org/.
+\end_layout
+
+\begin_layout Subsubsection
+KEGG
+\end_layout
+
+\begin_layout Standard
+KEGG 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Kanehisa2000-mp"
+
+\end_inset
+
+ was one of the first pathway databases with its inception in XXXX.
+ To provide an idea of how widely it was (and still is) used, Google Scholar
+ (query 25th February 2016) reported 6863 publications that cited the original
+ article.
+ However, in 2XXX the platform went commercial, allowing access only via
+ a subscription-based portal.
+ While the authors removed public access also to earlier versions of the
+ database, its pre-commercial license (OICR by Pathway Solutions, Inc) allowed
+ it to still be used.
+ The public version, however, will not receive any more updates.
+\end_layout
+
+\begin_layout Subsubsection
+Reactome
+\end_layout
+
+\begin_layout Standard
+Reactome 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Croft2011-po"
+
+\end_inset
+
+ is a 
+\begin_inset Quotes eld
+\end_inset
+
+a free, open-source, curated and peer reviewed pathway database
+\begin_inset Quotes erd
+\end_inset
+
+ hosted and curated by the European Binformatics Institute (EBI).
+ It has a web portal at http://www.reactome.org/, and the current version
+ is v55 released in December, 2015.
+ It has an open license (Creative Commons Attribution 4.0) for its own data
+ and the pre-commercial license for imported KEGG data.
+\end_layout
+
+\begin_layout Subsection
+The Cancer Genome Atlas (TCGA)
+\end_layout
+
+\begin_layout Itemize
+inception
+\end_layout
+
+\begin_layout Itemize
+cohorts
+\end_layout
+
+\begin_layout Itemize
+data access regulations
+\end_layout
+
+\begin_layout Itemize
+secondary dbs that simplify access: e.g.
+ BROAD GDAC firehose
+\end_layout
+
+\begin_layout Subsection
+International Cancer Genome Consortium (ICGC)
+\end_layout
+
+\begin_layout Itemize
+umbrella effort
+\end_layout
+
+\begin_layout Itemize
+more cohorts
+\end_layout
+
+\begin_layout Itemize
+horrible metadata
+\end_layout
+
+\begin_layout Itemize
+where data comes from
+\end_layout
+
+\begin_layout Itemize
+again: unbiased approach = spurious results
+\end_layout
+
+\begin_layout Subsection
+Cancer Cell Line Encyclopedia (CCLE)
+\end_layout
+
+\begin_layout Itemize
+status 2002
+\end_layout
+
+\begin_layout Subsection
+Genomics of Drug Sensitivity in Cancer (GDSC)
+\end_layout
+
+\begin_layout Itemize
+status 2002
+\end_layout
+
+\begin_layout Itemize
+now: new dataset
+\end_layout
+
+\begin_layout Subsection
+The Connectivity Map
+\end_layout
+
+\begin_layout Itemize
+Justin Lamb's paper in 2006
+\end_layout
+
+\begin_layout Itemize
+L1000 platform
+\end_layout
+
+\begin_layout Itemize
+Projection from landmarks to full microarray gene sets
+\end_layout
+
+\begin_layout Itemize
+Controversy about publication (there is still no paper)
 \end_layout
 
 \begin_layout Section
@@ -1416,13 +1673,26 @@ Another question that we might be interested in is which genes share a common
  and C is higher than the one of A and C (a concept called Data Processing
  Inequality).
  On top of ARACNE, the authors also propose a method they call Master Regulator
- Analysis (MRA) [basso, nat.gen] to identify the regulatory network in human
- B cells.
+ Analysis (MRA) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Basso2005-ql"
+
+\end_inset
+
+ to identify the regulatory network in human B cells.
 \end_layout
 
 \begin_layout Standard
 In an extension proposed by the same group is to condition the mutual informatio
-n on the expression of a modulator that they call MINDy.
+n on the expression of a modulator that they call MINDy 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Wang2009-ui"
+
+\end_inset
+
+.
  The idea here is to look at the upper and lower third of the modulator
  expression, and calculate mutual information for both of theses sets.
  Afterwards, instead of inferring the network, the authors look for the
@@ -1436,11 +1706,11 @@ n on the expression of a modulator that they call MINDy.
 
 \begin_layout Standard
 In another extension, they proposed a method call Master Regulator Inference
- Analysis (MaRInA), which ***
+ Analysis (MaRInA) , which ***
 \end_layout
 
 \begin_layout Subsection
-Signaling Aberrations
+Pathways and Signaling
 \end_layout
 
 \begin_layout Itemize

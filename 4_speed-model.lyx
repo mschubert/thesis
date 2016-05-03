@@ -92,7 +92,7 @@ Inferring Pathway Activity from Gene Expression
 \end_layout
 
 \begin_layout Section
-Introduction
+Aim
 \end_layout
 
 \begin_layout Itemize
@@ -125,14 +125,23 @@ There are numerous examples of using Gene Set Enrichment Analysis (GSEA)
  than assuming that it is proportional to the expression of the proteins
  involved in the signal transduction pathway, which assumes the latter accuratel
 y represent not only the protein levels but their activity.
-\end_layout
 
-\begin_layout Standard
-To our knowledge, the only similar efforts are the SPEED database (Parikh
- et al.
- 2010) and two studies MCF10A breast signatures (Bild et al.
- 2005; Gatza et al.
- 2010).
+\lang english
+ To our knowledge, the only similar efforts are the SPEED database 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Parikh2010-uj"
+
+\end_inset
+
+ and two studies MCF10A breast signatures 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Bild2005-tk,Bild2006-vt,Gatza2010-fq,Gatza2011-wd,Gatza2014-as"
+
+\end_inset
+
+.
  Whereas the former used a smaller but still significant set of publicly
  available experiments, the only analysis they did using their signatures
  was to compute the overlap between genes present in their signatures and
@@ -140,77 +149,36 @@ To our knowledge, the only similar efforts are the SPEED database (Parikh
  In the latter article the authors experimentally derived pathway-response
  signatures for a single condition (MCF10A cell line, one perturbation/time
  point per experiment).
- We can not claim that those signatures are transferable to other cancer
- types, nor that they don’t suffer from the same drawbacks as expression
- signatures in terms of general stability and reproducibility.
-\end_layout
-
-\begin_layout Subsection
-some heading
 \end_layout
 
 \begin_layout Standard
-In the previous section, I have already argued that for inferring pathway
- activity from gene expression, we need a platform as provided by [cite]:
- using stimulation-response genes is much more in line with common knowledge
- about how signaling and pathway activation works as opposed to pathway
- expression.
- I have, however, also outlined the potential drawbacks of the method in
- the previous discussion section.
-\end_layout
+The original SPEED platform 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Parikh2010-uj"
 
-\begin_layout Standard
-To my knowledge and after thorough review of the available literature, there
- are only lines of publications that made use of this reasoning.
- One is the SPEED platform that I already covered, and the other was published
- about the same time by [gatza].
- Both have got their good and bad points, that I outline below.
- Even given their availability, I think that taking the idea of pathway-response
- genes, extend the data set used, and properly benchmark it against other
- available pathway methods has merit.
-\end_layout
+\end_inset
 
-\begin_layout Standard
-When deciding to choose between the two, it is good to remind ourselves
- about the goal we have in mind, the bigger picture, so to speak.
- That goal is to derive generally applicable signatures of pathway activation
- that are helpful and predictive of drug response in cell lines, as well
- as potentially in a clinical settings (e.g.
- in terms of associations with patient survival).
-\end_layout
-
-\begin_layout Subsection
-SPEED
-\end_layout
-
-\begin_layout Standard
-The original SPEED platform consists of signatures of 11 pathways, derived
- and comprised of the genes responsive to a total of XX contrasts (the perturbat
-ions between a control and a perturbed condition).
+ consists of signatures of 11 pathways, derived and comprised of the genes
+ responsive to a total of XX contrasts (the perturbations between a control
+ and a perturbed condition).
  They use a consensus gene signature across multiple experiments, perturbagens,
  and other conditions to arrive at a gene list that corresponds to pathway
  activation in a wide condition.
  Of course, by doing this average, they might lose tissue-specific or condition-
 specific gene expression patterns.
-\end_layout
-
-\begin_layout Standard
-The authors performed no analysis in terms of either drug associations,
+ The authors performed no analysis in terms of either drug associations,
  patient survival, or really anything else besides the overlap of their
  pathway-associated genes with Gene Ontology categories and each other.
  It has not been applied in a cancer-specific context before, except in
  the previous chapter.
 \end_layout
 
-\begin_layout Subsection
-Gatza
-\end_layout
-
 \begin_layout Standard
-Apart from the SPEED platform, there was a second string of articles published
- between 2009 and 2014, the main author of which developed gene-response
- signatures using a single condition (time point, concentration, agent)
- but three biological replicates of perturbations in the MCF10A cell line.
+The second string of articles published between 2009 and 2014, the main
+ author of which developed gene-response signatures using a single condition
+ (time point, concentration, agent) but three biological replicates of perturbat
+ions in the MCF10A cell line.
  The authors validated their signatures using correlation of different pathways
  or genes expressed as it was available in literature.
  The first article in this series is about a small set of signatures 
@@ -231,16 +199,27 @@ key "Baggerly2009-xc"
 \end_inset
 
 .
- A later generation of signatures [gatza2009] still had this author involved,
- but the signatures themselves seem to be well documented and the raw data
- was deposited in a public microarray respository.
- Finally, in 2014 the main author [gatza2014] linked the inferred pathway
- activity to drug response in a handful of breast cancer cell lines.
-\end_layout
+ A later generation of signatures 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Gatza2010-fq"
 
-\begin_layout Standard
-The MCF10A cell line itself is non-cancerous, so it will represent the behaviour
- of cells without cancer-causing molecular alterations.
+\end_inset
+
+ still had this author involved, but the signatures themselves seem to be
+ well documented and the raw data was deposited in a public microarray resposito
+ry.
+ Finally, in 2014 the main author 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Gatza2014-as"
+
+\end_inset
+
+ linked the inferred pathway activity to drug response in a handful of breast
+ cancer cell lines.
+ The MCF10A cell line itself is non-cancerous, so it will represent the
+ behaviour of cells without cancer-causing molecular alterations.
  However, while the data in general seems to be of high quality, I am not
  confident to make any statements about the genes responsive in this cell
  line can be extrapolated to other tissues.
@@ -248,6 +227,10 @@ The MCF10A cell line itself is non-cancerous, so it will represent the behaviour
  lab correlate more with the lab they were produced in than the biological
  condition [cite], which we can not control for if there is only one lab
  producing them.
+\end_layout
+
+\begin_layout Standard
+..aim more clearly..
 \end_layout
 
 \begin_layout Section
@@ -4068,10 +4051,6 @@ Size of the data set in comparison to the two published methods
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 

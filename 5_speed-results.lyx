@@ -114,9 +114,89 @@ sections
 Functional Relevance of different Pathway Methods
 \end_layout
 
+\begin_layout Section
+Paragraphs discarded from the main paper
+\end_layout
+
+\begin_layout Standard
+, we found that our signatures are indeed able to recover the pathway originally
+ perturbed, even though the experiments used in the model comprised a wide
+ range of different experimental conditions (linear model of current pathway
+ vs.
+ others, result shown in figure 1d).
+ This overall trend is confirmed by the pathway scores for each perturbation
+ experiment vs.
+ the others, as shown in figure S0.
+ We also detected significant associations (linear model, p<10-8) between
+ MAPK and PI3K activation and EGFR stimulation, and TNFa-responsive genes
+ upon NFkB activation.
+\end_layout
+
+\begin_layout Standard
+We detected the following overlaps between a perturbed pathway and a significant
+ induction of genes expressed responsive to another pathway: EGFR stimulations
+ triggered a strong expression of MAPK-responsive genes and a weaker expression
+ of PI3K-responsive genes.
+ Conversely, MAPK perturbation also showed a strong effect on EGFR-responsive
+ genes.
+ These are expected given that MAPK and PI3K are downstream of EGFR [ref-even
+ if basic].
+ We found the same structure of hierarchical pathway 
+\end_layout
+
+\begin_layout Standard
+Difference between Signaling Footprints and pathway expression
+\end_layout
+
+\begin_layout Standard
+We were interested in how our perturbation-responsive genes that represent
+ a footprint of signaling activity present in a given context are related
+ to induction of pathway expression (for an overview of how the different
+ pathway methods are related, see figure 1a).
+\end_layout
+
+\begin_layout Standard
+We find that the following pathways change in expression upon stimulation
+ of the same pathway: NFkB (TNFa), JAK-STAT and Hypoxia show a strong associatio
+n between the pathway being perturbed and increased expression of members
+ of the same pathway, representing feedback loops.
+ In contrast, both EGFR and MAPK perturbations cause expression of p53 pathway
+ members, which can be explained by MAPK/EGFR activating cell-cycle-promoting
+ genes and p53 inhibiting them (GO categories connected to the respective
+ pathways, figure SXX2b).
+ MAPK activation also causes expression of the TGFb pathway.
+\end_layout
+
+\begin_layout Standard
+.
+\end_layout
+
+\begin_layout Standard
+The functional context in terms of cancer hallmarks that mutations create
+ are similar despite obvious differences in the exact mode, as exemplified
+ by the long tail of different variants seen in cancer genomes.
+ 
+\end_layout
+
+\begin_layout Standard
+For cancer diagnosis in both the clinical and preclinical setting, efforts
+ like The Cancer Genome Atlas (The Cancer Genome Atlas Research Network
+ et al.
+ 2013) or the International Cancer Genome Consortium (ICGC) have pioneered
+ this characterization on a large scale, offering the opportunity to derive
+ large amounts of information about individual tumors and in turn likely
+ harbors yet undiscovered treatment opportunities.
+ While the recent focus on linking outcomes with mutations represents a
+ step forward over basing treatment of an individual on the tissue of tumor
+ origin alone, putting mutations in a functional context with the signaling
+ aberrations that they create may provide additional insight in mechanisms
+ of pathogenesis and treatment opportunities.
+ 
+\end_layout
+
 \begin_layout Author
-Michael Schubert, Luz Garcia Alonso, Martina Klünemann, Nils Blüthgen, Julio
- Saez Rodriguez 
+Michael Schubert, Martina Klünemann, Nils Blüthgen, Julio Saez Rodriguez
+ 
 \end_layout
 
 \begin_layout Abstract

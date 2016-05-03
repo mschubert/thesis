@@ -103,7 +103,169 @@ Modeling Drug Interactions
 \end_layout
 
 \begin_layout Section
-Introduction
+Aim
+\end_layout
+
+\begin_layout Standard
+Maybe the simplest way to investigate a biological system using gene expression
+ data is to not make any assumptions concerning translation, protein activity,
+ signaling, or pathways.
+ Instead, one could use the transcriptional state of a cell as a black box
+ entirely and just treat it as a readout of its phenotype.
+ This has the advantage that many of the assumptions that we normally make
+ that are not quite correct (mRNA expression corresponds to protein level
+ or activity, exactly those genes in a set have that function and there
+ is no overlap or partial membership, etc.) no longer have an impact on the
+ result we obtain - we can just use the gene expression readout of a disease,
+ a drug treatment, or really anything else that produces gene expression
+ changes and match them to another phenotype (reviewed in 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Iorio2013-pv"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+In this Signature Matching approach, there are, as shown in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Signature-Matching-Approaches"
+
+\end_inset
+
+, two commonly used workflows: First, we can define the signature of a disease
+ (e.g.
+ from cancer-normal pairs) and then look for a drug signature to counteract
+ this phenotype.
+ This may work well in certain circumstances, but is undoubtedly a gross
+ oversimplification of the problem of disease inception and progression.
+ Nontheless, it has been shown to work ***refs***, and our group has previously
+ worked on an R package for matching drugs and diseases 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Pacini2013-xn"
+
+\end_inset
+
+.
+ Second, we can take a drug signature and match it to other drug signatures,
+ to maybe discover a new indication for a drug and repurposing opportunities
+ more generally.
+ Also in our group, this has been done to discover a drug mode of action
+ (MoA) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Iorio2010-ux"
+
+\end_inset
+
+ or computing a drug similarity network 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Iorio2009-ji"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+...
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Signature Matching Approaches
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Signature-Matching-Approaches"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+At the time I started this project, the LINCS Connectivity Map data had
+ just been released.
+ The BROAD institute held a small symposium and workshop about the platform
+ (the L1000), the data they had collected, and how they are planning to
+ take it forward with web-based 
+\begin_inset Quotes eld
+\end_inset
+
+apps
+\begin_inset Quotes erd
+\end_inset
+
+ that did signature matching based on GSEA without actually exposing the
+ data to its users.
+ They did, however, release the raw data and z-scores between each control-
+ and drug-perturbed experiment for 978 oligonucleotide probes and a total
+ of 1.4 million conditions in a 111 gigabyte .gctx (HDF5 and metadata) file
+ where they projected their actual measurement to the full gene space using
+ publicly available microarray data.
+ At this time, no one knew about the quality of the data (BROAD claimed
+ it to be equal with microarrays; my own tries and conversations with other
+ people using the data have indicated that it is below that).
+ The main publication is still not out today (April 2016), and they refused
+ to share e.g.
+ the linear transformation matrix they used to obtain the projected gene
+ space.
+\end_layout
+
+\begin_layout Standard
+Notwithstanding those potential issues, it would be of enormous interest
+ to combine this data set with what we are already working on with the GDSC:
+ this way, we have for the same cancer tissue (sometimes even the same cell
+ line) not only high-quality baseline expression and drug response curves,
+ but also lower coverage/quality drug-perturbed gene for a lot of different
+ compounds, including 150 drug that are overlapping between the GDSC and
+ the LINCS project, for which we could use Signature Matching methods.
+\end_layout
+
+\begin_layout Standard
+Even more interesting, we could generate a signature between cells that
+ are sensitive and those that are resitant to a certain kind of drug, and
+ then match this signature with another drug that potentially converts the
+ cells from a resitant to a sensitive phenotype.
+ This has been shown to work when trying to overcome glutocorticoid resistance
+ in acute lymphoblastic leukemia (ALL) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Wei2006-ne"
+
+\end_inset
+
+, where the authors identified Rapamycin as a modulator of the resistance
+ phenotype.
+ But now, we could do it systematically with the 150x150 drugs overlapping
+ between the LINCS and GDSC projects, and could thus obtain the first view
+ of drug sensitisation over a large target space.
+ This could ultimately lead to a new drug combination or regimen that counters
+ the development of resistance in clinical cancer patients, which is one
+ of the main challenges in patient treatment today.
 \end_layout
 
 \begin_layout Section
@@ -111,15 +273,11 @@ A Pan-Cancer View of Drug Sensitisation
 \end_layout
 
 \begin_layout Subsection
-Aim
-\end_layout
-
-\begin_layout Itemize
-if we take GDSC-only drugs, we have 150x150
-\end_layout
-
-\begin_layout Subsection
 Methods
+\end_layout
+
+\begin_layout Subsubsection
+Connectivity Map Data
 \end_layout
 
 \begin_layout Subsubsection
@@ -134,12 +292,64 @@ diff between toxicity and targeted signature
 Pan-Cancer Models
 \end_layout
 
+\begin_layout Subsection
+Results
+\end_layout
+
+\begin_layout Subsubsection
+Naive associations using drug-level signatures
+\end_layout
+
+\begin_layout Subsubsection
+Models including a Covariate
+\end_layout
+
+\begin_layout Itemize
+pan-can assocs
+\end_layout
+
+\begin_layout Itemize
+the issue we encountered
+\end_layout
+
+\begin_layout Itemize
+how to solve it
+\end_layout
+
+\begin_layout Subsection
+Discussion
+\end_layout
+
+\begin_layout Itemize
+drug-level analysis is great, but:
+\end_layout
+
+\begin_layout Itemize
+might have off-target effects
+\end_layout
+
+\begin_layout Itemize
+and we don't take any bio into account
+\end_layout
+
+\begin_layout Section
+Tissue-specific Synergistic Compounds
+\end_layout
+
+\begin_layout Subsection
+Methods
+\end_layout
+
 \begin_layout Subsubsection
 Tissue-specific Models
 \end_layout
 
 \begin_layout Subsubsection
 Models for Individual Cell Lines
+\end_layout
+
+\begin_layout Subsubsection
+Consensus Models
 \end_layout
 
 \begin_layout Subsection
@@ -191,87 +401,19 @@ and we don't take any bio into account
 \end_layout
 
 \begin_layout Section
-Tissue-specific synergistic compounds
-\end_layout
-
-\begin_layout Subsection
-Aim
-\end_layout
-
-\begin_layout Itemize
-if we take GDSC-only drugs, we have 150x150
+Experimental Validation
 \end_layout
 
 \begin_layout Subsection
 Methods
 \end_layout
 
-\begin_layout Subsubsection
-Quality Control of Signatures
-\end_layout
-
-\begin_layout Itemize
-diff between toxicity and targeted signature
-\end_layout
-
-\begin_layout Subsubsection
-Pan-Cancer Models
-\end_layout
-
-\begin_layout Subsubsection
-Tissue-specific Models
-\end_layout
-
-\begin_layout Subsubsection
-Models for Individual Cell Lines
-\end_layout
-
 \begin_layout Subsection
 Results
 \end_layout
 
-\begin_layout Subsubsection
-Choosing the right Model
-\end_layout
-
-\begin_layout Itemize
-lots of different ways to derive them, no idea what is best
-\end_layout
-
-\begin_layout Itemize
-optimisation modelling (ILP)
-\end_layout
-
-\begin_layout Subsubsection
-Models including a Covariate
-\end_layout
-
-\begin_layout Itemize
-pan-can assocs
-\end_layout
-
-\begin_layout Itemize
-the issue we encountered
-\end_layout
-
-\begin_layout Itemize
-how to solve it
-\end_layout
-
 \begin_layout Subsection
 Discussion
-\end_layout
-
-\begin_layout Itemize
-drug-level analysis is great, but:
-\end_layout
-
-\begin_layout Itemize
-might have off-target effects
-\end_layout
-
-\begin_layout Itemize
-and we don't take any bio into account
 \end_layout
 
 \begin_layout Standard
