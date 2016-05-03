@@ -3195,26 +3195,6 @@ Instead of creating an SQLite database (original SPEED) or flat text files
 From Experiments to Expression Data
 \end_layout
 
-\begin_layout Itemize
-GEO vs AE
-\end_layout
-
-\begin_layout Itemize
-reproducibility, pipeline
-\end_layout
-
-\begin_layout Itemize
-we want raw data
-\end_layout
-
-\begin_layout Itemize
-RLE and NUSE, filters based on those scores
-\end_layout
-
-\begin_layout Itemize
-RMA, mapping to HGNC
-\end_layout
-
 \begin_layout Standard
 To go from an experiment accession in the ArrayExpress database to the actual
  expression values of the arrays referenced in the curated data set, I planned
@@ -4010,12 +3990,196 @@ hta20sttranscriptcluster.db
 Transformation of Z-scores
 \end_layout
 
-\begin_layout Itemize
-distribution across experiments and pathways
+\begin_layout Standard
+With the curated experiments, one requirement was that there at least two
+ arrays available that represent the control condition.
+ This way, I can use the distribution of the control condition of each gene
+ symbol as the reference distribution, and calculate the the number of standard
+ deviations that the average perturbed sample lies above or beneath its
+ mean:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+z_{i}=\frac{\overline{x_{i}}-\mu_{i}}{\sigma_{i}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $i$
+\end_inset
+
+ is the index of the gene, 
+\begin_inset Formula $z_{i}$
+\end_inset
+
+ is the obtained z-score, 
+\begin_inset Formula $\bar{x_{i}}$
+\end_inset
+
+ is the mean perturbed expression level, 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\mu_{i}$
+\end_inset
+
+ is the mean expression level of the reference condition and 
+\begin_inset Formula $\sigma_{i}$
+\end_inset
+
+ its standard deviation.
+ In addition, I use a 
+\begin_inset Formula $loess$
+\end_inset
+
+ model to smooth the relationship between a gene's expression level and
+ its variance across samples (as described in 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Parikh2010-uj"
+
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Subsubsection
 Building the Model
+\end_layout
+
+\begin_layout Standard
+From the z-scores of all experiments and all pathways, I performed a multiple
+ linear regression with the pathway as input and the z-scores as response
+ variable for each gene separately:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Z_{g}\sim M\,...\,\forall g
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Where 
+\begin_inset Formula $Z_{g}$
+\end_inset
+
+ is the z-score for a given gene 
+\begin_inset Formula $g$
+\end_inset
+
+ across all input experiments (as a column vector of experiments).
+ 
+\begin_inset Formula $M$
+\end_inset
+
+ is a coefficients matrix (rows are experiments, columns pathways, cf.
+ figure 1b) that has the coefficient 
+\begin_inset Formula $1$
+\end_inset
+
+ if the the experiment had a pathway activated, 
+\begin_inset Formula $-1$
+\end_inset
+
+ if inhibited, and 
+\begin_inset Formula $0$
+\end_inset
+
+ otherwise.
+ For instance, the Hypoxia pathway had experiments with low oxygen conditions
+ set as 
+\begin_inset Formula $1$
+\end_inset
+
+, HIF1A knockdown as 
+\begin_inset Formula $-1$
+\end_inset
+
+, and all other experiments as 
+\begin_inset Formula $0$
+\end_inset
+
+.
+ The same is true for EGFR and EGF treatment vs.
+ EGFR inhibitors respectively, with the additional coefficients of MAPK
+ and PI3K pathways set to 
+\begin_inset Formula $1$
+\end_inset
+
+ because of known pathway cross-talk.
+ An overview of all modelled cross-talk is shown in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Modelled-pathway-crosstalk"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+pathway cross-talk schema
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Modelled pathway crosstalk
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Modelled-pathway-crosstalk"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+From the result of the linear model, I selected the top 100 genes per pathway
+ according to their p-value and took their estimate (the fitted z-scores)
+ as coefficient.
+ I set all other gene coefficients to 0, so this yielded a matrix with HGNC
+ symbols in rows and pathways in columns, where each pathway had 100 non-zero
+ gene coefficients.
 \end_layout
 
 \begin_layout Subsection
@@ -4333,8 +4497,170 @@ Pathway Scores by different Methods
 Methods
 \end_layout
 
-\begin_layout Itemize
-how I actually calculate the different scores for different methods
+\begin_layout Subsubsection
+Perturbation-response genes
+\end_layout
+
+\begin_layout Standard
+Each column in the matrix of perturbation-response genes corresponds to
+ a plane in gene expression space, in which each cell line or tumor sample
+ is located.
+ If you follow its normal vector from the origin, the distance it spans
+ corresponds to the pathway score 
+\begin_inset Formula $P$
+\end_inset
+
+ each sample is assigned (matrix of samples in rows, pathways in columns).
+ In practice, this is achieved by a simple matrix multiplication between
+ the gene expression matrix (samples in rows, genes in columns, values are
+ expression levels) and the model matrix (genes in rows, pathways in columns,
+ values are our top 100 coefficients):
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P=E*G
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+I then scaled each pathway or gene set score to have a mean of zero and
+ standard deviation of one, in order to factor out the difference in strength
+ of gene expression signatures and thus be able to compare the relative
+ scores across pathways and samples at the same time.
+\end_layout
+
+\begin_layout Subsubsection
+Pathway and Gene Ontology scores
+\end_layout
+
+\begin_layout Standard
+I matched our defined set of pathways to the publicly available pathway
+ databases Reactome (Croft et al.
+ 2011) and KEGG (Kanehisa & Goto 2000), and Gene Ontology (GO) (Gene Ontology
+ Consortium 2004) categories (for the detailed mapping, see table S0), to
+ obtain a uniform set across pathway resources that makes them comparable.
+ I calculated pathway scores as normalized gene set enrichment (GSEA) scores
+ that I transformed into a uniform distribution (xu) using a kernel density
+ estimator (R package sROC) folloId by the normal transformation (xn):
+\end_layout
+
+\begin_layout Standard
+xn=log(xu(1-xu))
+\end_layout
+
+\begin_layout Subsubsection
+SPIA scores
+\end_layout
+
+\begin_layout Standard
+Signaling Pathway Impact Analysis (SPIA) 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Tarca2008-ey"
+
+\end_inset
+
+ is a method that utilizes the directionality and signs in a KEGG pathway
+ graph to determine if in a given pathway structure the available species
+ are more or less available to transduce a signal.
+ As the species considered for a pathway are usually mRNAs of genes, this
+ method infers signaling activity by the proxy of gene expression.
+ In order to do this, SPIA scores require the comparison with a normal condition
+ in order to compute both their scores and their significance.
+\end_layout
+
+\begin_layout Standard
+I used the SPIA Bioconductor package 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Tarca_undated-ol"
+
+\end_inset
+
+ in our analyses that implements an updated version of the 2008 algorithm.
+ I calculated our scores either for each cell line compared to the rest
+ of a given tissue (for the GDSC and drug response data) or compared to
+ the tissue-matched normals (for the TCGA data used in driver and survival
+ associations).
+\end_layout
+
+\begin_layout Subsubsection
+Pathifier scores
+\end_layout
+
+\begin_layout Standard
+As with SPIA, Pathifier 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Drier2013-vn"
+
+\end_inset
+
+ requires the comparison with a normal condition in order to compute their
+ scores.
+ For this, I took the combined data set of the GDSC and TCGA, performed
+ batch correction using ComBat with the GDSC as one batch, TCGA is one batch
+ per project, and tissue as a covariate in either case.
+ In addition, I included whether the same is a tumor or normal in the TCGA
+ as an additional covariate.
+ I then computed the pathway scores for each method using an individual
+ cell line or tumor sample and using all non-cancerous tissue controls as
+ baseline using the BioConductor packages pathifier and SPIA.
+ For this, I used Reactome and KEGG pathways as described in the previous
+ section, respectively.
+ Sample-pathway combinations where scores could not be computed (000 of
+ 000, or 0.00% total) were imputed using the five nearest neighbors (R package
+ impute).
+\end_layout
+
+\begin_layout Subsubsection
+PARADIGM scores
+\end_layout
+
+\begin_layout Standard
+I downloaded the PARADIGM software from the public software repository (
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+https://github.com/sbenz/Paradigm
+\end_layout
+
+\end_inset
+
+) and a model of the cell signaling network published in 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "The_Cancer_Genome_Atlas_Research_Network2013-bi"
+
+\end_inset
+
+ from the corresponding TCGA publication (
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+https://tcga-data.nci.nih.gov/docs/publications/coadread_2012/
+\end_layout
+
+\end_inset
+
+).
+ I used our voom-transformed RNA-seq gene expression data that I normalized
+ using ranks to assign equally spaced values between 0 and 1 for each sample
+ within a given tissue.
+ I then ran PARADIGM inference using the same options as in the above publicatio
+n for each sample separately.
+ I used nodes in the network representing pathway activity to our set of
+ pathways to obtain pathway scores that are comparable to the other methods,
+ averaging scores where there were more than one for a given sample and
+ node.
 \end_layout
 
 \begin_layout Subsection
