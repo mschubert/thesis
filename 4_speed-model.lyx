@@ -95,22 +95,6 @@ Inferring Pathway Activity from Gene Expression
 Aim
 \end_layout
 
-\begin_layout Itemize
-mRNA expression as proxy for protein activity
-\end_layout
-
-\begin_layout Itemize
-describe the goal (find known pancan drug assocs?)
-\end_layout
-
-\begin_layout Itemize
-applicability to basal expression
-\end_layout
-
-\begin_layout Itemize
-gex sigs said to be badly reproducible [we will show that in later section]
-\end_layout
-
 \begin_layout Standard
 
 \lang british
@@ -118,9 +102,6 @@ There are numerous examples of using Gene Set Enrichment Analysis (GSEA)
  for a set of signaling molecules in order to infer signaling activity.
  Most of them, however, use the expression of those proteins directly as
  a proxy for their activity.
- In contrast to that, the SPEED platform extracted differentially expressed
- genes upon pathway stimulation for a set of 11 pathways, and defined the
- gene sets as those that were upregulated in each experiment.
  We argue that using this footprint of signaling activity is a better proxy
  than assuming that it is proportional to the expression of the proteins
  involved in the signal transduction pathway, which assumes the latter accuratel
@@ -220,9 +201,9 @@ key "Gatza2014-as"
  cancer cell lines.
  The MCF10A cell line itself is non-cancerous, so it will represent the
  behaviour of cells without cancer-causing molecular alterations.
- However, while the data in general seems to be of high quality, I am not
- confident to make any statements about the genes responsive in this cell
- line can be extrapolated to other tissues.
+ While the data in general seems to be of high quality, I am not confident
+ to make any statements about the genes responsive in this cell line can
+ be extrapolated to other tissues.
  It has also previously been shown that signatures generated in a certain
  lab correlate more with the lab they were produced in than the biological
  condition [cite], which we can not control for if there is only one lab
@@ -230,11 +211,40 @@ key "Gatza2014-as"
 \end_layout
 
 \begin_layout Standard
-..aim more clearly..
+So far, it is unknown how well it is possible to derive consensus signatures
+ that provide meaningful estimates of pathway activity across different
+ conditions.
+ The only platform that computed them did not do a detailed investigation
+ of either this, or any functional association with the pathway scores obtained.
+ It also relies on a framework that applies multiple arbitrary cutoffs in
+ order to obtain signature sets (cf.
+ section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Pathway-responsive-genes:SPEED"
+
+\end_inset
+
+), even though a simple linear model would abrogate the requirement for
+ such cutoffs, while being able to take into account both up- and downregulated
+ genes.
+ In terms of outcomes, we are interested in how well the available platform
+ is able to explain drug sensitivity in the GDSC cell line panel, with the
+ aim of providing an improved approach that satisfies the stability requirement.
+ In terms of the inferred pathway activity itself, we are interested in
+ how it compares to readily available pathway methods that map mRNA to signaling
+ molecules.
 \end_layout
 
 \begin_layout Section
 Pathway-responsive genes: The SPEED Platform
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Pathway-responsive-genes:SPEED"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
