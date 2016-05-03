@@ -1472,12 +1472,18 @@ on is strongly dependent on the amount of variance captured in the reduced
 \end_layout
 
 \begin_layout Standard
-T-distributed Stochastic Neighbor Embedding (t-SNE).
- Instead of relying on the most variable global structures, this method
- visualises local structures in a given data set: Starting from a point
- in space (the sample), additional samples are distributed in its vicinity
- depending on their distance to the original sample, as well as the other
- points considered (that are a subset of the total number of points).
+T-distributed Stochastic Neighbor Embedding (t-SNE) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Van_der_Maaten2008-kt"
+
+\end_inset
+
+, instead of relying on the most variable global structures, visualises
+ local structures in a given data set: Starting from a point in space (the
+ sample), additional samples are distributed in its vicinity depending on
+ their distance to the original sample, as well as the other points considered
+ (that are a subset of the total number of points).
  Using this method, one can only trust the points neighbouring each other
  up to a certain number for which they were considered, as specified by
  the perplexity parameter.
@@ -1585,8 +1591,15 @@ The problem of finding a differentially expressed connected subnetwork in
  scores, and whether or not it adds or subtracts a score (the prize) by
  doing that.
  An example of an implementation that uses a PCST on interacting proteins
- is the BioNet R package, intially used to analyse deregulated subnetworks
- in Diffuse Large B Cell Lymphoma (DLBC).
+ is the BioNet R package 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Beisser2010-wa"
+
+\end_inset
+
+, intially used to analyse deregulated subnetworks in Diffuse Large B Cell
+ Lymphoma (DLBC).
 \end_layout
 
 \begin_layout Subsection
@@ -1649,19 +1662,25 @@ n factor could bind but did not in the original experiment.
  factor blocking the binding of the one we are looking at.
  There are databases that collect and store those motifs from experimental
  data and their known and predicted binding in different cell types, such
- as JASPAR [*],TRANSFAC [*], or the Ensembl Regulatory Build [*].
+ as JASPAR 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Portales-Casamar2009-nd,Mathelier2013-mo"
+
+\end_inset
+
+,TRANSFAC 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Matys2003-ea"
+
+\end_inset
+
+, or the Ensembl Regulatory Build [*].
 \end_layout
 
 \begin_layout Subsubsection
 Mutual Information for Transcription Factor Networks
-\end_layout
-
-\begin_layout Itemize
-ARACNE
-\end_layout
-
-\begin_layout Itemize
-TF logic
 \end_layout
 
 \begin_layout Standard
@@ -1710,11 +1729,6 @@ key "Wang2009-ui"
  If a high modulator expression corresponds with increased mutual information
  that will likely be activating, or inactivating if in corresponds to decreased
  mutual information.
-\end_layout
-
-\begin_layout Standard
-In another extension, they proposed a method call Master Regulator Inference
- Analysis (MaRInA) , which ***
 \end_layout
 
 \begin_layout Subsection
@@ -1788,8 +1802,15 @@ We can thus argue that computational methods are required to make statements
  signs of the different pathway molecules, e.g.
  Signaling Pathway Impact Analysis [ref] or Pathifier [ref].
  They, however, do still not distinguish between expression level and activity.
- Another method, PARADIGM [ref] could in theory support it, depending the
- pathway structure supplied for inference.
+ Another method, PARADIGM 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Vaske2010-zn"
+
+\end_inset
+
+ could in theory support it, depending the pathway structure supplied for
+ inference.
  Yet, the focus has never been to tell apart activity from expression.
  I elaborate on these issues further in chapter 4, with a possible way to
  resolve them.
@@ -1821,8 +1842,14 @@ When investigating the effect small molecules (i.e., drugs) have on a system,
  indication (where directionality may be limited by additional factors),
  or (2) matching a drug's signature with the inverse gene expression changes
  that a disease exhibits over normal controls, we can suggest that this
- drug may be used to counteract the effects of the disease [MANTRA, DvD],
- i.e.
+ drug may be used to counteract the effects of the disease 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Iorio2009-ji,Pacini2013-xn"
+
+\end_inset
+
+, i.e.
  be a potential treatment if the disesase is indeed caused by the gene expressio
 n changes that the drug reverses.
  Of course, those matches should rather be seen as hypothesis generators
@@ -1869,9 +1896,9 @@ comp analyses get more complex
 
 \begin_layout Standard
 Reproducibility of scientific experiments has recently gotten into the spotlight
- when [someone] published a high-profile study that tried to independently
- validate findings of [40?] findings reported by different groups in the
- journals Nature, Science and Cell.
+ when Amgen published a high-profile study that tried to independently validate
+ findings of [40?] findings reported by different groups in the journals
+ Nature, Science and Cell [baker2016].
  For half of the studies that they invesigated, they could not obtain the
  same results and thus conclusions that the respective authors reported.
  Needless to say, this raised some concerns about the current paradigm of
@@ -1879,9 +1906,9 @@ Reproducibility of scientific experiments has recently gotten into the spotlight
  effect or significance of a study in order to have an article accepted
  in the top tier journals.
  Follow-up studies have pointed a part of the blame on use of different
- antibodies [nat news+refs] that did not always show the affinity and specificit
-y to their target as the vendors claimed, which has resulted in the creation
- of a registry for validated antibodies at [somewhere].
+ antibodies [baker2016.2] that did not always show the affinity and specificity
+ to their target as the vendors claimed, which has resulted in the creation
+ of a registry for validated antibodies at [bradbury2015].
 \end_layout
 
 \begin_layout Standard
@@ -1912,9 +1939,27 @@ Apart from experimental reproducibility, computational reproducibility should
  experimental scientists, computational analysis also has its high-profile
  fraught with issues.
  The most well-known example of this is maybe Anil Potti's cancer gene signature
-s [*] that Keith Baggerly later spent six months trying to reproduce - and
- failed, but in the process found considerable errors that later caused
- the original article to be retracted [*].
+s
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+http://retractionwatch.com/2015/11/07/its-official-anil-potti-faked-data-say-feds
+/
+\end_layout
+
+\end_inset
+
+ that Keith Baggerly later spent six months trying to reproduce - and failed,
+ but in the process found considerable errors that later caused the original
+ article to be retracted 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Baggerly2009-xc"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
