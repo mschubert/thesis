@@ -1133,6 +1133,10 @@ a free, open-source, curated and peer reviewed pathway database
 \end_layout
 
 \begin_layout Subsection
+Primary Cancer Cohorts
+\end_layout
+
+\begin_layout Subsubsection
 The Cancer Genome Atlas (TCGA)
 \end_layout
 
@@ -1153,7 +1157,7 @@ secondary dbs that simplify access: e.g.
  BROAD GDAC firehose
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Paragraph
 International Cancer Genome Consortium (ICGC)
 \end_layout
 
@@ -1178,6 +1182,10 @@ again: unbiased approach = spurious results
 \end_layout
 
 \begin_layout Subsection
+Cancer cell line drug sensitivity resources
+\end_layout
+
+\begin_layout Subsubsection
 Cancer Cell Line Encyclopedia (CCLE)
 \end_layout
 
@@ -1185,7 +1193,7 @@ Cancer Cell Line Encyclopedia (CCLE)
 status 2002
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Genomics of Drug Sensitivity in Cancer (GDSC)
 \end_layout
 
