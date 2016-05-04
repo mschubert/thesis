@@ -162,70 +162,182 @@ Aim
 \end_layout
 
 \begin_layout Standard
-..get baseline of gsea w/ go/pathway..
-\end_layout
+Pathway methods have been used for a while in a cancer context, both for
+ cell lines an primary tumours.
+ Most of the time, the method of choice is to take a gene set from either
+ Gene Ontology (GO) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Ashburner2000-xl"
 
-\begin_layout Subsection
-Pathway Methods
-\end_layout
+\end_inset
 
-\begin_layout Subsubsection
-Gene Set Enrichment Analysis (GSEA)
-\end_layout
+, KEGG 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Kanehisa2000-mp"
 
-\begin_layout Itemize
-inception, history
-\end_layout
+\end_inset
 
-\begin_layout Itemize
-how it works
-\end_layout
+ or Reactome 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Croft2011-po"
 
-\begin_layout Itemize
-maybe: leading edge analysis
-\end_layout
+\end_inset
 
-\begin_layout Itemize
-with any of the pathway gene sets
-\end_layout
+, and calculate a combined expression score using either a Fisher's exact
+ test (e.g.
+ by a tool called DAVID **cite**) if one is to test one set against another,
+ or some variant of Gene Set Enrichment Analysis (GSEA) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Subramanian2005-wp"
 
-\begin_layout Itemize
-implementations
-\end_layout
+\end_inset
 
-\begin_layout Itemize
-limitations to the set
-\end_layout
+ if the sets are pre-defined, but one wants to avoid cutting of continuous
+ expression values at an artbitrary threshold.
+ There are, however, more advanced pathway methods available that take into
+ account the directionality and sign of edges in a KEGG pathway (Signaling
+ Pathway Impact Analysis 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Tarca2008-ey"
 
-\begin_layout Subsubsection
-Other Pathway Methods
+\end_inset
+
+, Differential Expression Analysis for Pathways 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Haynes2013-eo"
+
+\end_inset
+
+), calculate probable information flow between the set items (Pathifier,
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Drier2013-vn"
+
+\end_inset
+
+), or employ a bayesian framework that models translation, activity, and
+ interactions (PARADIGM, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Vaske2010-zn"
+
+\end_inset
+
+).
+ I will leave the more complex methods for a later chapter and focus on
+ GSEA using different gene sets here.
 \end_layout
 
 \begin_layout Standard
-While GSEA is able to detect groups of genes that are differentially expressed
- per condition, it does not take into account the structure of the pathway
- whose expression it quantifies.
- What this means is that a member than has a central role is not weighted
- differently from a member that does not mediate any particular function
- somewhere on the periphery.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+add gsea schema here...
+ (maybe still switch to GSVA?)
 \end_layout
 
-\begin_layout Section
-Aim
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+GSEA
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-After the impact of driver mutations on drug response of cell lines in the
- GDSC panel has been quantified 
+GSEA using GO gene sets is ubiquitous: usually, a (for instance) differential
+ expression analysis yields a list of genes, yet it is not clear which higher-le
+vel function they mediate.
+ One run of GSEA/GO later, our list of genes is condensed down to a list
+ of significantly enriched GO categories, that may be related to the phenotype
+ we are observing.
+ This may work very well in some cases.
+ There are, however, a couple of caveats to observe: (1) a gene does not
+ exclusively belong to one process; we might very well get a significant
+ p-value only caused by the overlap between different sets, (2) if we test
+ all categories and correct by false discovery rate we might dilute our
+ signal so much that small categories can no longer be significant, or (3)
+ they process that did indeed cause our phenotype does not correspond to
+ a gene set at all (this can be due to missing biological knowledge, annotation
+ errors, or simply the fact that curators have not yet added a certain gene
+ to a certain category).
+ Maybe the most dangerous caveat of them all is that once we see our list
+ of resulting categories, we are inclined to pick out category that 
+\begin_inset Quotes eld
+\end_inset
+
+makes sense
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Taken this selection of desired categories on its head, we may also be
+ inclined to overlook a category that we don't want to see, e.g.
+ because the involved process is already known in literature and we could
+ not publish our new findings in a high-impact journal.
+\end_layout
+
+\begin_layout Standard
+I will use this chapter to provide a baseline of using Gene Set Enrichment
+ Analysis in order to figure out which processes are involved in: (1) making
+ cancer cell lines sensitive or resistant to different drugs in the GDSC
+ panel 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Garnett2012-dk,Iorio2016-gh"
 
 \end_inset
 
-, an additional question that I wanted to ask was how this drug response
- related to gene expression, in terms of either gene sets with a defined
- function or biological pathways.
+, (2) causing improved or diminished survival in cancer patients in the
+ TCGA cohorts 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "The_Cancer_Genome_Atlas_Research_Network2013-bi"
+
+\end_inset
+
+, and (3) which two drugs are likely to act synergistically when treating
+ cancer cell lines.
+ I will not filter the gene sets I use, and well represented signaling pathways
+ are among the top hits for (1) - where signaling pathways are known to
+ play a pivotal role for targeted therapies 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Garnett2012-dk,Iorio2016-gh,Yap2012-mi"
+
+\end_inset
+
+ and (2) - where signaling pathways are at the core of disease development
+ and progression 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Hanahan2000-is,Hanahan2011-he,Hanahan2012-im"
+
+\end_inset
+
+.
+ For (3), I will see how well cancer drugs are represented in the hits obtained,
+ as the combinatorial targeting of multiple cancer-related signaling pathways
+ has been shown to ***.
 \end_layout
 
 \begin_layout Section
