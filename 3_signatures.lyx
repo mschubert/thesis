@@ -272,12 +272,60 @@ key "Wei2006-ne"
 A Pan-Cancer View of Drug Sensitisation
 \end_layout
 
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Thu: go through the scripts and write down what they do
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Methods
 \end_layout
 
 \begin_layout Subsubsection
 Connectivity Map Data
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/3.1_projections.svg
+	lyxscale 50
+	width 90text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Overview of number of experiments available
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
@@ -292,6 +340,72 @@ diff between toxicity and targeted signature
 Pan-Cancer Models
 \end_layout
 
+\begin_layout Itemize
+normal assocs
+\end_layout
+
+\begin_layout Itemize
+covar assocs (just show the formula here - explain in results section below)
+\end_layout
+
+\begin_layout Standard
+We fit a model to Z-scores of each perturbation experiment.
+ We don’t specify a cutoff for sensitive and resistant cell lines.
+ Negative correlation between cell lines expressing the signature and observed
+ IC50s implies a good combination.
+ This has more power than GSEA in our analyses.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/3.1_schema.svg
+	lyxscale 50
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Schema of linear associations
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Search for Literature Evidence
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Quotes eld
+\end_inset
+
+we did a google search
+\begin_inset Quotes erd
+\end_inset
+
+ bla bla
+\end_layout
+
 \begin_layout Subsection
 Results
 \end_layout
@@ -300,8 +414,210 @@ Results
 Naive associations using drug-level signatures
 \end_layout
 
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+..put volcano here..
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Naive volcano
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/3.1_pan_matrix.svg
+	lyxscale 50
+	width 80page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Naive association matrix
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Lack of Literature Evidence
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/3.1_qs11_fit.svg
+	lyxscale 50
+	width 80text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+QS11 fit
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Pathway cross-activation as a source of False Positives
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/3.1_qs11_problem.svg
+	lyxscale 50
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+QS11 Problem schematic
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsubsection
 Models including a Covariate
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+..put volcano here..
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Covar volcano
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/3.1_pan_matrix_covar.svg
+	lyxscale 50
+	width 80page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Matrix of associations including covariate
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
@@ -314,6 +630,192 @@ the issue we encountered
 
 \begin_layout Itemize
 how to solve it
+\end_layout
+
+\begin_layout Subsubsection
+Literature Evidence
+\end_layout
+
+\begin_layout Standard
+CDK inhibitors may act as sensitisers for GSK1120212 in multiple tissues.
+ PD-0332991 [CDK 4/6] GSK1120212 [MEK 1/2] Found in melanoma, our analysis
+ suggests stronger effects in the tissues listed.
+ “The combination MEK and CDK4/6 inhibition is synergistic in vivo”, Kwong,
+ L.
+ N.
+ et al.
+ Oncogenic NRAS signaling differentially regulates survival and proliferation
+ in melanoma.
+ Nat.
+ Med.
+ 18, 1503–1510 (2012) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Kwong2012-vd"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/3.1_gsk1120212+cdk.svg
+	lyxscale 50
+	width 80text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+GSK1120212 + CDK inhibitor fit
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Tissue-specific associations are done by deriving tissue-dependent drug
+ signatures (i.e., only using corresponding cell lines in LINCS and GDSC)
+ for predicting drug sensitising agents.
+ SB590885 [Raf/BRAF] other inibitors [MEK 1/2] This has been shown in SKCM:
+ “data from two phase III trials add considerable support for combined BRAF
+ and MEK inhibition” , Killock, D.
+ Skin cancer: BRAF and MEK inhibitors - good news comes in twos! Nat.
+ Rev.
+ Clin.
+ Oncol.
+ 11, 683–683 (2014) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Killock2014-ku"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/3.1_raf+mek_BRCA.svg
+	lyxscale 50
+	width 80text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Raf + MEK inhibitor in BRCA fit
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Various drugs may act as sensitisers for Temozolomide in COREAD.
+ Temozolomide [DNA alkylating] AG-014699 [PARP inhibitor] GW843682X [PLK1
+ inhibitor] Mitomycin C [DNA cross-linker] Plummer, R.
+ et al.
+ A phase II study of the potent PARP inhibitor, Rucaparib (PF-01367338,
+ AG014699), with temozolomide in patients with metastatic melanoma demonstrating
+ evidence of chemopotentiation.
+ Cancer Chemother.
+ Pharmacol.
+ 71, 1191–1199 (2013) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Plummer2013-vl"
+
+\end_inset
+
+.
+ Pezuk, J.
+ A.
+ et al.
+ Polo-like kinase 1 inhibition causes decreased proliferation by cell cycle
+ arrest, leading to cell death in glioblastoma.
+ Cancer Gene Ther.
+ 20, 499–506 (2013) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Pezuk2013-xn"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/3.1_temozolomide_COREAD.svg
+	lyxscale 50
+	width 80text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Temozolomide fit
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -332,6 +834,14 @@ might have off-target effects
 and we don't take any bio into account
 \end_layout
 
+\begin_layout Standard
+These are preliminary results, examples are shown where a quick search turned
+ up additional supporting evidence.
+ There are some parameters in the method that should be optimised (LINCS
+ projection, signature creation cutoff).
+ Right now, we only use GDSC drugs in LINCS - which others should we include?
+\end_layout
+
 \begin_layout Section
 Tissue-specific Synergistic Compounds
 \end_layout
@@ -342,6 +852,41 @@ Methods
 
 \begin_layout Subsubsection
 Tissue-specific Models
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/3.2_experiments.svg
+	lyxscale 50
+	width 90text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Overview of number of experiments available
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
