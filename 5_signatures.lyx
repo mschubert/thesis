@@ -269,6 +269,136 @@ key "Wei2006-ne"
 \end_layout
 
 \begin_layout Section
+Using the original Connectivity Map
+\end_layout
+
+\begin_layout Subsection
+Methods
+\end_layout
+
+\begin_layout Subsubsection
+Matching Drug and Disease Signatures
+\end_layout
+
+\begin_layout Itemize
+MSigDB
+\end_layout
+
+\begin_layout Itemize
+maybe mention: 2 sigs to match 1 disease
+\end_layout
+
+\begin_layout Itemize
+MANTRA
+\end_layout
+
+\begin_layout Itemize
+DvD
+\end_layout
+
+\begin_layout Subsubsection
+Predicting Drug Combinations
+\end_layout
+
+\begin_layout Itemize
+maybe mention: 2 sigs to match 1 disease (same or in prev?)
+\end_layout
+
+\begin_layout Subsection
+Results
+\end_layout
+
+\begin_layout Subsubsection
+Pan-cancer predictions
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/2.3_mantra_pan.png
+	lyxscale 50
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Gene Ontology Pan-Cancer associations
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Tissue-specific predictions
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/2.3_mantra_tissue.png
+	lyxscale 50
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Gene Ontology tissue-specific associations
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Discussion
+\end_layout
+
+\begin_layout Itemize
+(almost) only 1 cell line, 10 uM everywhere
+\end_layout
+
+\begin_layout Itemize
+mostly non cancer drugs
+\end_layout
+
+\begin_layout Section
 A Pan-Cancer View of Drug Sensitisation
 \end_layout
 
