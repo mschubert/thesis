@@ -4596,12 +4596,24 @@ I matched our defined set of pathways to the publicly available pathway
  Consortium 2004) categories (for the detailed mapping, see table S0), to
  obtain a uniform set across pathway resources that makes them comparable.
  I calculated pathway scores as normalized gene set enrichment (GSEA) scores
- that I transformed into a uniform distribution (xu) using a kernel density
- estimator (R package sROC) folloId by the normal transformation (xn):
+ that I transformed into a uniform distribution (
+\begin_inset Formula $x_{u}$
+\end_inset
+
+) using a kernel density estimator (R package sROC) followed by the normal
+ transformation (
+\begin_inset Formula $x_{n}$
+\end_inset
+
+):
 \end_layout
 
 \begin_layout Standard
-xn=log(xu(1-xu))
+\align center
+\begin_inset Formula $x_{n}=log(x_{u}(1-x_{u}))$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -4631,6 +4643,19 @@ name "tab:Mapping-go"
 
 \begin_layout Plain Layout
 \align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
 \begin_inset Tabular
 <lyxtabular version="3" rows="13" columns="3">
 <features rotate="0" tabularvalignment="middle">
@@ -5019,6 +5044,17 @@ vascular endothelial growth factor signaling pathway
 \end_inset
 
 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -5090,6 +5126,19 @@ name "tab:Mapping-spia"
 
 \begin_layout Plain Layout
 \align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
 \begin_inset Tabular
 <lyxtabular version="3" rows="13" columns="3">
 <features rotate="0" tabularvalignment="middle">
@@ -5478,6 +5527,17 @@ VEGF signaling pathway
 \end_inset
 
 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -5542,6 +5602,19 @@ name "tab:Mapping-reactome"
 
 \begin_layout Plain Layout
 \align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
 \begin_inset Tabular
 <lyxtabular version="3" rows="20" columns="3">
 <features rotate="0" tabularvalignment="middle">
@@ -6133,6 +6206,17 @@ Signaling by VEGF
 \end_inset
 
 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -6212,10 +6296,22 @@ name "tab:Mapping-paradigm"
 
 \begin_layout Plain Layout
 \align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
 \begin_inset Tabular
-<lyxtabular version="3" rows="13" columns="3">
+<lyxtabular version="3" rows="13" columns="2">
 <features rotate="0" tabularvalignment="middle">
-<column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <row>
@@ -6228,20 +6324,11 @@ Pathway
 
 \end_inset
 </cell>
-<cell multicolumn="1" alignment="center" valignment="top" usebox="none">
+<cell multirow="3" alignment="center" valignment="middle" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 PARADIGM
-\end_layout
-
-\end_inset
-</cell>
-<cell multicolumn="2" alignment="center" valignment="top" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
 \end_layout
 
 \end_inset
@@ -6257,20 +6344,11 @@ PARADIGM
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+<cell multirow="4" alignment="center" valignment="top" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-ID
-\end_layout
 
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Name
 \end_layout
 
 \end_inset
@@ -6282,15 +6360,6 @@ Name
 
 \begin_layout Plain Layout
 EGFR
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
 \end_layout
 
 \end_inset
@@ -6319,15 +6388,6 @@ Hypoxia
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
 response to hypoxia (abstract)
 \end_layout
 
@@ -6340,15 +6400,6 @@ response to hypoxia (abstract)
 
 \begin_layout Plain Layout
 JAK-STAT
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
 \end_layout
 
 \end_inset
@@ -6377,15 +6428,6 @@ MAPK
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
 MEK-1-2-active
 \end_layout
 
@@ -6398,15 +6440,6 @@ MEK-1-2-active
 
 \begin_layout Plain Layout
 NFkB
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
 \end_layout
 
 \end_inset
@@ -6435,15 +6468,6 @@ p53
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
 response to DNA damage stimulus (abstract)
 \end_layout
 
@@ -6456,15 +6480,6 @@ response to DNA damage stimulus (abstract)
 
 \begin_layout Plain Layout
 PI3K
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
 \end_layout
 
 \end_inset
@@ -6493,15 +6508,6 @@ TNFa
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
 tumor necrosis factor receptor activity (abstract)
 \end_layout
 
@@ -6514,15 +6520,6 @@ tumor necrosis factor receptor activity (abstract)
 
 \begin_layout Plain Layout
 TGFb
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
 \end_layout
 
 \end_inset
@@ -6551,15 +6548,6 @@ Trail
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
 induction of apoptosis (abstract)
 \end_layout
 
@@ -6580,15 +6568,6 @@ VEGF
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
 platelet-derived growth factor receptor activity (abstract)
 \end_layout
 
@@ -6596,6 +6575,17 @@ platelet-derived growth factor receptor activity (abstract)
 </cell>
 </row>
 </lyxtabular>
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
 
 \end_inset
 
@@ -6924,6 +6914,98 @@ would be nice to have AUCs for each curve here
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/4.2_links_speed.pdf
+	lyxscale 50
+	width 50col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Perturbation-Response genes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/4.2_links_reactome.pdf
+	lyxscale 50
+	width 50col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Reactome pathway enrichment
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Comparison of links between perturbation input and Footprints vs.
+ Reactome pathway enrichment
 \end_layout
 
 \end_inset
