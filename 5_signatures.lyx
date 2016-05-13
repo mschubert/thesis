@@ -1024,7 +1024,27 @@ Models for Individual Cell Lines
 \end_layout
 
 \begin_layout Subsubsection
-Consensus Models
+Building Consensus Models
+\end_layout
+
+\begin_layout Subsubsection
+Modeling Drug Interactions
+\end_layout
+
+\begin_layout Itemize
+do mainly the maths here
+\end_layout
+
+\begin_layout Subsubsection
+Experimental Validation
+\end_layout
+
+\begin_layout Itemize
+this is done by the hamburg people
+\end_layout
+
+\begin_layout Itemize
+just some short description what they did
 \end_layout
 
 \begin_layout Subsection
@@ -1043,20 +1063,24 @@ lots of different ways to derive them, no idea what is best
 optimisation modelling (ILP)
 \end_layout
 
+\begin_layout Itemize
+selecting the combinations to be screened
+\end_layout
+
 \begin_layout Subsubsection
-Models including a Covariate
+Experimental Validation: Single Agent Dilutions
 \end_layout
 
 \begin_layout Itemize
-pan-can assocs
+either a couple of all of the combination plots
+\end_layout
+
+\begin_layout Subsubsection
+Experimental Validation: Combinations
 \end_layout
 
 \begin_layout Itemize
-the issue we encountered
-\end_layout
-
-\begin_layout Itemize
-how to solve it
+either a couple of all of the combination plots
 \end_layout
 
 \begin_layout Subsection
@@ -1073,22 +1097,6 @@ might have off-target effects
 
 \begin_layout Itemize
 and we don't take any bio into account
-\end_layout
-
-\begin_layout Section
-Experimental Validation
-\end_layout
-
-\begin_layout Subsection
-Methods
-\end_layout
-
-\begin_layout Subsection
-Results
-\end_layout
-
-\begin_layout Subsection
-Discussion
 \end_layout
 
 \begin_layout Standard
