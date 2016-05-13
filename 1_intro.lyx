@@ -1334,9 +1334,16 @@ The concept of a cell being unable to acquire two mutations that together
  patterns of metabolic networks [*], or by identifying si/sh-RNA probes
  that are purified from a starting population [*].
  These interactions can then be transformed in a network of synthetic lethal
- pairs [Jerby-Arnon2014], which can then be used to predict sensitivity
- of cancer cell lines to a certain drug treatment, as well as clinical outcome
- given the level of co- expression of its pairs.
+ pairs 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Jerby-Arnon2014-fn"
+
+\end_inset
+
+], which can then be used to predict sensitivity of cancer cell lines to
+ a certain drug treatment, as well as clinical outcome given the level of
+ co- expression of its pairs.
  Examples of such pairs are a VHL LoF mutation that is associated with increased
  sensitivity to not previously associated with cancer as shown in their
  article, or the well-known BRCA1/2 loss of function and PARP inhibitors
@@ -1363,6 +1370,13 @@ d set to compare our observed instance to using numerical simulations.
  account.
  In order to do this, a number of authors developed random versions of presence-
 absence matrices, and more Ciriello et al.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Ciriello2012-hc"
+
+\end_inset
+
  transformed the problem into one of switching edges on a bipartite network
  that proved favorably by means of computational resources required.
 \end_layout
@@ -1793,14 +1807,36 @@ We can thus argue that computational methods are required to make statements
  PTM data.
  The simplest approach to this is looking how much mRNA of signaling molecules
  are expressed that comprise a pathway, and designate a high expression
- a high activity and vice versa.
+ a high activity and vice versa (using algorithms like Gene Set Enrichment
+ Analysis 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Subramanian2005-pd"
+
+\end_inset
+
+, more in chapter 2).
  This, however, is at odds with the way cell signaling works and is regulated.
  Inferring the protein levels from mRNA levels may indeed be viable [60%
  paper], but two steps removed from the PTMs.
  Methods have been developed to address the issue of taking the expression
  level of a gene set as activity proxy by considering the structure and
  signs of the different pathway molecules, e.g.
- Signaling Pathway Impact Analysis [ref] or Pathifier [ref].
+ Signaling Pathway Impact Analysis 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Tarca2008-ey"
+
+\end_inset
+
+ or Pathifier 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Drier2013-vn"
+
+\end_inset
+
+.
  They, however, do still not distinguish between expression level and activity.
  Another method, PARADIGM 
 \begin_inset CommandInset citation
