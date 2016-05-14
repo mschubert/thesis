@@ -1188,13 +1188,37 @@ Modeling Drug Interactions
 \end_layout
 
 \begin_layout Standard
-If we assume the expected effect 
+Using two drugs and denoting the combination treatment with 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+and the corresponding single agent treatment with 
+\begin_inset Formula $\tilde{x}_{i}$
+\end_inset
+
+, we get the combination index 
+\begin_inset Formula $CI$
+\end_inset
+
+ that is 
+\begin_inset Formula $1$
+\end_inset
+
+ under Loewe's additivity assumption, smaller than 
+\begin_inset Formula $1$
+\end_inset
+
+ for synergistic combinations, and larger than 
+\begin_inset Formula $1$
+\end_inset
+
+ for antagonistic combinations.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \[
-CI=\frac{x_{1}}{\tilde{x_{1}}}+\frac{x_{2}}{\tilde{x_{2}}}
+\frac{x_{1}}{\tilde{x_{1}}}+\frac{x_{2}}{\tilde{x_{2}}}=CI
 \]
 
 \end_inset
