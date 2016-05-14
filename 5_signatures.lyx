@@ -579,10 +579,34 @@ status open
 
 \begin_layout Plain Layout
 \align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
 \begin_inset Graphics
 	filename figures/3.1_pan_matrix.svg
 	lyxscale 50
 	width 80page%
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
 
 \end_inset
 
@@ -723,10 +747,34 @@ status open
 
 \begin_layout Plain Layout
 \align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
 \begin_inset Graphics
 	filename figures/3.1_pan_matrix_covar.svg
 	lyxscale 50
 	width 80page%
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
 
 \end_inset
 
@@ -973,7 +1021,7 @@ These are preliminary results, examples are shown where a quick search turned
 \end_layout
 
 \begin_layout Section
-Tissue-specific Synergistic Compounds
+Tissue-specific synergistic Compounds
 \end_layout
 
 \begin_layout Subsection
@@ -1028,14 +1076,6 @@ Building Consensus Models
 \end_layout
 
 \begin_layout Subsubsection
-Modeling Drug Interactions
-\end_layout
-
-\begin_layout Itemize
-do mainly the maths here
-\end_layout
-
-\begin_layout Subsubsection
 Experimental Validation
 \end_layout
 
@@ -1045,6 +1085,304 @@ this is done by the hamburg people
 
 \begin_layout Itemize
 just some short description what they did
+\end_layout
+
+\begin_layout Subsubsection
+Fitting Drug Response Curves
+\end_layout
+
+\begin_layout Standard
+Given that we know which concentration 
+\begin_inset Formula $x$
+\end_inset
+
+ of a given drug we treat our cells with and which relative viability 
+\begin_inset Formula $y$
+\end_inset
+
+ we observe, we can calculate the Hill parameters for the minimal viability
+ 
+\begin_inset Formula $E^{min}$
+\end_inset
+
+, the maximal viability 
+\begin_inset Formula $E^{max}$
+\end_inset
+
+, the concentration of the half maximum effect 
+\begin_inset Formula $m$
+\end_inset
+
+ and the slope of the sigmoid 
+\begin_inset Formula $\lambda$
+\end_inset
+
+.
+ Note that 
+\begin_inset Formula $E^{min}$
+\end_inset
+
+ and 
+\begin_inset Formula $E^{max}$
+\end_inset
+
+ are usually for the minimum and maximum effect instead of relative viability.
+ We can use them for viability here because both range between 
+\begin_inset Formula $0$
+\end_inset
+
+ and 
+\begin_inset Formula $1$
+\end_inset
+
+, the only difference is that our curve is that in this case we are modeling
+ a sigmoid decrease instead of increase, so the only different is that the
+ slope parameter has a different sign.
+ The relationship 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Yadav2015-bu"
+
+\end_inset
+
+ between our drug response paramters is in both cases:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x=m\left(\frac{y-E^{min}}{E^{max}-y}\right)^{-\lambda}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Given enough data points we can calculate the best fit using nonlinear least
+ squares for our parameters.
+ I make an additional assumption here, which is that a drug that is infinitely
+ diluted will show no inhibition of cell growth (or full viability) by setting
+ the parameter 
+\begin_inset Formula $E^{max}$
+\end_inset
+
+ to 
+\begin_inset Formula $1$
+\end_inset
+
+ instead of optimising it between 
+\begin_inset Formula $0$
+\end_inset
+
+ and 
+\begin_inset Formula $1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Modeling Drug Interactions
+\end_layout
+
+\begin_layout Standard
+If we assume the expected effect 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+CI=\frac{x_{1}}{\tilde{x_{1}}}+\frac{x_{2}}{\tilde{x_{2}}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If two drugs act in an additive manner, the combination index 
+\begin_inset Formula $CI$
+\end_inset
+
+ is 1.
+ If it is smaller than 
+\begin_inset Formula $1$
+\end_inset
+
+ the drugs act synergistically, or if it is larger than 
+\begin_inset Formula $1$
+\end_inset
+
+ antagonistically.
+ To calculate our expected response 
+\begin_inset Formula $y_{Loewe}$
+\end_inset
+
+ given treatment with two drugs at concentration 
+\begin_inset Formula $x_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $x_{2}$
+\end_inset
+
+, we set the combination index to 
+\begin_inset Formula $1$
+\end_inset
+
+ and solve for 
+\begin_inset Formula $y_{Loewe}$
+\end_inset
+
+ numerically [yadav2015complex].
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+1-\frac{x_{1}}{m_{1}\left(\frac{y_{Loewe}-E_{1}^{min}}{E_{1}^{max}-y_{Loewe}}\right)^{-\lambda_{1}}}-\frac{x_{2}}{m_{2}\left(\frac{y_{Loewe}-E_{2}^{min}}{E_{2}^{max}-y_{Loewe}}\right)^{-\lambda_{2}}}=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The way I do this is to use the bisect function of SciPy between 
+\begin_inset Formula $0$
+\end_inset
+
+ and 
+\begin_inset Formula $1-10^{5}$
+\end_inset
+
+, where the the returned value of the function is smaller than 
+\begin_inset Formula $0$
+\end_inset
+
+ for the input close to 
+\begin_inset Formula $1$
+\end_inset
+
+ and greater than 
+\begin_inset Formula $0$
+\end_inset
+
+ for the input 
+\begin_inset Formula $0$
+\end_inset
+
+.
+ Having those two different signs, the solver divides the interval between
+ the two input values iteratively until it reaches a value for 
+\begin_inset Formula $y_{Loewe}$
+\end_inset
+
+that makes the function approximate 
+\begin_inset Formula $0$
+\end_inset
+
+ up to a default tolerance.
+\end_layout
+
+\begin_layout Standard
+I calculate the expected viability 
+\begin_inset Formula $y_{Loewe}$
+\end_inset
+
+for the whole matrix of same drug concentration as was used in the combination
+ screening.
+ This way, I get a drug response surface that corresponds to a drug interaction
+ that is neither synergistic nor antagonistic.
+ The volume between the calculated and measured surface then corresponds
+ to an observed interaction effect: If we see fewer cells survive than we
+ would expect under the assumption of an additive effect we found a synergistic
+ combination, or an antagonistic one if vice versa.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+V=\int_{x_{1}^{min}}^{x_{1}^{max}}\int_{x_{2}^{min}}^{x_{2}^{max}}E^{expected}-E^{observed}dx_{1}dx_{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In practice, I integrate the volume below each of the surfaces separately
+ using the 2D trapezoidal rule by first defining the synergy score 
+\begin_inset Formula $s$
+\end_inset
+
+ at any given point as
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+s_{m,n}=E^{expected}-E^{observed}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Then calculating the volume
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+V=\frac{1}{4}\sum_{i\in x_{1}}\sum_{j\in x_{2}}s_{i,j}+s_{i+1,j}+s_{i,j+1}+s_{i+1,j+1}\Delta x_{1}\Delta x_{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Subtract the measured from the calculated volume, and normalize the volume
+ I obtain by the area of the matrices
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A=\sum_{x_{1}}\sum_{x_{2}}\Delta x_{1}\Delta x_{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+And obtian the overall synergy score 
+\begin_inset Formula $S$
+\end_inset
+
+ by dividing the volume by the area
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S=\frac{V}{A}.
+\]
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
