@@ -20,6 +20,7 @@ thesis.pdf: thesis.tex config.tex $(TEX)
 	@sed -i '/\\end{document}/d' $@
 	@sed -i '/\\bibliography/d' $@
 	@sed -i 's/\\lyxdot /./g' $@
+	@sed -i 's/\\part/\\chapter/g' $@
 
 clean:
 	rm -f thesis.{aux,bbl,bcf,blg,fdb_latexmk,fls,log,out,pdf,run.xml}

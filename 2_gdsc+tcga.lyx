@@ -8,7 +8,7 @@
 \end_preamble
 \use_default_options true
 \maintain_unincluded_children false
-\language english
+\language british
 \language_package default
 \inputencoding auto
 \fontencoding global
@@ -964,42 +964,30 @@ Generating Gene Lists
 \end_layout
 
 \begin_layout Standard
-
-\lang british
 The authors of the original SPEED publication used four parameters to generate
  gene lists from their input experiments:
 \end_layout
 
 \begin_layout Itemize
-
-\lang british
 Z-score cutoff: the top n% of upregulated genes
 \end_layout
 
 \begin_layout Itemize
-
-\lang british
 Total expression cutoff: the top m% of genes considering their basal expression
  in each experiment
 \end_layout
 
 \begin_layout Itemize
-
-\lang british
 Experiment overlap: the percentage of experiments for which the other two
  conditions must be met
 \end_layout
 
 \begin_layout Itemize
-
-\lang british
 Uniqueness: whether only genes should be returned that were unique to the
  stimulation of a specific pathway
 \end_layout
 
 \begin_layout Standard
-
-\lang british
 With the SQLite database (
 \begin_inset CommandInset href
 LatexCommand href
@@ -1018,8 +1006,6 @@ target "http://speed.sys-bio.net/SPEED_db.zip"
 \end_layout
 
 \begin_layout Subsubsection
-
-\lang british
 Pathway Scores for all Experiments
 \end_layout
 
@@ -1056,14 +1042,10 @@ which yielded normally distributed GSEA scores without performing any test
 \end_layout
 
 \begin_layout Subsubsection
-
-\lang british
 Running the Cross-Validation
 \end_layout
 
 \begin_layout Standard
-
-\lang british
 With the SQLite database (
 \begin_inset CommandInset href
 LatexCommand href
@@ -1077,27 +1059,19 @@ target "http://speed.sys-bio.net/SPEED_db.zip"
 \end_layout
 
 \begin_layout Itemize
-
-\lang british
 Z-score: 0.25, 0.5, 0.75, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7, 7.5,
  8, 9, 10, 11, 12, 15, 20, 25
 \end_layout
 
 \begin_layout Itemize
-
-\lang british
 Total expression: 5, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100
 \end_layout
 
 \begin_layout Itemize
-
-\lang british
 Overlap: 5, 10, 20, 30, 40, 50, 60, 70, 80
 \end_layout
 
 \begin_layout Itemize
-
-\lang british
 Uniqueness: True or False
 \end_layout
 
@@ -1164,14 +1138,10 @@ I did not simply select the highest highest AUC in the test set because
 \end_layout
 
 \begin_layout Subsubsection
-
-\lang british
 Linear Associations
 \end_layout
 
 \begin_layout Standard
-
-\lang british
 As a control and sanity check, I compared the inferred pathway activation
  scores between different tissues.
  If the assigned scores per tissue are biologically meaningful, we would
@@ -1376,8 +1346,6 @@ centerline{
 \end_inset
 
 
-\lang british
-
 \begin_inset Tabular
 <lyxtabular version="3" rows="13" columns="11">
 <features rotate="0" tabularvalignment="middle">
@@ -1397,8 +1365,6 @@ centerline{
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 pathway
 \end_layout
 
@@ -1408,8 +1374,6 @@ pathway
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 cutoffs used
 \end_layout
 
@@ -1446,8 +1410,6 @@ cutoffs used
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 # genes in list
 \end_layout
 
@@ -1466,8 +1428,6 @@ cutoffs used
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 precision-recall AUC
 \end_layout
 
@@ -1486,8 +1446,6 @@ precision-recall AUC
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 all arrays
 \end_layout
 
@@ -1517,8 +1475,6 @@ all arrays
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 Z
 \end_layout
 
@@ -1528,8 +1484,6 @@ Z
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 O
 \end_layout
 
@@ -1539,8 +1493,6 @@ O
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 E
 \end_layout
 
@@ -1550,8 +1502,6 @@ E
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 U
 \end_layout
 
@@ -1561,8 +1511,6 @@ U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 opt
 \end_layout
 
@@ -1572,8 +1520,6 @@ opt
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 original
 \end_layout
 
@@ -1583,8 +1529,6 @@ original
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 train
 \end_layout
 
@@ -1594,8 +1538,6 @@ train
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 cv
 \end_layout
 
@@ -1605,8 +1547,6 @@ cv
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 opt
 \end_layout
 
@@ -1616,8 +1556,6 @@ opt
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 original
 \end_layout
 
@@ -1629,8 +1567,6 @@ original
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 H2O2
 \end_layout
 
@@ -1640,8 +1576,6 @@ H2O2
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 20
 \end_layout
 
@@ -1651,8 +1585,6 @@ H2O2
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 50
 \end_layout
 
@@ -1662,8 +1594,6 @@ H2O2
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 20
 \end_layout
 
@@ -1673,8 +1603,6 @@ H2O2
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 +
 \end_layout
 
@@ -1684,8 +1612,6 @@ H2O2
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 191
 \end_layout
 
@@ -1695,8 +1621,6 @@ H2O2
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 60
 \end_layout
 
@@ -1706,8 +1630,6 @@ H2O2
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 0.99
 \end_layout
 
@@ -1717,8 +1639,6 @@ H2O2
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 1.00
 \end_layout
 
@@ -1730,7 +1650,6 @@ H2O2
 \begin_layout Plain Layout
 
 \series bold
-\lang british
 0.99
 \end_layout
 
@@ -1740,8 +1659,6 @@ H2O2
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 0.66
 \end_layout
 
@@ -1753,8 +1670,6 @@ H2O2
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 IL-1
 \end_layout
 
@@ -1764,8 +1679,6 @@ IL-1
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 20
 \end_layout
 
@@ -1775,8 +1688,6 @@ IL-1
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 60
 \end_layout
 
@@ -1786,8 +1697,6 @@ IL-1
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 20
 \end_layout
 
@@ -1797,8 +1706,6 @@ IL-1
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 +
 \end_layout
 
@@ -1808,8 +1715,6 @@ IL-1
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 75
 \end_layout
 
@@ -1819,8 +1724,6 @@ IL-1
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 141
 \end_layout
 
@@ -1830,8 +1733,6 @@ IL-1
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 0.91
 \end_layout
 
@@ -1841,8 +1742,6 @@ IL-1
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 0.99
 \end_layout
 
@@ -1854,7 +1753,6 @@ IL-1
 \begin_layout Plain Layout
 
 \series bold
-\lang british
 0.93
 \end_layout
 
@@ -1864,8 +1762,6 @@ IL-1
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 0.85
 \end_layout
 
@@ -1877,8 +1773,6 @@ IL-1
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 JAK-STAT
 \end_layout
 
@@ -1888,8 +1782,6 @@ JAK-STAT
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 20
 \end_layout
 
@@ -1899,8 +1791,6 @@ JAK-STAT
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 20
 \end_layout
 
@@ -1910,8 +1800,6 @@ JAK-STAT
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 70
 \end_layout
 
@@ -1921,8 +1809,6 @@ JAK-STAT
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 +
 \end_layout
 
@@ -1932,8 +1818,6 @@ JAK-STAT
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 162
 \end_layout
 
@@ -1943,8 +1827,6 @@ JAK-STAT
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 114
 \end_layout
 
@@ -1954,8 +1836,6 @@ JAK-STAT
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 0.78
 \end_layout
 
@@ -1965,8 +1845,6 @@ JAK-STAT
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 0.87
 \end_layout
 
@@ -1978,7 +1856,6 @@ JAK-STAT
 \begin_layout Plain Layout
 
 \series bold
-\lang british
 0.81
 \end_layout
 
@@ -1988,8 +1865,6 @@ JAK-STAT
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 0.68
 \end_layout
 
@@ -2001,8 +1876,6 @@ JAK-STAT
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 MAPK_only
 \end_layout
 
@@ -2012,8 +1885,6 @@ MAPK_only
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 20
 \end_layout
 
@@ -2023,8 +1894,6 @@ MAPK_only
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 70
 \end_layout
 
@@ -2034,8 +1903,6 @@ MAPK_only
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 10
 \end_layout
 
@@ -2045,8 +1912,6 @@ MAPK_only
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 -
 \end_layout
 
@@ -2056,8 +1921,6 @@ MAPK_only
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 65
 \end_layout
 
@@ -2067,8 +1930,6 @@ MAPK_only
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 559
 \end_layout
 
@@ -2078,8 +1939,6 @@ MAPK_only
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 0.94
 \end_layout
 
@@ -2089,8 +1948,6 @@ MAPK_only
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 0.97
 \end_layout
 
@@ -2102,7 +1959,6 @@ MAPK_only
 \begin_layout Plain Layout
 
 \series bold
-\lang british
 0.95
 \end_layout
 
@@ -2112,8 +1968,6 @@ MAPK_only
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 0.46
 \end_layout
 
@@ -2125,8 +1979,6 @@ MAPK_only
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 MAPK_PI3K
 \end_layout
 
@@ -2136,8 +1988,6 @@ MAPK_PI3K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 15
 \end_layout
 
@@ -2147,8 +1997,6 @@ MAPK_PI3K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 20
 \end_layout
 
@@ -2158,8 +2006,6 @@ MAPK_PI3K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 5
 \end_layout
 
@@ -2169,8 +2015,6 @@ MAPK_PI3K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 -
 \end_layout
 
@@ -2180,8 +2024,6 @@ MAPK_PI3K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 171
 \end_layout
 
@@ -2191,8 +2033,6 @@ MAPK_PI3K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 118
 \end_layout
 
@@ -2202,8 +2042,6 @@ MAPK_PI3K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 0.82
 \end_layout
 
@@ -2213,8 +2051,6 @@ MAPK_PI3K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 0.89
 \end_layout
 
@@ -2226,7 +2062,6 @@ MAPK_PI3K
 \begin_layout Plain Layout
 
 \series bold
-\lang british
 0.84
 \end_layout
 
@@ -2236,8 +2071,6 @@ MAPK_PI3K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 0.63
 \end_layout
 
@@ -2249,8 +2082,6 @@ MAPK_PI3K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 TLR
 \end_layout
 
@@ -2260,8 +2091,6 @@ TLR
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 6.5
 \end_layout
 
@@ -2271,8 +2100,6 @@ TLR
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 40
 \end_layout
 
@@ -2282,8 +2109,6 @@ TLR
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 50
 \end_layout
 
@@ -2293,8 +2118,6 @@ TLR
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 +
 \end_layout
 
@@ -2304,8 +2127,6 @@ TLR
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 78
 \end_layout
 
@@ -2315,8 +2136,6 @@ TLR
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 181
 \end_layout
 
@@ -2326,8 +2145,6 @@ TLR
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 0.88
 \end_layout
 
@@ -2337,8 +2154,6 @@ TLR
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 0.91
 \end_layout
 
@@ -2350,7 +2165,6 @@ TLR
 \begin_layout Plain Layout
 
 \series bold
-\lang british
 0.89
 \end_layout
 
@@ -2360,8 +2174,6 @@ TLR
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 0.81
 \end_layout
 
@@ -2373,8 +2185,6 @@ TLR
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 PI3K_only
 \end_layout
 
@@ -2384,8 +2194,6 @@ PI3K_only
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 15
 \end_layout
 
@@ -2395,8 +2203,6 @@ PI3K_only
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 20
 \end_layout
 
@@ -2406,8 +2212,6 @@ PI3K_only
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 30
 \end_layout
 
@@ -2417,8 +2221,6 @@ PI3K_only
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 +
 \end_layout
 
@@ -2428,8 +2230,6 @@ PI3K_only
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 227
 \end_layout
 
@@ -2439,8 +2239,6 @@ PI3K_only
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 67
 \end_layout
 
@@ -2450,8 +2248,6 @@ PI3K_only
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 0.80
 \end_layout
 
@@ -2461,8 +2257,6 @@ PI3K_only
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 0.97
 \end_layout
 
@@ -2474,7 +2268,6 @@ PI3K_only
 \begin_layout Plain Layout
 
 \series bold
-\lang british
 0.83
 \end_layout
 
@@ -2484,8 +2277,6 @@ PI3K_only
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 0.49
 \end_layout
 
@@ -2497,8 +2288,6 @@ PI3K_only
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 TGFB
 \end_layout
 
@@ -2508,8 +2297,6 @@ TGFB
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 20
 \end_layout
 
@@ -2519,8 +2306,6 @@ TGFB
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 20
 \end_layout
 
@@ -2530,8 +2315,6 @@ TGFB
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 60
 \end_layout
 
@@ -2541,8 +2324,6 @@ TGFB
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 +
 \end_layout
 
@@ -2552,8 +2333,6 @@ TGFB
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 119
 \end_layout
 
@@ -2563,8 +2342,6 @@ TGFB
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 142
 \end_layout
 
@@ -2574,8 +2351,6 @@ TGFB
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 0.78
 \end_layout
 
@@ -2585,8 +2360,6 @@ TGFB
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 0.88
 \end_layout
 
@@ -2598,7 +2371,6 @@ TGFB
 \begin_layout Plain Layout
 
 \series bold
-\lang british
 0.80
 \end_layout
 
@@ -2608,8 +2380,6 @@ TGFB
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 0.68
 \end_layout
 
@@ -2621,8 +2391,6 @@ TGFB
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 TNFa
 \end_layout
 
@@ -2632,8 +2400,6 @@ TNFa
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 1.5
 \end_layout
 
@@ -2643,8 +2409,6 @@ TNFa
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 50
 \end_layout
 
@@ -2654,8 +2418,6 @@ TNFa
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 70
 \end_layout
 
@@ -2665,8 +2427,6 @@ TNFa
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 -
 \end_layout
 
@@ -2676,8 +2436,6 @@ TNFa
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 56
 \end_layout
 
@@ -2687,8 +2445,6 @@ TNFa
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 259
 \end_layout
 
@@ -2698,8 +2454,6 @@ TNFa
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 0.77
 \end_layout
 
@@ -2709,8 +2463,6 @@ TNFa
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 0.99
 \end_layout
 
@@ -2722,7 +2474,6 @@ TNFa
 \begin_layout Plain Layout
 
 \series bold
-\lang british
 0.81
 \end_layout
 
@@ -2732,8 +2483,6 @@ TNFa
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 0.66
 \end_layout
 
@@ -2745,8 +2494,6 @@ TNFa
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 VEGF
 \end_layout
 
@@ -2756,8 +2503,6 @@ VEGF
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 12
 \end_layout
 
@@ -2767,8 +2512,6 @@ VEGF
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 20
 \end_layout
 
@@ -2778,8 +2521,6 @@ VEGF
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 30
 \end_layout
 
@@ -2789,8 +2530,6 @@ VEGF
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 +
 \end_layout
 
@@ -2800,8 +2539,6 @@ VEGF
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 121
 \end_layout
 
@@ -2811,8 +2548,6 @@ VEGF
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 56
 \end_layout
 
@@ -2822,8 +2557,6 @@ VEGF
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 0.92
 \end_layout
 
@@ -2833,8 +2566,6 @@ VEGF
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 0.94
 \end_layout
 
@@ -2846,7 +2577,6 @@ VEGF
 \begin_layout Plain Layout
 
 \series bold
-\lang british
 0.92
 \end_layout
 
@@ -2856,8 +2586,6 @@ VEGF
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 0.84
 \end_layout
 
@@ -2869,8 +2597,6 @@ VEGF
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 Wnt
 \end_layout
 
@@ -2880,8 +2606,6 @@ Wnt
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 7.5
 \end_layout
 
@@ -2891,8 +2615,6 @@ Wnt
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 30
 \end_layout
 
@@ -2902,8 +2624,6 @@ Wnt
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 5
 \end_layout
 
@@ -2913,8 +2633,6 @@ Wnt
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 +
 \end_layout
 
@@ -2924,8 +2642,6 @@ Wnt
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 195
 \end_layout
 
@@ -2935,8 +2651,6 @@ Wnt
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 83
 \end_layout
 
@@ -2946,8 +2660,6 @@ Wnt
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 0.93
 \end_layout
 
@@ -2957,8 +2669,6 @@ Wnt
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 0.94
 \end_layout
 
@@ -2970,7 +2680,6 @@ Wnt
 \begin_layout Plain Layout
 
 \series bold
-\lang british
 0.93
 \end_layout
 
@@ -2980,8 +2689,6 @@ Wnt
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang british
 0.65
 \end_layout
 
@@ -2992,8 +2699,6 @@ Wnt
 
 \end_inset
 
-
-\lang english
 
 \begin_inset ERT
 status open
@@ -3080,8 +2785,6 @@ Associations between Pathway Scores and Tissues
 \end_layout
 
 \begin_layout Standard
-
-\lang british
 An overview of up- and down-regulated pathways (in terms of the inferred
  pathway scores by the SPEED platform with my modifications) is shown in
  figure 
@@ -3098,8 +2801,6 @@ reference "fig:tissue-heatmap"
 \end_layout
 
 \begin_layout Standard
-
-\lang british
 \begin_inset Float figure
 wide false
 sideways false
@@ -3117,13 +2818,9 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
-
-\lang british
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
-\lang british
 Heatmap of inferred pathway activation scores for different tissues
 \begin_inset CommandInset label
 LatexCommand label
@@ -3145,8 +2842,6 @@ name "fig:tissue-heatmap"
 \end_layout
 
 \begin_layout Itemize
-
-\lang british
 JAK-STAT signalling is well-known to be upregulated in blood cancer cells
  
 \begin_inset CommandInset citation
@@ -3197,8 +2892,6 @@ key "Rothenfusser2002-gi"
 \end_layout
 
 \begin_layout Itemize
-
-\lang british
 High production of reactive oxygen species has been shown to occur in certain
  mesotheliomas 
 \begin_inset CommandInset citation
@@ -3218,8 +2911,6 @@ key "Drukala2010-kj"
 \end_layout
 
 \begin_layout Itemize
-
-\lang british
 TGFB 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -3261,8 +2952,6 @@ key "Rajabi2012-fj,Gajanin2010-ff"
 \end_layout
 
 \begin_layout Itemize
-
-\lang british
 MAPK_only/MAPK_PI3K signalling seems to evenly distributed among non-blood
  cancer tissues.
  We found the highest activity of MAPK and MAPK_PI3K can be found in KIRC
@@ -3271,14 +2960,10 @@ MAPK_only/MAPK_PI3K signalling seems to evenly distributed among non-blood
 \end_layout
 
 \begin_layout Subsubsection
-
-\lang british
 Pan-Cancer Drug Associations
 \end_layout
 
 \begin_layout Standard
-
-\lang british
 Linear associations of inferred pathway activity within all tissues and
  drug response are shown in figure 
 \begin_inset CommandInset ref
@@ -3347,14 +3032,10 @@ name "fig:pancan-volcano"
 \end_layout
 
 \begin_layout Standard
-
-\lang british
 Sensitivity markers:
 \end_layout
 
 \begin_layout Itemize
-
-\lang british
 RDEA119 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -3392,8 +3073,6 @@ key "Parikh2010-uj"
 \end_layout
 
 \begin_layout Itemize
-
-\lang british
 BIBW2992 and Gefitinib showed higher efficacy with PI3K_only activity.
  As both are are EGFR inhibitors and PI3K is known to cause resistance to
  those 
@@ -3408,8 +3087,6 @@ key "Jeannot2014-av"
 \end_layout
 
 \begin_layout Itemize
-
-\lang british
 We found sensitivity correlating with Wnt activity for the drugs Etoposide,
  QS11, and GSK-650394.
  QS11 modulates ARF activity and B-catenin localisation 
@@ -3441,8 +3118,6 @@ key "Elzi2012-mv"
 \end_layout
 
 \begin_layout Itemize
-
-\lang british
 FTI-277 is more effective when reactive oxygen response (H2O2) is active.
  Farnesyl transferase inhibitors are known to induce DNA damage via ROS
  
@@ -3457,8 +3132,6 @@ key "Pan2005-on"
 \end_layout
 
 \begin_layout Itemize
-
-\lang british
 AZD6482 is a PI3K inhibitor 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -3495,8 +3168,6 @@ key "Kim2007-db"
 \end_layout
 
 \begin_layout Itemize
-
-\lang british
 TNFalpha 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -3511,14 +3182,10 @@ key "Sleijfer1998-vs"
 \end_layout
 
 \begin_layout Standard
-
-\lang british
 Resistance markers:
 \end_layout
 
 \begin_layout Itemize
-
-\lang british
 EHT 1864 is a Rac-family GTPase inhibitor 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -3540,8 +3207,6 @@ n.
 \end_layout
 
 \begin_layout Standard
-
-\lang british
 To give an example of the relationship between inferred pathway activity
  and drug response for different tissues, a linear fit of MAPK_PI3K activity
  is shown in relation to the log IC50 of RDEA119 in figure 
@@ -3561,8 +3226,6 @@ reference "fig:RDEA-MAPK"
 status open
 
 \begin_layout Plain Layout
-
-\lang british
 compare to a mutation here?
 \end_layout
 
@@ -3576,8 +3239,6 @@ Tissue-specific Drug Associations
 \end_layout
 
 \begin_layout Standard
-
-\lang british
 In addition to calculating the strongest associations within all tissues,
  we also calculated the ones for each tissue separately, associations for
  which are shown in figure 
@@ -3611,8 +3272,6 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
-\lang british
 Associations between inferred pathway activity and drug response for individual
  tissues.
  FDR set at 20%.

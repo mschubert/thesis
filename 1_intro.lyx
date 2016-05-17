@@ -8,7 +8,7 @@
 \end_preamble
 \use_default_options true
 \maintain_unincluded_children false
-\language english
+\language british
 \language_package default
 \inputencoding auto
 \fontencoding global
@@ -211,9 +211,9 @@ cell signaling
 
 \begin_layout Standard
 Genes that are relevant for cancer development and progression have long
- been classified in Oncogenes and Tumor Suppressor Genes.
+ been classified in Oncogenes and Tumour Suppressor Genes.
  In broad terms, this classification represents the following: does a mutation
- introduce a gene function that was not there before, or it loses sensitivty
+ introduce a gene function that was not there before, or it loses sensitivity
  to an inhibitory signal that kept it in check, this gene is called an Oncogene
  in its active (mutated) form, or Proto-Oncogene in its wild-type form;
  conversely, if a mutation causes a gene a lose its function as e.g.

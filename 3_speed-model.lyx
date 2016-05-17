@@ -8,7 +8,7 @@
 \end_preamble
 \use_default_options true
 \maintain_unincluded_children false
-\language english
+\language british
 \language_package default
 \inputencoding auto
 \fontencoding global
@@ -81,8 +81,6 @@ Aim
 \end_layout
 
 \begin_layout Standard
-
-\lang british
 There are numerous examples of using Gene Set Enrichment Analysis (GSEA)
  for a set of signaling molecules in order to infer signaling activity.
  Most of them, however, use the expression of those proteins directly as
@@ -91,8 +89,6 @@ There are numerous examples of using Gene Set Enrichment Analysis (GSEA)
  than assuming that it is proportional to the expression of the proteins
  involved in the signal transduction pathway, which assumes the latter accuratel
 y represent not only the protein levels but their activity.
-
-\lang english
  To our knowledge, the only similar efforts are the SPEED database 
 \begin_inset CommandInset citation
 LatexCommand citep
