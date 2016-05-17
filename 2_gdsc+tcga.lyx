@@ -120,7 +120,7 @@ key "Subramanian2005-wp"
  if the sets are pre-defined, but one wants to avoid cutting of continuous
  expression values at an arbitrary threshold.
  There are, however, more advanced pathway methods available that take into
- account the directionality and sign of edges in a KEGG pathway (Signaling
+ account the directionality and sign of edges in a KEGG pathway (Signalling
  Pathway Impact Analysis 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -238,16 +238,16 @@ key "The_Cancer_Genome_Atlas_Research_Network2013-bi"
 
 , and (3) which two drugs are likely to act synergistically when treating
  cancer cell lines.
- I will not filter the gene sets I use, and well represented signaling pathways
- are among the top hits for (1) - where signaling pathways are known to
- play a pivotal role for targeted therapies 
+ I will not filter the gene sets I use, and well represented signalling
+ pathways are among the top hits for (1) - where signaling pathways are
+ known to play a pivotal role for targeted therapies 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Garnett2012-dk,Iorio2016-gh,Yap2012-mi"
 
 \end_inset
 
- and (2) - where signaling pathways are at the core of disease development
+ and (2) - where signalling pathways are at the core of disease development
  and progression 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -257,7 +257,7 @@ key "Hanahan2000-is,Hanahan2011-he,Hanahan2012-im"
 
 .
  For (3), I will see how well cancer drugs are represented in the hits obtained,
- as the combinatorial targeting of multiple cancer-related signaling pathways
+ as the combinatorial targeting of multiple cancer-related signalling pathways
  has been shown to ***.
 \end_layout
 
@@ -892,7 +892,7 @@ key "Smyth2005-mw"
  I used the function avereps (R package limma) to average rows that had
  the same gene symbol.
  This resulted in one expression matrix per TCGA tissue, for a total of
- 00 tissues including 00000 tumor and 0000 matched normal samples.
+ 00 tissues including 00000 tumour and 0000 matched normal samples.
 \end_layout
 
 \begin_layout Subsubsection
@@ -3299,7 +3299,7 @@ Discussion
 \end_layout
 
 \begin_layout Standard
-Using pathway-responsive genes instead of pathway expression to infer signaling
+Using pathway-responsive genes instead of pathway expression to infer signalling
  activity makes a lot of sense: we look at the footprint of the actual signaling
  activity (the expression changes downstream of a signaling pathway) and
  not the potential mediators (protein kinases, among others) by mRNA expression

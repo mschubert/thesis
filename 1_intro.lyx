@@ -81,7 +81,7 @@ Cancer Biology
 \end_layout
 
 \begin_layout Subsection
-Significance and Etiology
+Significance and Aetiology
 \end_layout
 
 \begin_layout Itemize
@@ -126,8 +126,8 @@ In the human population, there is natural variation in the genome from one
  process of reproduction.
  Each human being has got two copies of their DNA, one passed down from
  their mother and the other passed down from their father.
- Disregarding of where the copies that an individal actually inherits came
- from, they may harbor the same sequence (that is, the individual is homozygous
+ Disregarding of where the copies that an individual actually inherits came
+ from, they may harbour the same sequence (that is, the individual is homozygous
  in a given base or gene) or may be different between those (that is, the
  individual is heterozygous).
  This is (in part) what makes us look different, but also what may cause
@@ -1382,7 +1382,7 @@ key "Ciriello2012-hc"
 
 \begin_layout Standard
 So how do we take advantage of the recent advances in cancer pharmacogenomics
- with regard to co-occurence and mutual exclusivity analysis?
+ with regard to co-occurrence and mutual exclusivity analysis?
 \end_layout
 
 \begin_layout Standard
@@ -1401,9 +1401,9 @@ First, use the already experimentally verified synthetic lethal pairs.
  Second, combine the idea of ME with the idea of network drugs and polypharmacol
 ogy.
  One way to reconcile ME pairs with perturbations being propagated in a
- cell's signaling network is to study the dynamic nature of inhibition both
- genes in a pair as opposed to either gene individually.
- Is there a common principle that we can distill in order to get a novel
+ cell's signalling network is to study the dynamic nature of inhibition
+ both genes in a pair as opposed to either gene individually.
+ Is there a common principle that we can distil in order to get a novel
  kind of understanding in how to rationally design drug therapies? Another
  aspect of this is to study the difference between a knockdown approach
  targeted at the gene to the inhibition of a protein's activity, as the
@@ -1437,7 +1437,7 @@ Cancer is known to be a heterogeneous disease, with individual tumours forming
  different subtypes within the same tissue.
  In turn, cells in the same tumour mediate different functions essential
  to its survival and growth.
- One of the arguably most effective ways of eludicating the state of individual
+ One of the arguably most effective ways of elucidating the state of individual
  tumours and cell populations therein is its transcriptome, where transcription
  of individual genes and regulatory RNAs can be assessed using methods such
  as microarrays or RNA sequencing.
@@ -1445,7 +1445,7 @@ Cancer is known to be a heterogeneous disease, with individual tumours forming
 
 \begin_layout Standard
 Disregarding the effect of different cell types (by making the assumption
- that we sampled a tumour evenly and uniformly while excluding neighboring
+ that we sampled a tumour evenly and uniformly while excluding neighbouring
  non-cancerous cells, which is not really the case), we can use the global
  pattern of gene expression to identify different subtypes of the disease
  in a given tissue (or even between tissues).
@@ -1477,8 +1477,8 @@ Principal Component Analysis (PCA).
  principal components, and the latter's projection back into N called loadings
  (which represent how much of each original axis is contained within the
  new axes).
- It is important to note the meaining and interpretability of such a decompositi
-on is strongly dependent on the amount of variance captured in the reduced
+ It is important to note the meaning and interpretability of such a decompositio
+n is strongly dependent on the amount of variance captured in the reduced
  space.
  PCA is closely related to Singular Value Decomposition (SVD), which has
  applications in dimensionality reduction as well.
@@ -1611,7 +1611,7 @@ key "Beisser2010-wa"
 
 \end_inset
 
-, intially used to analyse deregulated subnetworks in Diffuse Large B Cell
+, initially used to analyse deregulated subnetworks in Diffuse Large B Cell
  Lymphoma (DLBC).
 \end_layout
 
@@ -1628,8 +1628,8 @@ An important aspect of gene expression is that its patterns are not randomly
  The terminal nodes of this signal transduction are called transcription
  factors, that upon binding on the DNA mediate and direct (either in a promoting
  or in an inhibiting fashion) binding of DNA-dependent RNA polymerase (PolII
- [?]) that forms a complex with available factors in order to start transcrition
- of a factor's target genes.
+ [?]) that forms a complex with available factors in order to start transcriptio
+n of a factor's target genes.
  The genes transcribed upon activation of transcription factors may in turn
  be transcription factors themselves that cause increased or decreased transcrip
 tion of other genes.
@@ -1737,8 +1737,8 @@ key "Wang2009-ui"
  expression, and calculate mutual information for both of theses sets.
  Afterwards, instead of inferring the network, the authors look for the
  strongest changes in mutual information between the two subsets: if that
- is the case, the modulator can be seen as a cofactor required for transcription
- factor regulation.
+ is the case, the modulator can be seen as a co-factor required for transcriptio
+n factor regulation.
  If a high modulator expression corresponds with increased mutual information
  that will likely be activating, or inactivating if in corresponds to decreased
  mutual information.
@@ -1775,7 +1775,7 @@ The transduction of a signal from a cue either binding to a receptor on
  In turn, this signal is relayed through the network of kinases and phosphatases
  (there are other chemical modifications, but those are the best studied)
  until it reaches the terminal nodes that are the transcription factors,
- acting in conjunction with polymerase III and other cofactors to initiate
+ acting in conjunction with polymerase III and other co-factors to initiate
  changes in gene expression.
  Those genes are in turn transcribed into RNA, and if they are protein-coding
  consequently translated into those.
@@ -1786,9 +1786,9 @@ The transduction of a signal from a cue either binding to a receptor on
 \begin_layout Standard
 Cell signaling is deregulated in many diseases, including cancer that we
  focus on here because of the sheer wealth of available data.
- But how to best quantify the signaling activity? The closest proxy we have
- would be to quantify post-translational modifications that are known to
- confer activity.
+ But how to best quantify the signalling activity? The closest proxy we
+ have would be to quantify post-translational modifications that are known
+ to confer activity.
  In the simplest case this could be a phosphate group on a certain position
  that is known to make a kinase active, that is that it in turn phosphorylates
  its downstream targets.
@@ -1804,7 +1804,7 @@ Cell signaling is deregulated in many diseases, including cancer that we
 We can thus argue that computational methods are required to make statements
  about cell signaling, starting from DNA and RNA instead of protein and
  PTM data.
- The simplest approach to this is looking how much mRNA of signaling molecules
+ The simplest approach to this is looking how much mRNA of signalling molecules
  are expressed that comprise a pathway, and designate a high expression
  a high activity and vice versa (using algorithms like Gene Set Enrichment
  Analysis 
@@ -1885,8 +1885,8 @@ key "Iorio2009-ji,Pacini2013-xn"
 \end_inset
 
 , i.e.
- be a potential treatment if the disesase is indeed caused by the gene expressio
-n changes that the drug reverses.
+ be a potential treatment if the disease is indeed caused by the gene expression
+ changes that the drug reverses.
  Of course, those matches should rather be seen as hypothesis generators
  than definite indications for repurposing and treating diseases.
 \end_layout
@@ -2054,7 +2054,7 @@ With computational analyses getting more complex, it is no longer enough
  to just apply a simple statistical test for a number of obervations of
  one condition vs.
  another.
- The wealth of data that has become available needs preprocessing, normalising,
+ The wealth of data that has become available needs pre-processing, normalising,
  statistical analysis, and interpretation of results.
  No one scientist can perform all of these tasks completely independently,
  as some of them may detailed knowledge of all the algorithms involved,
@@ -2066,7 +2066,7 @@ With computational analyses getting more complex, it is no longer enough
 \begin_layout Standard
 This is where the scientific software ecosystem comes in.
  And, to a larger extent, the ecosystem of general software.
- For instance, I want to obtain, preprocess, and normalise microarray data
+ For instance, I want to obtain, pre-process, and normalise microarray data
  to then compute differentially expressed genes in two conditions.
  The concepts of obtain, preprocess, and normalise are well enough defined
  that I should not have to worry about their exact implementation.
@@ -2079,7 +2079,7 @@ This is where the scientific software ecosystem comes in.
 
 \begin_layout Standard
 Two programming languages, along with the packages they themselves as well
- as their users provide, have been fundamental in providing a toolset that
+ as their users provide, have been fundamental in providing a tool set that
  allows processing, exploration, and analysis of the amount of data contemporary
  experiments provide.
  These are R and Python, along with packages hosted on CRAN/BioConductor

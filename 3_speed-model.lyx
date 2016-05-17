@@ -82,10 +82,10 @@ Aim
 
 \begin_layout Standard
 There are numerous examples of using Gene Set Enrichment Analysis (GSEA)
- for a set of signaling molecules in order to infer signaling activity.
+ for a set of signalling molecules in order to infer signaling activity.
  Most of them, however, use the expression of those proteins directly as
  a proxy for their activity.
- We argue that using this footprint of signaling activity is a better proxy
+ We argue that using this footprint of signalling activity is a better proxy
  than assuming that it is proportional to the expression of the proteins
  involved in the signal transduction pathway, which assumes the latter accuratel
 y represent not only the protein levels but their activity.
