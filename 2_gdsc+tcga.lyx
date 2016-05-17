@@ -351,9 +351,17 @@ key "Subramanian2005-pd"
 
 \end_inset
 
- from the original BROAD weighted GSEA R script (http://software.broadinstitute.or
-g/gsea/index.jsp) modified by Francesco Iorio to work with the current version
- of R.
+ from the original BROAD weighted GSEA R script
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+http://software.broadinstitute.org/gsea/index.jsp
+\end_layout
+
+\end_inset
+
+ modified by Francesco Iorio to work with the current version of R.
  I supplied as gene sets the Gene Ontology and pathway sets described above.
  I performed 1,000 resampling steps for score normalisation for all subsequent
  analyses unless otherwise indicated.

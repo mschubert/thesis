@@ -193,6 +193,10 @@ For cancer diagnosis in both the clinical and preclinical setting, efforts
  
 \end_layout
 
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
 \begin_layout Author
 Michael Schubert, Martina Klünemann, Nils Blüthgen, Julio Saez Rodriguez
  
@@ -222,6 +226,11 @@ We compared how Gene Ontology, pathway expression, and signaling footprints
 Taken together, our results suggest that mutation-based biomarkers should
  be augmented by consensus gene expression signatures in order to improve
  preclinical and clinical performance.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section

@@ -72,11 +72,6 @@
 
 \begin_body
 
-\begin_layout Title
-Gene expression methods for cancer cell line drug sensitivity and patient
- outcome
-\end_layout
-
 \begin_layout Part
 Introduction
 \end_layout
@@ -156,7 +151,7 @@ Should we sequence each cell in an individual, we would not find that all
  precursor, or a change may have been introduced in a single cell by an
  internal or external process.
  In the former case, we need to realize that the DNA copy mechanism (also
- called DNA replication) that ensures that that wenn a cell splits both
+ called DNA replication) that ensures that that when a cell splits both
  its daughter cells inherit two full copies of its DNA is not infinitely
  accurate, but this process may introduce reading- (from the ancestral or
  template strand) and writing (the newly synthesised strand) errors.
@@ -260,9 +255,9 @@ A gene that has an erroneous sequence somewhere on the DNA is, by itself,
 \end_layout
 
 \begin_layout Standard
-Take, for instance, a protein is involed in relaying a signal from the cell
- surface, such as a signal to grow and divide, to another protein that in
- turn activates some other proteins which ultimately induces the expression
+Take, for instance, a protein is involved in relaying a signal from the
+ cell surface, such as a signal to grow and divide, to another protein that
+ in turn activates some other proteins which ultimately induces the expression
  of genes that are needed for the cell's replication machinery.
  These signals are usually relayed by post-translational modifications from
  one protein to another.
