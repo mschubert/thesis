@@ -1543,7 +1543,15 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-pathway cross-talk schema
+\align center
+\begin_inset Graphics
+	filename figures/4.1_path-xtalk.pdf
+	lyxscale 50
+	width 40text%
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -1581,6 +1589,13 @@ From the result of the linear model, I selected the top 100 genes per pathway
 
 \begin_layout Subsubsection
 Computing Pathway Scores
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:method:speed-scores"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1834,6 +1849,13 @@ Computing Pathway Scores for other Methods
 
 \begin_layout Subsection
 Methods
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Methods:pathway-scores"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
@@ -3480,9 +3502,9 @@ PARADIGM scores
 \end_layout
 
 \begin_layout Standard
-I downloaded the PARADIGM software from the public software repository (
+I downloaded the PARADIGM software from the public software repository
 \begin_inset Foot
-status open
+status collapsed
 
 \begin_layout Plain Layout
 https://github.com/sbenz/Paradigm
@@ -3490,16 +3512,16 @@ https://github.com/sbenz/Paradigm
 
 \end_inset
 
-) and a model of the cell signaling network published in 
+ and a model of the cell signaling network published in 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "The_Cancer_Genome_Atlas_Research_Network2013-bi"
 
 \end_inset
 
- from the corresponding TCGA publication (
+ from the corresponding TCGA publication
 \begin_inset Foot
-status open
+status collapsed
 
 \begin_layout Plain Layout
 https://tcga-data.nci.nih.gov/docs/publications/coadread_2012/
@@ -3507,7 +3529,7 @@ https://tcga-data.nci.nih.gov/docs/publications/coadread_2012/
 
 \end_inset
 
-).
+.
  I used our voom-transformed RNA-seq gene expression data that I normalized
  using ranks to assign equally spaced values between 0 and 1 for each sample
  within a given tissue.
@@ -3699,7 +3721,7 @@ NFkB
 \begin_inset Text
 
 \begin_layout Plain Layout
--
+NFkB Complex (complex)
 \end_layout
 
 \end_inset
@@ -3846,6 +3868,101 @@ status open
 \end_inset
 
 
+\end_layout
+
+\begin_layout Subsubsection
+Perturbation Associations and Heatmaps
+\end_layout
+
+\begin_layout Standard
+I calculate linear associations using the 
+\begin_inset Formula $lm$
+\end_inset
+
+ function in R between a pathway coefficients matrix (of the shape experiments
+ x pathways, with the value 1 where a pathway was activated, -1 where a
+ pathway was inhibited, and 0 otherwise; here, no cross-talk was modelled
+ explicitly) and the pathway scores obtained by using the different methods
+ as described in sections 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:method:speed-scores"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Methods:pathway-scores"
+
+\end_inset
+
+.
+ I then plot the result of the associations as a heatmap where the perturbed
+ pathway and the obtained pathway score are on the axes, and the colour
+ (blue for positive and red for negative correlation) indicates the Wald
+ statistic between them.
+ I annotate combinations where the p-value is below 
+\begin_inset Formula $10^{-5}$
+\end_inset
+
+ with 
+\begin_inset Formula $*$
+\end_inset
+
+ and where it is 
+\begin_inset Formula $10^{-10}$
+\end_inset
+
+ with 
+\begin_inset Formula $***$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+As a method for inspection of the pathway scores of the individual experiments,
+ I plot a heatmap using the R package 
+\begin_inset Formula $pheatmap$
+\end_inset
+
+ with the pathways scores in rows, experiments in columns, and the colour
+ indicates the relative (column-scaled) activation of each pathway.
+ In order to make activations and inhibitions more comparable, I take the
+ negative pathway score for each inhibition and annotate the columns separately
+ indicating which pathway was perturbed, and which kind of perturbation
+ it was.
+ This way, we can see clusters of similar pathway activation patterns that
+ should correspond to the pathways that were perturbed.
+\end_layout
+
+\begin_layout Subsubsection
+Correlation in Basal Expression
+\end_layout
+
+\begin_layout Standard
+For all pathway scores described in sections 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:method:speed-scores"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Methods:pathway-scores"
+
+\end_inset
+
+ using basal gene expression, I calculated the pearson correlation across
+ all samples and tissues, and plotted the correlation matrix between each
+ pathway combination using the R package corplot for GDSC and TCGA data
+ separately.
+ The correlation between a pathway and itself is 1 by definition, all other
+ values range from -1 (perfectly linear reverse correlation) to 1 (perfectly
+ linear correlation).
 \end_layout
 
 \begin_layout Subsection

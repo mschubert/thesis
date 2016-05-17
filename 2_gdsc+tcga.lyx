@@ -188,8 +188,10 @@ key "Croft2011-po"
 
 , and calculate a combined expression score using either a Fisher's exact
  test (e.g.
- by a tool called DAVID **cite**) if one is to test one set against another,
- or some variant of Gene Set Enrichment Analysis (GSEA) 
+ by a tool called DAVID **cite**; note that although this tool is still
+ widely used, it has last been updated in 2010 and misses a lot of annotations
+ [wadi]) if one is to test one set against another, or some variant of Gene
+ Set Enrichment Analysis (GSEA) 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Subramanian2005-wp"
