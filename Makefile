@@ -1,13 +1,16 @@
 LATEXMK = latexmk -xelatex
 
-LYX = $(wildcard *.lyx)
+LYX = $(sort $(wildcard *.lyx))
 TEX = $(LYX:%.lyx=%.tex)
 
 #.INTERMEDIATE: $(TEX)
 
 all: thesis.pdf
 
-thesis.pdf: thesis.tex $(TEX)
+# Use `print-VARNAME` to print arbitrary variables
+print-%: ; @echo $* = $($*)
+
+thesis.pdf: thesis.tex config.tex $(TEX)
 	$(LATEXMK) thesis
 
 %.tex: %.lyx Makefile
@@ -16,3 +19,4 @@ thesis.pdf: thesis.tex $(TEX)
 	@sed -i '/\\begin{document}/d' $@
 	@sed -i '/\\end{document}/d' $@
 	@sed -i '/\\bibliography/d' $@
+	@sed -i 's/\\lyxdot /./g' $@
