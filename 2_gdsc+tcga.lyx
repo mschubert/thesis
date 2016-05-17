@@ -72,91 +72,6 @@
 
 \begin_body
 
-\begin_layout Title
-Gene expression methods for cancer cell line drug sensitivity and patient
- outcome
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-main work for this chapter are investigating the COREAD data set with available
- methods
-\end_layout
-
-\begin_layout Plain Layout
-(not sure to remove patient survival)
-\end_layout
-
-\begin_layout Plain Layout
-- intro: while intro chapter had overview of all methods used, these are
- the methods we use here
-\end_layout
-
-\begin_layout Plain Layout
-- include all methods here that are common to the next chapters
-\end_layout
-
-\begin_layout Plain Layout
-- describe how I actually obtained scores per method and how I ran it
-\end_layout
-
-\begin_layout Plain Layout
-- reproduce already published results that are easy (e.g.
- have got all the utils for gdsc mutation assocs)
-\end_layout
-
-\begin_layout Plain Layout
-.
-\end_layout
-
-\begin_layout Plain Layout
-atn: 
-\begin_inset Quotes eld
-\end_inset
-
-Unbiased approach is not interpretable
-\begin_inset Quotes erd
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-w/ subchapters:
-\end_layout
-
-\begin_layout Plain Layout
-- gdsc drug response
-\end_layout
-
-\begin_layout Plain Layout
-- tcga survival
-\end_layout
-
-\begin_layout Plain Layout
-- drug sensitisation
-\end_layout
-
-\begin_layout Plain Layout
-.
-\end_layout
-
-\begin_layout Plain Layout
-1 intro per chapter +
-\end_layout
-
-\begin_layout Plain Layout
-1 aims per section?
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Part
 A Baseline for available Pathway Methods
 \end_layout
@@ -203,7 +118,7 @@ key "Subramanian2005-wp"
 \end_inset
 
  if the sets are pre-defined, but one wants to avoid cutting of continuous
- expression values at an artbitrary threshold.
+ expression values at an arbitrary threshold.
  There are, however, more advanced pathway methods available that take into
  account the directionality and sign of edges in a KEGG pathway (Signaling
  Pathway Impact Analysis 
@@ -228,7 +143,7 @@ key "Drier2013-vn"
 
 \end_inset
 
-), or employ a bayesian framework that models translation, activity, and
+), or employ a Bayesian framework that models translation, activity, and
  interactions (PARADIGM, 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -359,7 +274,7 @@ Obtaining Gene Sets
 \end_layout
 
 \begin_layout Standard
-To obtian Gene Ontology sets, I used the BioMart R package [cite] to query
+To obtain Gene Ontology sets, I used the BioMart R package [cite] to query
  the Ensembl [cite] hsapiens_gene_ensembl database for all HGNC symbols
  that had a Gene Ontology 
 \begin_inset CommandInset citation
@@ -370,7 +285,7 @@ key "Ashburner2000-xl,Gene_Ontology_Consortium2004-sn"
 
  ID (go_id field) associated with them, yielding three main categories (biologic
 al process, molecular function, cellular compartment) with XX, XX, and XX
- gene sets respecively.
+ gene sets respectively.
  I performed the subsequent analyses using gene sets from the biological
  process category only.
  For Reactome 
@@ -437,7 +352,7 @@ key "Subramanian2005-pd"
 \end_inset
 
  from the original BROAD weighted GSEA R script (http://software.broadinstitute.or
-g/gsea/index.jsp) modified by Fracesco Iorio to work with the current version
+g/gsea/index.jsp) modified by Francesco Iorio to work with the current version
  of R.
  I supplied as gene sets the Gene Ontology and pathway sets described above.
  I performed 1,000 resampling steps for score normalisation for all subsequent
@@ -515,7 +430,7 @@ The original GDSC data set contained different dilutions of drugs that the
  On way to do this is to measure the growth inhibition at different concentratio
 ns, and then fit a dose-response curve to the data points, interpolating
  (or extrapolating, if necessary) the concentration at which the half-maximal
- inhibition occured.
+ inhibition occurred.
  This term is referred to the IC50 value, and has already been calculated
  in 
 \begin_inset CommandInset citation
@@ -620,7 +535,7 @@ In this formula, the scores
 \end_inset
 
 .
- In this case, I corredted the p-values using the FDR methods for each subset
+ In this case, I corrected the p-values using the FDR methods for each subset
  of tissues separately.
 \end_layout
 
@@ -913,7 +828,7 @@ T cell receptor
 We thus have two options: we either need to link seemingly unrelated gene
  sets back to the process that actually caused a difference in drug response,
  or we need to pre-select gene sets that may be relevant for drug response.
- Needless to say, the first approach may in mose cases prove impossible,
+ Needless to say, the first approach may in most cases prove impossible,
  as we can not easily follow the chain of causality between a biological
  process that mediates differential drug response and its downstream readout
  as change of gene expression.
@@ -950,7 +865,11 @@ http://gdac.broadinstitute.org/
  contained in the archive that contained the name rnaseqv2) for all cancer
  types for which it was available.
  I extracted the raw counts from each of the text files for each gene.
- I then performed a voom transformation (R package limma 
+ I then performed a voom transformation (R package 
+\begin_inset Formula $limma$
+\end_inset
+
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Smyth2005-mw"
@@ -1397,7 +1316,7 @@ reference "tab:Parameter-selection-overview"
 , including the number of genes in the signature and prAUC (training and
  test set) compared between the original cutoffs used in the query tool
  and my selection.
- Pathways where the optimisation of paramters yielded a better separation
+ Pathways where the optimisation of parameters yielded a better separation
  of control- vs.
  perturbed arrays are shown in bold (all of them).
 \end_layout
@@ -3759,7 +3678,7 @@ However, there is still a wealth of potential issues with the current model,
  Sometimes they report this in their respective experimental or data analysis
  procedures, but often they don't.
  There is a potential of all sorts of biases that we can not control for.
- (2) The platform as it currently stands needs four paramters to be speficied,
+ (2) The platform as it currently stands needs four parameters to be specified,
  each of which corresponds to a somewhat arbitrary cutoff.
  Even if we ignore this, they limit that method in a way that does not support
  down-regulated genes at all (as the z-scores are filtered by top percentile
@@ -3771,7 +3690,7 @@ ys.
 \end_layout
 
 \begin_layout Standard
-I am thus inclined to argue that, while the optimisation of paramters yielded
+I am thus inclined to argue that, while the optimisation of parameters yielded
  vast improvements in terms of correlatedness of scores and resulting drug
  associations, it still has enough drawbacks the warrant a different approach
  while keeping the overall idea of using pathway-responsive genes as signature

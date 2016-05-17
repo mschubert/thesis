@@ -25,7 +25,7 @@
 \graphics default
 \default_output_format default
 \output_sync 0
-\bibtex_command biber
+\bibtex_command default
 \index_command default
 \paperfontsize default
 \spacing single
@@ -71,24 +71,6 @@
 \end_header
 
 \begin_body
-
-\begin_layout Title
-Gene expression methods for cancer cell line drug sensitivity and patient
- outcome
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-main work for this chapter is the SPEED optimisation done for the GDSC paper
-\end_layout
-
-\end_inset
-
-
-\end_layout
 
 \begin_layout Part
 Building an Improved Model of Perturbation-Response Genes
@@ -191,8 +173,8 @@ key "Gatza2010-fq"
 \end_inset
 
  still had this author involved, but the signatures themselves seem to be
- well documented and the raw data was deposited in a public microarray resposito
-ry.
+ well documented and the raw data was deposited in a public microarray repositor
+y.
  Finally, in 2014 the main author 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -482,22 +464,37 @@ With the R package patched, I was able to download the associated data with
  If less than two control and one perturbed array were remaining after QC,
  I removed the whole contrast.
  If there were enough, I performed background correction, normalisation,
- and probe summarisation using the rma function in the oligo 
+ and probe summarisation using the rma function in the 
+\begin_inset Formula $oligo$
+\end_inset
+
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Carvalho2010-xu"
 
 \end_inset
 
- or affy 
+ or 
+\begin_inset Formula $affy$
+\end_inset
+
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Gautier2004-bx"
 
 \end_inset
 
- package (depending on whether the object was a FeatureSet or AffyBatch,
- respectively) using the corresponding platform design package.
+ package (depending on whether the object was a 
+\begin_inset Formula $FeatureSet$
+\end_inset
+
+ or 
+\begin_inset Formula $AffyBatch$
+\end_inset
+
+, respectively) using the corresponding platform design package.
  I then mapped the probe set identifiers to Human Genome Nomenclature Consortium
  (HGNC) symbols using the respective annotation packages (platform design
  and annotation package see table 
@@ -1449,14 +1446,14 @@ where
 \end_inset
 
  model to smooth the relationship between a gene's expression level and
- its variance across samples (as described in 
+ its variance across samples as described in 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Parikh2010-uj"
 
 \end_inset
 
-).
+.
 \end_layout
 
 \begin_layout Subsubsection
@@ -4194,7 +4191,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-SPIA
+Signaling Pathway Impact Analysis (SPIA)
 \end_layout
 
 \end_inset
@@ -4594,7 +4591,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-SPIA
+Signaling Pathway Impact Analysis (SPIA)
 \end_layout
 
 \end_inset

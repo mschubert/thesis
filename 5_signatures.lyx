@@ -72,9 +72,8 @@
 
 \begin_body
 
-\begin_layout Title
-Gene expression methods for cancer cell line drug sensitivity and patient
- outcome
+\begin_layout Part
+Modeling Drug Interactions
 \end_layout
 
 \begin_layout Standard
@@ -100,10 +99,6 @@ split out intro to separate section?
 \end_inset
 
 
-\end_layout
-
-\begin_layout Part
-Modeling Drug Interactions
 \end_layout
 
 \begin_layout Section
@@ -1184,7 +1179,7 @@ key "Yadav2015-bu"
 
 \end_inset
 
- between our drug response paramters is in both cases:
+ between our drug response parameters is in both cases:
 \end_layout
 
 \begin_layout Standard
