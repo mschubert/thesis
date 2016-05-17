@@ -3,6 +3,9 @@
 \begin_document
 \begin_header
 \textclass article
+\begin_preamble
+\usepackage[font=small,labelfont=bf]{caption}
+\end_preamble
 \use_default_options true
 \maintain_unincluded_children false
 \language english
@@ -25,6 +28,7 @@
 \bibtex_command default
 \index_command default
 \paperfontsize default
+\spacing single
 \use_hyperref false
 \papersize default
 \use_geometry false
@@ -277,31 +281,66 @@ Methods
 \end_layout
 
 \begin_layout Subsubsection
-Matching Drug and Disease Signatures
+Two-Tailed GSEA using MANTRA
 \end_layout
 
-\begin_layout Itemize
-MSigDB
+\begin_layout Standard
+The original Connectivity Map [lamb2006] consisted of 6100 perturbation
+ experiments on five different human cell lines (but mostly the MCF-7 breast
+ cancer cell line) using 1309 different, mostly non-cancer-related, small
+ molecules as perturbations and microarray data as readout.
+ On top of this data set 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Iorio2010-ux"
+
+\end_inset
+
+ ordered differentially expressed genes by their fold change for each drug,
+ and then merged those inversely weighted by distance (so different conditions
+ are weighted equally and overrepresentation of one condition, like the
+ experiments performed in the MCF-7 cell line, do not bias the data set)
+ to arrive at what they call a Prototype Ranked List (PRL) that corresponds
+ to a consensus signature across different conditions for a given drug.
 \end_layout
 
-\begin_layout Itemize
-maybe mention: 2 sigs to match 1 disease
+\begin_layout Standard
+Here, I used the 250 most up- and downregulated genes to perform a two-tailed
+ GSEA in the basal expression of the GDSC cell lines and thus obtain a drug-resp
+onsive signature expression score for each drug that has a PRL and each
+ cell line in the GDSC panel.
+ The enrichment score was composed of the two individual enrichment scores
+ of of both parts of the list, using:
 \end_layout
 
-\begin_layout Itemize
-MANTRA
-\end_layout
+\begin_layout Standard
+\begin_inset Formula 
+\[
+ES_{consensus}=ES_{top}-ES_{bottom}
+\]
 
-\begin_layout Itemize
-DvD
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
-Predicting Drug Combinations
+Drug Associations
 \end_layout
 
-\begin_layout Itemize
-maybe mention: 2 sigs to match 1 disease (same or in prev?)
+\begin_layout Standard
+I performed the drug associations for both pan-cancer and tissue-specific
+ contexts as described in section 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+2.**
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsection
@@ -309,7 +348,7 @@ Results
 \end_layout
 
 \begin_layout Subsubsection
-Pan-cancer predictions
+Pan-cancer associations
 \end_layout
 
 \begin_layout Standard
@@ -348,7 +387,7 @@ Gene Ontology Pan-Cancer associations
 \end_layout
 
 \begin_layout Subsubsection
-Tissue-specific predictions
+Tissue-specific associations
 \end_layout
 
 \begin_layout Standard
@@ -396,6 +435,10 @@ Discussion
 
 \begin_layout Itemize
 mostly non cancer drugs
+\end_layout
+
+\begin_layout Itemize
+mantra not avail for LINCS
 \end_layout
 
 \begin_layout Section
@@ -479,8 +522,8 @@ covar assocs (just show the formula here - explain in results section below)
 \end_layout
 
 \begin_layout Standard
-We fit a model to Z-scores of each perturbation experiment.
- We don’t specify a cutoff for sensitive and resistant cell lines.
+I fit a linear model to Z-scores of each perturbation experiment.
+ I don’t specify a cutoff for sensitive and resistant cell lines.
  Negative correlation between cell lines expressing the signature and observed
  IC50s implies a good combination.
  This has more power than GSEA in our analyses.
@@ -1029,7 +1072,7 @@ Methods
 \end_layout
 
 \begin_layout Subsubsection
-Tissue-specific Models
+Tissue-specific and Cell Line Models
 \end_layout
 
 \begin_layout Standard
@@ -1065,10 +1108,6 @@ Overview of number of experiments available
 \end_inset
 
 
-\end_layout
-
-\begin_layout Subsubsection
-Models for Individual Cell Lines
 \end_layout
 
 \begin_layout Subsubsection
@@ -1218,7 +1257,7 @@ and the corresponding single agent treatment with
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\frac{x_{1}}{\tilde{x_{1}}}+\frac{x_{2}}{\tilde{x_{2}}}=CI
+\frac{x_{1}}{\tilde{x}_{1}}+\frac{x_{2}}{\tilde{x}_{2}}=CI
 \]
 
 \end_inset

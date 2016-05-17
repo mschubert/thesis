@@ -3,6 +3,9 @@
 \begin_document
 \begin_header
 \textclass article
+\begin_preamble
+\usepackage[font=small,labelfont=bf]{caption}
+\end_preamble
 \use_default_options true
 \maintain_unincluded_children false
 \language english
@@ -1721,9 +1724,31 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-asd *compare this to speed_fullmat heatmap?* -- *precision-recall curves
- for all pathways??? => would be nice* (but then to compare other pathway
- methods as well - should rather put this in the next chapter!!)
+Recovery of the perturbations across pathways (left) and for individual
+ experiments (right) using the consensus signature.
+ Significant associations (marked with 
+\begin_inset Formula $*$
+\end_inset
+
+ for 
+\begin_inset Formula $p<10^{-5}$
+\end_inset
+
+ and *** for 
+\begin_inset Formula $p<10^{-10}$
+\end_inset
+
+) between a pathway perturbation and a higher (blue) or lower (red) pathway
+ score are shown on the left, pathway scores for individual experiments
+ on the right (order of pathways: EGFR, H2O2, Hypoxia, JAK-STAT, MAPK, NFkB,
+ PI3K, TGFb, TNFa, Trail, VEGF, p53)
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:sp2-exp-heatmap"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1738,10 +1763,6 @@ asd *compare this to speed_fullmat heatmap?* -- *precision-recall curves
 
 \begin_layout Itemize
 precision-recall curves for all methods, plot per pathway
-\end_layout
-
-\begin_layout Itemize
-linear associations and/or heatmaps from S1?
 \end_layout
 
 \begin_layout Subsubsection
@@ -1770,7 +1791,10 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Signaling Footprints
+Correlation for TCGA primary tumour data (left) and GDSC cell lines (right)
+ for perturbation-response genes in basal expression.
+ Sign indicated by colour of the points (positive correlation blue, negative
+ correlation red), strength by colour shade and size of the point.
 \end_layout
 
 \end_inset
@@ -3958,8 +3982,11 @@ reference "sub:Methods:pathway-scores"
 
  using basal gene expression, I calculated the pearson correlation across
  all samples and tissues, and plotted the correlation matrix between each
- pathway combination using the R package corplot for GDSC and TCGA data
- separately.
+ pathway combination using the R package 
+\begin_inset Formula $corplot$
+\end_inset
+
+ for GDSC and TCGA data separately.
  The correlation between a pathway and itself is 1 by definition, all other
  values range from -1 (perfectly linear reverse correlation) to 1 (perfectly
  linear correlation).
@@ -3974,16 +4001,14 @@ Pathway Methods for Perturbation Experiments
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-this is missing a legend for all the plots below
-\end_layout
+Order of pathways for all heatmaps below is the same as in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:sp2-exp-heatmap"
 
 \end_inset
 
-
+ ().
 \end_layout
 
 \begin_layout Standard
@@ -4104,7 +4129,30 @@ Gene Ontology
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Comparison to pathway member GSEA
+Comparison to pathway member GSEA.
+ Significant associations (marked with 
+\begin_inset Formula $*$
+\end_inset
+
+ for 
+\begin_inset Formula $p<10^{-5}$
+\end_inset
+
+ and *** for 
+\begin_inset Formula $p<10^{-10}$
+\end_inset
+
+) between a pathway perturbation and a higher (blue) or lower (red) pathway
+ score are shown on the left, pathway scores for individual experiments
+ on the right (order of pathways: EGFR, H2O2, Hypoxia, JAK-STAT, MAPK, NFkB,
+ PI3K, TGFb, TNFa, Trail, VEGF, p53)
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Comparison-to-pathway-perturb"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -4199,7 +4247,14 @@ Pathifier
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Comparison to other pathway methods
+Comparison to other pathway methods, legend as in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Comparison-to-pathway-perturb"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -4238,7 +4293,12 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Perturbation recall on input experiments
+Perturbation recall on input experiments as a comparison across methods
+ for each pathway.
+ Colour of the ROC curve according to the method used, TPR true positive
+ rate; FPR false positive rate.
+ Performance is indicated with the area under each curve, values indicated
+ in table
 \begin_inset Note Note
 status open
 
@@ -4340,7 +4400,13 @@ Reactome pathway enrichment
 
 \begin_layout Plain Layout
 Comparison of links between perturbation input and Footprints vs.
- Reactome pathway enrichment
+ Reactome pathway enrichment.
+ Link width proportional to strength of association, with links only shown
+ if 
+\begin_inset Formula $p<10^{-4}$
+\end_inset
+
+.
 \end_layout
 
 \end_inset
@@ -4475,7 +4541,18 @@ Gene Ontology
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Comparison to pathway member GSEA
+Comparison to pathway member GSEA for TCGA primary tumour data (left) and
+ GDSC cell lines (right).
+ Sign of the correlation indicated by colour of the points (positive correlation
+ blue, negative correlation red), strength by colour shade and size of the
+ point.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:basal-comparison-methods"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -4606,7 +4683,14 @@ PARADIGM
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Comparison to other pathway methods
+Comparison to state of the art pathway methods, legend as in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:basal-comparison-methods"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
