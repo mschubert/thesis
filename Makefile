@@ -23,6 +23,9 @@ thesis.pdf: thesis.tex config.tex $(TEX)
 	@sed -i 's/\\part/\\chapter/g' $@
 
 clean:
-	rm -f thesis.{aux,bbl,bcf,blg,fdb_latexmk,fls,log,out,pdf,run.xml}
+	rm -f thesis.{aux,bbl,bcf,blg,fdb_latexmk,fls,log,out,run.xml,lof,lot,toc}
 	rm -f $(TEX)
 	rm -f *~
+
+distclean: clean
+	rm -f thesis.pdf

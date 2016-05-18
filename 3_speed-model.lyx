@@ -218,14 +218,10 @@ reference "sec:Pathway-responsive-genes:SPEED"
 \end_layout
 
 \begin_layout Section
-A Database of Perturbation-Response Experiments
-\end_layout
-
-\begin_layout Subsection
 Methods
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 Defining Relevant Pathways and Experiments
 \end_layout
 
@@ -283,7 +279,7 @@ Taking into account these modifications, the final pathway sets I re-curated
  were: EGFR, H2O2, JAK-STAT, MAPK, NFkB, p53, PI3K, Trail, VEGF, and TGFb.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 Finding suitable Experiments
 \end_layout
 
@@ -433,7 +429,7 @@ Instead of creating an SQLite database (original SPEED) or flat text files
  original SPEED), and being easily machine- and human-readable (unlike XML).
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 From Experiments to Expression Data
 \end_layout
 
@@ -1268,118 +1264,6 @@ status open
 \end_layout
 
 \begin_layout Subsection
-Results
-\end_layout
-
-\begin_layout Subsubsection
-A fixed R package to query ArrayExpress experiments
-\end_layout
-
-\begin_layout Itemize
-how many exps the package could process before+after patches
-\end_layout
-
-\begin_layout Subsubsection
-A Database of Pathway Perturbation Experiments
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename figures/4.2_size.pdf
-	lyxscale 50
-	width 80col%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Size of the data set in comparison to the two published methods
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-summary stats
-\end_layout
-
-\begin_layout Itemize
-include number of pathways, contrasts, arrays here
-\end_layout
-
-\begin_layout Itemize
-compared to speed1, gatza, speed_martina
-\end_layout
-
-\begin_layout Itemize
-gatza: use only their pathways (and not all sigs in ng2014)?
-\end_layout
-
-\begin_layout Subsection
-Discussion
-\end_layout
-
-\begin_layout Itemize
-too much variability for batch correction: each sample would be its own
- batch (lab, platform, cells, etc.)
-\end_layout
-
-\begin_layout Subsubsection
-Value of curated perturbation experiments
-\end_layout
-
-\begin_layout Itemize
-over what was already there
-\end_layout
-
-\begin_layout Subsubsection
-Challenges when integrating different data sets
-\end_layout
-
-\begin_layout Itemize
-biases by platform
-\end_layout
-
-\begin_layout Itemize
-imputation vs selecting common subset
-\end_layout
-
-\begin_layout Itemize
-need to summarize by gene symbols, different probes on different platforms
-\end_layout
-
-\begin_layout Itemize
-this doesn't work, we need bias by prior knowledge
-\end_layout
-
-\begin_layout Section
-Building a Linear Model
-\end_layout
-
-\begin_layout Subsection
-Methods
-\end_layout
-
-\begin_layout Subsubsection
 Transformation of Z-scores
 \end_layout
 
@@ -1452,7 +1336,7 @@ key "Parikh2010-uj"
 .
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 Building the Model
 \end_layout
 
@@ -1583,7 +1467,7 @@ From the result of the linear model, I selected the top 100 genes per pathway
  gene coefficients.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 Computing Pathway Scores
 \begin_inset CommandInset label
 LatexCommand label
@@ -1592,11 +1476,22 @@ name "sub:method:speed-scores"
 \end_inset
 
 
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Methods:pathway-scores"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Perturbation-response genes
 \end_layout
 
 \begin_layout Standard
 Each column in the matrix of perturbation-response genes corresponds to
- a plane in gene expression space, in which each cell line or tumor sample
+ a plane in gene expression space, in which each cell line or tumour sample
  is located.
  If you follow its normal vector from the origin, the distance it spans
  corresponds to the pathway score 
@@ -1626,253 +1521,6 @@ I then scaled each pathway or gene set score to have a mean of zero and
  standard deviation of one, in order to factor out the difference in strength
  of gene expression signatures and thus be able to compare the relative
  scores across pathways and samples at the same time.
-\end_layout
-
-\begin_layout Subsection
-Results
-\end_layout
-
-\begin_layout Subsubsection
-Clustering of the Data
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename figures/4.2_tsne.pdf
-	lyxscale 50
-	width 120col%
-	BoundingBox 70bp 150bp 771bp 440bp
-	clip
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-*just say that middle->right is an improvement*
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-the actual matrix we get
-\end_layout
-
-\begin_layout Itemize
-the scores for TCGA and GDSC? (more in next chapter - focus on sigs only
- here - ?-> but I need for stability anyway)
-\end_layout
-
-\begin_layout Itemize
-wordle cloud of the genes selected in the bootstraps? (or: just GSEA with
- p-values?)
-\end_layout
-
-\begin_layout Itemize
-GO associations with the genes selected?
-\end_layout
-
-\begin_layout Subsubsection
-Recall of Perturbations
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename figures/4.2_recall_speed-matrix.pdf
-	lyxscale 50
-	width 100col%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Recovery of the perturbations across pathways (left) and for individual
- experiments (right) using the consensus signature.
- Significant associations (marked with 
-\begin_inset Formula $*$
-\end_inset
-
- for 
-\begin_inset Formula $p<10^{-5}$
-\end_inset
-
- and *** for 
-\begin_inset Formula $p<10^{-10}$
-\end_inset
-
-) between a pathway perturbation and a higher (blue) or lower (red) pathway
- score are shown on the left, pathway scores for individual experiments
- on the right (order of pathways: EGFR, H2O2, Hypoxia, JAK-STAT, MAPK, NFkB,
- PI3K, TGFb, TNFa, Trail, VEGF, p53)
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:sp2-exp-heatmap"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-precision-recall curves for all methods, plot per pathway
-\end_layout
-
-\begin_layout Subsubsection
-Scores for Basal Expression
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename figures/4.2_cor_speed-matrix.pdf
-	lyxscale 50
-	width 100col%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Correlation for TCGA primary tumour data (left) and GDSC cell lines (right)
- for perturbation-response genes in basal expression.
- Sign indicated by colour of the points (positive correlation blue, negative
- correlation red), strength by colour shade and size of the point.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsubsection
-Stability of Scores
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename figures/4.2_stability.pdf
-	lyxscale 50
-	width 80col%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Variance of pathway scores in different cell lines vs.
- bootstraps of input experiments for different pathways
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-this is confidence how much scores change with different input experiments
-\end_layout
-
-\begin_layout Itemize
-over 5x, we should be fine; 2x might be an issue
-\end_layout
-
-\begin_layout Itemize
-spell out formulas here
-\end_layout
-
-\begin_layout Itemize
-maybe do another plot for TCGA (more variability in scores -> higher numbers?)
-\end_layout
-
-\begin_layout Subsection
-Discussion
-\end_layout
-
-\begin_layout Section
-Computing Pathway Scores for other Methods
-\end_layout
-
-\begin_layout Subsection
-Methods
-\begin_inset CommandInset label
-LatexCommand label
-name "sub:Methods:pathway-scores"
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Subsubsection
@@ -3887,7 +3535,7 @@ status open
 
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 Perturbation Associations and Heatmaps
 \end_layout
 
@@ -3954,7 +3602,7 @@ As a method for inspection of the pathway scores of the individual experiments,
  should correspond to the pathways that were perturbed.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 Correlation in Basal Expression
 \end_layout
 
@@ -3973,7 +3621,7 @@ reference "sub:Methods:pathway-scores"
 
 \end_inset
 
- using basal gene expression, I calculated the pearson correlation across
+ using basal gene expression, I calculated the Pearson correlation across
  all samples and tissues, and plotted the correlation matrix between each
  pathway combination using the R package 
 \begin_inset Formula $corplot$
@@ -3985,11 +3633,298 @@ reference "sub:Methods:pathway-scores"
  linear correlation).
 \end_layout
 
-\begin_layout Subsection
-Results
+\begin_layout Section
+A model for perturbation-response experiments
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Itemize
+A fixed R package to query ArrayExpress experiments
+\end_layout
+
+\begin_layout Itemize
+how many exps the package could process before+after patches
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/4.2_size.pdf
+	lyxscale 50
+	width 80col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Size of the data set in comparison to the two published methods
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+summary stats
+\end_layout
+
+\begin_layout Itemize
+include number of pathways, contrasts, arrays here
+\end_layout
+
+\begin_layout Itemize
+compared to speed1, gatza, speed_martina
+\end_layout
+
+\begin_layout Itemize
+gatza: use only their pathways (and not all sigs in ng2014)?
+\end_layout
+
+\begin_layout Subsection
+Building a Linear Model
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/4.2_tsne.pdf
+	lyxscale 50
+	width 120col%
+	BoundingBox 70bp 150bp 771bp 440bp
+	clip
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+*just say that middle->right is an improvement*
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+the actual matrix we get
+\end_layout
+
+\begin_layout Itemize
+the scores for TCGA and GDSC? (more in next chapter - focus on sigs only
+ here - ?-> but I need for stability anyway)
+\end_layout
+
+\begin_layout Itemize
+wordle cloud of the genes selected in the bootstraps? (or: just GSEA with
+ p-values?)
+\end_layout
+
+\begin_layout Itemize
+GO associations with the genes selected?
+\end_layout
+
+\begin_layout Subsection
+Recall of Perturbations
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/4.2_recall_speed-matrix.pdf
+	lyxscale 50
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Recovery of the perturbations across pathways (left) and for individual
+ experiments (right) using the consensus signature.
+ Significant associations (marked with 
+\begin_inset Formula $*$
+\end_inset
+
+ for 
+\begin_inset Formula $p<10^{-5}$
+\end_inset
+
+ and *** for 
+\begin_inset Formula $p<10^{-10}$
+\end_inset
+
+) between a pathway perturbation and a higher (blue) or lower (red) pathway
+ score are shown on the left, pathway scores for individual experiments
+ on the right (order of pathways: EGFR, H2O2, Hypoxia, JAK-STAT, MAPK, NFkB,
+ PI3K, TGFb, TNFa, Trail, VEGF, p53)
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:sp2-exp-heatmap"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+precision-recall curves for all methods, plot per pathway
+\end_layout
+
+\begin_layout Subsection
+Scores for Basal Expression
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/4.2_cor_speed-matrix.pdf
+	lyxscale 50
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Correlation for TCGA primary tumour data (left) and GDSC cell lines (right)
+ for perturbation-response genes in basal expression.
+ Sign indicated by colour of the points (positive correlation blue, negative
+ correlation red), strength by colour shade and size of the point.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Stability of Scores
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/4.2_stability.pdf
+	lyxscale 50
+	width 80col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Variance of pathway scores in different cell lines vs.
+ bootstraps of input experiments for different pathways
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+this is confidence how much scores change with different input experiments
+\end_layout
+
+\begin_layout Itemize
+over 5x, we should be fine; 2x might be an issue
+\end_layout
+
+\begin_layout Itemize
+spell out formulas here
+\end_layout
+
+\begin_layout Itemize
+maybe do another plot for TCGA (more variability in scores -> higher numbers?)
+\end_layout
+
+\begin_layout Section
+Computing Pathway Scores for other Methods
+\end_layout
+
+\begin_layout Subsection
 Pathway Methods for Perturbation Experiments
 \end_layout
 
@@ -4260,7 +4195,7 @@ reference "fig:Comparison-to-pathway-perturb"
 
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 Comparing Recall between Pathway Methods
 \end_layout
 
@@ -4412,7 +4347,7 @@ Comparison of links between perturbation input and Footprints vs.
 
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 Correlation of other Methods
 \end_layout
 
@@ -4704,8 +4639,45 @@ scores of different methods
 correlation matrices from S1?
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Discussion
+\end_layout
+
+\begin_layout Subsection
+Need for an improved database and model
+\end_layout
+
+\begin_layout Itemize
+too much variability for batch correction: each sample would be its own
+ batch (lab, platform, cells, etc.)
+\end_layout
+
+\begin_layout Subsection
+Value of curated perturbation experiments
+\end_layout
+
+\begin_layout Itemize
+over what was already there
+\end_layout
+
+\begin_layout Subsection
+Challenges when integrating different data sets
+\end_layout
+
+\begin_layout Itemize
+biases by platform
+\end_layout
+
+\begin_layout Itemize
+imputation vs selecting common subset
+\end_layout
+
+\begin_layout Itemize
+need to summarize by gene symbols, different probes on different platforms
+\end_layout
+
+\begin_layout Itemize
+this doesn't work, we need bias by prior knowledge
 \end_layout
 
 \begin_layout Standard

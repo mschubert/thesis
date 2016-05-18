@@ -262,14 +262,10 @@ key "Hanahan2000-is,Hanahan2011-he,Hanahan2012-im"
 \end_layout
 
 \begin_layout Section
-Pathways and Cell Line Drug Response
-\end_layout
-
-\begin_layout Subsection
 Methods
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 Obtaining Gene Sets
 \end_layout
 
@@ -339,7 +335,7 @@ key "Kanehisa2000-mp"
  the KGML present in the last official public KEGG release).
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 Using Gene Set Enrichment Analysis (GSEA) to obtain scores
 \end_layout
 
@@ -390,7 +386,7 @@ https://cran.r-project.org/web/packages/sROC/index.html
  for drug response.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 Drug Associations using the Half-Maximum Inhibitory Concentration (IC50)
 \end_layout
 
@@ -547,313 +543,7 @@ In this formula, the scores
  of tissues separately.
 \end_layout
 
-\begin_layout Subsubsection
-Volcano Plots
-\end_layout
-
 \begin_layout Subsection
-Results
-\end_layout
-
-\begin_layout Itemize
-basically, better versions of the volcano plots that are already there
-\end_layout
-
-\begin_layout Itemize
-add table of top hits
-\end_layout
-
-\begin_layout Itemize
-list them in text, implying the ridiculousness
-\end_layout
-
-\begin_layout Itemize
-probably see where pathways that should be causing this are (=the ones we
- use in speed2 anyway)
-\end_layout
-
-\begin_layout Subsubsection
-Associations using Mutations
-\end_layout
-
-\begin_layout Itemize
-ca.
- re-plot of the paper
-\end_layout
-
-\begin_layout Subsubsection
-Associations using Gene Ontology
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename figures/2.1_go_pan.png
-	lyxscale 50
-	width 100col%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Gene Ontology Pan-Cancer associations
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename figures/2.1_go_tissue.png
-	lyxscale 50
-	width 100col%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Gene Ontology tissue-specific associations
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsubsection
-Associations using KEGG
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename figures/2.1_kegg_pan.png
-	lyxscale 50
-	width 100col%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Gene Ontology Pan-Cancer associations
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename figures/2.1_kegg_tissue.png
-	lyxscale 50
-	width 100col%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Gene Ontology tissue-specific associations
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsubsection
-Associations using Reactome
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename figures/2.1_reactome_pan.png
-	lyxscale 50
-	width 100col%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Gene Ontology Pan-Cancer associations
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename figures/2.1_reactome_tissue.png
-	lyxscale 50
-	width 100col%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Gene Ontology tissue-specific associations
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-Discussion
-\end_layout
-
-\begin_layout Standard
-The importance of mutations, especially when they are drivers, and the associati
-on with the cell lines' response to the different drugs is well established.
- Also with the new data set, there are previously unknown links that may
- ultimately lead to new clinical indications, or prioritise the development
- of certain drugs over others.
-\end_layout
-
-\begin_layout Standard
-In contrast to this, the biological meaning of the top associations between
- gene set or pathway scores and drug response I obtained is doubtful at
- best.
- What does it mean to have an association of the 
-\begin_inset Quotes eld
-\end_inset
-
-T cell receptor
-\begin_inset Quotes erd
-\end_inset
-
- in Head and Neck Squamous Carcinoma (HNSC)? There are no immune cells involved
- in the culturing of HNSC cell lines.
- [add about a q per plot here]
-\end_layout
-
-\begin_layout Standard
-We thus have two options: we either need to link seemingly unrelated gene
- sets back to the process that actually caused a difference in drug response,
- or we need to pre-select gene sets that may be relevant for drug response.
- Needless to say, the first approach may in most cases prove impossible,
- as we can not easily follow the chain of causality between a biological
- process that mediates differential drug response and its downstream readout
- as change of gene expression.
- The second alternative does not solve this, but leads to a much higher
- probability to catch causative gene sets when we already select candidates
- of exactly this by prior knowledge.
-\end_layout
-
-\begin_layout Section
-Pathways and primary Tumours
-\end_layout
-
-\begin_layout Subsection
-Methods
-\end_layout
-
-\begin_layout Subsubsection
 Gene Expression Data from the TCGA
 \end_layout
 
@@ -895,7 +585,7 @@ key "Smyth2005-mw"
  00 tissues including 00000 tumour and 0000 matched normal samples.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 Clinical Data from the TCGA
 \end_layout
 
@@ -916,47 +606,12 @@ _death or if that was not available patient.days_to_last_followup), the TCGA
 s_to_birth had the highest number).
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 Cox Proportional Hazard Model for Survival Associations
 \end_layout
 
 \begin_layout Subsection
-Results
-\end_layout
-
-\begin_layout Subsubsection
-Associations using Mutations
-\end_layout
-
-\begin_layout Subsubsection
-Associations using Gene Ontology
-\end_layout
-
-\begin_layout Subsubsection
-Associations using KEGG
-\end_layout
-
-\begin_layout Subsubsection
-Associations using Reactome
-\end_layout
-
-\begin_layout Subsection
-Discussion
-\end_layout
-
-\begin_layout Section
-Pathway-responsive genes: The SPEED Platform
-\begin_inset CommandInset label
-LatexCommand label
-name "sec:Pathway-responsive-genes:SPEED"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-Methods
+Pathway-responsive genes
 \end_layout
 
 \begin_layout Subsubsection
@@ -1046,7 +701,11 @@ Running the Cross-Validation
 \end_layout
 
 \begin_layout Standard
-With the SQLite database (
+With the SQLite database
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
 \begin_inset CommandInset href
 LatexCommand href
 name "http://speed.sys-bio.net/SPEED_db.zip"
@@ -1054,7 +713,12 @@ target "http://speed.sys-bio.net/SPEED_db.zip"
 
 \end_inset
 
-) and Python query tools the authors provided, we extracted gene lists for
+
+\end_layout
+
+\end_inset
+
+ and Python query tools the authors provided, we extracted gene lists for
  different combinations of those four parameters:
 \end_layout
 
@@ -1169,10 +833,293 @@ I calculated a linear regression using the obtained pathway scores the IC50s
 \end_layout
 
 \begin_layout Subsection
-Results
+Volcano Plots
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Section
+Cell Line Drug Response
+\end_layout
+
+\begin_layout Itemize
+basically, better versions of the volcano plots that are already there
+\end_layout
+
+\begin_layout Itemize
+add table of top hits
+\end_layout
+
+\begin_layout Itemize
+list them in text, implying the ridiculousness
+\end_layout
+
+\begin_layout Itemize
+probably see where pathways that should be causing this are (=the ones we
+ use in speed2 anyway)
+\end_layout
+
+\begin_layout Subsection
+Associations using Mutations
+\end_layout
+
+\begin_layout Itemize
+ca.
+ re-plot of the paper
+\end_layout
+
+\begin_layout Subsection
+Associations using Gene Ontology
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/2.1_go_pan.png
+	lyxscale 50
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Gene Ontology Pan-Cancer associations
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/2.1_go_tissue.png
+	lyxscale 50
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Gene Ontology tissue-specific associations
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Associations using KEGG
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/2.1_kegg_pan.png
+	lyxscale 50
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Gene Ontology Pan-Cancer associations
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/2.1_kegg_tissue.png
+	lyxscale 50
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Gene Ontology tissue-specific associations
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Associations using Reactome
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/2.1_reactome_pan.png
+	lyxscale 50
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Gene Ontology Pan-Cancer associations
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/2.1_reactome_tissue.png
+	lyxscale 50
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Gene Ontology tissue-specific associations
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Pathways and primary Tumours
+\end_layout
+
+\begin_layout Subsection
+Associations using Mutations
+\end_layout
+
+\begin_layout Subsection
+Associations using Gene Ontology
+\end_layout
+
+\begin_layout Subsection
+Associations using KEGG
+\end_layout
+
+\begin_layout Subsection
+Associations using Reactome
+\end_layout
+
+\begin_layout Section
+Pathway-responsive genes: The SPEED Platform
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Pathway-responsive-genes:SPEED"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
 Separability-optimised Gene Sets
 \end_layout
 
@@ -2718,7 +2665,7 @@ status open
 
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 Overlap of Gene Lists
 \end_layout
 
@@ -2730,7 +2677,7 @@ old with new cutoffs
 new with other gene lists (GO, pathway)
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 Obtaining Pathway Scores from Gene Sets
 \end_layout
 
@@ -2780,7 +2727,7 @@ would be good to order by pathways to compare to later model
 
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 Associations between Pathway Scores and Tissues
 \end_layout
 
@@ -2959,7 +2906,7 @@ MAPK_only/MAPK_PI3K signalling seems to evenly distributed among non-blood
  However, the difference was a lot less apparent than for other pathways.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 Pan-Cancer Drug Associations
 \end_layout
 
@@ -3234,7 +3181,7 @@ compare to a mutation here?
 
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 Tissue-specific Drug Associations
 \end_layout
 
@@ -3294,8 +3241,58 @@ name "fig:tissue-drug-assocs"
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Discussion
+\end_layout
+
+\begin_layout Subsection
+Cell line drug response
+\end_layout
+
+\begin_layout Standard
+The importance of mutations, especially when they are drivers, and the associati
+on with the cell lines' response to the different drugs is well established.
+ Also with the new data set, there are previously unknown links that may
+ ultimately lead to new clinical indications, or prioritise the development
+ of certain drugs over others.
+\end_layout
+
+\begin_layout Standard
+In contrast to this, the biological meaning of the top associations between
+ gene set or pathway scores and drug response I obtained is doubtful at
+ best.
+ What does it mean to have an association of the 
+\begin_inset Quotes eld
+\end_inset
+
+T cell receptor
+\begin_inset Quotes erd
+\end_inset
+
+ in Head and Neck Squamous Carcinoma (HNSC)? There are no immune cells involved
+ in the culturing of HNSC cell lines.
+ [add about a q per plot here]
+\end_layout
+
+\begin_layout Standard
+We thus have two options: we either need to link seemingly unrelated gene
+ sets back to the process that actually caused a difference in drug response,
+ or we need to pre-select gene sets that may be relevant for drug response.
+ Needless to say, the first approach may in most cases prove impossible,
+ as we can not easily follow the chain of causality between a biological
+ process that mediates differential drug response and its downstream readout
+ as change of gene expression.
+ The second alternative does not solve this, but leads to a much higher
+ probability to catch causative gene sets when we already select candidates
+ of exactly this by prior knowledge.
+\end_layout
+
+\begin_layout Subsection
+Mutations and patient survival
+\end_layout
+
+\begin_layout Subsection
+Pathway-responsive genes
 \end_layout
 
 \begin_layout Standard
