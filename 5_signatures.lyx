@@ -141,7 +141,7 @@ reference "fig:Signature-Matching-Approaches"
  this phenotype.
  This may work well in certain circumstances, but is undoubtedly a gross
  oversimplification of the problem of disease inception and progression.
- Nontheless, it has been shown to work ***refs***, and our group has previously
+ Nonetheless, it has been shown to work ***refs***, and our group has previously
  worked on an R package for matching drugs and diseases 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -246,11 +246,11 @@ Notwithstanding those potential issues, it would be of enormous interest
 
 \begin_layout Standard
 Even more interesting, we could generate a signature between cells that
- are sensitive and those that are resitant to a certain kind of drug, and
+ are sensitive and those that are resistant to a certain kind of drug, and
  then match this signature with another drug that potentially converts the
- cells from a resitant to a sensitive phenotype.
+ cells from a resistant to a sensitive phenotype.
  This has been shown to work when trying to overcome glutocorticoid resistance
- in acute lymphoblastic leukemia (ALL) 
+ in acute lymphoblastic leukaemia (ALL) 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Wei2006-ne"
@@ -289,7 +289,7 @@ key "Iorio2010-ux"
 
  ordered differentially expressed genes by their fold change for each drug,
  and then merged those inversely weighted by distance (so different conditions
- are weighted equally and overrepresentation of one condition, like the
+ are weighted equally and over-representation of one condition, like the
  experiments performed in the MCF-7 cell line, do not bias the data set)
  to arrive at what they call a Prototype Ranked List (PRL) that corresponds
  to a consensus signature across different conditions for a given drug.
@@ -554,7 +554,7 @@ Given that we know which concentration
 \begin_inset Formula $1$
 \end_inset
 
-, the only difference is that our curve is that in this case we are modeling
+, the only difference is that our curve is that in this case we are modelling
  a sigmoid decrease instead of increase, so the only different is that the
  slope parameter has a different sign.
  The relationship 

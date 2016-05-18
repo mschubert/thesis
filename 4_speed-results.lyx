@@ -144,12 +144,12 @@ We detected the following overlaps between a perturbed pathway and a significant
 \end_layout
 
 \begin_layout Standard
-Difference between Signaling Footprints and pathway expression
+Difference between Signalling Footprints and pathway expression
 \end_layout
 
 \begin_layout Standard
 We were interested in how our perturbation-responsive genes that represent
- a footprint of signaling activity present in a given context are related
+ a footprint of signalling activity present in a given context are related
  to induction of pathway expression (for an overview of how the different
  pathway methods are related, see figure 1a).
 \end_layout
@@ -183,11 +183,11 @@ For cancer diagnosis in both the clinical and preclinical setting, efforts
  et al.
  2013) or the International Cancer Genome Consortium (ICGC) have pioneered
  this characterization on a large scale, offering the opportunity to derive
- large amounts of information about individual tumors and in turn likely
- harbors yet undiscovered treatment opportunities.
+ large amounts of information about individual tumours and in turn likely
+ harbours yet undiscovered treatment opportunities.
  While the recent focus on linking outcomes with mutations represents a
- step forward over basing treatment of an individual on the tissue of tumor
- origin alone, putting mutations in a functional context with the signaling
+ step forward over basing treatment of an individual on the tissue of tumour
+ origin alone, putting mutations in a functional context with the signalling
  aberrations that they create may provide additional insight in mechanisms
  of pathogenesis and treatment opportunities.
  
@@ -240,13 +240,13 @@ Introduction
 \begin_layout Standard
 With sequencing technologies becoming more and more commonplace for cancer
  diagnosis in both the clinical and preclinical setting, there is a wealth
- of molecular data available that likely harbors yet undiscovered treatment
+ of molecular data available that likely harbours yet undiscovered treatment
  opportunities.
  Efforts like the TCGA/ICGC have pioneered this characterization on a large
  scale, offering the opportunity to derive large amounts of information
- about individual tumors.
+ about individual tumours.
  This represents a step forward over basing the treatment of an individual
- on the tissue of tumor origin alone, with mutational screens and sensitivity
+ on the tissue of tumour origin alone, with mutational screens and sensitivity
  markers providing a first glimpse of the direction that personalized medicine
  is going to take.
 \end_layout
@@ -342,12 +342,12 @@ Methods
 \end_layout
 
 \begin_layout Subsection
-Co-clustering of tumors and cell lines
+Co-clustering of tumours and cell lines
 \end_layout
 
 \begin_layout Standard
 Using the batch-corrected gene expression data that merged tumor and cell
- line expression as described with the pathifier and SPIA scores, we also
+ line expression as described with the Pathifier and SPIA scores, we also
  performed non-negative matrix factorization (NMF) clustering using multiplicati
 ve updating derived from libNMF (Janecek et al.
  2011) for cluster numbers (k) between 2 and 10, with 00 repetitions using
@@ -355,7 +355,7 @@ ve updating derived from libNMF (Janecek et al.
  With those, we computed the cophenetic coefficient for each k, and chose
  the local maxima as more suitable numbers for cluster analysis.
  As the clustering was performed on data merged together between cell lines
- and tumors, we can try and infer drug responses from clinically derived
+ and tumours, we can try and infer drug responses from clinically derived
  subtypes.
 \end_layout
 

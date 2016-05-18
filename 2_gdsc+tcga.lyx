@@ -682,7 +682,7 @@ I calculated the raw basal GSEA scores (using the wGSEA function of the
 \begin_layout Standard
 \begin_inset Formula 
 \[
-log(x/(1\text{−}x))
+log(x/(1\text{-}x))
 \]
 
 \end_inset
