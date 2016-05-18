@@ -370,8 +370,13 @@ http://software.broadinstitute.org/gsea/index.jsp
 \end_layout
 
 \begin_layout Standard
-I transformed the resulting distribution of NES scores into a normal distributio
-n using a kernel density estimator (R package sROC 
+As I do not have a background set, I transformed the resulting bimodal distribut
+ion of normalised enrichment scores (NES) for each pathway across all cell
+ lines into a normal distribution using a kernel density estimator (
+\begin_inset Formula $kCDF$
+\end_inset
+
+ function from the R package sROC
 \begin_inset Foot
 status open
 
@@ -381,9 +386,86 @@ https://cran.r-project.org/web/packages/sROC/index.html
 
 \end_inset
 
-) to obtain uniformly distributed scores and a normal transformation afterwards.
- I used those transformed scores in subsequent linear (ANOVA-like) associations
+).
+ The result of this resembled a uniform distribution, with the exception
+ that it took into account local differences with the kernel function.
+ I then transformed the resulting distribution into a normal distribution
+ using the formula
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+log(x/(1\text{-}x))
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+I used those transformed scores in subsequent linear (ANOVA-like) associations
  for drug response.
+\end_layout
+
+\begin_layout Subsection
+Patient data from the TCGA
+\end_layout
+
+\begin_layout Standard
+I used the Firehose tool
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+http://gdac.broadinstitute.org/
+\end_layout
+
+\end_inset
+
+ from the BROAD institute to download data labelled level 3 RNA-seq v2 (files
+ names including RSEM_genes__data.Level_3, unpacked them, selected all files
+ contained in the archive that contained the name rnaseqv2) for all cancer
+ types for which it was available.
+ I extracted the raw counts from each of the text files for each gene.
+ I then performed a voom transformation (R package 
+\begin_inset Formula $limma$
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Smyth2005-mw"
+
+\end_inset
+
+) for each TCGA study separately.
+ The result of this transformation are expression values that I can use
+ linear modeling techniques on, unlike the raw RNA-seq read counts.
+ With the resulting expression matrix, I selected only genes that had an
+ HGNC symbol associated with them.
+ I used the function avereps (R package limma) to average rows that had
+ the same gene symbol.
+ This resulted in one expression matrix per TCGA tissue, for a total of
+ 00 tissues including 00000 tumour and 0000 matched normal samples.
+\end_layout
+
+\begin_layout Standard
+Also using the Firehose tool, I downloaded clinical data (file names including
+ Merge_Clinical.Level_1, unpack them, select all clin.merged.txt files) for
+ all cancer types for which it was available.
+ I extracted the fields for study (admin.disease_code), age of the patient
+ (age_days), their vital status (where a field days_to_death with a missing
+ value indicated that the patient was alive, encoded with 0 if the patient
+ is alive and 1 if they are not), days that they survived (either patient.days_to
+_death or if that was not available patient.days_to_last_followup), the TCGA
+ patient barcode (patient.bcr_patient_barcode), and their sex (patient.gender).
+ I converted the days of survival to months by dividing by 30.4.
+ I discarded all patients that had a negative survival time.
+ I removed duplicates, and in the case there were multiple records of the
+ same patient I took the one recorded latest (the row where the field patient.day
+s_to_birth had the highest number).
 \end_layout
 
 \begin_layout Subsection
@@ -544,292 +626,7 @@ In this formula, the scores
 \end_layout
 
 \begin_layout Subsection
-Gene Expression Data from the TCGA
-\end_layout
-
-\begin_layout Standard
-I used the Firehose tool
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-http://gdac.broadinstitute.org/
-\end_layout
-
-\end_inset
-
- from the BROAD institute to download data labelled level 3 RNA-seq v2 (files
- names including RSEM_genes__data.Level_3, unpacked them, selected all files
- contained in the archive that contained the name rnaseqv2) for all cancer
- types for which it was available.
- I extracted the raw counts from each of the text files for each gene.
- I then performed a voom transformation (R package 
-\begin_inset Formula $limma$
-\end_inset
-
- 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Smyth2005-mw"
-
-\end_inset
-
-) for each TCGA study separately.
- The result of this transformation are expression values that I can use
- linear modeling techniques on, unlike the raw RNA-seq read counts.
- With the resulting expression matrix, I selected only genes that had an
- HGNC symbol associated with them.
- I used the function avereps (R package limma) to average rows that had
- the same gene symbol.
- This resulted in one expression matrix per TCGA tissue, for a total of
- 00 tissues including 00000 tumour and 0000 matched normal samples.
-\end_layout
-
-\begin_layout Subsection
-Clinical Data from the TCGA
-\end_layout
-
-\begin_layout Standard
-Also using the Firehose tool, I downloaded clinical data (file names including
- Merge_Clinical.Level_1, unpack them, select all clin.merged.txt files) for
- all cancer types for which it was available.
- I extracted the fields for study (admin.disease_code), age of the patient
- (age_days), their vital status (where a field days_to_death with a missing
- value indicated that the patient was alive, encoded with 0 if the patient
- is alive and 1 if they are not), days that they survived (either patient.days_to
-_death or if that was not available patient.days_to_last_followup), the TCGA
- patient barcode (patient.bcr_patient_barcode), and their sex (patient.gender).
- I converted the days of survival to months by dividing by 30.4.
- I discarded all patients that had a negative survival time.
- I removed duplicates, and in the case there were multiple records of the
- same patient I took the one recorded latest (the row where the field patient.day
-s_to_birth had the highest number).
-\end_layout
-
-\begin_layout Subsection
 Cox Proportional Hazard Model for Survival Associations
-\end_layout
-
-\begin_layout Subsection
-Pathway-responsive genes
-\end_layout
-
-\begin_layout Subsubsection
-Generating Gene Lists
-\end_layout
-
-\begin_layout Standard
-The authors of the original SPEED publication used four parameters to generate
- gene lists from their input experiments:
-\end_layout
-
-\begin_layout Itemize
-Z-score cutoff: the top n% of upregulated genes
-\end_layout
-
-\begin_layout Itemize
-Total expression cutoff: the top m% of genes considering their basal expression
- in each experiment
-\end_layout
-
-\begin_layout Itemize
-Experiment overlap: the percentage of experiments for which the other two
- conditions must be met
-\end_layout
-
-\begin_layout Itemize
-Uniqueness: whether only genes should be returned that were unique to the
- stimulation of a specific pathway
-\end_layout
-
-\begin_layout Standard
-With the SQLite database (
-\begin_inset CommandInset href
-LatexCommand href
-name "http://speed.sys-bio.net/SPEED_db.zip"
-target "http://speed.sys-bio.net/SPEED_db.zip"
-
-\end_inset
-
-) and Python query tools the authors provided, I extracted gene lists with
- the given cutoff.
- First, I used the default parameters in their implementation, which was
- to include all genes that were top 5% of up-regulated genes by z-score,
- overall top 50% of expressed genes, in at least 20% of the experiments
- per pathway, and disregarding whether the gene was in any other pathway
- or not.
-\end_layout
-
-\begin_layout Subsubsection
-Pathway Scores for all Experiments
-\end_layout
-
-\begin_layout Standard
-I calculated the raw basal GSEA scores (using the wGSEA function of the
- script provided by the BROAD institute) for all cell lines and basal gene
- expression in the GDSC panel using the default gene list as described in
- the previous section.
- As we do not have a background set, we transformed the resulting bimodal
- distribution for each pathway across all cell lines into a normal distribution
- using a kernel density estimator (kCDF function from the R package sROC
- [cite!]).
- The result of this resembled a uniform distribution, with the exception
- that it took into account local differences with the kernel function.
- I then transformed the resulting distribution into a normal distribution
- using the formula
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-log(x/(1\text{-}x))
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-which yielded normally distributed GSEA scores without performing any test
- of significance in terms of up- or down-regulated of the individual cell
- lines.
-\end_layout
-
-\begin_layout Subsubsection
-Running the Cross-Validation
-\end_layout
-
-\begin_layout Standard
-With the SQLite database
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-name "http://speed.sys-bio.net/SPEED_db.zip"
-target "http://speed.sys-bio.net/SPEED_db.zip"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
- and Python query tools the authors provided, we extracted gene lists for
- different combinations of those four parameters:
-\end_layout
-
-\begin_layout Itemize
-Z-score: 0.25, 0.5, 0.75, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7, 7.5,
- 8, 9, 10, 11, 12, 15, 20, 25
-\end_layout
-
-\begin_layout Itemize
-Total expression: 5, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100
-\end_layout
-
-\begin_layout Itemize
-Overlap: 5, 10, 20, 30, 40, 50, 60, 70, 80
-\end_layout
-
-\begin_layout Itemize
-Uniqueness: True or False
-\end_layout
-
-\begin_layout Standard
-For each combination, I performed a scan of the four adjustable platform
- parameters to optimize the order obtained by GSEA scores between control
- and stimulated experiments.
- For combination of parameters, so for each of the 4950 gene lists, I calculated
- the raw enrichment score for each pathway and cell line, yielding a total
- of 55 million enrichment scores.
- I then went on to, for each pathway, construct a precision-recall curve
- that quantified how well the GSEA scores were able assign lower pathway
- activation scores to the control arrays than the perturbed arrays (where,
- in the case of an inhibition I performed GSEA using negative z-scores).
-\end_layout
-
-\begin_layout Standard
-The set of control arrays comprised all the un-stimulated arrays in the
- database, and the stimulated set all arrays in the database where a certain
- pathway was perturbed.
- I used as a measure of performance the area under the precision-recall
- curve.
- A perfect ordering (that is, all control arrays and then all stimulated
- arrays) corresponded to a precision-recall AUC (prAUC) of 1, while a random
- ordering would respond to a prAUC about 0.5.
- 
-\end_layout
-
-\begin_layout Standard
-By using not only the matched control arrays to the perturbed arrays but
- all arrays present in the data set, we allow cross-activation of pathways
- while minimizing the fit to random differences in gene expression by different
- initial conditions.
-\end_layout
-
-\begin_layout Standard
-I split the data set (both control and perturbed arrays) in five different
- subsets, where four of the five were the designated training set and the
- fifth the designed test set.
- I calculated the prAUC for all the parameters described in the previous
- section, and chose the set with the highest score.
- I then went on to the part that was not used in training and quantified
- the prAUC there as well.
- I performed the whole process five times, with another subset functioning
- as the test set each time.
- I then chose the set that the highest prAUC:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-selected=max^{all\,runs}(min^{per\,run}(prAUC^{train},prAUC^{test}))
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-I did not simply select the highest highest AUC in the test set because
- I would not want to select a model that performed badly on the training
- set to begin with.
-\end_layout
-
-\begin_layout Subsubsection
-Linear Associations
-\end_layout
-
-\begin_layout Standard
-As a control and sanity check, I compared the inferred pathway activation
- scores between different tissues.
- If the assigned scores per tissue are biologically meaningful, we would
- expect to find well-established literature evidence for backing them up.
- A heatmap overview of pathway activation scores is shown in figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:tissue-heatmap"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-I calculated a linear regression using the obtained pathway scores the IC50s
- or drug response for all cell lines and each pathway, with tissues either
- as a blocking factor or calculating the associations for each tissue separately.
- I adjusted p-values by controlling the false discovery rate and visualized
- the result as volcano plots and individual fits.
- For separate fits between tissues, I only calculated associations that
- had at least two sensitive cell lines (defined as it being in the top 10%
- of responders, not 100x less sensitive than the most sensitive overall,
- and having an IC50 below 1 uM).
 \end_layout
 
 \begin_layout Subsection
@@ -1124,11 +921,56 @@ Separability-optimised Gene Sets
 \end_layout
 
 \begin_layout Standard
-Using the default parameters of the SPEED query tools (constant cutoff if
- z<1%, expression>50%, overlap>20% and allowing non-unique genes), I obtained
- scores that were highly correlated between the different pathways.
- The Pearson correlations for each of the pathways across all cell lines
- is shown in figure 
+The authors of the original SPEED publication used four parameters to generate
+ gene lists from their input experiments:
+\end_layout
+
+\begin_layout Itemize
+Z-score cutoff: the top n% of upregulated genes
+\end_layout
+
+\begin_layout Itemize
+Total expression cutoff: the top m% of genes considering their basal expression
+ in each experiment
+\end_layout
+
+\begin_layout Itemize
+Experiment overlap: the percentage of experiments for which the other two
+ conditions must be met
+\end_layout
+
+\begin_layout Itemize
+Uniqueness: whether only genes should be returned that were unique to the
+ stimulation of a specific pathway
+\end_layout
+
+\begin_layout Standard
+With the SQLite database
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+name "http://speed.sys-bio.net/SPEED_db.zip"
+target "http://speed.sys-bio.net/SPEED_db.zip"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ and Python query tools the authors provided, I extracted gene lists with
+ the given cutoff.
+ First, I used the default parameters in their implementation, which was
+ to include all genes that were top 5% of up-regulated genes by z-score,
+ overall top 50% of expressed genes, in at least 20% of the experiments
+ per pathway, and disregarding whether the gene was in any other pathway
+ or not.
+ Using these default parameters, I obtained scores that were highly correlated
+ between the different pathways, as shown in figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "cor-before"
@@ -1136,15 +978,6 @@ reference "cor-before"
 \end_inset
 
 .
- For the optimised lists, I observed a much lower overall correlation of
- the pathway scores (figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "cor-after"
-
-\end_inset
-
-).
 \end_layout
 
 \begin_layout Standard
@@ -1230,7 +1063,114 @@ Correlation plots for GSEA scores per pathway across cell lines for the
 \end_layout
 
 \begin_layout Standard
-The values for the different gene list cutoff parameters that I selected
+To counteract this problem, I extracted gene lists for different combinations
+ of those four parameters with the SQLite database
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+name "http://speed.sys-bio.net/SPEED_db.zip"
+target "http://speed.sys-bio.net/SPEED_db.zip"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ and Python query tools the authors provided:
+\end_layout
+
+\begin_layout Itemize
+Z-score: 0.25, 0.5, 0.75, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7, 7.5,
+ 8, 9, 10, 11, 12, 15, 20, 25
+\end_layout
+
+\begin_layout Itemize
+Total expression: 5, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100
+\end_layout
+
+\begin_layout Itemize
+Overlap: 5, 10, 20, 30, 40, 50, 60, 70, 80
+\end_layout
+
+\begin_layout Itemize
+Uniqueness: True or False
+\end_layout
+
+\begin_layout Standard
+For each combination, I performed a scan of the four adjustable platform
+ parameters to optimize the order obtained by GSEA scores between control
+ and stimulated experiments.
+ For combination of parameters, so for each of the 4950 gene lists, I calculated
+ the raw enrichment score for each pathway and cell line, yielding a total
+ of 55 million enrichment scores.
+ I then went on to, for each pathway, construct a precision-recall curve
+ that quantified how well the GSEA scores were able assign lower pathway
+ activation scores to the control arrays than the perturbed arrays (where,
+ in the case of an inhibition I performed GSEA using negative z-scores).
+\end_layout
+
+\begin_layout Standard
+The set of control arrays comprised all the un-stimulated arrays in the
+ database, and the stimulated set all arrays in the database where a certain
+ pathway was perturbed.
+ I used as a measure of performance the area under the precision-recall
+ curve.
+ A perfect ordering (that is, all control arrays and then all stimulated
+ arrays) corresponded to a precision-recall AUC (prAUC) of 1, while a random
+ ordering would respond to a prAUC about 0.5.
+ 
+\end_layout
+
+\begin_layout Standard
+By using not only the matched control arrays to the perturbed arrays but
+ all arrays present in the data set, we allow cross-activation of pathways
+ while minimizing the fit to random differences in gene expression by different
+ initial conditions.
+\end_layout
+
+\begin_layout Standard
+I split the data set (both control and perturbed arrays) in five different
+ subsets, where four of the five were the designated training set and the
+ fifth the designed test set.
+ I calculated the prAUC for all the parameters described in the previous
+ section, and chose the set with the highest score.
+ I then went on to the part that was not used in training and quantified
+ the prAUC there as well.
+ I performed the whole process five times, with another subset functioning
+ as the test set each time.
+ I then chose the set that the highest prAUC.
+ I did not simply select the highest highest AUC in the test set because
+ I would not want to select a model that performed badly on the training
+ set to begin with.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+selected=max^{all\,runs}(min^{per\,run}(prAUC^{train},prAUC^{test}))
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For the optimised lists, I observed a much lower overall correlation of
+ the pathway scores (figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cor-after"
+
+\end_inset
+
+).
+ The values for the different gene list cutoff parameters that I selected
  after optimisation are listed in table 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -2665,22 +2605,6 @@ status open
 
 \end_layout
 
-\begin_layout Subsection
-Overlap of Gene Lists
-\end_layout
-
-\begin_layout Itemize
-old with new cutoffs
-\end_layout
-
-\begin_layout Itemize
-new with other gene lists (GO, pathway)
-\end_layout
-
-\begin_layout Subsection
-Obtaining Pathway Scores from Gene Sets
-\end_layout
-
 \begin_layout Standard
 \begin_inset Float table
 wide false
@@ -2729,6 +2653,21 @@ would be good to order by pathways to compare to later model
 
 \begin_layout Subsection
 Associations between Pathway Scores and Tissues
+\end_layout
+
+\begin_layout Standard
+As a control and sanity check, I compared the inferred pathway activation
+ scores between different tissues.
+ If the assigned scores per tissue are biologically meaningful, we would
+ expect to find well-established literature evidence for backing them up.
+ A heatmap overview of pathway activation scores is shown in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:tissue-heatmap"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -2908,6 +2847,18 @@ MAPK_only/MAPK_PI3K signalling seems to evenly distributed among non-blood
 
 \begin_layout Subsection
 Pan-Cancer Drug Associations
+\end_layout
+
+\begin_layout Standard
+I calculated a linear regression using the obtained pathway scores the IC50s
+ or drug response for all cell lines and each pathway, with tissues either
+ as a blocking factor or calculating the associations for each tissue separately.
+ I adjusted p-values by controlling the false discovery rate and visualized
+ the result as volcano plots and individual fits.
+ For separate fits between tissues, I only calculated associations that
+ had at least two sensitive cell lines (defined as it being in the top 10%
+ of responders, not 100x less sensitive than the most sensitive overall,
+ and having an IC50 below 1 uM).
 \end_layout
 
 \begin_layout Standard
