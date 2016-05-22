@@ -772,10 +772,7 @@ _code}
 
 \end_inset
 
-), age of the patient 
-(
-\lang british
-
+), age of the patient (
 \begin_inset ERT
 status open
 
@@ -1169,80 +1166,6 @@ Gene Ontology tissue-specific associations
 \end_layout
 
 \begin_layout Subsection
-Associations using KEGG
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename figures/2.1_kegg_pan.png
-	lyxscale 50
-	width 100col%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Gene Ontology Pan-Cancer associations
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename figures/2.1_kegg_tissue.png
-	lyxscale 50
-	width 100col%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Gene Ontology tissue-specific associations
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
 Associations using Reactome
 \end_layout
 
@@ -1326,10 +1249,6 @@ Associations using Mutations
 
 \begin_layout Subsection
 Associations using Gene Ontology
-\end_layout
-
-\begin_layout Subsection
-Associations using KEGG
 \end_layout
 
 \begin_layout Subsection
