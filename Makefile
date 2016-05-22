@@ -21,6 +21,7 @@ thesis.pdf: thesis.tex config.tex $(TEX)
 	@sed -i '/\\bibliography/d' $@
 	@sed -i 's/\\lyxdot /./g' $@
 	@sed -i 's/\\part/\\chapter/g' $@
+	@sed -i 's/\\cite{/\\citep{/g' $@
 
 clean:
 	rm -f thesis.{aux,bbl,bcf,blg,fdb_latexmk,fls,log,out,run.xml,lof,lot,toc}

@@ -5,6 +5,15 @@
 \textclass article
 \begin_preamble
 \usepackage[font=small,labelfont=bf]{caption}
+
+\newcommand*\name[1]{#1}                                                                                                                                                                                                                       
+\newcommand*\abbrv[1]{#1}                                                                                                                                                                                                                      
+\newcommand*\rpkg[1]{\textit{#1}}                                                                                                                                                                                                              
+\newcommand*\file[1]{\textit{#1}}                                                                                                                                                                                                              
+\newcommand{\code}[1]{\texttt{#1}}                                                                                                                                                                                                             
+                                                                                                                                                                                                                                               
+\newcommand*\protein[1]{#1}                                                                                                                                                                                                                    
+\newcommand*\gene[1]{\textit{#1}}                                                                                                                                                                                                              
 \end_preamble
 \use_default_options true
 \maintain_unincluded_children false
@@ -107,10 +116,26 @@ key "Croft2011-po"
 
 , and calculate a combined expression score using either a Fisher's exact
  test (e.g.
- by a tool called DAVID **cite**; note that although this tool is still
- widely used, it has last been updated in 2010 and misses a lot of annotations
- [wadi]) if one is to test one set against another, or some variant of Gene
- Set Enrichment Analysis (GSEA) 
+ by a tool called DAVID **cite**
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+note that although this tool is still widely used, it has last been updated
+ in 2010 and misses a lot of annotations 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Wadi2016-wc"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+) if one is to test one set against another, or some variant of Gene Set
+ Enrichment Analysis (GSEA) 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Subramanian2005-wp"
@@ -239,7 +264,7 @@ key "The_Cancer_Genome_Atlas_Research_Network2013-bi"
 , and (3) which two drugs are likely to act synergistically when treating
  cancer cell lines.
  I will not filter the gene sets I use, and well represented signalling
- pathways are among the top hits for (1) - where signaling pathways are
+ pathways are among the top hits for (1) - where signalling pathways are
  known to play a pivotal role for targeted therapies 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -270,17 +295,87 @@ Obtaining Gene Sets
 \end_layout
 
 \begin_layout Standard
-To obtain Gene Ontology sets, I used the BioMart R package [cite] to query
- the Ensembl [cite] hsapiens_gene_ensembl database for all HGNC symbols
- that had a Gene Ontology 
+To obtain Gene Ontology sets, I used the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+rpkg{BioMart}
+\end_layout
+
+\end_inset
+
+ R package 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Smedley2009-xo"
+
+\end_inset
+
+ to query the Ensembl 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Hubbard2002-lv,Yates2016-bw"
+
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+code{hsapiens
+\backslash
+_gene
+\backslash
+_ensembl}
+\end_layout
+
+\end_inset
+
+ database for all 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbrv{HGNC}
+\end_layout
+
+\end_inset
+
+ symbols that had a Gene Ontology 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Ashburner2000-xl,Gene_Ontology_Consortium2004-sn"
 
 \end_inset
 
- ID (go_id field) associated with them, yielding three main categories (biologic
-al process, molecular function, cellular compartment) with XX, XX, and XX
+ ID (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+code{go
+\backslash
+_id}
+\end_layout
+
+\end_inset
+
+ field) associated with them, yielding three main categories (biological
+ process, molecular function, cellular compartment) with XX, XX, and XX
  gene sets respectively.
  I performed the subsequent analyses using gene sets from the biological
  process category only.
@@ -291,7 +386,20 @@ key "Croft2011-po"
 
 \end_inset
 
-, I downloaded the file ReactomePathways.gmt
+, I downloaded the file 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+file{ReactomePathways.gmt}
+\end_layout
+
+\end_inset
+
+
 \begin_inset Foot
 status open
 
@@ -307,8 +415,21 @@ http://www.reactome.org/pages/download-data/
 \end_layout
 
 \begin_layout Standard
-For other gene sets, I used the Enrichr platform [cite] and the gene sets
- the authors assembled in their Github repository
+For other gene sets, I used the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+name{Enrichr}
+\end_layout
+
+\end_inset
+
+ platform [cite] and the gene sets the authors assembled in their Github
+ repository
 \begin_inset Foot
 status open
 
@@ -332,7 +453,20 @@ key "Kanehisa2000-mp"
  in 2001, before it went commercial).
  This data source of KEGG gene sets had the advantage that it was in .gmt
  format that was readily accessible and easily machine readable (unlike
- the KGML present in the last official public KEGG release).
+ the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbrv{KGML}
+\end_layout
+
+\end_inset
+
+ present in the last official public KEGG release).
 \end_layout
 
 \begin_layout Subsection
@@ -340,7 +474,20 @@ Using Gene Set Enrichment Analysis (GSEA) to obtain scores
 \end_layout
 
 \begin_layout Standard
-I used the function wGSEA 
+I used the function 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+code{wGSEA}
+\end_layout
+
+\end_inset
+
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Subramanian2005-pd"
@@ -361,9 +508,21 @@ http://software.broadinstitute.org/gsea/index.jsp
  I supplied as gene sets the Gene Ontology and pathway sets described above.
  I performed 1,000 resampling steps for score normalisation for all subsequent
  analyses unless otherwise indicated.
- I used the normalised enrichment score (NES) for all subsequent associations,
- which was a continuous numerical value that represented the expression
- level of the gene set in a given sample.
+ I used the normalised enrichment score (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbrv{NES}
+\end_layout
+
+\end_inset
+
+) for all subsequent associations, which was a continuous numerical value
+ that represented the expression level of the gene set in a given sample.
  I did not perform any statistical test to quantify the enrichment of this
  set compared to other sets, as at this point I was only interested in the
  expression level itself, not how it compares to other samples.
@@ -371,12 +530,47 @@ http://software.broadinstitute.org/gsea/index.jsp
 
 \begin_layout Standard
 As I do not have a background set, I transformed the resulting bimodal distribut
-ion of normalised enrichment scores (NES) for each pathway across all cell
- lines into a normal distribution using a kernel density estimator (
-\begin_inset Formula $kCDF$
+ion of normalised enrichment scores (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbrv{NES}
+\end_layout
+
 \end_inset
 
- function from the R package sROC
+) for each pathway across all cell lines into a normal distribution using
+ a kernel density estimator (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+code{kCDF}
+\end_layout
+
+\end_inset
+
+ function from the R package 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+rpkg{sROC}
+\end_layout
+
+\end_inset
+
+
 \begin_inset Foot
 status open
 
@@ -396,7 +590,7 @@ https://cran.r-project.org/web/packages/sROC/index.html
 \begin_layout Standard
 \begin_inset Formula 
 \[
-log(x/(1\text{-}x))
+log(x/(1-x))
 \]
 
 \end_inset
@@ -425,12 +619,54 @@ http://gdac.broadinstitute.org/
 \end_inset
 
  from the BROAD institute to download data labelled level 3 RNA-seq v2 (files
- names including RSEM_genes__data.Level_3, unpacked them, selected all files
- contained in the archive that contained the name rnaseqv2) for all cancer
- types for which it was available.
+ names including 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+file{RSEM
+\backslash
+_genes
+\backslash
+_
+\backslash
+_data.Level
+\backslash
+_3}
+\end_layout
+
+\end_inset
+
+, unpacked them, selected all files contained in the archive that contained
+ the name 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+file{rnaseqv2}
+\end_layout
+
+\end_inset
+
+) for all cancer types for which it was available.
  I extracted the raw counts from each of the text files for each gene.
  I then performed a voom transformation (R package 
-\begin_inset Formula $limma$
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+rpkg{limma}
+\end_layout
+
 \end_inset
 
  
@@ -442,30 +678,225 @@ key "Smyth2005-mw"
 
 ) for each TCGA study separately.
  The result of this transformation are expression values that I can use
- linear modeling techniques on, unlike the raw RNA-seq read counts.
+ linear modelling techniques on, unlike the raw RNA-seq read counts.
  With the resulting expression matrix, I selected only genes that had an
  HGNC symbol associated with them.
- I used the function avereps (R package limma) to average rows that had
- the same gene symbol.
+ I used the function 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+code{avereps}
+\end_layout
+
+\end_inset
+
+(R package 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+rpkg{limma}
+\end_layout
+
+\end_inset
+
+) to average rows that had the same gene symbol.
  This resulted in one expression matrix per TCGA tissue, for a total of
- 00 tissues including 00000 tumour and 0000 matched normal samples.
+ 34 tissues including 9179 tumour and 661 matched normal samples.
 \end_layout
 
 \begin_layout Standard
-Also using the Firehose tool, I downloaded clinical data (file names including
- Merge_Clinical.Level_1, unpack them, select all clin.merged.txt files) for
- all cancer types for which it was available.
- I extracted the fields for study (admin.disease_code), age of the patient
- (age_days), their vital status (where a field days_to_death with a missing
- value indicated that the patient was alive, encoded with 0 if the patient
- is alive and 1 if they are not), days that they survived (either patient.days_to
-_death or if that was not available patient.days_to_last_followup), the TCGA
- patient barcode (patient.bcr_patient_barcode), and their sex (patient.gender).
+Also using the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+name{Firehose}
+\end_layout
+
+\end_inset
+
+ tool, I downloaded clinical data (file names including 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+file{Merge
+\backslash
+_Clinical.Level
+\backslash
+_1}
+\end_layout
+
+\end_inset
+
+, unpack them, select all 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+file{clin.merged.txt}
+\end_layout
+
+\end_inset
+
+ files) for all cancer types for which it was available.
+ I extracted the fields for study (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+code{admin.disease
+\backslash
+_code}
+\end_layout
+
+\end_inset
+
+), age of the patient 
+(
+\lang british
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+code{age
+\backslash
+_days}
+\end_layout
+
+\end_inset
+
+), their vital status (where a field 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+code{days
+\backslash
+_to
+\backslash
+_death}
+\end_layout
+
+\end_inset
+
+ with a missing value indicated that the patient was alive, encoded with
+ 0 if the patient is alive and 1 if they are not), days that they survived
+ (either 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+code{patient.days
+\backslash
+_to
+\backslash
+_death}
+\end_layout
+
+\end_inset
+
+ or if that was not available 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+code{patient.days
+\backslash
+_to
+\backslash
+_last
+\backslash
+_followup}
+\end_layout
+
+\end_inset
+
+), the TCGA patient barcode (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+code{patient.bcr
+\backslash
+_patient
+\backslash
+_barcode}
+\end_layout
+
+\end_inset
+
+), and their sex (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+code{patient.gender}
+\end_layout
+
+\end_inset
+
+).
  I converted the days of survival to months by dividing by 30.4.
  I discarded all patients that had a negative survival time.
  I removed duplicates, and in the case there were multiple records of the
- same patient I took the one recorded latest (the row where the field patient.day
-s_to_birth had the highest number).
+ same patient I took the one recorded latest (the row where the field 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+code{patient.days
+\backslash
+_to
+\backslash
+_birth}
+\end_layout
+
+\end_inset
+
+ had the highest number).
 \end_layout
 
 \begin_layout Subsection
@@ -909,7 +1340,7 @@ Associations using Reactome
 Pathway-responsive genes: The SPEED Platform
 \begin_inset CommandInset label
 LatexCommand label
-name "sec:Pathway-responsive-genes:SPEED"
+name "sec:Pathway-responsive-genes-SPEED"
 
 \end_inset
 
@@ -2767,7 +3198,7 @@ key "Gupta2012-zp"
 .
  This correlates well with the inferred activity scores for JAK-STAT signalling.
  Similarly, TLR signalling has been shown to be induced by CpG oxydinucleotides
- in B- (DLBC, MM) and dentritic myeloid, but not T-cells 
+ in B- (DLBC, MM) and dendritic myeloid, but not T-cells 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Rothenfusser2002-gi"
@@ -2987,7 +3418,7 @@ key "Jeannot2014-av"
 \begin_layout Itemize
 We found sensitivity correlating with Wnt activity for the drugs Etoposide,
  QS11, and GSK-650394.
- QS11 modulates ARF activity and B-catenin localisation 
+ QS11 modulates ARF activity and β-catenin localisation 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Zhang2007-fu"
@@ -2995,7 +3426,7 @@ key "Zhang2007-fu"
 \end_inset
 
 , which may offer a treatment strategy for Wnt-driven tumours.
- GSK-650394 targets SGK1, which is activated by Wnt/B-catenin signalling
+ GSK-650394 targets SGK1, which is activated by Wnt/β-catenin signalling
  and has been shown to inhibit ROS-induced apoptosis in liver cells 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -3202,7 +3633,7 @@ Cell line drug response
 
 \begin_layout Standard
 The importance of mutations, especially when they are drivers, and the associati
-on with the cell lines' response to the different drugs is well established.
+on with the cell line's response to the different drugs is well established.
  Also with the new data set, there are previously unknown links that may
  ultimately lead to new clinical indications, or prioritise the development
  of certain drugs over others.
@@ -3248,10 +3679,10 @@ Pathway-responsive genes
 
 \begin_layout Standard
 Using pathway-responsive genes instead of pathway expression to infer signalling
- activity makes a lot of sense: we look at the footprint of the actual signaling
- activity (the expression changes downstream of a signaling pathway) and
+ activity makes a lot of sense: we look at the footprint of the actual signallin
+g activity (the expression changes downstream of a signaling pathway) and
  not the potential mediators (protein kinases, among others) by mRNA expression
- level that is a lot further removed from the actual signaling going on
+ level that is a lot further removed from the actual signalling going on
  in a cell.
  However, the SPEED platform has some issues in terms of the level in which
  its pathways are correlated to one another: If we did calculate drug associatio

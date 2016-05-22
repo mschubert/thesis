@@ -5,6 +5,15 @@
 \textclass article
 \begin_preamble
 \usepackage[font=small,labelfont=bf]{caption}
+
+\newcommand*\name[1]{#1}                                                                                                                                                                                                                       
+\newcommand*\abbrv[1]{#1}                                                                                                                                                                                                                      
+\newcommand*\rpkg[1]{\textit{#1}}                                                                                                                                                                                                              
+\newcommand*\file[1]{\textit{#1}}                                                                                                                                                                                                              
+\newcommand{\code}[1]{\texttt{#1}}                                                                                                                                                                                                             
+                                                                                                                                                                                                                                               
+\newcommand*\protein[1]{#1}                                                                                                                                                                                                                    
+\newcommand*\gene[1]{\textit{#1}}                                                                                                                                                                                                              
 \end_preamble
 \use_default_options true
 \maintain_unincluded_children false
@@ -82,7 +91,7 @@ Aim
 
 \begin_layout Standard
 There are numerous examples of using Gene Set Enrichment Analysis (GSEA)
- for a set of signalling molecules in order to infer signaling activity.
+ for a set of signalling molecules in order to infer signalling activity.
  Most of them, however, use the expression of those proteins directly as
  a proxy for their activity.
  We argue that using this footprint of signalling activity is a better proxy
@@ -198,23 +207,15 @@ So far, it is unknown how well it is possible to derive consensus signatures
  The only platform that computed them did not do a detailed investigation
  of either this, or any functional association with the pathway scores obtained.
  It also relies on a framework that applies multiple arbitrary cutoffs in
- order to obtain signature sets (cf.
- section 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sec:Pathway-responsive-genes:SPEED"
-
-\end_inset
-
-), even though a simple linear model would abrogate the requirement for
- such cutoffs, while being able to take into account both up- and downregulated
- genes.
+ order to obtain signature sets, even though a simple linear model would
+ abrogate the requirement for such cutoffs, while being able to take into
+ account both up- and downregulated genes.
  In terms of outcomes, we are interested in how well the available platform
  is able to explain drug sensitivity in the GDSC cell line panel, with the
  aim of providing an improved approach that satisfies the stability requirement.
  In terms of the inferred pathway activity itself, we are interested in
- how it compares to readily available pathway methods that map mRNA to signaling
- molecules.
+ how it compares to readily available pathway methods that map mRNA to signallin
+g molecules.
 \end_layout
 
 \begin_layout Section
@@ -223,6 +224,13 @@ Methods
 
 \begin_layout Subsection
 Defining Relevant Pathways and Experiments
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Defining-Relevant-Pathways"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
@@ -281,6 +289,13 @@ Taking into account these modifications, the final pathway sets I re-curated
 
 \begin_layout Subsection
 Finding suitable Experiments
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Finding-suitable-Experiments"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -431,15 +446,34 @@ Instead of creating an SQLite database (original SPEED) or flat text files
 
 \begin_layout Subsection
 From Experiments to Expression Data
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:From-Experiments-to"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 To go from an experiment accession in the ArrayExpress database to the actual
  expression values of the arrays referenced in the curated data set, I planned
  to use the ArrayExpress package with its main function that should do exactly
- that: take an accession, and return an annotated data.frame with probe IDs
- in rows and samples in columns - with the annotation containing the metadata
- of the experiment.
+ that: take an accession, and return an annotated 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+code{data.frame}
+\end_layout
+
+\end_inset
+
+ with probe IDs in rows and samples in columns - with the annotation containing
+ the metadata of the experiment.
  This was not working for the majority of experiments however, so I rewrote
  parts of the package and gave the patches to the original maintainers (for
  detailed list of changes, see the Bioconductor VCS diff between 1.28.1 and
@@ -450,14 +484,87 @@ To go from an experiment accession in the ArrayExpress database to the actual
 With the R package patched, I was able to download the associated data with
  all the Affymetrix accessions.
  I fitted a probe-level model (PLM) for each accession, calculating the
- NUSE and RLE scores for each array.
- Arrays that had a NUSE or RLE over 0.1 were discarded as quality control
- failures.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+code{NUSE}
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+code{RLE}
+\end_layout
+
+\end_inset
+
+ scores for each array.
+ Arrays that had a 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+code{NUSE}
+\end_layout
+
+\end_inset
+
+ or 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+code{RLE}
+\end_layout
+
+\end_inset
+
+ over 0.1 were discarded as quality control failures.
  If less than two control and one perturbed array were remaining after QC,
  I removed the whole contrast.
  If there were enough, I performed background correction, normalisation,
- and probe summarisation using the rma function in the 
-\begin_inset Formula $oligo$
+ and probe summarisation using the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+code{rma}
+\end_layout
+
+\end_inset
+
+ function in the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+rpkg{oligo}
+\end_layout
+
 \end_inset
 
  
@@ -468,7 +575,16 @@ key "Carvalho2010-xu"
 \end_inset
 
  or 
-\begin_inset Formula $affy$
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+rpkg{affy}
+\end_layout
+
 \end_inset
 
  
@@ -479,11 +595,29 @@ key "Gautier2004-bx"
 \end_inset
 
  package (depending on whether the object was a 
-\begin_inset Formula $FeatureSet$
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+code{FeatureSet}
+\end_layout
+
 \end_inset
 
  or 
-\begin_inset Formula $AffyBatch$
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+code{AffyBatch}
+\end_layout
+
 \end_inset
 
 , respectively) using the corresponding platform design package.
@@ -497,9 +631,35 @@ reference "tab:ma-platforms"
 \end_inset
 
 ).
- I discarded probe identifiers mapping to more then one HGNC symbol, and
+ I discarded probe identifiers mapping to more than one HGNC symbol, and
  averaged multiple probe sets that belonged to the same HGNC symbol using
- the avereps function in the limma 
+ the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+code{avereps}
+\end_layout
+
+\end_inset
+
+ function in the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+rpkg{limma}
+\end_layout
+
+\end_inset
+
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Smyth2005-mw"
@@ -1265,6 +1425,13 @@ status open
 
 \begin_layout Subsection
 Transformation of Z-scores
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Transformation-of-Z-scores"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1279,7 +1446,7 @@ With the curated experiments, one requirement was that there at least two
 \begin_layout Standard
 \begin_inset Formula 
 \[
-z_{i}=\frac{\overline{x_{i}}-\mu_{i}}{\sigma_{i}}
+z_{i}=\frac{\overline{x}_{i}-\mu_{i}}{\sigma_{i}}
 \]
 
 \end_inset
@@ -1322,7 +1489,16 @@ where
 
  its standard deviation.
  In addition, I use a 
-\begin_inset Formula $loess$
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+code{loess}
+\end_layout
+
 \end_inset
 
  model to smooth the relationship between a gene's expression level and
@@ -1338,6 +1514,13 @@ key "Parikh2010-uj"
 
 \begin_layout Subsection
 Building the Model
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Building-the-Model"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1438,7 +1621,10 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Modelled pathway crosstalk
+Modelled pathway crosstalk.
+ For pathways that point directly to the nucleus in the schematic cell we
+ model no pathway cross-talk, pathways that point to other pathways represent
+ are assumed to, upon activation, activate those as well.
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Modelled-pathway-crosstalk"
@@ -1538,8 +1724,20 @@ I matched our defined set of pathways to the publicly available pathway
 \begin_inset Formula $x_{u}$
 \end_inset
 
-) using a kernel density estimator (R package sROC) followed by the normal
- transformation (
+) using a kernel density estimator (R package 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+rpkg{sROC}
+\end_layout
+
+\end_inset
+
+) followed by the normal transformation (
 \begin_inset Formula $x_{n}$
 \end_inset
 
@@ -2016,13 +2214,26 @@ key "Tarca2008-ey"
  graph to determine if in a given pathway structure the available species
  are more or less available to transduce a signal.
  As the species considered for a pathway are usually mRNAs of genes, this
- method infers signaling activity by the proxy of gene expression.
+ method infers signalling activity by the proxy of gene expression.
  In order to do this, SPIA scores require the comparison with a normal condition
  in order to compute both their scores and their significance.
 \end_layout
 
 \begin_layout Standard
-I used the SPIA Bioconductor package 
+I used the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+rpkg{SPIA}
+\end_layout
+
+\end_inset
+
+ Bioconductor package 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Tarca_undated-ol"
@@ -2500,16 +2711,55 @@ key "Drier2013-vn"
  For this, I took the combined data set of the GDSC and TCGA, performed
  batch correction using ComBat with the GDSC as one batch, TCGA is one batch
  per project, and tissue as a covariate in either case.
- In addition, I included whether the same is a tumor or normal in the TCGA
+ In addition, I included whether the same is a tumour or normal in the TCGA
  as an additional covariate.
  I then computed the pathway scores for each method using an individual
- cell line or tumor sample and using all non-cancerous tissue controls as
- baseline using the BioConductor packages pathifier and SPIA.
+ cell line or tumour sample and using all non-cancerous tissue controls
+ as baseline using the BioConductor packages 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+rpkg{pathifier}
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+rpkg{SPIA}
+\end_layout
+
+\end_inset
+
+.
  For this, I used Reactome and KEGG pathways as described in the previous
  section, respectively.
  Sample-pathway combinations where scores could not be computed (000 of
- 000, or 0.00% total) were imputed using the five nearest neighbors (R package
- impute).
+ 000, or 0.00% total) were imputed using the five nearest neighbours (R package
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+rpkg{impute}
+\end_layout
+
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Standard
@@ -3177,7 +3427,7 @@ https://github.com/sbenz/Paradigm
 
 \end_inset
 
- and a model of the cell signaling network published in 
+ and a model of the cell signalling network published in 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "The_Cancer_Genome_Atlas_Research_Network2013-bi"
@@ -3537,11 +3787,27 @@ status open
 
 \begin_layout Subsection
 Perturbation Associations and Heatmaps
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Perturbation-Associations"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 I calculate linear associations using the 
-\begin_inset Formula $lm$
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+code{lm}
+\end_layout
+
 \end_inset
 
  function in R between a pathway coefficients matrix (of the shape experiments
@@ -3589,7 +3855,16 @@ reference "sub:Methods:pathway-scores"
 \begin_layout Standard
 As a method for inspection of the pathway scores of the individual experiments,
  I plot a heatmap using the R package 
-\begin_inset Formula $pheatmap$
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+rpkg{pheatmap}
+\end_layout
+
 \end_inset
 
  with the pathways scores in rows, experiments in columns, and the colour
@@ -3603,7 +3878,14 @@ As a method for inspection of the pathway scores of the individual experiments,
 \end_layout
 
 \begin_layout Subsection
-Correlation in Basal Expression
+Correlation in basal expression
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Correlation-in-basal"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3624,7 +3906,16 @@ reference "sub:Methods:pathway-scores"
  using basal gene expression, I calculated the Pearson correlation across
  all samples and tissues, and plotted the correlation matrix between each
  pathway combination using the R package 
-\begin_inset Formula $corplot$
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+rpkg{corplot}
+\end_layout
+
 \end_inset
 
  for GDSC and TCGA data separately.
@@ -3697,7 +3988,7 @@ gatza: use only their pathways (and not all sigs in ng2014)?
 \end_layout
 
 \begin_layout Subsection
-Building a Linear Model
+Building a linear model of z-scores
 \end_layout
 
 \begin_layout Standard
@@ -3724,8 +4015,13 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-*just say that middle->right is an improvement*
-\end_layout
+t-SNE plots of input experiments by fold change (left), average z-scores
+ (centre) and z-scores filtered by significance (right).
+ Different perturbations are shown as different colours, distance between
+ points corresponds to inverse similarity.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:t-SNE-plots-of"
 
 \end_inset
 
@@ -3737,26 +4033,72 @@ status open
 
 \end_layout
 
-\begin_layout Itemize
-the actual matrix we get
+\end_inset
+
+
 \end_layout
 
-\begin_layout Itemize
-the scores for TCGA and GDSC? (more in next chapter - focus on sigs only
- here - ?-> but I need for stability anyway)
+\begin_layout Standard
+Looking at the fold changes in each perturbation experiment I curated using
+ the non-linear dimensionality reduction technique t-distribution stochastic
+ neighbour embedding (t-SNE) 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Van_der_Maaten2008-kt,Van_der_Maaten2013-io"
+
+\end_inset
+
+, I do not see an obvious clustering in which pathway was perturbed (figure
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:t-SNE-plots-of"
+
+\end_inset
+
+, left).
+ Distances between the fold changes of different experiments are about equal,
+ with the slight exception of JAK-STAT and Hypoxia that are grouped to some
+ extend, but the fold changes do not allow for a separation of pathways.
 \end_layout
 
-\begin_layout Itemize
-wordle cloud of the genes selected in the bootstraps? (or: just GSEA with
- p-values?)
-\end_layout
+\begin_layout Standard
+Applying the model building as described in section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Transformation-of-Z-scores"
 
-\begin_layout Itemize
-GO associations with the genes selected?
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Building-the-Model"
+
+\end_inset
+
+, I obtain an expression matrix with genes in rows and pathways in columns.
+ As this is a linear model of the z-scores of those different pathways,
+ I can obtain activation scores (my inferred pathway activity) by a matrix
+ multiplication between the model matrix and gene expression values from
+ samples, as long as the identifiers are in the same order.
+ Using a model derived from those average z-scores alone, I start to see
+ that some pathways produce activation patterns distinct from other perturbation
+s (figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:t-SNE-plots-of"
+
+\end_inset
+
+, centre), like NFkB/TNFa, and a proper separation of Hypoxia and JAK-STAT.
+ Using only the top 100 significant genes, the separation of those gets
+ larger and I see almost all pathways in groups, albeit the ones in the
+ centre are still overlapping.
 \end_layout
 
 \begin_layout Subsection
-Recall of Perturbations
+Perturbation recall as quality control
 \end_layout
 
 \begin_layout Standard
@@ -3818,12 +4160,182 @@ name "fig:sp2-exp-heatmap"
 
 \end_layout
 
-\begin_layout Itemize
-precision-recall curves for all methods, plot per pathway
+\begin_layout Standard
+The above clusters of input experiments only tell us that across all scores,
+ individual pathways produce patterns distinct from others.
+ It does not tell us the obtained scores actually correspond to the perturbed
+ pathway.
+\end_layout
+
+\begin_layout Standard
+The first test I decided to run here is whether the the pathway scores assigned
+ to a perturbation correspond to this pathway being perturbed on average.
+ To this end, I compared the difference of scores for all pathway perturbations,
+ and checked if the pathway scores assigned to the gene expression differences
+ in the input experiments are systematically higher (for activation) or
+ lower (for inhibition) between the two conditions.
+ With the linear model I use for this purpose (implementation details in
+ section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Perturbation-Associations"
+
+\end_inset
+
+), I find that all pathway scores are strongly associated with the perturbation
+ they were derived from (figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:sp2-exp-heatmap"
+
+\end_inset
+
+, left), and some for a perturbation with a known pathway cross-talk (e.g.
+ EGFR activating MAPK or TNFa activating NFkB).
+\end_layout
+
+\begin_layout Standard
+The above test showed us that the mean of assigned scores is significantly
+ altered when a given pathway is perturbed, but it gives us only limited
+ information about the heterogeneity in the individual experiments.
+ To this end, I calculated the relative pathway activations for each individual
+ experiment (details section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Perturbation-Associations"
+
+\end_inset
+
+) and show the results in a heatmap ordered by perturbation (figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:sp2-exp-heatmap"
+
+\end_inset
+
+, right).
+ For easier interpretation, I show all scores in the direction of activation
+ by taking the negative scores of inhibitions (so red indicates a match,
+ not necessarily an activation) and indicating whether the original experiment
+ was an activation or inhibition separately.
+ We can clearly see that the majority of pathway scores across experiments
+ agrees with the pathway that was actually perturbed in the experiment.
+\end_layout
+
+\begin_layout Standard
+Taken together, those two approaches imply that the perturbation-response
+ signature is both correct on average, as well as in the majority of individual
+ cases.
+ For the remaining cases, we do not know if this is something our (admittedly
+ very simple) model misses or the pathway was not sufficiently perturbed
+ with the given parameters the experimentalists used (e.g.
+ a low concentration of the perturbing agent, too little time for genes
+ to change their expression significantly, or a general experimental error).
+ 
 \end_layout
 
 \begin_layout Subsection
-Scores for Basal Expression
+Scores and stability and basal expression
+\end_layout
+
+\begin_layout Standard
+As I am most interested in how basal signalling activity in cancer cell
+ lines and tumour samples correlates with outcomes such as drug response
+ and survival, one crucial point of deriving pathway response signatures
+ is that they also need to reflect pathway activation in basal gene expression.
+ At this point, I know that my perturbation-response signature genes correspond
+ to the pathway activation between a basal and perturbed condition, but
+ not how well the pattern of pathway activation from those perturbation
+ experiments corresponds to gene expression footprints of a constitutively
+ active signalling pathway leaves in basal gene expression.
+\end_layout
+
+\begin_layout Standard
+Providing a definitive proof that the same signatures obtained correspond
+ to constitutive activation in basal expression is only possible using a
+ range of functional readouts (e.g.
+ mutations activating pathways, drug response on oncogene addiction) so
+ I will defer this to chapter 4, where I investigate the functional relevance
+ of perturbation-response signatures compared to other pathway methods.
+\end_layout
+
+\begin_layout Standard
+What I can show, however, is how well known pathway cross-talk and structure
+ (as is known in literature and I have shown in figures 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Modelled-pathway-crosstalk"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:sp2-exp-heatmap"
+
+\end_inset
+
+) translates to pathway correlation in basal expression, and how well they
+ agree between tumours and cell lines.
+ To this end, I computed pathway scores for all primary tumours in the TCGA
+ and cell lines in the GDSC (details section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Correlation-in-basal"
+
+\end_inset
+
+), and checked how well they correlate.
+\end_layout
+
+\begin_layout Standard
+I find that not only are the correlations in basal gene expression (figure
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Correlation-speed"
+
+\end_inset
+
+) similar to the ones in perturbed experiments (figures 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:sp2-exp-heatmap"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:circle-perturb"
+
+\end_inset
+
+), but they also correlate very well with known cross-talk and do not change
+ more than could be biologically expected between primary tumours and cell
+ lines.
+ I find a high correlation between EGFR and MAPK and a lesser one to PI3K,
+ as well as TNFa and NFkB.
+ Another high correlation is between NFkB and JAK-STAT that I also observed
+ in perturbation experiments (figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:circle-perturb"
+
+\end_inset
+
+, but below cutoff of 
+\begin_inset Formula $10^{-5}$
+\end_inset
+
+ of figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:sp2-exp-heatmap"
+
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Standard
@@ -3852,7 +4364,9 @@ Correlation for TCGA primary tumour data (left) and GDSC cell lines (right)
  for perturbation-response genes in basal expression.
  Sign indicated by colour of the points (positive correlation blue, negative
  correlation red), strength by colour shade and size of the point.
-\end_layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Correlation-speed"
 
 \end_inset
 
@@ -3864,8 +4378,92 @@ Correlation for TCGA primary tumour data (left) and GDSC cell lines (right)
 
 \end_layout
 
-\begin_layout Subsection
-Stability of Scores
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+At this point I found strong indications that the gene expression changes
+ in perturbation experiments can be described across many conditions using
+ a linear consensus signature whose score reflects pathway activation and
+ this signature is translatable to basal pathway activity in non-perturbed
+ gene expression.
+\end_layout
+
+\begin_layout Standard
+What I have not shown yet is how stable the whole process is, i.e.
+ much the selection of input experiments influences the scores in basal
+ expression.
+ In order to investigate this, I bootstrapped the experiment selection 1,000
+ times and built models as described in section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Building-the-Model"
+
+\end_inset
+
+, using the GDSC basal expression and yielding a 3-dimensional scores matrix
+ with a score for each cell line, pathway, and bootstrap.
+ I regressed out either the effect of the individual cell lines or the effect
+ of the bootstraps, and quantified the relative remaining variance in the
+ scores:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+ratio=\frac{var(cell\,lines\,|\,bootstraps)}{var(bootstraps\,|\,cell\,lines)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The overview of those relative variances is shown in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:bootstraps-basal"
+
+\end_inset
+
+.
+ Here, a value smaller than 1 indicates that the experiment selection has
+ a bigger effect than the cell line I apply the model to (i.e., we can not
+ observe a biological effect because it is hidden by the noise of input
+ experiments) and values bigger than 1 indicate the times the biological
+ context is more influential for providing the score than the input selection
+ (i.e, the biological context outweighs the exact selection of perturbation
+ input).
+ For most pathways (TNFa, NFkB, MAPK, JAK-STAT, Hypoxia, and EGFR) the variance
+ of the input experiments as only a negligible influence (smaller than 10%)
+ on the final scores.
+ For p53, TGFb, and PI3K selection of the input experiments still accounts
+ for under 20% of the observed variance of basal pathway scores.
+ For Trail and VEGF, it is about twice as large as the variance of the input
+ experiments.
+ This can either point to the pathway not being particularly well defined
+ (if the experiments are also not well recovered by the signature, like
+ for VEGF in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:ROC"
+
+\end_inset
+
+), or that the overall number of input experiments is too small to guarantee
+ a stable signature (like for Trail, where the signature performs well but
+ the overall number of experiments are low, cf.
+ figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:ROC"
+
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Standard
@@ -3892,7 +4490,9 @@ status open
 \begin_layout Plain Layout
 Variance of pathway scores in different cell lines vs.
  bootstraps of input experiments for different pathways
-\end_layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:bootstraps-basal"
 
 \end_inset
 
@@ -3904,28 +4504,30 @@ Variance of pathway scores in different cell lines vs.
 
 \end_layout
 
-\begin_layout Itemize
-this is confidence how much scores change with different input experiments
-\end_layout
+\end_inset
 
-\begin_layout Itemize
-over 5x, we should be fine; 2x might be an issue
-\end_layout
 
-\begin_layout Itemize
-spell out formulas here
-\end_layout
-
-\begin_layout Itemize
-maybe do another plot for TCGA (more variability in scores -> higher numbers?)
 \end_layout
 
 \begin_layout Section
-Computing Pathway Scores for other Methods
+Comparison to pathway mapping methods
 \end_layout
 
 \begin_layout Subsection
-Pathway Methods for Perturbation Experiments
+Implicated gene sets are fundamentally different
+\end_layout
+
+\begin_layout Itemize
+GO characterisation (where is this?)
+\end_layout
+
+\begin_layout Itemize
+Venn diagram as overlaps between the genes selected and the pathway method
+ gene sets
+\end_layout
+
+\begin_layout Subsection
+Pathway mapping fails to recover perturbations
 \end_layout
 
 \begin_layout Standard
@@ -3936,7 +4538,7 @@ reference "fig:sp2-exp-heatmap"
 
 \end_inset
 
- ().
+.
 \end_layout
 
 \begin_layout Standard
@@ -4196,7 +4798,7 @@ reference "fig:Comparison-to-pathway-perturb"
 \end_layout
 
 \begin_layout Subsection
-Comparing Recall between Pathway Methods
+Relationship between perturbations and pathway expression
 \end_layout
 
 \begin_layout Standard
@@ -4237,7 +4839,9 @@ would be nice to have AUCs for each curve here
 \end_inset
 
 
-\end_layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:ROC"
 
 \end_inset
 
@@ -4247,6 +4851,15 @@ would be nice to have AUCs for each curve here
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+pathway expr methods correspond less to perturbations
 \end_layout
 
 \begin_layout Standard
@@ -4267,7 +4880,7 @@ status open
 \begin_inset Graphics
 	filename figures/4.2_links_speed.pdf
 	lyxscale 50
-	width 50col%
+	width 45col%
 
 \end_inset
 
@@ -4279,6 +4892,13 @@ status open
 
 \begin_layout Plain Layout
 Perturbation-Response genes
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:circle-perturb"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -4299,7 +4919,7 @@ status open
 \begin_inset Graphics
 	filename figures/4.2_links_reactome.pdf
 	lyxscale 50
-	width 50col%
+	width 45col%
 
 \end_inset
 
@@ -4311,6 +4931,13 @@ status open
 
 \begin_layout Plain Layout
 Reactome pathway enrichment
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:circle-pathway-expr"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -4347,8 +4974,13 @@ Comparison of links between perturbation input and Footprints vs.
 
 \end_layout
 
+\begin_layout Itemize
+pathways expressed upon perturbation are likely a secondary response (maybe
+ also not even primary feedback?)
+\end_layout
+
 \begin_layout Subsection
-Correlation of other Methods
+Pathway scores in basal gene expression
 \end_layout
 
 \begin_layout Standard
