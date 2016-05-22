@@ -315,18 +315,6 @@ name "sub:Defining-Relevant-Pathways"
 
 \end_layout
 
-\begin_layout Itemize
-pathways: cancer relevant
-\end_layout
-
-\begin_layout Itemize
-this has been done quite well by the initial platform, stick with it
-\end_layout
-
-\begin_layout Itemize
-reference to hallmarks and how we map it
-\end_layout
-
 \begin_layout Standard
 Because the experiments in the SPEED database were curated in a first iteration
  in 2009 and other pathways were added in 2012, it is quite likely that
@@ -5026,13 +5014,95 @@ Comparison to pathway mapping methods
 Implicated gene sets are fundamentally different
 \end_layout
 
-\begin_layout Itemize
-GO characterisation (where is this?)
+\begin_layout Standard
+As already indicated in my initial motivation (figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Schema-of-different"
+
+\end_inset
+
+), ...x...
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
 Venn diagram as overlaps between the genes selected and the pathway method
  gene sets
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Overlap between Gene Ontology, Reactome pathways, and perturbation-response
+ gene sets
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Notwithstanding the differences outlined above and that we already defined
+ Gene Ontology sets that correspond to signalling pathways, computing which
+ unfiltered GO gene sets are over-represented in our signature genes may
+ give us additional insight into which lower-level processes (not pathway)
+ are activated upon pathway stimulation.
+\end_layout
+
+\begin_layout Standard
+...short methods...
+\end_layout
+
+\begin_layout Standard
+...described figure 10...
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/3.4_footprints-go.pdf
+	width 50col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Functional annotations of perturbation-response genes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -5308,6 +5378,10 @@ reference "fig:Comparison-to-pathway-perturb"
 
 \begin_layout Subsection
 Relationship between perturbations and pathway expression
+\end_layout
+
+\begin_layout Itemize
+more quantitative approach to heatmaps above
 \end_layout
 
 \begin_layout Standard

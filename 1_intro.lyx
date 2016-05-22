@@ -389,7 +389,7 @@ based on cells growing quicker/consuming more resources
 \end_layout
 
 \begin_layout Standard
-...put some examples of clinical cyototoxic here...
+...put some examples of clinical cytotoxic here...
 \end_layout
 
 \begin_layout Subsection
@@ -438,7 +438,7 @@ This has an important implication for cancer therapy: if we are able to
 Coming back to our example of the BRAF-V600E mutation, [* et al] indeed
  designed and developed a small-molecule inhibitor called Plexicon (more
  specifically, PLX4720) that proved to bind the mutation version of the
- BRAF protein with a much higher affinity than the one found in unmutated
+ BRAF protein with a much higher affinity than the one found in wild-type
  cells.
  This, in some ways, could be considered the perfect drug for cancer therapy,
  because it has it has favourable uptake in the body [*], and once it is
@@ -498,7 +498,7 @@ This, together with multiple other examples, proved to show that targeted
  prevent recurrence.
  But how does this work? In order for a tumour to regrow, there need to
  be some cancerous cells left alive after treatment, as this rapid regrowth
- of mass can not be explained by an idependent inception, so some cells
+ of mass can not be explained by an independent inception, so some cells
  must have survived the process of therapy.
  More specifically, there are two possibilities of these cells that later
  repopulate a tumour can be formed (and a spectrum in between): (1) the
@@ -700,9 +700,34 @@ Of course, there are aspects missing when relying on models that handle
  to a compound, which makes it necessary to perform experiments in a whole
  organism.
  For this purpose animals have long been used, down from a simple multicellular
- worm (Caenorhabdilis elegans, mostly for development and its simple central
- nervous system) to frogs (Xenopus, for induced pluripotency), up to mammals
- (mice, rats, and chimps).
+ worm (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+species{Caenorhabdilis elegans}
+\end_layout
+
+\end_inset
+
+, mostly for development and its simple central nervous system) to frogs
+ (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+species{Xenopus}
+\end_layout
+
+\end_inset
+
+, for induced pluripotency), up to mammals (mice, rats, and chimps).
  Just as the complexity of these organisms increases, they also mirror more
  and more aspects of human physiology.
  However, experiments performed in the latter organisms also takes much
@@ -714,7 +739,7 @@ Of course, there are aspects missing when relying on models that handle
  and mice does indeed have the same effect in humans remains.
  Looking at the number of articles published about a specific molecular
  mechanism or the detailed characterisation of a compound and its usability
- as a drug, mice seem to be considered a reasonable tradeoff between providing
+ as a drug, mice seem to be considered a reasonable trade-off between providing
  a close enough match of human biology and being not too difficult to keep.
 \end_layout
 
@@ -728,11 +753,11 @@ One line of experiments that can be done with mice but not humans is to
 \end_layout
 
 \begin_layout Standard
-Another method of invastigation are xenografts, where an immunodeficient
+Another method of investigation are xenografts, where an immunodeficient
  [*?*] mouse is inoculated with cancerous cells derived from either a cell
  line or a patient, to study effects like how cancerous cells influence
  and modify the microenvironment around them, how they can sustain themselves
- and grow, attract the formation of blood vessels, and ultimately metastisise.
+ and grow, attract the formation of blood vessels, and ultimately metastasise.
 \end_layout
 
 \begin_layout Subsection
@@ -765,7 +790,7 @@ For cancer-specific gene expression, I used either used the same cell lines,
  or patient data directly from a consortium whose aim it is to molecularly
  characterise a multitude of cancers (The Cancer Genome Atlas consortium,
  TCGA).
- It is also the latter where I obtained survival data from, as more thorougly
+ It is also the latter where I obtained survival data from, as more thoroughly
  described in section *.
 \end_layout
 
@@ -786,7 +811,7 @@ One of the issues of both understanding as well as preventing or treating
  cancer development and progression is that it is a process in such complexity
  that a simple observation of patients with the disease will not suffice
  to come up with effective models of disease inception and progression,
- or treatmants for that matter.
+ or treatments for that matter.
  Fortunately, we have got a battery of tests available, quantifying different
  molecular aspects of a biological sample.
  Examples of these data include the sequence, structure, and modification
@@ -906,7 +931,7 @@ An alternative approach that has become more popular recently with the falling
  costs of DNA sequencing is to apply this technology to RNA as well.
  In this case, we can use the RNA that we isolated from a sample, reverse-transc
 ribe it into DNA, and sequence this DNA like we would normally.
- This has got the advantange that it can be used even if there is no genome
+ This has got the advantage that it can be used even if there is no genome
  sequence or chip available where as a consequence we are also not biasing
  or selection of genes by previously knowing what to look at, with the exception
  of sections in the RNA that can be more or easily transcribed into DNA
@@ -929,7 +954,17 @@ The way RNA-seq quantification is usually done is to align the reads to
  As this is computationally very expensive, there have been efforts recently
  to get around performing the alignment step by k-mer counting and so-called
  pseudo-alignments.
- Methods for the latter include Sailfish [*], Salmon [*], or Kallisto [*].
+ Methods for the latter include Sailfish [*], Salmon 
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+https://github.com/COMBINE-lab/salmon
+\end_layout
+
+\end_inset
+
+, or Kallisto [*].
 \end_layout
 
 \begin_layout Standard
@@ -938,9 +973,47 @@ The data produced by RNA-sequencing is different to the one from microarrays,
  of the continuous fluorescence signal that microarrays provide.
  These counts are well-known to be negatively binomially distributed, and
  require specialised software packages to call e.g.
- differential expression (the most well-known of which are edgeR, DEseq,
- and DEseq2) or transformation before they can be used in standard linear
- modeling techniques (for instance provided by voom in the limma package).
+ differential expression (the most well-known of which are 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+rpkg{edgeR}
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+rpkg{DEseq}
+\end_layout
+
+\end_inset
+
+, and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+rpkg{DEseq2}
+\end_layout
+
+\end_inset
+
+) or transformation before they can be used in standard linear modelling
+ techniques (for instance provided by voom in the limma package).
 \end_layout
 
 \begin_layout Subsection
