@@ -3928,12 +3928,53 @@ rpkg{corplot}
 A model for perturbation-response experiments
 \end_layout
 
-\begin_layout Itemize
-A fixed R package to query ArrayExpress experiments
+\begin_layout Subsection
+Size of the data set
 \end_layout
 
-\begin_layout Itemize
-how many exps the package could process before+after patches
+\begin_layout Standard
+I defined a set of cancer-relevant pathways (methods section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Defining-Relevant-Pathways"
+
+\end_inset
+
+) the database search using ArrayExpress (methods section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Finding-suitable-Experiments"
+
+\end_inset
+
+) and curation of a total of ** submissions encompassing 11 pathways, **
+ experiments, and a total of ** arrays.
+ This is about the same number of pathways in the SPEED platform 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Parikh2010-uj"
+
+\end_inset
+
+, but about three times as many experiments and more than four times as
+ many microarrays that were used to derived the signature.
+ Because the collection of 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Gatza2010-fq"
+
+\end_inset
+
+ is breast cancer only and only consists of a single experiment per signature,
+ our number of pathway signatures is smaller but the number of overall experimen
+tal data much bigger (for a comparison, see figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Size-of-the"
+
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Standard
@@ -3959,7 +4000,9 @@ status open
 
 \begin_layout Plain Layout
 Size of the data set in comparison to the two published methods
-\end_layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Size-of-the"
 
 \end_inset
 
@@ -3971,20 +4014,404 @@ Size of the data set in comparison to the two published methods
 
 \end_layout
 
-\begin_layout Itemize
-summary stats
+\end_inset
+
+
 \end_layout
 
-\begin_layout Itemize
-include number of pathways, contrasts, arrays here
+\begin_layout Standard
+To manage the different data sets I used as well as making them reusable,
+ I defined a human- as well as machine-readable format using the markup
+ language YAML *ref*.
+ This has the advantage over a simple tabular format in that it supports
+ structured data, including field names and comments.
+ It can thus easily be reused by other projects for which a curation of
+ perturbation-response experiments on the resolution of pathways is of interest.
+ An overview of the format structure is shown in table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:yaml-format"
+
+\end_inset
+
+.
 \end_layout
 
-\begin_layout Itemize
-compared to speed1, gatza, speed_martina
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Structured data in the YAML file format
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:yaml-format"
+
+\end_inset
+
+
 \end_layout
 
-\begin_layout Itemize
-gatza: use only their pathways (and not all sigs in ng2014)?
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="13" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Identifier
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Description
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+---
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+marker for the beginning of a record
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+id
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+the experiment identifier; consists of 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+accession
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+the experiment accession in ArrayExpress, e.g.
+ E-GEOD-15986
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+platform
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+the microarray platform
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+pathway
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+the pathway identifier
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+cells
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+a description of the cells used in the experiment
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+treatment
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+a description of what the cell were treated with
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+effect
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+if the effect was 
+\begin_inset Quotes eld
+\end_inset
+
+activating
+\begin_inset Quotes erd
+\end_inset
+
+ or 
+\begin_inset Quotes eld
+\end_inset
+
+inhibiting
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+hours
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+how many hours the perturbation lasted
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+control
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+a list of array identifiers used for the basal condition
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+perturbed
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+a list of array identifiers used for the perturbed condition
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+...
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+marker for the end of file
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+I designed a pipeline to parse the experiment index, and download and process
+ the corresponding experimental data as described in section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:From-Experiments-to"
+
+\end_inset
+
+.
+ At the time, the release of the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+rpkg{ArrayExpress}
+\end_layout
+
+\end_inset
+
+ R package as unable to process most of the experiments although the raw
+ data as well as experiment description as available.
+ In the spirit of increased reusability, I aimed at fixing the package instead
+ of just writing my own processing routines, and the new version is available
+ on BioConductor
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+http://bioconductor.org/packages/release/bioc/html/ArrayExpress.html
+\end_layout
+
+\end_inset
+
+, where it has been downloaded by over 4,000 people since
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+http://bioconductor.org/packages/stats/bioc/ArrayExpress/
+\end_layout
+
+\end_inset
+
+\SpecialChar \@.
+
+\end_layout
+
+\begin_layout Standard
+After processing and quality control, a total of ** experiments and ** arrays
+ remained, with a total of over 64 million single-gene measurements.
 \end_layout
 
 \begin_layout Subsection
