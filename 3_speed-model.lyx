@@ -146,6 +146,47 @@ specific gene expression patterns.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/3.0_method-comparison.pdf
+	width 50col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Schema of different pathway methods
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Schema-of-different"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 The second string of articles published between 2009 and 2014, the main
  author of which developed gene-response signatures using a single condition
  (time point, concentration, agent) but three biological replicates of perturbat
@@ -198,6 +239,47 @@ key "Gatza2014-as"
  lab correlate more with the lab they were produced in than the biological
  condition [cite], which we can not control for if there is only one lab
  producing them.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/3.0_workflow.pdf
+	width 50col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Workflow of obtaining perturbation-response gene signatures
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Workflow-of-obtaining"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
