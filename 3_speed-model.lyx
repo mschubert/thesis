@@ -787,7 +787,7 @@ centerline{
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <row>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -796,7 +796,7 @@ ArrayExpress Platform ID
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -805,7 +805,7 @@ GEO Platform ID
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -814,7 +814,7 @@ Platform design package
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1433,7 +1433,7 @@ pd.ht.hg.u133.plus.pm
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1442,7 +1442,7 @@ A-GEOD-17586
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1451,7 +1451,7 @@ GPL17586
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1460,7 +1460,7 @@ pd.hta.2.0
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1869,7 +1869,7 @@ centerline{
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <row>
-<cell multirow="3" alignment="center" valignment="middle" bottomline="true" rightline="true" usebox="none">
+<cell multirow="3" alignment="center" valignment="middle" topline="true" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1878,7 +1878,7 @@ Pathway
 
 \end_inset
 </cell>
-<cell multicolumn="1" alignment="center" valignment="top" usebox="none">
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1927,7 +1927,7 @@ Name
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1956,7 +1956,7 @@ ERBB signaling pathway
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1985,7 +1985,7 @@ cellular response to hypoxia
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2014,7 +2014,7 @@ JAK-STAT signal transduction
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2043,7 +2043,7 @@ MAPK cascade
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2072,7 +2072,7 @@ NIK/NF-kappaB signaling
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2101,7 +2101,7 @@ DNA damage response, signal transduction by p53 class mediator
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2130,7 +2130,7 @@ phosphatidylinositol 3-kinase signaling
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2159,7 +2159,7 @@ tumor necrosis factor-mediated signaling pathway
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2188,7 +2188,7 @@ transforming growth factor beta receptor signaling pathway
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2217,7 +2217,7 @@ TRAIL-activated apoptotic signaling pathway
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2226,7 +2226,7 @@ VEGF
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2235,7 +2235,7 @@ GO:0038084
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2365,7 +2365,7 @@ centerline{
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <row>
-<cell multirow="3" alignment="center" valignment="middle" bottomline="true" rightline="true" usebox="none">
+<cell multirow="3" alignment="center" valignment="middle" topline="true" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2374,7 +2374,7 @@ Pathway
 
 \end_inset
 </cell>
-<cell multicolumn="1" alignment="center" valignment="top" usebox="none">
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2423,7 +2423,7 @@ Name
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2452,7 +2452,7 @@ ErbB signaling pathway
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2481,7 +2481,7 @@ Hypoxia
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2510,7 +2510,7 @@ Jak-STAT signaling pathway
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2539,7 +2539,7 @@ MAPK signaling pathway
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2568,7 +2568,7 @@ NF-kappa B signaling pathway
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2597,7 +2597,7 @@ p53
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2626,7 +2626,7 @@ mTOR signaling pathway
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2655,7 +2655,7 @@ TNFa
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2684,7 +2684,7 @@ TGF-beta signaling pathway
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2713,7 +2713,7 @@ Apoptosis
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2722,7 +2722,7 @@ VEGF
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2731,7 +2731,7 @@ VEGF
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2880,7 +2880,7 @@ centerline{
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <row>
-<cell multirow="3" alignment="center" valignment="middle" bottomline="true" rightline="true" usebox="none">
+<cell multirow="3" alignment="center" valignment="middle" topline="true" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2889,7 +2889,7 @@ Pathway
 
 \end_inset
 </cell>
-<cell multicolumn="1" alignment="center" valignment="top" usebox="none">
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2938,7 +2938,7 @@ Name
 </cell>
 </row>
 <row>
-<cell multirow="3" alignment="center" valignment="middle" rightline="true" usebox="none">
+<cell multirow="3" alignment="center" valignment="middle" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2996,7 +2996,7 @@ Signaling by EGFR in Cancer
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3025,7 +3025,7 @@ Cellular response to hypoxia
 </cell>
 </row>
 <row>
-<cell multirow="3" alignment="center" valignment="middle" rightline="true" usebox="none">
+<cell multirow="3" alignment="center" valignment="middle" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3112,7 +3112,7 @@ Signalling to STAT3
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3141,7 +3141,7 @@ Signalling to ERKs
 </cell>
 </row>
 <row>
-<cell multirow="3" alignment="center" valignment="middle" rightline="true" usebox="none">
+<cell multirow="3" alignment="center" valignment="middle" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3199,7 +3199,7 @@ RIP-mediated NFkB activation via ZBP1
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3228,7 +3228,7 @@ Transcriptional Regulation by TP53
 </cell>
 </row>
 <row>
-<cell multirow="3" alignment="center" valignment="middle" rightline="true" usebox="none">
+<cell multirow="3" alignment="center" valignment="middle" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3344,7 +3344,7 @@ PI3K/AKT activation
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3373,7 +3373,7 @@ TNF signaling
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3402,7 +3402,7 @@ Signaling by TGF-beta Receptor Complex
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3431,7 +3431,7 @@ TRAIL signaling
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3440,7 +3440,7 @@ VEGF
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3449,7 +3449,7 @@ VEGF
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3573,7 +3573,7 @@ centerline{
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <row>
-<cell multirow="3" alignment="center" valignment="middle" bottomline="true" rightline="true" usebox="none">
+<cell multirow="3" alignment="center" valignment="middle" topline="true" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3582,7 +3582,7 @@ Pathway
 
 \end_inset
 </cell>
-<cell multirow="3" alignment="center" valignment="middle" bottomline="true" usebox="none">
+<cell multirow="3" alignment="center" valignment="middle" topline="true" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3613,7 +3613,7 @@ PARADIGM
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3633,7 +3633,7 @@ epidermal growth factor receptor activity (abstract)
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3653,7 +3653,7 @@ response to hypoxia (abstract)
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3673,7 +3673,7 @@ STAT-1-3-5-active
 </cell>
 </row>
 <row>
-<cell multirow="3" alignment="center" valignment="top" rightline="true" usebox="none">
+<cell multirow="3" alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3693,7 +3693,7 @@ MEK-1-2-active
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3713,7 +3713,7 @@ NFkB Complex (complex)
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3733,7 +3733,7 @@ response to DNA damage stimulus (abstract)
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3753,7 +3753,7 @@ PIK3CA
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3773,7 +3773,7 @@ tumor necrosis factor receptor activity (abstract)
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3793,7 +3793,7 @@ SMAD1-5-8-active
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3813,7 +3813,7 @@ induction of apoptosis (abstract)
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3822,7 +3822,7 @@ VEGF
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4140,7 +4140,7 @@ name "tab:yaml-format"
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <row>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4149,7 +4149,7 @@ Identifier
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4164,7 +4164,10 @@ Description
 \begin_inset Text
 
 \begin_layout Plain Layout
----
+\begin_inset Formula $---$
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -4397,7 +4400,7 @@ a list of array identifiers used for the perturbed condition
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4406,7 +4409,7 @@ a list of array identifiers used for the perturbed condition
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4597,6 +4600,16 @@ reference "tab:Significance-of-signature"
 
 ), the separation of those gets larger and I see almost all pathways in
  groups, albeit the ones in the centre are still overlapping.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+make point about significance here more obvious?
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -4632,7 +4645,7 @@ name "tab:Significance-of-signature"
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <row>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4641,7 +4654,7 @@ Pathway
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4665,7 +4678,7 @@ EGFR
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $1.91\cdot10^{-11}$
+\begin_inset Formula $1.67\cdot10^{-10}$
 \end_inset
 
 
@@ -4688,7 +4701,7 @@ Hypoxia
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $9.33\cdot10^{-23}$
+\begin_inset Formula $4.50\cdot10^{-21}$
 \end_inset
 
 
@@ -4711,7 +4724,7 @@ JAK-STAT
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $3.63\cdot10^{-14}$
+\begin_inset Formula $4.10\cdot10^{-13}$
 \end_inset
 
 
@@ -4734,7 +4747,7 @@ MAPK
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $6.49\cdot10^{-23}$
+\begin_inset Formula $3.36\cdot10^{-21}$
 \end_inset
 
 
@@ -4757,7 +4770,7 @@ NFkB
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $5.50\cdot10^{-21}$
+\begin_inset Formula $2.28\cdot10^{-19}$
 \end_inset
 
 
@@ -4780,7 +4793,7 @@ p53
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $2.35\cdot10^{-13}$
+\begin_inset Formula $2.55\cdot10^{-12}$
 \end_inset
 
 
@@ -4803,7 +4816,7 @@ PI3K
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $3.43\cdot10^{-19}$
+\begin_inset Formula $1.03\cdot10^{-17}$
 \end_inset
 
 
@@ -4826,7 +4839,7 @@ TNFa
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $2.16\cdot10^{-19}$
+\begin_inset Formula $6.40\cdot10^{-18}$
 \end_inset
 
 
@@ -4849,7 +4862,7 @@ TGFb
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $7.42\cdot10^{-8}$
+\begin_inset Formula $2.71\cdot10^{-7}$
 \end_inset
 
 
@@ -4872,7 +4885,7 @@ Trail
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $0.017$
+\begin_inset Formula $0.018$
 \end_inset
 
 
@@ -4882,7 +4895,7 @@ Trail
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4891,11 +4904,11 @@ VEGF
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $8.31\cdot10^{-10}$
+\begin_inset Formula $4.68\cdot10^{-9}$
 \end_inset
 
 
