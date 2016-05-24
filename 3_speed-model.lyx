@@ -3947,53 +3947,6 @@ rpkg{pheatmap}
  should correspond to the pathways that were perturbed.
 \end_layout
 
-\begin_layout Subsection
-Correlation in basal expression
-\begin_inset CommandInset label
-LatexCommand label
-name "sub:Correlation-in-basal"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-For all pathway scores described in sections 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sub:method:speed-scores"
-
-\end_inset
-
- and 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sub:Methods:pathway-scores"
-
-\end_inset
-
- using basal gene expression, I calculated the Pearson correlation across
- all samples and tissues, and plotted the correlation matrix between each
- pathway combination using the R package 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-rpkg{corplot}
-\end_layout
-
-\end_inset
-
- for GDSC and TCGA data separately.
- The correlation between a pathway and itself is 1 by definition, all other
- values range from -1 (perfectly linear reverse correlation) to 1 (perfectly
- linear correlation).
-\end_layout
-
 \begin_layout Section
 A model for perturbation-response experiments
 \end_layout
