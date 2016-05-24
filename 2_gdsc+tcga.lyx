@@ -1051,6 +1051,16 @@ In this formula, the scores
 .
  In this case, I corrected the p-values using the FDR methods for each subset
  of tissues separately.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+describe OLS?
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
