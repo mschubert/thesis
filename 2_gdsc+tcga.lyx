@@ -1267,6 +1267,25 @@ Associations using Reactome
 
 \begin_layout Section
 Pathway-responsive genes: The SPEED Platform
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+This approach and results have been incorporated in the latest publication
+ of the GDSC screening 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Iorio2016-gh"
+
+\end_inset
+
+.
+ Text and results below are entirely my own work.
+\end_layout
+
+\end_inset
+
+
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Pathway-responsive-genes-SPEED"
