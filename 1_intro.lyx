@@ -469,18 +469,27 @@ When the President of the United States announced the so-called Moonshot
 Development of Resistance
 \end_layout
 
-\begin_layout Itemize
-kills most cells, but some survive and repopulate
-\end_layout
-
-\begin_layout Itemize
-cancer stem cells
-\end_layout
-
 \begin_layout Standard
 Let us revisit one of the most well-known examples in targeted therapies,
- the inhibitor Plexicon (PLX4720) specifically targeted to BRAF-V600E mutants.
- In a seminal paper, *** et al.
+ the inhibitor Plexicon (PLX4720) specifically targeted to 
+\begin_inset Formula $BRAF^{V600E}$
+\end_inset
+
+ mutants.
+ In a seminal paper, *** 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+latin{et al.}
+\end_layout
+
+\end_inset
+
+.
  showed that this example of targeted therapy works with the intended effect
  in such that it kills cancer cells to an extent that makes multiple from
  the outside clearly visible tumours completely disappear for months, which
@@ -511,7 +520,7 @@ This, together with multiple other examples, proved to show that targeted
 
 \begin_layout Standard
 This debate lasted for a while, evidence presented for both one [*] and
- the other [*]: surely, if there are cells present that harbor a mutation
+ the other [*]: surely, if there are cells present that harbour a mutation
  that confers resistance to a given drug at the beginning of treatment,
  sequencing the tumour must show a minor frequency of this mutation that
  later takes over already at that stage.
@@ -539,33 +548,13 @@ Disease models
 Rationale
 \end_layout
 
-\begin_layout Itemize
-data from treatment directly
-\end_layout
-
-\begin_layout Itemize
-can't try out stuff
-\end_layout
-
-\begin_layout Itemize
-anything that is not best known treatment unethical
-\end_layout
-
-\begin_layout Itemize
-mirror the disease inception, progression, and treatment
-\end_layout
-
-\begin_layout Itemize
-clinical trials
-\end_layout
-
 \begin_layout Standard
 It is easy to argue that in order to find better cancer treatments, we first
  need to understand better the molecular mechanisms that drive it.
  This is especially true because the mechanisms involved from the inception
  of cancer up the its progression and spreading are in fact molecular mechanisms
  that have spun out of the normal biological control that cells of an organism
- excert on each other.
+ exert on each other.
  In order to improve our understanding, it is required to collect data about
  the different types, stages, treatments, and similar.
 \end_layout
@@ -581,7 +570,7 @@ This poses a problem: it is not possible to perform all of the assays required
  It follows that there is a requirement for some biological system that
  mirrors the disease while, at the same time, is easy to handle in the laborator
 y.
- Therein, the points mentioned involve a tradeoff: a system that mirrors
+ Therein, the points mentioned involve a trade-off: a system that mirrors
  the disease perfectly and is easy to handle does not exist, but there are
  multiple systems (outlined in the sections below) that are closer to one
  or the other.
@@ -598,24 +587,26 @@ However, if there is a strong indication given those model systems that
  humans as well.
 \end_layout
 
+\begin_layout Standard
+All drug screening experiments and analysis based thereon in this work,
+ while there are potentially many drawbacks associated with it, have been
+ carried out on data that was derived from cell lines.
+ This can easily explained by the fact that the amount that needed to be
+ generated in order to make general statements about perturbed gene expression
+ and especially drug response is not feasible with any other model system.
+\end_layout
+
+\begin_layout Standard
+For cancer-specific gene expression, I used either used the same cell lines,
+ or patient data directly from a consortium whose aim it is to molecularly
+ characterise a multitude of cancers (The Cancer Genome Atlas consortium,
+ TCGA).
+ It is also the latter where I obtained survival data from, as more thoroughly
+ described in section *.
+\end_layout
+
 \begin_layout Subsection
 Cell Lines
-\end_layout
-
-\begin_layout Itemize
-once established, easy to grow
-\end_layout
-
-\begin_layout Itemize
-unlimited supply
-\end_layout
-
-\begin_layout Itemize
-easy handling (plastic dishes)
-\end_layout
-
-\begin_layout Itemize
-compared to others: uniform
 \end_layout
 
 \begin_layout Standard
@@ -679,18 +670,6 @@ generating much more diversity than there can be cell lines
 
 \begin_layout Subsection
 Animal models
-\end_layout
-
-\begin_layout Itemize
-KO/KI: making more prone
-\end_layout
-
-\begin_layout Itemize
-xenografts
-\end_layout
-
-\begin_layout Itemize
-similar but not the same to human
 \end_layout
 
 \begin_layout Standard
@@ -758,40 +737,6 @@ Another method of investigation are xenografts, where an immunodeficient
  line or a patient, to study effects like how cancerous cells influence
  and modify the microenvironment around them, how they can sustain themselves
  and grow, attract the formation of blood vessels, and ultimately metastasise.
-\end_layout
-
-\begin_layout Subsection
-Models used in this work
-\end_layout
-
-\begin_layout Itemize
-drug screening
-\end_layout
-
-\begin_layout Itemize
-perturbed expr
-\end_layout
-
-\begin_layout Itemize
-patient survival
-\end_layout
-
-\begin_layout Standard
-All drug screening experiments and analysis based thereon in this work,
- while there are potentially many drawbacks associated with it, have been
- carried out on data that was derived from cell lines.
- This can easily explained by the fact that the amount that needed to be
- generated in order to make general statements about perturbed gene expression
- and especially drug response is not feasable with any other model system.
-\end_layout
-
-\begin_layout Standard
-For cancer-specific gene expression, I used either used the same cell lines,
- or patient data directly from a consortium whose aim it is to molecularly
- characterise a multitude of cancers (The Cancer Genome Atlas consortium,
- TCGA).
- It is also the latter where I obtained survival data from, as more thoroughly
- described in section *.
 \end_layout
 
 \begin_layout Section
@@ -1013,29 +958,47 @@ rpkg{DEseq2}
 \end_inset
 
 ) or transformation before they can be used in standard linear modelling
- techniques (for instance provided by voom in the limma package).
+ techniques (for instance provided by 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+code{voom}
+\end_layout
+
+\end_inset
+
+ in the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+rpkg{limma}
+\end_layout
+
+\end_inset
+
+ package).
 \end_layout
 
 \begin_layout Subsection
 Protein and Phosphorylation
 \end_layout
 
-\begin_layout Itemize
-MS, RPPA
-\end_layout
-
-\begin_layout Itemize
-phospho = closest to activity from what we have
-\end_layout
-
 \begin_layout Standard
 It can easily be argued that in order to get an appropriate picture of what
  goes on in a cell it would be better to look at the proteins that perform
  most functions, as opposed to the mRNA levels of genes.
- The latter will in many cases be translated into proteins that then excert
+ The latter will in many cases be translated into proteins that then exert
  their activity, yet mRNA measurements are one more step removed from the
  functional process than proteins, and measuring post-translational modification
-s (PTMs) that modify activity already gives us a lot of functional informatioin
+s (PTMs) that modify activity already gives us a lot of functional information
  - as long as we know how to interpret them.
 \end_layout
 
@@ -1082,8 +1045,8 @@ For more complex samples, there are too many peptides to detect at any given
  time, so the Mass Spectrometry is often coupled with another technology
  that first separates proteins contained in a sample using some other property
  (e.g.
- their hydrophilicity/hydrophobicity) in columns of gas (gas chromatography
- - GC) or liquid (high performance liquid chromatography - HPLC).
+ their hydrophilicity/hydrophobicity) in columns of gas (gas chromatography,
+ GC) or liquid (high performance liquid chromatography, HPLC).
 \end_layout
 
 \begin_layout Subsection
@@ -1121,7 +1084,7 @@ reference "sub:assay_RNA"
 
 , it is important to put genes together into functional groups for several
  reasons: (1) groups of higher level processes are more interpretable, (2)
- gene level measurements in microarrays (and to a lesser extent RNA-seqeuencing)
+ gene level measurements in microarrays (and to a lesser extent RNA-sequencing)
  are inherently noisy and the more measurements we combine the clearer the
  signal gets, and (3) it may be possible to solve statistical problems where
  the number of observations per sample is greater than the number of samples.
@@ -1206,7 +1169,7 @@ a free, open-source, curated and peer reviewed pathway database
 \begin_inset Quotes erd
 \end_inset
 
- hosted and curated by the European Binformatics Institute (EBI).
+ hosted and curated by the European Bioinformatics Institute (EBI).
  It has a web portal at http://www.reactome.org/, and the current version
  is v55 released in December, 2015.
  It has an open license (Creative Commons Attribution 4.0) for its own data
@@ -1425,17 +1388,17 @@ key "Jerby-Arnon2014-fn"
 ], which can then be used to predict sensitivity of cancer cell lines to
  a certain drug treatment, as well as clinical outcome given the level of
  co- expression of its pairs.
- Examples of such pairs are a VHL LoF mutation that is associated with increased
- sensitivity to not previously associated with cancer as shown in their
- article, or the well-known BRCA1/2 loss of function and PARP inhibitors
- [*].
+ Examples of such pairs are a VHL Loss of Function (LoF) mutation that is
+ associated with increased sensitivity to not previously associated with
+ cancer as shown in their article, or the well-known BRCA1/2 loss of function
+ and PARP inhibitors [*].
 \end_layout
 
 \begin_layout Standard
 As all things in biology, things (a) need a p-value and (b) are a bit more
  complicated than they first seem.
  It is such that synthetic lethal pairs can be conditional to a third factor
- (the kind of mutation, a co-ocurring germline variant, a certain environment
+ (the kind of mutation, a co-occurring germline variant, a certain environment
  that it is valid in, etc.) that in addition to making sure that the effect
  observed is not due to coincidence alone, examples of gene pairs can not
  be determined with absolute certainty.
@@ -1450,7 +1413,19 @@ d set to compare our observed instance to using numerical simulations.
  well as the occurrence of a mutated gene per sample need to be taken into
  account.
  In order to do this, a number of authors developed random versions of presence-
-absence matrices, and more Ciriello et al.
+absence matrices, and more Ciriello 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+latin{et al.}
+\end_layout
+
+\end_inset
+
  
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -1459,7 +1434,7 @@ key "Ciriello2012-hc"
 \end_inset
 
  transformed the problem into one of switching edges on a bipartite network
- that proved favorably by means of computational resources required.
+ that proved favourably by means of computational resources required.
 \end_layout
 
 \begin_layout Standard
@@ -1475,11 +1450,24 @@ First, use the already experimentally verified synthetic lethal pairs.
  that is applicable, or does it just make a cell line that was resistant
  to a drug a bit less resistant but not in the order of magnitude where
  it would actually be usable? Are we using drugs at concentrations where
- the corresponding ED50/LD50 in vivo is still acceptable? Is the effect
- observed true for only the context that the authors investigated or is
- it more generally applicable? If these conditions are met, candidates and
- candidate combinations should be validated using the appropriate platforms
- and depending on this picked up by pharma companies for further development.
+ the corresponding ED50/LD50 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+latin{in vivo}
+\end_layout
+
+\end_inset
+
+ is still acceptable? Is the effect observed true for only the context that
+ the authors investigated or is it more generally applicable? If these condition
+s are met, candidates and candidate combinations should be validated using
+ the appropriate platforms and depending on this picked up by pharma companies
+ for further development.
  Second, combine the idea of ME with the idea of network drugs and polypharmacol
 ogy.
  One way to reconcile ME pairs with perturbations being propagated in a
@@ -1498,22 +1486,6 @@ ogy.
 Gene Expression Clustering
 \end_layout
 
-\begin_layout Itemize
-mostly subtype clustering
-\end_layout
-
-\begin_layout Itemize
-heterogeneity
-\end_layout
-
-\begin_layout Itemize
-global clustering
-\end_layout
-
-\begin_layout Itemize
-Visualising global expression patterns: PCA, t-SNE
-\end_layout
-
 \begin_layout Standard
 Cancer is known to be a heterogeneous disease, with individual tumours forming
  different subtypes within the same tissue.
@@ -1522,7 +1494,7 @@ Cancer is known to be a heterogeneous disease, with individual tumours forming
  One of the arguably most effective ways of elucidating the state of individual
  tumours and cell populations therein is its transcriptome, where transcription
  of individual genes and regulatory RNAs can be assessed using methods such
- as microarrays or RNA sequencing.
+ as microarrays or RNA sequencing **CMS**.
 \end_layout
 
 \begin_layout Standard
@@ -1567,7 +1539,7 @@ n is strongly dependent on the amount of variance captured in the reduced
 \end_layout
 
 \begin_layout Standard
-T-distributed Stochastic Neighbor Embedding (t-SNE) 
+T-distributed Stochastic Neighbour Embedding (t-SNE) 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Van_der_Maaten2008-kt"
@@ -1582,10 +1554,32 @@ key "Van_der_Maaten2008-kt"
  Using this method, one can only trust the points neighbouring each other
  up to a certain number for which they were considered, as specified by
  the perplexity parameter.
- This method has been re-branded as vi-SNE [cite] by Dana Pe'er in their
- cyt software tool [cite], and later extended by the original author to
- use the Barnes-Hut method [cite] that is usually used in large N-body simulatio
-n in astrophysics.
+ This method has been re-branded as viSNE 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Amir2013-od"
+
+\end_inset
+
+ in their cyt software tool
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+http://www.c2b2.columbia.edu/danapeerlab/html/cyt-download.html
+\end_layout
+
+\end_inset
+
+, and later extended by the original author to use the Barnes-Hut method
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Van_der_Maaten2013-io"
+
+\end_inset
+
+ that is usually used in large N-body simulation in astrophysics.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1593,9 +1587,22 @@ Clustering
 \end_layout
 
 \begin_layout Standard
-K-Nearest Neighbors.
+K-Nearest Neighbours.
  This is one of the simplest clustering algorithms that requires the number
- of clusters to be known a priori.
+ of clusters to be known 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+latin{a priori}
+\end_layout
+
+\end_inset
+
+.
  It starts with assigning N cluster centres randomly in a given data set,
  and then assigning all samples that have a smaller distance to a given
  centre than the others to that centre.
@@ -1611,10 +1618,21 @@ K-Nearest Neighbors.
 \begin_layout Standard
 Non-Negative Matrix Factorisation (NMF).
  As the name already suggests, this is another matrix factorisation method
- that decomposes the matrix V (usually with observations in rows and samples
- in columns) into the matrices W (with samples in columns and weights for
- each cluster in rows) multiplied with the matrix H (cluster assignment
- vectors in columns and samples in rows).
+ that decomposes the matrix 
+\begin_inset Formula $V$
+\end_inset
+
+ (usually with observations in rows and samples in columns) into the matrices
+ 
+\begin_inset Formula $W$
+\end_inset
+
+ (with samples in columns and weights for each cluster in rows) multiplied
+ with the matrix 
+\begin_inset Formula $H$
+\end_inset
+
+ (cluster assignment vectors in columns and samples in rows).
  It does not determine the optimal number of clusters by itself, but can
  be run with different numbers of clusters that is later evaluated using
  the cophenetic coefficient (a measure of goodness of fit of the samples
@@ -1622,21 +1640,13 @@ Non-Negative Matrix Factorisation (NMF).
 \end_layout
 
 \begin_layout Standard
-Latent Dirichlet Allocation.
- A modern, Bayesian method for clustering that is an active research topic
- but not used in this work.
+There are also other methods (Spectral Clustering [ng2002], Latent Dirichlet
+ Allocation [blei2003] - a modern, Bayesian method for clustering that is
+ an active research topic) but they are not used in this work.
 \end_layout
 
 \begin_layout Subsection
 Differentially Expressed Subnetworks
-\end_layout
-
-\begin_layout Itemize
-usually in the interactome
-\end_layout
-
-\begin_layout Itemize
-PCSTs (BioNet), etc.
 \end_layout
 
 \begin_layout Standard
@@ -1733,10 +1743,6 @@ lly, as outlined in section *, or computationally by looking at which sequence
 Binding Motifs
 \end_layout
 
-\begin_layout Itemize
-JASPAR, TRANSFAC
-\end_layout
-
 \begin_layout Standard
 Some, albeit not all, transcription factors prefer to bind a specific sequence
  of nucleotides that the recognize on the DNA strands.
@@ -1771,7 +1777,14 @@ key "Matys2003-ea"
 
 \end_inset
 
-, or the Ensembl Regulatory Build [*].
+, or the Ensembl Regulatory Build 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Zerbino2016-mx"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1937,19 +1950,18 @@ key "Vaske2010-zn"
 Signature Matching
 \end_layout
 
-\begin_layout Itemize
-Old Connectivity Map
-\end_layout
-
-\begin_layout Itemize
-requirement for suitable experiments
-\end_layout
-
 \begin_layout Standard
 When investigating the effect small molecules (i.e., drugs) have on a system,
  we might not want to look at the mechanism by which this happens at all,
  but instead rely on the changes of gene expression upon treatment with
- it.
+ it 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Lamb2007-dg"
+
+\end_inset
+
+.
  Then we could use the downstream genes that are changing as a signature
  of treatment with that drug.
  This has got two applications that have indeed been used, which are the
@@ -1977,10 +1989,16 @@ key "Iorio2009-ji,Pacini2013-xn"
 Of course, this kind of approach relies on the availability of signatures
  of the drugs we look at, or of a given drug and disease, respectively.
  That first large-scale project providing signatures of drug-perturbed gene
- expression changes in the MCF-7 cell line was the Connectivity Map [Lamb2006],
- which was subsequently extended and the current version features 1.4 million
+ expression changes in the MCF-7 cell line was the Connectivity Map 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Lamb2006-mp"
+
+\end_inset
+
+, which was subsequently extended and the current version features 1.4 million
  conditions where 978 transcripts are quantified using the L1000 platform
- - more on this in chapter 3.
+ - more on this in chapter 5.
 \end_layout
 
 \begin_layout Section
