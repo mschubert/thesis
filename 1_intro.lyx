@@ -1361,8 +1361,7 @@ Patterns of Mutations
 status open
 
 \begin_layout Plain Layout
-Parts of this text have been published in **schubert2014** with Francesco
- Iorio.
+Parts of this section have been published with Francesco Iorio**schubert2014**.
  The state of the text below is derived from an early draft that was written
  entirely by myself.
 \end_layout
@@ -1837,26 +1836,6 @@ n factor regulation.
 Pathways and Signaling
 \end_layout
 
-\begin_layout Itemize
-Transcription: DNA->RNA, RNA data
-\end_layout
-
-\begin_layout Itemize
-signaling/via TFs points
-\end_layout
-
-\begin_layout Itemize
-proteins
-\end_layout
-
-\begin_layout Itemize
-Cell Signaling: actual activity
-\end_layout
-
-\begin_layout Itemize
-pathway expression vs activity
-\end_layout
-
 \begin_layout Standard
 The transduction of a signal from a cue either binding to a receptor on
  a cell's surface or intracellularly, is how a cell responds to changes
@@ -1936,8 +1915,8 @@ key "Vaske2010-zn"
  could in theory support it, depending the pathway structure supplied for
  inference.
  Yet, the focus has never been to tell apart activity from expression.
- I elaborate on these issues further in chapter 4, with a possible way to
- resolve them.
+ I elaborate on these issues further in chapter 2-4, with a possible way
+ to resolve them.
 \end_layout
 
 \begin_layout Subsection
