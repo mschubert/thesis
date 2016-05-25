@@ -4959,10 +4959,6 @@ Notwithstanding the differences outlined above and that we already defined
 \end_layout
 
 \begin_layout Standard
-tivator **ref**), and so does Trail.
-\end_layout
-
-\begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
@@ -5023,11 +5019,11 @@ reference "fig:sig-GO-enrichment"
  Hypoxia on the other hand inhibits the expression of G1/S genes and mitochondri
 a-related genes (where oxidative phosphorylation happens **ref**).
  TNFa/NFkB show enrichment in the category of genes responsive to LPS (which
- is a known pathway ac
+ is a known pathway activator **ref**), and so does Trail.
 \end_layout
 
 \begin_layout Subsection
-Pathway mapping fails to recover perturbations
+Within experiments, pathway mapping fails to recover perturbations
 \end_layout
 
 \begin_layout Standard
@@ -5233,62 +5229,6 @@ reference "fig:sp2-exp-heatmap"
 \end_layout
 
 \begin_layout Standard
-These results provide a further confirmation that pathway expressed as defined
- as a consensus score of pathway members is fundamentally different to pathway
- activity and can not be used as a measure for such.
- All the categories that provide strong associations are explicitly curated
- to contain the pathway response, as opposed to the members.
- This is true for a 
-\begin_inset Quotes eld
-\end_inset
-
-Response to Hypoxia
-\begin_inset Quotes erd
-\end_inset
-
- for Reactome and Gene Ontology (cf.
- tables 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:Mapping-reactome"
-
-\end_inset
-
- and 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:Mapping-go"
-
-\end_inset
-
-), while the BioCarta pathway that does not provide an association focussed
- more on the pathway itself.
- A similar pattern can be observed for TNFa/NFkB and the 
-\begin_inset Quotes eld
-\end_inset
-
-Response to LPS
-\begin_inset Quotes erd
-\end_inset
-
- category (also tables 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:Mapping-reactome"
-
-\end_inset
-
- and 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:Mapping-go"
-
-\end_inset
-
-).
-\end_layout
-
-\begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
@@ -5391,15 +5331,133 @@ reference "fig:Comparison-to-pathway-perturb"
 \end_layout
 
 \begin_layout Standard
-*spia, pathifier*
+These results provide a further confirmation that pathway expressed as defined
+ as a consensus score of pathway members is fundamentally different to pathway
+ activity and can not be used as a measure for such.
+ All the categories that provide strong associations are explicitly curated
+ to contain the pathway response, as opposed to the members.
+ This is true for a 
+\begin_inset Quotes eld
+\end_inset
+
+Response to Hypoxia
+\begin_inset Quotes erd
+\end_inset
+
+ for Reactome and Gene Ontology (cf.
+ tables 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Mapping-reactome"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Mapping-go"
+
+\end_inset
+
+), while the BioCarta pathway that does not provide an association focussed
+ more on the pathway itself.
+ A similar pattern can be observed for TNFa/NFkB and the 
+\begin_inset Quotes eld
+\end_inset
+
+Response to LPS
+\begin_inset Quotes erd
+\end_inset
+
+ category (also tables 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Mapping-reactome"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Mapping-go"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+SPIA (figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Comparison-to-pathway-perturb"
+
+\end_inset
+
+, top) seems to assign more extreme relative scores to a couple of pathways
+ (MAPK, EGFR, NFkB, Trail) no matter which pathway was perturbed.
+ It does not show a clear unique link between a pathway stimulation and
+ its impact on scores in the same pathway.
+ Pathifier (figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Comparison-to-pathway-perturb"
+
+\end_inset
+
+, bottom) fails to derive scores for the majority of perturbation experiments
+ (their method tries to construct principal curves from control-experiments
+ that need at least three arrays in that condition) and for the remaining
+ does not provide any strong associations (with the strongest being the
+ upregulation of the hypoxic response upon JAK-STAT stimulation, otherwise
+ all 
+\begin_inset Formula $p>10^{-5}$
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Subsection
-Relationship between perturbations and pathway expression
+Across experiments, pathway mapping fails to recover perturbations
 \end_layout
 
-\begin_layout Itemize
-more quantitative approach to heatmaps above
+\begin_layout Standard
+While the previous section focussed on pathway activation in relative terms
+ (whether, given a pathway perturbation, the score assigned to any one pathway
+ is higher or lower compared to other pathways), I am now interested in
+ how well pathway methods are able to assign activity scores across different
+ experiments.
+ I use as input data the fold changes (difference in 
+\begin_inset Formula $log$
+\end_inset
+
+ space, or negative difference if inhibition) of the curated perturbation
+ experiments, and see how well the pathway scores derived from those are
+ ordered for each pathway across experiments.
+ This is meant as a comparison how well the pathway scores obtained by different
+ methods correspond to perturbations, and not to assign significance of
+ the perturbation-response signature model.
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Because then I would need an independent set of experiments.
+ This is not required as I assessed the significance of this model analytically,
+ with results shown in table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Significance-of-signature"
+
+\end_inset
+
+.
+ The comparison here serves to show that my model corresponds better to
+ perturbations.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -5436,7 +5494,9 @@ reference "tab:ROC_AUC"
 
 \end_inset
 
-
+.
+ Lines for methods are only drawn if there were at least five experiments
+ where a given pathway was perturbed and the method could derive scores.
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:ROC"
@@ -6263,14 +6323,63 @@ status open
 
 \end_layout
 
+\begin_layout Standard
+The standard non-parametric (i.e., only based on order rather than value)
+ of quantifying this are Receiver-Operator (ROC) curves, the results of
+ which are shown in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:ROC"
+
+\end_inset
+
+ (AUCs in table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:ROC_AUC"
+
+\end_inset
+
+).
+ For all pathways except NFkB and JAK-STAT (where multiple methods are tied),
+ the consensus gene signature I derived is also better able to detect pathway
+ activations across experiments.
+ VEGF is not well recovered by any method, potentially due to the relatedness
+ with EGFR/MAPK and the low number of experiments.
+ Interestingly, SPIA in 4 out of 11 cases systematically assigns pathway
+ scores in the wrong direction of the experimental perturbations (this may
+ be due to increased expression of negative feedback regulators that SPIA
+ picks up due to the underlying directed KEGG graph).
+\end_layout
+
+\begin_layout Subsection
+Relationship between perturbations and pathway expression
+\end_layout
+
 \begin_layout Itemize
-pathway expr methods correspond less to perturbations
+pathways expressed upon perturbation are likely a secondary response (maybe
+ also not even primary feedback?)
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "50col%"
+special "none"
+height "1in"
+height_special "totalheight"
 status open
 
 \begin_layout Plain Layout
@@ -6285,7 +6394,7 @@ status open
 \begin_inset Graphics
 	filename figures/4.2_links_speed.pdf
 	lyxscale 50
-	width 45col%
+	width 100col%
 
 \end_inset
 
@@ -6314,6 +6423,26 @@ name "fig:circle-perturb"
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "50col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\align center
 \begin_inset Float figure
 wide false
 sideways false
@@ -6324,7 +6453,7 @@ status open
 \begin_inset Graphics
 	filename figures/4.2_links_reactome.pdf
 	lyxscale 50
-	width 45col%
+	width 100col%
 
 \end_inset
 
@@ -6339,6 +6468,11 @@ Reactome pathway enrichment
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:circle-pathway-expr"
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -6379,11 +6513,6 @@ Comparison of links between perturbation input and Footprints vs.
 
 \end_layout
 
-\begin_layout Itemize
-pathways expressed upon perturbation are likely a secondary response (maybe
- also not even primary feedback?)
-\end_layout
-
 \begin_layout Section
 Discussion
 \end_layout
@@ -6397,6 +6526,10 @@ too much variability for batch correction: each sample would be its own
  batch (lab, platform, cells, etc.)
 \end_layout
 
+\begin_layout Itemize
+this doesn't work, we need bias by prior knowledge
+\end_layout
+
 \begin_layout Subsection
 Value of curated perturbation experiments
 \end_layout
@@ -6405,24 +6538,16 @@ Value of curated perturbation experiments
 over what was already there
 \end_layout
 
+\begin_layout Itemize
+this is the only/largest curation of pathway-level exps
+\end_layout
+
 \begin_layout Subsection
-Challenges when integrating different data sets
+Importance of distinguishing between pathway expression and activity
 \end_layout
 
 \begin_layout Itemize
-biases by platform
-\end_layout
-
-\begin_layout Itemize
-imputation vs selecting common subset
-\end_layout
-
-\begin_layout Itemize
-need to summarize by gene symbols, different probes on different platforms
-\end_layout
-
-\begin_layout Itemize
-this doesn't work, we need bias by prior knowledge
+...
 \end_layout
 
 \begin_layout Standard
