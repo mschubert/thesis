@@ -137,84 +137,6 @@ key "Iorio2013-pv"
 \end_layout
 
 \begin_layout Standard
-In this Signature Matching approach, there are, as shown in figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Signature-Matching-Approaches"
-
-\end_inset
-
-, two commonly used workflows: First, we can define the signature of a disease
- (e.g.
- from cancer-normal pairs) and then look for a drug signature to counteract
- this phenotype.
- This may work well in certain circumstances, but is undoubtedly a gross
- oversimplification of the problem of disease inception and progression.
- Nonetheless, it has been shown to work ***refs***, and our group has previously
- worked on an R package for matching drugs and diseases 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Pacini2013-xn"
-
-\end_inset
-
-.
- Second, we can take a drug signature and match it to other drug signatures,
- to maybe discover a new indication for a drug and re-purposing opportunities
- more generally.
- Also in our group, this has been done to discover a drug mode of action
- (MoA) 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Iorio2010-ux"
-
-\end_inset
-
- or computing a drug similarity network 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Iorio2009-ji"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-...
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Signature Matching Approaches
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Signature-Matching-Approaches"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 At the time I started this project, the LINCS Connectivity Map data had
  just been released.
  The BROAD institute held a small symposium and workshop about the platform
@@ -229,34 +151,7 @@ apps
 
  that did signature matching based on GSEA without actually exposing the
  data to its users.
- They did, however, release the raw data and z-scores between each control-
- and drug-perturbed experiment for 978 oligonucleotide probes and a total
- of 1.4 million conditions in a 111 gigabyte 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-file{.gctx}
-\end_layout
-
-\end_inset
-
- (HDF5 and metadata) file where they projected their actual measurement
- to the full gene space using publicly available microarray data.
- At this time, no one knew about the quality of the data (BROAD claimed
- it to be equal with microarrays; my own tries and conversations with other
- people using the data have indicated that it is below that).
- The main publication is still not out today (April 2016), and they refused
- to share e.g.
- the linear transformation matrix they used to obtain the projected gene
- space.
-\end_layout
-
-\begin_layout Standard
-Notwithstanding those potential issues, it would be of enormous interest
+ Notwithstanding those potential issues, it would be of enormous interest
  to combine this data set with what we are already working on with the GDSC:
  this way, we have for the same cancer tissue (sometimes even the same cell
  line) not only high-quality baseline expression and drug response curves,
@@ -350,45 +245,6 @@ onsive signature expression score for each drug that has a PRL and each
 \[
 ES_{consensus}=ES_{top}-ES_{bottom}
 \]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-Connectivity Map Data
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename figures/3.1_projections.svg
-	lyxscale 50
-	width 90text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Overview of number of experiments available
-\end_layout
-
-\end_inset
-
-
-\end_layout
 
 \end_inset
 

@@ -747,10 +747,6 @@ Molecular Data Types and Assays
 Role of Molecular Data
 \end_layout
 
-\begin_layout Itemize
-this is the data we get from the models
-\end_layout
-
 \begin_layout Standard
 One of the issues of both understanding as well as preventing or treating
  cancer development and progression is that it is a process in such complexity
@@ -794,14 +790,6 @@ name "sub:assay_RNA"
 
 \end_layout
 
-\begin_layout Itemize
-microarrays: single vs dual channel
-\end_layout
-
-\begin_layout Itemize
-RNA-seq: unbiased, alignment to genome vs assembly, alignment-free methods
-\end_layout
-
 \begin_layout Standard
 In contrast to DNA, which is stable in sequence, and its chromatin structure
  and methylation that are still, albeit a bit less stable, the RNA that
@@ -824,6 +812,16 @@ ly between different tissue types and situations that a cell is in, the
 
 \begin_layout Subsubsection
 Microarrays
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+needs citations
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -893,13 +891,27 @@ ribe it into DNA, and sequence this DNA like we would normally.
 \begin_layout Standard
 The way RNA-seq quantification is usually done is to align the reads to
  a known genome, allowing gaps in the alignment for splicing and differential
- use of exons.
+ use of exons 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Trapnell2012-ds"
+
+\end_inset
+
+.
  The transcription level of a gene, transcript or exon are then quantified
  by how many reads align to the corresponding section in the genome.
  As this is computationally very expensive, there have been efforts recently
  to get around performing the alignment step by k-mer counting and so-called
  pseudo-alignments.
- Methods for the latter include Sailfish [*], Salmon 
+ Methods for the latter include Sailfish 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Patro2014-wf"
+
+\end_inset
+
+, Salmon 
 \begin_inset Foot
 status open
 
@@ -909,7 +921,14 @@ https://github.com/COMBINE-lab/salmon
 
 \end_inset
 
-, or Kallisto [*].
+, or Kallisto 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Bray2016-gx"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -1266,24 +1285,105 @@ The Connectivity Map
 Original Connectivity Map using microarrays
 \end_layout
 
-\begin_layout Itemize
-Justin Lamb's paper in 2006
+\begin_layout Standard
+That first large-scale project providing signatures of drug-perturbed gene
+ expression changes in the MCF-7 cell line was the Connectivity Map 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Lamb2006-mp"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsubsection
 The L1000 platform
 \end_layout
 
-\begin_layout Itemize
-L1000 platform
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/3.1_projections.svg
+	lyxscale 50
+	width 90text%
+
+\end_inset
+
+
 \end_layout
 
-\begin_layout Itemize
-Projection from landmarks to full microarray gene sets
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Overview of number of experiments available using cancer drugs
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+explain the projections here
 \end_layout
 
-\begin_layout Itemize
-Controversy about publication (there is still no paper)
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In 2015, the BROAD institute released the raw data and z-scores between
+ each control- and drug-perturbed experiment for 978 oligonucleotide probes
+ and a total of 1.4 million conditions in a 111 gigabyte 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+file{.gctx}
+\end_layout
+
+\end_inset
+
+ (HDF5 and metadata) file where they projected their actual measurement
+ to the full gene space using publicly available microarray data.
+ At this time, no one knew about the quality of the data (the authors claimed
+ it to be equal with microarrays; my own tries and conversations with other
+ people using the data have indicated that it is below that).
+ The main publication is still not out today (June 2016), and they refused
+ to share e.g.
+ the linear transformation matrix they used to obtain the projected gene
+ space.
+\end_layout
+
+\begin_layout Standard
+Nonetheless, the sheer size of the new dataset will make it very valuable
+ for signature matching (cf.
+ section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Signature-Matching"
+
+\end_inset
+
+) approaches--more on this in chapter 5.
 \end_layout
 
 \begin_layout Section
@@ -1321,11 +1421,17 @@ low input, high throughput, not output
 \begin_inset Quotes erd
 \end_inset
 
- **cite**), a biomedical scientist's skill requirements have moved from
- knowing, for instance, as many details about a given gene as possible to
- understanding how to set up reproducible assays, generate reliable data,
- but especially treating the resulting data in a way that yielded biological
- insights.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Friedberg2008-cn"
+
+\end_inset
+
+), a biomedical scientist's skill requirements have moved from knowing,
+ for instance, as many details about a given gene as possible to understanding
+ how to set up reproducible assays, generate reliable data, but especially
+ treating the resulting data in a way that yielded biological insights.
 \end_layout
 
 \begin_layout Standard
@@ -1959,6 +2065,13 @@ key "Vaske2010-zn"
 
 \begin_layout Subsection
 Signature Matching
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Signature-Matching"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1994,22 +2107,8 @@ key "Iorio2009-ji,Pacini2013-xn"
  changes that the drug reverses.
  Of course, those matches should rather be seen as hypothesis generators
  than definite indications for repurposing and treating diseases.
-\end_layout
-
-\begin_layout Standard
-Of course, this kind of approach relies on the availability of signatures
+ Of course, this kind of approach relies on the availability of signatures
  of the drugs we look at, or of a given drug and disease, respectively.
- That first large-scale project providing signatures of drug-perturbed gene
- expression changes in the MCF-7 cell line was the Connectivity Map 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Lamb2006-mp"
-
-\end_inset
-
-, which was subsequently extended and the current version features 1.4 million
- conditions where 978 transcripts are quantified using the L1000 platform
- - more on this in chapter 5.
 \end_layout
 
 \begin_layout Section
