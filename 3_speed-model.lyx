@@ -133,9 +133,9 @@ key "Parikh2010-uj"
  consists of signatures of 11 pathways, derived and comprised of the genes
  responsive to a total of XX contrasts (the perturbations between a control
  and a perturbed condition).
- They use a consensus gene signature across multiple experiments, perturbagens,
- and other conditions to arrive at a gene list that corresponds to pathway
- activation in a wide condition.
+ They use a consensus gene signature across multiple experiments, perturbing
+ agents, and other conditions to arrive at a gene list that corresponds
+ to pathway activation in a wide condition.
  Of course, by doing this average, they might lose tissue-specific or condition-
 specific gene expression patterns.
  The authors performed no analysis in terms of either drug associations,
@@ -370,6 +370,16 @@ name "sub:Finding-suitable-Experiments"
 
 \begin_layout Standard
 I used the following searches on the ArrayExpress database to find experiments:
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+would be good to have citations for every compound here
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
@@ -508,7 +518,7 @@ Instead of creating an SQLite database (original SPEED) or flat text files
  with semi-defined fields (additional pathways for the original platform),
  I used the markup language YAML (short for Yet Another Markup Language)
  to create index files for all the curated experiments.
- This has the advantage of being easily entendable (no need to insert rows
+ This has the advantage of being easily extendable (no need to insert rows
  in a database, just add another file) while having named fields and allowing
  for comments (unlike the flat files used in the extended curation of the
  original SPEED), and being easily machine- and human-readable (unlike XML).
@@ -1785,10 +1795,29 @@ Pathway and Gene Ontology scores
 
 \begin_layout Standard
 I matched our defined set of pathways to the publicly available pathway
- databases Reactome (Croft et al.
- 2011) and KEGG (Kanehisa & Goto 2000), and Gene Ontology (GO) (Gene Ontology
- Consortium 2004) categories (for the detailed mapping, see table S0), to
- obtain a uniform set across pathway resources that makes them comparable.
+ databases Reactome 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Croft2011-po"
+
+\end_inset
+
+ and KEGG 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Kanehisa2000-mp,Kanehisa2009-rr"
+
+\end_inset
+
+, and Gene Ontology (GO) 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Ashburner2000-xl,Gene_Ontology_Consortium2004-sn"
+
+\end_inset
+
+ categories (for the detailed mapping, see table S0), to obtain a uniform
+ set across pathway resources that makes them comparable.
  I calculated pathway scores as normalized gene set enrichment (GSEA) scores
  that I transformed into a uniform distribution (
 \begin_inset Formula $x_{u}$
@@ -3314,9 +3343,22 @@ https://tcga-data.nci.nih.gov/docs/publications/coadread_2012/
 \end_inset
 
 .
- I used our voom-transformed RNA-seq gene expression data that I normalized
- using ranks to assign equally spaced values between 0 and 1 for each sample
- within a given tissue.
+ I used our 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+code{voom}
+\end_layout
+
+\end_inset
+
+-transformed RNA-seq gene expression data that I normalized using ranks
+ to assign equally spaced values between 0 and 1 for each sample within
+ a given tissue.
  I then ran PARADIGM inference using the same options as in the above publicatio
 n for each sample separately.
  I used nodes in the network representing pathway activity to our set of
@@ -4833,7 +4875,8 @@ reference "fig:Schema-of-different"
 
 \end_inset
 
-), ...x...
+), commonly used pathway methods map the mRNA expression level of signalling
+ molecules on the corresponding pathways to infer a pathway-level score.
 \end_layout
 
 \begin_layout Standard
@@ -4884,6 +4927,13 @@ status open
 \begin_layout Plain Layout
 Overlap between Gene Ontology, Reactome pathways, and perturbation-response
  gene sets
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:gene-VENN"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -4900,16 +4950,16 @@ Overlap between Gene Ontology, Reactome pathways, and perturbation-response
 Notwithstanding the differences outlined above and that we already defined
  Gene Ontology sets that correspond to signalling pathways, computing which
  unfiltered GO gene sets are over-represented in our signature genes may
- give us additional insight into which lower-level processes (not pathway)
- are activated upon pathway stimulation.
+ give us additional insight into which lower-level processes (and not signalling
+ pathways) are activated upon pathway stimulation.
+ For this, I performed a GSEA analysis of the signed p-value of the consensus
+ model and computed enrichment of Gene Ontology categories in an unbiased
+ way (using as a criterion for inclusion and exclusion of gene sets only
+ their size, from 5 to 500 genes; detailed methods in section ***).
 \end_layout
 
 \begin_layout Standard
-...short methods...
-\end_layout
-
-\begin_layout Standard
-...described figure 10...
+tivator **ref**), and so does Trail.
 \end_layout
 
 \begin_layout Standard
@@ -4934,7 +4984,9 @@ status open
 
 \begin_layout Plain Layout
 Functional annotations of perturbation-response genes
-\end_layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:sig-GO-enrichment"
 
 \end_inset
 
@@ -4944,21 +4996,38 @@ Functional annotations of perturbation-response genes
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+What I find is largely expected, but it also goes to show that modulation
+ of signaling pathways mainly triggers biological processes related to the
+ pathway, but not the corresponding pathway or pathway category itself.
+ For instance (figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:sig-GO-enrichment"
+
+\end_inset
+
+), EGFR and MAPK drive, while p53-mediated DNA damage response abrogates
+ the cell cycle and DNA replication (especially the G1/S checkpoint **ref_p53**).
+ In addition, MAPK and p53 have more specific opposing roles in components
+ of the spindle pole or mRNA splicing (among others).
+ PI3K stimulation also promotes G1/S transition, as well as regulation of
+ ubiquitin.
+ Hypoxia on the other hand inhibits the expression of G1/S genes and mitochondri
+a-related genes (where oxidative phosphorylation happens **ref**).
+ TNFa/NFkB show enrichment in the category of genes responsive to LPS (which
+ is a known pathway ac
 \end_layout
 
 \begin_layout Subsection
 Pathway mapping fails to recover perturbations
-\end_layout
-
-\begin_layout Standard
-Order of pathways for all heatmaps below is the same as in figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:sp2-exp-heatmap"
-
-\end_inset
-
-.
 \end_layout
 
 \begin_layout Standard
@@ -5116,6 +5185,110 @@ name "fig:Comparison-to-pathway-perturb"
 \end_layout
 
 \begin_layout Standard
+While this pathway-level does represents a measure of pathway expression,
+ it is not clear to which extent it is correlated with activity.
+ Of course, there are feedback cycles where stimulation (or inhibition)
+ of a pathway will lead to changes in the expression of some of its own
+ components, such as inhibitors in the case of a negative loop.
+ But is this enough of a change to determine pathway activity from the gene
+ expression of its components? If so, it would enable the expression to
+ be used as an actionable biomarker for modulating the pathway's activity,
+ e.g.
+ by means of treatment using a kinase inhibitor.
+ If not, we can still use it as a measure of pathway expression, but not
+ make statements about its activity or whether adding a drug would change
+ its state.
+\end_layout
+
+\begin_layout Standard
+For methods based on Gene Set Enrichment Analysis (Reactome, BioCarta, Gene
+ Ontology), the associations they provide between a perturbed pathway and
+ a significant change in score (figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Comparison-to-pathway-perturb"
+
+\end_inset
+
+) are very much different from the pathway scores obtained from the consensus
+ of the response itself (cf.
+ figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:sp2-exp-heatmap"
+
+\end_inset
+
+).
+ Reactome shows the strongest associations for the perturbation and pathway
+ score for Hypoxia and JAK-STAT (followed by NFkB, MAPK, and JAK-STAT pathway
+ expression upon NFkB perturbation).
+ Gene Ontology shows strong self-associations for Hypoxia and NFkB, and
+ NFkB expression changes upon TNFa stimulation.
+ BioCarta does not have any associations below the p-value of 
+\begin_inset Formula $10^{-10}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+These results provide a further confirmation that pathway expressed as defined
+ as a consensus score of pathway members is fundamentally different to pathway
+ activity and can not be used as a measure for such.
+ All the categories that provide strong associations are explicitly curated
+ to contain the pathway response, as opposed to the members.
+ This is true for a 
+\begin_inset Quotes eld
+\end_inset
+
+Response to Hypoxia
+\begin_inset Quotes erd
+\end_inset
+
+ for Reactome and Gene Ontology (cf.
+ tables 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Mapping-reactome"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Mapping-go"
+
+\end_inset
+
+), while the BioCarta pathway that does not provide an association focussed
+ more on the pathway itself.
+ A similar pattern can be observed for TNFa/NFkB and the 
+\begin_inset Quotes eld
+\end_inset
+
+Response to LPS
+\begin_inset Quotes erd
+\end_inset
+
+ category (also tables 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Mapping-reactome"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Mapping-go"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
@@ -5217,6 +5390,10 @@ reference "fig:Comparison-to-pathway-perturb"
 
 \end_layout
 
+\begin_layout Standard
+*spia, pathifier*
+\end_layout
+
 \begin_layout Subsection
 Relationship between perturbations and pathway expression
 \end_layout
@@ -5252,13 +5429,10 @@ Perturbation recall on input experiments as a comparison across methods
  Colour of the ROC curve according to the method used, TPR true positive
  rate; FPR false positive rate.
  Performance is indicated with the area under each curve, values indicated
- in table
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-would be nice to have AUCs for each curve here
-\end_layout
+ in table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:ROC_AUC"
 
 \end_inset
 
@@ -5270,6 +5444,813 @@ name "fig:ROC"
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Area under the curve (AUC) for methods and pathways in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:ROC"
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:ROC_AUC"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="13" columns="6">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Pathway
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Method
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Perturbation-response
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Gene Ontology
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Reactome
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SPIA
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Pathifier
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+EGFR
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Hypoxia
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+JAK-STAT
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MAPK
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+NFkB
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+PI3K
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+TGFb
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+TNFa
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Trail
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+VEGF
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+p53
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
 \end_layout
 
 \end_inset
