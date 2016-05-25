@@ -5023,7 +5023,7 @@ a-related genes (where oxidative phosphorylation happens **ref**).
 \end_layout
 
 \begin_layout Subsection
-Within experiments, pathway mapping fails to recover perturbations
+Pathway scores within perturbation experiments
 \end_layout
 
 \begin_layout Standard
@@ -5418,7 +5418,7 @@ reference "fig:Comparison-to-pathway-perturb"
 \end_layout
 
 \begin_layout Subsection
-Across experiments, pathway mapping fails to recover perturbations
+Pathway scores across perturbation experiments
 \end_layout
 
 \begin_layout Standard

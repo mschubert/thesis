@@ -1361,7 +1361,14 @@ Patterns of Mutations
 status open
 
 \begin_layout Plain Layout
-Parts of this section have been published with Francesco Iorio**schubert2014**.
+Parts of this section have been published with Francesco Iorio
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Schubert2014-gt"
+
+\end_inset
+
+.
  The state of the text below is derived from an early draft that was written
  entirely by myself.
 \end_layout
@@ -1375,13 +1382,25 @@ Parts of this section have been published with Francesco Iorio**schubert2014**.
 The concept of a cell being unable to acquire two mutations that together
  have a damaging effect up to the level of cell death has been termed synthetic
  lethality and has been used to study genetic interactions in model organisms
- for a long time [*], where the loss of both genes in a synthetic lethal
- pair is, as the name suggests, lethal to the organism, but the loss of
- each individual gene is not.
- More recently, these interactions have been used to infer drug sensitivity
- in cancer by mapping orthologous genes to human [*], by using evolutionary
- patterns of metabolic networks [*], or by identifying si/sh-RNA probes
- that are purified from a starting population [*].
+ for a long time 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Nijman2011-zf"
+
+\end_inset
+
+, where the loss of both genes in a synthetic lethal pair is, as the name
+ suggests, lethal to the organism, but the loss of each individual gene
+ is not.
+ More recently, these interactions have been used to identify si/sh-RNA
+ probes that are purified from a starting population 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Cheung2011-be"
+
+\end_inset
+
+.
  These interactions can then be transformed in a network of synthetic lethal
  pairs 
 \begin_inset CommandInset citation
@@ -1395,8 +1414,21 @@ key "Jerby-Arnon2014-fn"
  co- expression of its pairs.
  Examples of such pairs are a VHL Loss of Function (LoF) mutation that is
  associated with increased sensitivity to not previously associated with
- cancer as shown in their article, or the well-known BRCA1/2 loss of function
- and PARP inhibitors **farmer2005**.
+ cancer 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Bommi-Reddy2008-nc"
+
+\end_inset
+
+, or the well-known BRCA1/2 loss of function and PARP inhibitors 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Farmer2005-cp"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -1426,8 +1458,14 @@ key "Ciriello2012-hc"
 
 \end_inset
 
- that proved favourably by means of computational resources required **gobbi2014
-**.
+ that proved favourably by means of computational resources required 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Gobbi2014-xz"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
