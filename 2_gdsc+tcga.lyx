@@ -1042,7 +1042,14 @@ I performed this association between every drug and all gene set scores,
  yielding an effect size (how many units of drug response changed per unit
  of enrichment score) and p-value for each pair.
  I corrected the p-values for each pair using the False Discovery Rate (FDR)
- [cite].
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Benjamini1995-rj"
+
+\end_inset
+
+.
  In addition, I performed these associations using each tissue separately:
 \end_layout
 

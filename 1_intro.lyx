@@ -90,7 +90,7 @@ Cancer Biology
 \end_layout
 
 \begin_layout Subsection
-Significance and Aetiology
+Significance and aetiology
 \end_layout
 
 \begin_layout Itemize
@@ -110,19 +110,7 @@ early detection is key
 \end_layout
 
 \begin_layout Subsection
-Mutational Processes
-\end_layout
-
-\begin_layout Itemize
-SNVs vs structural rearrangements
-\end_layout
-
-\begin_layout Itemize
-ludmil's paper
-\end_layout
-
-\begin_layout Itemize
-different tissues: different forces
+Mutational processes
 \end_layout
 
 \begin_layout Subsubsection
@@ -191,18 +179,58 @@ Mutations, copy number alterations, and structural variation
 \begin_layout Standard
 Even when the replication process produced a perfect copy of the ancestral
  strands, there may still be cell-internal or external processes that affect
- the DNA's integrity.
- This could single base exchanges (single nucleotide polymorphisms, SNPs),
+ the DNA's integrity 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Alexandrov2013-qo"
+
+\end_inset
+
+.
+ This could be single base exchanges (single nucleotide polymorphisms, SNPs),
  small insertions and deletions (small indels), changes in the number of
  copies of DNA segments (copy number alterations--this can happen either
- on the genome or on double minute chromosomes), or strand breaking and
- rejoining at different positions (structural rearrangements--from single
- events that produce gene fusions to catastrophic DNA shattering and rearrangeme
-nts )
+ on the genome or on extragenomic small chromosomes 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Jones2012-fc"
+
+\end_inset
+
+), or strand breaking and rejoining at different positions (structural rearrange
+ments--from single events that produce gene fusions 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Nowell1960-rh,Mitelman1997-au"
+
+\end_inset
+
+ to 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Korbel2007-nq"
+
+\end_inset
+
+ catastrophic DNA shattering and rearrangements 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Rausch2012-mt,Northcott2012-ci"
+
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Subsection
 Consequences
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Consequences"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
@@ -283,12 +311,16 @@ Take, for instance, a protein is involved in relaying a signal from the
 This protein now may be affected by a mutation so that it no longer waits
  for an upstream signal to transduce, but sends the downstream signal to
  grow and divide irrespective of what the upstream input is.
- One such example is the well-known BRAF_V600E mutation, where a Valine
- on position 600 (the 600th amino acid) is replaced by Glutamic Acid.
+ One such example is the well-known 
+\begin_inset Formula $BRAF^{V600E}$
+\end_inset
+
+ mutation, where a Valine on position 600 (the 600th amino acid) is replaced
+ by Glutamic Acid.
 \end_layout
 
 \begin_layout Subsection
-Cellular Coping Mechanisms
+Cellular coping mechanisms
 \end_layout
 
 \begin_layout Itemize
@@ -320,27 +352,25 @@ There are however, cellular mechanisms that identify and try to fix those
 \end_layout
 
 \begin_layout Subsection
-Uncontrolled Growth
+Uncontrolled growth
 \end_layout
 
 \begin_layout Itemize
 go through all hanahan & weinberg Hallmarks
 \end_layout
 
+\begin_layout Standard
+If all the above mechanisms fail, a cancer cell can continue to divide and
+ grow into a tumour.
+ 
+\end_layout
+
 \begin_layout Section
-Therapeutic Interventions
+Therapeutic interventions
 \end_layout
 
 \begin_layout Subsection
-The Therapeutic Window
-\end_layout
-
-\begin_layout Itemize
-bioavailability
-\end_layout
-
-\begin_layout Itemize
-difference in killing normal vs target cells
+The therapeutic window
 \end_layout
 
 \begin_layout Standard
@@ -355,7 +385,7 @@ Within a therapeutic intervention, our goal is to selectively treat (or
  all the bad cells and leaves the good cells alone.
  An effective drug will work on the bad cells at a lower concentration than
  on the good ones.
- If the concentration is too high, it will undoubtely affect other cells
+ If the concentration is too high, it will undoubtedly affect other cells
  as well.
  This range of concentration, where a given drug already acts on the target
  cells but does not confer toxicity to other cells is called the therapeutic
@@ -380,11 +410,45 @@ Lipinsky's Rule of Five
 \begin_inset Quotes erd
 \end_inset
 
-, that states the following: ***
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Lipinski2012-cl"
+
+\end_inset
+
+, that states that an orally effective drug has no more than one violation
+ of (1) no more than five hydrogen bond donors, (2) no more than ten hydrogen
+ bind acceptors, (3) a molecular mass less than 500 daltons, (4) an octanol-wate
+r distribution coefficient (
+\begin_inset Formula $logP$
+\end_inset
+
+) of less than five.
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Note that these are only four and not five rules.
+ The 
+\begin_inset Quotes eld
+\end_inset
+
+five
+\begin_inset Quotes erd
+\end_inset
+
+ in the rule's name stems from the components being multiples of five, not
+ that there are five rules
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
-Cytotoxic Drugs
+Cytotoxic drugs
 \end_layout
 
 \begin_layout Itemize
@@ -396,26 +460,24 @@ based on cells growing quicker/consuming more resources
 \end_layout
 
 \begin_layout Subsection
-Targeted Therapies
-\end_layout
-
-\begin_layout Itemize
-specific blockade of signaling pathway
-\end_layout
-
-\begin_layout Itemize
-small molecules vs antibodies
-\end_layout
-
-\begin_layout Itemize
-put some intro to chem bio in here?
+Targeted therapies
 \end_layout
 
 \begin_layout Standard
 A recurrent theme of cancer development and progression is the aberrant
  activation of specific molecular cues in cell signaling.
- An example of this is the well-known BRAF-V600E mutation, already mentioned
- in section [consequences].
+ An example of this is the well-known 
+\begin_inset Formula $BRAF^{V600E}$
+\end_inset
+
+ mutation, already mentioned in section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Consequences"
+
+\end_inset
+
+.
  But there are many more instances where a mutation in a gene yields a gene
  product that is abnormally active- or inactive.
  This often includes members of the MAP kinase pathway (like EGFR, RAS,
@@ -438,23 +500,22 @@ This has an important implication for cancer therapy: if we are able to
 \end_layout
 
 \begin_layout Standard
-Coming back to our example of the BRAF-V600E mutation, [* et al] indeed
- designed and developed a small-molecule inhibitor called Plexicon (more
- specifically, PLX4720) that proved to bind the mutation version of the
- BRAF protein with a much higher affinity than the one found in wild-type
- cells.
+Coming back to our example of the 
+\begin_inset Formula $BRAF^{V600E}$
+\end_inset
+
+ mutation, [* et al] indeed designed and developed a small-molecule inhibitor
+ called Plexicon (more specifically, PLX4720) that proved to bind the mutation
+ version of the BRAF protein with a much higher affinity than the one found
+ in wild-type cells.
  This, in some ways, could be considered the perfect drug for cancer therapy,
  because it has it has favourable uptake in the body [*], and once it is
  there the therapeutic window is much larger compared to other compounds
  due to this difference in binding affinity.
 \end_layout
 
-\begin_layout Standard
-...put some examples of clinical targeted therapies here...
-\end_layout
-
 \begin_layout Subsection
-Immune Therapy
+Immune therapy
 \end_layout
 
 \begin_layout Itemize
@@ -469,7 +530,7 @@ When the President of the United States announced the so-called Moonshot
 \end_layout
 
 \begin_layout Subsection
-Development of Resistance
+Development of resistance
 \end_layout
 
 \begin_layout Standard
@@ -541,6 +602,20 @@ This debate lasted for a while, evidence presented for both one [*] and
  It eventually settled when some groups [*] were able to overcome those
  challenges and show that the resistant clone is indeed present at low frequency
  at the beginning of therapy.
+\end_layout
+
+\begin_layout Subsection
+Overcoming resistance
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Long2014-uy"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -669,6 +744,16 @@ some signaling pathways that are important in patients not captured in cell
 
 \begin_layout Itemize
 generating much more diversity than there can be cell lines
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Francies2015-fs"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -815,28 +900,38 @@ ly between different tissue types and situations that a cell is in, the
 
 \begin_layout Subsubsection
 Microarrays
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-needs citations
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
-The classic way to measure RNA expression is using microarrays.
+The classic way to measure RNA expression is using microarrays 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Brown1999-mc,Debouck1999-ec"
+
+\end_inset
+
+.
  These are, in the simplest case, a carrier matrix (glass can be used but
  the more recent chips all feature a polymer matrix) that has fixed single-stran
 ded oligonucleotides spotted on them.
  For our sample, we would then extract and clean the RNA while simultaneously
  degrading any DNA that it contains, and label the RNA either with one dye
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Gohlmann2009-ac,Du2008-sb"
+
+\end_inset
+
  (if we want to quantify the expression levels of transcripts in a given
- sample) or two different dyes (if we want to quantify the difference between
- two samples).
+ sample) or two different dyes 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Shalon1996-pq"
+
+\end_inset
+
+ (if we want to quantify the difference between two samples).
  Such fluorescent dyes used are e.g.
  Cy3 and Cy5, that emit light in the green and red wave lengths upon stimulation
 , respectively.
@@ -873,15 +968,28 @@ RNA-seq
 \end_layout
 
 \begin_layout Standard
-An alternative approach that has become more popular recently with the falling
- costs of DNA sequencing is to apply this technology to RNA as well.
+An alternative approach 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Marioni2008-lb,Wang2009-ge"
+
+\end_inset
+
+ that has become more popular recently with the falling costs of DNA sequencing
+ is to apply this technology to RNA as well.
  In this case, we can use the RNA that we isolated from a sample, reverse-transc
 ribe it into DNA, and sequence this DNA like we would normally.
  This has got the advantage that it can be used even if there is no genome
  sequence or chip available where as a consequence we are also not biasing
- or selection of genes by previously knowing what to look at, with the exception
- of sections in the RNA that can be more or easily transcribed into DNA
- (like GC-rich regions that also pose challenges for sequencing).
+ or selection of genes by previously knowing what to look at 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Trapnell2010-le"
+
+\end_inset
+
+, with the exception of sections in the RNA that can be more or easily transcrib
+ed into DNA (like GC-rich regions that also pose challenges for sequencing).
  Another advantage is that the dynamic range this technology is able to
  quantify transcripts is much higher when looking at the reads it produces
  than it is for microarrays, both on the lower as well as on the upper bound:
@@ -892,9 +1000,15 @@ ribe it into DNA, and sequence this DNA like we would normally.
 \end_layout
 
 \begin_layout Standard
-The way RNA-seq quantification is usually done is to align the reads to
- a known genome, allowing gaps in the alignment for splicing and differential
- use of exons 
+The way RNA-seq quantification 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Mortazavi2008-lh,Li2011-zi"
+
+\end_inset
+
+ is usually done is to align the reads to a known genome, allowing gaps
+ in the alignment for splicing and differential use of exons 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Trapnell2012-ds"
@@ -1044,8 +1158,15 @@ Reverse-Phase Protein Arrays (RPPA)
 \end_layout
 
 \begin_layout Standard
-In this method, there is an array of spotted antibodies, similar to the
- nucleic acids on a microarray.
+In this method 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Tibes2006-fg"
+
+\end_inset
+
+, there is an array of spotted antibodies, similar to the nucleic acids
+ on a microarray.
  A labelled cell lysate (or other sample) is incubated with the antibodies,
  and we can quantify the amount of the proteins (or phospho-proteins) correspond
 ing to each antibody afterwards.
@@ -1058,9 +1179,16 @@ Mass Spectrometry
 \end_layout
 
 \begin_layout Standard
-Mass spectrometry is based on fragmenting proteins into peptides that are
- then ionized and sprayed into an electrical field in vacuum tube, where
- their mass-to-charge ratio causes them to behave in a certain way.
+Mass spectrometry 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Domon2006-au,Bensimon2012-iy"
+
+\end_inset
+
+ is based on fragmenting proteins into peptides that are then ionized and
+ sprayed into an electrical field in vacuum tube, where their mass-to-charge
+ ratio causes them to behave in a certain way.
  For instance, in Time of Flight (TOF) instruments, the electrical field
  is used to accelerate the peptides; the force that accelerates them is
  then proportional to their charge, and their inertia to their mass - hence
@@ -1171,7 +1299,7 @@ key "Kanehisa2000-mp"
 
 \end_inset
 
- was one of the first pathway databases with its inception in XXXX.
+ was one of the first pathway databases.
  To provide an idea of how widely it was (and still is) used, Google Scholar
  (query 25th February 2016) reported 6863 publications that cited the original
  article.
@@ -1329,7 +1457,13 @@ The L1000 platform
 \end_layout
 
 \begin_layout Standard
-The new version of the Connectivity Map is based on Luminex beads **peck**
+The new version of the Connectivity Map is based on Luminex beads 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Peck2006-fa"
+
+\end_inset
+
  that are able to measure about 500 transcripts.
  For the L1000 platform
 \begin_inset Foot
@@ -1725,18 +1859,41 @@ Visualising Patterns in High-Dimensional Data
 \end_layout
 
 \begin_layout Standard
-Principal Component Analysis (PCA).
- PCA is one of the simplest linear transformations that rotates samples
- in N-dimensional space (where N is the number of observations per sample)
- in a way that its projection to M-dimensional space (the target dimensions
- - for interpretability usually two or three) maximises the variance contained
- in M.
+Principal Component Analysis (PCA) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Wold1987-se"
+
+\end_inset
+
+ is one of the simplest linear transformations that rotates samples in 
+\begin_inset Formula $N$
+\end_inset
+
+-dimensional space (where 
+\begin_inset Formula $N$
+\end_inset
+
+ is the number of observations per sample) in a way that its projection
+ to 
+\begin_inset Formula $M$
+\end_inset
+
+-dimensional space (the target dimensions - for interpretability usually
+ two or three) maximises the variance contained in 
+\begin_inset Formula $M$
+\end_inset
+
+.
  The rotation is calculated using the matrix factorisation [add fact here],
  which can be simplified to [add here] and yields a unique solution.
- [params] provide the position of a sample in M space where the axes are
- principal components, and the latter's projection back into N called loadings
- (which represent how much of each original axis is contained within the
- new axes).
+ [params] provide the position of a sample in 
+\begin_inset Formula $M$
+\end_inset
+
+ space where the axes are principal components, and the latter's projection
+ back into N called loadings (which represent how much of each original
+ axis is contained within the new axes).
  It is important to note the meaning and interpretability of such a decompositio
 n is strongly dependent on the amount of variance captured in the reduced
  space.
@@ -1799,9 +1956,14 @@ Clustering
 \end_layout
 
 \begin_layout Standard
-K-Nearest Neighbours.
- This is one of the simplest clustering algorithms that requires the number
- of clusters to be known 
+This is one of the simplest clustering algorithms is K-means 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Hartigan1979-pe"
+
+\end_inset
+
+ that requires the number of clusters to be known 
 \begin_inset ERT
 status open
 
@@ -1828,9 +1990,14 @@ latin{a priori}
 \end_layout
 
 \begin_layout Standard
-Non-Negative Matrix Factorisation (NMF).
- As the name already suggests, this is another matrix factorisation method
- that decomposes the matrix 
+Non-Negative Matrix Factorisation (NMF) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Lee2001-ju"
+
+\end_inset
+
+ is a matrix factorisation method that decomposes the matrix 
 \begin_inset Formula $V$
 \end_inset
 
@@ -1852,9 +2019,22 @@ Non-Negative Matrix Factorisation (NMF).
 \end_layout
 
 \begin_layout Standard
-There are also other methods (Spectral Clustering [ng2002], Latent Dirichlet
- Allocation [blei2003] - a modern, Bayesian method for clustering that is
- an active research topic) but they are not used in this work.
+There are also other methods (Spectral Clustering 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Ng2002-zs"
+
+\end_inset
+
+, Latent Dirichlet Allocation 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Blei2003-oi"
+
+\end_inset
+
+--a modern, Bayesian method for clustering that is an active research topic)
+ but they are not used in this work.
 \end_layout
 
 \begin_layout Subsection
@@ -1908,7 +2088,20 @@ The problem of finding a differentially expressed connected subnetwork in
  scores, and whether or not it adds or subtracts a score (the prize) by
  doing that.
  An example of an implementation that uses a PCST on interacting proteins
- is the BioNet R package 
+ is the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+rpkg{BioNet}
+\end_layout
+
+\end_inset
+
+ R package 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Beisser2010-wa"
@@ -1963,9 +2156,16 @@ Some, albeit not all, transcription factors prefer to bind a specific sequence
  to bind in terms of the nucleotide sequences that peaks are found in ChIP-seq.
  This preference for a certain string of nucleotides is called a motif.
  The enrichment in ChIP-seq peaks can be found using tools such as MEME
- [*] that will report different weight matrices for nucleotides around the
- binding region (which correspond to how often a given nucleotide is found
- in a given position).
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Bailey1995-hs"
+
+\end_inset
+
+ that will report different weight matrices for nucleotides around the binding
+ region (which correspond to how often a given nucleotide is found in a
+ given position).
  These motifs in turn can be used to scan the genome for the same or a similar
  sequence using a sliding window approach that may indicate sites a transcriptio
 n factor could bind but did not in the original experiment.
@@ -2194,26 +2394,6 @@ Reproducibility of Results
 Experimental and Computational
 \end_layout
 
-\begin_layout Itemize
-focussing on comp reproducibility here
-\end_layout
-
-\begin_layout Itemize
-methods desc inadequate -> need code
-\end_layout
-
-\begin_layout Itemize
-also this thesis will inadequately describe what was done
-\end_layout
-
-\begin_layout Itemize
-more data available
-\end_layout
-
-\begin_layout Itemize
-comp analyses get more complex
-\end_layout
-
 \begin_layout Standard
 Reproducibility of scientific experiments has recently gotten into the spotlight
  when Amgen published a high-profile study that tried to independently validate
@@ -2366,42 +2546,12 @@ To summarise, ensuring that a subsequent study has the possibility to arrive
 \end_layout
 
 \begin_layout Subsection
-Inadequacy of Journal Articles
-\end_layout
-
-\begin_layout Itemize
-clarify: the articles are not the problem
-\end_layout
-
-\begin_layout Itemize
-but the suppl is
-\end_layout
-
-\begin_layout Subsection
 Scientific Software Ecosystem
-\end_layout
-
-\begin_layout Itemize
-programming language: not too high-/low-level
-\end_layout
-
-\begin_layout Itemize
-availability of support packages: huge progress with R, python
-\end_layout
-
-\begin_layout Itemize
-we are working on more or less the same tools, should be easy to exchange
- ideas
-\end_layout
-
-\begin_layout Itemize
-need to focus more on collaboration -> code repos that accept patches, etc.
- email is bad
 \end_layout
 
 \begin_layout Standard
 With computational analyses getting more complex, it is no longer enough
- to just apply a simple statistical test for a number of obervations of
+ to just apply a simple statistical test for a number of observations of
  one condition vs.
  another.
  The wealth of data that has become available needs pre-processing, normalising,
@@ -2432,7 +2582,27 @@ Two programming languages, along with the packages they themselves as well
  as their users provide, have been fundamental in providing a tool set that
  allows processing, exploration, and analysis of the amount of data contemporary
  experiments provide.
- These are R and Python, along with packages hosted on CRAN/BioConductor
+ These are R 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Ihaka1996-bm"
+
+\end_inset
+
+ and Python 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Van_Rossum1995-pl"
+
+\end_inset
+
+, along with packages hosted on CRAN/BioConductor 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Gentleman2004-oc"
+
+\end_inset
+
  and PyPI, respectively.
  Without those tools, performing analysis like I do to obtain the results
  shown later would not be possible.
@@ -2510,33 +2680,40 @@ n on how to run it, so to not only have all the bits and pieces but to connect
 Motivation and Outlook
 \end_layout
 
-\begin_layout Itemize
-aberrations on cell signaling level, we want to make inferences about that
-\end_layout
-
-\begin_layout Itemize
-because that's what should be causing our phenotype (drug response or patient
- survival)
-\end_layout
-
-\begin_layout Itemize
-and it should be better than methods looking at other proxies that represent
- something that is somewhat correlated with it, but not as directly
-\end_layout
-
 \begin_layout Standard
-Cancer sequencing projects (ICGC, TCGA) are giving us an unprecedented view
- on the mutational landscape of human cancers.
+Cancer sequencing projects 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "The_Cancer_Genome_Atlas_Research_Network2013-bi,International_Cancer_Genome_Consortium2010-bn"
+
+\end_inset
+
+ are giving us an unprecedented view on the mutational landscape of human
+ cancers.
  In addition, this information is augmented by genomic and general molecular
  characterisation of cell lines and their responses to anticancer compounds
- (GDSC, CCLE), or by selection viable genotypes under a selective constraint
- (Achilles projects).
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Garnett2012-dk,Barretina2012-of,Iorio2016-gh"
+
+\end_inset
+
+, or by selection viable genotypes under a selective constraint (Achilles
+ projects).
  These projects have led us to believe that, while this landscape is vast,
  mutations tend to occur in a limited set of pathways, often exhibiting
  a pattern different from the ones one would expect by random chance.
  As these modules deviate from a randomly expected distributions, it is
  commonly accepted that they represent the pattern of evolutionary adaption
- that enabled a cancer to obtain its hallmarks (Hanahan2000,2011).
+ that enabled a cancer to obtain its hallmarks 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Hanahan2000-is,Hanahan2011-he"
+
+\end_inset
+
+.
  Mutations that are generally selected for and often functionally characterised
  to be tumorigenic are often referred to as driver mutations, while those
  following the background pattern are likely to occur just by replication-
@@ -2546,7 +2723,14 @@ Cancer sequencing projects (ICGC, TCGA) are giving us an unprecedented view
 \begin_layout Standard
 When looking at sets of mutations instead of individual ones, the occurrence
  of those patterns has been quantified by a couple of approaches, identifying
- modules that are either co-occurring or mutually exclusive.
+ modules that are either co-occurring or mutually exclusive 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Ciriello2012-hc,Babur2015-ap"
+
+\end_inset
+
+.
  In the event of co-occurring mutations, this might mean that a given mutation
  is not sufficient to obtain a certain trait and thus a second mutation
  is necessary to confer it.
