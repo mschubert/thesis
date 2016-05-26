@@ -55,7 +55,7 @@ do = function(fid, caption="", ...) {
     file.path("/home/mschu/Work/speed2/analyses/drug_assocs/assocs_mapped/", paste0(fid, ".RData")) %>%
         load2("assocs.pan") %>%
         transmute(Drug=Ys, Pathway=score, Size=size, Effect=estimate, `P-value`=p.value, FDR=adj.p) %>%
-        tab(caption=paste(caption, "(pan-cancer)"), ...)
+        tab(caption=paste(caption, "(pan-cancer)"), p=0.05, ...)
 }
 do("gsea_go", "Gene Ontology")
 do("gsea_reactome", "Reactome")
@@ -74,7 +74,7 @@ do = function(fid, caption="", ...) {
     file.path("/home/mschu/Work/speed2/analyses/drug_assocs/assocs_mapped/", paste0(fid, ".RData")) %>%
         load2("assocs.tissue") %>%
         transmute(Drug=Yf, Pathway=score, Tissue=subset, Size=size, Effect=estimate, `P-value`=p.value, FDR=adj.p) %>%
-        tab(caption=paste(caption, "(tissue-specific)"), ...)
+        tab(caption=paste(caption, "(tissue-specific)"), p=0.1, ...)
 }
 do("gsea_go", "Gene Ontology")
 do("gsea_reactome", "Reactome")
@@ -95,7 +95,7 @@ do = function(fid, caption="", ...) {
     file.path("/home/mschu/Work/speed2/analyses/tcga_survival/assocs_cont_mapped/", paste0(fid, ".RData")) %>%
         load2("pan_cov") %>%
         transmute(Pathway=scores, Size=size, Effect=estimate, `Log-likelihood`=statistic, `P-value`=p.value, FDR=adj.p) %>%
-        tab(caption=paste(caption, "(pan-cancer)"), ...)
+        tab(caption=paste(caption, "(pan-cancer)"), n=Inf, p=1, ...)
 }
 do("gsea_go", "Gene Ontology")
 do("gsea_reactome", "Reactome")
@@ -114,7 +114,7 @@ do = function(fid, caption="", ...) {
     file.path("/home/mschu/Work/speed2/analyses/tcga_survival/assocs_cont_mapped/", paste0(fid, ".RData")) %>%
         load2("tissue") %>%
         transmute(Tissue=subset, Pathway=scores, Size=size, Effect=estimate, `Log-likelihood`=statistic, `P-value`=p.value, FDR=adj.p) %>%
-        tab(caption=paste(caption, "(tissue-specific)"), ...)
+        tab(caption=paste(caption, "(tissue-specific)"), p=0.1, ...)
 }
 do("gsea_go", "Gene Ontology")
 do("gsea_reactome", "Reactome")
