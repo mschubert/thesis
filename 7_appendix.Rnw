@@ -40,15 +40,30 @@ tab = function(obj, caption="", p=0.2, n=100) {
 
 \section{Associations for baseline methods (chapter 2)}
 
-% add baseline methods here
 
-% add comparison of SPEED cutoffs here
+\subsection{Drug response with unbiased gene sets}
+
+\subsubsection{Associations for mutations}
+
+\subsubsection{Associations for Gene Ontology}
+
+\subsubsection{Associations for Reactome}
+
+
+\subsection{SPEED platform}
+
+\subsubsection{Original cutoffs}
+
+\subsubsection{Distance-optimised cutoffs}
+
+
 
 \section{Associations for evaluating perturbation-response signatures (chapter 4)}
 
+
 \subsection{Pathway scores and mutations}
 
-% add mutation assocs here
+% this has only pan-cancer
 
 \subsection{Pathway scores and drugs}
 
@@ -89,6 +104,7 @@ do("paradigm", "PARADIGM")
 do("speed_matrix", "Perturbation-response genes")
 @
 }
+
 
 \subsection{Pathway scores and survival}
 
@@ -133,6 +149,15 @@ do("speed_matrix", "Perturbation-response genes")
 
 \section{Associations for drug sensitisation (chapter 5)}
 
-% mantra
-% compare only pan-can: w+w/o covar here
+\subsection{MANTRA}
+
+\subsubsection{Pan-cancer}
+
+\subsubsection{Tissue specific}
+
+\subsection{LINCS Connectivity Map}
+
+\subsubsection{Naive}
+
+\subsubsection{With added covariate}
 

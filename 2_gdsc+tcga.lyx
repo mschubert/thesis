@@ -82,7 +82,7 @@
 \begin_body
 
 \begin_layout Part
-A Baseline for available Pathway Methods
+A Baseline for available pathway methods for drug response
 \end_layout
 
 \begin_layout Section
@@ -1286,6 +1286,10 @@ Gene Ontology tissue-specific associations
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
 \begin_layout Section
 Pathways and primary Tumours
 \end_layout
@@ -1300,6 +1304,11 @@ Associations using Gene Ontology
 
 \begin_layout Subsection
 Associations using Reactome
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
