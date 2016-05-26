@@ -40,10 +40,15 @@ tab = function(obj, caption="", p=0.2, n=100) {
 
 \section{Associations for baseline methods (chapter 2)}
 
+% add baseline methods here
+
+% add comparison of SPEED cutoffs here
 
 \section{Associations for evaluating perturbation-response signatures (chapter 4)}
 
 \subsection{Pathway scores and mutations}
+
+% add mutation assocs here
 
 \subsection{Pathway scores and drugs}
 
@@ -127,4 +132,7 @@ do("speed_matrix", "Perturbation-response genes")
 
 
 \section{Associations for drug sensitisation (chapter 5)}
+
+% mantra
+% compare only pan-can: w+w/o covar here
 
