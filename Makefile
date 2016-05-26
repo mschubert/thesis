@@ -1,7 +1,7 @@
 LATEXMK = latexmk -xelatex
 
 LYX = $(sort $(wildcard *.lyx))
-TEX = $(LYX:%.lyx=%.tex)
+TEX = $(LYX:%.lyx=%.tex) 7_appendix.tex
 
 #.INTERMEDIATE: $(TEX)
 
@@ -22,6 +22,9 @@ thesis.pdf: thesis.tex config.tex $(TEX)
 	@sed -i 's/\\lyxdot /./g' $@
 	@sed -i 's/\\part/\\chapter/g' $@
 	@sed -i 's/\\cite{/\\citep{/g' $@
+
+%.tex: %.Rnw
+	R -e 'library(knitr);knit("$<")'
 
 clean:
 	rm -f thesis.{aux,bbl,bcf,blg,fdb_latexmk,fls,log,out,run.xml,lof,lot,toc}

@@ -1,0 +1,124 @@
+
+\chapter{Appendix}
+
+<<setup, include=FALSE>>=
+library(dplyr)
+
+load2 = function(filename) {
+    get_contents = function(fpath) {
+        env = new.env()
+        fid = strsplit(basename(fpath), "\\$")[[1]]
+        fname = fid[1]
+        subsets = fid[-1]
+
+        base::load(file.path(dirname(fpath), fname), env)
+        contents = as.list(env)
+        if (length(contents)==1)
+            contents[[1]]
+        else
+            contents
+    }
+    if (length(filename) > 1)
+        lapply(filename, get_contents)
+    else
+        get_contents(filename)
+}
+
+tab = function(obj, caption="") {
+    obj %>%
+        arrange(`P-value`) %>%
+        filter(FDR < 0.2) %>%
+        head(100) %>%
+        kable(digits=5, booktabs=TRUE, longtable=TRUE, caption=caption)
+}
+@
+
+\section{Associations for chapter 2}
+
+<<echo=FALSE>>=
+#file2table("/home/mschu/Work/speed2/analyses/drug_assocs/assocs_all/gsea_go.RData")
+#file2table("/home/mschu/Work/speed2/analyses/drug_assocs/assocs_all/gsea_reactome.RData")
+@
+
+\section{Associations for chapter 4}
+
+\subsection{Pathway scores and mutations}
+
+\subsection{Pathway scores and drugs}
+
+\subsubsection{Pan-cancer}
+
+\small{
+<<echo=FALSE>>=
+drug_go = load2("/home/mschu/Work/speed2/analyses/drug_assocs/assocs_mapped/gsea_go.RData")
+drug_go$assocs.pan %>%
+    transmute(Drug=Ys, Pathway=score, Size=size, Effect=estimate, `P-value`=p.value, FDR=adj.p) %>%
+    tab("Gene Ontology (pan-cancer)")
+
+drug_reactome = load2("/home/mschu/Work/speed2/analyses/drug_assocs/assocs_mapped/gsea_reactome.RData")
+drug_reactome$assocs.pan %>%
+    transmute(Drug=Ys, Pathway=score, Size=size, Effect=estimate, `P-value`=p.value, FDR=adj.p) %>%
+    tab("Reactome (pan-cancer)")
+
+drug_spia = load2("/home/mschu/Work/speed2/analyses/drug_assocs/assocs_mapped/spia.RData")
+drug_spia$assocs.pan %>%
+    transmute(Drug=Ys, Pathway=score, Size=size, Effect=estimate, `P-value`=p.value, FDR=adj.p) %>%
+    tab("SPIA (pan-cancer)")
+
+drug_pathifier = load2("/home/mschu/Work/speed2/analyses/drug_assocs/assocs_mapped/pathifier.RData")
+drug_pathifier$assocs.pan %>%
+    transmute(Drug=Ys, Pathway=score, Size=size, Effect=estimate, `P-value`=p.value, FDR=adj.p) %>%
+    tab("Pathifier (pan-cancer)")
+
+drug_paradigm = load2("/home/mschu/Work/speed2/analyses/drug_assocs/assocs_mapped/paradigm.RData")
+drug_paradigm$assocs.pan %>%
+    transmute(Drug=Ys, Pathway=score, Size=size, Effect=estimate, `P-value`=p.value, FDR=adj.p) %>%
+    tab("PARADIGM (pan-cancer)")
+
+drug_speed = load2("/home/mschu/Work/speed2/analyses/drug_assocs/assocs_mapped/speed_matrix.RData")
+drug_speed$assocs.pan %>%
+    transmute(Drug=Ys, Pathway=score, Size=size, Effect=estimate, `P-value`=p.value, FDR=adj.p) %>%
+    tab("Perturbation-response genes (pan-cancer)")
+@
+}
+
+\subsubsection{Tissue specific}
+
+\small{
+<<echo=FALSE>>=
+drug_go$assocs.tissue %>%
+    filter(Ysub == "noexp") %>%
+    transmute(Drug=Yf, Pathway=score, Tissue=subset, Size=size, Effect=estimate, `P-value`=p.value, FDR=adj.p) %>%
+    tab("Gene Ontology (tissue-specific)")
+
+drug_reactome$assocs.tissue %>%
+    filter(Ysub == "noexp") %>%
+    transmute(Drug=Yf, Pathway=score, Tissue=subset, Size=size, Effect=estimate, `P-value`=p.value, FDR=adj.p) %>%
+    tab("Reactome (tissue-specific)")
+
+drug_spia$assocs.tissue %>%
+    filter(Ysub == "noexp") %>%
+    transmute(Drug=Yf, Pathway=score, Tissue=subset, Size=size, Effect=estimate, `P-value`=p.value, FDR=adj.p) %>%
+    tab("SPIA (tissue-specific)")
+
+drug_pathifier$assocs.tissue %>%
+    filter(Ysub == "noexp") %>%
+    transmute(Drug=Yf, Pathway=score, Tissue=subset, Size=size, Effect=estimate, `P-value`=p.value, FDR=adj.p) %>%
+    tab("Pathifier (tissue-specific)")
+
+drug_paradigm$assocs.tissue %>%
+    filter(Ysub == "noexp") %>%
+    transmute(Drug=Yf, Pathway=score, Tissue=subset, Size=size, Effect=estimate, `P-value`=p.value, FDR=adj.p) %>%
+    tab("PARADIGM (tissue-specific)")
+
+drug_speed$assocs.tissue %>%
+    filter(Ysub == "noexp") %>%
+    transmute(Drug=Yf, Pathway=score, Tissue=subset, Size=size, Effect=estimate, `P-value`=p.value, FDR=adj.p) %>%
+    tab("Perturbation-response genes (tissue-specific)")
+@
+}
+
+\subsection{Pathway scores and survival}
+
+\section{Associations for chapter 5}
+

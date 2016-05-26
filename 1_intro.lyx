@@ -833,11 +833,11 @@ Another method of investigation are xenografts, where an immunodeficient
 \end_layout
 
 \begin_layout Section
-Molecular Data Types and Assays
+Molecular data types and assays
 \end_layout
 
 \begin_layout Subsection
-Role of Molecular Data
+Role of molecular data
 \end_layout
 
 \begin_layout Standard
@@ -1135,7 +1135,7 @@ rpkg{limma}
 \end_layout
 
 \begin_layout Subsection
-Protein and Phosphorylation
+Proteins and phosphorylation
 \end_layout
 
 \begin_layout Standard
@@ -1180,7 +1180,7 @@ ing to each antibody afterwards.
 \end_layout
 
 \begin_layout Subsubsection
-Mass Spectrometry
+Mass spectrometry
 \end_layout
 
 \begin_layout Standard
@@ -1211,7 +1211,7 @@ For more complex samples, there are too many peptides to detect at any given
 \end_layout
 
 \begin_layout Subsection
-Protein Interactions
+Protein interactions
 \end_layout
 
 \begin_layout Itemize
@@ -1227,11 +1227,11 @@ Data sets
 \end_layout
 
 \begin_layout Subsection
-Public Gene Expression Repositories
+Public gene expression repositories
 \end_layout
 
 \begin_layout Subsection
-Gene Sets and Pathways
+Gene sets and pathways
 \end_layout
 
 \begin_layout Standard
@@ -1365,7 +1365,7 @@ target "https://creativecommons.org/licenses/by/4.0/"
 \end_layout
 
 \begin_layout Subsection
-Primary Cancer Cohorts
+Primary cancer cohorts
 \end_layout
 
 \begin_layout Subsubsection
@@ -1595,7 +1595,7 @@ reference "sub:Signature-Matching"
 \end_layout
 
 \begin_layout Section
-Computational Methods
+Computational methods
 \end_layout
 
 \begin_layout Standard
@@ -1828,7 +1828,7 @@ ogy.
 \end_layout
 
 \begin_layout Subsection
-Gene Expression Clustering
+Gene expression clustering
 \end_layout
 
 \begin_layout Standard
@@ -1860,7 +1860,7 @@ Disregarding the effect of different cell types (by making the assumption
 \end_layout
 
 \begin_layout Subsubsection
-Visualising Patterns in High-Dimensional Data
+Visualising patterns in high-dimensional data
 \end_layout
 
 \begin_layout Standard
@@ -2043,7 +2043,7 @@ key "Blei2003-oi"
 \end_layout
 
 \begin_layout Subsection
-Differentially Expressed Subnetworks
+Differentially expressed subnetworks
 \end_layout
 
 \begin_layout Standard
@@ -2076,7 +2076,7 @@ In this case we require an algorithm that summarises differential expression
 \end_layout
 
 \begin_layout Subsubsection
-Minimum Spanning Trees
+Minimum spanning trees
 \end_layout
 
 \begin_layout Standard
@@ -2118,7 +2118,7 @@ key "Beisser2010-wa"
 \end_layout
 
 \begin_layout Subsection
-Gene Regulatory Networks
+Gene regulatory networks
 \end_layout
 
 \begin_layout Standard
@@ -2150,7 +2150,7 @@ lly, as outlined in section *, or computationally by looking at which sequence
 \end_layout
 
 \begin_layout Subsubsection
-Binding Motifs
+Binding motifs
 \end_layout
 
 \begin_layout Standard
@@ -2205,7 +2205,7 @@ key "Zerbino2016-mx"
 \end_layout
 
 \begin_layout Subsubsection
-Mutual Information for Transcription Factor Networks
+Mutual Information for transcription factor networks
 \end_layout
 
 \begin_layout Standard
@@ -2257,7 +2257,7 @@ n factor regulation.
 \end_layout
 
 \begin_layout Subsection
-Pathways and Signaling
+Pathways and signaling
 \end_layout
 
 \begin_layout Standard
@@ -2392,11 +2392,11 @@ key "Iorio2009-ji,Pacini2013-xn"
 \end_layout
 
 \begin_layout Section
-Reproducibility of Results
+Reproducibility of results
 \end_layout
 
 \begin_layout Subsection
-Experimental and Computational
+Experimental and computational
 \end_layout
 
 \begin_layout Standard
@@ -2551,7 +2551,7 @@ To summarise, ensuring that a subsequent study has the possibility to arrive
 \end_layout
 
 \begin_layout Subsection
-Scientific Software Ecosystem
+Scientific software ecosystem
 \end_layout
 
 \begin_layout Standard
@@ -2656,7 +2656,7 @@ key "Wickham2011-qn"
 \end_layout
 
 \begin_layout Subsection
-Reproducible Workflows
+Reproducible workflows
 \end_layout
 
 \begin_layout Subsubsection
@@ -2825,7 +2825,7 @@ key "Xie2014-sa"
 \end_layout
 
 \begin_layout Section
-Motivation and Outlook
+Motivation and outlook
 \end_layout
 
 \begin_layout Standard
