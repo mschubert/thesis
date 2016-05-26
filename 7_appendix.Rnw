@@ -38,10 +38,10 @@ tab = function(obj, caption="", p=0.2, n=100) {
 }
 @
 
-\section{Associations for chapter 2}
+\section{Associations for baseline methods (chapter 2)}
 
 
-\section{Associations for chapter 4}
+\section{Associations for evaluating perturbation-response signatures (chapter 4)}
 
 \subsection{Pathway scores and mutations}
 
@@ -126,5 +126,5 @@ do("speed_matrix", "Perturbation-response genes")
 }
 
 
-\section{Associations for chapter 5}
+\section{Associations for drug sensitisation (chapter 5)}
 
