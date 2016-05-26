@@ -514,6 +514,11 @@ Coming back to our example of the
  due to this difference in binding affinity.
 \end_layout
 
+\begin_layout Standard
+There are, however, many other kinase inhibitors as well as antibodies that
+ specifically target a protein to abrogate its activity.
+\end_layout
+
 \begin_layout Subsection
 Immune therapy
 \end_layout
@@ -2603,7 +2608,47 @@ key "Gentleman2004-oc"
 
 \end_inset
 
- and PyPI, respectively.
+ (including 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+rpkg{dplyr}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Wickham2014-jy"
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+rpkg{ggplot2}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Wickham2011-qn"
+
+\end_inset
+
+, used extensively in the analyses) and PyPI, respectively.
  Without those tools, performing analysis like I do to obtain the results
  shown later would not be possible.
  Note that there are others, but they do not play a similarly important
@@ -2614,56 +2659,87 @@ key "Gentleman2004-oc"
 Reproducible Workflows
 \end_layout
 
-\begin_layout Itemize
-versioning
+\begin_layout Subsubsection
+Version control using Github
 \end_layout
 
-\begin_layout Itemize
-why keeping old version is important
+\begin_layout Standard
+Requirements for analyses are going to change, and so will the scripts that
+ were used to generate them.
+ There is nothing that is keeping us from updating and changing them of
+ course, but at times it is required to reproduce the behaviour and outcome
+ of an analysis after that.
+ This is very version control systems (VCS) come in.
+ These are software that will keep track of all previous versions of code
+ (and potentially other files as well) in case they are ever needed again.
+ One of the first to be widely used was CVS 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Thomas2003-ga"
+
+\end_inset
+
+, later subversion 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Pilato2008-bp"
+
+\end_inset
+
+ and now mostly git 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Loeliger2012-sf"
+
+\end_inset
+
+.
+ A company that was been widely successful in promoting the use of git both
+ in general and academia
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Github has become the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+latin{de facto}
 \end_layout
 
-\begin_layout Itemize
-tools to support
+\end_inset
+
+ standard in academic code sharing.
+ The technology for version tracking is state of the art, the functionality
+ of their website unparalleled and they offer their services to academics
+ for free: 
+\begin_inset CommandInset href
+LatexCommand href
+target "https://education.github.com/"
+
+\end_inset
+
+
 \end_layout
 
-\begin_layout Itemize
-how github really put it together
+\end_inset
+
+ in particular is Github 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Dabbish2012-hw"
+
+\end_inset
+
+.
 \end_layout
 
-\begin_layout Itemize
-automation
-\end_layout
-
-\begin_layout Itemize
-single entry point for analyses
-\end_layout
-
-\begin_layout Itemize
-Makefiles
-\end_layout
-
-\begin_layout Itemize
-LIMITATIONS:
-\end_layout
-
-\begin_layout Itemize
-run -> paper would be nice, but:
-\end_layout
-
-\begin_layout Itemize
-computing time for large analyses
-\end_layout
-
-\begin_layout Itemize
-complex software setup req'd, may not be available later
-\end_layout
-
-\begin_layout Itemize
-figures need manual tweaking (or lot of time)
-\end_layout
-
-\begin_layout Itemize
-holy grail would be something like shiny
+\begin_layout Subsubsection
+Workflows with GNU make
 \end_layout
 
 \begin_layout Standard
@@ -2674,6 +2750,78 @@ A challenge that often is underestimated is that even when all of the code
  Thus it is not only important to provide the code as it is, but also informatio
 n on how to run it, so to not only have all the bits and pieces but to connect
  them to a workflow from the data to the results.
+ Some tools have been proposed to manage scientific workflows 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Warr2012-yd,Wolstencroft2013-eu"
+
+\end_inset
+
+, but they are heavy monolithic pieces of software whose use has never taken
+ off.
+ A simple and lightweight alternative is GNU's 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+code{make}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Stallman1991-hz,Stallman2004-ud"
+
+\end_inset
+
+, which was originally designed for tracking dependencies in software compilatio
+n, but has been proposed to enable reproducible scientific workflows 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Schwab2000-fk"
+
+\end_inset
+
+.
+ It has been extensively used in the analyses because of its single entry
+ point (the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+file{Makefile}
+\end_layout
+
+\end_inset
+
+) and simple definition of dependency rules.
+\end_layout
+
+\begin_layout Subsubsection
+Document generation with knitr
+\end_layout
+
+\begin_layout Standard
+While the above tools take care of performing and keeping track of analyses,
+ the crucial point that is missing for reproducible research is integration
+ with reporting.
+ A tool to do combine R code with written text and annotation (as opposed
+ to technical/API documentation) is knitr 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Xie2014-sa"
+
+\end_inset
+
+ that can work with either Latex or Markdown.
 \end_layout
 
 \begin_layout Section

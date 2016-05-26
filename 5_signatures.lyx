@@ -319,7 +319,7 @@ Schema of linear associations
 \end_layout
 
 \begin_layout Subsubsection
-Tissue-specific and Cell Line Models
+Tissue-specific and cell line models
 \end_layout
 
 \begin_layout Standard
@@ -358,7 +358,7 @@ Overview of number of experiments available
 \end_layout
 
 \begin_layout Subsection
-Drug Associations
+Drug associations
 \end_layout
 
 \begin_layout Standard
@@ -377,7 +377,7 @@ status open
 \end_layout
 
 \begin_layout Subsection
-Experimental Validation
+Experimental validation
 \end_layout
 
 \begin_layout Itemize
@@ -389,7 +389,7 @@ just some short description what they did
 \end_layout
 
 \begin_layout Subsubsection
-Fitting Drug Response Curves
+Fitting drug response curves
 \end_layout
 
 \begin_layout Standard
@@ -485,7 +485,7 @@ Given enough data points we can calculate the best fit using nonlinear least
 \end_layout
 
 \begin_layout Subsubsection
-Modelling Drug Interactions
+Modelling drug interactions
 \end_layout
 
 \begin_layout Standard
