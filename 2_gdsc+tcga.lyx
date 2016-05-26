@@ -404,7 +404,13 @@ file{ReactomePathways.gmt}
 status open
 
 \begin_layout Plain Layout
-http://www.reactome.org/pages/download-data/
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.reactome.org/pages/download-data/"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -434,7 +440,13 @@ name{Enrichr}
 status open
 
 \begin_layout Plain Layout
-https://github.com/yokuyuki/Enrichr
+\begin_inset CommandInset href
+LatexCommand href
+target "https://github.com/yokuyuki/Enrichr"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -499,7 +511,13 @@ key "Subramanian2005-pd"
 status open
 
 \begin_layout Plain Layout
-http://software.broadinstitute.org/gsea/index.jsp
+\begin_inset CommandInset href
+LatexCommand href
+target "http://software.broadinstitute.org/gsea/index.jsp"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -575,7 +593,13 @@ rpkg{sROC}
 status open
 
 \begin_layout Plain Layout
-https://cran.r-project.org/web/packages/sROC/index.html
+\begin_inset CommandInset href
+LatexCommand href
+target "https://cran.r-project.org/web/packages/sROC/index.html"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -613,7 +637,13 @@ I used the Firehose tool
 status open
 
 \begin_layout Plain Layout
-http://gdac.broadinstitute.org/
+\begin_inset CommandInset href
+LatexCommand href
+target "http://gdac.broadinstitute.org/"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset

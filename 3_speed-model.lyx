@@ -3320,7 +3320,13 @@ I downloaded the PARADIGM software from the public software repository
 status collapsed
 
 \begin_layout Plain Layout
-https://github.com/sbenz/Paradigm
+\begin_inset CommandInset href
+LatexCommand href
+target "https://github.com/sbenz/Paradigm"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -3337,7 +3343,13 @@ key "The_Cancer_Genome_Atlas_Research_Network2013-bi"
 status collapsed
 
 \begin_layout Plain Layout
-https://tcga-data.nci.nih.gov/docs/publications/coadread_2012/
+\begin_inset CommandInset href
+LatexCommand href
+target "https://tcga-data.nci.nih.gov/docs/publications/coadread_2012/"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -4257,7 +4269,13 @@ rpkg{ArrayExpress}
 status open
 
 \begin_layout Plain Layout
-http://bioconductor.org/packages/release/bioc/html/ArrayExpress.html
+\begin_inset CommandInset href
+LatexCommand href
+target "http://bioconductor.org/packages/release/bioc/html/ArrayExpress.html"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -4267,7 +4285,13 @@ http://bioconductor.org/packages/release/bioc/html/ArrayExpress.html
 status open
 
 \begin_layout Plain Layout
-http://bioconductor.org/packages/stats/bioc/ArrayExpress/
+\begin_inset CommandInset href
+LatexCommand href
+target "http://bioconductor.org/packages/stats/bioc/ArrayExpress/"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset

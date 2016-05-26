@@ -177,25 +177,28 @@ Such an error may manifest itself in multiple ways.
  In contrast, it also may insert a base that was not in the original strand,
  thereby producing an insertion.
  It may also insert the wrong base, which leads to a substitution.
- Even when the replication process produced a perfect copy of the ancestral
- strands, there may still be cell-internal or external processes that affect
- the DNA's integrity - called mutations.
-\end_layout
-
-\begin_layout Standard
-While discussing theses mutational processes one should keep in mind that
+ While discussing theses mutational processes one should keep in mind that
  those errors introduced do manifest itself only on one of the two strands
  in an allele, which will lead to a base not perfectly matching its opposite
- base anymore, which means they do not pair as well as they were if there
- had been no error.
+ base anymore.
+ This means they do not pair as well as they were if there had been no error.
 \end_layout
 
 \begin_layout Subsubsection
-Mutations
+Mutations, copy number alterations, and structural variation
 \end_layout
 
 \begin_layout Standard
-...
+Even when the replication process produced a perfect copy of the ancestral
+ strands, there may still be cell-internal or external processes that affect
+ the DNA's integrity.
+ This could single base exchanges (single nucleotide polymorphisms, SNPs),
+ small insertions and deletions (small indels), changes in the number of
+ copies of DNA segments (copy number alterations--this can happen either
+ on the genome or on double minute chromosomes), or strand breaking and
+ rejoining at different positions (structural rearrangements--from single
+ events that produce gene fusions to catastrophic DNA shattering and rearrangeme
+nts )
 \end_layout
 
 \begin_layout Subsection
@@ -916,7 +919,13 @@ key "Patro2014-wf"
 status open
 
 \begin_layout Plain Layout
-https://github.com/COMBINE-lab/salmon
+\begin_inset CommandInset href
+LatexCommand href
+target "https://github.com/COMBINE-lab/salmon"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1140,8 +1149,14 @@ a major bioinformatics initiative to develop a computational representation
 
 .
  It has encoded over 40,000 biological concepts based on experiments reported
- in over 100,000 publications according to its web portal at http://geneontology.
-org/.
+ in over 100,000 publications according to its web portal at h
+\begin_inset CommandInset href
+LatexCommand href
+target "ttp://geneontology.org/"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1189,14 +1204,26 @@ a free, open-source, curated and peer reviewed pathway database
 \end_inset
 
  hosted and curated by the European Bioinformatics Institute (EBI).
- It has a web portal at http://www.reactome.org/, and the current version
- is v55 released in December, 2015.
+ It has a web portal at 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.reactome.org/"
+
+\end_inset
+
+, and the current version is v55 released in December, 2015.
  It has an open license (Creative Commons Attribution 4.0
 \begin_inset Foot
 status open
 
 \begin_layout Plain Layout
-https://creativecommons.org/licenses/by/4.0/
+\begin_inset CommandInset href
+LatexCommand href
+target "https://creativecommons.org/licenses/by/4.0/"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1302,6 +1329,50 @@ The L1000 platform
 \end_layout
 
 \begin_layout Standard
+The new version of the Connectivity Map is based on Luminex beads **peck**
+ that are able to measure about 500 transcripts.
+ For the L1000 platform
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+More information is available at: 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.lincscloud.org/l1000/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+, the BROAD institute managed to put twice the amount of genes on one bead
+ by scanning it in two different dilution ranges and deconvoluting them
+ computationally afterwards.
+ After that, they scaled the experimental readout by 80 control genes that
+ are supposed to be constant across experiments, optionally infer the whole
+ transcriptome from their 978 
+\begin_inset Quotes eld
+\end_inset
+
+landmark
+\begin_inset Quotes erd
+\end_inset
+
+ genes (projections shown in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:LINCS-projections"
+
+\end_inset
+
+), and compute z-scores (number of standard deviations of a perturbed condition
+ over the mean of the control) for each signature.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
@@ -1323,13 +1394,11 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Overview of number of experiments available using cancer drugs
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-explain the projections here
-\end_layout
+Overview of number of experiments available using cancer drugs.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:LINCS-projections"
 
 \end_inset
 
@@ -1467,7 +1536,7 @@ Patterns of Mutations
 status open
 
 \begin_layout Plain Layout
-Parts of this section have been published with Francesco Iorio
+Parts of this section have been published with Francesco Iorio 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Schubert2014-gt"
@@ -1703,7 +1772,13 @@ key "Amir2013-od"
 status open
 
 \begin_layout Plain Layout
-http://www.c2b2.columbia.edu/danapeerlab/html/cyt-download.html
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.c2b2.columbia.edu/danapeerlab/html/cyt-download.html"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2143,17 +2218,77 @@ comp analyses get more complex
 Reproducibility of scientific experiments has recently gotten into the spotlight
  when Amgen published a high-profile study that tried to independently validate
  findings of [40?] findings reported by different groups in the journals
- Nature, Science and Cell [baker2016].
- For half of the studies that they invesigated, they could not obtain the
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+journal{Nature}
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+journal{Science}
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+journal{Cell}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Baker2016-ng"
+
+\end_inset
+
+.
+ For half of the studies that they investigated, they could not obtain the
  same results and thus conclusions that the respective authors reported.
  Needless to say, this raised some concerns about the current paradigm of
  publishing new results quickly instead of thoroughly and overclaiming the
  effect or significance of a study in order to have an article accepted
  in the top tier journals.
  Follow-up studies have pointed a part of the blame on use of different
- antibodies [baker2016.2] that did not always show the affinity and specificity
- to their target as the vendors claimed, which has resulted in the creation
- of a registry for validated antibodies at [bradbury2015].
+ antibodies 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Baker2015-vi"
+
+\end_inset
+
+ that did not always show the affinity and specificity to their target as
+ the vendors claimed, which has resulted in the creation of a registry for
+ validated antibodies at 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Bradbury2015-is"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -2176,26 +2311,31 @@ Apart from experimental reproducibility, computational reproducibility should
  same tools.
  However, this is also easier said than done because the tools will depend
  on other tools, maybe with different versions, and each version may change
- the way they treat the data to go from input to output in a slighly different
+ the way they treat the data to go from input to output in a slightly different
  way.
  This is especially true with computational analyses, as well as the tools
  employed, are getting more and more complex.
  However, even if the potential confounding factors are smaller than for
  experimental scientists, computational analysis also has its high-profile
  fraught with issues.
- The most well-known example of this is maybe Anil Potti's cancer gene signature
-s
+ The most well-known example of this are maybe Anil Potti's cancer gene
+ signatures
 \begin_inset Foot
 status open
 
 \begin_layout Plain Layout
-http://retractionwatch.com/2015/11/07/its-official-anil-potti-faked-data-say-feds
-/
+\begin_inset CommandInset href
+LatexCommand href
+target "http://retractionwatch.com/2015/11/07/its-official-anil-potti-faked-data-say-feds/"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
 
- that Keith Baggerly later spent six months trying to reproduce - and failed,
+ that Keith Baggerly later spent six months trying to reproduce--and failed,
  but in the process found considerable errors that later caused the original
  article to be retracted 
 \begin_inset CommandInset citation

@@ -1,2 +1,13 @@
 *~
 \#*\#
+*.tex
+*.aux
+*.bbl
+*.blg
+*_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.toc
+*.bcf
