@@ -48,7 +48,7 @@ tab = function(obj, caption="") {
 
 \subsubsection{Pan-cancer}
 
-\small{
+\tiny{
 <<echo=FALSE>>=
 drug_go = load2("/home/mschu/Work/speed2/analyses/drug_assocs/assocs_mapped/gsea_go.RData")
 drug_go$assocs.pan %>%
@@ -84,7 +84,7 @@ drug_speed$assocs.pan %>%
 
 \subsubsection{Tissue specific}
 
-\small{
+\tiny{
 <<echo=FALSE>>=
 drug_go$assocs.tissue %>%
     filter(Ysub == "noexp") %>%
