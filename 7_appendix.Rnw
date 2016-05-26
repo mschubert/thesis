@@ -39,31 +39,48 @@ tab = function(obj, caption="", p=0.2, n=100) {
 @
 
 \section{Associations for baseline methods (chapter 2)}
+\setcounter{table}{0}
+\renewcommand{\thetable}{A\arabic{table}}
+\setcounter{figure}{0}
+\renewcommand{\thefigure}{A\arabic{figure}}
 
 
 \subsection{Drug response with unbiased gene sets}
 
 \subsubsection{Associations for mutations}
 
+%TODO
+
 \subsubsection{Associations for Gene Ontology}
 
+%TODO
+
 \subsubsection{Associations for Reactome}
+
+%TODO
 
 
 \subsection{SPEED platform}
 
 \subsubsection{Original cutoffs}
 
+%TODO
+
 \subsubsection{Distance-optimised cutoffs}
+
+%TODO
 
 
 
 \section{Associations for evaluating perturbation-response signatures (chapter 4)}
-
+\setcounter{table}{0}
+\renewcommand{\thetable}{B\arabic{table}}
+\setcounter{figure}{0}
+\renewcommand{\thefigure}{B\arabic{figure}}
 
 \subsection{Pathway scores and mutations}
 
-% this has only pan-cancer
+%TODO
 
 \subsection{Pathway scores and drugs}
 
@@ -148,16 +165,41 @@ do("speed_matrix", "Perturbation-response genes")
 
 
 \section{Associations for drug sensitisation (chapter 5)}
+\setcounter{table}{0}
+\renewcommand{\thetable}{C\arabic{table}}
+\setcounter{figure}{0}
+\renewcommand{\thefigure}{C\arabic{figure}}
 
 \subsection{MANTRA}
 
 \subsubsection{Pan-cancer}
 
+%TODO
+
 \subsubsection{Tissue specific}
+
+%TODO
 
 \subsection{LINCS Connectivity Map}
 
 \subsubsection{Naive}
 
+\tiny{
+<<echo=FALSE>>=
+do = function(fid, caption="", ...) {
+    file.path("/home/mschu/Work/signature-combinations/drug_tissue/assocs", paste0(fid, ".RData")) %>%
+        load2() %>%
+        transmute(`Drug response`=Ys, Sensitiser=sig, Size=size, Effect=estimate, `P-value`=p.value, FDR=p.adjust(p.value, method="fdr")) %>%
+        tab(caption=caption, p=0.1, n=50)
+}
+do("pan_bing_pancov-", "Naive pan-cancer")
+@
+}
+
 \subsubsection{With added covariate}
 
+\tiny{
+<<echo=FALSE>>=
+do("pan_bing_pancov", "Pan-cancer with covariate")
+@
+}

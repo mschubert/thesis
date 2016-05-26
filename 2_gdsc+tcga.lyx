@@ -82,7 +82,28 @@
 \begin_body
 
 \begin_layout Part
-A Baseline for available pathway methods for drug response
+A Baseline for Gene Set methods using Drug Response
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+using the same algorithm (GSEA) SPEED is *a lot* better
+\end_layout
+
+\begin_layout Plain Layout
+--> want to explore this further
+\end_layout
+
+\begin_layout Plain Layout
+(also make point about biasing gene sets)
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section

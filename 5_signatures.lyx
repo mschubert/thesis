@@ -562,7 +562,14 @@ If two drugs act in an additive manner, the combination index
 \begin_inset Formula $y_{Loewe}$
 \end_inset
 
- numerically [yadav2015complex].
+ numerically 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Yadav2015-ws"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -692,7 +699,7 @@ A=\sum_{x_{1}}\sum_{x_{2}}\Delta x_{1}\Delta x_{2}
 \end_layout
 
 \begin_layout Standard
-And obtian the overall synergy score 
+And obtain the overall synergy score 
 \begin_inset Formula $S$
 \end_inset
 
