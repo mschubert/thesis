@@ -4,7 +4,7 @@
 <<setup, include=FALSE>>=
 library(dplyr)
 
-load2 = function(filename) {
+load2 = function(filename, subset=FALSE) {
     get_contents = function(fpath) {
         env = new.env()
         fid = strsplit(basename(fpath), "\\$")[[1]]
@@ -19,26 +19,27 @@ load2 = function(filename) {
             contents
     }
     if (length(filename) > 1)
-        lapply(filename, get_contents)
+        re = lapply(filename, get_contents)
     else
-        get_contents(filename)
+        re = get_contents(filename)
+
+    if (identical(subset, FALSE))
+        re
+    else
+        re[[subset]]
 }
 
-tab = function(obj, caption="") {
+tab = function(obj, caption="", p=0.2, n=100) {
     obj %>%
         arrange(`P-value`) %>%
-        filter(FDR < 0.2) %>%
-        head(100) %>%
+        filter(FDR < p) %>%
+        head(n) %>%
         kable(digits=5, booktabs=TRUE, longtable=TRUE, caption=caption)
 }
 @
 
 \section{Associations for chapter 2}
 
-<<echo=FALSE>>=
-#file2table("/home/mschu/Work/speed2/analyses/drug_assocs/assocs_all/gsea_go.RData")
-#file2table("/home/mschu/Work/speed2/analyses/drug_assocs/assocs_all/gsea_reactome.RData")
-@
 
 \section{Associations for chapter 4}
 
@@ -50,35 +51,18 @@ tab = function(obj, caption="") {
 
 \tiny{
 <<echo=FALSE>>=
-drug_go = load2("/home/mschu/Work/speed2/analyses/drug_assocs/assocs_mapped/gsea_go.RData")
-drug_go$assocs.pan %>%
-    transmute(Drug=Ys, Pathway=score, Size=size, Effect=estimate, `P-value`=p.value, FDR=adj.p) %>%
-    tab("Gene Ontology (pan-cancer)")
-
-drug_reactome = load2("/home/mschu/Work/speed2/analyses/drug_assocs/assocs_mapped/gsea_reactome.RData")
-drug_reactome$assocs.pan %>%
-    transmute(Drug=Ys, Pathway=score, Size=size, Effect=estimate, `P-value`=p.value, FDR=adj.p) %>%
-    tab("Reactome (pan-cancer)")
-
-drug_spia = load2("/home/mschu/Work/speed2/analyses/drug_assocs/assocs_mapped/spia.RData")
-drug_spia$assocs.pan %>%
-    transmute(Drug=Ys, Pathway=score, Size=size, Effect=estimate, `P-value`=p.value, FDR=adj.p) %>%
-    tab("SPIA (pan-cancer)")
-
-drug_pathifier = load2("/home/mschu/Work/speed2/analyses/drug_assocs/assocs_mapped/pathifier.RData")
-drug_pathifier$assocs.pan %>%
-    transmute(Drug=Ys, Pathway=score, Size=size, Effect=estimate, `P-value`=p.value, FDR=adj.p) %>%
-    tab("Pathifier (pan-cancer)")
-
-drug_paradigm = load2("/home/mschu/Work/speed2/analyses/drug_assocs/assocs_mapped/paradigm.RData")
-drug_paradigm$assocs.pan %>%
-    transmute(Drug=Ys, Pathway=score, Size=size, Effect=estimate, `P-value`=p.value, FDR=adj.p) %>%
-    tab("PARADIGM (pan-cancer)")
-
-drug_speed = load2("/home/mschu/Work/speed2/analyses/drug_assocs/assocs_mapped/speed_matrix.RData")
-drug_speed$assocs.pan %>%
-    transmute(Drug=Ys, Pathway=score, Size=size, Effect=estimate, `P-value`=p.value, FDR=adj.p) %>%
-    tab("Perturbation-response genes (pan-cancer)")
+do = function(fid, caption="", ...) {
+    file.path("/home/mschu/Work/speed2/analyses/drug_assocs/assocs_mapped/", paste0(fid, ".RData")) %>%
+        load2("assocs.pan") %>%
+        transmute(Drug=Ys, Pathway=score, Size=size, Effect=estimate, `P-value`=p.value, FDR=adj.p) %>%
+        tab(caption=paste(caption, "(pan-cancer)"), ...)
+}
+do("gsea_go", "Gene Ontology")
+do("gsea_reactome", "Reactome")
+do("spia", "SPIA")
+do("pathifier", "Pathifier")
+do("paradigm", "PARADIGM")
+do("speed_matrix", "Perturbation-response genes")
 @
 }
 
@@ -86,39 +70,61 @@ drug_speed$assocs.pan %>%
 
 \tiny{
 <<echo=FALSE>>=
-drug_go$assocs.tissue %>%
-    filter(Ysub == "noexp") %>%
-    transmute(Drug=Yf, Pathway=score, Tissue=subset, Size=size, Effect=estimate, `P-value`=p.value, FDR=adj.p) %>%
-    tab("Gene Ontology (tissue-specific)")
-
-drug_reactome$assocs.tissue %>%
-    filter(Ysub == "noexp") %>%
-    transmute(Drug=Yf, Pathway=score, Tissue=subset, Size=size, Effect=estimate, `P-value`=p.value, FDR=adj.p) %>%
-    tab("Reactome (tissue-specific)")
-
-drug_spia$assocs.tissue %>%
-    filter(Ysub == "noexp") %>%
-    transmute(Drug=Yf, Pathway=score, Tissue=subset, Size=size, Effect=estimate, `P-value`=p.value, FDR=adj.p) %>%
-    tab("SPIA (tissue-specific)")
-
-drug_pathifier$assocs.tissue %>%
-    filter(Ysub == "noexp") %>%
-    transmute(Drug=Yf, Pathway=score, Tissue=subset, Size=size, Effect=estimate, `P-value`=p.value, FDR=adj.p) %>%
-    tab("Pathifier (tissue-specific)")
-
-drug_paradigm$assocs.tissue %>%
-    filter(Ysub == "noexp") %>%
-    transmute(Drug=Yf, Pathway=score, Tissue=subset, Size=size, Effect=estimate, `P-value`=p.value, FDR=adj.p) %>%
-    tab("PARADIGM (tissue-specific)")
-
-drug_speed$assocs.tissue %>%
-    filter(Ysub == "noexp") %>%
-    transmute(Drug=Yf, Pathway=score, Tissue=subset, Size=size, Effect=estimate, `P-value`=p.value, FDR=adj.p) %>%
-    tab("Perturbation-response genes (tissue-specific)")
+do = function(fid, caption="", ...) {
+    file.path("/home/mschu/Work/speed2/analyses/drug_assocs/assocs_mapped/", paste0(fid, ".RData")) %>%
+        load2("assocs.tissue") %>%
+        transmute(Drug=Yf, Pathway=score, Tissue=subset, Size=size, Effect=estimate, `P-value`=p.value, FDR=adj.p) %>%
+        tab(caption=paste(caption, "(tissue-specific)"), ...)
+}
+do("gsea_go", "Gene Ontology")
+do("gsea_reactome", "Reactome")
+do("spia", "SPIA")
+do("pathifier", "Pathifier")
+do("paradigm", "PARADIGM")
+do("speed_matrix", "Perturbation-response genes")
 @
 }
 
 \subsection{Pathway scores and survival}
+
+\subsubsection{Pan-cancer}
+
+\tiny{
+<<echo=FALSE>>=
+do = function(fid, caption="", ...) {
+    file.path("/home/mschu/Work/speed2/analyses/tcga_survival/assocs_cont_mapped/", paste0(fid, ".RData")) %>%
+        load2("pan_cov") %>%
+        transmute(Pathway=scores, Size=size, Effect=estimate, `Log-likelihood`=statistic, `P-value`=p.value, FDR=adj.p) %>%
+        tab(caption=paste(caption, "(pan-cancer)"), ...)
+}
+do("gsea_go", "Gene Ontology")
+do("gsea_reactome", "Reactome")
+do("spia", "SPIA")
+do("pathifier", "Pathifier")
+do("paradigm", "PARADIGM")
+do("speed_matrix", "Perturbation-response genes")
+@
+}
+
+\subsubsection{Tissue specific}
+
+\tiny{
+<<echo=FALSE>>=
+do = function(fid, caption="", ...) {
+    file.path("/home/mschu/Work/speed2/analyses/tcga_survival/assocs_cont_mapped/", paste0(fid, ".RData")) %>%
+        load2("tissue") %>%
+        transmute(Tissue=subset, Pathway=scores, Size=size, Effect=estimate, `Log-likelihood`=statistic, `P-value`=p.value, FDR=adj.p) %>%
+        tab(caption=paste(caption, "(tissue-specific)"), ...)
+}
+do("gsea_go", "Gene Ontology")
+do("gsea_reactome", "Reactome")
+do("spia", "SPIA")
+do("pathifier", "Pathifier")
+do("paradigm", "PARADIGM")
+do("speed_matrix", "Perturbation-response genes")
+@
+}
+
 
 \section{Associations for chapter 5}
 
