@@ -1,0 +1,128 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+\usepackage[font=small,labelfont=bf]{caption}
+
+\newcommand*\name[1]{#1}                                                                                                                                                                                                                       
+\newcommand*\abbrv[1]{#1}                                                                                                                                                                                                                      
+\newcommand*\rpkg[1]{\textit{#1}}                                                                                                                                                                                                              
+\newcommand*\file[1]{\textit{#1}}                                                                                                                                                                                                              
+\newcommand{\code}[1]{\texttt{#1}}                                                                                                                                                                                                             
+                                                                                                                                                                                                                                               
+\newcommand*\protein[1]{#1}                                                                                                                                                                                                                    
+\newcommand*\gene[1]{\textit{#1}}                                                                                                                                                                                                              
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language british
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Abstract
+The explanation of phenotypes in cancer, such as cell line drug response
+ or patient survival, has largely been focussed on genomic alterations (SNPs,
+ CNVs, and structural variations).
+ While this approach has generated many profound insights into cancer biology,
+ it does not directly make statements about the signaling impact those cellular
+ aberrations create.
+ With direct measurements much less widely available than gene expression,
+ pathway methods (mostly mapping gene expression onto signalling proteins)
+ have so far fallen short on delivering actionable evidence.
+ This can be due in part to lack of robustness, however, these approaches
+ are fundamentally at odds with the notion of tight post-translational control
+ of signal transduction.
+\end_layout
+
+\begin_layout Abstract
+As a baseline (chapter 2), I investigated how well pathway methods compare
+ to driver mutations in terms of explaining cell line drug response.
+ I went on to analyse the value of mRNA as a downstream signature of signaling
+ activity instead of mapping it to the pathway components by means of the
+ previously published SPEED platform.
+ With minor necessary modifications, this improved over mapping pathway
+ members using Gene Ontology or Reactome, but it considered only sets of
+ up-regulated genes defined by multiple arbitrary cutoffs.
+ Hence, I created a new platform based on a linear model of pathway-responsive
+ genes (chapter 3) and found that it compares favourably to gene set as
+ well as state of the art pathway methods in terms of recovering driver
+ mutations, cell line drug response, and patient survival (chapter 4).
+\end_layout
+
+\begin_layout Abstract
+Finally, I investigate how gene expression signatures of drugs can be used
+ in conjunction with viability data to suggest effective treatment combinations
+ (chapter 5).
+\end_layout
+
+\begin_layout Abstract
+To the best of my knowledge, this thesis represents the first comprehensive
+ analysis of different pathway methods across primary cohorts and cancer
+ cell lines, as well as the first large-scale systematic analysis of drug
+ sensitisation that could lead to new drug combinations.
+\end_layout
+
+\end_body
+\end_document
