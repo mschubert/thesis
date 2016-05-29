@@ -757,29 +757,8 @@ describe OLS?
 
 \end_layout
 
-\begin_layout Subsection
-Volcano Plots
-\end_layout
-
 \begin_layout Section
 Cell Line Drug Response
-\end_layout
-
-\begin_layout Itemize
-basically, better versions of the volcano plots that are already there
-\end_layout
-
-\begin_layout Itemize
-add table of top hits
-\end_layout
-
-\begin_layout Itemize
-list them in text, implying the ridiculousness
-\end_layout
-
-\begin_layout Itemize
-probably see where pathways that should be causing this are (=the ones we
- use in speed2 anyway)
 \end_layout
 
 \begin_layout Subsection
@@ -793,6 +772,11 @@ ca.
 
 \begin_layout Subsection
 Associations using Gene Ontology
+\end_layout
+
+\begin_layout Itemize
+probably see where pathways that should be causing this are (=the ones we
+ use in speed2 anyway)
 \end_layout
 
 \begin_layout Standard

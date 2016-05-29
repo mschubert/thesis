@@ -535,6 +535,25 @@ Pathway scores for other methods
 \end_layout
 
 \begin_layout Standard
+I computed the pathway scores for perturbation-response genes as well as
+ all other method using the subset of tissues in the TCGA gene expression
+ data that had 30 or more normals in the same tissue (TCGA identifier ***)
+ to compare.
+ This is to make full use of the advanced pathway methods (figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Comparison-to-state"
+
+\end_inset
+
+).
+ For the cell lines in the GDSC, we do not have tissue-matched normals,
+ so this is not possible and I calculate the scores for the cell lines alone
+ or comparing one cell line to the rest of the tissue if the method requires
+ it (SPIA and Pathifier).
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
@@ -677,6 +696,17 @@ name "fig:basal-comparison-methods"
 \end_layout
 
 \begin_layout Standard
+For the gene set methods (figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:basal-comparison-methods"
+
+\end_inset
+
+), the correlation of pathway scores they provide is 
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
@@ -706,6 +736,13 @@ status open
 
 \begin_layout Plain Layout
 Signaling Pathway Impact Analysis (SPIA)
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:cor-SPIA"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -742,6 +779,13 @@ status open
 
 \begin_layout Plain Layout
 Pathifier
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:cor:Pathifier"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -778,6 +822,13 @@ status open
 
 \begin_layout Plain Layout
 PARADIGM
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:cor:PARADIGM"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -802,7 +853,9 @@ reference "fig:basal-comparison-methods"
 \end_inset
 
 
-\end_layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Comparison-to-state"
 
 \end_inset
 
@@ -812,6 +865,57 @@ reference "fig:basal-comparison-methods"
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In comparison to the the pathway-responsive genes (figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Correlation-speed"
+
+\end_inset
+
+) and the gene set methods (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:basal-comparison-methods"
+
+\end_inset
+
+), SPIA and Pathifier had more data available to compute their scores for
+ the TCGA cohorts because they made use of the tissue-matched normals.
+ This has a minor impact on the correlation between pathway scores obtained
+ by SPIA (both show a high correlation between MAPK, NFkB, and Trail, as
+ shown in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:cor-SPIA"
+
+\end_inset
+
+), but a major impact on the ones obtained by Pathifier (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:cor:Pathifier"
+
+\end_inset
+
+): here, supplying normals cause all the pathway scores to be highly correlated,
+ while there is almost no correlation to be observed for the cell lines.
+ For PARADIGM (figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:cor:PARADIGM"
+
+\end_inset
+
+), there is almost no correlation between the nodes in the inference graph
+ that correspond to pathway activity.
 \end_layout
 
 \begin_layout Section
