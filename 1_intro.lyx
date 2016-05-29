@@ -539,26 +539,29 @@ Development of resistance
 \end_layout
 
 \begin_layout Standard
+Unfortunately, targeted therapies often can not kill all cells before they
+ acquire a resistance mechanism to the treatment, or a sub-population of
+ cells were resistant to begin with and then outgrow their competitors.
+ This is one of the reasons why targeting mutations in driver genes is a
+ good start, but needs to be augmented with knowledge of the dynamic changes
+ it induces in the cellular signaling network.
+\end_layout
+
+\begin_layout Standard
 Let us revisit one of the most well-known examples in targeted therapies,
- the inhibitor Plexicon (PLX4720) specifically targeted to 
+ the inhibitor Plexicon (PLX4720; later marketed with the name Vemurafenib)
+ specifically targeted to 
 \begin_inset Formula $BRAF^{V600E}$
 \end_inset
 
  mutants.
- In a seminal paper, *** 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-latin{et al.}
-\end_layout
+ In a seminal paper, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Chapman2011-jl"
 
 \end_inset
 
-.
  showed that this example of targeted therapy works with the intended effect
  in such that it kills cancer cells to an extent that makes multiple from
  the outside clearly visible tumours completely disappear for months, which
@@ -614,6 +617,11 @@ Overcoming resistance
 \end_layout
 
 \begin_layout Standard
+evol bottlenecks: ***
+\end_layout
+
+\begin_layout Standard
+meki+brafi combo: 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Long2014-uy"
@@ -714,13 +722,28 @@ One of the easiest model systems that provide a reasonable accurate mirror
 
 \begin_layout Standard
 Today, there is a multitude of cell lines available from commercial suppliers.
- The maybe best-known example is that of the HeLa cell line that was derived
- from a patient of cervical cancer in 1973, named Henrietta Lacks.
+ The maybe best-known example is that of the HeLa cell line 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Gey1952-qc"
+
+\end_inset
+
+ that was derived from a patient of cervical cancer in 1951, named Henrietta
+ Lacks.
  This cell line, however, with how long it has been kept in culture as well
  as its high mutation rate have produced a genotype that no longer resembles
  primary cancer samples in many ways.
  One property is that a normal human cell has two copies of the genome (the
- two alleles), whereas HeLa cells have four copies.
+ two alleles), whereas HeLa cells have four copies, but the HeLa genome
+ revealed more extensive aberrations 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Landry2013-sk"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -2834,12 +2857,50 @@ key "Hanahan2000-is,Hanahan2011-he"
 \end_layout
 
 \begin_layout Standard
-Unfortunately, targeted therapies often can not kill all cells before they
- acquire a resistance mechanism to the treatment, or a sub-population of
- cells were resistant to begin with and then outgrow their competitors.
- This is one of the reasons why targeting mutations in driver genes is a
- good start, but needs to be augmented with knowledge of the dynamic changes
- it induces in the cellular signaling network.
+One of the major challenges is how to use the available molecular data in
+ an efficient and reproducible manner.
+ While this is relatively straightforward for mutational data (mostly used
+ as binary features), it gets much for challenging for higher content readouts
+ like gene expression or DNA methylation.
+ Specifically, expression-derived biomarkers that were able to separate
+ distinct populations in a given conditions have often failed to replicate
+ their function once the conditions are altered.
+ As DNA methylation is dynamic, it will likely offer the same challenges.
+ There is still a tremendous amount of information that should be used to
+ decide on the optimal treatment, but most approaches have fallen short
+ of that promise.
+\end_layout
+
+\begin_layout Standard
+One way genes expression has shown promise is using global clustering to
+ identify subtypes of the disease, and associating those with different
+ drug response or survival outcome.
+ We believe that stratifying patients in a reproducible manner should involve
+ both the overall clustering of the data as well as more specific, functionally
+ relevant readouts.
+ An example of those functional readouts is the expression level of pre-defined
+ pathway sets - mostly using the GSEA scores - that has been reported in
+ numerous publications, but also more sophisticated methods that attempt
+ to quantify the signal flow, such as SPIA (Tarca et al.
+ 2008), PARADIGM (Vaske et al.
+ 2010), or Pathifier (Drier et al.
+ 2013).
+\end_layout
+
+\begin_layout Standard
+These methods, however, stand at odds with the notion that signalling in
+ animal - and thus human - cells is tightly post-translationally regulated,
+ since they are based on the mRNA expression of the signalling proteins,
+ in one way or another.
+ To date, it is largely unexplored how much those pathway-expression-based
+ methods are able to make statements about the signal transmission in a
+ protein network.
+ We propose a different strategy: use a large body of publicly available
+ perturbation experiments to quantify gene expression responses to a specified
+ set of stimuli, and then use those genes to infer the upstream signal required
+ to change their expression.
+ This is one way by which - only using gene expression data - we can indirectly
+ observe activity instead of just mRNA expression.
 \end_layout
 
 \begin_layout Standard

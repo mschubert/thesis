@@ -82,7 +82,7 @@
 \begin_body
 
 \begin_layout Part
-A Baseline for Gene Set methods using Drug Response
+A baseline for gene set methods using drug response
 \end_layout
 
 \begin_layout Standard
@@ -261,50 +261,6 @@ makes sense
  inclined to overlook a category that we don't want to see, e.g.
  because the involved process is already known in literature and we could
  not publish our new findings in a high-impact journal.
-\end_layout
-
-\begin_layout Standard
-I will use this chapter to provide a baseline of using Gene Set Enrichment
- Analysis in order to figure out which processes are involved in: (1) making
- cancer cell lines sensitive or resistant to different drugs in the GDSC
- panel 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Garnett2012-dk,Iorio2016-gh"
-
-\end_inset
-
-, (2) causing improved or diminished survival in cancer patients in the
- TCGA cohorts 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "The_Cancer_Genome_Atlas_Research_Network2013-bi"
-
-\end_inset
-
-, and (3) which two drugs are likely to act synergistically when treating
- cancer cell lines.
- I will not filter the gene sets I use, and well represented signalling
- pathways are among the top hits for (1) - where signalling pathways are
- known to play a pivotal role for targeted therapies 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Garnett2012-dk,Iorio2016-gh,Yap2012-mi"
-
-\end_inset
-
- and (2) - where signalling pathways are at the core of disease development
- and progression 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Hanahan2000-is,Hanahan2011-he,Hanahan2012-im"
-
-\end_inset
-
-.
- For (3), I will see how well cancer drugs are represented in the hits obtained,
- as the combinatorial targeting of multiple cancer-related signalling pathways
- has been shown to ***.
 \end_layout
 
 \begin_layout Section
@@ -649,305 +605,6 @@ I used those transformed scores in subsequent linear (ANOVA-like) associations
 \end_layout
 
 \begin_layout Subsection
-Patient data from the TCGA
-\end_layout
-
-\begin_layout Standard
-I used the Firehose tool
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "http://gdac.broadinstitute.org/"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
- from the BROAD institute to download data labelled level 3 RNA-seq v2 (files
- names including 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-file{RSEM
-\backslash
-_genes
-\backslash
-_
-\backslash
-_data.Level
-\backslash
-_3}
-\end_layout
-
-\end_inset
-
-, unpacked them, selected all files contained in the archive that contained
- the name 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-file{rnaseqv2}
-\end_layout
-
-\end_inset
-
-) for all cancer types for which it was available.
- I extracted the raw counts from each of the text files for each gene.
- I then performed a voom transformation (R package 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-rpkg{limma}
-\end_layout
-
-\end_inset
-
- 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Smyth2005-mw"
-
-\end_inset
-
-) for each TCGA study separately.
- The result of this transformation are expression values that I can use
- linear modelling techniques on, unlike the raw RNA-seq read counts.
- With the resulting expression matrix, I selected only genes that had an
- HGNC symbol associated with them.
- I used the function 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-code{avereps}
-\end_layout
-
-\end_inset
-
-(R package 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-rpkg{limma}
-\end_layout
-
-\end_inset
-
-) to average rows that had the same gene symbol.
- This resulted in one expression matrix per TCGA tissue, for a total of
- 34 tissues including 9179 tumour and 661 matched normal samples.
-\end_layout
-
-\begin_layout Standard
-Also using the 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-name{Firehose}
-\end_layout
-
-\end_inset
-
- tool, I downloaded clinical data (file names including 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-file{Merge
-\backslash
-_Clinical.Level
-\backslash
-_1}
-\end_layout
-
-\end_inset
-
-, unpack them, select all 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-file{clin.merged.txt}
-\end_layout
-
-\end_inset
-
- files) for all cancer types for which it was available.
- I extracted the fields for study (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-code{admin.disease
-\backslash
-_code}
-\end_layout
-
-\end_inset
-
-), age of the patient (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-code{age
-\backslash
-_days}
-\end_layout
-
-\end_inset
-
-), their vital status (where a field 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-code{days
-\backslash
-_to
-\backslash
-_death}
-\end_layout
-
-\end_inset
-
- with a missing value indicated that the patient was alive, encoded with
- 0 if the patient is alive and 1 if they are not), days that they survived
- (either 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-code{patient.days
-\backslash
-_to
-\backslash
-_death}
-\end_layout
-
-\end_inset
-
- or if that was not available 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-code{patient.days
-\backslash
-_to
-\backslash
-_last
-\backslash
-_followup}
-\end_layout
-
-\end_inset
-
-), the TCGA patient barcode (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-code{patient.bcr
-\backslash
-_patient
-\backslash
-_barcode}
-\end_layout
-
-\end_inset
-
-), and their sex (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-code{patient.gender}
-\end_layout
-
-\end_inset
-
-).
- I converted the days of survival to months by dividing by 30.4.
- I discarded all patients that had a negative survival time.
- I removed duplicates, and in the case there were multiple records of the
- same patient I took the one recorded latest (the row where the field 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-code{patient.days
-\backslash
-_to
-\backslash
-_birth}
-\end_layout
-
-\end_inset
-
- had the highest number).
-\end_layout
-
-\begin_layout Subsection
 Drug Associations using the Half-Maximum Inhibitory Concentration (IC50)
 \end_layout
 
@@ -1119,10 +776,6 @@ describe OLS?
 \end_inset
 
 
-\end_layout
-
-\begin_layout Subsection
-Cox Proportional Hazard Model for Survival Associations
 \end_layout
 
 \begin_layout Subsection
@@ -1300,31 +953,6 @@ Gene Ontology tissue-specific associations
 \end_inset
 
 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Section
-Pathways and primary Tumours
-\end_layout
-
-\begin_layout Subsection
-Associations using Mutations
-\end_layout
-
-\begin_layout Subsection
-Associations using Gene Ontology
-\end_layout
-
-\begin_layout Subsection
-Associations using Reactome
 \end_layout
 
 \end_inset
@@ -3668,7 +3296,6 @@ T cell receptor
 
  in Head and Neck Squamous Carcinoma (HNSC)? There are no immune cells involved
  in the culturing of HNSC cell lines.
- [add about a q per plot here]
 \end_layout
 
 \begin_layout Standard
@@ -3682,10 +3309,6 @@ We thus have two options: we either need to link seemingly unrelated gene
  The second alternative does not solve this, but leads to a much higher
  probability to catch causative gene sets when we already select candidates
  of exactly this by prior knowledge.
-\end_layout
-
-\begin_layout Subsection
-Mutations and patient survival
 \end_layout
 
 \begin_layout Subsection

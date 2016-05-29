@@ -85,41 +85,106 @@
 Functional Relevance of Pathway Methods in basal Gene Expression
 \end_layout
 
+\begin_layout Section
+Aim
+\end_layout
+
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-this is basically the main speed2 paper
+With sequencing technologies becoming more and more commonplace for cancer
+ diagnosis in both the clinical and preclinical setting, there is a wealth
+ of molecular data available that likely harbours yet undiscovered treatment
+ opportunities.
+ Efforts like the TCGA/ICGC have pioneered this characterization on a large
+ scale, offering the opportunity to derive large amounts of information
+ about individual tumours.
+ This represents a step forward over basing the treatment of an individual
+ on the tissue of tumour origin alone, with mutational screens and sensitivity
+ markers providing a first glimpse of the direction that personalized medicine
+ is going to take.
 \end_layout
 
-\begin_layout Plain Layout
-.
+\begin_layout Standard
+Investigations of cancer drug response and survival are mostly focussed
+ on DNA mutations.
+ This has yielded multiple markers, however, they are rarely put in functional
+ context of the signaling aberrations they create.
+ Because the amount of phosphorylation data available lags behind the one
+ of genomic data, we created a platform which infers signaling activity
+ by identifying publicly available perturbation experiments and the genes
+ responsive to a certain pathway.
 \end_layout
 
-\begin_layout Plain Layout
-split this in:
-\end_layout
-
-\begin_layout Plain Layout
-- tcga mutations
-\end_layout
-
-\begin_layout Plain Layout
-- gdsc drug assocs
-\end_layout
-
-\begin_layout Plain Layout
-- tcga survival
-\end_layout
-
-\begin_layout Plain Layout
-sections
-\end_layout
+\begin_layout Standard
+I will use this chapter to provide a baseline of using Gene Set Enrichment
+ Analysis in order to figure out which processes are involved in: (1) making
+ cancer cell lines sensitive or resistant to different drugs in the GDSC
+ panel 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Garnett2012-dk,Iorio2016-gh"
 
 \end_inset
 
+, and (2) causing improved or diminished survival in cancer patients in
+ the TCGA cohorts 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "The_Cancer_Genome_Atlas_Research_Network2013-bi"
 
+\end_inset
+
+.
+ I will not filter the gene sets I use, and well represented signalling
+ pathways are among the top hits for (1) - where signalling pathways are
+ known to play a pivotal role for targeted therapies 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Garnett2012-dk,Iorio2016-gh,Yap2012-mi"
+
+\end_inset
+
+ and (2) - where signalling pathways are at the core of disease development
+ and progression 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Hanahan2000-is,Hanahan2011-he,Hanahan2012-im"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+To my knowledge, such an approach has only been taken by 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Parikh2010-uj"
+
+\end_inset
+
+, where the authors did not focus on cancer, and 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Bild2005-tk,Gatza2010-fq,Gatza2014-as"
+
+\end_inset
+
+ that derived their signatures using a single cell line and perturbation
+ agent concentration only.
+\end_layout
+
+\begin_layout Standard
+Taking our method and previously published approaches, we investigated how
+ the different pathway scores, derived from mRNA expression, relate to or
+ are able to explain drug sensitivity in cancer cell lines and survival
+ in primary tumors using the Genomics of Drug Sensitivity in Cancer (GDSC)
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Garnett2012-dk,Iorio2016-gh"
+
+\end_inset
+
+ and TCGA data, respectively.
 \end_layout
 
 \begin_layout Section
@@ -758,249 +823,15 @@ correlation matrices from S1?
 \end_layout
 
 \begin_layout Section
-Paragraphs discarded from the main paper
+Driver mutations in primary tumours
 \end_layout
 
-\begin_layout Standard
-, we found that our signatures are indeed able to recover the pathway originally
- perturbed, even though the experiments used in the model comprised a wide
- range of different experimental conditions (linear model of current pathway
- vs.
- others, result shown in figure 1d).
- This overall trend is confirmed by the pathway scores for each perturbation
- experiment vs.
- the others, as shown in figure S0.
- We also detected significant associations (linear model, p<10-8) between
- MAPK and PI3K activation and EGFR stimulation, and TNFa-responsive genes
- upon NFkB activation.
-\end_layout
-
-\begin_layout Standard
-We detected the following overlaps between a perturbed pathway and a significant
- induction of genes expressed responsive to another pathway: EGFR stimulations
- triggered a strong expression of MAPK-responsive genes and a weaker expression
- of PI3K-responsive genes.
- Conversely, MAPK perturbation also showed a strong effect on EGFR-responsive
- genes.
- These are expected given that MAPK and PI3K are downstream of EGFR [ref-even
- if basic].
- We found the same structure of hierarchical pathway 
-\end_layout
-
-\begin_layout Standard
-Difference between Signalling Footprints and pathway expression
-\end_layout
-
-\begin_layout Standard
-We were interested in how our perturbation-responsive genes that represent
- a footprint of signalling activity present in a given context are related
- to induction of pathway expression (for an overview of how the different
- pathway methods are related, see figure 1a).
-\end_layout
-
-\begin_layout Standard
-We find that the following pathways change in expression upon stimulation
- of the same pathway: NFkB (TNFa), JAK-STAT and Hypoxia show a strong associatio
-n between the pathway being perturbed and increased expression of members
- of the same pathway, representing feedback loops.
- In contrast, both EGFR and MAPK perturbations cause expression of p53 pathway
- members, which can be explained by MAPK/EGFR activating cell-cycle-promoting
- genes and p53 inhibiting them (GO categories connected to the respective
- pathways, figure SXX2b).
- MAPK activation also causes expression of the TGFb pathway.
-\end_layout
-
-\begin_layout Standard
-.
-\end_layout
-
-\begin_layout Standard
-The functional context in terms of cancer hallmarks that mutations create
- are similar despite obvious differences in the exact mode, as exemplified
- by the long tail of different variants seen in cancer genomes.
- 
-\end_layout
-
-\begin_layout Standard
-For cancer diagnosis in both the clinical and preclinical setting, efforts
- like The Cancer Genome Atlas (The Cancer Genome Atlas Research Network
- et al.
- 2013) or the International Cancer Genome Consortium (ICGC) have pioneered
- this characterization on a large scale, offering the opportunity to derive
- large amounts of information about individual tumours and in turn likely
- harbours yet undiscovered treatment opportunities.
- While the recent focus on linking outcomes with mutations represents a
- step forward over basing treatment of an individual on the tissue of tumour
- origin alone, putting mutations in a functional context with the signalling
- aberrations that they create may provide additional insight in mechanisms
- of pathogenesis and treatment opportunities.
- 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Author
-Michael Schubert, Martina Klünemann, Nils Blüthgen, Julio Saez Rodriguez
- 
-\end_layout
-
-\begin_layout Abstract
-Investigations of cancer drug response and survival are mostly focussed
- on DNA mutations.
- This has yielded multiple markers, however, they are rarely put in functional
- context of the signaling aberrations they create.
- Because the amount of phosphorylation data available lags behind the one
- of genomic data, we created a platform which infers signaling activity
- by identifying publicly available perturbation experiments and the genes
- responsive to a certain pathway.
-\end_layout
-
-\begin_layout Abstract
-We compared how Gene Ontology, pathway expression, and signaling footprints
- performed for predicting cell line drug response and patient survival,
- and found that the latter outperformed the other two on both accounts.
- Using both our method and pathway expression mapping, we are beginning
- to understand how signaling activity and pathway expression are interlinked
- in both cell lines and tumours.
-\end_layout
-
-\begin_layout Abstract
-Taken together, our results suggest that mutation-based biomarkers should
- be augmented by consensus gene expression signatures in order to improve
- preclinical and clinical performance.
-\end_layout
-
-\end_inset
-
-
+\begin_layout Itemize
+mutation stuff with the tcga
 \end_layout
 
 \begin_layout Section
-Introduction
-\end_layout
-
-\begin_layout Standard
-With sequencing technologies becoming more and more commonplace for cancer
- diagnosis in both the clinical and preclinical setting, there is a wealth
- of molecular data available that likely harbours yet undiscovered treatment
- opportunities.
- Efforts like the TCGA/ICGC have pioneered this characterization on a large
- scale, offering the opportunity to derive large amounts of information
- about individual tumours.
- This represents a step forward over basing the treatment of an individual
- on the tissue of tumour origin alone, with mutational screens and sensitivity
- markers providing a first glimpse of the direction that personalized medicine
- is going to take.
-\end_layout
-
-\begin_layout Standard
-One of the major challenges is how to use the available molecular data in
- an efficient and reproducible manner.
- While this is relatively straightforward for mutational data (mostly used
- as binary features), it gets much for challenging for higher content readouts
- like gene expression or DNA methylation.
- Specifically, expression-derived biomarkers that were able to separate
- distinct populations in a given conditions have often failed to replicate
- their function once the conditions are altered.
- As DNA methylation is dynamic, it will likely offer the same challenges.
- There is still a tremendous amount of information that should be used to
- decide on the optimal treatment, but most approaches have fallen short
- of that promise.
-\end_layout
-
-\begin_layout Standard
-One way genes expression has shown promise is using global clustering to
- identify subtypes of the disease, and associating those with different
- drug response or survival outcome.
- We believe that stratifying patients in a reproducible manner should involve
- both the overall clustering of the data as well as more specific, functionally
- relevant readouts.
- An example of those functional readouts is the expression level of pre-defined
- pathway sets - mostly using the GSEA scores - that has been reported in
- numerous publications, but also more sophisticated methods that attempt
- to quantify the signal flow, such as SPIA (Tarca et al.
- 2008), PARADIGM (Vaske et al.
- 2010), or Pathifier (Drier et al.
- 2013).
-\end_layout
-
-\begin_layout Standard
-These methods, however, stand at odds with the notion that signalling in
- animal - and thus human - cells is tightly post-translationally regulated,
- since they are based on the mRNA expression of the signalling proteins,
- in one way or another.
- To date, it is largely unexplored how much those pathway-expression-based
- methods are able to make statements about the signal transmission in a
- protein network.
- We propose a different strategy: use a large body of publicly available
- perturbation experiments to quantify gene expression responses to a specified
- set of stimuli, and then use those genes to infer the upstream signal required
- to change their expression.
- This is one way by which - only using gene expression data - we can indirectly
- observe activity instead of just mRNA expression.
- To our knowledge, such an approach has only been taken by
-\begin_inset Note Comment
-status open
-
-\begin_layout Plain Layout
-include Bild2006 here with transfection of oncogenes
-\end_layout
-
-\end_inset
-
- (Parikh et al.
- 2010), where the authors did not focus on cancer, and (Gatza et al.
- 2010; Gatza et al.
- 2014; Bild et al.
- 2005) that derived their signatures using a single cell line and perturbation
- agent concentration only.
-\end_layout
-
-\begin_layout Standard
-Taking our method and previously published approaches
-\begin_inset Note Comment
-status open
-
-\begin_layout Plain Layout
-Julio: one likely question is how this relates/would perform in the context
- of the NCI-DREAM challenge (Costello et al Nat Biot 2014).
- Specially since best performers used PARADIGM.
- I am not saying we have to do this before submissions, but is possibly
- coming
-\end_layout
-
-\end_inset
-
-, we investigated how the different pathway scores, derived from mRNA expression
-, relate to or are able to explain drug sensitivity in cancer cell lines
- and survival in primary tumors using the Genomics of Drug Sensitivity in
- Cancer (GDSC) (Garnett et al.
- 2012) and TCGA (The Cancer Genome Atlas Research Network et al.
- 2013) data, respectively.
-\end_layout
-
-\begin_layout Section
-Methods
-\end_layout
-
-\begin_layout Subsection
-Co-clustering of tumours and cell lines
-\end_layout
-
-\begin_layout Standard
-Using the batch-corrected gene expression data that merged tumor and cell
- line expression as described with the Pathifier and SPIA scores, we also
- performed non-negative matrix factorization (NMF) clustering using multiplicati
-ve updating derived from libNMF (Janecek et al.
- 2011) for cluster numbers (k) between 2 and 10, with 00 repetitions using
- different initial conditions each.
- With those, we computed the cophenetic coefficient for each k, and chose
- the local maxima as more suitable numbers for cluster analysis.
- As the clustering was performed on data merged together between cell lines
- and tumours, we can try and infer drug responses from clinically derived
- subtypes.
+Cell line drug response using the GDSC
 \end_layout
 
 \begin_layout Subsection
@@ -1052,191 +883,6 @@ We also selected two of our strongest associations to investigate whether
  B-Raf) with a discretized pathway score (upper and lower quartile vs.
  the rest), as well as the combination between the upper quartile of tissue-spec
 ific pathway scores and presence of a MAPK mutation.
-\end_layout
-
-\begin_layout Subsection
-Survival associations using TCGA data
-\end_layout
-
-\begin_layout Standard
-Starting from the pathway scores derived with GO/Reactome GSEA, SPIA, Pathifier,
- PARADIGM, and our method on the TCGA data as described above, we used Cox
- Proportional Hazard model (R package survival) to calculate survival associatio
-ns for pan-cancer and each tissue-specific cohort.
- For the pan-cancer cohort, we regressed out the effect of the study and
- age of the patient, and fitted the more for each pathway and method used.
- For the tissue-specific cohorts, we regressed out the age of the patients.
- We adjusted the p-values using the FDR method for each method and for each
- method and study separately.
- We selected a significance threshold of 5 and 10% for the pan-cancer and
- cancer-specific associations for which we show a matrix plot and a volcano
- plot of associations, respectively.
-\end_layout
-
-\begin_layout Standard
-For Kaplan-Meier survival curves (cf.
- figure 4c) it only straightforward to plot discrete classes of input and
- not the continuous pathway scores we obtained using the different methods.
- In order to get distinct classes needed for interpretable survival curves,
- we split all obtained pathway scores in upper, the two middle, and lower
- quartile and respectively assigned the classes “up”, “unknown”, and “down”
- to show for the three examples of associations found.
- 
-\end_layout
-
-\begin_layout Section
-Results
-\end_layout
-
-\begin_layout Subsection
-A curated Database of Pathway Perturbation Experiments
-\end_layout
-
-\begin_layout Standard
-Our method is dependent on a sufficiently large number publicly available
- perturbation experiments that activate or inhibit one of the pathways we
- were looking at.
- The following conditions needed to be met in order for us to consider an
- experiment: (1) the compound or factor used for perturbation was one of
- our curated list of pathway-perturbing agents (for a list, see table S0);
- (2) the perturbation lasted for less than 24 hours to capture genes that
- belong to the primary response; (3) there was raw data available for at
- least two control arrays and one perturbed array; (4) it was a single-channel
- array; (5) we could process the arrays using available BioConductor packages;
- (6) the array was not custom-made so we could use standard annotations.
-\end_layout
-
-\begin_layout Subsection
-Consensus Gene Signatures reveal Pathway-Response Transcriptional Modules
-\end_layout
-
-\begin_layout Itemize
-gene signatures are very different, even if they represent the same thing
-\end_layout
-
-\begin_layout Itemize
-averaging we can get sigs that are more valid than individual
-\end_layout
-
-\begin_layout Standard
-We have curated a total of 208 different submissions to ArrayExpress/GEO,
- spanning perturbations of a total of 11 pathways, 580 experiment (a comparison
- between basal and perturbed arrays; if there were multiple time points,
- different cells, different concentrations, or different perturbing agents
- within a single database submission, they were considered as different
- experiments), and 2652 arrays.
- After quality control, there were a total of 555 experiments remaining.
- The full set of perturbing agents, number of experiments, and cells those
- were carried out on is listed in table S0.
- For a workflow schema, see figure 1A, points 1-3.
-\end_layout
-
-\begin_layout Standard
-We obtained z-scores (cf.
- figure 1A/4), for which we performed a multiple linear regression (figure
- 1A/5) with perturbation coefficients as described in figure 1B.
- We could use the resulting matrix (figure 1A/6) to assign pathway scores
- to gene expression data by a simple matrix multiplication.
- When comparing the difference in assigned scores between basal and perturbed
- conditions across all available perturbations, we found that our signatures
- are indeed able to recover the pathway originally perturbed, even though
- the experiments used in the model comprised a wide range of different experimen
-tal conditions (t-test of current pathway vs.
- others, result shown in figure 1C).
-\end_layout
-
-\begin_layout Subsection
-Transcriptional Footprints are different to Pathway Expression
-\end_layout
-
-\begin_layout Itemize
-definition of footprint: expression level of pathway response genes
-\end_layout
-
-\begin_layout Itemize
-should compare mutation assocs in TCGA here
-\end_layout
-
-\begin_layout Itemize
-if we get better mutation assocs than pathway expr, we are sorted for making
- step to basal expression enrichment as well
-\end_layout
-
-\begin_layout Itemize
-rationale for going from perturbed to basal exp
-\end_layout
-
-\begin_layout Itemize
-scores of GDSC, TCGA samples
-\end_layout
-
-\begin_layout Standard
-Next, we were interested in how our perturbation-responsive genes are related
- to induction of pathway expression and other expressed modules associated
- with a known function (represented by GO categories).
-\end_layout
-
-\begin_layout Standard
-For pathway-responsive genes, we found that pathway perturbations are mostly
- connected to their response-target genes (figure 2A), as we would expect
- because this is the effect we are modeling.
- Apart from this primary effect, we would expect for some pathways to activate
- other pathways on a post-translational level and thus also increase the
- signature of target genes of the latter.
- We detected the following overlaps between a perturbed pathway and a significan
-t induction of genes expressed responsive to another pathway: EGFR stimulations
- triggered a strong expression of MAPK-responsive genes and a weaker expression
- of PI3K-responsive genes.
- Conversely, MAPK perturbation also showed a strong effect on EGFR-responsive
- genes.
- These are expected given that MAPK and PI3K are downstream of EGFR.
- We found the same structure of hierarchical pathway activation between
- NFkB stimulation and TNFa-responsive genes, where NFkB also weakly induces
- JAK-STAT responsive genes (all shown in figure 1C).
- Again, this is expected and known in literature.
-\end_layout
-
-\begin_layout Standard
-We also find that the following pathways are changing in expression upon
- stimulation of the same pathway: NFkB (TNFa), JAK-STAT and Hypoxia show
- a strong association between the pathway being perturbed and increased
- expression of members of the same pathway, representing gene-regulatory
- feedback loops.
- In contrast, both EGFR and MAPK perturbations cause expression of p53 pathway
- members, which can be explained by MAPK/EGFR activating cell-cycle-promoting
- genes and p53 inhibiting them (GO categories connected to the respective
- pathways, figure 2B).
- MAPK also causes expression of the TGFb pathway 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Chapnick2011-ub"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-Similarly, activation of NFkB causes expression of the MAPK pathway.
- Hypoxia causes expression of JAK-STAT and TGFb members, but not VEGF
-\begin_inset Note Comment
-status open
-
-\begin_layout Plain Layout
-extend explanation here, use GO associations in 2C
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-Recovering Mechanisms of known Driver Mutations
-\end_layout
-
-\begin_layout Standard
-if we can show
 \end_layout
 
 \begin_layout Subsection
@@ -1387,25 +1033,379 @@ find some associations that are new and follow up on them (+add to figure)
 
 \end_layout
 
+\begin_layout Section
+Patient survival using the TCGA
+\end_layout
+
 \begin_layout Subsection
-Implications for patient survival
+Obtaining patient data from the TCGA
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Comment
+I used the Firehose tool
+\begin_inset Foot
 status open
 
 \begin_layout Plain Layout
-missing
-\end_layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://gdac.broadinstitute.org/"
 
 \end_inset
 
 
 \end_layout
 
+\end_inset
+
+ from the BROAD institute to download data labelled level 3 RNA-seq v2 (files
+ names including 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+file{RSEM
+\backslash
+_genes
+\backslash
+_
+\backslash
+_data.Level
+\backslash
+_3}
+\end_layout
+
+\end_inset
+
+, unpacked them, selected all files contained in the archive that contained
+ the name 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+file{rnaseqv2}
+\end_layout
+
+\end_inset
+
+) for all cancer types for which it was available.
+ I extracted the raw counts from each of the text files for each gene.
+ I then performed a voom transformation (R package 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+rpkg{limma}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Smyth2005-mw"
+
+\end_inset
+
+) for each TCGA study separately.
+ The result of this transformation are expression values that I can use
+ linear modelling techniques on, unlike the raw RNA-seq read counts.
+ With the resulting expression matrix, I selected only genes that had an
+ HGNC symbol associated with them.
+ I used the function 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+code{avereps}
+\end_layout
+
+\end_inset
+
+(R package 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+rpkg{limma}
+\end_layout
+
+\end_inset
+
+) to average rows that had the same gene symbol.
+ This resulted in one expression matrix per TCGA tissue, for a total of
+ 34 tissues including 9179 tumour and 661 matched normal samples.
+\end_layout
+
+\begin_layout Standard
+Also using the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+name{Firehose}
+\end_layout
+
+\end_inset
+
+ tool, I downloaded clinical data (file names including 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+file{Merge
+\backslash
+_Clinical.Level
+\backslash
+_1}
+\end_layout
+
+\end_inset
+
+, unpack them, select all 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+file{clin.merged.txt}
+\end_layout
+
+\end_inset
+
+ files) for all cancer types for which it was available.
+ I extracted the fields for study (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+code{admin.disease
+\backslash
+_code}
+\end_layout
+
+\end_inset
+
+), age of the patient (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+code{age
+\backslash
+_days}
+\end_layout
+
+\end_inset
+
+), their vital status (where a field 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+code{days
+\backslash
+_to
+\backslash
+_death}
+\end_layout
+
+\end_inset
+
+ with a missing value indicated that the patient was alive, encoded with
+ 0 if the patient is alive and 1 if they are not), days that they survived
+ (either 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+code{patient.days
+\backslash
+_to
+\backslash
+_death}
+\end_layout
+
+\end_inset
+
+ or if that was not available 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+code{patient.days
+\backslash
+_to
+\backslash
+_last
+\backslash
+_followup}
+\end_layout
+
+\end_inset
+
+), the TCGA patient barcode (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+code{patient.bcr
+\backslash
+_patient
+\backslash
+_barcode}
+\end_layout
+
+\end_inset
+
+), and their sex (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+code{patient.gender}
+\end_layout
+
+\end_inset
+
+).
+ I converted the days of survival to months by dividing by 30.4.
+ I discarded all patients that had a negative survival time.
+ I removed duplicates, and in the case there were multiple records of the
+ same patient I took the one recorded latest (the row where the field 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+code{patient.days
+\backslash
+_to
+\backslash
+_birth}
+\end_layout
+
+\end_inset
+
+ had the highest number).
+\end_layout
+
+\begin_layout Subsection
+Survival associations using the Cox Proportional Hazard model
+\end_layout
+
+\begin_layout Standard
+Starting from the pathway scores derived with GO/Reactome GSEA, SPIA, Pathifier,
+ PARADIGM, and our method on the TCGA data as described above, we used Cox
+ Proportional Hazard model (R package survival) to calculate survival associatio
+ns for pan-cancer and each tissue-specific cohort.
+ For the pan-cancer cohort, we regressed out the effect of the study and
+ age of the patient, and fitted the more for each pathway and method used.
+ For the tissue-specific cohorts, we regressed out the age of the patients.
+ We adjusted the p-values using the FDR method for each method and for each
+ method and study separately.
+ We selected a significance threshold of 5 and 10% for the pan-cancer and
+ cancer-specific associations for which we show a matrix plot and a volcano
+ plot of associations, respectively.
+\end_layout
+
+\begin_layout Standard
+For Kaplan-Meier survival curves (cf.
+ figure 4c) it only straightforward to plot discrete classes of input and
+ not the continuous pathway scores we obtained using the different methods.
+ In order to get distinct classes needed for interpretable survival curves,
+ we split all obtained pathway scores in upper, the two middle, and lower
+ quartile and respectively assigned the classes “up”, “unknown”, and “down”
+ to show for the three examples of associations found.
+ 
+\end_layout
+
 \begin_layout Section
 Discussion
+\end_layout
+
+\begin_layout Standard
+The functional context in terms of cancer hallmarks that mutations create
+ are similar despite obvious differences in the exact mode, as exemplified
+ by the long tail of different variants seen in cancer genomes.
+ 
+\end_layout
+
+\begin_layout Standard
+For cancer diagnosis in both the clinical and preclinical setting, efforts
+ like The Cancer Genome Atlas (The Cancer Genome Atlas Research Network
+ et al.
+ 2013) or the International Cancer Genome Consortium (ICGC) have pioneered
+ this characterization on a large scale, offering the opportunity to derive
+ large amounts of information about individual tumours and in turn likely
+ harbours yet undiscovered treatment opportunities.
+ While the recent focus on linking outcomes with mutations represents a
+ step forward over basing treatment of an individual on the tissue of tumour
+ origin alone, putting mutations in a functional context with the signalling
+ aberrations that they create may provide additional insight in mechanisms
+ of pathogenesis and treatment opportunities.
+ 
+\end_layout
+
+\begin_layout Standard
+I compared how Gene Ontology, pathway expression, and signaling footprints
+ performed for predicting cell line drug response and patient survival,
+ and found that the latter outperformed the other two on both accounts.
+ Using both my method and pathway expression mapping, we are beginning to
+ understand how signaling activity and pathway expression are interlinked
+ in both cell lines and tumours.
+\end_layout
+
+\begin_layout Standard
+Taken together, our results suggest that mutation-based biomarkers should
+ be augmented by consensus gene expression signatures in order to improve
+ preclinical and clinical performance.
 \end_layout
 
 \begin_layout Standard
