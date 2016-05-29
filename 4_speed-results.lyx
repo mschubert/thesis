@@ -443,6 +443,49 @@ ratio=\frac{var(cell\,lines\,|\,bootstraps)}{var(bootstraps\,|\,cell\,lines)}
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/4.2_stability.pdf
+	lyxscale 50
+	width 80col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Variance of pathway scores in different cell lines vs.
+ bootstraps of input experiments for different pathways
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:bootstraps-basal"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 The overview of those relative variances is shown in figure 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -485,49 +528,6 @@ reference "fig:ROC"
 \end_inset
 
 ).
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename figures/4.2_stability.pdf
-	lyxscale 50
-	width 80col%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Variance of pathway scores in different cell lines vs.
- bootstraps of input experiments for different pathways
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:bootstraps-basal"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Subsection
@@ -583,6 +583,13 @@ status open
 
 \begin_layout Plain Layout
 Reactome
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:cor-Reactome"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -619,6 +626,13 @@ status open
 
 \begin_layout Plain Layout
 BioCarta
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:cor-BioCarta"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -655,6 +669,13 @@ status open
 
 \begin_layout Plain Layout
 Gene Ontology
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:cor-Gene-Ontology"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -703,7 +724,36 @@ reference "fig:basal-comparison-methods"
 
 \end_inset
 
-), the correlation of pathway scores they provide is 
+), the amount of correlation between pathway scores they provide is in the
+ same order of the one for pathway-response genes.
+ Reactome (figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:cor-Reactome"
+
+\end_inset
+
+) shows increased correlation between EGFR and MAPK (to a lesser extent
+ PI3K), and between TNFa and NFkB (and to a lesser extent also JAK-STAT
+ and Trail).
+ BioCarta (figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:cor-BioCarta"
+
+\end_inset
+
+) has the latter as well but misses the former.
+ Gene Ontology (figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:cor-Gene-Ontology"
+
+\end_inset
+
+) is very similar to Reactome.
+ For all methods, the correlation between pathways is similar from primary
+ data (TCGA, left panel of figures) to cell lines (GDSC, right panel).
 \end_layout
 
 \begin_layout Standard
