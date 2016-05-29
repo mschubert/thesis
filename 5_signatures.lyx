@@ -85,31 +85,6 @@
 Modelling Drug Interactions
 \end_layout
 
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-this is the easiest way - we don't have to make many assumptions
-\end_layout
-
-\begin_layout Plain Layout
-also, we don't care about pathways
-\end_layout
-
-\begin_layout Plain Layout
-.
-\end_layout
-
-\begin_layout Plain Layout
-split out intro to separate section?
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Section
 Aim
 \end_layout

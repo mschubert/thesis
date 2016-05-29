@@ -2642,7 +2642,7 @@ Reproducible workflows
 \end_layout
 
 \begin_layout Subsubsection
-Version control using Github
+Keeping past versions of scripts
 \end_layout
 
 \begin_layout Standard
@@ -2721,7 +2721,7 @@ key "Dabbish2012-hw"
 \end_layout
 
 \begin_layout Subsubsection
-Workflows with GNU make
+Defining workflows with a single entry point
 \end_layout
 
 \begin_layout Standard
@@ -2788,7 +2788,7 @@ file{Makefile}
 \end_layout
 
 \begin_layout Subsubsection
-Document generation with knitr
+Generating reports directly from the analysis
 \end_layout
 
 \begin_layout Standard

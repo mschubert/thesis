@@ -814,20 +814,21 @@ reference "fig:basal-comparison-methods"
 
 \end_layout
 
-\begin_layout Itemize
-scores of different methods
-\end_layout
-
-\begin_layout Itemize
-correlation matrices from S1?
-\end_layout
-
 \begin_layout Section
 Driver mutations in primary tumours
 \end_layout
 
-\begin_layout Itemize
-mutation stuff with the tcga
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+TODO: add the paper results for the mutation assocs here
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -1341,6 +1342,23 @@ Survival associations using the Cox Proportional Hazard model
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+TODO: add survival methods here
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Association with pathway scores
+\end_layout
+
+\begin_layout Standard
 Starting from the pathway scores derived with GO/Reactome GSEA, SPIA, Pathifier,
  PARADIGM, and our method on the TCGA data as described above, we used Cox
  Proportional Hazard model (R package survival) to calculate survival associatio
@@ -1364,6 +1382,19 @@ For Kaplan-Meier survival curves (cf.
  quartile and respectively assigned the classes “up”, “unknown”, and “down”
  to show for the three examples of associations found.
  
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+TODO: add survival results here
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section

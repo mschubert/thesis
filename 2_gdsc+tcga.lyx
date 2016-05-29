@@ -85,27 +85,6 @@
 A baseline for gene set methods using drug response
 \end_layout
 
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-using the same algorithm (GSEA) SPEED is *a lot* better
-\end_layout
-
-\begin_layout Plain Layout
---> want to explore this further
-\end_layout
-
-\begin_layout Plain Layout
-(also make point about biasing gene sets)
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Section
 Aim
 \end_layout
@@ -1138,24 +1117,7 @@ Correlation plots for GSEA scores per pathway across cell lines for the
 
 \begin_layout Standard
 To counteract this problem, I extracted gene lists for different combinations
- of those four parameters with the SQLite database
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-name "http://speed.sys-bio.net/SPEED_db.zip"
-target "http://speed.sys-bio.net/SPEED_db.zip"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
- and Python query tools the authors provided:
+ of those four parameters and Python query tools the authors provided:
 \end_layout
 
 \begin_layout Itemize
@@ -3194,16 +3156,6 @@ reference "fig:RDEA-MAPK"
  response.
  This is slightly lower for the rest of tissues, with 8 tissues showing
  a significant association between the drug and the pathway.
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-compare to a mutation here?
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Subsection
@@ -3268,6 +3220,27 @@ name "fig:tissue-drug-assocs"
 
 \begin_layout Section
 Discussion
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+using the same algorithm (GSEA) SPEED is *a lot* better
+\end_layout
+
+\begin_layout Plain Layout
+--> want to explore this further
+\end_layout
+
+\begin_layout Plain Layout
+(also make point about biasing gene sets)
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection

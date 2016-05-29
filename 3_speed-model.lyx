@@ -4313,7 +4313,7 @@ After processing and quality control, a total of ** experiments and ** arrays
 \end_layout
 
 \begin_layout Subsection
-Building a linear model of z-scores
+A model of significantly modulated genes upon perturbation
 \end_layout
 
 \begin_layout Standard
@@ -4425,16 +4425,6 @@ reference "tab:Significance-of-signature"
 
 ), the separation of those gets larger and I see almost all pathways in
  groups, albeit the ones in the centre are still overlapping.
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-make point about significance here more obvious?
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -5345,6 +5335,13 @@ Comparison to other pathway methods, legend as in figure
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Comparison-to-pathway-perturb"
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Comparison-to-other"
 
 \end_inset
 
@@ -6391,33 +6388,140 @@ Discussion
 Need for an improved database and model
 \end_layout
 
-\begin_layout Itemize
-too much variability for batch correction: each sample would be its own
- batch (lab, platform, cells, etc.)
+\begin_layout Standard
+As I have outlined already in the discussion of chapter 2, the original
+ SPEED implementation suffered from a multitude of arbitrary cutoffs (z-score,
+ overall expression, highest expressed fraction of genes, whether the signature
+ genes are allowed to overlap between pathways), highly correlated gene
+ sets (that could be fixed by optimising those cutoffs), discarding most
+ of its information (not taking into account down-regulated genes in general,
+ modestly but consistently upregulated genes, etc.), and potentially weak
+ input experiments (mostly processed data without any knowledge of how this
+ was done, calculating z-scores for only one control condition, and never
+ thoroughly assessing the quality of the model).
 \end_layout
 
-\begin_layout Itemize
-this doesn't work, we need bias by prior knowledge
+\begin_layout Standard
+Also the results that I obtained in terms of drug associations were significant
+ but not stellar.
+ This, combined with the fact that the original database was curated in
+ 2010 where there were a lot fewer perturbation experiments available, suggests
+ that building a new database could result in a much improved model.
 \end_layout
 
 \begin_layout Subsection
 Value of curated perturbation experiments
 \end_layout
 
-\begin_layout Itemize
-over what was already there
+\begin_layout Standard
+The average entry in the ArrayExpress database comes with a fair level of
+ curation.
+ Newer entries are often linked to ontology terms in the Experimental Factor
+ Ontology 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Malone2010-mz"
+
+\end_inset
+
+ or others.
+ Linking those to pathways, however, is non-trivial because the available
+ information is not accessible via an API.
+ This is only possible using the Gene Expression Atlas 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Parkinson2007-bf,Parkinson2009-ej"
+
+\end_inset
+
+, but it also requires a much higher level of curation than the experiments
+ that are just deposited in the database and hence the number of experiments
+ that made it into Atlas is much smaller.
+ In order to interrogate cellular systems (as those provided by the GDSC
+ and the TCGA in this study), I need a high number of perturbation experiments
+ that are not available in the Atlas yet, hence the need for a focussed
+ curation of those pathways.
 \end_layout
 
-\begin_layout Itemize
-this is the only/largest curation of pathway-level exps
+\begin_layout Standard
+The value of this approach, combined with putting it into a machine readable
+ format that includes metadata (as opposed to the original SPEED database
+ that came either as a collection of un-annotated text files or SQLite database)
+, allows for easy reuse in other projects and extension by adding additional
+ experiments or pathways.
 \end_layout
 
 \begin_layout Subsection
 Importance of distinguishing between pathway expression and activity
 \end_layout
 
-\begin_layout Itemize
-...
+\begin_layout Standard
+Seeing how my model compares to other pathway methods that map mRNA expression
+ to signalling molecules in one way or another underlines the importance
+ of distinguishing between pathway expression and activity and, by extension,
+ that the expression of pathway members should not be used to make inferences
+ about activity.
+ This is irrespective of using the pathway as a simple gene set or a directed
+ graph.
+\end_layout
+
+\begin_layout Standard
+However, pathway expression alone does not tell us much about the involved
+ biology (a more expressed pathway likely only has an impact on the cell
+ if it is more active as well - but this is a jump in reasoning that we
+ can not make for the reasons outlined above) and it is not actionable by
+ itself (because there is no straightforward way to change the expression
+ of a pathway that was found to be associated with e.g.
+ drug response; this only makes sense if we interpret the obtained pathway
+ scores as activity).
+\end_layout
+
+\begin_layout Standard
+It can of course be argued that there of course exists feedback loops where
+ the stimulation of a pathway triggers changes in expression in its components
+ (as I find with JAK-STAT and Hypoxia), either in the same (positive feedback)
+ or the opposite (negative feedback) direction.
+ This way of thinking makes sense only for positive feedback on the same
+ pathway: if it is negative feedback we would see an incorrect decrease
+ of expression or a increase of associated inhibitors (I see this kind of
+ correlation using SPIA and how it incorrectly orders experiments in figure
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:ROC"
+
+\end_inset
+
+), or if it is on another pathway we would assign significance to the expression
+ change of this pathway although this is merely a downstream consequence
+ that did not cause the phenotype we observe at all.
+\end_layout
+
+\begin_layout Standard
+Of course, I can not claim that my model will always find causal aberrations.
+ But I do argue that it is more likely for it to find them compared to other
+ pathway methods, because the way it infers pathway activity from gene expressio
+n is closer to the actual activity by definition.
+ If this is true, I would expect it not only to be able to recover known
+ perturbation experiments better (figures 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Comparison-to-pathway-perturb"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Comparison-to-other"
+
+\end_inset
+
+) but also provide more insight into which pathways driver mutations activate
+ and drug sensitivity due to oncogene addiction.
+ Now that I have a model that I know corresponds to pathway perturbations
+ in a wide range of conditions I can actually put those statements to the
+ test.
 \end_layout
 
 \begin_layout Standard
