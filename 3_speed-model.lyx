@@ -5727,6 +5727,8 @@ EGFR
 
 \begin_layout Plain Layout
 
+\series bold
+0.84
 \end_layout
 
 \end_inset
@@ -5735,7 +5737,7 @@ EGFR
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.38
 \end_layout
 
 \end_inset
@@ -5744,7 +5746,7 @@ EGFR
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.50
 \end_layout
 
 \end_inset
@@ -5753,7 +5755,7 @@ EGFR
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.64
 \end_layout
 
 \end_inset
@@ -5762,7 +5764,7 @@ EGFR
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.50
 \end_layout
 
 \end_inset
@@ -5783,6 +5785,8 @@ Hypoxia
 
 \begin_layout Plain Layout
 
+\series bold
+0.95
 \end_layout
 
 \end_inset
@@ -5791,7 +5795,7 @@ Hypoxia
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.86
 \end_layout
 
 \end_inset
@@ -5800,7 +5804,7 @@ Hypoxia
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.86
 \end_layout
 
 \end_inset
@@ -5809,7 +5813,7 @@ Hypoxia
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+-
 \end_layout
 
 \end_inset
@@ -5818,7 +5822,7 @@ Hypoxia
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.71
 \end_layout
 
 \end_inset
@@ -5839,6 +5843,8 @@ JAK-STAT
 
 \begin_layout Plain Layout
 
+\series bold
+0.80
 \end_layout
 
 \end_inset
@@ -5847,7 +5853,7 @@ JAK-STAT
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.76
 \end_layout
 
 \end_inset
@@ -5856,7 +5862,7 @@ JAK-STAT
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.50
 \end_layout
 
 \end_inset
@@ -5865,7 +5871,7 @@ JAK-STAT
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.43
 \end_layout
 
 \end_inset
@@ -5874,7 +5880,7 @@ JAK-STAT
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.76
 \end_layout
 
 \end_inset
@@ -5895,6 +5901,8 @@ MAPK
 
 \begin_layout Plain Layout
 
+\series bold
+0.83
 \end_layout
 
 \end_inset
@@ -5903,7 +5911,7 @@ MAPK
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.59
 \end_layout
 
 \end_inset
@@ -5912,7 +5920,7 @@ MAPK
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.46
 \end_layout
 
 \end_inset
@@ -5921,7 +5929,7 @@ MAPK
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.29
 \end_layout
 
 \end_inset
@@ -5930,7 +5938,7 @@ MAPK
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.48
 \end_layout
 
 \end_inset
@@ -5950,7 +5958,25 @@ NFkB
 \begin_inset Text
 
 \begin_layout Plain Layout
+0.77
+\end_layout
 
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.56
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.75
 \end_layout
 
 \end_inset
@@ -5960,6 +5986,8 @@ NFkB
 
 \begin_layout Plain Layout
 
+\series bold
+0.79
 \end_layout
 
 \end_inset
@@ -5968,25 +5996,7 @@ NFkB
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
+0.60
 \end_layout
 
 \end_inset
@@ -6007,6 +6017,8 @@ PI3K
 
 \begin_layout Plain Layout
 
+\series bold
+0.81
 \end_layout
 
 \end_inset
@@ -6015,7 +6027,7 @@ PI3K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.26
 \end_layout
 
 \end_inset
@@ -6024,7 +6036,7 @@ PI3K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.47
 \end_layout
 
 \end_inset
@@ -6033,7 +6045,7 @@ PI3K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.35
 \end_layout
 
 \end_inset
@@ -6042,7 +6054,7 @@ PI3K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.46
 \end_layout
 
 \end_inset
@@ -6063,6 +6075,8 @@ TGFb
 
 \begin_layout Plain Layout
 
+\series bold
+0.94
 \end_layout
 
 \end_inset
@@ -6071,7 +6085,7 @@ TGFb
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.68
 \end_layout
 
 \end_inset
@@ -6080,7 +6094,7 @@ TGFb
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.75
 \end_layout
 
 \end_inset
@@ -6089,7 +6103,7 @@ TGFb
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.15
 \end_layout
 
 \end_inset
@@ -6098,7 +6112,7 @@ TGFb
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+-
 \end_layout
 
 \end_inset
@@ -6119,6 +6133,8 @@ TNFa
 
 \begin_layout Plain Layout
 
+\series bold
+0.87
 \end_layout
 
 \end_inset
@@ -6127,7 +6143,7 @@ TNFa
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.70
 \end_layout
 
 \end_inset
@@ -6136,7 +6152,7 @@ TNFa
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.53
 \end_layout
 
 \end_inset
@@ -6145,7 +6161,7 @@ TNFa
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+-
 \end_layout
 
 \end_inset
@@ -6154,7 +6170,7 @@ TNFa
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.63
 \end_layout
 
 \end_inset
@@ -6175,6 +6191,8 @@ Trail
 
 \begin_layout Plain Layout
 
+\series bold
+0.91
 \end_layout
 
 \end_inset
@@ -6183,7 +6201,7 @@ Trail
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.42
 \end_layout
 
 \end_inset
@@ -6192,7 +6210,7 @@ Trail
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.56
 \end_layout
 
 \end_inset
@@ -6201,7 +6219,7 @@ Trail
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.52
 \end_layout
 
 \end_inset
@@ -6210,7 +6228,7 @@ Trail
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.39
 \end_layout
 
 \end_inset
@@ -6231,6 +6249,8 @@ VEGF
 
 \begin_layout Plain Layout
 
+\series bold
+0.76
 \end_layout
 
 \end_inset
@@ -6239,7 +6259,7 @@ VEGF
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.58
 \end_layout
 
 \end_inset
@@ -6248,7 +6268,7 @@ VEGF
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.52
 \end_layout
 
 \end_inset
@@ -6257,7 +6277,7 @@ VEGF
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.52
 \end_layout
 
 \end_inset
@@ -6266,7 +6286,7 @@ VEGF
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.52
 \end_layout
 
 \end_inset
@@ -6287,6 +6307,8 @@ p53
 
 \begin_layout Plain Layout
 
+\series bold
+0.86
 \end_layout
 
 \end_inset
@@ -6295,7 +6317,7 @@ p53
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.32
 \end_layout
 
 \end_inset
@@ -6304,7 +6326,7 @@ p53
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.67
 \end_layout
 
 \end_inset
@@ -6313,7 +6335,7 @@ p53
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+-
 \end_layout
 
 \end_inset
@@ -6322,7 +6344,7 @@ p53
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.48
 \end_layout
 
 \end_inset
