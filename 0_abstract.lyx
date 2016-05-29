@@ -109,10 +109,7 @@ As a baseline (chapter 2), I investigated how well pathway methods compare
  genes (chapter 3) and found that it compares favourably to gene set as
  well as state of the art pathway methods in terms of recovering driver
  mutations, cell line drug response, and patient survival (chapter 4).
-\end_layout
-
-\begin_layout Abstract
-Finally, I investigate how gene expression signatures of drugs can be used
+ Finally, I investigate how gene expression signatures of drugs can be used
  in conjunction with viability data to suggest effective treatment combinations
  (chapter 5).
 \end_layout
