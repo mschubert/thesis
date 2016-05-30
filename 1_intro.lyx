@@ -224,7 +224,7 @@ key "Jones2012-fc"
 ments--from single events that produce gene fusions 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "Nowell1960-rh,Mitelman1997-au"
+key "Nowell1960-rh,Mitelman1997-au,Garnett2012-dk"
 
 \end_inset
 
@@ -1598,23 +1598,72 @@ Cancer cell line drug sensitivity resources
 \end_layout
 
 \begin_layout Subsubsection
-Cancer Cell Line Encyclopedia (CCLE)
-\end_layout
-
-\begin_layout Itemize
-status 2002
-\end_layout
-
-\begin_layout Subsubsection
 Genomics of Drug Sensitivity in Cancer (GDSC)
 \end_layout
 
-\begin_layout Itemize
-status 2002
+\begin_layout Standard
+The first release of the cell ling drug screening from the Cancer Genome
+ Project of the Wellcome Trust Sanger Institute contained 639 cell lines
+ treated with 130 cancer drugs that were in either clinical use or pre-clinical
+ development, where the cell lines have also been profiled by capillary
+ sequencing of 77 known oncogenes 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Garnett2012-dk"
+
+\end_inset
+
+.
+ The subsequent release increased this count to 1,001 cell lines and 265
+ drugs, with a full molecular characterisation of cell lines comprised of
+ full exome sequencing, SNP6 arrays for copy number, high-quality microarray
+ gene expression, and DNA promoter methylation 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Iorio2016-gh"
+
+\end_inset
+
+.
 \end_layout
 
-\begin_layout Itemize
-now: new dataset
+\begin_layout Subsubsection
+Cancer Cell Line Encyclopedia (CCLE)
+\end_layout
+
+\begin_layout Standard
+The Cancer Cell Line Encyclopedia 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Barretina2012-of"
+
+\end_inset
+
+ characterised the mutations of 947 human cancer cell lines along with SNP
+ 6.0 copy number and Affymetrix U133 Plus 2.0 array gene expression, approximately
+ 500 of which they treated with 24 anti-cancer compounds.
+\end_layout
+
+\begin_layout Standard
+In contrast to the GDSC, they did not chose concentration ranges of the
+ screened drugs in order to detect the few cell lines that are truly sensitive
+ to a given drug.
+ The resulting differences compared the the GDSC caused a number of inconsistenc
+ies 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Haibe-Kains2012-ki"
+
+\end_inset
+
+ but they are largely resolved 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Cancer_Cell_Line_Encyclopedia_Consortium2015-df"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsection
