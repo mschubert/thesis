@@ -1635,6 +1635,19 @@ key "Lamb2006-mp"
 \end_inset
 
 .
+ In comprised a total of 1,309 compounds, yet most of them were not anti-cancer
+ compounds.
+ It has introduced and enabled the paradigm of signature matching (section
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Signature-Matching"
+
+\end_inset
+
+), the method of using gene expression changes upon drug treatment to match
+ both drugs with drugs for finding similarities and drugs with diseases
+ for a potential treatment indication.
 \end_layout
 
 \begin_layout Subsubsection
