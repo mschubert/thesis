@@ -1339,18 +1339,6 @@ For more complex samples, there are too many peptides to detect at any given
  GC) or liquid (high performance liquid chromatography, HPLC).
 \end_layout
 
-\begin_layout Subsection
-Protein interactions
-\end_layout
-
-\begin_layout Itemize
-with DNA
-\end_layout
-
-\begin_layout Itemize
-with other proteins + different types + different networks
-\end_layout
-
 \begin_layout Section
 Data sets
 \end_layout
