@@ -576,12 +576,28 @@ There are, however, many other kinase inhibitors as well as antibodies that
 Immune therapy
 \end_layout
 
-\begin_layout Itemize
-PD-1, PD-L1 inhibitors
-\end_layout
-
 \begin_layout Standard
-When the President of the United States announced the so-called Moonshot
+The importance of the immune system in the suppression of cancer has only
+ recently been discovered.
+ As a consequence, drugs have been developed that target the inhibition
+ that cancer cells confer on to immune cells using the PD-1--PD-L1 ligand-recept
+or pair 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Blank2005-cc,Zou2016-qz"
+
+\end_inset
+
+.
+ This has shown immense promise in the clinic 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Brahmer2012-kv,Ott2013-eh"
+
+\end_inset
+
+, however, the field is still in its infancy.
+ When the President of the United States announced the so-called Moonshot
  effort that promised funding for developing and improving personalised
  cancer treatment by targeted therapies, immune therapies were set to play
  a profound role in it.
