@@ -989,16 +989,44 @@ One of the issues of both understanding as well as preventing or treating
 DNA
 \end_layout
 
-\begin_layout Itemize
-sanger seq of few genes
-\end_layout
+\begin_layout Standard
+When Frederick Sanger discovered 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Sanger1977-mb"
 
-\begin_layout Itemize
-NGS
-\end_layout
+\end_inset
 
-\begin_layout Itemize
-methylation
+ that one could read DNA by supplying a minor fraction of di-desoxynucleotides
+ in addition to desoxynucleotides that are normally incorporated into DNA
+ during replication, in turn halting the replication chain and revealing
+ the sequence, it was clear that this was a major improvement upon the previous
+ method published in the same year 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Maxam1977-to"
+
+\end_inset
+
+.
+ Further incremental improvements and then the switch to next-generation
+ sequencing has enabled the scientific community to read DNA on an unprecedented
+ scale 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Schuster2008-pe"
+
+\end_inset
+
+, with the implication that the genome of individual (cancer) patients could
+ soon be used to decide upon optimal treatment of each individual 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "McDermott2015-sn"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsection
