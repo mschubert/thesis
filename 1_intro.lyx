@@ -1347,6 +1347,41 @@ Data sets
 Public gene expression repositories
 \end_layout
 
+\begin_layout Standard
+There are two major repositories of gene expression experiments using microarray
+s, the Gene Expression Omnibus (GEO) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Barrett2007-dy,Barrett2009-nh"
+
+\end_inset
+
+ at the National Institutes of Biotechnology Information (NCBI) and ArrayExpress
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Parkinson2007-bf,Parkinson2009-ej"
+
+\end_inset
+
+ at the European Bioinformatics institute.
+ With the reporting standards defined in the Minimal Information about a
+ Microarray Experiment (MIAME) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Brazma2001-ro"
+
+\end_inset
+
+, they played a pivotal role to ensure that experiments where one could
+ not only measure one gene but the entire transcriptome remained interpretable.
+ Both of these are synchronised, which means that if you submit to one the
+ other will import the data set and make it available on their platform
+ as well.
+ More recently, ArrayExpress also started collecting RNA-seq and ChIP-seq
+ experiments.
+\end_layout
+
 \begin_layout Subsection
 Gene sets and pathways
 \end_layout
