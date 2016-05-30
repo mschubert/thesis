@@ -765,9 +765,82 @@ Cell Line Drug Response
 Associations using Mutations
 \end_layout
 
-\begin_layout Itemize
-ca.
- re-plot of the paper
+\begin_layout Standard
+Associations between drug response and mutated genes have already been published
+ with the 2012 and 2016 versions of the GDSC screening 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Garnett2012-dk,Iorio2016-gh"
+
+\end_inset
+
+.
+ I reproduce them here in order to ensure that the associations I obtain
+ are the same as the ones previously published.
+ P-values vary slightly between the two because the cell lines included
+ in this study are not exactly the same as in the original article.
+ But the overall results (volcano plot in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Mutation-pancan"
+
+\end_inset
+
+) very much agree: the strongest hit in both cases is that 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+gene{TP53}
+\end_layout
+
+\end_inset
+
+ mutations correlate with resistance to Nutlin-3a, drugs that specifically
+ target mutant 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+gene{BRAF}
+\end_layout
+
+\end_inset
+
+ require such a mutation to be effective (Dabrafenib, PLX4720), and MEK
+ inhibitors work better with mutations in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+gene{KRAS}
+\end_layout
+
+\end_inset
+
+ or 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+gene{NRAS}
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -792,7 +865,9 @@ status open
 
 \begin_layout Plain Layout
 Mutation associations
-\end_layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Mutation-pancan"
 
 \end_inset
 
@@ -802,6 +877,51 @@ Mutation associations
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Also, for cancer-specific associations, my results (volcano plot in figure
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Mutation-tissue"
+
+\end_inset
+
+) agree well with the ones previously published.
+ As an example, I find increased sensitivity for Imatinib with 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+gene{PTPN11}
+\end_layout
+
+\end_inset
+
+ mutations in Lymphoblastic Acute Myeloid Leukemia (LAML), increased sensitivity
+ for Dabrafenib with mutations in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+gene{BRAF}
+\end_layout
+
+\end_inset
+
+ in Melanoma (SKCM), and increased resistance to ** for ** in **.
 \end_layout
 
 \begin_layout Standard
@@ -826,6 +946,13 @@ status open
 
 \begin_layout Plain Layout
 Mutation associations
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Mutation-tissue"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset

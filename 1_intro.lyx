@@ -90,23 +90,46 @@ Cancer Biology
 \end_layout
 
 \begin_layout Subsection
-Significance and aetiology
+Significance and epidemiology
 \end_layout
 
-\begin_layout Itemize
-number of patients affected
+\begin_layout Standard
+The International Agency for Research on Cancer estimates of global incidence
+ of cancer to be 12.7 million new cases on 7.6 million cancer deaths based
+ on estimates for 182 countries in 2008 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Ferlay2010-an"
+
+\end_inset
+
+.
+ In the United States, it has even surpassed heart disease as the leading
+ cause of death in people younger than 85 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Twombly2005-gg"
+
+\end_inset
+
+.
+ Breast cancer is the most abundant form in females, accounting for a total
+ of 23% of cases and 14% of deaths.
+ For males, the most abundant is lung cancer, comprised of 17% of cases
+ and 23% of cancer-related deaths 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Jemal2011-ku"
+
+\end_inset
+
+.
 \end_layout
 
-\begin_layout Itemize
-survival changes in the last 40 years
-\end_layout
-
-\begin_layout Itemize
-disease of the genes
-\end_layout
-
-\begin_layout Itemize
-early detection is key
+\begin_layout Standard
+Needless to say, the disease is a global health concern and better ways
+ of diagnosis and treatment are needed, as well as better understanding
+ of the molecular mechanisms.
 \end_layout
 
 \begin_layout Subsection
@@ -233,22 +256,6 @@ name "sub:Consequences"
 
 \end_layout
 
-\begin_layout Itemize
-Oncogenes and Tumor Suppressors
-\end_layout
-
-\begin_layout Itemize
-not all genes equally important
-\end_layout
-
-\begin_layout Itemize
-mutations switch on+off genes
-\end_layout
-
-\begin_layout Itemize
-cell signaling
-\end_layout
-
 \begin_layout Standard
 Genes that are relevant for cancer development and progression have long
  been classified in Oncogenes and Tumour Suppressor Genes.
@@ -320,49 +327,95 @@ This protein now may be affected by a mutation so that it no longer waits
 \end_layout
 
 \begin_layout Subsection
-Cellular coping mechanisms
-\end_layout
-
-\begin_layout Itemize
-peter campbell's non-cancerous skin high depth -> Q should be: not how it
- develops, but how does it not?
-\end_layout
-
-\begin_layout Itemize
-DNA repair
-\end_layout
-
-\begin_layout Itemize
-senescence
-\end_layout
-
-\begin_layout Itemize
-apoptosis
-\end_layout
-
-\begin_layout Itemize
-immune clearance
+The path to uncontrolled growth
 \end_layout
 
 \begin_layout Standard
-There are however, cellular mechanisms that identify and try to fix those
- issues.
- The only problem is: how will they recognise which is the correct and which
- is the faulty strand?
+Mutagenic driving forces are not only all around but also inside us (as
+ exemplified by the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+gene{APOBEC}
 \end_layout
 
-\begin_layout Subsection
-Uncontrolled growth
+\end_inset
+
+ virus defence 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Alexandrov2013-qo"
+
+\end_inset
+
+).
+ However, most cells do not start to divide uncontrollably, even if they
+ acquire a driver mutation.
+ For instance, it has been shown that in healthy skin there is a high number
+ of potential driver mutation that pre-exist without cancer ever developing
+ from them 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Martincorena2015-iw"
+
+\end_inset
+
+.
+ For a cell to develop into a malignant tumour, it requires multiple 
+\begin_inset Quotes eld
+\end_inset
+
+hits
+\begin_inset Quotes erd
+\end_inset
+
+ that transform it into a truly malignant state.
+ The mutations and mechanisms but which it acquires those properties are
+ different from cancer to cancer, yet the biological processes it needs
+ to modify are remarkable similar 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Hanahan2000-is,Hanahan2012-im"
+
+\end_inset
+
+:
 \end_layout
 
 \begin_layout Itemize
-go through all hanahan & weinberg Hallmarks
+Self-sufficiency in growth signals
 \end_layout
 
-\begin_layout Standard
-If all the above mechanisms fail, a cancer cell can continue to divide and
- grow into a tumour.
- 
+\begin_layout Itemize
+Insensitivity to anti-growth signals
+\end_layout
+
+\begin_layout Itemize
+Evading apoptosis
+\end_layout
+
+\begin_layout Itemize
+Limitless replicative potential
+\end_layout
+
+\begin_layout Itemize
+Sustained angiogenesis
+\end_layout
+
+\begin_layout Itemize
+Tissue invasion and metastasis
+\end_layout
+
+\begin_layout Itemize
+Avoiding immune destruction
+\end_layout
+
+\begin_layout Itemize
+Deregulating cellular energetics
 \end_layout
 
 \begin_layout Section
@@ -765,23 +818,76 @@ In contrast to this cell line, most on which experiments are performed on
 Organoids
 \end_layout
 
-\begin_layout Itemize
-some signaling pathways that are important in patients not captured in cell
- lines, but potentially here
-\end_layout
-
-\begin_layout Itemize
-generating much more diversity than there can be cell lines
-\end_layout
-
 \begin_layout Standard
+While the overall number of available cell lines is vast, there are limits
+ to what is available.
+ With the approximately 1,000 cell lines that the Genomics of Drug Sensitivity
+ in Cancer (GDSC, cf.
+ section **) screened for compound sensitivity 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Iorio2016-gh"
+
+\end_inset
+
+, it is time to think about how many more cell lines would be needed to
+ gain enough statistical power for the long tail of rare mutations and whether
+ the required amount of diversity can theoretically be generated with cell
+ lines 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Francies2015-fs"
 
 \end_inset
 
+.
+ While every xenografted mouse model is different, it is very time consuming
+ and expensive to investigate cancers this way.
+ Hence, there is a need for a model system that is simpler and easier to
+ handle than animal models, but provides more diversity and numbers than
+ cell lines 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Kamb2005-zq"
 
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+One answer that resolves this issue could be organoid cultures: these are
+ small assemblies of primary cells taken out of a tumour and grown in matrigel,
+ where the spatial separation of mini-cultures retains much of the tumour
+ heterogeneity 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Sachs2014-dz"
+
+\end_inset
+
+.
+ Because of these properties, they could advance 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+latin{in silico}
+\end_layout
+
+\end_inset
+
+ cancer screening in a way that is not possible with other platforms 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Francies2015-fs"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsection
