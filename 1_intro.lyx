@@ -823,7 +823,14 @@ While the overall number of available cell lines is vast, there are limits
  to what is available.
  With the approximately 1,000 cell lines that the Genomics of Drug Sensitivity
  in Cancer (GDSC, cf.
- section **) screened for compound sensitivity 
+ section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:GDSC"
+
+\end_inset
+
+) screened for compound sensitivity 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Iorio2016-gh"
@@ -997,8 +1004,8 @@ key "Sanger1977-mb"
 
 \end_inset
 
- that one could read DNA by supplying a minor fraction of di-desoxynucleotides
- in addition to desoxynucleotides that are normally incorporated into DNA
+ that one could read DNA by supplying a minor fraction of di-deoxynucleotides
+ in addition to deoxynucleotides that are normally incorporated into DNA
  during replication, in turn halting the replication chain and revealing
  the sequence, it was clear that this was a major improvement upon the previous
  method published in the same year 
@@ -1516,7 +1523,7 @@ a free, open-source, curated and peer reviewed pathway database
 \begin_inset Quotes erd
 \end_inset
 
- hosted and curated by the European Bioinformatics Institute (EBI).
+ hosted and curated by the European Bioinformatics Institute (EMBL-EBI).
  It has a web portal at 
 \begin_inset CommandInset href
 LatexCommand href
@@ -1552,45 +1559,55 @@ Primary cancer cohorts
 The Cancer Genome Atlas (TCGA)
 \end_layout
 
-\begin_layout Itemize
-inception
+\begin_layout Standard
+The Cancer Genome Atlas is a United States-based consortium that aims to
+ profile primary tumours belonging to many different cohorts on the DNA,
+ RNA, protein, and epigenetic level.
+ The initial release 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "The_Cancer_Genome_Atlas_Research_Network2013-bi"
+
+\end_inset
+
+ contained 12 tumour types, but it has grown to 35 with their June 2016
+ release.
+ There are many secondary portals that allow access to the TCGA data, such
+ as the BROAD Firehose tool
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+https://gdac.broadinstitute.org/
 \end_layout
 
-\begin_layout Itemize
-cohorts
-\end_layout
+\end_inset
 
-\begin_layout Itemize
-data access regulations
-\end_layout
+ or cBioPortal 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Gao2013-wp"
 
-\begin_layout Itemize
-secondary dbs that simplify access: e.g.
- BROAD GDAC firehose
+\end_inset
+
+, which also includes data from other projects.
 \end_layout
 
 \begin_layout Subsubsection
 International Cancer Genome Consortium (ICGC)
 \end_layout
 
-\begin_layout Itemize
-umbrella effort
-\end_layout
+\begin_layout Standard
+The International Cancer Genome consortium is an umbrella effort with the
+ same goals, yet it incorporates many more studies from different countries
+ and thus represents a superset of the TCGA data
+\begin_inset CommandInset citation
+LatexCommand cite
+key "International_Cancer_Genome_Consortium2010-bn"
 
-\begin_layout Itemize
-more cohorts
-\end_layout
+\end_inset
 
-\begin_layout Itemize
-horrible metadata
-\end_layout
-
-\begin_layout Itemize
-where data comes from
-\end_layout
-
-\begin_layout Itemize
-again: unbiased approach = spurious results
+.
 \end_layout
 
 \begin_layout Subsection
@@ -1599,6 +1616,13 @@ Cancer cell line drug sensitivity resources
 
 \begin_layout Subsubsection
 Genomics of Drug Sensitivity in Cancer (GDSC)
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:GDSC"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3100,10 +3124,28 @@ One way genes expression has shown promise is using global clustering to
  An example of those functional readouts is the expression level of pre-defined
  pathway sets - mostly using the GSEA scores - that has been reported in
  numerous publications, but also more sophisticated methods that attempt
- to quantify the signal flow, such as SPIA (Tarca et al.
- 2008), PARADIGM (Vaske et al.
- 2010), or Pathifier (Drier et al.
- 2013).
+ to quantify the signal flow, such as SPIA 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Tarca2008-ey"
+
+\end_inset
+
+, PARADIGM 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Vaske2010-zn"
+
+\end_inset
+
+, or Pathifier 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Drier2013-vn"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
