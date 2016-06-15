@@ -166,7 +166,11 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Schema of different pathway methods
+Reasoning about pathway activation.
+ Most pathway approaches make use of either the set (top panel) or graph
+ (middle panel) of signalling molecules to make statements about a possible
+ activation, while our approach considered the genes affected by perturbing
+ them.
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Schema-of-different"
@@ -262,7 +266,14 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Workflow of obtaining perturbation-response gene signatures
+Workflow of data curation and model building.
+ (1) Finding and curation of 208 publicly available experiment series in
+ the ArrayExpress database, (2) Extracting 556 perturbation experiments
+ from series' raw data, (3) Performing QC metrics and discarding failures,
+ (4) Computing z-scores per experiment, (5) Using a multiple linear regression
+ to fit genes responsive to all pathways simultaneously obtaining the z-coeffici
+ents matrix, (6) Assigning pathway scores using the coefficients matrix
+ and basal expression data.
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Workflow-of-obtaining"
@@ -1701,10 +1712,11 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Modelled pathway crosstalk.
- For pathways that point directly to the nucleus in the schematic cell we
- model no pathway cross-talk, pathways that point to other pathways represent
- are assumed to, upon activation, activate those as well.
+Structure of the perturbation-response model.
+ For the multiple linear regression, we set the coefficients or perturbed
+ pathways to 1 if a pathway was perturbed, 0 otherwise.
+ In addition, EGFR perturbation also had MAPK and PI3K coefficients set,
+ and TNFa had NFkB set.
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Modelled-pathway-crosstalk"
@@ -4772,22 +4784,22 @@ status open
 \begin_layout Plain Layout
 Recovery of the perturbations across pathways (left) and for individual
  experiments (right) using the consensus signature.
- Significant associations (marked with 
-\begin_inset Formula $*$
-\end_inset
-
- for 
-\begin_inset Formula $p<10^{-5}$
-\end_inset
-
- and *** for 
-\begin_inset Formula $p<10^{-10}$
-\end_inset
-
-) between a pathway perturbation and a higher (blue) or lower (red) pathway
- score are shown on the left, pathway scores for individual experiments
- on the right (order of pathways: EGFR, H2O2, Hypoxia, JAK-STAT, MAPK, NFkB,
- PI3K, TGFb, TNFa, Trail, VEGF, p53)
+ Associations between perturbed pathways and the scores obtained by the
+ model of pathway-response genes (PRGs).
+ Along the diagonal each pathway is strongly (p<10-10) associated with its
+ own perturbation.
+ Significant off-diagonal elements are sparse and only show a strong association
+ between EGFR/MAPK and TNFa/NFkB and a weaker association (p<10-5) between
+ EGFR/PI3K and MAPK/TNFa.
+ Heatmap of relative pathway scores in each perturbation experiment.
+ 523 experiments in columns, annotated with the perturbation effect (green
+ for activation, orange for inhibition) and pathway perturbed (same order
+ as b).
+ Pathway scores in rows cluster between EGFR/MAPK and to a lesser extent
+ PI3K, and TNFa/NFkB.
+ Colour indicates activation or inhibition strength.
+ Order of pathways: EGFR, H2O2, Hypoxia, JAK-STAT, MAPK, NFkB, PI3K, TGFb,
+ TNFa, Trail, VEGF, p53.
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:sp2-exp-heatmap"
@@ -5512,8 +5524,13 @@ status open
 \begin_layout Plain Layout
 Perturbation recall on input experiments as a comparison across methods
  for each pathway.
- Colour of the ROC curve according to the method used, TPR true positive
- rate; FPR false positive rate.
+ ROC curves for different methods ranking perturbation experiments by their
+ pathway score.
+ Pathway-response genes (PRGs) show better performance for all pathways
+ except JAK-STAT and NFkB, where other methods are equal.
+ Gene Ontology and Reactome scores obtained by Gene Set Variation Analysis
+ (GSVA).
+ Pathifier using Reactome gene sets.
  Performance is indicated with the area under each curve, values indicated
  in table 
 \begin_inset CommandInset ref

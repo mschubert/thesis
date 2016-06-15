@@ -234,8 +234,24 @@ rpkg{corplot}
 
  for GDSC and TCGA data separately.
  The correlation between a pathway and itself is 1 by definition, all other
- values range from -1 (perfectly linear reverse correlation) to 1 (perfectly
- linear correlation).
+ values range from -1 (where the values are identical except for a constant
+ factor 
+\begin_inset Formula $x_{1}=k*x_{2}+\varepsilon$
+\end_inset
+
+ where 
+\begin_inset Formula $k<1$
+\end_inset
+
+ and residual 
+\begin_inset Formula $\varepsilon=0$
+\end_inset
+
+) to 1 (same for 
+\begin_inset Formula $k>1$
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Subsection
@@ -379,8 +395,11 @@ status open
 \begin_layout Plain Layout
 Correlation for TCGA primary tumour data (left) and GDSC cell lines (right)
  for perturbation-response genes in basal expression.
- Sign indicated by colour of the points (positive correlation blue, negative
- correlation red), strength by colour shade and size of the point.
+ Positive correlation in blue, negative in red.
+ Circle size and shade correspond to correlation strength.
+ Pathways that showed cross-activation in point b are more highly correlated
+ in basal expression as well.
+ 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Correlation-speed"
@@ -464,8 +483,11 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Variance of pathway scores in different cell lines vs.
- bootstraps of input experiments for different pathways
+Stability of basal pathway scores when bootstrapping input experiments.
+ The variance of pathway scores in cell lines given bootstraps more than
+ five times as high compared to the variance of bootstraps given cell lines
+ for all pathways except two (Trail and VEGF), where it is roughly twice
+ as high.
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:bootstraps-basal"
@@ -969,20 +991,179 @@ reference "fig:cor:PARADIGM"
 \end_layout
 
 \begin_layout Section
-Driver mutations in primary tumours
+Recall of known pathway modifiers
+\end_layout
+
+\begin_layout Subsection
+Pathway scores and mutations/CNAs
+\end_layout
+
+\begin_layout Subsection
+Associations using driver mutations and CNAs
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
+\begin_inset Float figure
+wide false
+sideways false
 status open
 
 \begin_layout Plain Layout
-TODO: add the paper results for the mutation assocs here
+\align center
+\begin_inset Graphics
+	filename figures/4_mut+cna_volcano.pdf
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Volcano plot of pan-cancer associations between driver mutations (denoted
+ by the superscript mut and green/red color) and copy number aberrations
+ (denoted by amp/del and yellow/purple color) with inferred pathway activity
+ using PRGs in basal gene expression of TCGA cohorts.
+ Effect sizes larger than zero indicate inferred activation, smaller than
+ zero inferred inhibition of a pathway.
+ P-values FDR-adjusted with a significance threshold of 5%.
+ Circles with a black outer ring are also significant if corrected for cancer
+ type.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:volcano-CNA/drivers"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If our reasoning is correct and pathway-response signatures are indeed correspon
+d to intrinsic signaling activity, we should be able to see a higher pathway
+ score in cancer patients with an oncogenic driver mutation and a lower
+ score when a tumour suppressor is mutated or lost compared to patients
+ where no such alteration is present.
+ Depending on how those aberrations are spread across cancer types, we should
+ be able to detect them within or across cancer types.
+\end_layout
+
+\begin_layout Standard
+We selected all cancer types in the TCGA for which there were tissue-matched
+ normals available, in order to make full use of the pathway methods that
+ require them.
+ We calculated pathway scores for those using pathway-response genes, Reactome
+ and Gene Ontology enrichment, SPIA, Pathifier, and PARADIGM.
+ We used an ANOVA to calculate significant associations between the presence
+ and absence of mutations and copy number alterations and the inferred pathway
+ scores, both with and without regressing out cancer types.
+\end_layout
+
+\begin_layout Standard
+We are indeed able to recover a range of known associations using PRGs (Fig.
+ 2a).
+ We find that both within and across cancers mutations and deletions of
+ TP53 are associated with decreased activity of the p53/DNA damage response
+ pathway; EGFR amplifications, KRAS mutations or amplifications, and BRAF
+ mutations with increased activity of both MAPK and EGFR pathways.
+ The genes NDRG1, RAD21, and PABPC1 that are, when amplified, associated
+ with decreased activity p53/DDR have also been implicated in DNA damage
+ response [REF].
+ TP53 mutations, however, additionally show a correlation with increased
+ expression (Supplementary Fig.
+ 6) and activity of oncogenic pathways EGFR and PI3K.
+ Myc amplifications are strongly associated with a decreased expression
+ of p53/DDR genes.
+ CDKN2A deletions more strongly with induction of EGFR-responsive genes
+ compared to other pathways.
+ More surprisingly, we find that presence of PIK3CA and PIK3CB amplifications
+ and PTEN deletions is more connected to increasing the hypoxic response
+ compared to an effect on the PI3K-responsive genes.
+ For the latter, we find that VHL mutations (which are only found in and
+ exclusive to KIRC) are associated with an induction of hypoxic genes across
+ cancer types.
+\end_layout
+
+\begin_layout Subsection
+Comparison of methods
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/4_method_compare.pdf
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Comparison of pathway scores (vertical axis) across different methods (horizonta
+l axis).
+ TP53 and KRAS mutations within cancer types in top row, EGFR amplification
+ bottom left.
+ VHL across cancer types.
+ Log-likelihood of Welch’s t-test shown as shades of green for downregulated
+ and red for upregulated pathways.
+ P-value cutoffs shown as indicated.
+ White squares where pathway could not be used for a method.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Comparison-CNA/drivers"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Comparing different methods (Fig.
+ 2b and Supplementary Fig.
+ 6), we found that for TP53 mutations (top left panel) only PRGs are able
+ to recover the expected negative association between the mutation and p53/DDR
+ activity.
+ GO and Reactome showed a much weaker effect in the same, while Pathifier
+ and SPIA showed an incorrect positive effect.
+ For KRAS mutations (top right panel) only our method can detect a strong
+ activation of the MAPK/EGFR pathways where the other methods either show
+ no significant effect or an effect in the wrong direction.
+ The same goes EGFR amplifications (bottom left panel).
+ Across tissues, our method is the only one to recover hypoxia as the strongest
+ link with VHL mutations (bottom right panel).
 \end_layout
 
 \begin_layout Section
@@ -1013,6 +1194,47 @@ We performed drug association using a linear model between 265 drug IC50s
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/4_cell_schema.pdf
+	width 70col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Pathway context of EGFR/MAPK and its inhibitors.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:drug-cell-schema"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 In order to distinguish between Reactome/GO associations that are genuinely
  dependent on pathway expression and those that can be fully explained by
  pathway-responsive genes, we condition each association for those two methods
@@ -1035,7 +1257,7 @@ We also selected two of our strongest associations to investigate whether
  they provide additional information of what is known by mutation data.
  For two MEK inhibitors, we show the difference between wild-type and mutant
  MAPK pathway (defined is a mutation in either MAP2K1, N-Ras, K-Ras, or
- B-Raf) with a discretized pathway score (upper and lower quartile vs.
+ B-Raf) with a discretised pathway score (upper and lower quartile vs.
  the rest), as well as the combination between the upper quartile of tissue-spec
 ific pathway scores and presence of a MAPK mutation.
 \end_layout
@@ -1061,6 +1283,51 @@ can stratify within mutated population (but not for TP53)
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/4_drug_volcano_pan.pdf
+	width 80col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Volcano plot of pan-cancer associations between PRGs in GDSC cell lines
+ and drug response (IC50), corrected for cancer type.
+ Effect sizes of smaller than zero indicate sensitivity markers (shown in
+ green) and greater than zero resistance markers (shown in red).
+ P-values FDR-corrected.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Volcano-drug-pancan"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 The next question we tried to answer is how well our pathway-responsive
  genes are able to explain drug sensitivity in cancer cell lines.
  We took IC50 values from the GDSC project (Iorio2015, submitted) and calculated
@@ -1068,6 +1335,53 @@ The next question we tried to answer is how well our pathway-responsive
  in Reactome (Croft et al.
  2011) or Gene Ontology (Gene Ontology Consortium 2004), both for a pan-cancer
  and a tissue-specific condition.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/4_drug-assocs-compare.pdf
+	width 80col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Comparison of the associations obtained by different pathway methods.
+ Number of associations on the vertical, FDR on the horizontal axis.
+ PRGs yield more and stronger associations compared to all other pathway
+ methods.
+ Mutation associations are only stronger for TP53/Nutlin-3a and drugs that
+ were specifically designed to bind to a mutated protein.
+ PARADIGM not shown because no associations < 10% FDR.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:drug-assoc-strength-compare"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1098,38 +1412,130 @@ e (absence of TP53 activity) to this drug that our method recovers but neither
  Reactome pathways dropped to 18.
 \end_layout
 
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+
+\begin_inset Graphics
+	filename figures/4_drug_substrat.pdf
+	width 80page%
+
+\end_inset
+
+
+\lang british
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Comparison of stratification by mutations and pathway scores for the MAPK
+ pathway (BRAF, NRAS, or KRAS mutations) and Trametinib (top left)/AZ628
+ (bottom left), BRAF mutation and Dabrafenib (top right), and p53 pathway/TP53
+ mutations/Nutlin-3a (bottom right).
+ Mutations indicated by color of the box (from left; blue for mutated, green
+ wild-type, white mixed) and pathway scores by color and shade of the violin
+ (from right; pink for MAPK and and yellow for TP53).
+ The more sensitive genomic phenotype (middle; mutated for MAPK/BRAF and
+ wild-type for TP53) is further stratified by top- and bottom quartiles
+ of pathway score (fold change of medians and p-value of Mann-Whitney U
+ test indicated).
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:drug-mut-substrat"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Tissue-specific Associations with Drug Response
 \end_layout
 
-\begin_layout Itemize
-focus on clinical drugs
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/4_drug_volcano_tissue.pdf
+	width 100col%
+
+\end_inset
+
+
 \end_layout
 
-\begin_layout Itemize
-stratifications avail: clinical (x2) + experimental
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Volcano plot of tissue-specific associations between pathway activity and
+ drug response to clinical drugs only.
+ Horizontal axis shows the regression slope, vertical axis the FDR-adjusted
+ p-values (adjustment per tissue).
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Volcano-drug-tissue"
+
+\end_inset
+
+
 \end_layout
 
-\begin_layout Itemize
-significance of stratifications compared to tissues, pathway methods
+\end_inset
+
+
 \end_layout
 
-\begin_layout Itemize
-why we think we need the pancan assocs in order to say something about the
- tissue-specific
-\end_layout
+\end_inset
 
-\begin_layout Itemize
-GSEA, Reactome enrichment
-\end_layout
 
-\begin_layout Itemize
-conditioned association performance (figure in suppl)
-\end_layout
-
-\begin_layout Itemize
-will not do SPIA, pathifier, PARADIGM here because they need normals + we
- don’t have
 \end_layout
 
 \begin_layout Standard
@@ -1165,6 +1571,54 @@ explanation of this?
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/4_drug_strat_esca.pdf
+	width 80col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Trail activity mediates sensitivity to Docetaxel (microtubule stabilizer)
+ in Low-Grade Glioma (LGG).
+ Stratifications compared to differences in drug response of other tissues.
+ Colored boxes show the drug response of a certain tissue and the stratification
+ achieved by negative and positive scores for a given pathway, white boxes
+ indicate range of drug response for other tissues.
+ In all cases, the stratified population is more sensitive by median than
+ any other tissue.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:strat_ESCA"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Furthermore, we could show (figure 3D) that our method improves upon using
  only mutations as biomarkers for drug response.
  Using the examples of Trametinib in BRCA (associated with MAPK activity)
@@ -1181,6 +1635,56 @@ status open
 
 \begin_layout Plain Layout
 find some associations that are new and follow up on them (+add to figure)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/4_drug_strat_lgg.pdf
+	width 80col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+EGFR activity mediates resistance to Rapamycin (macrolide antibiotic) in
+ Esophageal Carcinoma (ESCA).
+ Legend as in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:strat_ESCA"
+
+\end_inset
+
+.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:strat-LGG"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1539,11 +2043,139 @@ For Kaplan-Meier survival curves (cf.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
+\begin_inset Float figure
+wide false
+sideways false
 status open
 
 \begin_layout Plain Layout
-TODO: add survival results here
+\align center
+\begin_inset Graphics
+	filename figures/4_survival_pan.pdf
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Comparison of pathway methods by association of a pathway with increased
+ (green) or decreased (red) patient survival.
+ Colors correspond to z-score (grey: FDR>20%, white: no pathway available).
+ Method (vertical) and pathway (horizontal) labels as indicated.
+ For our method, MAPK/EGFR provide the strongest negative contribution to
+ survival.
+ Trail/apoptosis is the only pathway mediating prolonged survival, but missing
+ the significance threshold.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/4_survival_tissue-volcano.pdf
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Volcano plot of cancers-specific associations between patient survival and
+ inferred pathway score using our method, effect size on the x-axis, FDR-adjuste
+d p-values on y.
+ For these associations we can recover significant hits for apoptosis in
+ multiple cancers and are the only method to do so.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename figures/4_survival_curves.pdf
+	width 50col%
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Examples of Kaplan-Meier curves where our method is able to separate between
+ groups of up-, downregulated pathways vs the rest.
+ Hits shown are TNFa in KIRC, JAK-STAT in LGG, and Trail and CESC, where
+ the stratification between top and bottom quartile is always at or greater
+ than 25% after a year.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset

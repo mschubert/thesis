@@ -459,7 +459,7 @@ Elaborating on our simplification, it is of course not the case that an
 \begin_inset Quotes eld
 \end_inset
 
-Lipinsky's Rule of Five
+Lipinsky's Rule of Fives
 \begin_inset Quotes erd
 \end_inset
 
@@ -618,24 +618,23 @@ Unfortunately, targeted therapies often can not kill all cells before they
 
 \begin_layout Standard
 Let us revisit one of the most well-known examples in targeted therapies,
- the inhibitor Plexicon (PLX4720; later marketed with the name Vemurafenib)
+ the inhibitor Plexicon (PLX4720; later marketed under the name Vemurafenib)
  specifically targeted to 
 \begin_inset Formula $BRAF^{V600E}$
 \end_inset
 
  mutants.
- In a seminal paper, 
+ This example of targeted therapy works with the intended effect in such
+ that it kills cancer cells to an extent that makes multiple from the outside
+ clearly visible tumours completely disappear for months 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Chapman2011-jl"
 
 \end_inset
 
- showed that this example of targeted therapy works with the intended effect
- in such that it kills cancer cells to an extent that makes multiple from
- the outside clearly visible tumours completely disappear for months, which
- could be hailed as a success for identifying a target and rationally designing
- an inhibitor that abrogates oncogenic signaling.
+, which could be hailed as a success for identifying a target and rationally
+ designing an inhibitor that abrogates oncogenic signaling.
  However, there was one drawback: after a couple more weeks after the initial
  success, the tumour cells were able to overcome the effects of the inhibitor,
  start to grow again, and ultimately lead to the recurrence of the tumours
