@@ -109,9 +109,9 @@ Investigations of cancer drug response and survival are mostly focussed
  This has yielded multiple markers, however, they are rarely put in functional
  context of the signaling aberrations they create.
  Because the amount of phosphorylation data available lags behind the one
- of genomic data, I created a platform which infers signaling activity by
- identifying publicly available perturbation experiments and the genes responsiv
-e to a certain pathway.
+ of genomic data, I created a platform which infers signalling activity
+ by identifying publicly available perturbation experiments and the genes
+ responsive to a certain pathway.
 \end_layout
 
 \begin_layout Standard
@@ -1076,10 +1076,62 @@ I selected all cancer types in the TCGA for which there were tissue-matched
  normals available, in order to make full use of the pathway methods that
  require them.
  I calculated pathway scores for those using pathway-response genes, Reactome
- and Gene Ontology enrichment, SPIA, Pathifier, and PARADIGM.
- I used an ANOVA to calculate significant associations between the presence
- and absence of mutations and copy number alterations and the inferred pathway
- scores, both with and without regressing out cancer types.
+ and Gene Ontology enrichment, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbrv{SPIA}
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+name{Pathifier}
+\end_layout
+
+\end_inset
+
+, and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbrv{PARADIGM}
+\end_layout
+
+\end_inset
+
+.
+ I used an 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbrv{ANOVA}
+\end_layout
+
+\end_inset
+
+ to calculate significant associations between the presence and absence
+ of mutations and copy number alterations and the inferred pathway scores,
+ both with and without regressing out cancer types.
 \end_layout
 
 \begin_layout Standard
@@ -1591,11 +1643,29 @@ name "fig:Volcano-drug-pancan"
 \begin_layout Standard
 The next question I tried to answer is how well our pathway-responsive genes
  are able to explain drug sensitivity in cancer cell lines.
- I took IC50 values from the GDSC project (Iorio2015, submitted) and calculated
- statistical associations with our method, and GSEA using the same pathways
- in Reactome (Croft et al.
- 2011) or Gene Ontology (Gene Ontology Consortium 2004), both for a pan-cancer
- and a tissue-specific condition.
+ I took IC50 values from the GDSC project 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Iorio2016-gh"
+
+\end_inset
+
+ and calculated statistical associations with our method, and GSEA using
+ the same pathways in Reactome 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Croft2011-po"
+
+\end_inset
+
+ or Gene Ontology 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Gene_Ontology_Consortium2004-sn"
+
+\end_inset
+
+, both for a pan-cancer and a tissue-specific condition.
 \end_layout
 
 \begin_layout Standard
@@ -1653,8 +1723,14 @@ I found that for the pan-cancer setting, there were 161 significant associations
  p53-responsive genes.
  Nutlin-3a is an MDM2-inhibitor that in turn stabilizes TP53, where it has
  also previously been shown that a mutation in TP53 is strongly associated
- with increased resistance to Nutlin-3a (Garnett et al.
- 2012).
+ with increased resistance to Nutlin-3a 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Garnett2012-dk"
+
+\end_inset
+
+.
  This is thus a well-understood mechanism of sensitivity (presence) or resistanc
 e (absence of TP53 activity) to this drug that our method recovers but neither
  GO or Reactome pathways do.
@@ -1725,9 +1801,9 @@ Comparison of stratification by mutations and pathway scores for the MAPK
  pathway (BRAF, NRAS, or KRAS mutations) and Trametinib (top left)/AZ628
  (bottom left), BRAF mutation and Dabrafenib (top right), and p53 pathway/TP53
  mutations/Nutlin-3a (bottom right).
- Mutations indicated by color of the box (from left; blue for mutated, green
- wild-type, white mixed) and pathway scores by color and shade of the violin
- (from right; pink for MAPK and and yellow for TP53).
+ Mutations indicated by colour of the box (from left; blue for mutated,
+ green wild-type, white mixed) and pathway scores by colour and shade of
+ the violin (from right; pink for MAPK and and yellow for TP53).
  The more sensitive genomic phenotype (middle; mutated for MAPK/BRAF and
  wild-type for TP53) is further stratified by top- and bottom quartiles
  of pathway score (fold change of medians and p-value of Mann-Whitney U
@@ -1822,7 +1898,15 @@ explanation of this?
  Our strongest association was response to Trametinib where sensitivity
  was positively correlated with expression of MAPK-responsive genes, explaining
  a total of 54% of the total variance observed in the IC50s of BRCA drug
- response (FDR 10-5, p 10-8, shown in figure 3C/top).
+ response (FDR 
+\begin_inset Formula $10^{-5}$
+\end_inset
+
+, p 
+\begin_inset Formula $10^{-8}$
+\end_inset
+
+, shown in figure 3C/top).
  While this is expected due to the oncogene addiction paradigm, other strong
  associations included TNFa-responsive genes in SCLC treated with PD-0325901
  (a MEK inhibitor, for sensitivity) and FK866 (an inducer of apoptosis,
@@ -1856,8 +1940,8 @@ status open
 Trail activity mediates sensitivity to Docetaxel (microtubule stabilizer)
  in Low-Grade Glioma (LGG).
  Stratifications compared to differences in drug response of other tissues.
- Colored boxes show the drug response of a certain tissue and the stratification
- achieved by negative and positive scores for a given pathway, white boxes
+ Coloured boxes show the drug response of a certain tissue and the stratificatio
+n achieved by negative and positive scores for a given pathway, white boxes
  indicate range of drug response for other tissues.
  In all cases, the stratified population is more sensitive by median than
  any other tissue.
@@ -2312,8 +2396,8 @@ ns for pan-cancer and each tissue-specific cohort.
  For the pan-cancer cohort, I regressed out the effect of the study and
  age of the patient, and fitted the more for each pathway and method used.
  For the tissue-specific cohorts, I regressed out the age of the patients.
- I adjusted the p-values using the FDR method for each method and for each
- method and study separately.
+ I adjusted the p-values using the FDR for each method and for each method
+ and study separately.
  I selected a significance threshold of 5 and 10% for the pan-cancer and
  cancer-specific associations for which I show a matrix plot and a volcano
  plot of associations, respectively.
@@ -2511,12 +2595,17 @@ The functional context in terms of cancer hallmarks that mutations create
 
 \begin_layout Standard
 For cancer diagnosis in both the clinical and preclinical setting, efforts
- like The Cancer Genome Atlas (The Cancer Genome Atlas Research Network
- et al.
- 2013) or the International Cancer Genome Consortium (ICGC) have pioneered
- this characterization on a large scale, offering the opportunity to derive
- large amounts of information about individual tumours and in turn likely
- harbours yet undiscovered treatment opportunities.
+ like The Cancer Genome Atlas
+\begin_inset CommandInset citation
+LatexCommand cite
+key "The_Cancer_Genome_Atlas_Research_Network2013-bi"
+
+\end_inset
+
+ or the International Cancer Genome Consortium (ICGC) have pioneered this
+ characterization on a large scale, offering the opportunity to derive large
+ amounts of information about individual tumours and in turn likely harbours
+ yet undiscovered treatment opportunities.
  While the recent focus on linking outcomes with mutations represents a
  step forward over basing treatment of an individual on the tissue of tumour
  origin alone, putting mutations in a functional context with the signalling
@@ -2526,11 +2615,11 @@ For cancer diagnosis in both the clinical and preclinical setting, efforts
 \end_layout
 
 \begin_layout Standard
-I compared how Gene Ontology, pathway expression, and signaling footprints
+I compared how Gene Ontology, pathway expression, and signalling footprints
  performed for predicting cell line drug response and patient survival,
  and found that the latter outperformed the other two on both accounts.
  Using both my method and pathway expression mapping, I are beginning to
- understand how signaling activity and pathway expression are interlinked
+ understand how signalling activity and pathway expression are interlinked
  in both cell lines and tumours.
 \end_layout
 
@@ -2559,10 +2648,34 @@ I have achieved a significant progress to overcome these limitations by
  I could confirm this heterogeneity in gene expression experiments, but
  also found that consensus signatures are strongly correlated with pathway
  perturbations and less with other conditions that they are confounded with.
- The only other similar efforts, to the best of our knowledge, are the SPEED
- database (Parikh et al.
- 2010) and MCF10A breast cancer signatures (Gatza et al.
- 2010).
+ The only other similar efforts, to the best of our knowledge, are the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbrv{SPEED}
+\end_layout
+
+\end_inset
+
+ database 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Parikh2010-uj"
+
+\end_inset
+
+ and MCF10A breast cancer signatures 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Gatza2010-fq"
+
+\end_inset
+
+.
  Whereas the former used a smaller but still significant set of publicly
  available experiments, they only analysis they did using their signatures
  was to compute the overlap between genes present in their signatures and

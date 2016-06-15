@@ -175,9 +175,18 @@ Should we sequence each cell in an individual, we would not find that all
  its daughter cells inherit two full copies of its DNA is not infinitely
  accurate, but this process may introduce reading- (from the ancestral or
  template strand) and writing (the newly synthesised strand) errors.
- In fact, in each cell division there is an average of *** errors that are
- introduced while copying the each of the three billion bases (times the
- two alleles) that is our genome.
+ In fact, in each cell division there is an average of 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+***
+\end_layout
+
+\end_inset
+
+ errors that are introduced while copying the each of the three billion
+ bases (times the two alleles) that is our genome.
 \end_layout
 
 \begin_layout Standard
@@ -210,9 +219,21 @@ key "Alexandrov2013-qo"
 \end_inset
 
 .
- This could be single base exchanges (single nucleotide polymorphisms, SNPs),
- small insertions and deletions (small indels), changes in the number of
- copies of DNA segments (copy number alterations--this can happen either
+ This could be single base exchanges (single nucleotide polymorphisms, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbrv{SNP}s
+\end_layout
+
+\end_inset
+
+), small insertions and deletions (small indels), changes in the number
+ of copies of DNA segments (copy number alterations--this can happen either
  on the genome or on extragenomic small chromosomes 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -266,8 +287,20 @@ Genes that are relevant for cancer development and progression have long
  conversely, if a mutation causes a gene a lose its function as e.g.
  a negative regulator of cell growth, it is called an Tumour Suppressor
  Gene.
- The first Tumour Suppressor Gene that has been found was TP53 in ***, now
- termed 
+ The first Tumour Suppressor Gene that has been found was 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+gene{TP53}
+\end_layout
+
+\end_inset
+
+ in ***, now termed 
 \begin_inset Quotes eld
 \end_inset
 
@@ -319,7 +352,16 @@ This protein now may be affected by a mutation so that it no longer waits
  for an upstream signal to transduce, but sends the downstream signal to
  grow and divide irrespective of what the upstream input is.
  One such example is the well-known 
-\begin_inset Formula $BRAF^{V600E}$
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+gene{BRAF^{V600E}}
+\end_layout
+
 \end_inset
 
  mutation, where a Valine on position 600 (the 600th amino acid) is replaced
@@ -3329,8 +3371,8 @@ key "Baker2016-ng"
  For half of the studies that they investigated, they could not obtain the
  same results and thus conclusions that the respective authors reported.
  Needless to say, this raised some concerns about the current paradigm of
- publishing new results quickly instead of thoroughly and overclaiming the
- effect or significance of a study in order to have an article accepted
+ publishing new results quickly instead of thoroughly and over-claiming
+ the effect or significance of a study in order to have an article accepted
  in the top tier journals.
  Follow-up studies have pointed a part of the blame on use of different
  antibodies 

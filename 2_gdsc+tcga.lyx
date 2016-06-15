@@ -116,7 +116,7 @@ key "Croft2011-po"
 
 , and calculate a combined expression score using either a Fisher's exact
  test (e.g.
- by a tool called DAVID **cite**
+ by a tool called DAVID 
 \begin_inset Foot
 status open
 
@@ -130,6 +130,16 @@ key "Wadi2016-wc"
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+cite?
 \end_layout
 
 \end_inset
