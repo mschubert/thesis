@@ -1567,7 +1567,20 @@ Gene Ontology
 \end_layout
 
 \begin_layout Standard
-Gene Ontology (GO) 
+Gene Ontology (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbrv{GO}
+\end_layout
+
+\end_inset
+
+) 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Ashburner2000-xl,Gene_Ontology_Consortium2004-sn"
@@ -1601,7 +1614,19 @@ KEGG
 \end_layout
 
 \begin_layout Standard
-KEGG 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbrv{KEGG}
+\end_layout
+
+\end_inset
+
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Kanehisa2000-mp"
@@ -1665,7 +1690,20 @@ target "https://creativecommons.org/licenses/by/4.0/"
 
 \end_inset
 
-) for its own data and the pre-commercial license for imported KEGG data.
+) for its own data and the pre-commercial license for imported 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbrv{KEGG}
+\end_layout
+
+\end_inset
+
+ data.
 \end_layout
 
 \begin_layout Subsection
@@ -1673,7 +1711,20 @@ Primary cancer cohorts
 \end_layout
 
 \begin_layout Subsubsection
-The Cancer Genome Atlas (TCGA)
+The Cancer Genome Atlas (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbrv{TCGA}
+\end_layout
+
+\end_inset
+
+)
 \end_layout
 
 \begin_layout Standard
@@ -1711,7 +1762,20 @@ key "Gao2013-wp"
 \end_layout
 
 \begin_layout Subsubsection
-International Cancer Genome Consortium (ICGC)
+International Cancer Genome Consortium (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbrv{ICGC}
+\end_layout
+
+\end_inset
+
+)
 \end_layout
 
 \begin_layout Standard
@@ -1732,7 +1796,20 @@ Cancer cell line drug sensitivity resources
 \end_layout
 
 \begin_layout Subsubsection
-Genomics of Drug Sensitivity in Cancer (GDSC)
+Genomics of Drug Sensitivity in Cancer (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbrv{GDSC}
+\end_layout
+
+\end_inset
+
+)
 \begin_inset CommandInset label
 LatexCommand label
 name "sub:GDSC"
@@ -1769,7 +1846,20 @@ key "Iorio2016-gh"
 \end_layout
 
 \begin_layout Subsubsection
-Cancer Cell Line Encyclopedia (CCLE)
+Cancer Cell Line Encyclopedia (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbrv{CCLE}
+\end_layout
+
+\end_inset
+
+)
 \end_layout
 
 \begin_layout Standard
@@ -1845,7 +1935,20 @@ The L1000 platform
 \end_layout
 
 \begin_layout Standard
-The new version of the Connectivity Map is based on Luminex beads 
+The new version of the Connectivity Map is based on 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+name{Luminex}
+\end_layout
+
+\end_inset
+
+ beads 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Peck2006-fa"
@@ -2103,7 +2206,7 @@ key "Babur2015-ap"
  Much focus has been on identifying driver mutations in different cancer
  types, that, combined with oncogene addition (i.e., the tendency of a transformed
  cell to become dependent on sustained impact of the lesion it first obtained)
- forms the basis of many targeted therapies: if you can inhibit signaling
+ forms the basis of many targeted therapies: if you can inhibit signalling
  stemming from a mutation that drives a cancer's development and progression,
  the affected cells' growth will be severely inhibited.
 \end_layout
@@ -2180,8 +2283,30 @@ Cancer is known to be a heterogeneous disease, with individual tumours forming
  to its survival and growth.
  One of the arguably most effective ways of elucidating the state of individual
  tumours and cell populations therein is its transcriptome, where transcription
- of individual genes and regulatory RNAs can be assessed using methods such
- as microarrays or RNA sequencing **CMS**.
+ of individual genes and regulatory 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbrv{RNA}s
+\end_layout
+
+\end_inset
+
+ can be assessed using methods such as microarrays or RNA sequencing
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+**CMS**
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -2192,7 +2317,20 @@ Disregarding the effect of different cell types (by making the assumption
  in a given tissue (or even between tissues).
  A challenge with this is is that the transcriptome could be comprised of
  up to 22,000 genes without even considering most regulatory or ribosomal
- RNAs.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbrv{RNA}s
+\end_layout
+
+\end_inset
+
+.
  This space needs to be reduced to something more manageable for visual
  inspection, as well as different subgroups within assigned that have prognostic
  or therapeutic relevance.
@@ -2206,7 +2344,20 @@ Visualising patterns in high-dimensional data
 \end_layout
 
 \begin_layout Standard
-Principal Component Analysis (PCA) 
+Principal Component Analysis (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbrv{PCA}
+\end_layout
+
+\end_inset
+
+) 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Wold1987-se"
@@ -2239,17 +2390,59 @@ key "Wold1987-se"
 \end_inset
 
  space where the axes are principal components, and the latter's projection
- back into N called loadings (which represent how much of each original
- axis is contained within the new axes).
+ back into 
+\begin_inset Formula $N$
+\end_inset
+
+ called loadings (which represent how much of each original axis is contained
+ within the new axes).
  It is important to note the meaning and interpretability of such a decompositio
 n is strongly dependent on the amount of variance captured in the reduced
  space.
- PCA is closely related to Singular Value Decomposition (SVD), which has
- applications in dimensionality reduction as well.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbrv{PCA}
+\end_layout
+
+\end_inset
+
+ is closely related to Singular Value Decomposition (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbrv{SVD}
+\end_layout
+
+\end_inset
+
+), which has applications in dimensionality reduction as well.
 \end_layout
 
 \begin_layout Standard
-T-distributed Stochastic Neighbour Embedding (t-SNE) 
+T-distributed Stochastic Neighbour Embedding (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbrv{t-SNE}
+\end_layout
+
+\end_inset
+
+) 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Van_der_Maaten2008-kt"
@@ -2264,14 +2457,40 @@ key "Van_der_Maaten2008-kt"
  Using this method, one can only trust the points neighbouring each other
  up to a certain number for which they were considered, as specified by
  the perplexity parameter.
- This method has been re-branded as viSNE 
+ This method has been re-branded as 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbrv{viSNE}
+\end_layout
+
+\end_inset
+
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Amir2013-od"
 
 \end_inset
 
- in their cyt software tool
+ in their 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+name{cyt}
+\end_layout
+
+\end_inset
+
+ software tool
 \begin_inset Foot
 status open
 
@@ -2337,7 +2556,20 @@ latin{a priori}
 \end_layout
 
 \begin_layout Standard
-Non-Negative Matrix Factorisation (NMF) 
+Non-Negative Matrix Factorisation (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbvr{NMF}
+\end_layout
+
+\end_inset
+
+) 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Lee2001-ju"
@@ -2411,10 +2643,32 @@ In this case we require an algorithm that summarises differential expression
  If we are looking gene regulatory networks we would use those interactions
  to map gene expression on.
  If we are looking for likely effector complexes of interacting proteins
- we would ideally use proteomics data, but since [*] have shown that most
- variability in protein expression can be explained by variability in the
- mRNA of the corresponding gene, we could also make a good case for looking
- for the gene expression level of interacting proteins.
+ we would ideally use proteomics data, but since it has been shown 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+ref
+\end_layout
+
+\end_inset
+
+ that most variability in protein expression can be explained by variability
+ in the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbrv{mRNA}
+\end_layout
+
+\end_inset
+
+ of the corresponding gene, we could also make a good case for looking for
+ the gene expression level of interacting proteins.
 \end_layout
 
 \begin_layout Subsubsection
@@ -2430,12 +2684,36 @@ The problem of finding a differentially expressed connected subnetwork in
  As the exhaustive search for an exact solution to this problem is NP-hard,
  there are several approximate solutions that were developed to solve that
  problem.
- One of those is an algorithm called the Prize Collecting Steiner Tree (PCST),
- which expands and shrinks the tree base on an initial assessment of connected
+ One of those is an algorithm called the Prize Collecting Steiner Tree (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbrv{PCST}
+\end_layout
+
+\end_inset
+
+), which expands and shrinks the tree base on an initial assessment of connected
  scores, and whether or not it adds or subtracts a score (the prize) by
  doing that.
- An example of an implementation that uses a PCST on interacting proteins
- is the 
+ An example of an implementation that uses a 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbrv{PCST}
+\end_layout
+
+\end_inset
+
+ on interacting proteins is the 
 \begin_inset ERT
 status open
 
@@ -2456,7 +2734,20 @@ key "Beisser2010-wa"
 \end_inset
 
 , initially used to analyse deregulated subnetworks in Diffuse Large B Cell
- Lymphoma (DLBC).
+ Lymphoma (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbrv{DLBC}
+\end_layout
+
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Subsection
@@ -2471,9 +2762,31 @@ An important aspect of gene expression is that its patterns are not randomly
  as a response to the stimulus (more on this in the next section).
  The terminal nodes of this signal transduction are called transcription
  factors, that upon binding on the DNA mediate and direct (either in a promoting
- or in an inhibiting fashion) binding of DNA-dependent RNA polymerase (PolII
- [?]) that forms a complex with available factors in order to start transcriptio
-n of a factor's target genes.
+ or in an inhibiting fashion) binding of DNA-dependent RNA polymerase (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbrv{PolII}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+check
+\end_layout
+
+\end_inset
+
+) that forms a complex with available factors in order to start transcription
+ of a factor's target genes.
  The genes transcribed upon activation of transcription factors may in turn
  be transcription factors themselves that cause increased or decreased transcrip
 tion of other genes.
@@ -2484,11 +2797,21 @@ tion of other genes.
 \begin_layout Standard
 There are multiple ways these can be investigated: by characterising which
  transcription factors bind to which genes (which can be done either experimenta
-lly, as outlined in section *, or computationally by looking at which sequence
- of nucleotides a given factor is likely to bind), by finding genes that
- change in a coordinated fashion and hypothesise that those might be regulated
- by the same set of factors, or by making inferences which combination of
- which factors is required for a certain gene to be transcribed.
+lly, as outlined in section 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+*
+\end_layout
+
+\end_inset
+
+, or computationally by looking at which sequence of nucleotides a given
+ factor is likely to bind), by finding genes that change in a coordinated
+ fashion and hypothesise that those might be regulated by the same set of
+ factors, or by making inferences which combination of which factors is
+ required for a certain gene to be transcribed.
 \end_layout
 
 \begin_layout Subsubsection
@@ -2500,9 +2823,47 @@ Some, albeit not all, transcription factors prefer to bind a specific sequence
  of nucleotides that the recognize on the DNA strands.
  Depending on how strong this preference is, it may require a certain amount
  of experiments to find a statistical enrichment in the regions it was found
- to bind in terms of the nucleotide sequences that peaks are found in ChIP-seq.
+ to bind in terms of the nucleotide sequences that peaks are found in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbrv{ChIP-seq}
+\end_layout
+
+\end_inset
+
+.
  This preference for a certain string of nucleotides is called a motif.
- The enrichment in ChIP-seq peaks can be found using tools such as MEME
+ The enrichment in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbrv{ChIP-seq}
+\end_layout
+
+\end_inset
+
+ peaks can be found using tools such as 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbrv{MEME}
+\end_layout
+
+\end_inset
+
  
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -2522,21 +2883,60 @@ n factor could bind but did not in the original experiment.
  factor blocking the binding of the one we are looking at.
  There are databases that collect and store those motifs from experimental
  data and their known and predicted binding in different cell types, such
- as JASPAR 
+ as 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbrv{JASPAR}
+\end_layout
+
+\end_inset
+
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Portales-Casamar2009-nd,Mathelier2013-mo"
 
 \end_inset
 
-, TRANSFAC 
+, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbrv{TRANSFAC}
+\end_layout
+
+\end_inset
+
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Matys2003-ea"
 
 \end_inset
 
-, or the Ensembl Regulatory Build 
+, or the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+name{Ensembl Regulatory Build}
+\end_layout
+
+\end_inset
+
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Zerbino2016-mx"
@@ -2556,18 +2956,87 @@ Another question that we might be interested in is which genes share a common
  In the simplest case this is a transcription factor that, upon activation,
  transcribes a set of genes in a coordinated fashion.
  Target genes of this transcription factors may act in that capacity themselves,
- so we come back to the construction of a GRN.
+ so we come back to the construction of a 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbrv{GRN}
+\end_layout
+
+\end_inset
+
+.
  Turning the argument on its head, we can look genes that are expressed
  in a coordinated fashion across different conditions (which includes e.g.
  different patient samples, as long as we can assume that the transcription
  factor-target relationship is the same) by calculating the mutual information
  of all gene pairs, setting a lower bound to consider, and the pruning the
  edges in the resulting network by postulating that a link between genes
- A and C is indirect if the mutual information of A and B, as well as B
- and C is higher than the one of A and C (a concept called Data Processing
- Inequality).
- On top of ARACNE, the authors also propose a method they call Master Regulator
- Analysis (MRA) 
+ 
+\begin_inset Formula $A$
+\end_inset
+
+ and 
+\begin_inset Formula $C$
+\end_inset
+
+ is indirect if the mutual information of 
+\begin_inset Formula $A$
+\end_inset
+
+ and 
+\begin_inset Formula $B$
+\end_inset
+
+, as well as 
+\begin_inset Formula $B$
+\end_inset
+
+ and 
+\begin_inset Formula $C$
+\end_inset
+
+ is higher than the one of 
+\begin_inset Formula $A$
+\end_inset
+
+ and 
+\begin_inset Formula $C$
+\end_inset
+
+ (a concept called Data Processing Inequality).
+ On top of 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbrv{ARACNE}
+\end_layout
+
+\end_inset
+
+, the authors also propose a method they call Master Regulator Analysis
+ (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbrv{MRA}
+\end_layout
+
+\end_inset
+
+) 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Basso2005-ql"
@@ -2579,7 +3048,20 @@ key "Basso2005-ql"
 
 \begin_layout Standard
 In an extension proposed by the same group is to condition the mutual informatio
-n on the expression of a modulator that they call MINDy 
+n on the expression of a modulator that they call 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbrv{MINDy}
+\end_layout
+
+\end_inset
+
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Wang2009-ui"
@@ -2599,7 +3081,7 @@ n factor regulation.
 \end_layout
 
 \begin_layout Subsection
-Pathways and signaling
+Pathways and signalling
 \end_layout
 
 \begin_layout Standard
@@ -2618,7 +3100,7 @@ The transduction of a signal from a cue either binding to a receptor on
 \end_layout
 
 \begin_layout Standard
-Cell signaling is deregulated in many diseases, including cancer that we
+Cell signalling is deregulated in many diseases, including cancer that we
  focus on here because of the sheer wealth of available data.
  But how to best quantify the signalling activity? The closest proxy we
  have would be to quantify post-translational modifications that are known
@@ -2636,7 +3118,7 @@ Cell signaling is deregulated in many diseases, including cancer that we
 
 \begin_layout Standard
 We can thus argue that computational methods are required to make statements
- about cell signaling, starting from DNA and RNA instead of protein and
+ about cell signalling, starting from DNA and RNA instead of protein and
  PTM data.
  The simplest approach to this is looking how much mRNA of signalling molecules
  are expressed that comprise a pathway, and designate a high expression
@@ -2649,20 +3131,59 @@ key "Subramanian2005-pd"
 \end_inset
 
 , more in chapter 2).
- This, however, is at odds with the way cell signaling works and is regulated.
+ This, however, is at odds with the way cell signalling works and is regulated.
  Inferring the protein levels from mRNA levels may indeed be viable [60%
- paper], but two steps removed from the PTMs.
+ paper], but two steps removed from the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbrv{PTM}s
+\end_layout
+
+\end_inset
+
+.
  Methods have been developed to address the issue of taking the expression
  level of a gene set as activity proxy by considering the structure and
  signs of the different pathway molecules, e.g.
- Signaling Pathway Impact Analysis 
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+name{Signaling Pathway Impact Analysis}
+\end_layout
+
+\end_inset
+
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Tarca2008-ey"
 
 \end_inset
 
- or Pathifier 
+ or 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+name{Pathifier}
+\end_layout
+
+\end_inset
+
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Drier2013-vn"
@@ -2671,7 +3192,20 @@ key "Drier2013-vn"
 
 .
  They, however, do still not distinguish between expression level and activity.
- Another method, PARADIGM 
+ Another method, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbrv{PARADIGM}
+\end_layout
+
+\end_inset
+
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Vaske2010-zn"
@@ -2943,7 +3477,20 @@ key "Van_Rossum1995-pl"
 
 \end_inset
 
-, along with packages hosted on CRAN/BioConductor 
+, along with packages hosted on 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbrv{CRAN}
+\end_layout
+
+\end_inset
+
+/BioConductor 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Gentleman2004-oc"
@@ -2990,7 +3537,20 @@ key "Wickham2011-qn"
 
 \end_inset
 
-, used extensively in the analyses) and PyPI, respectively.
+, used extensively in the analyses) and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbrv{PyPI}
+\end_layout
+
+\end_inset
+
+, respectively.
  Without those tools, performing analysis like I do to obtain the results
  shown later would not be possible.
  Note that there are others, but they do not play a similarly important
@@ -3011,7 +3571,20 @@ Requirements for analyses are going to change, and so will the scripts that
  There is nothing that is keeping us from updating and changing them of
  course, but at times it is required to reproduce the behaviour and outcome
  of an analysis after that.
- This is very version control systems (VCS) come in.
+ This is very version control systems (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbrv{VCS}
+\end_layout
+
+\end_inset
+
+) come in.
  These are software that will keep track of all previous versions of code
  (and potentially other files as well) in case they are ever needed again.
  One of the first to be widely used was CVS 
@@ -3156,7 +3729,33 @@ While the above tools take care of performing and keeping track of analyses,
  the crucial point that is missing for reproducible research is integration
  with reporting.
  A tool to do combine R code with written text and annotation (as opposed
- to technical/API documentation) is knitr 
+ to technical/
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbrv{API}
+\end_layout
+
+\end_inset
+
+ documentation) is 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+rpkg{knitr}
+\end_layout
+
+\end_inset
+
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Xie2014-sa"
@@ -3239,23 +3838,75 @@ One way genes expression has shown promise is using global clustering to
  both the overall clustering of the data as well as more specific, functionally
  relevant readouts.
  An example of those functional readouts is the expression level of pre-defined
- pathway sets - mostly using the GSEA scores - that has been reported in
- numerous publications, but also more sophisticated methods that attempt
- to quantify the signal flow, such as SPIA 
+ pathway sets - mostly using the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbrv{GSEA}
+\end_layout
+
+\end_inset
+
+ scores - that has been reported in numerous publications, but also more
+ sophisticated methods that attempt to quantify the signal flow, such as
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbrv{SPIA}
+\end_layout
+
+\end_inset
+
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Tarca2008-ey"
 
 \end_inset
 
-, PARADIGM 
+, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbrv{PARADIGM}
+\end_layout
+
+\end_inset
+
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Vaske2010-zn"
 
 \end_inset
 
-, or Pathifier 
+, or 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+name{Pathifier}
+\end_layout
+
+\end_inset
+
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Drier2013-vn"
@@ -3268,8 +3919,20 @@ key "Drier2013-vn"
 \begin_layout Standard
 These methods, however, stand at odds with the notion that signalling in
  animal - and thus human - cells is tightly post-translationally regulated,
- since they are based on the mRNA expression of the signalling proteins,
- in one way or another.
+ since they are based on the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbrv{mRNA}
+\end_layout
+
+\end_inset
+
+ expression of the signalling proteins, in one way or another.
  To date, it is largely unexplored how much those pathway-expression-based
  methods are able to make statements about the signal transmission in a
  protein network.
@@ -3277,8 +3940,21 @@ These methods, however, stand at odds with the notion that signalling in
  perturbation experiments to quantify gene expression responses to a specified
  set of stimuli, and then use those genes to infer the upstream signal required
  to change their expression.
- This is one way by which - only using gene expression data - we can indirectly
- observe activity instead of just mRNA expression.
+ This is one way by which--only using gene expression data--we can indirectly
+ observe activity instead of just 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbrv{mRNA}
+\end_layout
+
+\end_inset
+
+ expression.
 \end_layout
 
 \begin_layout Standard
