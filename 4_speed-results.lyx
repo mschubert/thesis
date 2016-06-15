@@ -585,6 +585,16 @@ status open
 \end_inset
 
 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+TODO: move this to suppl
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -1768,8 +1778,9 @@ status open
 \begin_layout Plain Layout
 Volcano plot of tissue-specific associations between pathway activity and
  drug response to clinical drugs only.
- Horizontal axis shows the regression slope, vertical axis the FDR-adjusted
- p-values (adjustment per tissue).
+ Horizontal axis shows the regression slope, vertical axis the per-tissue
+ FDR-adjusted p-values.
+ Dots with black circles are shown in more detail below.
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Volcano-drug-tissue"
@@ -1952,7 +1963,20 @@ Obtaining patient data from the TCGA
 \end_layout
 
 \begin_layout Standard
-I used the Firehose tool
+I used the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+name{Firehose}
+\end_layout
+
+\end_inset
+
+ tool
 \begin_inset Foot
 status open
 
@@ -1968,8 +1992,8 @@ target "http://gdac.broadinstitute.org/"
 
 \end_inset
 
- from the BROAD institute to download data labelled level 3 RNA-seq v2 (files
- names including 
+ from the BROAD institute to download data labelled level 3 RNA-seq version
+ 2 (files names including 
 \begin_inset ERT
 status open
 
@@ -2006,7 +2030,20 @@ file{rnaseqv2}
 
 ) for all cancer types for which it was available.
  I extracted the raw counts from each of the text files for each gene.
- I then performed a voom transformation (R package 
+ I then performed a 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+code{voom}
+\end_layout
+
+\end_inset
+
+ transformation (R package 
 \begin_inset ERT
 status open
 
@@ -2044,7 +2081,7 @@ code{avereps}
 
 \end_inset
 
-(R package 
+ (R package 
 \begin_inset ERT
 status open
 

@@ -3910,7 +3910,20 @@ name "fig:Size-of-the"
 \begin_layout Standard
 To manage the different data sets I used as well as making them reusable,
  I defined a human- as well as machine-readable format using the markup
- language YAML 
+ language 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbrv{YAML}
+\end_layout
+
+\end_inset
+
+ 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Ben-Kiki2005-jo"
@@ -5034,8 +5047,8 @@ name "fig:sig-GO-enrichment"
 
 \begin_layout Standard
 What I find is largely expected, but it also goes to show that modulation
- of signaling pathways mainly triggers biological processes related to the
- pathway, but not the corresponding pathway or pathway category itself.
+ of signalling pathways mainly triggers biological processes related to
+ the pathway, but not the corresponding pathway or pathway category itself.
  For instance (figure 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -5051,8 +5064,20 @@ reference "fig:sig-GO-enrichment"
  ubiquitin.
  Hypoxia on the other hand inhibits the expression of G1/S genes and mitochondri
 a-related genes (where oxidative phosphorylation happens **ref**).
- TNFa/NFkB show enrichment in the category of genes responsive to LPS (which
- is a known pathway activator **ref**), and so does Trail.
+ TNFa/NFkB show enrichment in the category of genes responsive to 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbrv{LPS}
+\end_layout
+
+\end_inset
+
+ (which is a known pathway activator **ref**), and so does Trail.
 \end_layout
 
 \begin_layout Subsection

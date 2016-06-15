@@ -520,7 +520,16 @@ Targeted therapies
 A recurrent theme of cancer development and progression is the aberrant
  activation of specific molecular cues in cell signaling.
  An example of this is the well-known 
-\begin_inset Formula $BRAF^{V600E}$
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+gene{BRAF^{V600E}}
+\end_layout
+
 \end_inset
 
  mutation, already mentioned in section 
@@ -540,7 +549,7 @@ reference "sub:Consequences"
  context.
  An important aspect in that regard is the concept of oncogene addiction:
  Once a cell, or a population of cells, suffers a molecular lesion that
- causes aberrant signaling, the cell (or cells) become dependent on exactly
+ causes aberrant signalling, the cell (or cells) become dependent on exactly
  that signal.
  Turn it off, and those cells are likely to die.
 \end_layout
@@ -554,7 +563,16 @@ This has an important implication for cancer therapy: if we are able to
 
 \begin_layout Standard
 Coming back to our example of the 
-\begin_inset Formula $BRAF^{V600E}$
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+gene{BRAF^{V600E}}
+\end_layout
+
 \end_inset
 
  mutation, [* et al] indeed designed and developed a small-molecule inhibitor
@@ -613,14 +631,23 @@ Unfortunately, targeted therapies often can not kill all cells before they
  cells were resistant to begin with and then outgrow their competitors.
  This is one of the reasons why targeting mutations in driver genes is a
  good start, but needs to be augmented with knowledge of the dynamic changes
- it induces in the cellular signaling network.
+ it induces in the cellular signalling network.
 \end_layout
 
 \begin_layout Standard
 Let us revisit one of the most well-known examples in targeted therapies,
  the inhibitor Plexicon (PLX4720; later marketed under the name Vemurafenib)
  specifically targeted to 
-\begin_inset Formula $BRAF^{V600E}$
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+gene{BRAF^{V600E}}
+\end_layout
+
 \end_inset
 
  mutants.
@@ -634,7 +661,7 @@ key "Chapman2011-jl"
 \end_inset
 
 , which could be hailed as a success for identifying a target and rationally
- designing an inhibitor that abrogates oncogenic signaling.
+ designing an inhibitor that abrogates oncogenic signalling.
  However, there was one drawback: after a couple more weeks after the initial
  success, the tumour cells were able to overcome the effects of the inhibitor,
  start to grow again, and ultimately lead to the recurrence of the tumours
@@ -919,9 +946,21 @@ Animal models
 \begin_layout Standard
 Of course, there are aspects missing when relying on models that handle
  individual cells or the interaction of a couple of cell of the same type
- when trying to assess either mechanisms of pathogenesis or in vivo response
- to a compound, which makes it necessary to perform experiments in a whole
- organism.
+ when trying to assess either mechanisms of pathogenesis or 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+latin{in vivo}
+\end_layout
+
+\end_inset
+
+ response to a compound, which makes it necessary to perform experiments
+ in a whole organism.
  For this purpose animals have long been used, down from a simple multicellular
  worm (
 \begin_inset ERT
@@ -972,7 +1011,7 @@ One line of experiments that can be done with mice but not humans is to
  their offspring is homozygous for a desired mutation.
  The gene introduced can either be a reporter, to see where a it is expressed,
  or for instance a mutated version of a human gene that is known to induce
- the formation of tumors.
+ the formation of tumours.
 \end_layout
 
 \begin_layout Standard
@@ -1373,11 +1412,23 @@ key "Domon2006-au,Bensimon2012-iy"
  is based on fragmenting proteins into peptides that are then ionized and
  sprayed into an electrical field in vacuum tube, where their mass-to-charge
  ratio causes them to behave in a certain way.
- For instance, in Time of Flight (TOF) instruments, the electrical field
- is used to accelerate the peptides; the force that accelerates them is
- then proportional to their charge, and their inertia to their mass - hence
- the time it takes to reaches the detector is proportional to the ratio
- of the two.
+ For instance, in Time of Flight (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbrv{TOF}
+\end_layout
+
+\end_inset
+
+) instruments, the electrical field is used to accelerate the peptides;
+ the force that accelerates them is then proportional to their charge, and
+ their inertia to their mass--hence the time it takes to reaches the detector
+ is proportional to the ratio of the two.
 \end_layout
 
 \begin_layout Standard
@@ -1386,7 +1437,33 @@ For more complex samples, there are too many peptides to detect at any given
  that first separates proteins contained in a sample using some other property
  (e.g.
  their hydrophilicity/hydrophobicity) in columns of gas (gas chromatography,
- GC) or liquid (high performance liquid chromatography, HPLC).
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbrv{GC}
+\end_layout
+
+\end_inset
+
+) or liquid (high performance liquid chromatography, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbrv{HPLC}
+\end_layout
+
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Section
@@ -1416,7 +1493,20 @@ key "Parkinson2007-bf,Parkinson2009-ej"
 
  at the European Bioinformatics institute.
  With the reporting standards defined in the Minimal Information about a
- Microarray Experiment (MIAME) 
+ Microarray Experiment (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbrv{MIAME}
+\end_layout
+
+\end_inset
+
+) 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Brazma2001-ro"
@@ -1456,8 +1546,20 @@ reference "sub:assay_RNA"
 \begin_layout Standard
 There are multiple databases available that link gene sets into function
  groups.
- The most well known are Gene Ontology and the pathway resources KEGG and
- Reactome, as listed below.
+ The most well known are Gene Ontology and the pathway resources 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbrv{KEGG}
+\end_layout
+
+\end_inset
+
+ and Reactome, as listed below.
 \end_layout
 
 \begin_layout Subsubsection
