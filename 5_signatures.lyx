@@ -112,8 +112,20 @@ key "Iorio2013-pv"
 \end_layout
 
 \begin_layout Standard
-At the time I started this project, the LINCS Connectivity Map data had
- just been released.
+At the time I started this project, the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbrv{LINCS}
+\end_layout
+
+\end_inset
+
+ Connectivity Map data had just been released.
  The BROAD institute held a small symposium and workshop about the platform
  (the L1000), the data they had collected, and how they are planning to
  take it forward with web-based 
@@ -141,7 +153,20 @@ Even more interesting, we could generate a signature between cells that
  then match this signature with another drug that potentially converts the
  cells from a resistant to a sensitive phenotype.
  This has been shown to work when trying to overcome glutocorticoid resistance
- in acute lymphoblastic leukaemia (ALL) 
+ in acute lymphoblastic leukaemia (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbrv{ALL}
+\end_layout
+
+\end_inset
+
+) 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Wei2006-ne"
@@ -151,8 +176,21 @@ key "Wei2006-ne"
 , where the authors identified Rapamycin as a modulator of the resistance
  phenotype.
  But now, we could do it systematically with the 150x150 drugs overlapping
- between the LINCS and GDSC projects, and could thus obtain the first view
- of drug sensitisation over a large target space.
+ between the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbrv{LINCS}
+\end_layout
+
+\end_inset
+
+ and GDSC projects, and could thus obtain the first view of drug sensitisation
+ over a large target space.
  This could ultimately lead to a new drug combination or regimen that counters
  the development of resistance in clinical cancer patients, which is one
  of the main challenges in patient treatment today.

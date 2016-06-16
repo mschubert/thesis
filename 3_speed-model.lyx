@@ -312,11 +312,12 @@ g molecules.
 \end_layout
 
 \begin_layout Section
-Methods
+Curating and assembling a database of publicly available perturbation experiment
+s
 \end_layout
 
 \begin_layout Subsection
-Defining Relevant Pathways and Experiments
+Defining scope and format
 \begin_inset CommandInset label
 LatexCommand label
 name "sub:Defining-Relevant-Pathways"
@@ -366,6 +367,405 @@ Remove TLR, instead use TNFa and NFkB
 \begin_layout Standard
 Taking into account these modifications, the final pathway sets I re-curated
  were: EGFR, H2O2, JAK-STAT, MAPK, NFkB, p53, PI3K, Trail, VEGF, and TGFb.
+\end_layout
+
+\begin_layout Standard
+Instead of creating an 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbrv{SQLite}
+\end_layout
+
+\end_inset
+
+ database (original 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbrv{SPEED}
+\end_layout
+
+\end_inset
+
+) or flat text files with semi-defined fields (additional pathways for the
+ original platform), I used the markup language 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbrv{YAML}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+short for Yet Another Markup Language
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Ben-Kiki2005-jo"
+
+\end_inset
+
+ to create index files for all the curated experiments.
+ This has the advantage over a simple tabular format in that it supports
+ structured data, including field names and comments, and being easily machine-
+ and human-readable (unlike XML).
+ It can thus easily be reused by other projects for which a curation of
+ perturbation-response experiments on the resolution of pathways is of interest
+ (unlike the flat files used in the extended curation of the original SPEED).
+ An overview of the format structure is shown in table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:yaml-format"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Structured data in the YAML file format
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:yaml-format"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="13" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Identifier
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Description
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $---$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+marker for the beginning of a record
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+id
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+the experiment identifier; consists of 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+accession
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+the experiment accession in ArrayExpress, e.g.
+ E-GEOD-15986
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+platform
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+the microarray platform
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+pathway
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+the pathway identifier
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+cells
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+a description of the cells used in the experiment
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+treatment
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+a description of what the cell were treated with
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+effect
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+if the effect was 
+\begin_inset Quotes eld
+\end_inset
+
+activating
+\begin_inset Quotes erd
+\end_inset
+
+ or 
+\begin_inset Quotes eld
+\end_inset
+
+inhibiting
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+hours
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+how many hours the perturbation lasted
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+control
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+a list of array identifiers used for the basal condition
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+perturbed
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+a list of array identifiers used for the perturbed condition
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+...
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+marker for the end of file
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -485,54 +885,145 @@ Those searches yielded between 30 and 650 results in the database, the majority
  the latter was rather mentioned in the experiment description.
  I read the description, sample attributes, metadata files, and if required
  the associated article to fill in the following information about each
- experiment:
-\end_layout
+ experiment (listed in table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:yaml-format"
 
-\begin_layout Itemize
-accession: the experiment ID in ArrayExpress
-\end_layout
+\end_inset
 
-\begin_layout Itemize
-platform: the microarray platform the experiment was performed on
-\end_layout
+).
+ Using these searches and data, I defined a set of cancer-relevant pathways
+ (methods section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Defining-Relevant-Pathways"
 
-\begin_layout Itemize
-pathway: which pathway the perturbation belonged to
-\end_layout
+\end_inset
 
-\begin_layout Itemize
-cells: the cell type used in the experiment
-\end_layout
+) the database search using ArrayExpress (methods section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Finding-suitable-Experiments"
 
-\begin_layout Itemize
-treatment: the perturbagen used
-\end_layout
+\end_inset
 
-\begin_layout Itemize
-effect: whether it was activating or inhibiting
-\end_layout
+) and curation of a total of 208 submissions encompassing 11 pathways, 580
+ experiments, and a total of 2352 arrays.
+ This is about the same number of pathways in the SPEED platform 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Parikh2010-uj"
 
-\begin_layout Itemize
-hours: the number of hours the cells were perturbed
-\end_layout
+\end_inset
 
-\begin_layout Itemize
-control: the array IDs measuring the control condition
-\end_layout
+, but about three times as many experiments and more than four times as
+ many microarrays that were used to derived the signature.
+ Because the collection of 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Gatza2010-fq"
 
-\begin_layout Itemize
-perturbed: the array IDs measuring the perturbed condition
+\end_inset
+
+ is breast cancer only and only consists of a single experiment per signature,
+ our number of pathway signatures is smaller but the number of overall experimen
+tal data much bigger (for a comparison, see figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Size-of-the"
+
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Standard
-Instead of creating an SQLite database (original SPEED) or flat text files
- with semi-defined fields (additional pathways for the original platform),
- I used the markup language YAML (short for Yet Another Markup Language)
- to create index files for all the curated experiments.
- This has the advantage of being easily extendable (no need to insert rows
- in a database, just add another file) while having named fields and allowing
- for comments (unlike the flat files used in the extended curation of the
- original SPEED), and being easily machine- and human-readable (unlike XML).
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/4.2_size.pdf
+	lyxscale 50
+	width 80col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Size of the data set in comparison to the two published methods
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Size-of-the"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+I designed a pipeline to parse the experiment index, and download and process
+ the corresponding experimental data as described in section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:From-Experiments-to"
+
+\end_inset
+
+.
+ At the time, the release of the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+rpkg{ArrayExpress}
+\end_layout
+
+\end_inset
+
+ R package as unable to process most of the experiments although the raw
+ data as well as experiment description as available.
+ In the spirit of increased reusability, I aimed at fixing the package instead
+ of just writing my own processing routines, and the new version is available
+ on BioConductor
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://bioconductor.org/packages/release/bioc/html/ArrayExpress.html"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+, where 
 \end_layout
 
 \begin_layout Subsection
@@ -549,8 +1040,21 @@ name "sub:From-Experiments-to"
 \begin_layout Standard
 To go from an experiment accession in the ArrayExpress database to the actual
  expression values of the arrays referenced in the curated data set, I planned
- to use the ArrayExpress package with its main function that should do exactly
- that: take an accession, and return an annotated 
+ to use the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+rpkg{ArrayExpress}
+\end_layout
+
+\end_inset
+
+ package with its main function that should do exactly that: take an accession,
+ and return an annotated 
 \begin_inset ERT
 status open
 
@@ -569,6 +1073,24 @@ code{data.frame}
  parts of the package and gave the patches to the original maintainers (for
  detailed list of changes, see the Bioconductor VCS diff between 1.28.1 and
  1.30.1).
+ The update package has been downloaded by over 4,000 people since
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://bioconductor.org/packages/stats/bioc/ArrayExpress/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+\SpecialChar \@.
+
 \end_layout
 
 \begin_layout Standard
@@ -758,6 +1280,8 @@ key "Smyth2005-mw"
 \end_inset
 
  package.
+ After processing and quality control, a total of ** experiments and **
+ arrays remained, with a total of over 64 million single-gene measurements.
 \end_layout
 
 \begin_layout Standard
@@ -1514,6 +2038,10 @@ status open
 
 \end_layout
 
+\begin_layout Section
+A model for perturbation-response experiments
+\end_layout
+
 \begin_layout Subsection
 Transformation of Z-scores
 \begin_inset CommandInset label
@@ -1746,25 +2274,7 @@ From the result of the linear model, I selected the top 100 genes per pathway
 \end_layout
 
 \begin_layout Subsection
-Computing Pathway Scores
-\begin_inset CommandInset label
-LatexCommand label
-name "sub:method:speed-scores"
-
-\end_inset
-
-
-\begin_inset CommandInset label
-LatexCommand label
-name "sub:Methods:pathway-scores"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsubsection
-Perturbation-response genes
+Computing pathway scores
 \end_layout
 
 \begin_layout Standard
@@ -1799,6 +2309,855 @@ I then scaled each pathway or gene set score to have a mean of zero and
  standard deviation of one, in order to factor out the difference in strength
  of gene expression signatures and thus be able to compare the relative
  scores across pathways and samples at the same time.
+\end_layout
+
+\begin_layout Subsection
+A model of significantly modulated genes upon perturbation
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/4.2_tsne.pdf
+	lyxscale 50
+	width 120col%
+	BoundingBox 70bp 150bp 771bp 440bp
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+t-SNE plots of input experiments by fold change (left), average z-scores
+ (centre) and z-scores filtered by significance (right).
+ Different perturbations are shown as different colours, distance between
+ points corresponds to inverse similarity.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:t-SNE-plots-of"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Looking at the fold changes in each perturbation experiment I curated using
+ the non-linear dimensionality reduction technique t-distribution stochastic
+ neighbour embedding (t-SNE) 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Van_der_Maaten2008-kt,Van_der_Maaten2013-io"
+
+\end_inset
+
+, I do not see an obvious clustering in which pathway was perturbed (figure
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:t-SNE-plots-of"
+
+\end_inset
+
+, left).
+ Distances between the fold changes of different experiments are about equal,
+ with the slight exception of JAK-STAT and Hypoxia that are grouped to some
+ extend, but the fold changes do not allow for a separation of pathways.
+\end_layout
+
+\begin_layout Standard
+Applying the model building as described in section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Transformation-of-Z-scores"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Building-the-Model"
+
+\end_inset
+
+, I obtain an expression matrix with genes in rows and pathways in columns.
+ As this is a linear model of the z-scores of those different pathways,
+ I can obtain activation scores (my inferred pathway activity) by a matrix
+ multiplication between the model matrix and gene expression values from
+ samples, as long as the identifiers are in the same order.
+ Using a model derived from those average z-scores alone, I start to see
+ that some pathways produce activation patterns distinct from other perturbation
+s (figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:t-SNE-plots-of"
+
+\end_inset
+
+, centre), like NFkB/TNFa, and a proper separation of Hypoxia and JAK-STAT.
+ Using only the top 100 significant genes (table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Significance-of-signature"
+
+\end_inset
+
+), the separation of those gets larger and I see almost all pathways in
+ groups, albeit the ones in the centre are still overlapping.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Significance of signature genes
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Significance-of-signature"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="12" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Pathway
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Average FDR
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+EGFR
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1.67\cdot10^{-10}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Hypoxia
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $4.50\cdot10^{-21}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+JAK-STAT
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $4.10\cdot10^{-13}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MAPK
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $3.36\cdot10^{-21}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+NFkB
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $2.28\cdot10^{-19}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+p53
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $2.55\cdot10^{-12}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+PI3K
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1.03\cdot10^{-17}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+TNFa
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $6.40\cdot10^{-18}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+TGFb
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $2.71\cdot10^{-7}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Trail
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.018$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+VEGF
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $4.68\cdot10^{-9}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Consensus gene signatures reveal pathway-response transcriptional modules
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Perturbation-Associations"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+I calculate linear associations using the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+code{lm}
+\end_layout
+
+\end_inset
+
+ function in R between a pathway coefficients matrix (of the shape experiments
+ x pathways, with the value 1 where a pathway was activated, -1 where a
+ pathway was inhibited, and 0 otherwise; here, no cross-talk was modelled
+ explicitly) and the pathway scores obtained by using the different methods
+ as described in sections 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:method:speed-scores"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Methods:pathway-scores"
+
+\end_inset
+
+.
+ I then plot the result of the associations as a heatmap where the perturbed
+ pathway and the obtained pathway score are on the axes, and the colour
+ (blue for positive and red for negative correlation) indicates the Wald
+ statistic between them.
+ I annotate combinations where the p-value is below 
+\begin_inset Formula $10^{-5}$
+\end_inset
+
+ with 
+\begin_inset Formula $*$
+\end_inset
+
+ and where it is 
+\begin_inset Formula $10^{-10}$
+\end_inset
+
+ with 
+\begin_inset Formula $***$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+As a method for inspection of the pathway scores of the individual experiments,
+ I plot a heatmap using the R package 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+rpkg{pheatmap}
+\end_layout
+
+\end_inset
+
+ with the pathways scores in rows, experiments in columns, and the colour
+ indicates the relative (column-scaled) activation of each pathway.
+ In order to make activations and inhibitions more comparable, I take the
+ negative pathway score for each inhibition and annotate the columns separately
+ indicating which pathway was perturbed, and which kind of perturbation
+ it was.
+ This way, we can see clusters of similar pathway activation patterns that
+ should correspond to the pathways that were perturbed.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/4.2_recall_speed-matrix.pdf
+	lyxscale 50
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Recovery of the perturbations across pathways (left) and for individual
+ experiments (right) using the consensus signature.
+ Associations between perturbed pathways and the scores obtained by the
+ model of pathway-response genes (PRGs).
+ Along the diagonal each pathway is strongly (p<10-10) associated with its
+ own perturbation.
+ Significant off-diagonal elements are sparse and only show a strong association
+ between EGFR/MAPK and TNFa/NFkB and a weaker association (p<10-5) between
+ EGFR/PI3K and MAPK/TNFa.
+ Heatmap of relative pathway scores in each perturbation experiment.
+ 523 experiments in columns, annotated with the perturbation effect (green
+ for activation, orange for inhibition) and pathway perturbed (same order
+ as b).
+ Pathway scores in rows cluster between EGFR/MAPK and to a lesser extent
+ PI3K, and TNFa/NFkB.
+ Colour indicates activation or inhibition strength.
+ Order of pathways: EGFR, H2O2, Hypoxia, JAK-STAT, MAPK, NFkB, PI3K, TGFb,
+ TNFa, Trail, VEGF, p53.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:sp2-exp-heatmap"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The above clusters of input experiments only tell us that across all scores,
+ individual pathways produce patterns distinct from others.
+ It does not tell us the obtained scores actually correspond to the perturbed
+ pathway.
+\end_layout
+
+\begin_layout Standard
+The first test I decided to run here is whether the the pathway scores assigned
+ to a perturbation correspond to this pathway being perturbed on average.
+ To this end, I compared the difference of scores for all pathway perturbations,
+ and checked if the pathway scores assigned to the gene expression differences
+ in the input experiments are systematically higher (for activation) or
+ lower (for inhibition) between the two conditions.
+ With the linear model I use for this purpose (implementation details in
+ section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Perturbation-Associations"
+
+\end_inset
+
+), I find that all pathway scores are strongly associated with the perturbation
+ they were derived from (figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:sp2-exp-heatmap"
+
+\end_inset
+
+, left), and some for a perturbation with a known pathway cross-talk (e.g.
+ EGFR activating MAPK or TNFa activating NFkB).
+\end_layout
+
+\begin_layout Standard
+The above test showed us that the mean of assigned scores is significantly
+ altered when a given pathway is perturbed, but it gives us only limited
+ information about the heterogeneity in the individual experiments.
+ To this end, I calculated the relative pathway activations for each individual
+ experiment (details section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Perturbation-Associations"
+
+\end_inset
+
+) and show the results in a heatmap ordered by perturbation (figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:sp2-exp-heatmap"
+
+\end_inset
+
+, right).
+ For easier interpretation, I show all scores in the direction of activation
+ by taking the negative scores of inhibitions (so red indicates a match,
+ not necessarily an activation) and indicating whether the original experiment
+ was an activation or inhibition separately.
+ We can clearly see that the majority of pathway scores across experiments
+ agrees with the pathway that was actually perturbed in the experiment.
+\end_layout
+
+\begin_layout Standard
+Taken together, those two approaches imply that the perturbation-response
+ signature is both correct on average, as well as in the majority of individual
+ cases.
+ For the remaining cases, we do not know if this is something our (admittedly
+ very simple) model misses or the pathway was not sufficiently perturbed
+ with the given parameters the experimentalists used (e.g.
+ a low concentration of the perturbing agent, too little time for genes
+ to change their expression significantly, or a general experimental error).
+\end_layout
+
+\begin_layout Section
+Comparison to pathway mapping methods
+\end_layout
+
+\begin_layout Subsection
+Transcriptional footprints are fundamentally different to pathway expression
+\end_layout
+
+\begin_layout Standard
+As already indicated in my initial motivation (figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Schema-of-different"
+
+\end_inset
+
+), commonly used pathway methods map the mRNA expression level of signalling
+ molecules on the corresponding pathways to infer a pathway-level score.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename figures/3.4_venn.pdf
+	lyxscale 50
+	width 120col%
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Overlap between Gene Ontology, Reactome pathways, and perturbation-response
+ gene sets
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:gene-VENN"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Notwithstanding the differences outlined above and that we already defined
+ Gene Ontology sets that correspond to signalling pathways, computing which
+ unfiltered GO gene sets are over-represented in our signature genes may
+ give us additional insight into which lower-level processes (and not signalling
+ pathways) are activated upon pathway stimulation.
+ For this, I performed a GSEA analysis of the signed p-value of the consensus
+ model and computed enrichment of Gene Ontology categories in an unbiased
+ way (using as a criterion for inclusion and exclusion of gene sets only
+ their size, from 5 to 500 genes; detailed methods in section ***).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/3.4_footprints-go.pdf
+	width 50col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Functional annotations of perturbation-response genes
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:sig-GO-enrichment"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+What I find is largely expected, but it also goes to show that modulation
+ of signalling pathways mainly triggers biological processes related to
+ the pathway, but not the corresponding pathway or pathway category itself.
+ For instance (figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:sig-GO-enrichment"
+
+\end_inset
+
+), EGFR and MAPK drive, while p53-mediated DNA damage response abrogates
+ the cell cycle and DNA replication (especially the G1/S checkpoint **ref_p53**).
+ In addition, MAPK and p53 have more specific opposing roles in components
+ of the spindle pole or mRNA splicing (among others).
+ PI3K stimulation also promotes G1/S transition, as well as regulation of
+ ubiquitin.
+ Hypoxia on the other hand inhibits the expression of G1/S genes and mitochondri
+a-related genes (where oxidative phosphorylation happens **ref**).
+ TNFa/NFkB show enrichment in the category of genes responsive to 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbrv{LPS}
+\end_layout
+
+\end_inset
+
+ (which is a known pathway activator **ref**), and so does Trail.
+\end_layout
+
+\begin_layout Subsection
+Computing pathway scores for other methods
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:method:speed-scores"
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Methods:pathway-scores"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
@@ -3721,1367 +5080,7 @@ status open
 \end_layout
 
 \begin_layout Subsection
-Perturbation Associations and Heatmaps
-\begin_inset CommandInset label
-LatexCommand label
-name "sub:Perturbation-Associations"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-I calculate linear associations using the 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-code{lm}
-\end_layout
-
-\end_inset
-
- function in R between a pathway coefficients matrix (of the shape experiments
- x pathways, with the value 1 where a pathway was activated, -1 where a
- pathway was inhibited, and 0 otherwise; here, no cross-talk was modelled
- explicitly) and the pathway scores obtained by using the different methods
- as described in sections 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sub:method:speed-scores"
-
-\end_inset
-
- and 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sub:Methods:pathway-scores"
-
-\end_inset
-
-.
- I then plot the result of the associations as a heatmap where the perturbed
- pathway and the obtained pathway score are on the axes, and the colour
- (blue for positive and red for negative correlation) indicates the Wald
- statistic between them.
- I annotate combinations where the p-value is below 
-\begin_inset Formula $10^{-5}$
-\end_inset
-
- with 
-\begin_inset Formula $*$
-\end_inset
-
- and where it is 
-\begin_inset Formula $10^{-10}$
-\end_inset
-
- with 
-\begin_inset Formula $***$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-As a method for inspection of the pathway scores of the individual experiments,
- I plot a heatmap using the R package 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-rpkg{pheatmap}
-\end_layout
-
-\end_inset
-
- with the pathways scores in rows, experiments in columns, and the colour
- indicates the relative (column-scaled) activation of each pathway.
- In order to make activations and inhibitions more comparable, I take the
- negative pathway score for each inhibition and annotate the columns separately
- indicating which pathway was perturbed, and which kind of perturbation
- it was.
- This way, we can see clusters of similar pathway activation patterns that
- should correspond to the pathways that were perturbed.
-\end_layout
-
-\begin_layout Section
-A model for perturbation-response experiments
-\end_layout
-
-\begin_layout Subsection
-A curated database of public pathway perturbation experiments
-\end_layout
-
-\begin_layout Standard
-I defined a set of cancer-relevant pathways (methods section 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sub:Defining-Relevant-Pathways"
-
-\end_inset
-
-) the database search using ArrayExpress (methods section 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sub:Finding-suitable-Experiments"
-
-\end_inset
-
-) and curation of a total of 208 submissions encompassing 11 pathways, 580
- experiments, and a total of 2352 arrays.
- This is about the same number of pathways in the SPEED platform 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Parikh2010-uj"
-
-\end_inset
-
-, but about three times as many experiments and more than four times as
- many microarrays that were used to derived the signature.
- Because the collection of 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Gatza2010-fq"
-
-\end_inset
-
- is breast cancer only and only consists of a single experiment per signature,
- our number of pathway signatures is smaller but the number of overall experimen
-tal data much bigger (for a comparison, see figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Size-of-the"
-
-\end_inset
-
-).
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename figures/4.2_size.pdf
-	lyxscale 50
-	width 80col%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Size of the data set in comparison to the two published methods
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Size-of-the"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-To manage the different data sets I used as well as making them reusable,
- I defined a human- as well as machine-readable format using the markup
- language 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-abbrv{YAML}
-\end_layout
-
-\end_inset
-
- 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Ben-Kiki2005-jo"
-
-\end_inset
-
-.
- This has the advantage over a simple tabular format in that it supports
- structured data, including field names and comments.
- It can thus easily be reused by other projects for which a curation of
- perturbation-response experiments on the resolution of pathways is of interest.
- An overview of the format structure is shown in table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:yaml-format"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float table
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Structured data in the YAML file format
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:yaml-format"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Tabular
-<lyxtabular version="3" rows="13" columns="2">
-<features rotate="0" tabularvalignment="middle">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Identifier
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Description
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $---$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-marker for the beginning of a record
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-id
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-the experiment identifier; consists of 
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-accession
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-the experiment accession in ArrayExpress, e.g.
- E-GEOD-15986
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-platform
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-the microarray platform
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-pathway
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-the pathway identifier
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-cells
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-a description of the cells used in the experiment
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-treatment
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-a description of what the cell were treated with
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-effect
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-if the effect was 
-\begin_inset Quotes eld
-\end_inset
-
-activating
-\begin_inset Quotes erd
-\end_inset
-
- or 
-\begin_inset Quotes eld
-\end_inset
-
-inhibiting
-\begin_inset Quotes erd
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-hours
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-how many hours the perturbation lasted
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-control
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-a list of array identifiers used for the basal condition
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-perturbed
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-a list of array identifiers used for the perturbed condition
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-...
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-marker for the end of file
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-I designed a pipeline to parse the experiment index, and download and process
- the corresponding experimental data as described in section 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sub:From-Experiments-to"
-
-\end_inset
-
-.
- At the time, the release of the 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-rpkg{ArrayExpress}
-\end_layout
-
-\end_inset
-
- R package as unable to process most of the experiments although the raw
- data as well as experiment description as available.
- In the spirit of increased reusability, I aimed at fixing the package instead
- of just writing my own processing routines, and the new version is available
- on BioConductor
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "http://bioconductor.org/packages/release/bioc/html/ArrayExpress.html"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-, where it has been downloaded by over 4,000 people since
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "http://bioconductor.org/packages/stats/bioc/ArrayExpress/"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-\SpecialChar \@.
-
-\end_layout
-
-\begin_layout Standard
-After processing and quality control, a total of ** experiments and ** arrays
- remained, with a total of over 64 million single-gene measurements.
-\end_layout
-
-\begin_layout Subsection
-A model of significantly modulated genes upon perturbation
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename figures/4.2_tsne.pdf
-	lyxscale 50
-	width 120col%
-	BoundingBox 70bp 150bp 771bp 440bp
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-t-SNE plots of input experiments by fold change (left), average z-scores
- (centre) and z-scores filtered by significance (right).
- Different perturbations are shown as different colours, distance between
- points corresponds to inverse similarity.
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:t-SNE-plots-of"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Looking at the fold changes in each perturbation experiment I curated using
- the non-linear dimensionality reduction technique t-distribution stochastic
- neighbour embedding (t-SNE) 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Van_der_Maaten2008-kt,Van_der_Maaten2013-io"
-
-\end_inset
-
-, I do not see an obvious clustering in which pathway was perturbed (figure
- 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:t-SNE-plots-of"
-
-\end_inset
-
-, left).
- Distances between the fold changes of different experiments are about equal,
- with the slight exception of JAK-STAT and Hypoxia that are grouped to some
- extend, but the fold changes do not allow for a separation of pathways.
-\end_layout
-
-\begin_layout Standard
-Applying the model building as described in section 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sub:Transformation-of-Z-scores"
-
-\end_inset
-
- and 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sub:Building-the-Model"
-
-\end_inset
-
-, I obtain an expression matrix with genes in rows and pathways in columns.
- As this is a linear model of the z-scores of those different pathways,
- I can obtain activation scores (my inferred pathway activity) by a matrix
- multiplication between the model matrix and gene expression values from
- samples, as long as the identifiers are in the same order.
- Using a model derived from those average z-scores alone, I start to see
- that some pathways produce activation patterns distinct from other perturbation
-s (figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:t-SNE-plots-of"
-
-\end_inset
-
-, centre), like NFkB/TNFa, and a proper separation of Hypoxia and JAK-STAT.
- Using only the top 100 significant genes (table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:Significance-of-signature"
-
-\end_inset
-
-), the separation of those gets larger and I see almost all pathways in
- groups, albeit the ones in the centre are still overlapping.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float table
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Significance of signature genes
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:Significance-of-signature"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Tabular
-<lyxtabular version="3" rows="12" columns="2">
-<features rotate="0" tabularvalignment="middle">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Pathway
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Average FDR
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-EGFR
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $1.67\cdot10^{-10}$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Hypoxia
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $4.50\cdot10^{-21}$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-JAK-STAT
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $4.10\cdot10^{-13}$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-MAPK
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $3.36\cdot10^{-21}$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-NFkB
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $2.28\cdot10^{-19}$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-p53
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $2.55\cdot10^{-12}$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-PI3K
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $1.03\cdot10^{-17}$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-TNFa
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $6.40\cdot10^{-18}$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-TGFb
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $2.71\cdot10^{-7}$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Trail
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $0.018$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-VEGF
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $4.68\cdot10^{-9}$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-Consensus gene signatures reveal pathway-response transcriptional modules
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename figures/4.2_recall_speed-matrix.pdf
-	lyxscale 50
-	width 100col%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Recovery of the perturbations across pathways (left) and for individual
- experiments (right) using the consensus signature.
- Associations between perturbed pathways and the scores obtained by the
- model of pathway-response genes (PRGs).
- Along the diagonal each pathway is strongly (p<10-10) associated with its
- own perturbation.
- Significant off-diagonal elements are sparse and only show a strong association
- between EGFR/MAPK and TNFa/NFkB and a weaker association (p<10-5) between
- EGFR/PI3K and MAPK/TNFa.
- Heatmap of relative pathway scores in each perturbation experiment.
- 523 experiments in columns, annotated with the perturbation effect (green
- for activation, orange for inhibition) and pathway perturbed (same order
- as b).
- Pathway scores in rows cluster between EGFR/MAPK and to a lesser extent
- PI3K, and TNFa/NFkB.
- Colour indicates activation or inhibition strength.
- Order of pathways: EGFR, H2O2, Hypoxia, JAK-STAT, MAPK, NFkB, PI3K, TGFb,
- TNFa, Trail, VEGF, p53.
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:sp2-exp-heatmap"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-The above clusters of input experiments only tell us that across all scores,
- individual pathways produce patterns distinct from others.
- It does not tell us the obtained scores actually correspond to the perturbed
- pathway.
-\end_layout
-
-\begin_layout Standard
-The first test I decided to run here is whether the the pathway scores assigned
- to a perturbation correspond to this pathway being perturbed on average.
- To this end, I compared the difference of scores for all pathway perturbations,
- and checked if the pathway scores assigned to the gene expression differences
- in the input experiments are systematically higher (for activation) or
- lower (for inhibition) between the two conditions.
- With the linear model I use for this purpose (implementation details in
- section 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sub:Perturbation-Associations"
-
-\end_inset
-
-), I find that all pathway scores are strongly associated with the perturbation
- they were derived from (figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:sp2-exp-heatmap"
-
-\end_inset
-
-, left), and some for a perturbation with a known pathway cross-talk (e.g.
- EGFR activating MAPK or TNFa activating NFkB).
-\end_layout
-
-\begin_layout Standard
-The above test showed us that the mean of assigned scores is significantly
- altered when a given pathway is perturbed, but it gives us only limited
- information about the heterogeneity in the individual experiments.
- To this end, I calculated the relative pathway activations for each individual
- experiment (details section 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sub:Perturbation-Associations"
-
-\end_inset
-
-) and show the results in a heatmap ordered by perturbation (figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:sp2-exp-heatmap"
-
-\end_inset
-
-, right).
- For easier interpretation, I show all scores in the direction of activation
- by taking the negative scores of inhibitions (so red indicates a match,
- not necessarily an activation) and indicating whether the original experiment
- was an activation or inhibition separately.
- We can clearly see that the majority of pathway scores across experiments
- agrees with the pathway that was actually perturbed in the experiment.
-\end_layout
-
-\begin_layout Standard
-Taken together, those two approaches imply that the perturbation-response
- signature is both correct on average, as well as in the majority of individual
- cases.
- For the remaining cases, we do not know if this is something our (admittedly
- very simple) model misses or the pathway was not sufficiently perturbed
- with the given parameters the experimentalists used (e.g.
- a low concentration of the perturbing agent, too little time for genes
- to change their expression significantly, or a general experimental error).
-\end_layout
-
-\begin_layout Section
-Comparison to pathway mapping methods
-\end_layout
-
-\begin_layout Subsection
-Transcriptional footprints are fundamentally different to pathway expression
-\end_layout
-
-\begin_layout Standard
-As already indicated in my initial motivation (figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Schema-of-different"
-
-\end_inset
-
-), commonly used pathway methods map the mRNA expression level of signalling
- molecules on the corresponding pathways to infer a pathway-level score.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-centerline{
-\end_layout
-
-\end_inset
-
-
-\begin_inset Graphics
-	filename figures/3.4_venn.pdf
-	lyxscale 50
-	width 120col%
-
-\end_inset
-
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Overlap between Gene Ontology, Reactome pathways, and perturbation-response
- gene sets
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:gene-VENN"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Notwithstanding the differences outlined above and that we already defined
- Gene Ontology sets that correspond to signalling pathways, computing which
- unfiltered GO gene sets are over-represented in our signature genes may
- give us additional insight into which lower-level processes (and not signalling
- pathways) are activated upon pathway stimulation.
- For this, I performed a GSEA analysis of the signed p-value of the consensus
- model and computed enrichment of Gene Ontology categories in an unbiased
- way (using as a criterion for inclusion and exclusion of gene sets only
- their size, from 5 to 500 genes; detailed methods in section ***).
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename figures/3.4_footprints-go.pdf
-	width 50col%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Functional annotations of perturbation-response genes
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:sig-GO-enrichment"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-What I find is largely expected, but it also goes to show that modulation
- of signalling pathways mainly triggers biological processes related to
- the pathway, but not the corresponding pathway or pathway category itself.
- For instance (figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:sig-GO-enrichment"
-
-\end_inset
-
-), EGFR and MAPK drive, while p53-mediated DNA damage response abrogates
- the cell cycle and DNA replication (especially the G1/S checkpoint **ref_p53**).
- In addition, MAPK and p53 have more specific opposing roles in components
- of the spindle pole or mRNA splicing (among others).
- PI3K stimulation also promotes G1/S transition, as well as regulation of
- ubiquitin.
- Hypoxia on the other hand inhibits the expression of G1/S genes and mitochondri
-a-related genes (where oxidative phosphorylation happens **ref**).
- TNFa/NFkB show enrichment in the category of genes responsive to 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-abbrv{LPS}
-\end_layout
-
-\end_inset
-
- (which is a known pathway activator **ref**), and so does Trail.
-\end_layout
-
-\begin_layout Subsection
-Comparison of pathway scores within perturbation experiments
+Comparison within perturbation experiments
 \end_layout
 
 \begin_layout Standard
@@ -5483,7 +5482,7 @@ reference "fig:Comparison-to-pathway-perturb"
 \end_layout
 
 \begin_layout Subsection
-Comparison of pathway scores across perturbation experiments
+Comparison across perturbation experiments
 \end_layout
 
 \begin_layout Standard
