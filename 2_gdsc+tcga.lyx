@@ -257,7 +257,7 @@ Methods used throughout this thesis
 \end_layout
 
 \begin_layout Subsection
-Obtaining Gene Sets
+Obtaining gene sets
 \end_layout
 
 \begin_layout Standard
@@ -448,7 +448,7 @@ abbrv{KGML}
 \end_layout
 
 \begin_layout Subsection
-Using Gene Set Enrichment Analysis (GSEA) to obtain scores
+Gene set enrichment without comparing groups
 \end_layout
 
 \begin_layout Standard
@@ -594,7 +594,7 @@ I used those transformed scores in subsequent linear (ANOVA-like) associations
 \end_layout
 
 \begin_layout Subsection
-Drug Associations using the Half-Maximum Inhibitory Concentration (IC50)
+Drug associations using the half-maximum inhibitory concentration (IC50)
 \end_layout
 
 \begin_layout Standard

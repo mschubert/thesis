@@ -2053,13 +2053,30 @@ status open
 
 \begin_layout Section
 A model for perturbation-response experiments
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+merge sections here a bit (very short)
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
-Transformation of Z-scores
+Building a linear model from z-scores
 \begin_inset CommandInset label
 LatexCommand label
 name "sub:Transformation-of-Z-scores"
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Building-the-Model"
 
 \end_inset
 
@@ -2142,21 +2159,19 @@ key "Parikh2010-uj"
 \end_inset
 
 .
-\end_layout
 
-\begin_layout Subsection
-Building the Model
-\begin_inset CommandInset label
-LatexCommand label
-name "sub:Building-the-Model"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-From the z-scores of all experiments and all pathways, I performed a multiple
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ From the z-scores of all experiments and all pathways, I performed a multiple
  linear regression with the pathway as input and the z-scores as response
  variable for each gene separately:
 \end_layout
@@ -2288,6 +2303,13 @@ From the result of the linear model, I selected the top 100 genes per pathway
 
 \begin_layout Subsection
 Computing pathway scores
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:method:speed-scores"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2322,6 +2344,19 @@ I then scaled each pathway or gene set score to have a mean of zero and
  standard deviation of one, in order to factor out the difference in strength
  of gene expression signatures and thus be able to compare the relative
  scores across pathways and samples at the same time.
+\end_layout
+
+\begin_layout Standard
+This approach is vastly simpler and more computationally efficient than
+ any other way of computing scores for other pathway methods that I compare
+ in section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Methods:pathway-scores"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsection
@@ -3157,13 +3192,6 @@ abbrv{LPS}
 
 \begin_layout Subsection
 Computing pathway scores for other methods
-\begin_inset CommandInset label
-LatexCommand label
-name "sub:method:speed-scores"
-
-\end_inset
-
-
 \begin_inset CommandInset label
 LatexCommand label
 name "sub:Methods:pathway-scores"

@@ -1062,8 +1062,8 @@ name "fig:volcano-CNA/drivers"
 \end_layout
 
 \begin_layout Standard
-If our reasoning is correct and pathway-response signatures are indeed correspon
-d to intrinsic signalling activity, we should be able to see a higher pathway
+If my reasoning is correct and pathway-response signatures are indeed correspond
+ to intrinsic signalling activity, we should be able to see a higher pathway
  score in cancer patients with an oncogenic driver mutation and a lower
  score when a tumour suppressor is mutated or lost compared to patients
  where no such alteration is present.
