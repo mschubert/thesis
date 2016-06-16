@@ -860,6 +860,7 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename figures/2.3_mutation.pdf
 	lyxscale 50
@@ -941,6 +942,7 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename figures/2.3_mutation_tissue.pdf
 	lyxscale 50

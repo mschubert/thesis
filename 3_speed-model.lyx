@@ -204,7 +204,20 @@ key "Bild2005-tk"
 
 \end_inset
 
- published in Nature in 2005.
+ published in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+journal{Nature}
+\end_layout
+
+\end_inset
+
+ in 2005.
  Without claiming a direct connection, one of the senior authors on this
  article had his medical license revoked and multiple articles retracted
  because of irreproducibility of results, as investigated by 
