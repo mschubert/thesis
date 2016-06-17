@@ -196,44 +196,6 @@ abbrv{LINCS}
  of the main challenges in patient treatment today.
 \end_layout
 
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename figures/3.1_schema.svg
-	lyxscale 50
-	width 100text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Schema of linear associations without specifying a cutoff for sensitive
- and resistant cell lines.
- Negative correlation between the expression level of the drug signature
- and observed IC50s implies a good combination.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Section
 MANTRA and the original Connectivity Map
 \end_layout
@@ -283,9 +245,41 @@ abbrv{PRL}
 \end_layout
 
 \begin_layout Standard
-Here, I used the 250 most up- and downregulated genes to perform a two-tailed
- GSEA in the basal expression of the GDSC cell lines and thus obtain a drug-resp
-onsive signature expression score for each drug that has a 
+The overlap between the microarrays of the Connectivity Map (HG-U133A) and
+ the GDSC (HG-U219) only had 83 overlapping probe set identifiers, so I
+ mapped the probe sets in the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbrv{PRLs}
+\end_layout
+
+\end_inset
+
+ to 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbrv{HGNC}
+\end_layout
+
+\end_inset
+
+ symbols.
+ From the 250 most up- and downregulated genes I took those that uniquely
+ present in the respective subset, leaving approximately 100 genes per drug
+ signature.
+ I performed a two-tailed GSEA in the basal expression of the GDSC cell
+ lines and thus obtain a drug-responsive signature expression score for
+ each drug that has a 
 \begin_inset ERT
 status open
 
@@ -412,6 +406,10 @@ A pan-cancer view of drug sensitisation using LINCS
 
 \begin_layout Subsection
 Creating drug signatures
+\end_layout
+
+\begin_layout Itemize
+outline QC here
 \end_layout
 
 \begin_layout Itemize

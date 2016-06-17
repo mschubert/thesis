@@ -192,34 +192,6 @@ key "Vaske2010-zn"
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-add gsea schema here...
- (maybe still switch to GSVA?)
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-GSEA
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 GSEA using GO gene sets is ubiquitous: usually, a (for instance) differential
  expression analysis yields a list of genes, yet it is not clear which higher-le
 vel function they mediate.
@@ -429,7 +401,19 @@ key "Kanehisa2000-mp"
 
  (that does not suffer from such a drawback as the last public release was
  in 2001, before it went commercial).
- This data source of KEGG gene sets had the advantage that it was in .gmt
+ This data source of KEGG gene sets had the advantage that it was in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+code{.gmt}
+\end_layout
+
+\end_inset
+
  format that was readily accessible and easily machine readable (unlike
  the 
 \begin_inset ERT
