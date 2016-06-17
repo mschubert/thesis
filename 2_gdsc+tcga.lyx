@@ -594,6 +594,23 @@ I used those transformed scores in subsequent linear (ANOVA-like) associations
 \end_layout
 
 \begin_layout Subsection
+Linear associations
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+describe OLS?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
 Drug associations using the half-maximum inhibitory concentration (IC50)
 \end_layout
 
@@ -755,16 +772,6 @@ In this formula, the scores
 .
  In this case, I corrected the p-values using the FDR methods for each subset
  of tissues separately.
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-describe OLS?
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Section

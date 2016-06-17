@@ -196,6 +196,44 @@ abbrv{LINCS}
  of the main challenges in patient treatment today.
 \end_layout
 
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/3.1_schema.svg
+	lyxscale 50
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Schema of linear associations without specifying a cutoff for sensitive
+ and resistant cell lines.
+ Negative correlation between the expression level of the drug signature
+ and observed IC50s implies a good combination.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 MANTRA and the original Connectivity Map
 \end_layout
@@ -247,8 +285,20 @@ abbrv{PRL}
 \begin_layout Standard
 Here, I used the 250 most up- and downregulated genes to perform a two-tailed
  GSEA in the basal expression of the GDSC cell lines and thus obtain a drug-resp
-onsive signature expression score for each drug that has a PRL and each
- cell line in the GDSC panel.
+onsive signature expression score for each drug that has a 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbrv{PRL}
+\end_layout
+
+\end_inset
+
+ and each cell line in the GDSC panel.
  The enrichment score was composed of the two individual enrichment scores
  of of both parts of the list, using:
 \end_layout
@@ -256,8 +306,22 @@ onsive signature expression score for each drug that has a PRL and each
 \begin_layout Standard
 \begin_inset Formula 
 \[
-ES_{consensus}=ES_{top}-ES_{bottom}
+ES=ES^{up}-ES^{down}
 \]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+add figure of gsea score distrs here? (up, down, up-down) -> see 2-tailed
+ is somewhat uniform
+\end_layout
 
 \end_inset
 
@@ -347,75 +411,27 @@ A pan-cancer view of drug sensitisation using LINCS
 \end_layout
 
 \begin_layout Subsection
-Naive pan-cancer models
+Creating drug signatures
 \end_layout
 
 \begin_layout Itemize
-normal assocs
+signatures need to be connected to themselves
 \end_layout
 
 \begin_layout Itemize
-covar assocs (just show the formula here - explain in results section below)
+example plots of ROC curves for selection here
 \end_layout
 
-\begin_layout Standard
-I fit a linear model to Z-scores of each perturbation experiment.
- I don’t specify a cutoff for sensitive and resistant cell lines.
- Negative correlation between cell lines expressing the signature and observed
- IC50s implies a good combination.
- This has more power than GSEA in our analyses.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename figures/3.1_schema.svg
-	lyxscale 50
-	width 100text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Schema of linear associations
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Thu: go through the scripts and write down what they do
-\end_layout
-
-\end_inset
-
-
+\begin_layout Subsection
+Naive associations with drug response
 \end_layout
 
 \begin_layout Itemize
-Associations using drug-level signatures
+pancan, one subset, show problem for drug-self-antagonism and QS11
+\end_layout
+
+\begin_layout Itemize
+Lack of Literature Evidence
 \end_layout
 
 \begin_layout Standard
@@ -443,69 +459,6 @@ Naive volcano
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-centerline{
-\end_layout
-
-\end_inset
-
-
-\begin_inset Graphics
-	filename figures/3.1_pan_matrix.svg
-	lyxscale 50
-	width 80page%
-
-\end_inset
-
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Naive association matrix
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-Lack of Literature Evidence
 \end_layout
 
 \begin_layout Standard
@@ -544,7 +497,7 @@ QS11 fit
 \end_layout
 
 \begin_layout Subsection
-Models correcting for pathway cross-talk
+Pathway correlation as a major source for false positives
 \end_layout
 
 \begin_layout Standard
@@ -582,6 +535,22 @@ QS11 Problem schematic
 
 \end_layout
 
+\begin_layout Itemize
+pan-can assocs
+\end_layout
+
+\begin_layout Itemize
+the issue we encountered
+\end_layout
+
+\begin_layout Itemize
+how to solve it
+\end_layout
+
+\begin_layout Subsection
+Building an improved model
+\end_layout
+
 \begin_layout Standard
 \begin_inset Float figure
 wide false
@@ -607,81 +576,6 @@ Covar volcano
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-centerline{
-\end_layout
-
-\end_inset
-
-
-\begin_inset Graphics
-	filename figures/3.1_pan_matrix_covar.svg
-	lyxscale 50
-	width 80page%
-
-\end_inset
-
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Matrix of associations including covariate
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-pan-can assocs
-\end_layout
-
-\begin_layout Itemize
-the issue we encountered
-\end_layout
-
-\begin_layout Itemize
-how to solve it
-\end_layout
-
-\begin_layout Subsection
-Evidence of improvement
 \end_layout
 
 \begin_layout Standard
@@ -871,7 +765,7 @@ Tissue-specific synergistic compounds
 \end_layout
 
 \begin_layout Subsection
-Tissue-specific and cell line models
+Consensus models for breast cancer cell lines
 \end_layout
 
 \begin_layout Standard
@@ -922,11 +816,7 @@ selecting the combinations to be screened
 \end_layout
 
 \begin_layout Subsection
-Setting up an experimental validation
-\end_layout
-
-\begin_layout Itemize
-either a couple of all of the combination plots
+Defining synergy for drug combinations
 \end_layout
 
 \begin_layout Standard
@@ -1019,10 +909,6 @@ Given enough data points we can calculate the best fit using nonlinear least
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Subsection
-Evaluating drug combinations
 \end_layout
 
 \begin_layout Standard
@@ -1252,6 +1138,26 @@ S=\frac{V}{A}.
 \end_inset
 
 
+\end_layout
+
+\begin_layout Subsection
+Single-agent drug response curves
+\end_layout
+
+\begin_layout Itemize
+how to decide on dilutions of combos from single-agent treatment
+\end_layout
+
+\begin_layout Itemize
+plots of single-agent fits and suggested combos concentrations
+\end_layout
+
+\begin_layout Subsection
+Screening drug combinations
+\end_layout
+
+\begin_layout Itemize
+either a couple of all of the combination plots
 \end_layout
 
 \begin_layout Section
