@@ -91,7 +91,7 @@ tab = function(obj, caption="", p=0.2, n=100) {
 do = function(fid, caption="", ...) {
     file.path("/home/mschu/Work/speed2/analyses/drug_assocs/assocs_mapped/", paste0(fid, ".RData")) %>%
         load2("assocs.pan") %>%
-        transmute(Drug=Ys, Pathway=score, Size=size, Effect=estimate, `P-value`=p.value, FDR=adj.p) %>%
+        transmute(Drug=drug, Pathway=scores, Size=size, Effect=estimate, `P-value`=p.value, FDR=adj.p) %>%
         tab(caption=paste(caption, "(pan-cancer)"), p=0.05, ...)
 }
 do("gsea_go", "Gene Ontology")
@@ -110,7 +110,8 @@ do("speed_matrix", "Perturbation-response genes")
 do = function(fid, caption="", ...) {
     file.path("/home/mschu/Work/speed2/analyses/drug_assocs/assocs_mapped/", paste0(fid, ".RData")) %>%
         load2("assocs.tissue") %>%
-        transmute(Drug=Yf, Pathway=score, Tissue=subset, Size=size, Effect=estimate, `P-value`=p.value, FDR=adj.p) %>%
+        filter(subset == "noexp") %>%
+        transmute(Drug=drug, Pathway=scores, Tissue=tissue, Size=size, Effect=estimate, `P-value`=p.value, FDR=adj.p) %>%
         tab(caption=paste(caption, "(tissue-specific)"), p=0.1, ...)
 }
 do("gsea_go", "Gene Ontology")
