@@ -292,9 +292,10 @@ abbrv{PRL}
 
 \end_inset
 
- and each cell line in the GDSC panel.
- The enrichment score was composed of the two individual enrichment scores
- of of both parts of the list, using:
+ and each cell line in the GDSC panel, and scaled the score for each drug
+ across all cell lines by dividing by the standard deviation.
+ The final enrichment score was composed of the two individual enrichment
+ scores of of both parts of the list, using:
 \end_layout
 
 \begin_layout Standard
@@ -309,12 +310,47 @@ ES=ES^{up}-ES^{down}
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
+This composite score causes the normally bimodally distributed scores to
+ have a uniform distribution again (figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Distributions-GSEA"
+
+\end_inset
+
+) and makes them more suitable to compute linear associations using those
+ scores directly.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
 status open
 
 \begin_layout Plain Layout
-add figure of gsea score distrs here? (up, down, up-down) -> see 2-tailed
- is somewhat uniform
+\align center
+dist plot
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Distributions of raw GSEA scores for up- and downregulated genes as well
+ as the combined score of both
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Distributions-GSEA"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -409,15 +445,34 @@ Creating drug signatures
 \end_layout
 
 \begin_layout Itemize
-outline QC here
+150 drug overlap GDSC-LINCS
 \end_layout
 
 \begin_layout Itemize
 signatures need to be connected to themselves
 \end_layout
 
+\begin_deeper
+\begin_layout Itemize
+min genes ..
+ max genes: calculate signature scores + ROC
+\end_layout
+
+\begin_layout Itemize
+select best sig (AUC) where genes < 10% FDR
+\end_layout
+
+\begin_layout Itemize
+if AUC>cutoff, QC pass
+\end_layout
+
+\end_deeper
 \begin_layout Itemize
 example plots of ROC curves for selection here
+\end_layout
+
+\begin_layout Itemize
+maybe also how qc pass signatures connect
 \end_layout
 
 \begin_layout Subsection
@@ -1148,6 +1203,122 @@ how to decide on dilutions of combos from single-agent treatment
 
 \begin_layout Itemize
 plots of single-agent fits and suggested combos concentrations
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename figures/5_drug72.pdf
+	width 80page%
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+drug 72
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename figures/5_drug96.pdf
+	width 80page%
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+drug 96
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
