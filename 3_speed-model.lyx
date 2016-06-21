@@ -5633,7 +5633,8 @@ reference "fig:ROC"
 
 \end_inset
 
-
+.
+ Best performance in bold.
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:ROC_AUC"
