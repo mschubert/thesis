@@ -1228,7 +1228,7 @@ centerline{
 
 \begin_inset Graphics
 	filename figures/5_drug72.pdf
-	width 80page%
+	width 75page%
 
 \end_inset
 
@@ -1286,7 +1286,7 @@ centerline{
 
 \begin_inset Graphics
 	filename figures/5_drug96.pdf
-	width 80page%
+	width 75page%
 
 \end_inset
 
@@ -1323,6 +1323,40 @@ drug 96
 
 \begin_layout Subsection
 Screening drug combinations
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/5_384.pdf
+	width 80col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+384 schema
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
