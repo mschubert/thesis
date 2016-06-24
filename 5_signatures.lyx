@@ -277,7 +277,7 @@ abbrv{HGNC}
  From the 250 most up- and downregulated genes I took those that uniquely
  present in the respective subset, leaving approximately 100 genes per drug
  signature.
- I performed a two-tailed GSEA in the basal expression of the GDSC cell
+ I performed a two-tailed GSVA in the basal expression of the GDSC cell
  lines and thus obtain a drug-responsive signature expression score for
  each drug that has a 
 \begin_inset ERT
@@ -292,8 +292,7 @@ abbrv{PRL}
 
 \end_inset
 
- and each cell line in the GDSC panel, and scaled the score for each drug
- across all cell lines by dividing by the standard deviation.
+ and each cell line in the GDSC panel.
  The final enrichment score was composed of the two individual enrichment
  scores of of both parts of the list, using:
 \end_layout
@@ -310,16 +309,33 @@ ES=ES^{up}-ES^{down}
 \end_layout
 
 \begin_layout Standard
-This composite score causes the normally bimodally distributed scores to
- have a uniform distribution again (figure 
+In comparison to GSVA, GSEA scores and signature-scaled GSEA scores are
+ bimodally distributed around zero.
+ One could argue that with the up- and downregulated parts of the signature,
+ a combination of the two would yield a unimodally distributed score again
+ and thus GSEA scores can be used in conjunction with tests that assume
+ a normal distribution of scores.
+ This is not true because scores that are above zero with one signature
+ can be either above or below zero in the other signature.
+ In practice, combining GSEA scores yields a trimodal distribution (figure
+ 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Distributions-GSEA"
 
 \end_inset
 
-) and makes them more suitable to compute linear associations using those
- scores directly.
+, left panel).
+ In contrast, GSVA scores are normally distributed for each individual score
+ as well as for the combined score (figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Distributions-GSEA"
+
+\end_inset
+
+, left panel), which explains the choice of GSVA over GSEA in also this
+ context.
 \end_layout
 
 \begin_layout Standard
@@ -367,21 +383,51 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Distributions of raw GSEA scores for up- and downregulated genes as well
- as the combined score of both
+Distributions of GSEA (left panel) and GSVA (right panel) scores for up-
+ and downregulated genes as well as the combined score of both.
+ GSEA: Combining up- and downregulated score of the yields scores yields
+ a distribution around zero (if 
+\begin_inset Formula $ES^{up}$
+\end_inset
+
+ and 
+\begin_inset Formula $ES^{down}$
+\end_inset
+
+ have the same sign) or more extreme tails if they have opposite signs (e.g.
+ an 
+\begin_inset Formula $ES^{up}$
+\end_inset
+
+ of 
+\begin_inset Formula $-1$
+\end_inset
+
+ and 
+\begin_inset Formula $ES^{down}$
+\end_inset
+
+ of 
+\begin_inset Formula $1$
+\end_inset
+
+ would yield a combined score of 
+\begin_inset Formula $-2$
+\end_inset
+
+, like the peak at that position in the left panel; there are also scores
+ distributed around 
+\begin_inset Formula $2$
+\end_inset
+
+, but their peak is barely visible).
+ GSVA: Both the individual and the combined score are unimodally distributed
+ and resembling a normal distribution, making them more amenable to statistical
+ testing.
+ 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Distributions-GSEA"
-
-\end_inset
-
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-compare gsea<->gsva?
-\end_layout
 
 \end_inset
 
@@ -534,14 +580,45 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-..put volcano here..
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename figures/3.1_pan_matrix.pdf
+	width 100col%
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Naive volcano
+Matrix of naive associations
 \end_layout
 
 \end_inset
@@ -651,14 +728,45 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-..put volcano here..
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename figures/3.1_pan_matrix_covar.pdf
+	width 100col%
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Covar volcano
+Matrix of associations including the treatment drug as covariate
 \end_layout
 
 \end_inset

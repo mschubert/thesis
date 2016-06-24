@@ -2370,16 +2370,13 @@ _birth}
  had the highest number).
 \end_layout
 
-\begin_layout Subsection
-Survival associations using the Cox Proportional Hazard model
-\end_layout
-
 \begin_layout Standard
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-TODO: add survival methods here
+TODO_SUBSECTION: Survival associations using the Cox Proportional Hazard
+ model
 \end_layout
 
 \end_inset
