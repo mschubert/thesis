@@ -810,7 +810,33 @@ name "fig:QS11-Problem-schematic"
 \end_layout
 
 \begin_layout Standard
+One way to test the above hypothesis is to introduce as a covariate in the
+ regression the expression score of the signature of the treatment drug,
+ and calculate the associations as everything that is left after correcting
+ for the effect on gene expression that it would have (using the expression
+ score of Trametinib/GSK1120212 and calculating the association strength
+ of the QS-11 signature and Trametinib response on top of that, as indicated
+ with the blue box in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:QS11-Problem-schematic"
 
+\end_inset
+
+).
+ This, in more general terms, would correct for pathway cross-talk between
+ the sensitiser and the treatment drug, also for two-drug pairs that have
+ the same target or are indeed the same drug.
+ If the above association stays significant despite the added covariate,
+ we can reject the model proposed in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:QS11-Problem-schematic"
+
+\end_inset
+
+.
+ Otherwise, this would be a valid explanation of the effect we see.
 \end_layout
 
 \begin_layout Subsection
