@@ -593,15 +593,16 @@ Cytotoxic drugs
 \end_layout
 
 \begin_layout Standard
-
-\end_layout
-
-\begin_layout Itemize
-based on cells growing quicker/consuming more resources
-\end_layout
-
-\begin_layout Standard
-...put some examples of clinical cytotoxic here...
+The easiest way to kill cancer cells is to expose them to a compound that
+ is generally toxic to cells.
+ While this is expected to have a negative impact on all cells, there are
+ certain properties of cancer cells that make them more susceptible.
+ One such property is that they grow more actively than most other cells,
+ and so a therapeutic window exists for compounds that interfere with cell
+ growth, as is the case for most chemotherapy.
+ This could be DNA synthesis (Cisplatin or Carboplatin), microtubule disassembly
+ (Paclitaxel and more generally Taxol-based compounds), or others.
+ 
 \end_layout
 
 \begin_layout Subsection
