@@ -460,6 +460,52 @@ Avoiding immune destruction
 Deregulating cellular energetics
 \end_layout
 
+\begin_layout Subsection
+Tumour heterogeneity
+\end_layout
+
+\begin_layout Standard
+Cells in a tumour are not homogeneous, but it should rather be seen as an
+ evolutionary process of diverse clones that compete for a growth advantage
+ subjected to positive and negative selection
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+ref
+\end_layout
+
+\end_inset
+
+.
+ This has implications both cancer growth as well as therapy, so assessing
+ this heterogeneity has become an important research topic.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+cc-by timeline figure?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+However, there are a couple of challenges when trying to assess the whole
+ genetic diversity of a sample.
+ It is important to sample not only in one place, but either mush the whole
+ thing up or selectively take small samples in different subsections.
+ Another challenge is that for detecting very minor frequencies, one needs
+ to sequence at a high depth and be sure that the resulting variants are
+ not only due to sequencing errors (if there is little enough DNA that it
+ needs to be amplified, errors introduced by PCR need also be considered).
+\end_layout
+
 \begin_layout Section
 Therapeutic interventions
 \end_layout
@@ -546,6 +592,10 @@ five
 Cytotoxic drugs
 \end_layout
 
+\begin_layout Standard
+
+\end_layout
+
 \begin_layout Itemize
 based on cells growing quicker/consuming more resources
 \end_layout
@@ -622,9 +672,18 @@ gene{BRAF^{V600E}}
  version of the BRAF protein with a much higher affinity than the one found
  in wild-type cells.
  This, in some ways, could be considered the perfect drug for cancer therapy,
- because it has it has favourable uptake in the body [*], and once it is
- there the therapeutic window is much larger compared to other compounds
- due to this difference in binding affinity.
+ because it has it has favourable uptake in the body
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+ [ref]
+\end_layout
+
+\end_inset
+
+, and once it is there the therapeutic window is much larger compared to
+ other compounds due to this difference in binding affinity.
 \end_layout
 
 \begin_layout Standard
@@ -728,44 +787,29 @@ This, together with multiple other examples, proved to show that targeted
 \end_layout
 
 \begin_layout Standard
-This debate lasted for a while, evidence presented for both one [*] and
- the other [*]: surely, if there are cells present that harbour a mutation
- that confers resistance to a given drug at the beginning of treatment,
- sequencing the tumour must show a minor frequency of this mutation that
- later takes over already at that stage.
- However, there are a couple of challenges when trying to assess the whole
- genetic diversity of a sample.
- For instance, tumours are often histologically quite different already
- across different section, implying that the molecular makeup is not uniformly
- distributed.
- Thus, it is important to sample not only in one place, but either mush
- the whole thing up or selectively take small samples in different subsections.
- Another challenge is that for detecting very minor frequencies, one needs
- to sequence at a high depth and be sure that the resulting variants are
- not only due to sequencing errors (if there is little enough DNA that it
- needs to be amplified, errors introduced by PCR need also be considered).
- It eventually settled when some groups [*] were able to overcome those
- challenges and show that the resistant clone is indeed present at low frequency
- at the beginning of therapy.
-\end_layout
-
-\begin_layout Subsection
-Overcoming resistance
-\end_layout
-
-\begin_layout Standard
-evol bottlenecks: ***
-\end_layout
-
-\begin_layout Standard
-meki+brafi combo: 
+Many distinct strategies have been suggested to overcome this, most notably
+ the combination of a MEK and BRAF inhibitor in melanoma 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Long2014-uy"
 
 \end_inset
 
+.
+ In fact, the very nature of killing off the majority of cells and pushing
+ the rest through an evolutionary bottleneck has been suggested as a basis
+ for designing therapies taking into account those temporal patterns in
+ adaptation
+\begin_inset Note Note
+status open
 
+\begin_layout Plain Layout
+ref
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Section
@@ -2427,7 +2471,16 @@ key "Wold1987-se"
 .
  The rotation is calculated using the matrix factorisation [add fact here],
  which can be simplified to [add here] and yields a unique solution.
- [params] provide the position of a sample in 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+ [params]
+\end_layout
+
+\end_inset
+
+ provide the position of a sample in 
 \begin_inset Formula $M$
 \end_inset
 
