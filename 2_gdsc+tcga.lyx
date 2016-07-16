@@ -3180,66 +3180,6 @@ reference "fig:RDEA-MAPK"
  a significant association between the drug and the pathway.
 \end_layout
 
-\begin_layout Subsection
-Tissue-specific Drug Associations
-\end_layout
-
-\begin_layout Standard
-In addition to calculating the strongest associations within all tissues,
- we also calculated the ones for each tissue separately, associations for
- which are shown in figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:tissue-drug-assocs"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename figures/4.1_volcano_tissue.pdf
-	width 100col%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Associations between inferred pathway activity and drug response for individual
- tissues.
- FDR set at 20%.
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:tissue-drug-assocs"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Section
 Discussion
 \end_layout
