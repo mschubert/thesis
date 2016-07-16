@@ -1,7 +1,9 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin unavailable
 \textclass article
 \begin_preamble
 \usepackage[font=small,labelfont=bf]{caption}
@@ -21,16 +23,16 @@
 \language_package default
 \inputencoding auto
 \fontencoding global
-\font_roman default
-\font_sans default
-\font_typewriter default
-\font_math auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_sf_scale 100 100
+\font_tt_scale 100 100
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -582,7 +584,7 @@ I used those transformed scores in subsequent linear (ANOVA-like) associations
 status open
 
 \begin_layout Plain Layout
-TODO_SUBSECTION: Linear associations --> describe OLS
+TODO_SUBSECTION: Linear associations –> describe OLS
 \end_layout
 
 \end_inset
@@ -922,48 +924,6 @@ gene{BRAF}
  in Melanoma (SKCM), and increased resistance to ** for ** in **.
 \end_layout
 
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename figures/2.3_mutation_tissue.pdf
-	lyxscale 50
-	width 80col%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Mutation associations
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Mutation-tissue"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Subsection
 Associations using Gene Ontology
 \end_layout
@@ -1008,41 +968,6 @@ Gene Ontology Pan-Cancer associations
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename figures/2.1_go_tissue.png
-	lyxscale 50
-	width 100col%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Gene Ontology tissue-specific associations
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Subsection
 Associations using Reactome
 \end_layout
@@ -1070,41 +995,6 @@ status open
 
 \begin_layout Plain Layout
 Gene Ontology Pan-Cancer associations
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename figures/2.1_reactome_tissue.png
-	lyxscale 50
-	width 100col%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Gene Ontology tissue-specific associations
 \end_layout
 
 \end_inset
@@ -1449,7 +1339,7 @@ centerline{
 
 \begin_inset Tabular
 <lyxtabular version="3" rows="13" columns="11">
-<features rotate="0" tabularvalignment="middle">
+<features tabularvalignment="middle">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
@@ -2819,52 +2709,6 @@ status open
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset Float table
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename figures/4.1_heatmap.pdf
-	width 100col%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Normalized GSEA scores for 1018 cell lines in the GDSC panel.
- Each row is a cell line (as indicated by its COSMIC ID), with the columns
- representing different pathways.
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-would be good to order by pathways to compare to later model
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Subsection
 Associations between Pathway Scores and Tissues
 \end_layout
@@ -3409,7 +3253,7 @@ using the same algorithm (GSEA) SPEED is *a lot* better
 \end_layout
 
 \begin_layout Plain Layout
---> want to explore this further
+–> want to explore this further
 \end_layout
 
 \begin_layout Plain Layout

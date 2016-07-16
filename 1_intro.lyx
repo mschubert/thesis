@@ -668,10 +668,20 @@ gene{BRAF^{V600E}}
 
 \end_inset
 
- mutation, [* et al] indeed designed and developed a small-molecule inhibitor
- called Plexicon (more specifically, PLX4720) that proved to bind the mutation
- version of the BRAF protein with a much higher affinity than the one found
- in wild-type cells.
+ mutation, 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+[* et al]
+\end_layout
+
+\end_inset
+
+ indeed designed and developed a small-molecule inhibitor called Plexicon
+ (more specifically, PLX4720) that proved to bind the mutation version of
+ the BRAF protein with a much higher affinity than the one found in wild-type
+ cells.
  This, in some ways, could be considered the perfect drug for cancer therapy,
  because it has it has favourable uptake in the body
 \begin_inset Note Note
@@ -800,13 +810,10 @@ key "Long2014-uy"
  In fact, the very nature of killing off the majority of cells and pushing
  the rest through an evolutionary bottleneck has been suggested as a basis
  for designing therapies taking into account those temporal patterns in
- adaptation
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-ref
-\end_layout
+ adaptation 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Hata2016-cg"
 
 \end_inset
 
