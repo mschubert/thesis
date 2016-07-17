@@ -84,7 +84,7 @@
 \begin_body
 
 \begin_layout Part
-A baseline for gene set methods using drug response
+Gene set methods for drug response
 \end_layout
 
 \begin_layout Section
@@ -925,7 +925,7 @@ gene{BRAF}
 \end_layout
 
 \begin_layout Subsection
-Associations using Gene Ontology
+Associations using Gene Ontology categories
 \end_layout
 
 \begin_layout Itemize
@@ -942,9 +942,9 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename figures/2.1_go_pan.png
+	filename figures/2_go_all.pdf
 	lyxscale 50
-	width 100col%
+	width 100text%
 
 \end_inset
 
@@ -969,7 +969,7 @@ Gene Ontology Pan-Cancer associations
 \end_layout
 
 \begin_layout Subsection
-Associations using Reactome
+Associations using Reactome pathways
 \end_layout
 
 \begin_layout Standard
@@ -980,10 +980,34 @@ status open
 
 \begin_layout Plain Layout
 \align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
 \begin_inset Graphics
-	filename figures/2.1_reactome_pan.png
+	filename figures/2_reactome_all.pdf
 	lyxscale 50
-	width 100col%
+	width 80page%
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
 
 \end_inset
 

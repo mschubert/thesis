@@ -589,7 +589,7 @@ status open
 status open
 
 \begin_layout Plain Layout
-TODO: move this to suppl
+TODO: move this to suppl?
 \end_layout
 
 \end_inset
@@ -1137,197 +1137,59 @@ abbrv{ANOVA}
 
  to calculate significant associations between the presence and absence
  of mutations and copy number alterations and the inferred pathway scores,
- both with and without regressing out cancer types.
+ both with and without regressing out cancer types (volcano plot in figure
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:volcano-CNA/drivers"
+
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Standard
-I am indeed able to recover a range of known associations using PRGs (Fig.
- 2a).
- I find that both within and across cancers mutations and deletions of 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-gene{TP53}
+In terms of proliferative signaling, I find that EGFR amplifications are
+ correlated both with EGFR- and MAPK-responsive genes (FDR<10-20), and to
+ a lesser extent PI3K, VEGF, and Hypoxia (FDR<10-9).
+ ERBB2 amplifications show an increase in EGFR and PI3K-responsive genes,
+ but also a reduction in the Trail signature (FDR<0.05), suggesting a relatively
+ stronger impact on cell survival.
+ KRAS mutations show an increase in inferred EGFR activity, and amplifications
+ additionally for MAPK and PI3K (FDR<10-5).
+ BRAF mutations have a positive effect on EGFR and MAPK (FDR<10-9) but not
+ PI3K (FDR>0.4).
 \end_layout
 
-\end_inset
-
- are associated with decreased activity of the p53/DNA damage response pathway;
- 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-gene{EGFR}
-\end_layout
-
-\end_inset
-
- amplifications, 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-gene{KRAS}
-\end_layout
-
-\end_inset
-
- mutations or amplifications, and BRAF mutations with increased activity
- of both MAPK and EGFR pathways.
- The genes 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-gene{NDRG1}
-\end_layout
-
-\end_inset
-
-, 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-gene{RAD21}
-\end_layout
-
-\end_inset
-
-, and 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-gene{PABPC1}
-\end_layout
-
-\end_inset
-
- that are, when amplified, associated with decreased activity p53/DDR have
- also been implicated in DNA damage response [REF].
- 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-gene{TP53}
-\end_layout
-
-\end_inset
-
- mutations, however, additionally show a correlation with increased expression
- (Supplementary Fig.
- 6) and activity of oncogenic pathways EGFR and PI3K.
- 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-gene{Myc}
-\end_layout
-
-\end_inset
-
- amplifications are strongly associated with a decreased expression of p53/DDR
- genes.
- 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-gene{CDKN2A}
-\end_layout
-
-\end_inset
-
- deletions more strongly with induction of EGFR-responsive genes compared
- to other pathways.
- More surprisingly, I find that presence of 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-gene{PIK3CA}
-\end_layout
-
-\end_inset
-
- and 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-gene{PIK3CB}
-\end_layout
-
-\end_inset
-
- amplifications and 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-gene{PTEN}
-\end_layout
-
-\end_inset
-
- deletions is more connected to increasing the hypoxic response compared
- to an effect on the PI3K-responsive genes.
- For the latter, I find that 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-gene{VHL}
-\end_layout
-
-\end_inset
-
- mutations (which are only found in and exclusive to KIRC) are associated
- with an induction of hypoxic genes across cancer types.
+\begin_layout Standard
+For TP53 mutations we find a significant reduction in p53/DDR activity (FDR<10-1
+8) that also explains the associations with MYC, RAD21, NDRG1, and PABPC1
+ (p>0.04 if conditioned).
+ It is also associated with a significant activation of the pathways for
+ MAPK, PI3K, and Hypoxia (FDR<10-4).
+ This is in contrast to loss of TP53, where we only find a reduction in
+ p53/DDR (FDR<10-3) but no modification of any other pathway (FDR>0.15).
+ The dual nature of TP53 mutations and CNAs are in line with the recent
+ discovery that TP53 mutations can act in an oncogenic manner in addition
+ to the protein losing its tumor suppressor activity that has been shown
+ for individual cancer types (Olive et al.
+ 2004; Zhang et al.
+ 2013; Weissmueller et al.
+ 2014; Zhu et al.
+ 2015).
+ In addition, we can suggest a link between TP53 mutations and genes that
+ are specifically induced by activation of canonical oncogenic signaling.
+ We find that VHL mutations (which have a high overlap with Kidney Renal
+ Carcinoma, KIRC) are associated with a stronger induction of hypoxic genes
+ compared to other cancer types.
+ More surprisingly, we find that presence of PIK3CA and PIK3CB amplifications
+ and PTEN deletions is also more connected to increasing the hypoxic response
+ (FDR<10-6) compared to an effect on the PI3K-responsive genes (FDR between
+ 10-2 and 10-5).
+ A role of PI3K signaling in hypoxia has been shown before (Zhou et al.
+ 2004; Yang et al.
+ 2009; Kilic-Eren et al.
+ 2013).
 \end_layout
 
 \begin_layout Subsection
