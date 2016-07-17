@@ -496,7 +496,10 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Pan-Cancer associations
+Volcano plot of associations between expression of drug signatures and drug
+ response for the pan-cancer cohort.
+ Effect size is standard deviations of the score on the horizontal axis,
+ FDR-adjusted p-values on the vertical axis.
 \end_layout
 
 \end_inset
@@ -507,6 +510,10 @@ Pan-Cancer associations
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+asd
 \end_layout
 
 \begin_layout Subsection
@@ -559,7 +566,10 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Tissue-specific associations
+Volcano plot of associations between expression of drug signatures and drug
+ response for individual cancer types.
+ Effect size is standard deviations of the score on the horizontal axis,
+ FDR-adjusted p-values on the vertical axis.
 \end_layout
 
 \end_inset
@@ -570,6 +580,10 @@ Tissue-specific associations
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+ads
 \end_layout
 
 \begin_layout Section
@@ -578,6 +592,10 @@ A pan-cancer view of drug sensitisation using LINCS
 
 \begin_layout Subsection
 Creating drug signatures
+\end_layout
+
+\begin_layout Standard
+There is a total of 150 drugs that are both in the GDSC and the LINCS panel.
 \end_layout
 
 \begin_layout Itemize
@@ -2871,7 +2889,7 @@ drug 96
 \end_layout
 
 \begin_layout Subsection
-Screening drug combinations
+Synergy of drug combinations
 \end_layout
 
 \begin_layout Standard

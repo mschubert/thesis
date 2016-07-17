@@ -3359,6 +3359,10 @@ using the same algorithm (GSEA) SPEED is *a lot* better
 (also make point about biasing gene sets)
 \end_layout
 
+\begin_layout Plain Layout
+bottom up vs top-down approach: either select sets before or after
+\end_layout
+
 \end_inset
 
 

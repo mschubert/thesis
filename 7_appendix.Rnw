@@ -38,6 +38,7 @@ tab = function(obj, caption="", p=0.2, n=100) {
 }
 
 speed2 = "/home/mschu/Work/speed2/analyses"
+mantra = "/home/mschu/Work/MANTRA"
 sig_comb = "/home/mschu/Work/signature-combinations"
 @
 
@@ -236,11 +237,32 @@ do("speed_matrix", "Perturbation-response genes")
 
 \subsubsection{Pan-cancer}
 
-%TODO
+\tiny{
+<<echo=FALSE>>=
+do = function(caption="", ...) {
+    file.path(mantra, "assocs.RData") %>%
+        load2("pan") %>%
+        transmute(`Drug response`=drug_resp, Sensitiser=scores, Size=size, Effect=estimate, `P-value`=p.value, FDR=p.adjust(p.value, method="fdr")) %>%
+        tab(caption=caption, p=0.1, n=50)
+}
+do("MANTRA (pan-cancer)")
+@
+}
 
 \subsubsection{Tissue specific}
 
-%TODO
+\tiny{
+<<echo=FALSE>>=
+do = function(caption="", ...) {
+    file.path(mantra, "assocs.RData") %>%
+        load2("tissue") %>%
+        transmute(`Drug response`= drug_resp, Sensitiser=scores, Type=subset, Size=size, Effect=estimate, `P-value`=p.value, FDR=p.adjust(p.value, method="fdr")) %>%
+        tab(caption=caption, p=0.1, n=50)
+}
+do("MANTRA (cancer-specific)")
+@
+}
+
 
 \subsection{LINCS Connectivity Map}
 
