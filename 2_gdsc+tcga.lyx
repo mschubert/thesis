@@ -864,7 +864,10 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Mutation associations
+Volcano plot of associations between driver mutations and drug response.
+ Effect size is fold changes between cell lines harbouring a mutated vs.
+ a wild-type copy on the horizontal axis, FDR-adjusted p-values on the vertical
+ axis.
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Mutation-pancan"
@@ -950,7 +953,10 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Gene Ontology Pan-Cancer associations
+Volcano plot of associations between expression of Gene Ontology categories
+ and drug response.
+ Effect size is standard deviations of the score on the horizontal axis,
+ FDR-adjusted p-values on the vertical axis.
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:GO-PanCan-unfiltered"
@@ -1049,6 +1055,9 @@ https://www.caymanchem.com/product/11490
 \end_inset
 
 ) or its possible indications.
+ Overall, there are so many significant associations that it is necessary
+ to select interesting categories either before or after computing those
+ in order to make sense of them.
 \end_layout
 
 \begin_layout Subsection
@@ -1101,7 +1110,10 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Reactome Pan-Cancer associations
+Volcano plot of associations between expression of Reactome pathways and
+ drug response.
+ Effect size is standard deviations of the score on the horizontal axis,
+ FDR-adjusted p-values on the vertical axis.
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Reactome-PanCancer-unfiltered"
@@ -1123,7 +1135,14 @@ name "fig:Reactome-PanCancer-unfiltered"
 
 \begin_layout Standard
 Compared to Gene Ontology, the drug associations with Reactome pathway enrichmen
-t using GSVA are maybe even harder to interpret.
+t using GSVA are maybe even harder to interpret (figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Reactome-PanCancer-unfiltered"
+
+\end_inset
+
+).
  The MEK inhibitors Trametinib and RDEA119 associate most strongly with
  fibrin clot dissolution and laminin interactions (a fibrous protein present
  in the basal lamina of the epithelia).
@@ -1143,6 +1162,8 @@ Neurotransmitter Release Cycle
 \end_inset
 
 .
+ Again, there are so many significant associations that we need to limit
+ the pathways in order to make sense of them.
 \end_layout
 
 \begin_layout Section
