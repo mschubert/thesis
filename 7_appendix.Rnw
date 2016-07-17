@@ -52,16 +52,37 @@ sig_comb = "/home/mschu/Work/signature-combinations"
 
 \subsubsection{Associations for mutations}
 
-%TODO
+\tiny{
+<<pan_drug_all_mut, echo=FALSE>>=
+do = function(fid, caption="", ...) {
+    file.path(speed2, "drug_assocs/assocs_all", paste0(fid, ".RData")) %>%
+        load2("assocs.pan") %>%
+        transmute(Drug = drug,
+                  Pathway = ifelse(nchar(scores) > 30,
+                                   paste0(substr(scores, 1, 27), "..."),
+                                   scores),
+                  Size=size, Effect=estimate, `P-value`=p.value, FDR=adj.p) %>%
+        tab(caption=paste(caption, "vs. drugs (pan-cancer)"), p=0.05, n=50, ...)
+}
+do("mutation", "Mutations")
+@
+}
 
 \subsubsection{Associations for Gene Ontology}
 
-%TODO
+\tiny{
+<<pan_drug_all_go, echo=FALSE>>=
+do("gsva_go", "Gene Ontology")
+@
+}
 
 \subsubsection{Associations for Reactome}
 
-%TODO
-
+\tiny{
+<<pan_drug_all_reactome, echo=FALSE>>=
+do("gsva_reactome", "Reactome")
+@
+}
 
 \subsection{SPEED platform}
 
