@@ -500,6 +500,13 @@ Volcano plot of associations between expression of drug signatures and drug
  response for the pan-cancer cohort.
  Effect size is standard deviations of the score on the horizontal axis,
  FDR-adjusted p-values on the vertical axis.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:mantra-pan"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -513,7 +520,48 @@ Volcano plot of associations between expression of drug signatures and drug
 \end_layout
 
 \begin_layout Standard
-asd
+Results of associations between the expression of a drug-response signature
+ (the sensitiser) and drug sensitivity to a second drug (the treatment drug)
+ are shown as volcano plot in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:mantra-pan"
+
+\end_inset
+
+.
+ The top hits mostly include the drugs NPK76−II−72−1 (an experimental PLK3
+ inhibitor), Trametinib (a MEK inhibitor) Afatinib (an EGFR inhibitor),
+ and Bleomycin/Gemcitabine (cytotoxic drugs).
+ The general-purpose drugs in the Connectivity Map that induce gene expression
+ changes correlated with increased sensitivity in those are for instance
+ cAMP, chlorogenic acid (antioxidant and involved in the lignin biosynthesis),
+ bromocriptine (a dopamine promoter), or 1,4−chrysenequinone (a DNA-binding
+ metallo-intercalator).
+ It is not straightforward to propose a possible mechanism in which each
+ of the two drugs interact.
+ Furthermore, the concentration of all drugs in the Connectivity Map is
+ 10 uM, which is much higher than the actual bodily concentration in most
+ cases.
+ We have no indication that the associations we found should indeed be causal
+ and act synergistically or antagonistically 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+latin{in vivo}
+\end_layout
+
+\end_inset
+
+.
+ It would be much more interesting to look at combinations of two cancer
+ drugs or at least cancer-related drugs.
+ In that regard, the most interesting associations is Trametinib with dexamethas
+one, as the latter is administered with chemotherapy already.
 \end_layout
 
 \begin_layout Subsection
@@ -570,6 +618,13 @@ Volcano plot of associations between expression of drug signatures and drug
  response for individual cancer types.
  Effect size is standard deviations of the score on the horizontal axis,
  FDR-adjusted p-values on the vertical axis.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:mantra-tissue"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -583,7 +638,37 @@ Volcano plot of associations between expression of drug signatures and drug
 \end_layout
 
 \begin_layout Standard
-ads
+In addition to the potential issues outlined above, tissue-specific associations
+ are a lot less stable due to lower sample numbers.
+ In my case, they also (figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:mantra-tissue"
+
+\end_inset
+
+) yield all the strongest hits with Liver Hepatocellular Carcinoma (LIHC),
+ for which there is no reason to assume that 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+latin{a priori}
+\end_layout
+
+\end_inset
+
+.
+ While these associations could hint at possible synergistic or antagonistic
+ combinations, we can not easily make sense of them.
+ One of the strongest associations, for instance, is a drug targeted at
+ BRAF (PLX4720), a mutation that does usually not occur in liver cancer.
+ After discussions with our collaborators at the Sanger, we decided that
+ these combinations are too far from available biological knowledge to test
+ them further.
 \end_layout
 
 \begin_layout Section
@@ -668,7 +753,7 @@ centerline{
 
 \begin_inset Graphics
 	filename figures/3.1_pan_matrix.pdf
-	width 100col%
+	width 80page%
 
 \end_inset
 
@@ -938,7 +1023,7 @@ centerline{
 
 \begin_inset Graphics
 	filename figures/3.1_pan_matrix_covar.pdf
-	width 100col%
+	width 85page%
 
 \end_inset
 
