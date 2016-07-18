@@ -1,7 +1,9 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin unavailable
 \textclass article
 \begin_preamble
 \usepackage[font=small,labelfont=bf]{caption}
@@ -21,16 +23,16 @@
 \language_package default
 \inputencoding auto
 \fontencoding global
-\font_roman default
-\font_sans default
-\font_typewriter default
-\font_math auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_sf_scale 100 100
+\font_tt_scale 100 100
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -195,7 +197,7 @@ Perturbation-response signatures for basal gene expression
 Correlation in basal expression
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Correlation-in-basal"
+name "subsec:Correlation-in-basal"
 
 \end_inset
 
@@ -206,14 +208,14 @@ name "sub:Correlation-in-basal"
 For all pathway scores described in sections 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:method:speed-scores"
+reference "subsec:method:speed-scores"
 
 \end_inset
 
  and 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Methods:pathway-scores"
+reference "subsec:Methods:pathway-scores"
 
 \end_inset
 
@@ -301,7 +303,7 @@ reference "fig:sp2-exp-heatmap"
  and cell lines in the GDSC (details section 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Correlation-in-basal"
+reference "subsec:Correlation-in-basal"
 
 \end_inset
 
@@ -426,7 +428,7 @@ What I have not shown yet is how stable the whole process is, i.e.
  times and built models as described in section 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Building-the-Model"
+reference "subsec:Building-the-Model"
 
 \end_inset
 
@@ -457,7 +459,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename figures/4.2_stability.pdf
+	filename figures/stability-1.pdf
 	lyxscale 50
 	width 80col%
 

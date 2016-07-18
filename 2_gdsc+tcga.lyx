@@ -1060,6 +1060,28 @@ https://www.caymanchem.com/product/11490
  in order to make sense of them.
 \end_layout
 
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+would be interesting to know where the 
+\begin_inset Quotes eld
+\end_inset
+
+signaling
+\begin_inset Quotes erd
+\end_inset
+
+/onc.
+ addiction categories are! (same as speed2)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Associations using Reactome pathways
 \end_layout
@@ -1328,8 +1350,7 @@ name "cor-after"
 
 \begin_layout Plain Layout
 Correlation plots for GSEA scores per pathway across cell lines for the
- original SPEED lists (panel a) and our separation-optimized version (panel
- b).
+ original SPEED lists (left) and our separation-optimized version (right).
 \end_layout
 
 \end_inset
@@ -3105,7 +3126,8 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename figures/4.1_volcano_pancan.pdf
+	filename figures/2_speed1.pdf
+	lyxscale 50
 	width 100col%
 
 \end_inset

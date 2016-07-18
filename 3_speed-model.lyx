@@ -1,7 +1,9 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin unavailable
 \textclass article
 \begin_preamble
 \usepackage[font=small,labelfont=bf]{caption}
@@ -21,16 +23,16 @@
 \language_package default
 \inputencoding auto
 \fontencoding global
-\font_roman default
-\font_sans default
-\font_typewriter default
-\font_math auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_sf_scale 100 100
+\font_tt_scale 100 100
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -333,7 +335,7 @@ s
 Defining scope and format
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Defining-Relevant-Pathways"
+name "subsec:Defining-Relevant-Pathways"
 
 \end_inset
 
@@ -486,7 +488,7 @@ name "tab:yaml-format"
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="13" columns="2">
-<features rotate="0" tabularvalignment="middle">
+<features tabularvalignment="middle">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <row>
@@ -785,7 +787,7 @@ marker for the end of file
 Finding suitable Experiments
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Finding-suitable-Experiments"
+name "subsec:Finding-suitable-Experiments"
 
 \end_inset
 
@@ -910,14 +912,14 @@ reference "tab:yaml-format"
  (methods section 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Defining-Relevant-Pathways"
+reference "subsec:Defining-Relevant-Pathways"
 
 \end_inset
 
 ) the database search using ArrayExpress (methods section 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Finding-suitable-Experiments"
+reference "subsec:Finding-suitable-Experiments"
 
 \end_inset
 
@@ -960,7 +962,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename figures/4.2_size.pdf
+	filename figures/dataset_size-1.pdf
 	lyxscale 50
 	width 80col%
 
@@ -973,7 +975,43 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Size of the data set in comparison to the two published methods
+Comparison of dataset size between SPEED, Gatza (2009), and ours.
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Gatza2010-fq"
+
+\end_inset
+
+ derived 18 pathway signatures using only the MCF-10A cell line (thus also
+ 18 experiments), and a total of 287 arrays.
+ In 2014, they included additional signatures from other sources to a total
+ of 53, but some are redundant, others not pathways, and all still limited
+ to breast cancer 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Gatza2014-as"
+
+\end_inset
+
+.
+ SPEED
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Parikh2010-uj"
+
+\end_inset
+
+ assembled consensus signatures for for 11 pathways using 69 GEO submissions,
+ 215 different conditions and 572 arrays.
+ Our data set consists of 11 pathways, 217 GEO submissions, 568 different
+ experiments and a total of 2687 arrays.
+ This means we use more evidence per pathway and cover a broader set of
+ experimental conditions, but also reflects the imposed limitation of only
+ considering experiments if there are at least two unperturbed arrays available
+ in order to estimate the basal variability.
+ In addition, all our expression values are derived from raw data and not
+ preprocessed data that we can not reproduce.
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Size-of-the"
@@ -998,7 +1036,7 @@ I designed a pipeline to parse the experiment index, and download and process
  the corresponding experimental data as described in section 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:From-Experiments-to"
+reference "subsec:From-Experiments-to"
 
 \end_inset
 
@@ -1043,7 +1081,7 @@ target "http://bioconductor.org/packages/release/bioc/html/ArrayExpress.html"
 From Experiments to Expression Data
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:From-Experiments-to"
+name "subsec:From-Experiments-to"
 
 \end_inset
 
@@ -1102,7 +1140,7 @@ target "http://bioconductor.org/packages/stats/bioc/ArrayExpress/"
 
 \end_inset
 
-\SpecialChar \@.
+\SpecialChar endofsentence
 
 \end_layout
 
@@ -1339,7 +1377,7 @@ centerline{
 
 \begin_inset Tabular
 <lyxtabular version="3" rows="18" columns="4">
-<features rotate="0" tabularvalignment="middle">
+<features tabularvalignment="middle">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
@@ -2059,14 +2097,14 @@ A model for perturbation-response experiments
 Building a linear model from z-scores
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Transformation-of-Z-scores"
+name "subsec:Transformation-of-Z-scores"
 
 \end_inset
 
 
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Building-the-Model"
+name "subsec:Building-the-Model"
 
 \end_inset
 
@@ -2245,7 +2283,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename figures/4.1_path-xtalk.pdf
+	filename figures/pathway-structure.pdf
 	lyxscale 50
 	width 40text%
 
@@ -2291,11 +2329,167 @@ From the result of the linear model, I selected the top 100 genes per pathway
  gene coefficients.
 \end_layout
 
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/sig_sign-1.pdf
+	lyxscale 50
+	width 90text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Distribution of FDR-correctd p-values for signature genes (double log).
+ Genes (horizonal axis) are ordered by significance.
+ Dashed line at 5% FDR, dotted line at 
+\begin_inset Formula $10^{-10}$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/sig_zscore-1.pdf
+	lyxscale 50
+	width 90text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Distribution of z-scores of the top 100 significant genes (different order
+ compared to a).
+ Signature genes are comprised of both up- and downregulated genes for most
+ of the pathways.
+ In no pathway there a single or a few z-scores are high enough to overshadow
+ the rest of the signature, indicating that the model is numerically stable.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Distribution of the top 100 genes used in the model, as outcome for the
+ multiple regression of all pathways
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Distribution-of-significance"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/sig_overlap-1.pdf
+	lyxscale 50
+	width 70text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Overlap of signature genes for different pathways.
+ For the 100 genes we selected for each individual pathway, this shows how
+ many of those signature genes are present in another pathway as well.
+ The overlap is generally minimal, with the highest numbers between TNFa
+ and NFkB (18) and EGFR and MAPK (9).
+ As both of these pathway pairs have one component that is directly upstream
+ of the other, this is to 8 be exptected.
+ This also shows that the response genes are specific to their perturbation
+ and not a common phenotype like stress response because of any perturbation.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Computing pathway scores
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:method:speed-scores"
+name "subsec:method:speed-scores"
 
 \end_inset
 
@@ -2342,7 +2536,7 @@ This approach is vastly simpler and more computationally efficient than
  in section 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Methods:pathway-scores"
+reference "subsec:Methods:pathway-scores"
 
 \end_inset
 
@@ -2350,7 +2544,14 @@ reference "sub:Methods:pathway-scores"
 \end_layout
 
 \begin_layout Subsection
-A model of significantly modulated genes upon perturbation
+Consensus gene signatures reveal pathway-response transcriptional modules
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Perturbation-Associations"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2362,9 +2563,8 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename figures/4.2_tsne.pdf
-	lyxscale 50
-	width 120col%
+	filename figures/global_structure-1.pdf
+	width 100col%
 	BoundingBox 70bp 150bp 771bp 440bp
 
 \end_inset
@@ -2400,6 +2600,21 @@ name "fig:t-SNE-plots-of"
 \end_layout
 
 \begin_layout Standard
+Each experiment in my data set consisted of between 3 and 30 arrays, measuring
+ between 8597 and 24,041 genes (72% over 15,000 genes).
+ For extracting the individual signatures for each experiment, I calculated
+ differential expression between the basal and perturbed condition and selected
+ all fold changes that were significant at 10% FDR.
+ If the pathway was inhibited, I took the negative fold changes.
+ This yielded between 1 and 14,014 significantly changing genes, reflecting
+ the strength of the perturbation, experimental design and number of genes
+ on the array.
+ I assembled a matrix of significant fold changes by setting all non-significant
+ or non-existent gene coefficients to 0, and use t-SNE for dimensionality
+ reduction on that matrix.
+\end_layout
+
+\begin_layout Standard
 Looking at the fold changes in each perturbation experiment I curated using
  the non-linear dimensionality reduction technique t-distribution stochastic
  neighbour embedding (t-SNE) 
@@ -2424,17 +2639,20 @@ reference "fig:t-SNE-plots-of"
 \end_layout
 
 \begin_layout Standard
-Applying the model building as described in section 
+To compare this to my model, I calculated pathway scores from the unfiltered
+ fold changes of my input experiments, or negative fold changes in the case
+ of inhibitions.
+ Applying the model building as described in section 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Transformation-of-Z-scores"
+reference "subsec:Transformation-of-Z-scores"
 
 \end_inset
 
  and 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Building-the-Model"
+reference "subsec:Building-the-Model"
 
 \end_inset
 
@@ -2465,67 +2683,6 @@ reference "fig:Distribution-of-significance"
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename figures/sig_sign-1.pdf
-	width 90text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Distribution of significance of the top 100 changing genes (horizontal axis)
- by p-value (vertical axis) by different pathways, result of the multiple
- regression of pathways vs.
- perturbation experiments.
- Lower limit 10% FDR, dashed line 5% FDR, dotted line 
-\begin_inset Formula $10^{-10}$
-\end_inset
-
-.
- For the majority of pathways the majority of genes fall below the latter.
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Distribution-of-significance"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-Consensus gene signatures reveal pathway-response transcriptional modules
-\begin_inset CommandInset label
-LatexCommand label
-name "sub:Perturbation-Associations"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 I calculate linear associations using the 
 \begin_inset ERT
 status open
@@ -2546,14 +2703,14 @@ code{lm}
  as described in sections 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:method:speed-scores"
+reference "subsec:method:speed-scores"
 
 \end_inset
 
  and 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Methods:pathway-scores"
+reference "subsec:Methods:pathway-scores"
 
 \end_inset
 
@@ -2683,7 +2840,7 @@ The first test I decided to run here is whether the the pathway scores assigned
  section 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Perturbation-Associations"
+reference "subsec:Perturbation-Associations"
 
 \end_inset
 
@@ -2707,7 +2864,7 @@ The above test showed us that the mean of assigned scores is significantly
  experiment (details section 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Perturbation-Associations"
+reference "subsec:Perturbation-Associations"
 
 \end_inset
 
@@ -2804,8 +2961,12 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Overlap between Gene Ontology, Reactome pathways, and perturbation-response
- gene sets
+Difference in gene sets between Perturbation-response genes and Gene Ontology/Re
+actome.
+ Perturbation-response genes are different to path- way members and gene
+ annotations, with between 0 and 4 genes in common.
+ However, pathway annotation is quite different from gene annotations here
+ as well.
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:gene-VENN"
@@ -2947,7 +3108,7 @@ ref
 Computing pathway scores for other methods
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Methods:pathway-scores"
+name "subsec:Methods:pathway-scores"
 
 \end_inset
 
@@ -3006,6 +3167,10 @@ rpkg{sROC}
 \end_inset
 
 ):
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3058,7 +3223,7 @@ centerline{
 
 \begin_inset Tabular
 <lyxtabular version="3" rows="13" columns="3">
-<features rotate="0" tabularvalignment="middle">
+<features tabularvalignment="middle">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
@@ -3554,7 +3719,7 @@ centerline{
 
 \begin_inset Tabular
 <lyxtabular version="3" rows="13" columns="3">
-<features rotate="0" tabularvalignment="middle">
+<features tabularvalignment="middle">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
@@ -4069,7 +4234,7 @@ centerline{
 
 \begin_inset Tabular
 <lyxtabular version="3" rows="19" columns="2">
-<features rotate="0" tabularvalignment="middle">
+<features tabularvalignment="middle">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <row>
@@ -4587,7 +4752,7 @@ centerline{
 
 \begin_inset Tabular
 <lyxtabular version="3" rows="13" columns="2">
-<features rotate="0" tabularvalignment="middle">
+<features tabularvalignment="middle">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <row>
@@ -5327,7 +5492,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename figures/4.2_roc.pdf
+	filename figures/perturb-roc.pdf
 	lyxscale 50
 	width 100col%
 
@@ -5429,7 +5594,7 @@ centerline{
 
 \begin_inset Tabular
 <lyxtabular version="3" rows="13" columns="6">
-<features rotate="0" tabularvalignment="middle">
+<features tabularvalignment="middle">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
