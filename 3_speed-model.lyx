@@ -895,65 +895,6 @@ tion profiling"
 \end_layout
 
 \begin_layout Standard
-Those searches yielded between 30 and 650 results in the database, the majority
- of which had nothing to do with the perturbation I was looking for but
- the latter was rather mentioned in the experiment description.
- I read the description, sample attributes, metadata files, and if required
- the associated article to fill in the following information about each
- experiment (listed in table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:yaml-format"
-
-\end_inset
-
-).
- Using these searches and data, I defined a set of cancer-relevant pathways
- (methods section 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "subsec:Defining-Relevant-Pathways"
-
-\end_inset
-
-) the database search using ArrayExpress (methods section 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "subsec:Finding-suitable-Experiments"
-
-\end_inset
-
-) and curation of a total of 208 submissions encompassing 11 pathways, 580
- experiments, and a total of 2352 arrays.
- This is about the same number of pathways in the SPEED platform 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Parikh2010-uj"
-
-\end_inset
-
-, but about three times as many experiments and more than four times as
- many microarrays that were used to derived the signature.
- Because the collection of 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Gatza2010-fq"
-
-\end_inset
-
- is breast cancer only and only consists of a single experiment per signature,
- our number of pathway signatures is smaller but the number of overall experimen
-tal data much bigger (for a comparison, see figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Size-of-the"
-
-\end_inset
-
-).
-\end_layout
-
-\begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
@@ -1029,6 +970,65 @@ name "fig:Size-of-the"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Those searches yielded between 30 and 650 results in the database, the majority
+ of which had nothing to do with the perturbation I was looking for but
+ the latter was rather mentioned in the experiment description.
+ I read the description, sample attributes, metadata files, and if required
+ the associated article to fill in the following information about each
+ experiment (listed in table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:yaml-format"
+
+\end_inset
+
+).
+ Using these searches and data, I defined a set of cancer-relevant pathways
+ (methods section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Defining-Relevant-Pathways"
+
+\end_inset
+
+) the database search using ArrayExpress (methods section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Finding-suitable-Experiments"
+
+\end_inset
+
+) and curation of a total of 208 submissions encompassing 11 pathways, 580
+ experiments, and a total of 2352 arrays.
+ This is about the same number of pathways in the SPEED platform 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Parikh2010-uj"
+
+\end_inset
+
+, but about three times as many experiments and more than four times as
+ many microarrays that were used to derived the signature.
+ Because the collection of 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Gatza2010-fq"
+
+\end_inset
+
+ is breast cancer only and only consists of a single experiment per signature,
+ our number of pathway signatures is smaller but the number of overall experimen
+tal data much bigger (for a comparison, see figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Size-of-the"
+
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Standard
@@ -1142,197 +1142,6 @@ target "http://bioconductor.org/packages/stats/bioc/ArrayExpress/"
 
 \SpecialChar endofsentence
 
-\end_layout
-
-\begin_layout Standard
-With the R package patched, I was able to download the associated data with
- all the Affymetrix accessions.
- I fitted a probe-level model (PLM) for each accession, calculating the
- 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-code{NUSE}
-\end_layout
-
-\end_inset
-
- and 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-code{RLE}
-\end_layout
-
-\end_inset
-
- scores for each array.
- Arrays that had a 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-code{NUSE}
-\end_layout
-
-\end_inset
-
- or 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-code{RLE}
-\end_layout
-
-\end_inset
-
- over 0.1 were discarded as quality control failures.
- If less than two control and one perturbed array were remaining after QC,
- I removed the whole contrast.
- If there were enough, I performed background correction, normalisation,
- and probe summarisation using the 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-code{rma}
-\end_layout
-
-\end_inset
-
- function in the 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-rpkg{oligo}
-\end_layout
-
-\end_inset
-
- 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Carvalho2010-xu"
-
-\end_inset
-
- or 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-rpkg{affy}
-\end_layout
-
-\end_inset
-
- 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Gautier2004-bx"
-
-\end_inset
-
- package (depending on whether the object was a 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-code{FeatureSet}
-\end_layout
-
-\end_inset
-
- or 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-code{AffyBatch}
-\end_layout
-
-\end_inset
-
-, respectively) using the corresponding platform design package.
- I then mapped the probe set identifiers to Human Genome Nomenclature Consortium
- (HGNC) symbols using the respective annotation packages (platform design
- and annotation package see table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:ma-platforms"
-
-\end_inset
-
-).
- I discarded probe identifiers mapping to more than one HGNC symbol, and
- averaged multiple probe sets that belonged to the same HGNC symbol using
- the 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-code{avereps}
-\end_layout
-
-\end_inset
-
- function in the 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-rpkg{limma}
-\end_layout
-
-\end_inset
-
- 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Smyth2005-mw"
-
-\end_inset
-
- package.
- After processing and quality control, a total of ** experiments and **
- arrays remained, with a total of over 64 million single-gene measurements.
 \end_layout
 
 \begin_layout Standard
@@ -2089,6 +1898,197 @@ status open
 
 \end_layout
 
+\begin_layout Standard
+With the R package patched, I was able to download the associated data with
+ all the Affymetrix accessions.
+ I fitted a probe-level model (PLM) for each accession, calculating the
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+code{NUSE}
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+code{RLE}
+\end_layout
+
+\end_inset
+
+ scores for each array.
+ Arrays that had a 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+code{NUSE}
+\end_layout
+
+\end_inset
+
+ or 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+code{RLE}
+\end_layout
+
+\end_inset
+
+ over 0.1 were discarded as quality control failures.
+ If less than two control and one perturbed array were remaining after QC,
+ I removed the whole contrast.
+ If there were enough, I performed background correction, normalisation,
+ and probe summarisation using the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+code{rma}
+\end_layout
+
+\end_inset
+
+ function in the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+rpkg{oligo}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Carvalho2010-xu"
+
+\end_inset
+
+ or 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+rpkg{affy}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Gautier2004-bx"
+
+\end_inset
+
+ package (depending on whether the object was a 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+code{FeatureSet}
+\end_layout
+
+\end_inset
+
+ or 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+code{AffyBatch}
+\end_layout
+
+\end_inset
+
+, respectively) using the corresponding platform design package.
+ I then mapped the probe set identifiers to Human Genome Nomenclature Consortium
+ (HGNC) symbols using the respective annotation packages (platform design
+ and annotation package see table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:ma-platforms"
+
+\end_inset
+
+).
+ I discarded probe identifiers mapping to more than one HGNC symbol, and
+ averaged multiple probe sets that belonged to the same HGNC symbol using
+ the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+code{avereps}
+\end_layout
+
+\end_inset
+
+ function in the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+rpkg{limma}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Smyth2005-mw"
+
+\end_inset
+
+ package.
+ After processing and quality control, a total of ** experiments and **
+ arrays remained, with a total of over 64 million single-gene measurements.
+\end_layout
+
 \begin_layout Section
 A model for perturbation-response experiments
 \end_layout
@@ -2105,6 +2105,52 @@ name "subsec:Transformation-of-Z-scores"
 \begin_inset CommandInset label
 LatexCommand label
 name "subsec:Building-the-Model"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/pathway-structure.pdf
+	lyxscale 50
+	width 40text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Structure of the perturbation-response model.
+ For the multiple linear regression, we set the coefficients or perturbed
+ pathways to 1 if a pathway was perturbed, 0 otherwise.
+ In addition, EGFR perturbation also had MAPK and PI3K coefficients set,
+ and TNFa had NFkB set.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Modelled-pathway-crosstalk"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -2216,6 +2262,75 @@ Z_{g}\sim M\,...\,\forall g
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/sig_sign-1.pdf
+	lyxscale 50
+	width 80text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/sig_zscore-1.pdf
+	lyxscale 50
+	width 80text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Distribution of the top 100 genes used in the model, as outcome for the
+ multiple regression of all pathways.
+ Top: Distribution of FDR-correctd p-values for signature genes (double
+ log).
+ Genes (horizonal axis) are ordered by significance.
+ Dashed line at 5% FDR, dotted line at 
+\begin_inset Formula $10^{-10}$
+\end_inset
+
+.
+ Bottom: Distribution of z-scores of the top 100 significant genes (different
+ order compared to a).
+ Signature genes are comprised of both up- and downregulated genes for most
+ of the pathways.
+ In no pathway there a single or a few z-scores are high enough to overshadow
+ the rest of the signature, indicating that the model is numerically stable.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Distribution-of-significance"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Where 
 \begin_inset Formula $Z_{g}$
 \end_inset
@@ -2283,174 +2398,6 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename figures/pathway-structure.pdf
-	lyxscale 50
-	width 40text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Structure of the perturbation-response model.
- For the multiple linear regression, we set the coefficients or perturbed
- pathways to 1 if a pathway was perturbed, 0 otherwise.
- In addition, EGFR perturbation also had MAPK and PI3K coefficients set,
- and TNFa had NFkB set.
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Modelled-pathway-crosstalk"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-From the result of the linear model, I selected the top 100 genes per pathway
- according to their p-value and took their estimate (the fitted z-scores)
- as coefficient.
- I set all other gene coefficients to 0, so this yielded a matrix with HGNC
- symbols in rows and pathways in columns, where each pathway had 100 non-zero
- gene coefficients.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename figures/sig_sign-1.pdf
-	lyxscale 50
-	width 90text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Distribution of FDR-correctd p-values for signature genes (double log).
- Genes (horizonal axis) are ordered by significance.
- Dashed line at 5% FDR, dotted line at 
-\begin_inset Formula $10^{-10}$
-\end_inset
-
-.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename figures/sig_zscore-1.pdf
-	lyxscale 50
-	width 90text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Distribution of z-scores of the top 100 significant genes (different order
- compared to a).
- Signature genes are comprised of both up- and downregulated genes for most
- of the pathways.
- In no pathway there a single or a few z-scores are high enough to overshadow
- the rest of the signature, indicating that the model is numerically stable.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Distribution of the top 100 genes used in the model, as outcome for the
- multiple regression of all pathways
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Distribution-of-significance"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
 	filename figures/sig_overlap-1.pdf
 	lyxscale 50
 	width 70text%
@@ -2483,6 +2430,15 @@ Overlap of signature genes for different pathways.
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+From the result of the linear model, I selected the top 100 genes per pathway
+ according to their p-value and took their estimate (the fitted z-scores)
+ as coefficient.
+ I set all other gene coefficients to 0, so this yielded a matrix with HGNC
+ symbols in rows and pathways in columns, where each pathway had 100 non-zero
+ gene coefficients.
 \end_layout
 
 \begin_layout Subsection
@@ -2564,8 +2520,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename figures/global_structure-1.pdf
-	width 100col%
-	BoundingBox 70bp 150bp 771bp 440bp
+	width 100text%
 
 \end_inset
 
