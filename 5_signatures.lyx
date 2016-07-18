@@ -1481,8 +1481,9 @@ reference "subsec:Creating-drug-signatures"
 \begin_layout Standard
 I used a linear optimisation strategy (Integer Linear Programming, ILP)
  to select up to 25 combinations of 10 drugs that would maximise the overall
- synergistic significance, excluding combinations of MEK and EGFR inhibition
- because that is already known.
+ synergistic significance while minimising antagonistic significance.
+ I decided to exclude combinations of MEK and EGFR inhibition because that
+ is already known.
  The result of this selection is listed in table 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -2717,6 +2718,13 @@ DDR1 RTK (?)
 
 \begin_layout Subsection
 Defining synergy for drug combinations
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Defining-synergy-for"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3044,14 +3052,6 @@ S=\frac{V}{A}.
 Single-agent drug response curves
 \end_layout
 
-\begin_layout Itemize
-how to decide on dilutions of combos from single-agent treatment
-\end_layout
-
-\begin_layout Itemize
-plots of single-agent fits and suggested combos concentrations
-\end_layout
-
 \begin_layout Standard
 \begin_inset Float figure
 wide false
@@ -3098,6 +3098,13 @@ status open
 
 \begin_layout Plain Layout
 drug 72
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:drug-72"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -3156,7 +3163,9 @@ status open
 
 \begin_layout Plain Layout
 drug 96
-\end_layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:drug-96"
 
 \end_inset
 
@@ -3168,8 +3177,87 @@ drug 96
 
 \end_layout
 
-\begin_layout Subsection
-Synergy of drug combinations
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Starting from the combinations listed in table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:combined-score"
+
+\end_inset
+
+, our collaborators in Hamburg agreed to screen their efficacy in the MFC-7
+ cell line.
+ This first requires single-agents measurements to be able to fit the Hill
+ parameters for each drug in this cell line, as we would expect them not
+ to be identical with the GDSC due to a different experimental setup.
+ This was done in 384 well plate, seeding cells and letting them attach
+ for 24 hours, then treating with the sensitiser, then treating with the
+ treatment drug after another 24 hours, and measuring the number of surviving
+ cells compared to untreated wells using Promega CellTiter Glo as a readout.
+\end_layout
+
+\begin_layout Standard
+Starting from the raw measurement intensity, I calculated the fraction of
+ surviving cells (blue dots) in each of the treated wells for each of the
+ drugs for both 72 (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:drug-72"
+
+\end_inset
+
+) and 96 hour treatment (figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:drug-96"
+
+\end_inset
+
+).
+ I used the Hill equation (first formula in section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Defining-synergy-for"
+
+\end_inset
+
+ and blue line in figures) to fit a dose-response curve to each drug, with
+ the condition that the maximum viability (
+\begin_inset Formula $E_{max}$
+\end_inset
+
+ in the above formulas) is 1, i.e.
+ the drug should not have an effect on the viability of the cell given in
+ an infinite dilution.
+ Based on this, I suggested dilutions to use in the combination screening
+ (red dots in figures).
+ Those were designed to start at multiples of 10 uM above the 
+\begin_inset Formula $IC_{50}$
+\end_inset
+
+ and have a total of 6 dilutions reach below the 
+\begin_inset Formula $IC_{10}$
+\end_inset
+
+, but not force stronger dilutions and 1 in 4.
+ The combinations should then be screened in 
+\begin_inset Formula $6x6$
+\end_inset
+
+ dilutions with a total of 4 combinations including single-agent control
+ on the same plate (figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:384-schema"
+
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Standard
@@ -3194,7 +3282,9 @@ status open
 
 \begin_layout Plain Layout
 384 schema
-\end_layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:384-schema"
 
 \end_inset
 
@@ -3204,6 +3294,15 @@ status open
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Synergy of drug combinations
 \end_layout
 
 \begin_layout Itemize
