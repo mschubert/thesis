@@ -765,14 +765,6 @@ Where
 Naive associations with drug response
 \end_layout
 
-\begin_layout Itemize
-pancan, one subset, show problem for drug-self-antagonism and QS11
-\end_layout
-
-\begin_layout Itemize
-Lack of Literature Evidence
-\end_layout
-
 \begin_layout Standard
 \begin_inset Float figure
 wide false
@@ -836,11 +828,6 @@ Matrix of naive associations.
 \end_inset
 
 .
- Most significant antagonistic hit is Trametinib with itself (
-\begin_inset Formula $FDR<10^{-7}$
-\end_inset
-
-).
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Matrix-of-naive"
@@ -917,8 +904,115 @@ name "fig:fit-Tram+QS11"
 
 \end_layout
 
+\begin_layout Standard
+For the pan-cancer drug associations, I use the formula:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+D_{i}\sim T+S_{j}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Where 
+\begin_inset Formula $S_{j}$
+\end_inset
+
+ is the expression of the signature in response to drug 
+\begin_inset Formula $j$
+\end_inset
+
+ across all cell lines, and 
+\begin_inset Formula $D_{i}$
+\end_inset
+
+ is the sensitivity towards drug 
+\begin_inset Formula $i$
+\end_inset
+
+ across all cell lines.
+ 
+\begin_inset Formula $T$
+\end_inset
+
+ corresponds to the tissue of each cell line and is used to regress out
+ the difference in drug response between tissues.
+ I compute those associations for all sensitisers (
+\begin_inset Formula $j\in LINCS$
+\end_inset
+
+) and treatments (
+\begin_inset Formula $i\in GDSC$
+\end_inset
+
+), adjusting the resulting p-values by the false discovery method.
+ An overview of significant hits is shown in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Matrix-of-naive"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The strongest potentially synergistic hit I obtain is Trametinib (GSK1120212)
+ to act as a sensitiser for QS11 (
+\begin_inset Formula $FDR<10^{-5}$
+\end_inset
+
+).
+ The most significant hit overall is Trametinib that is antagonistic with
+ itself (
+\begin_inset Formula $FDR<10^{-7}$
+\end_inset
+
+; not shown in plot because it is focussed on the most synergistic examples).
+ While the latter can not be true according to the definition of synergy
+ and antagonism, the former provides a workable hypothesis and a strong
+ fit across multiple tissues (figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:fit-Tram+QS11"
+
+\end_inset
+
+).
+ I could, however, not find any literature evidence to support it.
+\end_layout
+
 \begin_layout Subsection
 Pathway correlation as a major source for false positives
+\end_layout
+
+\begin_layout Standard
+Setting aside the issue on whether an apparent lack of literature support
+ can be a false positive or a new finding, an antagonistic interaction of
+ a compound with goes against the definition of synergy as described by
+ Loewe (and also the Bliss model, which I will not discuss here).
+ This provides support for the hypothesis that the synergistic interaction
+ between a MEK1/2 inhibitor and a Wnt agonist might be a false positive
+ as well.
+ So what mechanism could explain a strong association under the assumption
+ that the effect is indeed a false positive? One indication is that Wnt
+ activation is known to cross-activate the MAP kinase pathway
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+ref
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -964,29 +1058,9 @@ name "fig:QS11-Problem-schematic"
 \end_layout
 
 \begin_layout Standard
-Setting aside the issue on whether an apparent lack of literature support
- can be a false positive or a new finding, an antagonistic interaction of
- a compound with goes against the definition of synergy as described by
- Loewe (and also the Bliss model, which I will not discuss here).
- This provides support for the hypothesis that the synergistic interaction
- between a MEK1/2 inhibitor and a Wnt agonist might be a false positive
- as well.
- So what mechanism could explain a strong association under the assumption
- that the effect is indeed a false positive? One indication is that Wnt
- activation is known to cross-activate the MAP kinase pathway
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-ref
-\end_layout
-
-\end_inset
-
-.
- From our results above, we know that MEK inhibitors in general produce
- good signatures, or otherwise we would not expect as many MEK inhibitors
- as we see in our associations (figure 
+From our results above, we know that MEK inhibitors in general produce good
+ signatures, or otherwise we would not expect as many MEK inhibitors as
+ we see in our associations (figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Matrix-of-naive"
@@ -1009,8 +1083,61 @@ reference "fig:QS11-Problem-schematic"
 ).
 \end_layout
 
+\begin_layout Standard
+One way to test the above hypothesis is to introduce as a covariate in the
+ regression the expression score of the signature of the treatment drug,
+ and calculate the associations as everything that is left after correcting
+ for the effect on gene expression that it would have (using the expression
+ score of Trametinib/GSK1120212 and calculating the association strength
+ of the QS-11 signature and Trametinib response on top of that, as indicated
+ with the blue box in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:QS11-Problem-schematic"
+
+\end_inset
+
+).
+ This, in more general terms, would correct for pathway cross-talk between
+ the sensitiser and the treatment drug, also for two-drug pairs that have
+ the same target or are indeed the same drug.
+ If the above association stays significant despite the added covariate,
+ we can reject the model proposed in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:QS11-Problem-schematic"
+
+\end_inset
+
+.
+ Otherwise, this would be a valid explanation of the effect we see.
+\end_layout
+
 \begin_layout Subsection
 Building an improved model
+\end_layout
+
+\begin_layout Standard
+As I am only looking at the drugs that are present in both the GDSC and
+ LINCS data sets, introducing the signature of the first drug as a covariate
+ is straightforward.
+ Results for the associations are shown in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:covar-assocs-matrix"
+
+\end_inset
+
+.
+ When looking for literature evidence to support some of the stronger hits
+ in this matrix, I now do find some (figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:covar-fits"
+
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Standard
@@ -1181,59 +1308,6 @@ name "fig:covar-fits"
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-One way to test the above hypothesis is to introduce as a covariate in the
- regression the expression score of the signature of the treatment drug,
- and calculate the associations as everything that is left after correcting
- for the effect on gene expression that it would have (using the expression
- score of Trametinib/GSK1120212 and calculating the association strength
- of the QS-11 signature and Trametinib response on top of that, as indicated
- with the blue box in figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:QS11-Problem-schematic"
-
-\end_inset
-
-).
- This, in more general terms, would correct for pathway cross-talk between
- the sensitiser and the treatment drug, also for two-drug pairs that have
- the same target or are indeed the same drug.
- If the above association stays significant despite the added covariate,
- we can reject the model proposed in figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:QS11-Problem-schematic"
-
-\end_inset
-
-.
- Otherwise, this would be a valid explanation of the effect we see.
-\end_layout
-
-\begin_layout Standard
-As I am only looking at the drugs that are present in both the GDSC and
- LINCS data sets, introducing the signature of the first drug as a covariate
- is straightforward.
- Results for the associations are shown in figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:covar-assocs-matrix"
-
-\end_inset
-
-.
- When looking for literature evidence to support some of the stronger hits
- in this matrix, I now do find some (figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:covar-fits"
-
-\end_inset
-
-).
 \end_layout
 
 \begin_layout Section
