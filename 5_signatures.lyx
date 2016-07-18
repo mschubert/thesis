@@ -911,7 +911,7 @@ For the pan-cancer drug associations, I use the formula:
 \begin_layout Standard
 \begin_inset Formula 
 \[
-D_{i}\sim T+S_{j}
+D_{i}\sim T+S_{j}\,...\,\forall i,j
 \]
 
 \end_inset
@@ -1120,8 +1120,32 @@ Building an improved model
 \begin_layout Standard
 As I am only looking at the drugs that are present in both the GDSC and
  LINCS data sets, introducing the signature of the first drug as a covariate
- is straightforward.
- Results for the associations are shown in figure 
+ is straightforward:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+D_{i}\sim T+S_{i}+S_{j}\,...\,\forall i,j
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Where the addition of 
+\begin_inset Formula $S_{i}$
+\end_inset
+
+ indicates the conditioning on the drug-responsive signature of drug 
+\begin_inset Formula $i$
+\end_inset
+
+.
+ This takes the significance of the Trametinib-QS11 pair away, as shown
+ in the resulting association matrix in figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:covar-assocs-matrix"
@@ -1129,15 +1153,12 @@ reference "fig:covar-assocs-matrix"
 \end_inset
 
 .
- When looking for literature evidence to support some of the stronger hits
- in this matrix, I now do find some (figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:covar-fits"
-
-\end_inset
-
-).
+ Top hits now are Trametinib (GSK1120212) with PD-0332991 (a CDK4/6 inhibitor),
+ FK866 (Nampt inhibitor) with Sorafenib (a Raf inhibitor) and NPK76-II-72-I
+ (NAMPT inhibitor).
+ The strongest antagonistic hit is Thapsigargin (SERCA inhibitor) with BMS-75480
+7 (IGF inhibitor).
+ It also corrects for all associations of a drug with itself.
 \end_layout
 
 \begin_layout Standard
@@ -1251,46 +1272,10 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Top: CDK inhibitors may act as sensitisers for Trametinib (GSK1120212) in
- multiple tissues.
- This has been found in a mouse model of melanoma 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Kwong2012-vd"
-
-\end_inset
-
-, our analysis suggests stronger effects in the tissues listed.
- Middle: Combination of Raf (SB590885) and MEK inhibitors in BRCA.
- A synergistic effect has been shown in melanoma 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Killock2014-ku"
-
-\end_inset
-
-.
- Bottom: Various drugs may act as sensitisers for Temozolomide (DNA alkylating
- agent) in COREAD.
- This has been shown for Mitomycin C and Rucaparib (PF-01367338, AG014699)
- in metastatic melanoma 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Plummer2008-yt,Plummer2013-vl"
-
-\end_inset
-
-.
- Polo-like kinase 1 inhibition (target of GW843682X) has been shown to cause
- decreased proliferation by cell cycle arrest, leading to cell death in
- glioblastoma 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Pezuk2013-xn"
-
-\end_inset
-
-.
+Linear fits behind the associations of PD-0332991 (a CDK4/6 inhibitor) and
+ Trametinib (GSK1120212, a MEK inhibitor) in multiple tissues (top), the
+ Raf inhibitor SB590885 and multiple MEK inhibitors in breast cancer (middle),
+ and Temozolomide and various drugs (bottom).
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:covar-fits"
@@ -1310,12 +1295,75 @@ name "fig:covar-fits"
 
 \end_layout
 
+\begin_layout Standard
+When looking for literature evidence to support some of the stronger hits
+ in this matrix, I now do find some (figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:covar-fits"
+
+\end_inset
+
+): CDK inhibitors may act as sensitisers for Trametinib (GSK1120212) in
+ multiple tissues (top).
+ This has been found in a mouse model of melanoma 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Kwong2012-vd"
+
+\end_inset
+
+, our analysis suggests stronger effects in the tissues listed.
+ Combination of Raf (SB590885) and MEK inhibitors in BRCA (middle).
+ A synergistic effect has been shown in melanoma 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Killock2014-ku"
+
+\end_inset
+
+.
+ Various drugs may act as sensitisers for Temozolomide (DNA alkylating agent)
+ in COREAD (bottom).
+ This has been shown for Mitomycin C and Rucaparib (PF-01367338, AG014699)
+ in metastatic melanoma 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Plummer2008-yt,Plummer2013-vl"
+
+\end_inset
+
+.
+ Polo-like kinase 1 inhibition (target of GW843682X) has been shown to cause
+ decreased proliferation by cell cycle arrest, leading to cell death in
+ glioblastoma 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Pezuk2013-xn"
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Tissue-specific synergistic compounds
 \end_layout
 
 \begin_layout Subsection
 Consensus models for breast cancer cell lines
+\end_layout
+
+\begin_layout Itemize
+lots of different ways to derive them, no idea what is best
+\end_layout
+
+\begin_layout Itemize
+optimisation modelling (ILP)
+\end_layout
+
+\begin_layout Itemize
+selecting the combinations to be screened
 \end_layout
 
 \begin_layout Standard
@@ -1361,18 +1409,6 @@ tree map?
 \end_inset
 
 
-\end_layout
-
-\begin_layout Itemize
-lots of different ways to derive them, no idea what is best
-\end_layout
-
-\begin_layout Itemize
-optimisation modelling (ILP)
-\end_layout
-
-\begin_layout Itemize
-selecting the combinations to be screened
 \end_layout
 
 \begin_layout Standard
