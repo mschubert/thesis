@@ -677,6 +677,13 @@ A pan-cancer view of drug sensitisation using LINCS
 
 \begin_layout Subsection
 Creating drug signatures and scoring GDSC cell lines
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Creating-drug-signatures"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -686,8 +693,8 @@ What would be far more interesting is to investigate how drugs specifically
  There is a total of 150 drugs that are both in the GDSC and the LINCS,
  enabling us to do a comprehensive characterisation of signature matching.
  I derive models for each drug separately, with a linear model of LINCS-provided
- z-scores mapped to HGNC symbols in experiments where the drug was used
- vs.
+ projected z-scores mapped to HGNC symbols in experiments where the drug
+ was used vs.
  all others.
  I select the top 
 \begin_inset Formula $N$
@@ -1343,7 +1350,7 @@ key "Pezuk2013-xn"
 
 \end_inset
 
-
+.
 \end_layout
 
 \begin_layout Section
@@ -1354,16 +1361,39 @@ Tissue-specific synergistic compounds
 Consensus models for breast cancer cell lines
 \end_layout
 
-\begin_layout Itemize
-lots of different ways to derive them, no idea what is best
+\begin_layout Standard
+While pan-cancer associations can uncover far-reaching implications of treatment
+ with different drugs to make inferences about the effect of their combination,
+ experimental follow-up on those must be more restricted in order to suggest
+ a feasible setup with clear hypotheses.
+ This is where tissue- or cancer-specific models come in: using signature
+ matching, I derive hypotheses of potential synergies or antagonisms that
+ can actually be tested in one or a few cell lines.
+ Compared to pan-cancer associations, I would expect them to be more likely
+ to be true for this particular cell line or small set of cell lines.
 \end_layout
 
-\begin_layout Itemize
-optimisation modelling (ILP)
+\begin_layout Standard
+However, tissue-specific models of drug synergies are tricky.
+ First, there is fewer cell lines to define the signature.
+ A mutation that changes the gene expression response upon drug treatment
+ is likely not going to have a large effect in the pan-cancer context because
+ of the overall number of cell lines available, but if there is one in a
+ certain tissue for which I derive a signature this may or may not change
+ the outcome.
+ Second, there are fewer cell lines with drug sensitivity data and thus
+ we are much closer to the significance threshold.
 \end_layout
 
-\begin_layout Itemize
-selecting the combinations to be screened
+\begin_layout Standard
+In addition, there is a lot of choices to make about the model: Which tissue
+ or which cell line to choose? Limit the drugs to a set where the tissue
+ is sensitive in? How many cell lines are needed to derive meaningful signatures
+? Are the landmarks or projected genes better to make those inferences?
+ Use a covariate to correct for pathway cross-talk or does it take away
+ too much statistical power? These are all questions that could be answered
+ in iterative cycle of predictions and experimental readout.
+ Unfortunately, we can not do this.
 \end_layout
 
 \begin_layout Standard
@@ -1389,6 +1419,13 @@ status open
 
 \begin_layout Plain Layout
 Overview of number of experiments available
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:LINCS-tissues"
+
+\end_inset
+
+
 \begin_inset Note Note
 status open
 
@@ -1412,6 +1449,51 @@ tree map?
 \end_layout
 
 \begin_layout Standard
+I decided to focus on breast cancer because the number of available perturbation
+s with cancer-relevant drugs far exceeded any other tissues (figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:LINCS-tissues"
+
+\end_inset
+
+).
+ For the rest of decisions, I am not going to make them at all.
+ Instead of taking the top-performing combinations from individual predictions,
+ I would instead look at the ones that are most consistently predicted to
+ be synergistic.
+ I built models (analogous to section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Creating-drug-signatures"
+
+\end_inset
+
+) for the individual cell lines MFC-7, SKBR-3, BT20, MDA-MD-231, HS-578T,
+ MCF-10A, and the combined signature for breast cancer-related cell lines,
+ for all projections, with and without covariate.
+ I assigned a combined score by summing the logarithm of the adjusted p-value
+ for each 2-drug combination across all different conditions.
+ I expected that real synergistic combinations would systematically show
+ up as more synergistic than neutral or antagonistic combinations.
+\end_layout
+
+\begin_layout Standard
+I used a linear optimisation strategy (Integer Linear Programming, ILP)
+ to select up to 25 combinations of 10 drugs that would maximise the overall
+ synergistic significance, excluding combinations of MEK and EGFR inhibition
+ because that is already known.
+ The result of this selection is listed in table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:combined-score"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float table
 wide false
 sideways false
@@ -1421,7 +1503,14 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Selected drug combinations for breast cancer cell lines (MCF-7)
+Selected drug combinations for breast cancer cell lines
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:combined-score"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2860,7 +2949,7 @@ I calculate the expected viability
 \begin_inset Formula $y_{Loewe}$
 \end_inset
 
-for the whole matrix of same drug concentration as was used in the combination
+ for the whole matrix of same drug concentration as was used in the combination
  screening.
  This way, I get a drug response surface that corresponds to a drug interaction
  that is neither synergistic nor antagonistic.
@@ -2873,7 +2962,7 @@ for the whole matrix of same drug concentration as was used in the combination
 \begin_layout Standard
 \begin_inset Formula 
 \[
-V=\int_{x_{1}^{min}}^{x_{1}^{max}}\int_{x_{2}^{min}}^{x_{2}^{max}}E^{expected}-E^{observed}dx_{1}dx_{2}
+V=\int_{x_{2}^{min}}^{x_{2}^{max}}\int_{x_{1}^{min}}^{x_{1}^{max}}E^{expected}-E^{observed}dx_{1}dx_{2}
 \]
 
 \end_inset
@@ -2908,7 +2997,7 @@ Then calculating the volume
 \begin_layout Standard
 \begin_inset Formula 
 \[
-V=\frac{1}{4}\sum_{i\in x_{1}}\sum_{j\in x_{2}}s_{i,j}+s_{i+1,j}+s_{i,j+1}+s_{i+1,j+1}\Delta x_{1}\Delta x_{2}
+V=\frac{1}{4}\sum_{j\in x_{2}}\sum_{i\in x_{1}}s_{i,j}+s_{i+1,j}+s_{i,j+1}+s_{i+1,j+1}\Delta x_{1}\Delta x_{2}
 \]
 
 \end_inset
