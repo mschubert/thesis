@@ -676,7 +676,7 @@ A pan-cancer view of drug sensitisation using LINCS
 \end_layout
 
 \begin_layout Subsection
-Creating drug signatures
+Creating drug signatures and scoring GDSC cell lines
 \end_layout
 
 \begin_layout Standard
@@ -685,41 +685,80 @@ What would be far more interesting is to investigate how drugs specifically
  With the new LINCS Connectivity Map, that has become possible.
  There is a total of 150 drugs that are both in the GDSC and the LINCS,
  enabling us to do a comprehensive characterisation of signature matching.
+ I derive models for each drug separately, with a linear model of LINCS-provided
+ z-scores mapped to HGNC symbols in experiments where the drug was used
+ vs.
+ all others.
+ I select the top 
+\begin_inset Formula $N$
+\end_inset
+
+ genes as the signature (from 0.01 up to 10% FDR), and chose 
+\begin_inset Formula $N$
+\end_inset
+
+ to maximise the area under the precision-recall curve.
+ I keep all drugs signatures that have an AUC of over 0.7 recovering the
+ experiments where the same drug as used and discard the rest.
+ For the pan-cancer cohort, this leaves 123 out of 150 signatures.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+could add some ROC curves here
 \end_layout
 
-\begin_layout Itemize
-150 drug overlap GDSC-LINCS
-\end_layout
-
-\begin_layout Itemize
-signatures need to be connected to themselves
-\begin_inset Separator latexpar
 \end_inset
 
 
 \end_layout
 
-\begin_deeper
-\begin_layout Itemize
-min genes ..
- max genes: calculate signature scores + ROC
+\begin_layout Standard
+I use the coefficients of the model to score all GDSC cell lines using the
+ formula:
 \end_layout
 
-\begin_layout Itemize
-select best sig (AUC) where genes < 10% FDR
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S=E*Z
+\]
+
+\end_inset
+
+
 \end_layout
 
-\begin_layout Itemize
-if AUC>cutoff, QC pass
-\end_layout
+\begin_layout Standard
+Where 
+\begin_inset Formula $E$
+\end_inset
 
-\end_deeper
-\begin_layout Itemize
-example plots of ROC curves for selection here
-\end_layout
+ the basal gene expression values of the GDSC cell lines with cell lines
+ in rows and genes in columns, 
+\begin_inset Formula $Z$
+\end_inset
 
-\begin_layout Itemize
-maybe also how qc pass signatures connect
+ are the z-scores of the fitted model with genes in rows and drugs in columns,
+ and 
+\begin_inset Formula $S$
+\end_inset
+
+ the resulting expression of drug-response signatures with cell lines in
+ rows and drugs in columns.
+ I scale 
+\begin_inset Formula $S$
+\end_inset
+
+ for each drug to have mean 
+\begin_inset Formula $0$
+\end_inset
+
+ and standard deviation 
+\begin_inset Formula $1$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsection
