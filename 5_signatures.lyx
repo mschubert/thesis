@@ -680,7 +680,11 @@ Creating drug signatures
 \end_layout
 
 \begin_layout Standard
-There is a total of 150 drugs that are both in the GDSC and the LINCS panel.
+What would be far more interesting is to investigate how drugs specifically
+ designed or used in cancer interact in terms of synergies or antagonism.
+ With the new LINCS Connectivity Map, that has become possible.
+ There is a total of 150 drugs that are both in the GDSC and the LINCS,
+ enabling us to do a comprehensive characterisation of signature matching.
 \end_layout
 
 \begin_layout Itemize
@@ -879,6 +883,48 @@ Pathway correlation as a major source for false positives
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/3.1_qs11_problem.svg
+	lyxscale 50
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+QS11 Problem schematic
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:QS11-Problem-schematic"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Setting aside the issue on whether an apparent lack of literature support
  can be a false positive or a new finding, an antagonistic interaction of
  a compound with goes against the definition of synergy as described by
@@ -922,78 +968,6 @@ reference "fig:QS11-Problem-schematic"
 \end_inset
 
 ).
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename figures/3.1_qs11_problem.svg
-	lyxscale 50
-	width 100text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-QS11 Problem schematic
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:QS11-Problem-schematic"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-One way to test the above hypothesis is to introduce as a covariate in the
- regression the expression score of the signature of the treatment drug,
- and calculate the associations as everything that is left after correcting
- for the effect on gene expression that it would have (using the expression
- score of Trametinib/GSK1120212 and calculating the association strength
- of the QS-11 signature and Trametinib response on top of that, as indicated
- with the blue box in figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:QS11-Problem-schematic"
-
-\end_inset
-
-).
- This, in more general terms, would correct for pathway cross-talk between
- the sensitiser and the treatment drug, also for two-drug pairs that have
- the same target or are indeed the same drug.
- If the above association stays significant despite the added covariate,
- we can reject the model proposed in figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:QS11-Problem-schematic"
-
-\end_inset
-
-.
- Otherwise, this would be a valid explanation of the effect we see.
 \end_layout
 
 \begin_layout Subsection
@@ -1046,7 +1020,9 @@ status open
 
 \begin_layout Plain Layout
 Matrix of associations including the treatment drug as covariate
-\end_layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:covar-assocs-matrix"
 
 \end_inset
 
@@ -1058,26 +1034,9 @@ Matrix of associations including the treatment drug as covariate
 
 \end_layout
 
-\begin_layout Standard
-CDK inhibitors may act as sensitisers for GSK1120212 in multiple tissues.
- PD-0332991 [CDK 4/6] GSK1120212 [MEK 1/2] Found in melanoma, our analysis
- suggests stronger effects in the tissues listed.
- “The combination MEK and CDK4/6 inhibition is synergistic in vivo”, Kwong,
- L.
- N.
- et al.
- Oncogenic NRAS signaling differentially regulates survival and proliferation
- in melanoma.
- Nat.
- Med.
- 18, 1503–1510 (2012) 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Kwong2012-vd"
-
 \end_inset
 
-.
+
 \end_layout
 
 \begin_layout Standard
@@ -1091,7 +1050,31 @@ status open
 \begin_inset Graphics
 	filename figures/3.1_gsk1120212+cdk.svg
 	lyxscale 50
-	width 80text%
+	width 70text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/3.1_raf+mek_BRCA.svg
+	lyxscale 50
+	width 70text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/3.1_temozolomide_COREAD.svg
+	lyxscale 50
+	width 70text%
 
 \end_inset
 
@@ -1102,31 +1085,18 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-GSK1120212 + CDK inhibitor fit
-\end_layout
+Top: CDK inhibitors may act as sensitisers for Trametinib (GSK1120212) in
+ multiple tissues.
+ This has been found in a mouse model of melanoma 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Kwong2012-vd"
 
 \end_inset
 
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Tissue-specific associations are done by deriving tissue-dependent drug
- signatures (i.e., only using corresponding cell lines in LINCS and GDSC)
- for predicting drug sensitising agents.
- SB590885 [Raf/BRAF] other inibitors [MEK 1/2] This has been shown in SKCM:
- “data from two phase III trials add considerable support for combined BRAF
- and MEK inhibition” , Killock, D.
- Skin cancer: BRAF and MEK inhibitors - good news comes in twos! Nat.
- Rev.
- Clin.
- Oncol.
- 11, 683–683 (2014) 
+, our analysis suggests stronger effects in the tissues listed.
+ Middle: Combination of Raf (SB590885) and MEK inhibitors in BRCA.
+ A synergistic effect has been shown in melanoma 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Killock2014-ku"
@@ -1134,68 +1104,20 @@ key "Killock2014-ku"
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename figures/3.1_raf+mek_BRCA.svg
-	lyxscale 50
-	width 80text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Raf + MEK inhibitor in BRCA fit
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Various drugs may act as sensitisers for Temozolomide in COREAD.
- Temozolomide [DNA alkylating] AG-014699 [PARP inhibitor] GW843682X [PLK1
- inhibitor] Mitomycin C [DNA cross-linker] Plummer, R.
- et al.
- A phase II study of the potent PARP inhibitor, Rucaparib (PF-01367338,
- AG014699), with temozolomide in patients with metastatic melanoma demonstrating
- evidence of chemopotentiation.
- Cancer Chemother.
- Pharmacol.
- 71, 1191–1199 (2013) 
+ Bottom: Various drugs may act as sensitisers for Temozolomide (DNA alkylating
+ agent) in COREAD.
+ This has been shown for Mitomycin C and Rucaparib (PF-01367338, AG014699)
+ in metastatic melanoma 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "Plummer2013-vl"
+key "Plummer2008-yt,Plummer2013-vl"
 
 \end_inset
 
 .
- Pezuk, J.
- A.
- et al.
- Polo-like kinase 1 inhibition causes decreased proliferation by cell cycle
- arrest, leading to cell death in glioblastoma.
- Cancer Gene Ther.
- 20, 499–506 (2013) 
+ Polo-like kinase 1 inhibition (target of GW843682X) has been shown to cause
+ decreased proliferation by cell cycle arrest, leading to cell death in
+ glioblastoma 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Pezuk2013-xn"
@@ -1203,41 +1125,76 @@ key "Pezuk2013-xn"
 \end_inset
 
 .
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:covar-fits"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename figures/3.1_temozolomide_COREAD.svg
-	lyxscale 50
-	width 80text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Temozolomide fit
-\end_layout
+One way to test the above hypothesis is to introduce as a covariate in the
+ regression the expression score of the signature of the treatment drug,
+ and calculate the associations as everything that is left after correcting
+ for the effect on gene expression that it would have (using the expression
+ score of Trametinib/GSK1120212 and calculating the association strength
+ of the QS-11 signature and Trametinib response on top of that, as indicated
+ with the blue box in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:QS11-Problem-schematic"
 
 \end_inset
 
-
-\end_layout
+).
+ This, in more general terms, would correct for pathway cross-talk between
+ the sensitiser and the treatment drug, also for two-drug pairs that have
+ the same target or are indeed the same drug.
+ If the above association stays significant despite the added covariate,
+ we can reject the model proposed in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:QS11-Problem-schematic"
 
 \end_inset
 
+.
+ Otherwise, this would be a valid explanation of the effect we see.
+\end_layout
 
+\begin_layout Standard
+As I am only looking at the drugs that are present in both the GDSC and
+ LINCS data sets, introducing the signature of the first drug as a covariate
+ is straightforward.
+ Results for the associations are shown in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:covar-assocs-matrix"
+
+\end_inset
+
+.
+ When looking for literature evidence to support some of the stronger hits
+ in this matrix, I now do find some (figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:covar-fits"
+
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Section
