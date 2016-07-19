@@ -231,7 +231,7 @@ Methods used throughout this thesis
 \end_layout
 
 \begin_layout Subsection
-Obtaining gene sets
+Gene sets
 \end_layout
 
 \begin_layout Standard
@@ -434,7 +434,7 @@ abbrv{KGML}
 \end_layout
 
 \begin_layout Subsection
-Gene set enrichment without comparing groups
+Gene Set Variation Analysis (GSVA)
 \end_layout
 
 \begin_layout Standard
@@ -761,7 +761,7 @@ Cell Line Drug Response
 \end_layout
 
 \begin_layout Subsection
-Associations using Mutations
+Associations with Mutations
 \end_layout
 
 \begin_layout Standard
@@ -928,7 +928,7 @@ gene{BRAF}
 \end_layout
 
 \begin_layout Subsection
-Associations using Gene Ontology categories
+Associations with Gene Ontology categories
 \end_layout
 
 \begin_layout Standard
@@ -1083,7 +1083,7 @@ signaling
 \end_layout
 
 \begin_layout Subsection
-Associations using Reactome pathways
+Associations with Reactome pathways
 \end_layout
 
 \begin_layout Standard

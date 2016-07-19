@@ -1,7 +1,9 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin unavailable
 \textclass article
 \begin_preamble
 \usepackage[font=small,labelfont=bf]{caption}
@@ -21,16 +23,16 @@
 \language_package default
 \inputencoding auto
 \fontencoding global
-\font_roman default
-\font_sans default
-\font_typewriter default
-\font_math auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_sf_scale 100 100
+\font_tt_scale 100 100
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -232,9 +234,9 @@ abbrv{SNP}s
 
 \end_inset
 
-), small insertions and deletions (small indels), changes in the number
- of copies of DNA segments (copy number alterations--this can happen either
- on the genome or on extragenomic small chromosomes 
+), small insertions and deletions (indels), changes in the number of copies
+ of DNA segments (copy number alterations or aberrations, CNAs–this can
+ happen either on the genome or on extragenomic small chromosomes 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Jones2012-fc"
@@ -242,7 +244,7 @@ key "Jones2012-fc"
 \end_inset
 
 ), or strand breaking and rejoining at different positions (structural rearrange
-ments--from single events that produce gene fusions 
+ments–from single events that produce gene fusions 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Nowell1960-rh,Mitelman1997-au,Garnett2012-dk"
@@ -270,7 +272,7 @@ key "Rausch2012-mt,Northcott2012-ci"
 Consequences
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Consequences"
+name "subsec:Consequences"
 
 \end_inset
 
@@ -628,7 +630,7 @@ gene{BRAF^{V600E}}
  mutation, already mentioned in section 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Consequences"
+reference "subsec:Consequences"
 
 \end_inset
 
@@ -710,8 +712,8 @@ Immune therapy
 The importance of the immune system in the suppression of cancer has only
  recently been discovered.
  As a consequence, drugs have been developed that target the inhibition
- that cancer cells confer on to immune cells using the PD-1--PD-L1 ligand-recept
-or pair 
+ that cancer cells confer on to immune cells using the PD-1–PD-L1 ligand-recepto
+r pair 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Blank2005-cc,Zou2016-qz"
@@ -962,7 +964,7 @@ While the overall number of available cell lines is vast, there are limits
  section 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:GDSC"
+reference "subsec:GDSC"
 
 \end_inset
 
@@ -1188,7 +1190,7 @@ key "McDermott2015-sn"
 RNA
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:assay_RNA"
+name "subsec:assay_RNA"
 
 \end_inset
 
@@ -1521,7 +1523,7 @@ abbrv{TOF}
 
 ) instruments, the electrical field is used to accelerate the peptides;
  the force that accelerates them is then proportional to their charge, and
- their inertia to their mass--hence the time it takes to reaches the detector
+ their inertia to their mass–hence the time it takes to reaches the detector
  is proportional to the ratio of the two.
 \end_layout
 
@@ -1625,7 +1627,7 @@ With about 22,000 human genes whose transcription can be all measured simultaneo
 usly using the methods described in section 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:assay_RNA"
+reference "subsec:assay_RNA"
 
 \end_inset
 
@@ -1906,7 +1908,7 @@ abbrv{GDSC}
 )
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:GDSC"
+name "subsec:GDSC"
 
 \end_inset
 
@@ -2015,7 +2017,7 @@ key "Lamb2006-mp"
  
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Signature-Matching"
+reference "subsec:Signature-Matching"
 
 \end_inset
 
@@ -2167,11 +2169,11 @@ Nonetheless, the sheer size of the new dataset will make it very valuable
  section 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Signature-Matching"
+reference "subsec:Signature-Matching"
 
 \end_inset
 
-) approaches--more on this in chapter 5.
+) approaches–more on this in chapter 5.
 \end_layout
 
 \begin_layout Section
@@ -2715,7 +2717,7 @@ key "Blei2003-oi"
 
 \end_inset
 
---a modern, Bayesian method for clustering that is an active research topic)
+–a modern, Bayesian method for clustering that is an active research topic)
  but they are not used in this work.
 \end_layout
 
@@ -3326,7 +3328,7 @@ key "Vaske2010-zn"
 Signature Matching
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Signature-Matching"
+name "subsec:Signature-Matching"
 
 \end_inset
 
@@ -3499,7 +3501,7 @@ target "http://retractionwatch.com/2015/11/07/its-official-anil-potti-faked-data
 
 \end_inset
 
- that Keith Baggerly later spent six months trying to reproduce--and failed,
+ that Keith Baggerly later spent six months trying to reproduce–and failed,
  but in the process found considerable errors that later caused the original
  article to be retracted 
 \begin_inset CommandInset citation
@@ -4043,7 +4045,7 @@ abbrv{mRNA}
  perturbation experiments to quantify gene expression responses to a specified
  set of stimuli, and then use those genes to infer the upstream signal required
  to change their expression.
- This is one way by which--only using gene expression data--we can indirectly
+ This is one way by which–only using gene expression data–we can indirectly
  observe activity instead of just 
 \begin_inset ERT
 status open

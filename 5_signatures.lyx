@@ -3525,56 +3525,138 @@ Discussion
 Original Connectivity Map
 \end_layout
 
-\begin_layout Itemize
-(almost) only 1 cell line, 10 uM everywhere
+\begin_layout Standard
+Using the original Connectivity Map for predicting a drug that could sensitise
+ cell lines to another drug has a couple of drawbacks: First, most of the
+ compounds used are not cancer specific.
+ They do most likely not target a specific kinase but rather a high-level
+ biological process or set of processes.
+ This is not an issue by itself by our prior belief about the potential
+ in treating cancer is lower than if the drug was already designed to treat
+ a specific aspect or type of cancer.
+ Second, gene expression changes are derived from treatment with a high
+ drug concentration, almost exclusively 10 uM.
+ This is a concentration range where a drug that apart from its primary
+ effect has secondary targets will most likely hit them as well, even if
+ the physiological concentration upon drug treatment would never reach this
+ level.
+ In this case, we would observe gene expression changes that are due to
+ both the primary effect but also an unknown number and strength of secondary
+ effects.
+ Third, most of the perturbations are done only in MCF-7 or a low number
+ of cell lines.
+ The usual time is either 6 or 24 hours.
 \end_layout
 
-\begin_layout Itemize
-mostly non cancer drugs
-\end_layout
-
-\begin_layout Itemize
-mantra not avail for LINCS
+\begin_layout Standard
+What speaks for the original Connectivity Map is that with MANTRA, the compound-
+level signatures have been merged using informative distances (that is,
+ weighted by the gene expression distance between several experiments, to
+ for instance not have an overly strong contribution of the MCF-7 signature
+ if there were three experiments using MCF-7 and one in PC-3).
+ Gene Set Enrichment Analysis has also often been shown to robust, and we
+ have much less late available on that for a linear model on z-scores.
 \end_layout
 
 \begin_layout Subsection
 Pan-cancer view of the LINCS
 \end_layout
 
-\begin_layout Itemize
-drug-level analysis is great, but:
+\begin_layout Standard
+The LINCS Connectivity Map provides us with an opportunity to investigate
+ the possible effect of combining two cancer drugs, with a total of 150
+ drugs that both have drug sensitivity estimates in the GDSC and drug response
+ signatures in the LINCS.
+ On top of that, it enabled me to use the drug response signature in combination
+ with the sensitivity estimate to regress out overlapping expression changes
+ between the two.
+ This would not have been possible with the original Connectivity Map, but
+ it would also not have been possible using Gene Set Enrichment Analysis.
+ While the latter has been applied to virtually every possible biological
+ context and we know very well how it behaves (in terms of distribution
+ of scores, appropriate null models, continuous unimodal scores in GSVA,
+ leading edge analysis, etc.).
+ However, the overall knowledge and possibilities of linear models reach
+ far beyond what is possible with GSEA.
+ Adding a covariate is just one example of that, but it is my impression
+ that those kinds of models will expand again from ANOVAs, Genome Wide Associati
+on Studies (GWAS) and eQTLs (genomic variants with impact on gene expression,
+ or expression quantitative trait loci) more into gene expression and exhibit
+ a much more powerful behaviour than GSEA.
+ A good example of this is PEER, used to regress out known and unknown covariate
+s for genomic associations 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+cite
 \end_layout
 
-\begin_layout Itemize
-might have off-target effects
-\end_layout
+\end_inset
 
-\begin_layout Itemize
-and we don't take any bio into account
+.
 \end_layout
 
 \begin_layout Standard
-These are preliminary results, examples are shown where a quick search turned
- up additional supporting evidence.
+My analysis has shown one potential application of a technique not possible
+ with GSEA.
+ It has the potential to effectively remove the effect of overlapping signatures
+ or pathway cross-talk more generally.
+ The available literature support for those models that I could not find
+ for the naive models are evidence of that.
+\end_layout
+
+\begin_layout Standard
+Of course there are some open questions: These are preliminary results,
+ examples are shown where a quick search turned up additional supporting
+ evidence.
  There are some parameters in the method that should be optimised (LINCS
  projection, signature creation cutoff).
- Right now, we only use GDSC drugs in LINCS - which others should we include?
+ Right now, I only use GDSC drugs in LINCS.
+ There may be a reason to include others as well.
 \end_layout
 
 \begin_layout Subsection
-Value of tissue-specific models
+Tissue-specific models and validation
 \end_layout
 
-\begin_layout Itemize
-drug-level analysis is great, but:
+\begin_layout Standard
+The LINCS Connectivity Map also provides us with an opportunity of analysing
+ gene expression response upon drug treatment in a tissue-specific manner
+ while not limiting the set to a single cell line as I would have needed
+ to do in case of the first Connectivity Map.
+ There is five breast cancer and one non-cancerous breast line in the LINCS,
+ with a total of 19,000 perturbations.
+ However, there is no way of telling whether a common signature, or one
+ of the non-cancerous cell line, and which projection etc.
+ would have been the best choice to predict possible drug combinations.
+ Given this limitation, selecting the most consistently synergistically
+ predicted combinations made sense.
 \end_layout
 
-\begin_layout Itemize
-might have off-target effects
-\end_layout
+\begin_layout Standard
+Unfortunately, the actual experimental setup seems a lot more error-prone
+ than anticipated.
+ While I suggested the screening concentration based on single-agent response
+ curves to maximise the information we could obtain by using a relatively
+ small grid and have simultaneously having the single-agent dilutions as
+ a control, the actual setup that was used for screening separated combinations
+ from single-agent control again.
+ This is not a problem if the assay is stable enough to yield comparable
+ Hill parameters, but this does not seem to be the case: in the combination
+ screening, the likely 
+\begin_inset Formula $IC_{50}$
+\end_inset
 
-\begin_layout Itemize
-and we don't take any bio into account
+ that I can best estimate along a dilution series of a drug while looking
+ at the minimal concentration of the other, does often not fill well to
+ the previously estimated single-agent curves.
+ The only way I see to fix this is to assess stability of the assay and
+ influencing factors of the Hill parameters first in order to minimise the
+ batch effect.
+ We might still get another batch of experimental results that takes this
+ into account.
+ This will however be past the submission date of this thesis.
 \end_layout
 
 \begin_layout Standard
