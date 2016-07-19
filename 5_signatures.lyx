@@ -3336,8 +3336,22 @@ name "fig:384-schema"
 Synergy of drug combinations
 \end_layout
 
-\begin_layout Itemize
-either a couple of all of the combination plots
+\begin_layout Standard
+Our collaborators screened 2D dilutions of two different drugs on a 
+\begin_inset Formula $11x11$
+\end_inset
+
+ grid starting at a concentration of 1 or 10 uM and dilution 2-fold or 3-fold.
+ This takes up more space on the plate than our proposed layout, but it
+ should still capture large parts of the single agent drug response curves
+ for both drugs for all the suggested combinations in table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:combined-score"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -3386,7 +3400,14 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-asdf
+Combination of PD-0325901 as sensitiser and AT-7519 as treatment drug.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:PD+AT"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -3445,7 +3466,14 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-asdf
+Combination of AUY922 as sensitiser and VX-680 as treatment drug.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:AUY+VX"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -3504,8 +3532,10 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-asdf
-\end_layout
+Combination of WZ3105 as sensitiser and PD-0325901 as treatment drug.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:WZ+PD"
 
 \end_inset
 
@@ -3515,6 +3545,116 @@ asdf
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+There are multiple aspects to these plots (figures 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:PD+AT"
+
+\end_inset
+
+-
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:WZ+PD"
+
+\end_inset
+
+ and appendix D).
+ If the screening concentration using the extended grid did indeed capture
+ the dose-response curve of the single-agent dilutions, the middle panel
+ with the calculated combination efficacy under the null hypothesis (Loewe
+ additivity–no interaction, efficacy of both drugs combined is assuming
+ one drug is a dilution of the other) should show the whole range viability,
+ from bright yellow (all cells are killed) to dark violet (all cells survive).
+ This is true for some of the combinations (figures 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:AUY+VX"
+
+\end_inset
+
+-
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:WZ+PD"
+
+\end_inset
+
+) but not others (figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:WZ+PD"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+Another aspect is that even though we do not have single-agent dilutions
+ as part of this matrix, the dose response curve of one drug with the lowest
+ dilution of the other drug should roughly correspond to the single-agent
+ dose response curve.
+ This again is true in some cases (WZ3105 in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:WZ+PD"
+
+\end_inset
+
+), but not others (AUY922 in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:AUY+VX"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+Finally, my predictions are about synergistic combinations so I would expect
+ the combination of two drugs at various dilutions to kill more cells than
+ the expected null model of interaction.
+ This will of course not always happen, but it should happen more often
+ than expected by random chance.
+ Also for this difference, I find some examples where this is the case (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:PD+AT"
+
+\end_inset
+
+) but not others where a drug essentially seems to stop working under a
+ certain concentration that does not fit the single-agent dose response
+ curve (figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:AUY+VX"
+
+\end_inset
+
+).
+ Interestingly, for some cases (figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:WZ+PD"
+
+\end_inset
+
+), I observe that the combination response is driven by the opposite drug
+ than expected from the single-agent curves, leading to strongly synergistic
+ and antagonistic corners of the dilution.
+ Unfortunately, I can at this point not determine if this is a real effect
+ or an artefact due to experimental error.
 \end_layout
 
 \begin_layout Section
@@ -3583,8 +3723,7 @@ The LINCS Connectivity Map provides us with an opportunity to investigate
 on Studies (GWAS) and eQTLs (genomic variants with impact on gene expression,
  or expression quantitative trait loci) more into gene expression and exhibit
  a much more powerful behaviour than GSEA.
- A good example of this is PEER, used to regress out known and unknown covariate
-s for genomic associations 
+ A good example of this is PEER 
 \begin_inset Note Note
 status open
 
@@ -3594,7 +3733,7 @@ cite
 
 \end_inset
 
-.
+, used to regress out known and unknown covariates for genomic associations.
 \end_layout
 
 \begin_layout Standard
