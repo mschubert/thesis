@@ -227,7 +227,7 @@ do("speed_matrix", "Perturbation-response genes")
 }
 
 
-\section{Associations for drug sensitisation (chapter 5)}
+\section{Drug sensitisation (chapter 5)}
 \setcounter{table}{0}
 \renewcommand{\thetable}{C\arabic{table}}
 \setcounter{figure}{0}
@@ -287,3 +287,33 @@ do("pan_bing_pancov-", "Drug sensitisation (naive pan-cancer)")
 do("pan_bing_pancov", "Drug sensitisation (pan-cancer with covariate)")
 @
 }
+
+\subsection{Combination screen}
+
+\begin{figure}
+\begin{centering}
+\centerline{\includegraphics[width=0.7\paperwidth]{figures/synergy_sup1}}
+\par\end{centering}
+\caption{asdf}
+\end{figure}
+
+\begin{figure}
+\begin{centering}
+\centerline{\includegraphics[width=0.7\paperwidth]{figures/synergy_sup2}}
+\par\end{centering}
+\caption{(cont.)}
+\end{figure}
+
+\begin{figure}
+\begin{centering}
+\centerline{\includegraphics[width=0.7\paperwidth]{figures/synergy_sup3}}
+\par\end{centering}
+\caption{(cont.)}
+\end{figure}
+
+\begin{figure}
+\begin{centering}
+\centerline{\includegraphics[width=0.7\paperwidth]{figures/synergy_sup4}}
+\par\end{centering}
+\caption{cont.}
+\end{figure}
