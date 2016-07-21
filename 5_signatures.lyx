@@ -2727,6 +2727,113 @@ name "subsec:Defining-synergy-for"
 
 \end_layout
 
+\begin_layout Subsubsection
+Models of synergy
+\end_layout
+
+\begin_layout Standard
+Before we go on and try some of the predicted combinations, we first need
+ to decide on how we expect two drugs to act in combination if there is
+ no interaction effect, and then to quantify the interaction effect if there
+ is one.
+ Fortunately, there are common methods available to calculate synergy, the
+ best-known of which are Highest Single Agent, Bliss Independence and Loewe
+ Additivity.
+\end_layout
+
+\begin_layout Standard
+Highest Single Agent 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+cite
+\end_layout
+
+\end_inset
+
+ is not really a synergy method at all.
+ As the name suggests, this method takes the best-performing single agent
+ at a given concentration and uses this as a baseline upon which to define
+ synergy if a second drug improves upon the single treatment or antagonism
+ if the combination has a weaker effect than any single agent.
+ This, however, labels all additive effects as well as the interaction between
+ a drug and itself as synergistic.
+ 
+\end_layout
+
+\begin_layout Standard
+The Bliss Independence model 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+cite
+\end_layout
+
+\end_inset
+
+ makes a more sensible assumption: if both drugs don't interact, they exert
+ an effect independently of each other.
+ Thus, if one drug kills off half of the cells in the well, the other can
+ be seen as acting only on the remaining half.
+ Synergy and antagonism are defined as an effect above and below that, respectiv
+ely.
+ This model, however, may still label a drug to act synergistically with
+ itself: if you consider the single-agent dose response curve of AT-7519
+ in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:drug-96"
+
+\end_inset
+
+ and apply the drug at its 
+\begin_inset Formula $IC_{50}$
+\end_inset
+
+, adding the same amount of the same drug again may already put it above
+ the 
+\begin_inset Formula $IC_{75}$
+\end_inset
+
+.
+ This is more likely to happen the steeper the dose-response curves are.
+\end_layout
+
+\begin_layout Standard
+The Loewe Additivity model 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+cite
+\end_layout
+
+\end_inset
+
+ assumes the null interaction to be as if one drug is a dilution of the
+ other.
+ If we consider this assumption stringently, it means that the model should
+ be used if two drugs share the same mechanism of action.
+ Nevertheless, it is not prone to errors as the ones above and was the model
+ of choice for the DREAM drug synergy prediction challenge
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+footnote or cite
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+A model based on Loewe additivity
+\end_layout
+
 \begin_layout Standard
 Given that we know which concentration 
 \begin_inset Formula $x$
@@ -2920,7 +3027,7 @@ The way I do this is to use the bisect function of SciPy between
 \end_inset
 
  and 
-\begin_inset Formula $1-10^{5}$
+\begin_inset Formula $1-10^{-5}$
 \end_inset
 
 , where the the returned value of the function is smaller than 
