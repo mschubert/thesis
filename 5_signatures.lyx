@@ -2792,12 +2792,12 @@ reference "fig:drug-96"
 \begin_inset Formula $IC_{50}$
 \end_inset
 
-, adding the same amount of the same drug again may already put it above
+, adding the same amount of the same drug again would already put it above
  the 
 \begin_inset Formula $IC_{75}$
 \end_inset
 
-.
+ (use the red dots for suggested combination dilutions as a guide).
  This is more likely to happen the steeper the dose-response curves are.
 \end_layout
 
