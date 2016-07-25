@@ -195,7 +195,14 @@ abbrv{LINCS}
  over a large target space.
  This could ultimately lead to a new drug combination or regimen that counters
  the development of resistance in clinical cancer patients, which is one
- of the main challenges in patient treatment today.
+ of the main challenges in patient treatment today 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Ramaswamy2007-kw"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Section
@@ -2743,12 +2750,9 @@ Before we go on and try some of the predicted combinations, we first need
 
 \begin_layout Standard
 Highest Single Agent 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-cite
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Laska1994-cp"
 
 \end_inset
 
@@ -2764,12 +2768,9 @@ cite
 
 \begin_layout Standard
 The Bliss Independence model 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-cite
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Greco1995-xk"
 
 \end_inset
 
@@ -2780,8 +2781,15 @@ cite
  Synergy and antagonism are defined as an effect above and below that, respectiv
 ely.
  This model, however, may still label a drug to act synergistically with
- itself: if you consider the single-agent dose response curve of AT-7519
- in figure 
+ itself 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Zhao2014-xg"
+
+\end_inset
+
+: if you consider the single-agent dose response curve of AT-7519 in figure
+ 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:drug-96"
@@ -2803,12 +2811,9 @@ reference "fig:drug-96"
 
 \begin_layout Standard
 The Loewe Additivity model 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-cite
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Loewe1926-xx,Greco1995-xk"
 
 \end_inset
 
@@ -2818,11 +2823,11 @@ cite
  be used if two drugs share the same mechanism of action.
  Nevertheless, it is not prone to errors as the ones above and was the model
  of choice for the DREAM drug synergy prediction challenge
-\begin_inset Note Note
+\begin_inset Foot
 status open
 
 \begin_layout Plain Layout
-footnote or cite
+https://www.synapse.org/#!Synapse:syn4231880/wiki/235645
 \end_layout
 
 \end_inset
