@@ -87,8 +87,102 @@
 Conclusions
 \end_layout
 
-\begin_layout Itemize
-some conclusions
+\begin_layout Standard
+Signalling pathways have long been studied in the context of cancer as well
+ as other diseases.
+ Because direct measurements of those are not widely available, significant
+ effort has been devoted to extracting predictive and reliable biomarkers
+ reflecting their status from gene expression data.
+ This has either been done by mapping the expression level of pathway components
+, or by defining signature genes that differentiate between two conditions.
+ In this thesis, I have shown the utility and robustness of gene expression
+ signatures for inferring signalling activity as well as potential drug
+ combinations.
+ I started with characterising the GDSC cancer cell line panel using gene
+ sets of Gene Ontology categories and Reactome pathways.
+ I showed that one needs to be cautious when interpreting the top associations
+ with drug response, as the process depicted will often likely not be the
+ process that causes sensitivity to resistance to a given drug.
+ As a way to solve this, I showed the advantage of pre-selecting interesting
+ gene sets that are changing upon pathway stimulation using the SPEED platform
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Parikh2010-uj"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+I assembled a comprehensive and robust set of consensus gene expression
+ signatures derived from pathway perturbations, which enabled me to detect
+ pathway-specific footprints of signalling activity.
+ I provided the first large-scale comparison between these signatures and
+ state of the art pathway methods in both patient data and pharmacogenomic
+ drug screenings (The Cancer Genome Atlas and Sanger’s Genomics of Drug
+ Sensitivity in Cancer, respectively).
+ I found that consensus signatures of perturbations better recover many
+ well-known driver mutations in terms of their expected impact on pathway
+ activity, provide more associations with drug response than driver mutations,
+ and more clearly distinguish between oncogenic and tumor-suppressive pathways
+ for patient survival.
+ Furthermore, I showed that my signatures can be used in combinations with
+ driver mutations to yield better biomarkers for drug indications than mutations
+ alone.
+\end_layout
+
+\begin_layout Standard
+I showed that the same signatures, computed per drug in the LINCS Connectivity
+ Map can be used to predict synergistic and antagonistic drug combinations
+ using signature matching in conjunction with drug sensitivity data.
+ I developed a novel way of computing those associations while taking into
+ account possible pathway cross-talk between the two drugs.
+ While the experimental validation remains to be confirmed, literature evidence
+ strongly supported the validity of this approach.
+\end_layout
+
+\begin_layout Standard
+On the technical side, the signatures I have worked with were largely based
+ z-score coefficients of linear models and not gene sets and GSEA.
+ While GSEA has been applied to virtually every possible biological context
+ and we know very well how it behaves (in terms of distribution of scores,
+ appropriate null models, continuous unimodal scores in GSVA, leading edge
+ analysis, etc.).
+ However, the overall knowledge and possibilities of linear models reach
+ far beyond what is possible with GSEA.
+ Adding a covariate to signature matching is just one example of that.
+ It is my impression that those kinds of models will expand again from ANOVAs,
+ Genome Wide Association Studies (GWAS) and eQTLs (genomic variants with
+ impact on gene expression, or expression quantitative trait loci) more
+ into generally applicable analyses of gene expression, because it enables
+ to used to apply many more techniques and tools to solve problems such
+ as confounding variables, batch correction, latent variable extraction,
+ etc.
+ A good example of a tool that performs theses tasks is PEER 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Stegle2012-ds"
+
+\end_inset
+
+, used to regress out known and unknown covariates for genomic associations,
+ while finding correlated latent variables to explain phenotypes.
+\end_layout
+
+\begin_layout Standard
+On the biological side, I expect the signatures I derived (both for pathways
+ and for individual drugs) to in the future be used as tools to interrogate
+ the functional impact of mutations, as well as inference of signalling
+ activity from gene expression for other purposes.
+ As I addressed the issues of post-translational control that common pathway
+ methods do not take into account as well as the context-specificity of
+ single-condition signatures, I believe that those signatures (again, both
+ for pathways and individual drugs) can in the future be used in the pre-clinica
+l as well as clinical setting either as biomarkers for drug indication or
+ patient survival, but also as tools to interrogate the basic biology that
+ drives those processes.
 \end_layout
 
 \begin_layout Standard

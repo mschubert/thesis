@@ -2902,17 +2902,7 @@ tion of other genes.
 \begin_layout Standard
 There are multiple ways these can be investigated: by characterising which
  transcription factors bind to which genes (which can be done either experimenta
-lly, as outlined in section 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-*
-\end_layout
-
-\end_inset
-
-, or computationally by looking at which sequence of nucleotides a given
+lly or computationally by looking at which sequence of nucleotides a given
  factor is likely to bind), by finding genes that change in a coordinated
  fashion and hypothesise that those might be regulated by the same set of
  factors, or by making inferences which combination of which factors is

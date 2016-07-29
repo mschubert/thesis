@@ -136,16 +136,6 @@ key "Wadi2016-wc"
 
 \end_inset
 
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-cite?
-\end_layout
-
-\end_inset
-
 ) if one is to test one set against another, or some variant of Gene Set
  Enrichment Analysis (GSEA) 
 \begin_inset CommandInset citation

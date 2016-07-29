@@ -1016,13 +1016,10 @@ Setting aside the issue on whether an apparent lack of literature support
  as well.
  So what mechanism could explain a strong association under the assumption
  that the effect is indeed a false positive? One indication is that Wnt
- activation is known to cross-activate the MAP kinase pathway
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-ref
-\end_layout
+ activation is known to cross-activate the MAP kinase pathway 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Smit2004-pb"
 
 \end_inset
 
@@ -3824,35 +3821,8 @@ The LINCS Connectivity Map provides us with an opportunity to investigate
  between the two.
  This would not have been possible with the original Connectivity Map, but
  it would also not have been possible using Gene Set Enrichment Analysis.
- While the latter has been applied to virtually every possible biological
- context and we know very well how it behaves (in terms of distribution
- of scores, appropriate null models, continuous unimodal scores in GSVA,
- leading edge analysis, etc.).
- However, the overall knowledge and possibilities of linear models reach
- far beyond what is possible with GSEA.
- Adding a covariate is just one example of that, but it is my impression
- that those kinds of models will expand again from ANOVAs, Genome Wide Associati
-on Studies (GWAS) and eQTLs (genomic variants with impact on gene expression,
- or expression quantitative trait loci) more into gene expression and exhibit
- a much more powerful behaviour than GSEA.
- A good example of this is PEER 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-cite
-\end_layout
-
-\end_inset
-
-, used to regress out known and unknown covariates for genomic associations.
-\end_layout
-
-\begin_layout Standard
-My analysis has shown one potential application of a technique not possible
- with GSEA.
- It has the potential to effectively remove the effect of overlapping signatures
- or pathway cross-talk more generally.
+ My analysis has shown one potential approach to effectively remove the
+ effect of overlapping signatures or pathway cross-talk more generally.
  The available literature support for those models that I could not find
  for the naive models are evidence of that.
 \end_layout

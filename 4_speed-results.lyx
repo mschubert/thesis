@@ -1224,8 +1224,8 @@ l axis).
  TP53 and KRAS mutations within cancer types in top row, EGFR amplification
  bottom left.
  VHL across cancer types.
- Log-likelihood of Welch’s t-test shown as shades of green for downregulated
- and red for upregulated pathways.
+ Wald statistic shown as shades of green for downregulated and red for upregulat
+ed pathways.
  P-value cutoffs shown as indicated.
  White squares where pathway could not be used for a method.
 \begin_inset CommandInset label
@@ -2307,7 +2307,7 @@ status open
 \begin_layout Plain Layout
 Comparison of pathway methods by association of a pathway with increased
  (green) or decreased (red) patient survival.
- Colors correspond to z-score (grey: FDR>20%, white: no pathway available).
+ Colours correspond to z-score (grey: FDR>20%, white: no pathway available).
  Method (vertical) and pathway (horizontal) labels as indicated.
  For our method, MAPK/EGFR provide the strongest negative contribution to
  survival.
