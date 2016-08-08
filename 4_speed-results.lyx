@@ -291,10 +291,20 @@ As I am most interested in how basal signalling activity in cancer cell
 \begin_layout Standard
 Providing a definitive proof that the same signatures obtained correspond
  to constitutive activation in basal expression is only possible using a
- range of functional readouts (e.g.
- mutations activating pathways, drug response on oncogene addiction) so
- I will defer this to chapter 4, where I investigate the functional relevance
- of perturbation-response signatures compared to other pathway methods.
+ range of functional readouts, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+latin{e.g.}
+\end_layout
+
+\end_inset
+
+ mutations activating pathways and drug response on oncogene addiction.
 \end_layout
 
 \begin_layout Standard
@@ -335,17 +345,10 @@ reference "fig:Correlation-speed"
 
 \end_inset
 
-) similar to the ones in perturbed experiments (figures 
+) similar to the ones in perturbed experiments (figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:sp2-exp-heatmap"
-
-\end_inset
-
- and 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:circle-perturb"
 
 \end_inset
 
@@ -355,14 +358,7 @@ reference "fig:circle-perturb"
  I find a high correlation between EGFR and MAPK and a lesser one to PI3K,
  as well as TNFa and NFkB.
  Another high correlation is between NFkB and JAK-STAT that I also observed
- in perturbation experiments (figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:circle-perturb"
-
-\end_inset
-
-, but below cutoff of 
+ in perturbation experiments (below cutoff of 
 \begin_inset Formula $10^{-5}$
 \end_inset
 
@@ -464,6 +460,16 @@ ratio=\frac{var(cell\,lines\,|\,bootstraps)}{var(bootstraps\,|\,cell\,lines)}
 \end_inset
 
 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+more detail?
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -529,8 +535,8 @@ reference "fig:bootstraps-basal"
  (i.e, the biological context outweighs the exact selection of perturbation
  input).
  For most pathways (TNFa, NFkB, MAPK, JAK-STAT, Hypoxia, and EGFR) the variance
- of the input experiments as only a negligible influence (smaller than 10%)
- on the final scores.
+ of the input experiments was only a negligible influence (smaller than
+ 10%) on the final scores.
  For p53, TGFb, and PI3K selection of the input experiments still accounts
  for under 20% of the observed variance of basal pathway scores.
  For Trail and VEGF, it is about twice as large as the variance of the input
@@ -564,8 +570,20 @@ Pathway scores for other methods
 \begin_layout Standard
 I computed the pathway scores for perturbation-response genes as well as
  all other method using the subset of tissues in the TCGA gene expression
- data that had 30 or more normals in the same tissue (TCGA identifier ***)
- to compare.
+ data that had 30 or more normals in the same tissue (TCGA identifier 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+code{11A}
+\end_layout
+
+\end_inset
+
+) to compare.
  This is to make full use of the advanced pathway methods (figure 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -1014,8 +1032,8 @@ Pathway scores and mutations/CNAs
 \end_layout
 
 \begin_layout Standard
-For TCGA cohorts were there were tissue-matched normals available in the
- Firebrowse-processed run 2016_01_28.
+I computed pathway scores for TCGA cohorts where there were tissue-matched
+ normals available in the Firebrowse-processed run 2016_01_28.
  For mutated genes, I considered all genes that had a change of coding sequence
  (SNP, small indels in MAF files) as mutated and all others as not mutated.
  For copy number alterations, I used the thresholded GISTIC scores, where
@@ -1086,7 +1104,7 @@ name "fig:volcano-CNA/drivers"
 \end_layout
 
 \begin_layout Standard
-If my reasoning is correct and pathway-response signatures are indeed correspond
+If my reasoning is correct and pathway-response signatures indeed correspond
  to intrinsic signalling activity, we should be able to see a higher pathway
  score in cancer patients with an oncogenic driver mutation and a lower
  score when a tumour suppressor is mutated or lost compared to patients
@@ -1313,8 +1331,18 @@ gene{EGFR}
 \end_inset
 
  amplifications (bottom left panel).
- Across tissues, our method is the only one to recover hypoxia as the strongest
- link with 
+ Across tissues, our method is the only one to recover hypoxia as the expected
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+ref from paper
+\end_layout
+
+\end_inset
+
+ strongest link with 
 \begin_inset ERT
 status open
 
@@ -1350,10 +1378,10 @@ I performed drug association using a linear model between 265 drug IC50s
  different cancer types, I would not be able to distinguish between those
  and other confounders that impact the sensitivity of a certain cell line
  from a given tissue to a drug.
- Our pan-cancer association are thus the same of intra-tissue differences
- in drug response explained by inferred (our method, GO, or Reactome) pathway
- scores.
- For tissue-specific associations, I fit our linear model and correct p-values
+ My pan-cancer association are thus correcting for different tissues when
+ computing differences in drug response explained by inferred (our method,
+ GO, or Reactome) pathway scores.
+ For tissue-specific associations, I fit the linear model and correct p-values
  for the false discovery rate for each cancer type separately.
 \end_layout
 
@@ -1715,6 +1743,19 @@ Tissue-specific Associations with Drug Response
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+this section is a bit messed up
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
@@ -1761,13 +1802,20 @@ name "fig:Volcano-drug-tissue"
 
 \begin_layout Standard
 I performed the same kind of associations for each tissue separately, as
- shown in figure 3B.
+ shown in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Volcano-drug-tissue"
+
+\end_inset
+
+.
  I found 75 significant associations for our method vs.
  36 for Reactome and 12 for GO (FDR<10%, corrected for each tissue separately).
  I could show that the associations derived from our method are stronger
  than the alternatives, and that the other methods add no additional information
  over ours except for PI3K expression in BRCA when treating with rTRAIL
-\begin_inset Note Comment
+\begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
@@ -1776,12 +1824,25 @@ explanation of this?
 
 \end_inset
 
- (empty circles in middle and lower panel of figure 3B show a drop below
- significance when conditioning on the best hit of our method).
- Our strongest association was response to Trametinib where sensitivity
- was positively correlated with expression of MAPK-responsive genes, explaining
- a total of 54% of the total variance observed in the IC50s of BRCA drug
- response (FDR 
+ (empty circles in middle and lower panel of figure 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+3B
+\end_layout
+
+\end_inset
+
+ show a drop below significance when conditioning on the best hit of our
+ method).
+ My strongest association was response to Trametinib where sensitivity was
+ positively correlated with expression of MAPK-responsive genes, explaining
+ a total of 54% of the total variance observed in the 
+\begin_inset Formula $IC_{50}$
+\end_inset
+
+s of BRCA drug response (FDR 
 \begin_inset Formula $10^{-5}$
 \end_inset
 
@@ -1789,7 +1850,14 @@ explanation of this?
 \begin_inset Formula $10^{-8}$
 \end_inset
 
-, shown in figure 3C/top).
+, shown figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Volcano-drug-tissue"
+
+\end_inset
+
+).
  While this is expected due to the oncogene addiction paradigm, other strong
  associations included TNFa-responsive genes in SCLC treated with PD-0325901
  (a MEK inhibitor, for sensitivity) and FK866 (an inducer of apoptosis,
@@ -1859,7 +1927,7 @@ Furthermore, I could show (figure 3D) that our method improves upon using
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Comment
+\begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
@@ -1923,6 +1991,18 @@ name "fig:strat-LGG"
 
 \begin_layout Section
 Patient survival using the TCGA
+\end_layout
+
+\begin_layout Standard
+The implications of inferred pathway activity compared to pathway expression
+ is expected to be less clear for patient survival than for cell line drug
+ response due to more heterogeneity and many more confounding factors involved
+ that affect the phenotype observed.
+ Nonetheless, I was interested in how my inferred pathway activity compared
+ to the pathway expression methods in terms of overall patient survival.
+ I would expect activity of canonical oncogenic pathways to be negatively
+ correlated with patient survival and pro-apoptotic pathways to be positively
+ correlated.
 \end_layout
 
 \begin_layout Subsection
@@ -2270,9 +2350,22 @@ Association with pathway scores
 
 \begin_layout Standard
 Starting from the pathway scores derived with GO/Reactome GSEA, SPIA, Pathifier,
- PARADIGM, and our method on the TCGA data as described above, I used Cox
- Proportional Hazard model (R package survival) to calculate survival associatio
-ns for pan-cancer and each tissue-specific cohort.
+ PARADIGM, and my method on the TCGA data as described above, I used Cox
+ Proportional Hazard model (R package 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+rpkg{survival}
+\end_layout
+
+\end_inset
+
+) to calculate survival associations for pan-cancer and each tissue-specific
+ cohort.
  For the pan-cancer cohort, I regressed out the effect of the study and
  age of the patient, and fitted the more for each pathway and method used.
  For the tissue-specific cohorts, I regressed out the age of the patients.
@@ -2291,7 +2384,7 @@ reference "fig:surv-curves"
 
 \end_inset
 
-) it only straightforward to plot discrete classes of input and not the
+) it is only straightforward to plot discrete classes of input and not the
  continuous pathway scores I obtained using the different methods.
  In order to get distinct classes needed for interpretable survival curves,
  I split all obtained pathway scores in upper, the two middle, and lower
@@ -2349,6 +2442,52 @@ name "fig:surv-pancan"
 \end_layout
 
 \begin_layout Standard
+The pathway activity inferred by PRGs showed a strong association with decreased
+ survival for EGFR, MAPK, PI3K, and Hypoxia (figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:surv-pancan"
+
+\end_inset
+
+).
+ Gene Ontology found much weaker associations for those pathways, and the
+ other methods missed them almost entirely.
+ In terms of Trail activity, PRGs find an increase in survival while the
+ other methods show either a decrease or no effect.
+ For JAK-STAT, NFkB, p53, and VEGF there are no significant associations
+ that are picked up by more than one method (
+\begin_inset Formula $FDR<0.05$
+\end_inset
+
+).
+ Compared to pathway scores, driver mutations only showed a significant
+ decrease in survival for 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+gene{TP53}
+\end_layout
+
+\end_inset
+
+ (
+\begin_inset Formula $FDR<0.03$
+\end_inset
+
+ vs.
+ 
+\begin_inset Formula $FDR>0.2$
+\end_inset
+
+) with a weaker effect size.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
@@ -2391,6 +2530,70 @@ name "fig:surv-tissue"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+For individual cancer types, I found a similar separation between oncogenic
+ and tumor-suppressor pathways for the associations using PRGs (figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:surv-tissue"
+
+\end_inset
+
+) that other methods fail to provide, and our associations are significant
+ for more cancer types and less correlated between pathways
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+ (Supplementary Fig.
+ 10)
+\end_layout
+
+\end_inset
+
+.
+ In addition, I found cancer-specific associations of pathways with no effect
+ in the pan-cancer setting.
+ Adrenocortical Carcinoma (ACC) showed a significant survival increase with
+ p53 activity (
+\begin_inset Formula $FDR<10^{-3}$
+\end_inset
+
+) but none of the samples harbours a reported gain-of-function TP53 variants
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Zhu2015-jl"
+
+\end_inset
+
+.
+ Kidney Renal Clear Cell Carcinoma (KIRC) and Low-Grade Glioma (LGG) show
+ decreased survival with TNFa and the latter with JAK-STAT, pathways where
+ activating mutations are much less well established than for EGFR/MAPK.
+ For these associations, we found a difference in one-year survival of over
+ 25% between the top and bottom quartiles of the assigned pathway scores
+ (figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:surv-curves"
+
+\end_inset
+
+).
+ Compared to mutations, PRG associations were stronger (FDR 
+\begin_inset Formula $10^{-7}$
+\end_inset
+
+ vs.
+ 
+\begin_inset Formula $10^{-3}$
+\end_inset
+
+) and more consistent (strongest associations with small number of mutated
+ genes).
 \end_layout
 
 \begin_layout Standard
@@ -2522,63 +2725,15 @@ The explanation of phenotypes in cancer, such as cell line drug response
 \end_layout
 
 \begin_layout Standard
-I have achieved a significant progress to overcome these limitations by
- assembling a large compendium of pathway-responsive gene signatures derived
- from a wide range of different conditions.
- I could confirm this heterogeneity in gene expression experiments, but
- also found that consensus signatures are strongly correlated with pathway
- perturbations and less with other conditions that they are confounded with.
- The only other similar efforts, to the best of our knowledge, are the 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-abbrv{SPEED}
-\end_layout
-
-\end_inset
-
- database 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Parikh2010-uj"
-
-\end_inset
-
- and MCF10A breast cancer signatures 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Gatza2010-fq"
-
-\end_inset
-
-.
- Whereas the former used a smaller but still significant set of publicly
- available experiments, they only analysis they did using their signatures
- was to compute the overlap between genes present in their signatures and
- Gene Ontology categories, and genes between their pathways.
- In the latter article the authors experimentally derived pathway-response
- signatures for a single condition (MCF10A cell line, one perturbation/time
- point per experiment).
- Not only are those signatures non-transferable to other cancer types, but
- they likely suffer from the same drawbacks as expression signatures in
- terms of general stability and reproducibility.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Comment
-status open
-
-\begin_layout Plain Layout
-missing: characterization of signatures
-\end_layout
-
-\end_inset
-
-
+Here I showed progress to overcome these limitations by leveraging a large
+ compendium of pathway-responsive gene signatures derived from a wide range
+ of different conditions.
+ These pathway perturbation signatures can recover the impact of known driver
+ mutations, but also identify cases where a pathway is active without the
+ corresponding mutation.
+ Pathway mapping only recovers known associations where this effect is mediated
+ by expression changes, such as copy number aberrations.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -2598,39 +2753,26 @@ In terms of drug associations, I have shown that our method outperforms
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Comment
-status open
-
-\begin_layout Plain Layout
-missing: survival analysis
-\end_layout
-
-\end_inset
-
-
+For survival associations, only my signatures find the pathways that we
+ would most expect to decrease patient survival by accelerating tumour growth
+ (EGFR and MAPK) and promoting survival by apoptosis (Trail) to be associated
+ with the respective outcome in both the pan-cancer and the tissue-specific
+ cohorts.
+ Other methods fail to separate those, only obtain significant associations
+ for a very limited number of cancer types, and show high correlation between
+ pathways.
 \end_layout
 
 \begin_layout Standard
-Overall, I would argue that consensus pathway response signatures are a
- better measure of pathway activity than pathway expression, irrespective
+Overall, my results suggest that consensus pathway response signatures provide
+ a better measure of pathway activity than pathway expression, irrespective
  of whether the latter was derived from gene sets or directed paths.
- I have shown its utility for cell line drug response and patient survival,
- as well that they are able to refine our understanding of the impact of
- mutations in both the general (figure to do) as well as the particular
- case (figure 3D).
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Comment
-status open
-
-\begin_layout Plain Layout
-as per Julio's comment: limitations,future directions
-\end_layout
-
-\end_inset
-
-
+ I have shown that they are able to refine our understanding of the impact
+ of mutations, as well as their utility for cell line drug response and
+ patient survival.
+ The examples I outlined show that a downstream readout should be used as
+ a proxy for pathway activity instead of mapping mRNA expression levels
+ to signaling molecules.
 \end_layout
 
 \begin_layout Standard
