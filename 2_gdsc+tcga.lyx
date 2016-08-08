@@ -87,6 +87,22 @@
 Gene set methods for drug response
 \end_layout
 
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+contribution{add this here}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Aim
 \end_layout
@@ -146,39 +162,39 @@ key "Subramanian2005-wp"
 
  if the sets are pre-defined, but one wants to avoid cutting of continuous
  expression values at an arbitrary threshold.
- There are, however, more advanced pathway methods available that take into
- account the directionality and sign of edges in a KEGG pathway (Signalling
- Pathway Impact Analysis 
+ There are, however, more advanced pathway methods available.
+ Signalling Pathway Impact Analysis 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Tarca2008-ey"
 
 \end_inset
 
-, Differential Expression Analysis for Pathways 
+ and Differential Expression Analysis for Pathways 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Haynes2013-eo"
 
 \end_inset
 
-), calculate probable information flow between the set items (Pathifier,
- 
+ take into account the directionality and sign of edges in a pathway.
+ Pathifier 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Drier2013-vn"
 
 \end_inset
 
-), or employ a Bayesian framework that models translation, activity, and
- interactions (PARADIGM, 
+ calculates probable information flow between the set items.
+ PARADIGM 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Vaske2010-zn"
 
 \end_inset
 
-).
+ employs a Bayesian framework that models translation, activity, and interaction
+s.
  I will leave the more complex methods for a later chapter and focus on
  GSEA using different gene sets here.
 \end_layout
@@ -187,16 +203,16 @@ key "Vaske2010-zn"
 GSEA using GO gene sets is ubiquitous: usually, a (for instance) differential
  expression analysis yields a list of genes, yet it is not clear which higher-le
 vel function they mediate.
- One run of GSEA/GO later, our list of genes is condensed down to a list
- of significantly enriched GO categories, that may be related to the phenotype
- we are observing.
+ After computing the enrichment scores, our list of genes is condensed down
+ to a list of significantly enriched GO categories, that may be related
+ to the phenotype we are observing.
  This may work very well in some cases.
  There are, however, a couple of caveats to observe: (1) a gene does not
  exclusively belong to one process; we might very well get a significant
  p-value only caused by the overlap between different sets, (2) if we test
  all categories and correct by false discovery rate we might dilute our
  signal so much that small categories can no longer be significant, or (3)
- they process that did indeed cause our phenotype does not correspond to
+ the process that did indeed cause our phenotype does not correspond to
  a gene set at all (this can be due to missing biological knowledge, annotation
  errors, or simply the fact that curators have not yet added a certain gene
  to a certain category).
@@ -214,6 +230,7 @@ makes sense
  inclined to overlook a category that we don't want to see, e.g.
  because the involved process is already known in literature and we could
  not publish our new findings in a high-impact journal.
+ The aim of this chapter is to illustrate these issues.
 \end_layout
 
 \begin_layout Section
@@ -346,7 +363,27 @@ target "http://www.reactome.org/pages/download-data/"
 \end_inset
 
 .
- There were a total of XX pathways covering YY genes.
+ There were a total of 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+XX
+\end_layout
+
+\end_inset
+
+ pathways covering 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+YY
+\end_layout
+
+\end_inset
+
+ genes.
  
 \end_layout
 
@@ -364,8 +401,14 @@ name{Enrichr}
 
 \end_inset
 
- platform [cite] and the gene sets the authors assembled in their Github
- repository
+ platform 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Chen2013-da"
+
+\end_inset
+
+ and the gene sets the authors assembled in their Github repository
 \begin_inset Foot
 status open
 
@@ -391,40 +434,22 @@ key "Kanehisa2000-mp"
 
 \end_inset
 
- (that does not suffer from such a drawback as the last public release was
- in 2001, before it went commercial).
- This data source of KEGG gene sets had the advantage that it was in 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-code{.gmt}
-\end_layout
-
-\end_inset
-
- format that was readily accessible and easily machine readable (unlike
- the 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-abbrv{KGML}
-\end_layout
-
-\end_inset
-
- present in the last official public KEGG release).
+ (that already used the last non-commercial release).
 \end_layout
 
 \begin_layout Subsection
 Gene Set Variation Analysis (GSVA)
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+TODO: GSEA vs.
+ GSVA
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -574,7 +599,8 @@ I used those transformed scores in subsequent linear (ANOVA-like) associations
 status open
 
 \begin_layout Plain Layout
-TODO_SUBSECTION: Linear associations –> describe OLS
+TODO_SUBSECTION: Linear associations –> describe OLS (maybe I can get away
+ w/o)
 \end_layout
 
 \end_inset
@@ -627,8 +653,8 @@ The original GDSC data set contained different dilutions of drugs that the
  with their growth.
  Since I have got a pathway score for each cell line, I also need a single
  value corresponding to the sensitivity to a given drug.
- On way to do this is to measure the growth inhibition at different concentratio
-ns, and then fit a dose-response curve to the data points, interpolating
+ One way to do this is to measure the growth inhibition at different concentrati
+ons, and then fit a dose-response curve to the data points, interpolating
  (or extrapolating, if necessary) the concentration at which the half-maximal
  inhibition occurred.
  This term is referred to the IC50 value, and has already been calculated
@@ -652,8 +678,17 @@ key "Iorio2016-gh"
 \end_inset
 
 .
- I performed an ANOVA using the gene set score as an independent variable
- (
+ I performed an ANOVA
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+right term for regression???
+\end_layout
+
+\end_inset
+
+ using the gene set score as an independent variable (
 \begin_inset Formula $S_{j}$
 \end_inset
 
@@ -679,7 +714,11 @@ key "Iorio2016-gh"
 
  is the drug index).
  I regressed out the contribution of individual tissues by including it
- as a covariate in the fit.
+ as a covariate (
+\begin_inset Formula $T$
+\end_inset
+
+) in the fit.
 \end_layout
 
 \begin_layout Standard
@@ -712,7 +751,7 @@ key "Benjamini1995-rj"
 \begin_layout Standard
 \begin_inset Formula 
 \[
-D_{i}\sim S_{j=1..l,t\in T}|_{i=1..m,t\forall T}
+D_{i}\sim S_{t}|_{i=1..m,t\forall T}
 \]
 
 \end_inset
@@ -877,46 +916,6 @@ name "fig:Mutation-pancan"
 
 \end_layout
 
-\begin_layout Standard
-Also, for cancer-specific associations, my results (volcano plot in figure
- 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Mutation-tissue"
-
-\end_inset
-
-) agree well with the ones previously published.
- As an example, I find increased sensitivity for Imatinib with 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-gene{PTPN11}
-\end_layout
-
-\end_inset
-
- mutations in Lymphoblastic Acute Myeloid Leukemia (LAML), increased sensitivity
- for Dabrafenib with mutations in 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-gene{BRAF}
-\end_layout
-
-\end_inset
-
- in Melanoma (SKCM), and increased resistance to ** for ** in **.
-\end_layout
-
 \begin_layout Subsection
 Associations with Gene Ontology categories
 \end_layout
@@ -1047,7 +1046,7 @@ https://www.caymanchem.com/product/11490
 ) or its possible indications.
  Overall, there are so many significant associations that it is necessary
  to select interesting categories either before or after computing those
- in order to make sense of them.
+ in order to be able to interpret them.
 \end_layout
 
 \begin_layout Standard
@@ -1202,6 +1201,19 @@ key "Iorio2016-gh"
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Pathway-responsive-genes-SPEED"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+signatures, speed in particular
+\end_layout
 
 \end_inset
 
@@ -1379,9 +1391,22 @@ Uniqueness: True or False
 For each combination, I performed a scan of the four adjustable platform
  parameters to optimize the order obtained by GSEA scores between control
  and stimulated experiments.
- For combination of parameters, so for each of the 4950 gene lists, I calculated
- the raw enrichment score for each pathway and cell line, yielding a total
- of 55 million enrichment scores.
+ For combination of parameters, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+latin{i.e.}
+\end_layout
+
+\end_inset
+
+ for each of the 4950 gene lists, I calculated the raw enrichment score
+ for each pathway and cell line, yielding a total of 55 million enrichment
+ scores.
  I then went on to, for each pathway, construct a precision-recall curve
  that quantified how well the GSEA scores were able assign lower pathway
  activation scores to the control arrays than the perturbed arrays (where,
@@ -1455,9 +1480,9 @@ reference "tab:Parameter-selection-overview"
 , including the number of genes in the signature and prAUC (training and
  test set) compared between the original cutoffs used in the query tool
  and my selection.
- Pathways where the optimisation of parameters yielded a better separation
+ For all the pathways the optimisation of parameters yielded a better separation
  of control- vs.
- perturbed arrays are shown in bold (all of them).
+ perturbed arrays.
 \end_layout
 
 \begin_layout Standard
@@ -2884,8 +2909,8 @@ Associations between Pathway Scores and Tissues
 \end_layout
 
 \begin_layout Standard
-As a control and sanity check, I compared the inferred pathway activation
- scores between different tissues.
+As a control, I compared the inferred pathway activation scores between
+ different tissues.
  If the assigned scores per tissue are biologically meaningful, we would
  expect to find well-established literature evidence for backing them up.
  A heatmap overview of pathway activation scores is shown in figure 
@@ -3039,8 +3064,8 @@ key "Reardon2008-ot"
 
 \end_inset
 
- expression have been shown to be increased gliomas, correlating with malignancy
- 
+ expression have been shown to be increased in gliomas, correlating with
+ malignancy 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Kjellman2000-om,Leon1996-zu"
@@ -3078,9 +3103,13 @@ Pan-Cancer Drug Associations
 \end_layout
 
 \begin_layout Standard
-I calculated a linear regression using the obtained pathway scores the IC50s
- or drug response for all cell lines and each pathway, with tissues either
- as a blocking factor or calculating the associations for each tissue separately.
+I calculated a linear regression between the obtained pathway scores and
+ the 
+\begin_inset Formula $IC_{50}$
+\end_inset
+
+s for all cell lines and each pathway while correcting for tissues (used
+ as covariate).
  I adjusted p-values by controlling the false discovery rate and visualized
  the result as volcano plots and individual fits.
  For separate fits between tissues, I only calculated associations that
@@ -3160,6 +3189,16 @@ name "fig:pancan-volcano"
 
 \begin_layout Standard
 Sensitivity markers:
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+what is labelled in plot, what in suppl table?
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
@@ -3214,7 +3253,7 @@ key "Jeannot2014-av"
 \end_layout
 
 \begin_layout Itemize
-We found sensitivity correlating with Wnt activity for the drugs Etoposide,
+I found sensitivity correlating with Wnt activity for the drugs Etoposide,
  QS11, and GSK-650394.
  QS11 modulates ARF activity and β-catenin localisation 
 \begin_inset CommandInset citation
@@ -3333,24 +3372,6 @@ key "Khosravi-Far1995-mk"
 n.
 \end_layout
 
-\begin_layout Standard
-To give an example of the relationship between inferred pathway activity
- and drug response for different tissues, a linear fit of MAPK_PI3K activity
- is shown in relation to the log IC50 of RDEA119 in figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:RDEA-MAPK"
-
-\end_inset
-
-.
- For low grad glioma (LGG), neuroblastoma (NB), and cervical carcinoma,
- the inferred activity explains about a third of the total variance in drug
- response.
- This is slightly lower for the rest of tissues, with 8 tissues showing
- a significant association between the drug and the pathway.
-\end_layout
-
 \begin_layout Section
 Discussion
 \end_layout
@@ -3385,11 +3406,18 @@ Cell line drug response
 \end_layout
 
 \begin_layout Standard
-The importance of mutations, especially when they are drivers, and the associati
-on with the cell line's response to the different drugs is well established.
- Also with the new data set, there are previously unknown links that may
- ultimately lead to new clinical indications, or prioritise the development
- of certain drugs over others.
+The importance of mutations, especially when they are drivers, and their
+ role in a cell line's response to the different drugs is well established.
+ With the new GDSC release 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Iorio2016-gh"
+
+\end_inset
+
+ the authors uncovered previously unknown links that may ultimately lead
+ to new clinical indications, or prioritise the development of certain drugs
+ over others.
 \end_layout
 
 \begin_layout Standard
@@ -3464,7 +3492,7 @@ The next question to answer is whether we get more meaningful drug associations.
 \end_layout
 
 \begin_layout Standard
-However, there is still a wealth of potential issues with the current model,
+However, there is still a number of potential issues with the current model,
  many of which can be traced back to using the original platform: (1) The
  authors use raw microarray data as well as processed data.
  For the processed data, we have no idea of what the original authors did
@@ -3484,11 +3512,12 @@ ys.
 \end_layout
 
 \begin_layout Standard
-I am thus inclined to argue that, while the optimisation of parameters yielded
- vast improvements in terms of correlatedness of scores and resulting drug
- associations, it still has enough drawbacks the warrant a different approach
- while keeping the overall idea of using pathway-responsive genes as signature
- for pathway activity.
+Hence I argue that, while the optimisation of parameters yielded vast improvemen
+ts in terms of correlatedness of scores and resulting drug associations,
+ it still has enough drawbacks to suggest that a different approach keeping
+ the overall idea of using pathway-responsive genes as signature for pathway
+ activity may be worth exploring.
+ I describe this in chapter 3.
 \end_layout
 
 \begin_layout Standard

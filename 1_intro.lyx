@@ -169,7 +169,7 @@ ref
  underwent cell divisions (in a process called mitosis), all the cells in
  our body in theory harbour the same DNA sequence, with the exception that
  sex cells only contain one copy that was assembled in a cut-and-paste process
- (called meiosis) of the two somatic ones.
+ (called meiosis) of the two somatic ones 
 \begin_inset Note Note
 status open
 
@@ -179,7 +179,7 @@ ref/book?
 
 \end_inset
 
-
+.
 \end_layout
 
 \begin_layout Subsubsection
@@ -209,7 +209,7 @@ status open
 \end_inset
 
  errors that are introduced while copying the each of the three billion
- bases (times the two alleles) that is our genome.
+ bases (times the two alleles) that is our genome 
 \begin_inset Note Note
 status open
 
@@ -219,7 +219,7 @@ ref
 
 \end_inset
 
-
+.
 \end_layout
 
 \begin_layout Standard
@@ -234,7 +234,8 @@ Such an error may manifest itself in multiple ways.
  those errors introduced do manifest itself only on one of the two strands
  in an allele, which will lead to a base not perfectly matching its opposite
  base anymore.
- This means they do not pair as well as they were if there had been no error.
+ This means they do not pair as well as they were if there had been no error
+ 
 \begin_inset Note Note
 status open
 
@@ -244,7 +245,7 @@ ref
 
 \end_inset
 
-
+.
 \end_layout
 
 \begin_layout Subsubsection
