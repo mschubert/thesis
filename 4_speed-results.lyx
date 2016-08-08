@@ -1105,11 +1105,11 @@ name "fig:volcano-CNA/drivers"
 
 \begin_layout Standard
 If my reasoning is correct and pathway-response signatures indeed correspond
- to intrinsic signalling activity, we should be able to see a higher pathway
+ to intrinsic signalling activity, I should be able to see a higher pathway
  score in cancer patients with an oncogenic driver mutation and a lower
  score when a tumour suppressor is mutated or lost compared to patients
  where no such alteration is present.
- Depending on how those aberrations are spread across cancer types, we should
+ Depending on how those aberrations are spread across cancer types, I should
  be able to detect them within or across cancer types.
 \end_layout
 
@@ -1186,46 +1186,100 @@ reference "fig:volcano-CNA/drivers"
 
 \begin_layout Standard
 In terms of proliferative signaling, I find that EGFR amplifications are
- correlated both with EGFR- and MAPK-responsive genes (FDR<10-20), and to
- a lesser extent PI3K, VEGF, and Hypoxia (FDR<10-9).
+ correlated both with EGFR- and MAPK-responsive genes (
+\begin_inset Formula $FDR<10^{-20}$
+\end_inset
+
+), and to a lesser extent PI3K, VEGF, and Hypoxia (FDR<10-9).
  ERBB2 amplifications show an increase in EGFR and PI3K-responsive genes,
- but also a reduction in the Trail signature (FDR<0.05), suggesting a relatively
- stronger impact on cell survival.
+ but also a reduction in the Trail signature (
+\begin_inset Formula $FDR<0.05$
+\end_inset
+
+), suggesting a relatively stronger impact on cell survival.
  KRAS mutations show an increase in inferred EGFR activity, and amplifications
- additionally for MAPK and PI3K (FDR<10-5).
- BRAF mutations have a positive effect on EGFR and MAPK (FDR<10-9) but not
- PI3K (FDR>0.4).
+ additionally for MAPK and PI3K (
+\begin_inset Formula $FDR<10^{-5})$
+\end_inset
+
+.
+ BRAF mutations have a positive effect on EGFR and MAPK (
+\begin_inset Formula $FDR<10^{-9}$
+\end_inset
+
+) but not PI3K (
+\begin_inset Formula $FDR>0.4$
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Standard
-For TP53 mutations we find a significant reduction in p53/DDR activity (FDR<10-1
-8) that also explains the associations with MYC, RAD21, NDRG1, and PABPC1
- (p>0.04 if conditioned).
+For TP53 mutations I find a significant reduction in p53/DDR activity (
+\begin_inset Formula $FDR<10^{-18}$
+\end_inset
+
+) that also explains the associations with MYC, RAD21, NDRG1, and PABPC1
+ (
+\begin_inset Formula $p>0.04$
+\end_inset
+
+ if conditioned).
  It is also associated with a significant activation of the pathways for
- MAPK, PI3K, and Hypoxia (FDR<10-4).
- This is in contrast to loss of TP53, where we only find a reduction in
- p53/DDR (FDR<10-3) but no modification of any other pathway (FDR>0.15).
+ MAPK, PI3K, and Hypoxia (
+\begin_inset Formula $FDR<10^{-4}$
+\end_inset
+
+).
+ This is in contrast to loss of TP53, where I only find a reduction in p53/DDR
+ (
+\begin_inset Formula $FDR<10^{-3}$
+\end_inset
+
+) but no modification of any other pathway (
+\begin_inset Formula $FDR>0.15$
+\end_inset
+
+).
  The dual nature of TP53 mutations and CNAs are in line with the recent
  discovery that TP53 mutations can act in an oncogenic manner in addition
  to the protein losing its tumor suppressor activity that has been shown
- for individual cancer types (Olive et al.
- 2004; Zhang et al.
- 2013; Weissmueller et al.
- 2014; Zhu et al.
- 2015).
- In addition, we can suggest a link between TP53 mutations and genes that
+ for individual cancer types 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Olive2004-yg,Zhang2013-ka,Weissmueller2014-iu,Zhu2015-jl"
+
+\end_inset
+
+.
+ In addition, I can suggest a link between TP53 mutations and genes that
  are specifically induced by activation of canonical oncogenic signaling.
- We find that VHL mutations (which have a high overlap with Kidney Renal
+ I find that VHL mutations (which have a high overlap with Kidney Renal
  Carcinoma, KIRC) are associated with a stronger induction of hypoxic genes
  compared to other cancer types.
- More surprisingly, we find that presence of PIK3CA and PIK3CB amplifications
+ More surprisingly, I find that presence of PIK3CA and PIK3CB amplifications
  and PTEN deletions is also more connected to increasing the hypoxic response
- (FDR<10-6) compared to an effect on the PI3K-responsive genes (FDR between
- 10-2 and 10-5).
- A role of PI3K signaling in hypoxia has been shown before (Zhou et al.
- 2004; Yang et al.
- 2009; Kilic-Eren et al.
- 2013).
+ (
+\begin_inset Formula $FDR<10^{-6}$
+\end_inset
+
+) compared to an effect on the PI3K-responsive genes (FDR between 
+\begin_inset Formula $10^{-2}$
+\end_inset
+
+ and 
+\begin_inset Formula $10^{-5}$
+\end_inset
+
+).
+ A role of PI3K signaling in hypoxia has been shown before 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Zhou2004-uu,Yang2009-cp,Kilic-Eren2013-qh"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsection
@@ -1314,7 +1368,7 @@ gene{KRAS}
 
 \end_inset
 
- mutations (top right panel) only our method can detect a strong activation
+ mutations (top right panel) only my method can detect a strong activation
  of the MAPK/EGFR pathways where the other methods either show no significant
  effect or an effect in the wrong direction.
  The same goes 
