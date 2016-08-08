@@ -3094,12 +3094,9 @@ reference "fig:sig-GO-enrichment"
 
 ), EGFR and MAPK drive, while p53-mediated DNA damage response abrogates
  the cell cycle and DNA replication (especially the G1/S checkpoint 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Di Leonardo, 1994
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Di_Leonardo1994-gg"
 
 \end_inset
 
@@ -3110,12 +3107,9 @@ Di Leonardo, 1994
  ubiquitin.
  Hypoxia on the other hand inhibits the expression of G1/S genes and mitochondri
 a-related genes (where oxidative phosphorylation happens 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Schultz 2001
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Schultz2001-nl"
 
 \end_inset
 
@@ -3135,22 +3129,16 @@ abbrv{LPS}
 \end_inset
 
  
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Baeuerle 1994
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand citep
+key "P_A_Baeuerle1994-yu"
 
 \end_inset
 
 , and so does Trail 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Halaas 2000
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Halaas2000-yy"
 
 \end_inset
 
