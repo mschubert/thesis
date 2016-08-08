@@ -59,8 +59,8 @@ do = function(fid, caption="", ...) {
     file.path(speed2, "drug_assocs/assocs_all", paste0(fid, ".RData")) %>%
         load2("assocs.pan") %>%
         transmute(Drug = drug,
-                  Pathway = ifelse(nchar(scores) > 30,
-                                   paste0(substr(scores, 1, 27), "..."),
+                  Pathway = ifelse(nchar(scores) > 40,
+                                   paste0(substr(scores, 1, 37), "..."),
                                    scores),
                   Size=size, Effect=estimate, `Wald stat.`=statistic, `P-value`=p.value, FDR=adj.p) %>%
         tab(caption=paste(caption, "vs. drugs (pan-cancer)"), p=0.05, ...)
