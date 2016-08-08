@@ -1322,6 +1322,7 @@ Linear fits behind the associations of PD-0332991 (a CDK4/6 inhibitor) and
  Trametinib (GSK1120212, a MEK inhibitor) in multiple tissues (top), the
  Raf inhibitor SB590885 and multiple MEK inhibitors in breast cancer (middle),
  and Temozolomide and various drugs (bottom).
+ All associations FDR<0.05.
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:covar-fits"
@@ -1333,7 +1334,7 @@ name "fig:covar-fits"
 status open
 
 \begin_layout Plain Layout
-coeffs, p-value refs
+coeffs, p-value more detail?
 \end_layout
 
 \end_inset
@@ -3370,17 +3371,9 @@ reference "tab:combined-score"
 
 \end_inset
 
-, our collaborators in Hamburg
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-names
-\end_layout
-
-\end_inset
-
- agreed to screen their efficacy in the MFC-7 cell line.
+, our collaborators Ole Pless, Bernhard Ellinger, and Milena Kalmer (Department
+ ScreeningPort, Fraunhofer Institute for Molecular Biology and Applied Ecology
+ IME, Hamburg) agreed to screen their efficacy in the MFC-7 cell line.
  This first requires single-agents measurements to be able to fit the Hill
  parameters for each drug in this cell line, as we would expect them not
  to be identical with the GDSC due to a different experimental setup.

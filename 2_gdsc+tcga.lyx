@@ -685,17 +685,8 @@ key "Iorio2016-gh"
 \end_inset
 
 .
- I performed an ANOVA
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-right term for regression???
-\end_layout
-
-\end_inset
-
- using the gene set score as an independent variable (
+ I performed an regression using the gene set score as an independent variable
+ (
 \begin_inset Formula $S_{j}$
 \end_inset
 

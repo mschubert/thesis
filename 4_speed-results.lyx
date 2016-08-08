@@ -1743,19 +1743,6 @@ Tissue-specific Associations with Drug Response
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-this section is a bit messed up
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
@@ -1801,70 +1788,41 @@ name "fig:Volcano-drug-tissue"
 \end_layout
 
 \begin_layout Standard
-I performed the same kind of associations for each tissue separately, as
- shown in figure 
+The same analysis can be performed in a tissue-specific level.
+ However, by dividing my dataset into the different cancer types we lose
+ statistical power, so I chose in the first instance to only look at the
+ subset of clinically approved drugs for the already stratified populations.
+\end_layout
+
+\begin_layout Standard
+A drug association analysis for each tissue separately (figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Volcano-drug-tissue"
 
 \end_inset
 
-.
- I found 75 significant associations for our method vs.
- 36 for Reactome and 12 for GO (FDR<10%, corrected for each tissue separately).
- I could show that the associations derived from our method are stronger
- than the alternatives, and that the other methods add no additional information
- over ours except for PI3K expression in BRCA when treating with rTRAIL
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-explanation of this?
-\end_layout
-
-\end_inset
-
- (empty circles in middle and lower panel of figure 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-3B
-\end_layout
-
-\end_inset
-
- show a drop below significance when conditioning on the best hit of our
- method).
- My strongest association was response to Trametinib where sensitivity was
- positively correlated with expression of MAPK-responsive genes, explaining
- a total of 54% of the total variance observed in the 
+) resulted in 75 significant associations for footprints vs.
+ 36 for Reactome and 12 for GO (ANOVA, FDR<10%).
+ The strongest association was response to the MEK inhibitor Trametinib
+ where sensitivity was positively correlated with expression of MAPK-responsive
+ genes, explaining a total of 54% of the total variance observed in the
+ 
 \begin_inset Formula $IC_{50}$
 \end_inset
 
-s of BRCA drug response (FDR 
-\begin_inset Formula $10^{-5}$
+s of BRCA drug response (
+\begin_inset Formula $p<10^{-8}$
 \end_inset
 
-, p 
-\begin_inset Formula $10^{-8}$
-\end_inset
-
-, shown figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Volcano-drug-tissue"
-
+, 
+\begin_inset Formula $FDR<10^{-5}$
 \end_inset
 
 ).
- While this is expected due to the oncogene addiction paradigm, other strong
- associations included TNFa-responsive genes in SCLC treated with PD-0325901
- (a MEK inhibitor, for sensitivity) and FK866 (an inducer of apoptosis,
- for resistance).
- This indicates a potential dichotomy for drug efficacy for certain drugs
- and tissues to pathway activation that can be inferred from its downstream
- targets.
+ My method is the only one able to recover this association, which is expected
+ due to oncogene addiction to a hyperactivated MAPK pathway, or any other
+ associations involving EGFR/MAPK for BRCA.
 \end_layout
 
 \begin_layout Standard
@@ -1888,8 +1846,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Trail activity mediates sensitivity to Docetaxel (microtubule stabilizer)
- in Low-Grade Glioma (LGG).
+EGFR activity mediates resistance to Rapamycin (macrolide antibiotic) in
+ Esophageal Carcinoma (ESCA).
  Stratifications compared to differences in drug response of other tissues.
  Coloured boxes show the drug response of a certain tissue and the stratificatio
 n achieved by negative and positive scores for a given pathway, white boxes
@@ -1916,27 +1874,40 @@ name "fig:strat_ESCA"
 \end_layout
 
 \begin_layout Standard
-Furthermore, I could show (figure 3D) that our method improves upon using
- only mutations as biomarkers for drug response.
- Using the examples of Trametinib in BRCA (associated with MAPK activity)
- and PD-0325901 in SCLC (which is associated with both TNFa and MAPK activity),
- I show that inferred pathway activity is not only equivalent in association
- strength to MAPK mutations (a mutation in either MAP2K1, K-Ras, N-Ras or
- B-Raf), but they can be used in combination to yield a better biomarker
- than any single method.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-find some associations that are new and follow up on them (+add to figure)
-\end_layout
+Perhaps more interestingly, I found two associations to drugs with strong
+ effect sizes.
+ The inferred activity of Trail correlates with increased sensitivity to
+ Docetaxel in Low-Grade Glioma (LGG), where an increased response to Docetaxel
+ (figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:strat_ESCA"
 
 \end_inset
 
+) in combination with a Bcl-2 inhibitor has been previously shown in BRCA
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Lyseng-Williamson2005-pn"
 
+\end_inset
+
+.
+ Also, EGFR activity correlates with increased resistance in Esophageal
+ Carcinoma (ESCA) cell lines treated with Rapamycin (figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:strat-LGG"
+
+\end_inset
+
+).
+ While BRCA and ESCA are already more sensitive to these drugs than most
+ other tissues (unlike the case above of BRCA for Trametinib), the additional
+ stratification by pathway scores identifies a subset comprised of half
+ the cell lines per tissue with a more sensitive median response compared
+ to all tissues, including those where the drug is in clinical use.
 \end_layout
 
 \begin_layout Standard
@@ -1960,8 +1931,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-EGFR activity mediates resistance to Rapamycin (macrolide antibiotic) in
- Esophageal Carcinoma (ESCA).
+Trail activity mediates sensitivity to Docetaxel (microtubule stabilizer)
+ in Low-Grade Glioma (LGG).
  Legend as in figure 
 \begin_inset CommandInset ref
 LatexCommand ref
