@@ -322,7 +322,36 @@ _id}
 \end_inset
 
  field) associated with them, yielding three main categories (biological
- process, molecular function, cellular compartment) with XX, XX, and XX
+ process, molecular function, cellular compartment) with 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+XX
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+XX
+\end_layout
+
+\end_inset
+
+, and 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+XX
+\end_layout
+
+\end_inset
+
  gene sets respectively.
  I performed the subsequent analyses using gene sets from the biological
  process category only.
@@ -3163,7 +3192,7 @@ status open
 \begin_layout Plain Layout
 Volcano plot of linear associations of inferred pathway activity within
  all tissues and drug response.
- Tissue of origin used as a covarate in the regression.
+ Tissue of origin used as a covariate in the regression.
  P-values FDR-adjusted.
  Negative regression slopes (left side of the graph, green) indicate sensitivity
  markers, i.e.
@@ -3192,16 +3221,6 @@ name "fig:pancan-volcano"
 
 \begin_layout Standard
 Sensitivity markers:
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-what is labelled in plot, what in suppl table?
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Itemize
@@ -3373,6 +3392,20 @@ key "Khosravi-Far1995-mk"
 
 , so cells with a higher MAPK activity may be less susceptible to Rac1 inhibitio
 n.
+\end_layout
+
+\begin_layout Standard
+Markers not shown in the plot are listed in table 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+x-ref
+\end_layout
+
+\end_inset
+
+ in the appendix.
 \end_layout
 
 \begin_layout Section

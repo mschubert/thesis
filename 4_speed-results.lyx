@@ -449,6 +449,16 @@ reference "subsec:Building-the-Model"
  I regressed out either the effect of the individual cell lines or the effect
  of the bootstraps, and quantified the relative remaining variance in the
  scores:
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+more detail?
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -456,16 +466,6 @@ reference "subsec:Building-the-Model"
 \[
 ratio=\frac{var(cell\,lines\,|\,bootstraps)}{var(bootstraps\,|\,cell\,lines)}
 \]
-
-\end_inset
-
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-more detail?
-\end_layout
 
 \end_inset
 
@@ -1333,12 +1333,9 @@ gene{EGFR}
  amplifications (bottom left panel).
  Across tissues, our method is the only one to recover hypoxia as the expected
  
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-ref from paper
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Maxwell1999-gb"
 
 \end_inset
 

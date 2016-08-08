@@ -223,12 +223,9 @@ key "Gatza2014-as"
  It has also previously been shown that signatures generated in a certain
  lab correlate more with the lab they were produced in than the biological
  condition 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-[cite]
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Chibon2013-rl"
 
 \end_inset
 
@@ -2429,11 +2426,73 @@ name "subsec:method:speed-scores"
 \end_inset
 
 
-\begin_inset Note Note
+\end_layout
+
+\begin_layout Standard
+Each pathway signature I obtain is an 
+\begin_inset Formula $N$
+\end_inset
+
+-dimensional vector in gene expression space, 
+\begin_inset Formula $Z_{i}$
+\end_inset
+
+.
+ This vector defines not only a direction, but also a plane on the origin
+ whose normal it represents.
+ The distance of each sample (
+\begin_inset Formula $A$
+\end_inset
+
+) from that plane corresponds to the activation state of the pathway, calculated
+ as the dot product between 
+\begin_inset Formula $Z_{i}$
+\end_inset
+
+ and the gene expression of a given sample (or fold change).
+ A schema of this is shown in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:dot-product"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
 status open
 
 \begin_layout Plain Layout
-sketch?
+\align center
+\begin_inset Graphics
+	filename figures/dot_product.pdf
+	width 60text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:dot-product"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2442,25 +2501,77 @@ sketch?
 \end_layout
 
 \begin_layout Standard
-Each column in the matrix of perturbation-response genes corresponds to
- a plane in gene expression space, in which each cell line or tumour sample
- is located.
- If you follow its normal vector from the origin, the distance it spans
- corresponds to the pathway score 
+While the above only explains how to calculate the score for one pathway
+ in one sample, I have 11 pathways and 
+\begin_inset Formula $M$
+\end_inset
+
+ samples.
+ Each column in the matrix of perturbation-response genes (
+\begin_inset Formula $Z$
+\end_inset
+
+ with 
+\begin_inset Formula $N$
+\end_inset
+
+ genes in rows and 
+\begin_inset Formula $M$
+\end_inset
+
+ samples in columns) corresponds to a plane in gene expression space (
+\begin_inset Formula $Z_{i}$
+\end_inset
+
+ with 
+\begin_inset Formula $N$
+\end_inset
+
+ genes, 
+\begin_inset Formula $i\in M$
+\end_inset
+
+).
+ For samples, I have a matrix 
+\begin_inset Formula $E$
+\end_inset
+
+ with genes in columns (
+\begin_inset Formula $N$
+\end_inset
+
+ dimensions) and samples in rows (
+\begin_inset Formula $M$
+\end_inset
+
+ dimensions).
+ I can now calculate all the dot products between 
+\begin_inset Formula $Z_{i}$
+\end_inset
+
+ and 
+\begin_inset Formula $E_{sample}$
+\end_inset
+
+ by performing a matrix multiplication to yield 
 \begin_inset Formula $P$
 \end_inset
 
- each sample is assigned (matrix of samples in rows, pathways in columns).
- In practice, this is achieved by a simple matrix multiplication between
- the gene expression matrix (samples in rows, genes in columns, values are
- expression levels) and the model matrix (genes in rows, pathways in columns,
- values are our top 100 coefficients):
+, a matrix with all pathway scores (rows, indexed by 
+\begin_inset Formula $i$
+\end_inset
+
+) in all samples (columns, 
+\begin_inset Formula $M$
+\end_inset
+
+ dimensions):
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \[
-P=E*G
+P=E*Z
 \]
 
 \end_inset
@@ -2469,16 +2580,13 @@ P=E*G
 \end_layout
 
 \begin_layout Standard
-I then scaled each pathway or gene set score to have a mean of zero and
- standard deviation of one, in order to factor out the difference in strength
- of gene expression signatures and thus be able to compare the relative
- scores across pathways and samples at the same time.
-\end_layout
-
-\begin_layout Standard
-This approach is also vastly simpler and more computationally efficient
- than any other way of computing scores for other pathway methods that I
- compare in section 
+As I am more interested in the relative activation status between samples
+ than the absolute values that are not particularly meaningful, I scaled
+ each pathway or gene set score to have a mean of zero and standard deviation
+ of one.
+ This approach is vastly simpler and more computationally efficient than
+ any other way of computing scores for other pathway methods that I compare
+ in section 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "subsec:Methods:pathway-scores"
