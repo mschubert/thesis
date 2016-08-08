@@ -1073,20 +1073,16 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-QS11 Problem schematic
+Potential reason for the association between the QS11-responsive signature
+ and the MEK inhibitor Trametinib (GSK1120212): QS11 activates Wnt, which
+ corss-activates MAPK.
+ However, the gene expression signature of MAPK is stronger and thus the
+ primary readout.
+ Expression of this signature is thus correlated with MAPK activation, which
+ is in turn correlated with increased sensitivity to MEK inhibitors.
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:QS11-Problem-schematic"
-
-\end_inset
-
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-needs more legend
-\end_layout
 
 \end_inset
 

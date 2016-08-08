@@ -2481,6 +2481,18 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+2-dimensional schema of a distance calculation of a point from a plane by
+ means of a dot product.
+ The plane is defined by its normal vector, and the distance between it
+ and the point marked 
+\begin_inset Formula $A$
+\end_inset
+
+ is calculated by using the formula 
+\begin_inset Formula $\overrightarrow{n}\cdot\vec{A}$
+\end_inset
+
+.
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:dot-product"
