@@ -209,7 +209,7 @@ abbrv{LINCS}
 
  and GDSC projects, and could thus obtain the first view of drug sensitisation
  over a large target space.
- This could ultimately lead to a new drug combination or regimen that counters
+ This could ultimately lead to a new drug combination or regimen that restrict
  the development of resistance in clinical cancer patients, which is one
  of the main challenges in patient treatment today 
 \begin_inset CommandInset citation
@@ -270,9 +270,9 @@ abbrv{PRL}
 \end_layout
 
 \begin_layout Standard
-The overlap between the microarrays of the Connectivity Map (HG-U133A) and
- the GDSC (HG-U219) only had 83 overlapping probe set identifiers, so I
- mapped the probe sets in the 
+The microarrays of the Connectivity Map (HG-U133A) and the GDSC (HG-U219)
+ only had 83 overlapping probe set identifiers, so I mapped the probe sets
+ in the 
 \begin_inset ERT
 status open
 
@@ -302,9 +302,9 @@ abbrv{HGNC}
  From the 250 most up- and downregulated genes I took those that uniquely
  present in the respective subset, leaving approximately 100 genes per drug
  signature.
- I performed a two-tailed GSVA in the basal expression of the GDSC cell
- lines and thus obtain a drug-responsive signature expression score for
- each drug that has a 
+ I performed a two-tailed GSVA (details section 2.2.2) in the basal expression
+ of the GDSC cell lines and thus obtain a drug-responsive signature expression
+ score for each drug that has a 
 \begin_inset ERT
 status open
 
@@ -359,7 +359,7 @@ reference "fig:Distributions-GSEA"
 
 \end_inset
 
-, left panel), which explains the choice of GSVA over GSEA in also this
+, left panel), which explains the choice of GSVA over GSEA also in this
  context.
 \end_layout
 
@@ -520,7 +520,7 @@ status open
 
 \begin_layout Plain Layout
 Volcano plot of associations between expression of drug signatures and drug
- response for the pan-cancer cohort.
+ response for cell lines of all tissues.
  Effect size is standard deviations of the score on the horizontal axis,
  FDR-adjusted p-values on the vertical axis.
 \begin_inset CommandInset label
@@ -543,7 +543,8 @@ name "fig:mantra-pan"
 \end_layout
 
 \begin_layout Standard
-Results of associations between the expression of a drug-response signature
+Associations calculated as in section 2.2.3.
+ Results of associations between the expression of a drug-response signature
  (the sensitiser) and drug sensitivity to a second drug (the treatment drug)
  are shown as volcano plot in figure 
 \begin_inset CommandInset ref
@@ -719,7 +720,7 @@ What would be far more interesting is to investigate how drugs specifically
  projected z-scores mapped to HGNC symbols in experiments where the drug
  was used vs.
  all others.
- I select the top 
+ I selected the top 
 \begin_inset Formula $N$
 \end_inset
 
@@ -728,7 +729,7 @@ What would be far more interesting is to investigate how drugs specifically
 \end_inset
 
  to maximise the area under the precision-recall curve.
- I keep all drugs signatures that have an AUC of over 0.7 recovering the
+ I kept all drugs signatures that have an AUC of over 0.7 recovering the
  experiments where the same drug as used and discard the rest.
  For the pan-cancer cohort, this leaves 123 out of 150 signatures.
 \begin_inset Note Note
@@ -744,8 +745,9 @@ could add some ROC curves here
 \end_layout
 
 \begin_layout Standard
-I use the coefficients of the model to score all GDSC cell lines using the
- formula:
+Analogous to the model of pathway-responsive genes (chapter 3, implementation
+ in section 3.3.2), I calculated the expression level of a drug-responsive
+ signature using the linear transformation:
 \end_layout
 
 \begin_layout Standard
@@ -776,7 +778,7 @@ Where
 
  the resulting expression of drug-response signatures with cell lines in
  rows and drugs in columns.
- I scale 
+ I scaled 
 \begin_inset Formula $S$
 \end_inset
 
@@ -1025,8 +1027,15 @@ Pathway correlation as a major source for false positives
 \begin_layout Standard
 Setting aside the issue on whether an apparent lack of literature support
  can be a false positive or a new finding, an antagonistic interaction of
- a compound with goes against the definition of synergy as described by
- Loewe (and also the Bliss model, which I will not discuss here).
+ a compound with itself goes against the definition of synergy (details
+ section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Defining-synergy-for"
+
+\end_inset
+
+).
  This provides support for the hypothesis that the synergistic interaction
  between a MEK1/2 inhibitor and a Wnt agonist might be a false positive
  as well.
@@ -1072,6 +1081,16 @@ name "fig:QS11-Problem-schematic"
 \end_inset
 
 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+needs more legend
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1085,9 +1104,9 @@ name "fig:QS11-Problem-schematic"
 \end_layout
 
 \begin_layout Standard
-From our results above, we know that MEK inhibitors in general produce good
- signatures, or otherwise we would not expect as many MEK inhibitors as
- we see in our associations (figure 
+From our results above, it seems that MEK inhibitors in general produce
+ good signatures, or otherwise we would not expect as many MEK inhibitors
+ as we see in our associations (figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Matrix-of-naive"
@@ -1306,6 +1325,16 @@ Linear fits behind the associations of PD-0332991 (a CDK4/6 inhibitor) and
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:covar-fits"
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+coeffs, p-value refs
+\end_layout
 
 \end_inset
 
@@ -2921,8 +2950,8 @@ x=m\left(\frac{y-E^{min}}{E^{max}-y}\right)^{-\lambda}
 \end_layout
 
 \begin_layout Standard
-Given enough data points we can calculate the best fit using nonlinear least
- squares for our parameters.
+Given enough data points we can calculate the best fit for our parameters
+ in the above formula.
  I make an additional assumption here, which is that a drug that is infinitely
  diluted will show no inhibition of cell growth (or full viability) by setting
  the parameter 
@@ -2969,7 +2998,7 @@ and the corresponding single agent treatment with
 \begin_inset Formula $1$
 \end_inset
 
- for antagonistic combinations.
+ for antagonistic combinations:
 \end_layout
 
 \begin_layout Standard
@@ -3025,7 +3054,7 @@ key "Yadav2015-ws"
 
 \end_inset
 
-.
+:
 \end_layout
 
 \begin_layout Standard
@@ -3146,7 +3175,7 @@ Subtract the measured from the calculated volume, and normalize the volume
 \begin_layout Standard
 \begin_inset Formula 
 \[
-A=\sum_{x_{1}}\sum_{x_{2}}\Delta x_{1}\Delta x_{2}
+S=\sum_{x_{1}}\sum_{x_{2}}\Delta x_{1}\Delta x_{2}
 \]
 
 \end_inset
@@ -3159,7 +3188,7 @@ And obtain the overall synergy score
 \begin_inset Formula $S$
 \end_inset
 
- by dividing the volume by the area
+ by (optionally) dividing the volume by the area
 \end_layout
 
 \begin_layout Standard
@@ -3341,8 +3370,17 @@ reference "tab:combined-score"
 
 \end_inset
 
-, our collaborators in Hamburg agreed to screen their efficacy in the MFC-7
- cell line.
+, our collaborators in Hamburg
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+names
+\end_layout
+
+\end_inset
+
+ agreed to screen their efficacy in the MFC-7 cell line.
  This first requires single-agents measurements to be able to fit the Hill
  parameters for each drug in this cell line, as we would expect them not
  to be identical with the GDSC due to a different experimental setup.
@@ -3819,8 +3857,6 @@ level signatures have been merged using informative distances (that is,
  weighted by the gene expression distance between several experiments, to
  for instance not have an overly strong contribution of the MCF-7 signature
  if there were three experiments using MCF-7 and one in PC-3).
- Gene Set Enrichment Analysis has also often been shown to robust, and we
- have much less late available on that for a linear model on z-scores.
 \end_layout
 
 \begin_layout Subsection
@@ -3886,8 +3922,8 @@ Unfortunately, the actual experimental setup seems a lot more error-prone
 \end_inset
 
  that I can best estimate along a dilution series of a drug while looking
- at the minimal concentration of the other, does often not fill well to
- the previously estimated single-agent curves.
+ at the minimal concentration of the other, does often not fit well to the
+ previously estimated single-agent curves.
  The only way I see to fix this is to assess stability of the assay and
  influencing factors of the Hill parameters first in order to minimise the
  batch effect.

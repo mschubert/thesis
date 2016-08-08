@@ -2541,19 +2541,7 @@ reference "fig:surv-tissue"
 
 \end_inset
 
-) that other methods fail to provide, and our associations are significant
- for more cancer types and less correlated between pathways
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
- (Supplementary Fig.
- 10)
-\end_layout
-
-\end_inset
-
-.
+) that other methods fail to provide.
  In addition, I found cancer-specific associations of pathways with no effect
  in the pan-cancer setting.
  Adrenocortical Carcinoma (ACC) showed a significant survival increase with
@@ -2772,7 +2760,7 @@ Overall, my results suggest that consensus pathway response signatures provide
  patient survival.
  The examples I outlined show that a downstream readout should be used as
  a proxy for pathway activity instead of mapping mRNA expression levels
- to signaling molecules.
+ to signalling molecules.
 \end_layout
 
 \begin_layout Standard

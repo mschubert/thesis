@@ -439,6 +439,13 @@ key "Kanehisa2000-mp"
 
 \begin_layout Subsection
 Gene Set Variation Analysis (GSVA)
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:GSVA"
+
+\end_inset
+
+
 \begin_inset Note Note
 status open
 
