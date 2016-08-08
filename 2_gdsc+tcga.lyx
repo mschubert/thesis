@@ -1208,16 +1208,21 @@ name "sec:Pathway-responsive-genes-SPEED"
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-signatures, speed in particular
-\end_layout
+The original SPEED platform 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Parikh2010-uj"
 
 \end_inset
 
-
+ consists of signatures of 11 pathways, derived and comprised of the genes
+ responsive to a total of 215 experiments (the perturbations between a control
+ and a perturbed condition).
+ They use a consensus gene signature across multiple experiments, perturbing
+ agents, and other conditions to arrive at a gene list that corresponds
+ to pathway activation in a wide condition.
+ These consensus signatures of pathway perturbations are distinct from the
+ expression level of pathway members, as described above.
 \end_layout
 
 \begin_layout Subsection
