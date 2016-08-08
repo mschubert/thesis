@@ -2470,7 +2470,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename figures/dot_product.pdf
-	width 60text%
+	width 50text%
 
 \end_inset
 
@@ -3098,7 +3098,7 @@ reference "fig:sig-GO-enrichment"
 status open
 
 \begin_layout Plain Layout
-ref_p53
+Di Leonardo, 1994
 \end_layout
 
 \end_inset
@@ -3114,13 +3114,14 @@ a-related genes (where oxidative phosphorylation happens
 status open
 
 \begin_layout Plain Layout
-ref
+Schultz 2001
 \end_layout
 
 \end_inset
 
 ).
- TNFa/NFkB show enrichment in the category of genes responsive to 
+ TNFa/NFkB show enrichment in the category of genes responsive to known
+ pathway activator 
 \begin_inset ERT
 status open
 
@@ -3133,17 +3134,27 @@ abbrv{LPS}
 
 \end_inset
 
- (which is a known pathway activator 
+ 
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-ref
+Baeuerle 1994
 \end_layout
 
 \end_inset
 
-), and so does Trail.
+, and so does Trail 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Halaas 2000
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsection

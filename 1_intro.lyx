@@ -149,12 +149,9 @@ In the human population, there is natural variation in the genome from one
  Each human being has two copies of their DNA, one passed down from their
  mother and the other passed down from their father (excluding mitochondrial
  DNA that is only passed down the maternal lineage 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-ref
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Hutchison1974-hh"
 
 \end_inset
 
@@ -170,12 +167,9 @@ ref
  our body in theory harbour the same DNA sequence, with the exception that
  sex cells only contain one copy that was assembled in a cut-and-paste process
  (called meiosis) of the two somatic ones 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-ref/book?
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Hotta1966-yq"
 
 \end_inset
 
@@ -198,24 +192,12 @@ Should we sequence each cell in an individual, we would not find that all
  cells inherit two full copies of its DNA is not infinitely accurate.
  Rather, this process may introduce reading- (from the ancestral or template
  strand) and writing (the newly synthesised strand) errors.
- In fact, in each cell division there is an average of 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-***
-\end_layout
-
-\end_inset
-
- errors that are introduced while copying the each of the three billion
- bases (times the two alleles) that is our genome 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-ref
-\end_layout
+ In fact, in each cell division there is an average of 100 errors that are
+ introduced while copying the each of the three billion bases (times the
+ two alleles) that is our genome 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Kunkel2000-ts,McCulloch2008-wm"
 
 \end_inset
 
@@ -229,23 +211,19 @@ Such an error may manifest itself in multiple ways.
  strand, which produces a small deletion.
  In contrast, it also may insert a base that was not in the original strand,
  thereby producing an insertion.
- It may also insert the wrong base, which leads to a substitution.
- While discussing theses mutational processes one should keep in mind that
- those errors introduced do manifest itself only on one of the two strands
- in an allele, which will lead to a base not perfectly matching its opposite
- base anymore.
- This means they do not pair as well as they were if there had been no error
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-ref
-\end_layout
+ It may also insert the wrong base, which leads to a substitution 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Loeb1974-hz"
 
 \end_inset
 
 .
+ While discussing theses mutational processes one should keep in mind that
+ those errors introduced do manifest itself only on one of the two strands
+ in an allele, which will lead to a base not perfectly matching its opposite
+ base anymore.
+ This means they do not pair as well as they were if there had been no error.
 \end_layout
 
 \begin_layout Subsubsection
@@ -324,12 +302,9 @@ name "subsec:Consequences"
 \begin_layout Standard
 Genes that are relevant for cancer development and progression have long
  been classified in Oncogenes and Tumour Suppressor Genes 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-ref: oncogene/tumor suppressor
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Croce2008-bn"
 
 \end_inset
 
@@ -353,32 +328,19 @@ gene{TP53}
 
 \end_inset
 
- in 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-year
-\end_layout
-
-\end_inset
-
-, now termed 
+ in 1979, now termed 
 \begin_inset Quotes eld
 \end_inset
 
-Guardian of the Cell Cycle
+guardian of the genome
 \begin_inset Quotes erd
 \end_inset
 
  for its numerous functions maintaining DNA integrity, managing DNA repair,
  and causing apoptosis or senescence of the former fail 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-ref: TP53
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Levine2009-lo"
 
 \end_inset
 
@@ -390,12 +352,9 @@ ref: TP53
  bear no functional impact on the cell are called passenger mutations.
  Driver genes are usually either activated Oncogenes or Tumour suppressor
  genes, but may also have both functions 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-ref
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Vogelstein2004-mx"
 
 \end_inset
 
@@ -416,12 +375,9 @@ A gene that has an erroneous sequence somewhere on the DNA is, by itself,
  or covalently attaching sugars or other chemical groups (post-translational
  modifications) to yield the functional protein and/or to regulate its activity
  
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-ref: transcription, translation
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Crick1958-vv"
 
 \end_inset
 
@@ -452,12 +408,9 @@ abbrv{PTMs}
  remove phosphatases) of Serines or Threonines.
  These are amino acids with an OH group in their side chain and are thus
  susceptible to it 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-ref: kinase/phosphatase
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Burnett1954-bw"
 
 \end_inset
 
@@ -483,12 +436,9 @@ gene{BRAF^{V600E}}
 
  mutation, where a Valine on position 600 (the 600th amino acid) is replaced
  by Glutamic Acid 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-ref: BRAF_V600E
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Zecchin2013-fn"
 
 \end_inset
 
@@ -606,7 +556,7 @@ Cells in a tumour are not homogeneous, but it should rather be seen as an
  this heterogeneity has become an important research topic 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "Alizadeh2015-bz"
+key "Heppner1983-sw,Alizadeh2015-bz"
 
 \end_inset
 
@@ -734,12 +684,9 @@ The easiest way to kill cancer cells is to expose them to a compound that
  growth, as is the case for most chemotherapy.
  This could be DNA synthesis (Cisplatin or Carboplatin), microtubule disassembly
  (Paclitaxel and more generally Taxol-based compounds), or others 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-ref
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Skeel2011-rj"
 
 \end_inset
 
@@ -786,12 +733,9 @@ reference "subsec:Consequences"
  causes aberrant signalling, the cell (or cells) become dependent on exactly
  that signal.
  Turn it off, and those cells are likely to die 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-ref
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Weinstein2002-iw"
 
 \end_inset
 
@@ -819,30 +763,17 @@ gene{BRAF^{V600E}}
 
 \end_inset
 
- mutation, 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-[* et al]
-\end_layout
-
-\end_inset
-
- indeed designed and developed a small-molecule inhibitor called Plexicon
- (more specifically, PLX4720) that proved to bind the mutation version of
- the BRAF protein with a much higher affinity than the one found in wild-type
- cells.
+ mutation, computational chemists indeed designed and developed a small-molecule
+ inhibitor called Plexicon (more specifically, PLX4720) that proved to bind
+ the mutation version of the BRAF protein with a much higher affinity than
+ the one found in wild-type cells.
  This, in some ways, could be considered the perfect drug for cancer therapy,
  because it has it has favourable uptake in the body, and once it is there
  the therapeutic window is much larger compared to other compounds due to
  this difference in binding affinity 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
- [ref]
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Chapman2011-jl"
 
 \end_inset
 
@@ -883,12 +814,9 @@ key "Brahmer2012-kv,Ott2013-eh"
  effort that promised funding for developing and improving personalised
  cancer treatment by targeted therapies, immune therapies were set to play
  a profound role in it 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-ref
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Kaiser2016-jz"
 
 \end_inset
 
@@ -959,12 +887,9 @@ This, together with multiple other examples, proved to show that targeted
  to emerge where a subset was no longer affected by the drug and that could
  later expand, or (2) those resistant cells were there all along, just expanding
  their niche once the predominant clones were gone 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-ref
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Heppner1983-sw,Reya2001-ay"
 
 \end_inset
 
@@ -1049,12 +974,9 @@ However, if there is a strong indication given those model systems that
  indications previously shown using a model system - that are known to mirror
  a lot of aspects of the actual disease, but never all - actually hold in
  humans as well 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-ref
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Fields2005-tb"
 
 \end_inset
 
@@ -1297,12 +1219,9 @@ species{Xenopus}
  as a drug, mice seem to be considered a reasonable trade-off between providing
  a close enough match of human biology and being not too difficult to keep
  
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-ref
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Fields2005-tb"
 
 \end_inset
 
@@ -1316,12 +1235,9 @@ One line of experiments that can be done with mice but not humans is to
  The gene introduced can either be a reporter, to see where a it is expressed,
  or for instance a mutated version of a human gene that is known to induce
  the formation of tumours 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-ref
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Talmadge2007-tr"
 
 \end_inset
 
@@ -1331,12 +1247,9 @@ ref
 \begin_layout Standard
 Another method of investigation are xenografts, where an immunodeficient
  
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-[*?*]
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Fogh2014-ah"
 
 \end_inset
 
@@ -1344,12 +1257,9 @@ status open
  or a patient, to study effects like how cancerous cells influence and modify
  the microenvironment around them, how they can sustain themselves and grow,
  attract the formation of blood vessels, and ultimately metastasise 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-ref
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Talmadge2007-tr"
 
 \end_inset
 
@@ -1515,12 +1425,9 @@ tly change the readout.
  saturation, where it does not matter if there is more RNA present or not
  once all probes bind to their complementary sequence and thus produce a
  signal 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-ref
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Duggan1999-eu"
 
 \end_inset
 
@@ -1635,17 +1542,14 @@ The data produced by RNA-sequencing is different to the one from microarrays,
  as it is based on read numbers that thus counts (so discrete data) instead
  of the continuous fluorescence signal that microarrays provide.
  These counts are well-known to be negatively binomially distributed 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-ref
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Anders2010-pd"
 
 \end_inset
 
 , and require specialised software packages to call e.g.
- differential expression (the most well-known of which are 
+ differential expression like 
 \begin_inset ERT
 status open
 
@@ -1655,6 +1559,13 @@ status open
 \backslash
 rpkg{edgeR}
 \end_layout
+
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Robinson2010-uc"
 
 \end_inset
 
@@ -1671,7 +1582,14 @@ rpkg{DEseq}
 
 \end_inset
 
-, and 
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Anders2010-pd"
+
+\end_inset
+
+ and 
 \begin_inset ERT
 status open
 
@@ -1684,8 +1602,15 @@ rpkg{DEseq2}
 
 \end_inset
 
-) or transformation before they can be used in standard linear modelling
- techniques (for instance provided by 
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Love2014-dr,Love2014-la"
+
+\end_inset
+
+, or transformation before they can be used in standard linear modelling
+ techniques, for instance provided by 
 \begin_inset ERT
 status open
 
@@ -1711,17 +1636,14 @@ rpkg{limma}
 
 \end_inset
 
- package).
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-some ref for pkgs
-\end_layout
+ package 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Law2014-cf"
 
 \end_inset
 
-
+.
 \end_layout
 
 \begin_layout Subsection
@@ -1998,18 +1920,18 @@ key "Kanehisa2000-mp"
  To provide an idea of how widely it was (and still is) used, Google Scholar
  (query 25th February 2016) reported 6863 publications that cited the original
  article.
- However, in 
-\begin_inset Note Note
+ However, in 2011 the platform went commercial, allowing access only via
+ a subscription-based portal
+\begin_inset Foot
 status open
 
 \begin_layout Plain Layout
-2XXX
+http://www.pathway.jp/
 \end_layout
 
 \end_inset
 
- the platform went commercial, allowing access only via a subscription-based
- portal.
+.
  While the authors removed public access also to earlier versions of the
  database, its pre-commercial license (OICR by Pathway Solutions, Inc) allowed
  it to still be used.
@@ -2311,12 +2233,9 @@ reference "subsec:Signature-Matching"
 ), the method of using gene expression changes upon drug treatment to match
  both drugs with drugs for finding similarities and drugs with diseases
  for a potential treatment indication 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-ref
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Iorio2013-pv"
 
 \end_inset
 
@@ -2725,17 +2644,7 @@ abbrv{RNA}s
 
 \end_inset
 
- can be assessed using methods such as microarrays or RNA sequencing
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-**CMS**; ref
-\end_layout
-
-\end_inset
-
-.
+ can be assessed using methods such as microarrays or RNA sequencing.
 \end_layout
 
 \begin_layout Standard
@@ -2767,12 +2676,9 @@ abbrv{RNA}s
  are called dimensionality reduction techniques, while methods assigning
  the different samples to different subtypes are called clustering algorithms
  
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-ref
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Xu2005-oj"
 
 \end_inset
 
@@ -2823,37 +2729,9 @@ key "Wold1987-se"
 \end_inset
 
 .
- The rotation is calculated using the matrix factorisation 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-add factorsation
-\end_layout
-
-\end_inset
-
-, which can be simplified to 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-[add here]
-\end_layout
-
-\end_inset
-
- and yields a unique solution.
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
- [params]
-\end_layout
-
-\end_inset
-
- provide the position of a sample in 
+ The rotation is calculated using a matrix factorisation that yields a unique
+ solution.
+ Its parameters provide the position of a sample in 
 \begin_inset Formula $M$
 \end_inset
 
@@ -2894,12 +2772,9 @@ abbrv{SVD}
 \end_inset
 
 ), which has applications in dimensionality reduction as well 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-ref
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Wall2003-ww"
 
 \end_inset
 
@@ -3110,7 +2985,14 @@ y and then look at our ranked list (by p-value and effect size of each gene)
  to determine which are the genes that are most deregulated.
  This, however, may miss a group of interacting genes (or proteins, after
  translation) that all change moderately by themselves, but in combination
- will give a stronger signal than any one gene itself.
+ will give a stronger signal than any one gene itself 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Ideker2002-iz"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -3136,12 +3018,9 @@ abbrv{mRNA}
 \end_inset
 
  of the corresponding gene 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-ref
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Gry2009-ig,Maier2009-zc"
 
 \end_inset
 
@@ -3253,30 +3132,24 @@ abbrv{PolII}
 
 \end_inset
 
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-check
-\end_layout
+) that forms a complex with available factors in order to start transcription
+ of a factor's target genes 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Watson1987-mw"
 
 \end_inset
 
-) that forms a complex with available factors in order to start transcription
- of a factor's target genes.
+.
  The genes transcribed upon activation of transcription factors may in turn
  be transcription factors themselves that cause increased or decreased transcrip
 tion of other genes.
  These interactions between different transcription factors are usually
  referred to as a Transcription Factor Network or Gene Regulatory Network
  
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-ref
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Bansal2007-rb"
 
 \end_inset
 
@@ -3546,12 +3419,9 @@ The transduction of a signal from a cue binding to a receptor on a cell's
  consequently translated into those.
  The process of transcription and translation is referred to the central
  dogma of molecular biology 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-ref
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Crick1958-vv"
 
 \end_inset
 
@@ -3592,12 +3462,9 @@ key "Subramanian2005-pd"
 , more in chapter 2).
  This, however, is at odds with the way cell signalling works and is regulated.
  Inferring the protein levels from mRNA levels may indeed be viable 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-[60% paper]
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Gry2009-ig,Maier2009-zc"
 
 \end_inset
 
@@ -3831,12 +3698,9 @@ It is easy to argue that experimental reproducibility is a hard issue to
  female stewards in a mouse facility produced different reactions of the
  animals, potentially influencing the results obtained from a very large
  number of studies 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-ref
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Reardon2016-bn"
 
 \end_inset
 
@@ -4250,12 +4114,9 @@ key "Xie2014-sa"
 
  that can work with either Latex or Markdown.
  For Python, the IPython notebooks 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-ref
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "McKinney2012-tv"
 
 \end_inset
 
@@ -4269,7 +4130,14 @@ http://blog.jupyter.org/2016/07/14/jupyter-lab-alpha/
 
 \end_inset
 
-) has seen a wide adoption.
+) has seen a wide adoption 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Shen2014-of"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Section
