@@ -322,37 +322,18 @@ _id}
 \end_inset
 
  field) associated with them, yielding three main categories (biological
- process, molecular function, cellular compartment) with 
-\begin_inset Note Note
+ process, molecular function, cellular compartment) with 16413 gene sets
+ covering 18806 genes total
+\begin_inset Foot
 status open
 
 \begin_layout Plain Layout
-XX
+query of Ensembl Biomart on March 1st 2016
 \end_layout
 
 \end_inset
 
-, 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-XX
-\end_layout
-
-\end_inset
-
-, and 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-XX
-\end_layout
-
-\end_inset
-
- gene sets respectively.
+.
  I performed the subsequent analyses using gene sets from the biological
  process category only.
  For Reactome 
@@ -392,28 +373,7 @@ target "http://www.reactome.org/pages/download-data/"
 \end_inset
 
 .
- There were a total of 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-XX
-\end_layout
-
-\end_inset
-
- pathways covering 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-YY
-\end_layout
-
-\end_inset
-
- genes.
- 
+ It contained a total of 1675 pathways covering 7852 genes.
 \end_layout
 
 \begin_layout Standard
@@ -657,8 +617,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename figures/2.1_ic50.gif
-	lyxscale 50
+	filename figures/IC50_schema.pdf
 	width 50col%
 
 \end_inset
@@ -670,7 +629,34 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-IC50 values
+Calculation of 
+\begin_inset Formula $IC_{50}$
+\end_inset
+
+ values.
+ Cell viability is measured at different drug concentrations and then a
+ drug response curve is fitted to the data.
+ The halfway point of viability between the minimum (
+\begin_inset Formula $E_{min}$
+\end_inset
+
+) and maximum effect (
+\begin_inset Formula $E_{max}$
+\end_inset
+
+) is the 
+\begin_inset Formula $IC_{50}$
+\end_inset
+
+.
+ The curve is defined by these three values and the steepness of the slope.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:IC50schema"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -693,8 +679,11 @@ The original GDSC data set contained different dilutions of drugs that the
 ons, and then fit a dose-response curve to the data points, interpolating
  (or extrapolating, if necessary) the concentration at which the half-maximal
  inhibition occurred.
- This term is referred to the IC50 value, and has already been calculated
- in 
+ This term is referred to the 
+\begin_inset Formula $IC_{50}$
+\end_inset
+
+ value, and has already been calculated in 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Iorio2016-gh"
@@ -702,6 +691,25 @@ key "Iorio2016-gh"
 \end_inset
 
 .
+ The curve to fit is of sigmoid shape (figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:IC50schema"
+
+\end_inset
+
+) and has the formula:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x=IC_{50}\left(\frac{y-E_{min}}{E_{max}-y}\right)^{-slope}
+\]
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
