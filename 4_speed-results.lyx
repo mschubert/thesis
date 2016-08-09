@@ -1033,7 +1033,24 @@ Pathway scores and mutations/CNAs
 
 \begin_layout Standard
 I computed pathway scores for TCGA cohorts where there were tissue-matched
- normals available in the Firebrowse-processed run 2016_01_28.
+ normals available in the Firebrowse-processed run 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+code{2016
+\backslash
+_01
+\backslash
+_28}
+\end_layout
+
+\end_inset
+
+.
  For mutated genes, I considered all genes that had a change of coding sequence
  (SNP, small indels in MAF files) as mutated and all others as not mutated.
  For copy number alterations, I used the thresholded GISTIC scores, where

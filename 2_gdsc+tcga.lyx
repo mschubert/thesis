@@ -435,12 +435,53 @@ name "subsec:GSVA"
 \end_inset
 
 
-\begin_inset Note Note
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
 status open
 
 \begin_layout Plain Layout
-TODO: GSEA vs.
- GSVA
+\align center
+\begin_inset Graphics
+	filename figures/GSEA_GSVA_schema.pdf
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Calculation of the running sum statistic (top left) and absolute deviation
+ for enrichment score in case of GSEA vs.
+ the difference in GSVA.
+ Genes are ordered, genes that are in the query set are indicated by black
+ bars.
+ The red line indicates the running sum score where a score is added each
+ time there is a hit and subtracted otherwise.
+ GSEA hence produces a bimodal distribution of scores (left), while GSVA
+ produces a unimodal distribution (right).
+ This is why the former needs label shuffling of two conditions (bottom
+ left) to compute empirical p-values, while the latter produces scores for
+ each sample (but no statistical significance; bottom right).
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:GSEA_schema"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -449,47 +490,14 @@ TODO: GSEA vs.
 \end_layout
 
 \begin_layout Standard
-I used the function 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-code{wGSEA}
-\end_layout
-
-\end_inset
-
- 
+Gene Set Enrichment Analysis 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Subramanian2005-pd"
 
 \end_inset
 
- from the original BROAD weighted GSEA R script
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "http://software.broadinstitute.org/gsea/index.jsp"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
- modified by Francesco Iorio to work with the current version of R.
- I supplied as gene sets the Gene Ontology and pathway sets described above.
- I performed 1,000 resampling steps for score normalisation for all subsequent
- analyses unless otherwise indicated.
- I used the normalised enrichment score (
+ is the 
 \begin_inset ERT
 status open
 
@@ -497,21 +505,13 @@ status open
 
 
 \backslash
-abbrv{NES}
+latin{de facto}
 \end_layout
 
 \end_inset
 
-) for all subsequent associations, which was a continuous numerical value
- that represented the expression level of the gene set in a given sample.
- I did not perform any statistical test to quantify the enrichment of this
- set compared to other sets, as at this point I was only interested in the
- expression level itself, not how it compares to other samples.
-\end_layout
-
-\begin_layout Standard
-As I do not have a background set, I transformed the resulting bimodal distribut
-ion of normalised enrichment scores (
+ standard to compute the expression level of a set of genes.
+ It uses as an input a ranked list of genes (
 \begin_inset ERT
 status open
 
@@ -519,65 +519,28 @@ status open
 
 
 \backslash
-abbrv{NES}
+latin{e.g.}
 \end_layout
 
 \end_inset
 
-) for each pathway across all cell lines into a normal distribution using
- a kernel density estimator (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-code{kCDF}
-\end_layout
-
-\end_inset
-
- function from the R package 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-rpkg{sROC}
-\end_layout
-
-\end_inset
-
-
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "https://cran.r-project.org/web/packages/sROC/index.html"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-).
- The result of this resembled a uniform distribution, with the exception
- that it took into account local differences with the kernel function.
- I then transformed the resulting distribution into a normal distribution
- using the formula
+ fold changes).
+ It them computes the running sum of a set of interest by starting at the
+ beginning of this list and adding a score if the current gene is in the
+ set, or subtracts a score otherwise.
+ This can be summarised like the following:
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \[
-log(x/(1-x))
+s_{g+1}=s_{g}+\left\{ \begin{array}{c}
+1/n_{set}\\
+-1/(n-n_{set})
+\end{array}\right.\begin{array}{c}
+g\in set\\
+g\notin set
+\end{array}
 \]
 
 \end_inset
@@ -586,8 +549,74 @@ log(x/(1-x))
 \end_layout
 
 \begin_layout Standard
-I used those transformed scores in subsequent linear (ANOVA-like) associations
- for drug response.
+A schema of this calculation is shown in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:GSEA_schema"
+
+\end_inset
+
+.
+ In the case of GSEA, the overall score is the maximal deviation from zero.
+ As is shown in the example, this leads to a bimodal distribution of scores
+ when testing different sets or the same set on different samples, because
+ even if the genes in the set of interest are evenly spread, there will
+ always be a deviation.
+ As GSEA is commonly used to compute the significance of enrichment between
+ two conditions (left panels in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:GSEA_schema"
+
+\end_inset
+
+), this is not a problem: we can obtain the distribution of scores under
+ the null hypothesis by shuffling the labels of the reference and the samples
+ we are looking at, and then compute the empirical p-value as quantile of
+ this distribution.
+ This, however, also means that we need to compare two conditions in order
+ to do this reliably.
+ We can not compute enrichment scores for each individual sample.
+\end_layout
+
+\begin_layout Standard
+Gene Set Variation Analysis 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Hanzelmann2013-xl"
+
+\end_inset
+
+ solves this: instead of taking the maximal deviation, it takes the difference
+ between maximum positive and negative enrichment score.
+ This directly yields a unimodal distribution of enrichment scores in different
+ samples that can hence be used in statistical tests that assume normality
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+raw gene enrichment scores could still be used in nonparametric tests, but
+ they are usually less powerful
+\end_layout
+
+\end_inset
+
+.
+ As I am interested in correlating one continuous value (drug sensitivity)
+ with the set enrichment score, using GSVA (and the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+rpkg{GSVA}
+\end_layout
+
+\end_inset
+
+ R package) instead of GSEA is the natural choice.
 \end_layout
 
 \begin_layout Standard
