@@ -88,26 +88,6 @@ Gene set methods for drug response
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-contribution{add this here}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Aim
-\end_layout
-
-\begin_layout Standard
 Pathway methods have been used for a while in a cancer context, both for
  cell lines an primary tumours.
  Most of the time, the method of choice is to take a gene set from either
@@ -156,7 +136,7 @@ key "Wadi2016-wc"
  Enrichment Analysis (GSEA) 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "Subramanian2005-wp"
+key "Subramanian2005-pd"
 
 \end_inset
 
@@ -231,6 +211,63 @@ makes sense
  because the involved process is already known in literature and we could
  not publish our new findings in a high-impact journal.
  The aim of this chapter is to illustrate these issues.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Results obtained in section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Pathway-responsive-genes-SPEED"
+
+\end_inset
+
+ contributed the pathway scores for latest publication of the GDSC screening.
+ All analyses, plots, and written text in this thesis I produced myself:
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Iorio F, Knijnenburg TA, Vis DJ, Bignell GR, Menden MP, 
+\series bold
+Schubert M
+\series default
+, Aben N, Gonçalves E, Barthorpe S, Lightfoot H, Cokelaer T, Greninger P,
+ van Dyk E, Chang H, de Silva H, Heyn H, Deng X, Egan RK, Liu Q, Mironenko
+ T, Mitropoulos X, Richardson L, Wang J, Zhang T, Moran S, Sayols S, Soleimani
+ M, Tamborero D, Lopez-Bigas N, Ross-Macdonald P, Esteller M, Gray NS, Haber
+ DA, Stratton MR, Benes CH, Wessels LF, Saez-Rodriguez J, McDermott U, Garnett
+ MJ.
+ 
+\begin_inset Quotes eld
+\end_inset
+
+
+\shape italic
+A Landscape of Pharmacogenomic Interactions in Cancer
+\shape default
+
+\begin_inset Quotes erd
+\end_inset
+
+.
+ 
+\series bold
+Cell
+\series default
+ (2016).
 \end_layout
 
 \begin_layout Section
@@ -458,8 +495,18 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Calculation of the running sum statistic (top left) and absolute deviation
- for enrichment score in case of GSEA vs.
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Calculation of the running sum statistic for GSEA and GSVA
+\end_layout
+
+\end_inset
+
+Calculation of the running sum statistic for GSEA and GSVACalculation of
+ the running sum statistic (top left) and absolute deviation for enrichment
+ score in case of GSEA vs.
  the difference in GSVA.
  Genes are ordered, genes that are in the query set are indicated by black
  bars.
@@ -647,7 +694,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename figures/IC50_schema.pdf
-	width 50col%
+	width 60col%
 
 \end_inset
 
@@ -658,7 +705,24 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Schema for calculation of 
+\begin_inset Formula $IC_{50}$
+\end_inset
+
+ values
+\end_layout
+
+\end_inset
+
 Calculation of 
+\begin_inset Formula $IC_{50}$
+\end_inset
+
+ values.Calculation of 
 \begin_inset Formula $IC_{50}$
 \end_inset
 
@@ -957,6 +1021,15 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Volcano plot of associations between driver mutations and drug response
+\end_layout
+
+\end_inset
+
 Volcano plot of associations between driver mutations and drug response.
  Effect size is fold changes between cell lines harbouring a mutated vs.
  a wild-type copy on the horizontal axis, FDR-adjusted p-values on the vertical
@@ -1006,6 +1079,16 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Volcano plot of associations between expression of Gene Ontology categories
+ and drug response
+\end_layout
+
+\end_inset
+
 Volcano plot of associations between expression of Gene Ontology categories
  and drug response.
  Effect size is standard deviations of the score on the horizontal axis,
@@ -1185,6 +1268,16 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Volcano plot of associations between expression of Reactome pathways and
+ drug response
+\end_layout
+
+\end_inset
+
 Volcano plot of associations between expression of Reactome pathways and
  drug response.
  Effect size is standard deviations of the score on the horizontal axis,
@@ -1243,35 +1336,15 @@ Neurotransmitter Release Cycle
 
 \begin_layout Section
 Pathway-responsive genes: The SPEED Platform
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-This approach and results have been incorporated in the latest publication
- of the GDSC screening 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Iorio2016-gh"
-
-\end_inset
-
-.
- Text and results below are entirely my own work.
 \end_layout
 
-\end_inset
-
-
+\begin_layout Standard
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Pathway-responsive-genes-SPEED"
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
 The original SPEED platform 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -1346,7 +1419,7 @@ target "http://speed.sys-bio.net/SPEED_db.zip"
  between the different pathways, as shown in figure 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "cor-before"
+reference "fig:speed1_cor"
 
 \end_inset
 
@@ -1354,13 +1427,6 @@ reference "cor-before"
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
 \begin_inset Float figure
 wide false
 sideways false
@@ -1376,40 +1442,10 @@ status open
 \end_inset
 
 
-\begin_inset CommandInset label
-LatexCommand label
-name "cor-before"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
 \begin_inset Graphics
 	filename figures/4.1_correlation_optimized.jpg
 	lyxscale 50
 	width 50col%
-
-\end_inset
-
-
-\begin_inset CommandInset label
-LatexCommand label
-name "cor-after"
-
-\end_inset
-
-
-\end_layout
 
 \end_inset
 
@@ -1420,8 +1456,25 @@ name "cor-after"
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Correlation plots for GSEA scores per pathway across cell lines for the
+ original and optimised SPEED
+\end_layout
+
+\end_inset
+
 Correlation plots for GSEA scores per pathway across cell lines for the
  original SPEED lists (left) and our separation-optimized version (right).
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:speed1_cor"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1533,7 +1586,7 @@ For the optimised lists, I observed a much lower overall correlation of
  the pathway scores (figure 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "cor-after"
+reference "fig:speed1_cor"
 
 \end_inset
 
@@ -1564,6 +1617,15 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Parameter selection overview for each pathway
+\end_layout
+
+\end_inset
+
 Parameter selection overview for each pathway.
  Z: Z-value cutoff (0.25-20), O: array overlap (20-80); E: overall expression
  cutoff (5-100), U: unique (+) or all (-) genes considered.
@@ -3029,6 +3091,15 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Heatmap of inferred pathway activation scores for different tissues
+\end_layout
+
+\end_inset
+
 Heatmap of inferred pathway activation scores for different tissues
 \begin_inset CommandInset label
 LatexCommand label
@@ -3227,6 +3298,16 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Volcano plot of linear associations of inferred pathway activity within
+ all tissues and drug response
+\end_layout
+
+\end_inset
+
 Volcano plot of linear associations of inferred pathway activity within
  all tissues and drug response.
  Tissue of origin used as a covariate in the regression.
@@ -3314,7 +3395,11 @@ key "Jeannot2014-av"
 \begin_layout Itemize
 I found sensitivity correlating with Wnt activity for the drugs Etoposide,
  QS11, and GSK-650394.
- QS11 modulates ARF activity and β-catenin localisation 
+ QS11 modulates ARF activity and 
+\begin_inset Formula $β$
+\end_inset
+
+-catenin localisation 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Zhang2007-fu"
@@ -3322,8 +3407,12 @@ key "Zhang2007-fu"
 \end_inset
 
 , which may offer a treatment strategy for Wnt-driven tumours.
- GSK-650394 targets SGK1, which is activated by Wnt/β-catenin signalling
- and has been shown to inhibit ROS-induced apoptosis in liver cells 
+ GSK-650394 targets SGK1, which is activated by Wnt/
+\begin_inset Formula $β$
+\end_inset
+
+-catenin signalling and has been shown to inhibit ROS-induced apoptosis
+ in liver cells 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Tao2013-sj"

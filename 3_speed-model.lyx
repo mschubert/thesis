@@ -88,26 +88,6 @@ Building an Improved Model of Perturbation-Response Genes
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-contribution{add this here}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Aim
-\end_layout
-
-\begin_layout Standard
 There are numerous examples of using Gene Set Enrichment Analysis (GSEA)
  for a set of signalling molecules in order to infer signalling activity.
  Most of them, however, use the expression of those proteins directly as
@@ -171,6 +151,15 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Reasoning about pathway activation
+\end_layout
+
+\end_inset
+
 Reasoning about pathway activation.
  Most pathway approaches make use of either the set (top panel) or graph
  (middle panel) of signalling molecules to make statements about a possible
@@ -253,6 +242,15 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Workflow of data curation and model building
+\end_layout
+
+\end_inset
+
 Workflow of data curation and model building.
  (1) Finding and curation of 208 publicly available experiment series in
  the ArrayExpress database, (2) Extracting 556 perturbation experiments
@@ -299,6 +297,53 @@ In terms of outcomes, we are interested in how well the available platform
  In terms of the inferred pathway activity itself, we are interested in
  how it compares to readily available pathway methods that map mRNA to signallin
 g molecules.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The chapter represents the model building stage of improved pathway signatures.
+ All analyses, plots, and written text in this thesis I produced myself,
+ while incorporating comments from the coauthors:
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Schubert M
+\series default
+, Klinger B, Klünemann M, Garnett MJ, Blüthgen N, Saez-Rodriguez J.
+ 
+\begin_inset Quotes eld
+\end_inset
+
+
+\shape italic
+Perturbation-response genes reveal signaling footprints in cancer gene expressio
+n
+\shape default
+.
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\series bold
+bioRxiv
+\series default
+ 065672 (2016).
+ doi:10.1101/065672
 \end_layout
 
 \begin_layout Section
@@ -444,6 +489,15 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Structured data in the YAML file format
+\end_layout
+
+\end_inset
+
 Structured data in the YAML file format
 \begin_inset CommandInset label
 LatexCommand label
@@ -891,8 +945,18 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Comparison of dataset size between SPEED, Gatza (2009), and mine (Pathway-respon
-sive genes, PRGs).
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Comparison of dataset size between SPEED, Gatza (2009), and Pathway-responsive
+ genes (PRGs)
+\end_layout
+
+\end_inset
+
+Comparison of dataset size between SPEED, Gatza (2009), and Pathway-responsive
+ genes (PRGs).
  
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -1130,6 +1194,15 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Microarray platforms used in the curated experiments
+\end_layout
+
+\end_inset
+
 Microarray platforms used in the curated experiments
 \begin_inset CommandInset label
 LatexCommand label
@@ -2109,6 +2182,15 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Structure of the perturbation-response model
+\end_layout
+
+\end_inset
+
 Structure of the perturbation-response model.
  For the multiple linear regression, we set the coefficients or perturbed
  pathways to 1 if a pathway was perturbed, 0 otherwise.
@@ -2271,6 +2353,16 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Distribution of the top 100 genes used in the model, as outcome for the
+ multiple regression of all pathways
+\end_layout
+
+\end_inset
+
 Distribution of the top 100 genes used in the model, as outcome for the
  multiple regression of all pathways.
  Top: Distribution of FDR-correctd p-values for signature genes (double
@@ -2387,6 +2479,15 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Overlap of signature genes for different pathways
+\end_layout
+
+\end_inset
+
 Overlap of signature genes for different pathways.
  For the 100 genes we selected for each individual pathway, this shows how
  many of those signature genes are present in another pathway as well.
@@ -2481,6 +2582,16 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+2-dimensional schema of a distance calculation of a point from a plane by
+ means of a dot product
+\end_layout
+
+\end_inset
+
 2-dimensional schema of a distance calculation of a point from a plane by
  means of a dot product.
  The plane is defined by its normal vector, and the distance between it
@@ -2640,6 +2751,15 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+T-SNE plots for separation of perturbation experiments
+\end_layout
+
+\end_inset
+
 T-SNE plots for separation of perturbation experiments with different pathway
  perturbations in different colours.
  Fold changes of genes in individual perturbation experiments (10% FDR)
@@ -2834,6 +2954,15 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Recovery of the perturbations using the consensus signature
+\end_layout
+
+\end_inset
+
 Recovery of the perturbations across pathways (left) and for individual
  experiments (right) using the consensus signature.
  Associations between perturbed pathways and the scores obtained by the
@@ -3016,6 +3145,16 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Difference in gene sets between Perturbation-response genes and Gene Ontology/Re
+actome
+\end_layout
+
+\end_inset
+
 Difference in gene sets between Perturbation-response genes and Gene Ontology/Re
 actome.
  Perturbation-response genes are different to path- way members and gene
@@ -3073,6 +3212,15 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Functional annotations of perturbation-response genes
+\end_layout
+
+\end_inset
+
 Functional annotations of perturbation-response genes
 \begin_inset CommandInset label
 LatexCommand label
@@ -3244,6 +3392,15 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Mapping of pathways to Gene Ontology Categories
+\end_layout
+
+\end_inset
+
 Mapping of pathways to Gene Ontology Categories
 \begin_inset CommandInset label
 LatexCommand label
@@ -3740,6 +3897,15 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Mapping of pathways to SPIA (KEGG pathways)
+\end_layout
+
+\end_inset
+
 Mapping of pathways to SPIA (KEGG pathways)
 \begin_inset CommandInset label
 LatexCommand label
@@ -4257,6 +4423,15 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Mapping of pathways to Pathifier (Reactome pathways)
+\end_layout
+
+\end_inset
+
 Mapping of pathways to Pathifier (Reactome pathways)
 \begin_inset CommandInset label
 LatexCommand label
@@ -4775,6 +4950,15 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Mapping of pathways to PARADIGM nodes
+\end_layout
+
+\end_inset
+
 Mapping of pathways to PARADIGM nodes
 \begin_inset CommandInset label
 LatexCommand label
@@ -5215,6 +5399,15 @@ Gene Ontology
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Perturbation recall for pathway member GSEA
+\end_layout
+
+\end_inset
+
 Comparison to pathway member GSEA.
  Significant associations (marked with 
 \begin_inset Formula $*$
@@ -5381,6 +5574,15 @@ Pathifier
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Perturbation recall for other pathway methods
+\end_layout
+
+\end_inset
+
 Comparison to other pathway methods, legend as in figure 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -5559,6 +5761,16 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Perturbation recall on input experiments as a comparison across methods
+ for each pathway
+\end_layout
+
+\end_inset
+
 Perturbation recall on input experiments as a comparison across methods
  for each pathway.
  ROC curves for different methods ranking perturbation experiments by their
@@ -5608,6 +5820,15 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Area under the ROC curve for experiment recall
+\end_layout
+
+\end_inset
+
 Area under the curve (AUC) for methods and pathways in figure 
 \begin_inset CommandInset ref
 LatexCommand ref

@@ -87,6 +87,58 @@
 Introduction
 \end_layout
 
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Parts of section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Computational-methods"
+
+\end_inset
+
+ were previously published.
+ The text incorporated represents a draft stage of the article below that
+ was entirely written by myself:
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Schubert, M
+\series default
+ & Iorio, F 
+\begin_inset Quotes eld
+\end_inset
+
+
+\shape italic
+Exploiting combinatorial patterns in cancer genomic data for personalized
+ therapy and new target discovery.
+\shape default
+
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\series bold
+Pharmacogenomics
+\series default
+ 15, 1943–1946 (2014).
+\end_layout
+
 \begin_layout Section
 Cancer Biology
 \end_layout
@@ -2341,7 +2393,16 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Overview of number of experiments available using cancer drugs.
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Overview of number of experiments available in LINCS using cancer drugs
+\end_layout
+
+\end_inset
+
+Overview of number of experiments available in LINCS using cancer drugs.
  
 \begin_inset CommandInset label
 LatexCommand label
@@ -2407,6 +2468,12 @@ Computational methods
 \end_layout
 
 \begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Computational-methods"
+
+\end_inset
+
 Over the last decades and years, biology moved from an observational, qualitativ
 e science to a very much quantitative one.
  This can largely be attributed by high throughput assays, led by the advance
@@ -2480,25 +2547,6 @@ key "Rubio-Perez2015-ep"
 
 \begin_layout Subsection
 Patterns of mutations
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-Parts of this section have been published with Francesco Iorio 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Schubert2014-gt"
-
-\end_inset
-
-.
- The state of the text below is derived from an early draft that was written
- entirely by myself.
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard

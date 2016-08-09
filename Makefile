@@ -1,4 +1,4 @@
-LATEXMK = latexmk -xelatex
+LATEXMK = latexmk -xelatex -f
 
 LYX = $(sort $(wildcard *.lyx))
 TEX = $(LYX:%.lyx=%.tex) 7_appendix.tex
@@ -10,7 +10,7 @@ all: thesis.pdf
 # Use `print-VARNAME` to print arbitrary variables
 print-%: ; @echo $* = $($*)
 
-thesis.pdf: thesis.tex config.tex $(TEX)
+thesis.pdf: thesis.tex config.tex references.bib $(TEX)
 	$(LATEXMK) thesis
 
 %.tex: %.lyx Makefile
@@ -27,7 +27,7 @@ thesis.pdf: thesis.tex config.tex $(TEX)
 	R -e 'library(knitr);knit("$<")'
 
 clean:
-	rm -f thesis.{aux,bbl,bcf,blg,fdb_latexmk,fls,log,out,run.xml,lof,lot,toc}
+	rm -f thesis.{aux,bbl,bcf,blg,fdb_latexmk,fls,log,out,run.xml,lof,lot,toc,nlo}
 	rm -f $(TEX)
 	rm -f *~
 

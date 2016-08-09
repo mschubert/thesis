@@ -88,26 +88,6 @@ Modelling Drug Interactions
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-contribution{add this here}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Aim
-\end_layout
-
-\begin_layout Standard
 Maybe the simplest way to investigate a biological system using gene expression
  data is to not make any assumptions concerning translation, protein activity,
  signalling, or pathways.
@@ -219,6 +199,18 @@ key "Ramaswamy2007-kw"
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Results of this chapter are unpublished.
+ I produced all analyses, plots, and written text in this thesis myself.
 \end_layout
 
 \begin_layout Section
@@ -408,6 +400,15 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Distributions of GSEA and GSVA scores
+\end_layout
+
+\end_inset
+
 Distributions of GSEA (left panel) and GSVA (right panel) scores for up-
  and downregulated genes as well as the combined score of both.
  GSEA: Combining up- and downregulated score of the yields scores yields
@@ -519,6 +520,16 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Volcano plot of associations between expression of drug signatures and drug
+ response
+\end_layout
+
+\end_inset
+
 Volcano plot of associations between expression of drug signatures and drug
  response for cell lines of all tissues.
  Effect size is standard deviations of the score on the horizontal axis,
@@ -638,6 +649,16 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Volcano plot of associations between expression of drug signatures and drug
+ response for individual cancer types
+\end_layout
+
+\end_inset
+
 Volcano plot of associations between expression of drug signatures and drug
  response for individual cancer types.
  Effect size is standard deviations of the score on the horizontal axis,
@@ -842,7 +863,16 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Matrix of naive associations.
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Matrix of naive drug sensitisation associations
+\end_layout
+
+\end_inset
+
+Matrix of naive drug sensitisation associations.
  Predicted synergies in green, antagonisms in red.
  Effect size shown if 
 \begin_inset Formula $FDR<0.2$
@@ -901,6 +931,15 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Linear fit behind the associations between Trametinib and QS-11
+\end_layout
+
+\end_inset
+
 Linear fit behind the associations between Trametinib and QS-11.
  There is a strong linear correlation between expression of the QS-11-responsive
  signature and the drug sensitivity to Trametinib across all cancer types
@@ -1073,6 +1112,15 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Potential reason for the association between the QS11 and Trametinib
+\end_layout
+
+\end_inset
+
 Potential reason for the association between the QS11-responsive signature
  and the MEK inhibitor Trametinib (GSK1120212): QS11 activates Wnt, which
  corss-activates MAPK.
@@ -1248,6 +1296,15 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Matrix of associations including the treatment drug as covariate
+\end_layout
+
+\end_inset
+
 Matrix of associations including the treatment drug as covariate
 \begin_inset CommandInset label
 LatexCommand label
@@ -1314,6 +1371,15 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Linear fits behind various drug sensitisation associations
+\end_layout
+
+\end_inset
+
 Linear fits behind the associations of PD-0332991 (a CDK4/6 inhibitor) and
  Trametinib (GSK1120212, a MEK inhibitor) in multiple tissues (top), the
  Raf inhibitor SB590885 and multiple MEK inhibitors in breast cancer (middle),
@@ -1464,6 +1530,15 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Overview of number of experiments available
+\end_layout
+
+\end_inset
+
 Overview of number of experiments available
 \begin_inset CommandInset label
 LatexCommand label
@@ -1550,6 +1625,15 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Selected drug combinations for breast cancer cell lines
+\end_layout
+
+\end_inset
+
 Selected drug combinations for breast cancer cell lines
 \begin_inset CommandInset label
 LatexCommand label
@@ -3248,6 +3332,15 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Screening results and fit of drug-response curves for 72 hours of treatment
+\end_layout
+
+\end_inset
+
 Screening results and fit of drug-response curves for 72 hours of treatment.
  Blue dots are measured fraction of surviving cells at a given concentration
  with the blue line as fit.
@@ -3331,7 +3424,16 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Screening results and fit of drug-response curves for 72 hours of treatment.
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Screening results and fit of drug-response curves for 96 hours of treatment
+\end_layout
+
+\end_inset
+
+Screening results and fit of drug-response curves for 96 hours of treatment.
  Legend as in figure 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -3459,6 +3561,15 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Suggested layout of a 384 well plate to screen six different combinations
+\end_layout
+
+\end_inset
+
 Suggested layout of a 384 well plate to screen six different combinations
  and have a single-agent control for each on the same plate.
  Red, yellow, and blue squares correspond to combination dilutions, with
@@ -3552,6 +3663,15 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Combination of PD-0325901 and AT-7519
+\end_layout
+
+\end_inset
+
 Combination of PD-0325901 as sensitiser and AT-7519 as treatment drug.
 \begin_inset CommandInset label
 LatexCommand label
@@ -3618,6 +3738,15 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Combination of AUY922 and VX-680
+\end_layout
+
+\end_inset
+
 Combination of AUY922 as sensitiser and VX-680 as treatment drug.
 \begin_inset CommandInset label
 LatexCommand label
@@ -3684,6 +3813,15 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Combination of WZ3105 and PD-0325901
+\end_layout
+
+\end_inset
+
 Combination of WZ3105 as sensitiser and PD-0325901 as treatment drug.
 \begin_inset CommandInset label
 LatexCommand label
@@ -3712,7 +3850,7 @@ reference "fig:PD+AT"
 
 \end_inset
 
--
+, 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:WZ+PD"

@@ -88,26 +88,6 @@ Functional Evaluation of Pathway Methods in basal Gene Expression
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-contribution{add this here}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Aim
-\end_layout
-
-\begin_layout Standard
 With sequencing technologies becoming more and more commonplace for cancer
  diagnosis in both the clinical and preclinical setting, there is a wealth
  of molecular data available that likely harbours yet undiscovered treatment
@@ -203,6 +183,53 @@ key "Garnett2012-dk,Iorio2016-gh"
 \end_inset
 
  and TCGA data, respectively.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The chapter represents the results stage of improved pathway signatures.
+ All analyses, plots, and written text in this thesis I produced myself,
+ while incorporating comments from the coauthors:
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Schubert M
+\series default
+, Klinger B, Klünemann M, Garnett MJ, Blüthgen N, Saez-Rodriguez J.
+ 
+\begin_inset Quotes eld
+\end_inset
+
+
+\shape italic
+Perturbation-response genes reveal signaling footprints in cancer gene expressio
+n
+\shape default
+.
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\series bold
+bioRxiv
+\series default
+ 065672 (2016).
+ doi:10.1101/065672
 \end_layout
 
 \begin_layout Section
@@ -394,6 +421,15 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Correlation for TCGA primary tumour data and GDSC cell lines
+\end_layout
+
+\end_inset
+
 Correlation for TCGA primary tumour data (left) and GDSC cell lines (right)
  for perturbation-response genes in basal expression.
  Positive correlation in blue, negative in red.
@@ -494,6 +530,15 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Stability of basal pathway scores when bootstrapping input experiments
+\end_layout
+
+\end_inset
+
 Stability of basal pathway scores when bootstrapping input experiments.
  The variance of pathway scores in cell lines given bootstraps more than
  five times as high compared to the variance of bootstraps given cell lines
@@ -747,6 +792,15 @@ name "fig:cor-Gene-Ontology"
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Correlation of basal pathway scores for gene set methods
+\end_layout
+
+\end_inset
+
 Comparison to pathway member GSEA for TCGA primary tumour data (left) and
  GDSC cell lines (right).
  Sign of the correlation indicated by colour of the points (positive correlation
@@ -950,6 +1004,15 @@ name "fig:cor:PARADIGM"
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Correlation of basal pathway scores for other pathway methods
+\end_layout
+
+\end_inset
+
 Comparison to state of the art pathway methods, legend as in figure 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -1113,6 +1176,15 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Volcano plot of pan-cancer associations between driver mutations
+\end_layout
+
+\end_inset
+
 Volcano plot of pan-cancer associations between driver mutations (denoted
  by the superscript mut and green/red color) and copy number aberrations
  (denoted by amp/del and yellow/purple color) with inferred pathway activity
@@ -1345,6 +1417,15 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Comparison of pathway scores across different methods
+\end_layout
+
+\end_inset
+
 Comparison of pathway scores (vertical axis) across different methods (horizonta
 l axis).
  TP53 and KRAS mutations within cancer types in top row, EGFR amplification
@@ -1495,6 +1576,15 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Pathway context of EGFR/MAPK and its inhibitors
+\end_layout
+
+\end_inset
+
 Pathway context of EGFR/MAPK and its inhibitors.
 \begin_inset CommandInset label
 LatexCommand label
@@ -1619,6 +1709,16 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Volcano plot of pan-cancer associations between PRGs in GDSC cell lines
+ and drug response
+\end_layout
+
+\end_inset
+
 Volcano plot of pan-cancer associations between PRGs in GDSC cell lines
  and drug response (IC50), corrected for cancer type.
  Effect sizes of smaller than zero indicate sensitivity markers (shown in
@@ -1692,6 +1792,15 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Comparison of the associations obtained by different pathway methods
+\end_layout
+
+\end_inset
+
 Comparison of the associations obtained by different pathway methods.
  Number of associations on the vertical, FDR on the horizontal axis.
  PRGs yield more and stronger associations compared to all other pathway
@@ -1797,6 +1906,15 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Comparison of stratification by mutations and pathway scores
+\end_layout
+
+\end_inset
+
 Comparison of stratification by mutations and pathway scores for the MAPK
  pathway (BRAF, NRAS, or KRAS mutations) and Trametinib (top left)/AZ628
  (bottom left), BRAF mutation and Dabrafenib (top right), and p53 pathway/TP53
@@ -1852,6 +1970,16 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Volcano plot of tissue-specific associations between pathway activity and
+ drug response
+\end_layout
+
+\end_inset
+
 Volcano plot of tissue-specific associations between pathway activity and
  drug response to clinical drugs only.
  Horizontal axis shows the regression slope, vertical axis the per-tissue
@@ -1935,6 +2063,15 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+EGFR activity mediates resistance to Rapamycin in Esophageal Carcinoma 
+\end_layout
+
+\end_inset
+
 EGFR activity mediates resistance to Rapamycin (macrolide antibiotic) in
  Esophageal Carcinoma (ESCA).
  Stratifications compared to differences in drug response of other tissues.
@@ -2020,6 +2157,15 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Trail activity mediates sensitivity to Docetaxel in Low-Grade Glioma
+\end_layout
+
+\end_inset
+
 Trail activity mediates sensitivity to Docetaxel (microtubule stabilizer)
  in Low-Grade Glioma (LGG).
  Legend as in figure 
@@ -2474,6 +2620,15 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Comparison of pathway methods by association with patient survival
+\end_layout
+
+\end_inset
+
 Comparison of pathway methods by association of a pathway with increased
  (green) or decreased (red) patient survival.
  Colours correspond to z-score (grey: FDR>20%, white: no pathway available).
@@ -2568,6 +2723,16 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Volcano plot of cancers-specific associations between patient survival and
+ inferred pathway score
+\end_layout
+
+\end_inset
+
 Volcano plot of cancers-specific associations between patient survival and
  inferred pathway score using our method, effect size on the x-axis, FDR-adjuste
 d p-values on y.
@@ -2689,6 +2854,15 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Examples of Kaplan-Meier curves between groups of up-, downregulated pathways
+\end_layout
+
+\end_inset
+
 Examples of Kaplan-Meier curves where our method is able to separate between
  groups of up-, downregulated pathways vs the rest.
  Hits shown are TNFa in KIRC, JAK-STAT in LGG, and Trail and CESC, where
