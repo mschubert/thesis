@@ -46,7 +46,6 @@ mantra = "/home/mschu/Work/MANTRA"
 sig_comb = "/home/mschu/Work/signature-combinations"
 @
 
-\clearpage
 \section{Associations for baseline methods (chapter 2)}
 \setcounter{table}{0}
 \renewcommand{\thetable}{A\arabic{table}}
