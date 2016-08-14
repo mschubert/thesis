@@ -54,7 +54,7 @@ sig_comb = "/home/mschu/Work/signature-combinations"
 
 \subsubsection{Associations for mutations}
 
-\tiny{
+{\tiny
 <<pan_drug_all_mut, echo=FALSE>>=
 do = function(fid, caption="", ...) {
     file.path(speed2, "drug_assocs/assocs_all", paste0(fid, ".RData")) %>%
@@ -72,7 +72,7 @@ do("mutation", "Mutations")
 
 \subsubsection{Associations for Gene Ontology}
 
-\tiny{
+{\tiny
 <<pan_drug_all_go, echo=FALSE>>=
 do("gsva_go", "Gene Ontology")
 @
@@ -80,7 +80,7 @@ do("gsva_go", "Gene Ontology")
 
 \subsubsection{Associations for Reactome}
 
-\tiny{
+{\tiny
 <<pan_drug_all_reactome, echo=FALSE>>=
 do("gsva_reactome", "Reactome")
 @
@@ -117,7 +117,7 @@ cer type. PRGs provide stronger associations and are more in line with literatur
 pathways.}
 \end{figure}
 
-\tiny{
+{\tiny
 <<echo=FALSE>>=
 do = function(fid, caption="", ...) {
     file.path(speed2, "tcga_pathway_per_mutation/assocs_driver_mapped", paste0(fid, ".RData")) %>%
@@ -147,7 +147,7 @@ fications and deletion. Effect size is standard deviations of pathway scores. P-
 type regressed out. Associations by PRGs are more in line with established literature knowledge.}
 \end{figure}
 
-\tiny{
+{\tiny
 <<echo=FALSE>>=
 do = function(fid, caption="", ...) {
     file.path(speed2, "tcga_pathway_per_mutation/assocs_cna_mapped", paste0(fid, ".RData")) %>%
@@ -181,7 +181,7 @@ significant oncogene addiction associations, the rest of methods show no obvious
 drug target and pathway.}
 \end{figure}
 
-\tiny{
+{\tiny
 <<echo=FALSE>>=
 do = function(fid, caption="", ...) {
     file.path(speed2, "drug_assocs/assocs_mapped", paste0(fid, ".RData")) %>%
@@ -211,7 +211,7 @@ significant oncogene addiction associations, the rest of methods show no obvious
 drug target and pathway.}
 \end{figure}
 
-\tiny{
+{\tiny
 <<echo=FALSE>>=
 do = function(fid, caption="", ...) {
     file.path(speed2, "drug_assocs/assocs_mapped", paste0(fid, ".RData")) %>%
@@ -245,7 +245,7 @@ method to separate associations into classical oncogenic and tumor suppressor pa
 the meaning of associations obtained by other methods.}
 \end{figure}
 
-\tiny{
+{\tiny
 <<echo=FALSE>>=
 do = function(fid, caption="", ...) {
     file.path(speed2, "tcga_survival/assocs_cont_mapped", paste0(fid, ".RData")) %>%
@@ -275,7 +275,7 @@ method to separate associations into classical oncogenic and tumor suppressor pa
 the meaning of associations obtained by other methods.}
 \end{figure}
 
-\tiny{
+{\tiny
 <<echo=FALSE>>=
 do = function(fid, caption="", ...) {
     file.path(speed2, "tcga_survival/assocs_cont_mapped", paste0(fid, ".RData")) %>%
@@ -303,7 +303,7 @@ do("speed_matrix", "Perturbation-response genes")
 
 \subsubsection{Pan-cancer}
 
-\tiny{
+{\tiny
 <<echo=FALSE>>=
 do = function(caption="", ...) {
     file.path(mantra, "assocs.RData") %>%
@@ -317,7 +317,7 @@ do("MANTRA (pan-cancer)")
 
 \subsubsection{Tissue specific}
 
-\tiny{
+{\tiny
 <<echo=FALSE>>=
 do = function(caption="", ...) {
     file.path(mantra, "assocs.RData") %>%
@@ -334,7 +334,7 @@ do("MANTRA (cancer-specific)")
 
 \subsubsection{Naive}
 
-\tiny{
+{\tiny
 <<echo=FALSE>>=
 do = function(fid, caption="", ...) {
     file.path(sig_comb, "drug_tissue/assocs", paste0(fid, ".RData")) %>%
@@ -348,7 +348,7 @@ do("pan_bing_pancov-", "Drug sensitisation (naive pan-cancer)")
 
 \subsubsection{With added covariate}
 
-\tiny{
+{\tiny
 <<echo=FALSE>>=
 do("pan_bing_pancov", "Drug sensitisation (pan-cancer with covariate)")
 @
