@@ -211,6 +211,16 @@ key "Ramaswamy2007-kw"
 \begin_layout Standard
 Results of this chapter are unpublished.
  I produced all analyses, plots, and written text in this thesis myself.
+ Data for experimental validation in chapter 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Tissue-specific-synergistic-comp"
+
+\end_inset
+
+ were performed by Ole Pless, Bernhard Ellinger, and Milena Kalmer (Department
+ ScreeningPort, Fraunhofer Institute for Molecular Biology and Applied Ecology
+ IME, Hamburg).
 \end_layout
 
 \begin_layout Section
@@ -1467,6 +1477,13 @@ key "Pezuk2013-xn"
 
 \begin_layout Section
 Tissue-specific synergistic compounds
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Tissue-specific-synergistic-comp"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
