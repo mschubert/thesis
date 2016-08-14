@@ -574,7 +574,20 @@ reference "fig:mantra-pan"
 
 \end_inset
 
-.
+ (associations in appendix section 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{sub:ch5-mantra-pan}
+\end_layout
+
+\end_inset
+
+).
  The top hits mostly include the drugs NPK76−II−72−1 (an experimental PLK3
  inhibitor), Trametinib (a MEK inhibitor) Afatinib (an EGFR inhibitor),
  and Bleomycin/Gemcitabine (cytotoxic drugs).
@@ -699,6 +712,19 @@ In addition to the potential issues outlined above, tissue-specific associations
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:mantra-tissue"
+
+\end_inset
+
+ and associations in appendix section 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{sub:ch5-mantra-tissue}
+\end_layout
 
 \end_inset
 
@@ -1040,7 +1066,20 @@ reference "fig:Matrix-of-naive"
 
 \end_inset
 
-.
+ (associations in appendix section 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{sub:ch5-lincs-naive}
+\end_layout
+
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Standard
@@ -1252,7 +1291,20 @@ reference "fig:covar-assocs-matrix"
 
 \end_inset
 
-.
+ (associations in appendix section 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{sub:ch5-lincs-covar}
+\end_layout
+
+\end_inset
+
+).
  Top hits now are Trametinib (GSK1120212) with PD-0332991 (a CDK4/6 inhibitor),
  FK866 (Nampt inhibitor) with Sorafenib (a Raf inhibitor) and NPK76-II-72-I
  (NAMPT inhibitor).
@@ -3867,14 +3919,27 @@ reference "fig:PD+AT"
 
 \end_inset
 
-, 
+--
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:WZ+PD"
 
 \end_inset
 
- and appendix D).
+ and appendix section 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{sub:ch5-lincs-screen}
+\end_layout
+
+\end_inset
+
+).
  If the screening concentration using the extended grid did indeed capture
  the dose-response curve of the single-agent dilutions, the middle panel
  with the calculated combination efficacy under the null hypothesis (Loewe

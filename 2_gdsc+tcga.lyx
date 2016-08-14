@@ -942,6 +942,19 @@ reference "fig:Mutation-pancan"
 
 \end_inset
 
+ and associations in appendix 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{sub:ch2-mut}
+\end_layout
+
+\end_inset
+
 ) very much agree: the strongest hit in both cases is that 
 \begin_inset ERT
 status open
@@ -1146,7 +1159,20 @@ reference "fig:GO-PanCan-unfiltered"
 
 \end_inset
 
-.
+ (associations in appendix 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{sub:ch2-go}
+\end_layout
+
+\end_inset
+
+)).
  Among the the top drugs, there are MEK inhibitors (Trametinib, RDEA119),
  p53-stabiliser Nutlin-3a, and the multi-kinase inhibitor WZ3105.
  The biological processes that they are involved in have no obvious connection
@@ -1310,7 +1336,20 @@ reference "fig:Reactome-PanCancer-unfiltered"
 
 \end_inset
 
-).
+ and associations in appendix 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{sub:ch2-reactome}
+\end_layout
+
+\end_inset
+
+)).
  The MEK inhibitors Trametinib and RDEA119 associate most strongly with
  fibrin clot dissolution and laminin interactions (a fibrous protein present
  in the basal lamina of the epithelia).
@@ -3267,7 +3306,20 @@ reference "fig:pancan-volcano"
 
 \end_inset
 
-.
+ (associations in appendix 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{sub:ch2-speed}
+\end_layout
+
+\end_inset
+
+).
  Negative regression slopes (left side of the graph, green) indicate sensitivity
  markers, i.e.
  a higher pathway activation score correlates with a lower IC50.
