@@ -93,7 +93,7 @@ do("gsva_reactome", "Reactome")
 
 \subsubsection{Original cutoffs}
 
-%TODO
+%TODO: scores in diskstation://Michael/mschu[...]/QnD_SPEED/scores[..].ro
 
 \subsubsection{Distance-optimised cutoffs}
 
