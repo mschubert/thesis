@@ -2296,6 +2296,13 @@ key "Iorio2013-pv"
 
 \begin_layout Subsubsection
 The L1000 platform
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:LINCS-cmap"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard

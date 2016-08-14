@@ -123,9 +123,23 @@ abbrv{LINCS}
 
 \end_inset
 
- Connectivity Map data had just been released.
+ Connectivity Map (cf.
+ section 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{subsec:LINCS-cmap}
+\end_layout
+
+\end_inset
+
+) data had just been released.
  The BROAD institute held a small symposium and workshop about the platform
- (the L1000), the data they had collected, and how they are planning to
+ (the L1000), the data they had collected, and how they were planning to
  take it forward with web-based 
 \begin_inset Quotes eld
 \end_inset
@@ -136,13 +150,21 @@ apps
 
  that did signature matching based on GSEA without actually exposing the
  data to its users.
- Notwithstanding those potential issues, it would be of enormous interest
- to combine this data set with what we are already working on with the GDSC:
- this way, we have for the same cancer tissue (sometimes even the same cell
- line) not only high-quality baseline expression and drug response curves,
- but also lower coverage/quality drug-perturbed gene for a lot of different
- compounds, including 150 drug that are overlapping between the GDSC and
- the LINCS project, for which we could use Signature Matching methods.
+ Now, it would be of enormous interest to combine this data set with what
+ we are already working on with the GDSC: this way, we have for the same
+ cancer tissue (sometimes even the same cell line) not only high-quality
+ baseline expression and drug response curves, but also lower coverage/quality
+ drug-perturbed gene for a lot of different compounds, including 150 drug
+ that are overlapping between the GDSC and the LINCS project, for which
+ we could use Signature Matching methods (in terms of tissues, see figure
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:LINCS-tissues"
+
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Standard
@@ -150,6 +172,21 @@ Even more interesting, we could generate a signature between cells that
  are sensitive and those that are resistant to a certain kind of drug, and
  then match this signature with another drug that potentially converts the
  cells from a resistant to a sensitive phenotype.
+ If this interaction is causal, we would expect the two drugs to work better
+ in combination than any single treatment suggests, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+latin{i.e.}
+\end_layout
+
+\end_inset
+
+ a synergistic effect between the two.
  This has been shown to work when trying to overcome glutocorticoid resistance
  in acute lymphoblastic leukaemia (
 \begin_inset ERT
@@ -268,7 +305,8 @@ abbrv{PRL}
 \end_inset
 
 ) that corresponds to a consensus signature across different conditions
- for a given drug.
+ for a given drug–using a method called Mode of action by Network Analysis
+ (MANTRA).
 \end_layout
 
 \begin_layout Standard
@@ -301,11 +339,11 @@ abbrv{HGNC}
 \end_inset
 
  symbols.
- From the 250 most up- and downregulated genes I took those that uniquely
+ From the 250 most up- and downregulated genes I took those that are uniquely
  present in the respective subset, leaving approximately 100 genes per drug
  signature.
  I performed a two-tailed GSVA (details section 2.2.2) in the basal expression
- of the GDSC cell lines and thus obtain a drug-responsive signature expression
+ of the GDSC cell lines and thus obtained a drug-responsive signature expression
  score for each drug that has a 
 \begin_inset ERT
 status open
@@ -361,7 +399,7 @@ reference "fig:Distributions-GSEA"
 
 \end_inset
 
-, left panel), which explains the choice of GSVA over GSEA also in this
+, right panel), which explains the choice of GSVA over GSEA also in this
  context.
 \end_layout
 
@@ -540,8 +578,8 @@ Volcano plot of associations between expression of drug signatures and drug
 
 \end_inset
 
-Volcano plot of associations between expression of drug signatures and drug
- response for cell lines of all tissues.
+Volcano plot of associations between expression of drug signatures (second
+ part of label) and drug response (first part) for cell lines of all tissues.
  Effect size is standard deviations of the score on the horizontal axis,
  FDR-adjusted p-values on the vertical axis.
 \begin_inset CommandInset label
@@ -1199,7 +1237,8 @@ name "fig:QS11-Problem-schematic"
 \begin_layout Standard
 From our results above, it seems that MEK inhibitors in general produce
  good signatures, or otherwise we would not expect as many MEK inhibitors
- as we see in our associations (figure 
+ as we see in our associations (GSK1120212, CI-1040, PD-0325901 in figure
+ 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Matrix-of-naive"
@@ -1586,7 +1625,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename figures/3.2_experiments.svg
+	filename figures/3.2_experiments.pdf
 	lyxscale 50
 	width 90text%
 
@@ -1648,10 +1687,9 @@ reference "fig:LINCS-tissues"
 \end_inset
 
 ).
- For the rest of decisions, I am not going to make them at all.
- Instead of taking the top-performing combinations from individual predictions,
- I would instead look at the ones that are most consistently predicted to
- be synergistic.
+ But instead of taking the top-performing combinations from individual predictio
+ns, I would instead look at the ones that are most consistently predicted
+ to be synergistic.
  I built models (analogous to section 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -3036,7 +3074,8 @@ Given that we know which concentration
 \begin_inset Formula $x$
 \end_inset
 
- of a given drug we treat our cells with and which relative viability 
+ of a given drug we treat our cells with and which relative (to the untreated
+ control) viability 
 \begin_inset Formula $y$
 \end_inset
 
@@ -3045,11 +3084,12 @@ Given that we know which concentration
 \begin_inset Formula $E^{min}$
 \end_inset
 
-, the maximal viability 
+ (at high drug concentration), the maximal viability 
 \begin_inset Formula $E^{max}$
 \end_inset
 
-, the concentration of the half maximum effect 
+ (at very low drug concentration), the concentration of the half maximum
+ effect 
 \begin_inset Formula $m$
 \end_inset
 
@@ -3085,7 +3125,7 @@ key "Yadav2015-bu"
 
 \end_inset
 
- between our drug response parameters is in both cases:
+ between our drug response parameters is:
 \end_layout
 
 \begin_layout Standard
@@ -3545,9 +3585,10 @@ reference "tab:combined-score"
  parameters for each drug in this cell line, as we would expect them not
  to be identical with the GDSC due to a different experimental setup.
  This was done in 384 well plate, seeding cells and letting them attach
- for 24 hours, then treating with the sensitiser, then treating with the
- treatment drug after another 24 hours, and measuring the number of surviving
- cells compared to untreated wells using Promega CellTiter Glo as a readout.
+ for 24 hours, then treating them with a drug for 72 (if it was the treatment
+ drug) or 96 hours (if it was the sensitiser), and measuring the number
+ of surviving cells compared to untreated wells using Promega CellTiter
+ Glo as a readout.
 \end_layout
 
 \begin_layout Standard
@@ -3684,6 +3725,10 @@ reference "tab:combined-score"
 \end_inset
 
 .
+ The protocol was to seed cells and let them attach for 24 hours, then treating
+ with the sensitiser, then treating with the treatment drug after another
+ 24 hours, and after 72 more hours measuring the number of surviving cells
+ compared to untreated wells using Promega CellTiter Glo as a readout.
 \end_layout
 
 \begin_layout Standard
@@ -3912,7 +3957,7 @@ name "fig:WZ+PD"
 \end_layout
 
 \begin_layout Standard
-There are multiple aspects to these plots (figures 
+In figures 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:PD+AT"
@@ -3926,7 +3971,7 @@ reference "fig:WZ+PD"
 
 \end_inset
 
- and appendix section 
+ (and appendix section 
 \begin_inset ERT
 status open
 
@@ -3939,7 +3984,10 @@ ref{sub:ch5-lincs-screen}
 
 \end_inset
 
-).
+), I show the results of the screening experiment (left) vs.
+ the calculated viability if the drugs did not interact (middle) and their
+ difference (right).
+ There are multiple aspects to these plots.
  If the screening concentration using the extended grid did indeed capture
  the dose-response curve of the single-agent dilutions, the middle panel
  with the calculated combination efficacy under the null hypothesis (Loewe
