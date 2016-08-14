@@ -1291,7 +1291,59 @@ reference "fig:volcano-CNA/drivers"
 
 \end_inset
 
-).
+; other methods in figures 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{fig:sp2-mut}
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{fig:sp2-cna}
+\end_layout
+
+\end_inset
+
+, as well as tables in appendix 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{sub:ch4-mut}
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{sub:ch4-cna}
+\end_layout
+
+\end_inset
+
+ for mutations and CNAs, respectively).
 \end_layout
 
 \begin_layout Standard
@@ -1878,29 +1930,41 @@ e (absence of TP53 activity) to this drug that our method recovers but neither
 \end_layout
 
 \begin_layout Standard
-The other pathway methods (figure 
-\begin_inset Note Note
+The other pathway methods showed a much lower number of associations across
+ the range of significance (figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:drug-assoc-strength-compare"
+
+\end_inset
+
+; associations in figure 
+\begin_inset ERT
 status open
 
 \begin_layout Plain Layout
-X
+
+
+\backslash
+ref{fig:sp2-drug-pancan}
 \end_layout
 
 \end_inset
 
- and tables 
-\begin_inset Note Note
+ and tables in appendix 
+\begin_inset ERT
 status open
 
 \begin_layout Plain Layout
-Y-Z
+
+
+\backslash
+ref{sub:ch4-drug-pan}
 \end_layout
 
 \end_inset
 
- in appendix) showed a much lower number of associations across the range
- of significance (Fig.
- 4c).
+).
  Using the same significance threshold (10% FDR) mutated driver genes only
  yield 136 associations.
  Mutated driver genes provide stronger associations only for 
@@ -3149,7 +3213,34 @@ reference "fig:Volcano-drug-tissue"
 \end_inset
 
 ) resulted in 75 significant associations for footprints vs.
- 36 for Reactome and 12 for GO (ANOVA, FDR<10%).
+ 36 for Reactome and 12 for GO (ANOVA, FDR<10%; associations of different
+ methods in figure 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{fig:sp2-drug-tissue}
+\end_layout
+
+\end_inset
+
+ and tables in appendix 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{sub:ch4-drug-tissue}
+\end_layout
+
+\end_inset
+
+).
  The strongest association was response to the MEK inhibitor Trametinib
  where sensitivity was positively correlated with expression of MAPK-responsive
  genes, explaining a total of 54% of the total variance observed in the
@@ -3794,6 +3885,32 @@ reference "fig:surv-pancan"
 
 \end_inset
 
+; associations of different methods in figure 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{fig:sp2-surv-pancan}
+\end_layout
+
+\end_inset
+
+ and tables in appendix 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{sub:ch4-surv-pan}
+\end_layout
+
+\end_inset
+
 ).
  Gene Ontology found much weaker associations for those pathways, and the
  other methods missed them almost entirely.
@@ -3892,6 +4009,32 @@ For individual cancer types, I found a similar separation between oncogenic
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:surv-tissue"
+
+\end_inset
+
+; associations of different methods in figure 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{fig:sp2-surv-tissue}
+\end_layout
+
+\end_inset
+
+ and tables in appendix 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{sub:ch4-surv-tissue}
+\end_layout
 
 \end_inset
 
