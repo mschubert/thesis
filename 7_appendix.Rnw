@@ -109,7 +109,8 @@ do("gsva_reactome", "Reactome")
 \begin{centering}
 \centerline{\includegraphics[width=0.7\paperwidth]{figures/mut_volcano_pancan-1} }
 \par\end{centering}
-\caption{Volcano plot for pan-cancer associations between pathway scores and mutated driver genes. Effect
+\caption[Volcano plot for pan-cancer associations between pathway scores and mutated driver genes]{
+Volcano plot for pan-cancer associations between pathway scores and mutated driver genes. Effect
 size is standard deviations of pathway scores. P-values FDR-corrected. Associations corrected for can-
 cer type. PRGs provide stronger associations and are more in line with literature knowledge of signaling
 pathways.}
@@ -139,7 +140,8 @@ do("speed_matrix", "Perturbation-response genes")
 \begin{centering}
 \centerline{\includegraphics[width=0.78\paperwidth]{figures/cna_volcano_pancan-1} }
 \end{centering}
-\caption{Volcano plots for pan-cancer associations between pathway scores and GISTIC-filtered gene ampli-
+\caption[Volcano plots for pan-cancer associations between pathway scores and gene amplifications/deletion]{
+Volcano plots for pan-cancer associations between pathway scores and GISTIC-filtered gene ampli-
 fications and deletion. Effect size is standard deviations of pathway scores. P-values FDR-corrected. Cancer
 type regressed out. Associations by PRGs are more in line with established literature knowledge.}
 \end{figure}
@@ -171,7 +173,8 @@ do("speed_matrix", "Perturbation-response genes")
 \begin{centering}
 \centerline{\includegraphics[width=0.7\paperwidth]{figures/drug_volcano_pancan-1} }
 \end{centering}
-\caption{Pan-cancer volcano plots for associations between pathway scores and drug response (IC50). Effect
+\caption[Pan-cancer volcano plots for associations between pathway scores and drug response (IC50)]{
+Pan-cancer volcano plots for associations between pathway scores and drug response (IC50). Effect
 size arbitrary units, p-values FDR-corrected. Pathway-response genes are the only method to recover highly
 significant oncogene addiction associations, the rest of methods show no obvious connection between the
 drug target and pathway.}
@@ -200,7 +203,8 @@ do("speed_matrix", "Perturbation-response genes")
 \begin{centering}
 \centerline{\includegraphics[width=0.7\paperwidth]{figures/drug_volcano_tissue-1} }
 \end{centering}
-\caption{Tissue-specific volcano plots for associations between pathway scores and drug response (IC50). Effect
+\caption[Tissue-specific volcano plots for associations between pathway scores and drug response (IC50)]{
+Tissue-specific volcano plots for associations between pathway scores and drug response (IC50). Effect
 size arbitrary units, p-values FDR-corrected. Pathway-response genes are the only method to recover highly
 significant oncogene addiction associations, the rest of methods show no obvious connection between the
 drug target and pathway.}
@@ -233,7 +237,8 @@ do("speed_matrix", "Perturbation-response genes")
 \begin{centering}
 \centerline{\includegraphics[width=0.7\paperwidth]{figures/surv_volcano_pancan-1} }
 \end{centering}
-\caption{Volcano plots for pan-cancer survival associations. Effect size arbitrary units, p-values FDR-
+\caption[Volcano plots for pan-cancer survival associations]{
+Volcano plots for pan-cancer survival associations. Effect size arbitrary units, p-values FDR-
 corrected. Pathway-response genes provide stronger associations and are the only
 method to separate associations into classical oncogenic and tumor suppressor pathways, calling into question
 the meaning of associations obtained by other methods.}
@@ -262,7 +267,8 @@ do("speed_matrix", "Perturbation-response genes")
 \begin{centering}
 \centerline{\includegraphics[width=0.7\paperwidth]{figures/surv_volcano_tissue-1} }
 \end{centering}
-\caption{Volcano plots for tissue-specific survival associations. Effect size arbitrary units, p-values FDR-
+\caption[Volcano plots for tissue-specific survival associations]{
+Volcano plots for tissue-specific survival associations. Effect size arbitrary units, p-values FDR-
 corrected. All methods show strongest associations with KIRC and LGG. Pathway-response genes only
 method to separate associations into classical oncogenic and tumor suppressor pathways, calling into question
 the meaning of associations obtained by other methods.}
