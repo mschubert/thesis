@@ -1538,9 +1538,21 @@ Drug associations using GDSC cell lines
 
 \begin_layout Standard
 I performed drug association using a linear model between 265 drug IC50s
- and 11 inferred pathway scores (lm function, R stats package), doing a
- total of 2915 comparisons for which I correct the p-values using the false
- discovery rate.
+ and 11 inferred pathway scores (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+code{lm}
+\end_layout
+
+\end_inset
+
+ function, R stats package), doing a total of 2915 comparisons for which
+ I correct the p-values using the false discovery rate.
  For pan-cancer associations, I used the cancer type as a covariate in order
  to discard the effect that different tissues have on the observed drug
  response.
@@ -1828,14 +1840,26 @@ name "fig:drug-assoc-strength-compare"
 \end_layout
 
 \begin_layout Standard
-I found that for the pan-cancer setting, there were 161 significant associations
- (FDR<5%, conditioned on tissue of origin) for our method and 27 and 66
+I found that for the pan-cancer setting, there were 199 significant associations
+ (FDR<10%, conditioned on tissue of origin) for our method and 27 and 66
  for Gene Ontology and Reactome pathways, respectively.
  The top hit using our method was the associations between Nutlin-3a and
  p53-responsive genes.
- Nutlin-3a is an MDM2-inhibitor that in turn stabilizes TP53, where it has
- also previously been shown that a mutation in TP53 is strongly associated
- with increased resistance to Nutlin-3a 
+ Nutlin-3a is an MDM2-inhibitor that in turn stabilizes p53, where it has
+ also previously been shown that a mutation in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+gene{TP53}
+\end_layout
+
+\end_inset
+
+ is strongly associated with increased resistance to Nutlin-3a 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Garnett2012-dk"
@@ -1851,14 +1875,67 @@ e (absence of TP53 activity) to this drug that our method recovers but neither
  or TAK1 (7-Oxozeaonol) inhibitor.
  These are all associations that the other methods miss or associate with
  a different pathway.
- I then went on to quantify how many of the associations found using either
- GO or Reactome can be explained by pathway-response genes by conditioning
- the associations on the strongest pathway-response association and verifying
- that the pathway expression association is still significant after this
- conditioning.
- For Gene Ontology, there was no association that could not be explained
- by pathway-response genes, and the number of significant associations using
- Reactome pathways dropped to 18.
+\end_layout
+
+\begin_layout Standard
+The other pathway methods (figure 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+X
+\end_layout
+
+\end_inset
+
+ and tables 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Y-Z
+\end_layout
+
+\end_inset
+
+ in appendix) showed a much lower number of associations across the range
+ of significance (Fig.
+ 4c).
+ Using the same significance threshold (10% FDR) mutated driver genes only
+ yield 136 associations.
+ Mutated driver genes provide stronger associations only for 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+gene{TP53}
+\end_layout
+
+\end_inset
+
+, where the signature is a compound of p53 signalling and DNA damage response,
+ and PLX4720/Dabrafenib, drugs that were specifically designed to target
+ mutated 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+gene{BRAF}
+\end_layout
+
+\end_inset
+
+.
+ For 170 out of 265 drugs covered by significant associations with either
+ PRGs or mutations, the PRGs provided stronger associations for 85, with
+ a significant enrichment in cytotoxic drugs compared to targeted drugs
+ for mutations (Fisher’s exact test, p<0.002).
 \end_layout
 
 \begin_layout Standard
@@ -1946,14 +2023,155 @@ name "fig:drug-mut-substrat"
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float table
-wide false
-sideways false
+However, stratification using PRGs and mutated driver genes is not mutually
+ exclusive.
+ My pathway scores are able to further stratify mutated and wild-type sub-popula
+tions into more and less sensitive cell lines (shown in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:drug-mut-substrat"
+
+\end_inset
+
+ with additional statistics in table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:PRG_subset_strat"
+
+\end_inset
+
+).
+ This includes, but is not limited to, 
+\begin_inset ERT
 status open
 
 \begin_layout Plain Layout
 
+
+\backslash
+gene{BRAF}
 \end_layout
+
+\end_inset
+
+, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+gene{NRAS}
+\end_layout
+
+\end_inset
+
+ or 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+gene{KRAS}
+\end_layout
+
+\end_inset
+
+ mutations using MAPK pathway activity and the MEK inhibitor Trametinib
+ (top left) or Raf inhibitor AZ628 (bottom left), 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+gene{BRAF}
+\end_layout
+
+\end_inset
+
+ mutations with Dabrafenib (top right), and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+gene{TP53}
+\end_layout
+
+\end_inset
+
+ mutations with p53/DDR and Nutlin-3a (bottom left).
+ For MAPK- and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+gene{BRAF}
+\end_layout
+
+\end_inset
+
+-mutated cell lines, I find that cell lines with an active MAPK pathway
+ according to the PRGs are 175 (AZ628), 7596 (Trametinib), or 105 fold (Dabrafen
+ib) more sensitive than those where it is inactive.
+ For Trametinib, cell lines with active MAPK but no mutation in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+gene{BRAF}
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+gene{NRAS}
+\end_layout
+
+\end_inset
+
+ or 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+gene{KRAS}
+\end_layout
+
+\end_inset
+
+ are six times more sensitive than cell lines that harbour a mutation in
+ any of them but MAPK is inactive.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -1991,6 +2209,13 @@ reference "fig:drug-mut-substrat"
  Inferred pathway activity is indicated by + (top quartile) − (bottom quartile)
  or blank (any).
  Distance reported as a fold change of medians.
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:PRG_subset_strat"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2087,7 +2312,7 @@ MAPK mut
 \begin_inset Text
 
 \begin_layout Plain Layout
-4.654640e-29
+4.65e-29
 \end_layout
 
 \end_inset
@@ -2134,7 +2359,7 @@ MAPK-
 \begin_inset Text
 
 \begin_layout Plain Layout
-3.452056e-33
+3.45e-33
 \end_layout
 
 \end_inset
@@ -2181,7 +2406,7 @@ MAPK- wt
 \begin_inset Text
 
 \begin_layout Plain Layout
-6.526184e-13
+6.53e-13
 \end_layout
 
 \end_inset
@@ -2228,7 +2453,7 @@ MAPK- mut
 \begin_inset Text
 
 \begin_layout Plain Layout
-3.829289e-06
+3.83e-06
 \end_layout
 
 \end_inset
@@ -2275,7 +2500,7 @@ MAPK mut
 \begin_inset Text
 
 \begin_layout Plain Layout
-1.034881e-14
+1.03e-14
 \end_layout
 
 \end_inset
@@ -2322,7 +2547,7 @@ MAPK-
 \begin_inset Text
 
 \begin_layout Plain Layout
-2.105543e-14
+2.11e-14
 \end_layout
 
 \end_inset
@@ -2369,7 +2594,7 @@ MAPK- wt
 \begin_inset Text
 
 \begin_layout Plain Layout
-7.685111e-07
+7.69e-07
 \end_layout
 
 \end_inset
@@ -2416,7 +2641,7 @@ MAPK- mut
 \begin_inset Text
 
 \begin_layout Plain Layout
-6.722338e-03
+6.72e-03
 \end_layout
 
 \end_inset
@@ -2463,7 +2688,7 @@ BRAF mut
 \begin_inset Text
 
 \begin_layout Plain Layout
-1.878049e-24
+1.88e-24
 \end_layout
 
 \end_inset
@@ -2510,7 +2735,7 @@ MAPK-
 \begin_inset Text
 
 \begin_layout Plain Layout
-3.119061e-13
+3.12e-13
 \end_layout
 
 \end_inset
@@ -2557,7 +2782,7 @@ MAPK- wt
 \begin_inset Text
 
 \begin_layout Plain Layout
-1.931679e-04
+1.93e-04
 \end_layout
 
 \end_inset
@@ -2604,7 +2829,7 @@ MAPK- mut
 \begin_inset Text
 
 \begin_layout Plain Layout
-4.022448e-02
+4.02e-02
 \end_layout
 
 \end_inset
@@ -2675,7 +2900,7 @@ gene{TP53}
 \begin_inset Text
 
 \begin_layout Plain Layout
-3.090991e-35
+3.09e-35
 \end_layout
 
 \end_inset
@@ -2722,7 +2947,7 @@ p53-
 \begin_inset Text
 
 \begin_layout Plain Layout
-9.596743e-08
+9.60e-08
 \end_layout
 
 \end_inset
@@ -2769,7 +2994,7 @@ p53-
 \begin_inset Text
 
 \begin_layout Plain Layout
-1.692826e-02
+1.69e-02
 \end_layout
 
 \end_inset
@@ -2816,7 +3041,7 @@ p53- mut
 \begin_inset Text
 
 \begin_layout Plain Layout
-9.294672e-01
+9.29e-01
 \end_layout
 
 \end_inset
@@ -2841,6 +3066,12 @@ p53- mut
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Taken together, these results indicate that my pathway scores can be used
+ to complement mutation-derived biomarkers by either refining them or providing
+ an alternative where no such marker exists.
 \end_layout
 
 \begin_layout Subsection
@@ -2903,7 +3134,7 @@ name "fig:Volcano-drug-tissue"
 \end_layout
 
 \begin_layout Standard
-The same analysis can be performed in a tissue-specific level.
+I performed the same analysis on the tissue-specific level.
  However, by dividing my dataset into the different cancer types we lose
  statistical power, so I chose in the first instance to only look at the
  subset of clinically approved drugs for the already stratified populations.

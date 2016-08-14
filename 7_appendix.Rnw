@@ -53,9 +53,9 @@ sig_comb = "/home/mschu/Work/signature-combinations"
 \renewcommand{\thefigure}{A\arabic{figure}}
 
 
-\subsection{Drug response with unbiased gene sets}
+\subsection{Drug response with unbiased gene sets\label{sub:ch2}}
 
-\subsubsection{Associations for mutations}
+\subsubsection{Associations for mutations\label{sub:ch2-mut}}
 
 {\tiny
 <<pan_drug_all_mut, echo=FALSE>>=
@@ -73,7 +73,7 @@ do("mutation", "Mutations")
 @
 }
 
-\subsubsection{Associations for Gene Ontology}
+\subsubsection{Associations for Gene Ontology\label{sub:ch2-go}}
 
 {\tiny
 <<pan_drug_all_go, echo=FALSE>>=
@@ -81,7 +81,7 @@ do("gsva_go", "Gene Ontology")
 @
 }
 
-\subsubsection{Associations for Reactome}
+\subsubsection{Associations for Reactome\label{sub:ch2-reactome}}
 
 {\tiny
 <<pan_drug_all_reactome, echo=FALSE>>=
@@ -89,7 +89,7 @@ do("gsva_reactome", "Reactome")
 @
 }
 
-\subsection{SPEED platform}
+\subsection{SPEED platform\label{sub:ch2-speed}}
 
 \subsubsection{Original cutoffs}
 
@@ -101,13 +101,13 @@ do("gsva_reactome", "Reactome")
 
 
 \clearpage
-\section{Associations for evaluating perturbation-response signatures (chapter 4)}
+\section{Associations for evaluating perturbation-response signatures (chapter 4)\label{sec:ch4}}
 \setcounter{table}{0}
 \renewcommand{\thetable}{B\arabic{table}}
 \setcounter{figure}{0}
 \renewcommand{\thefigure}{B\arabic{figure}}
 
-\subsection{Pathway scores and mutations}
+\subsection{Pathway scores and mutations\label{sub:ch4-mut}}
 
 \begin{figure}[h]
 \begin{centering}
@@ -118,6 +118,7 @@ Volcano plot for pan-cancer associations between pathway scores and mutated driv
 size is standard deviations of pathway scores. P-values FDR-corrected. Associations corrected for can-
 cer type. PRGs provide stronger associations and are more in line with literature knowledge of signaling
 pathways.}
+\label{fig:sp2-mut}
 \end{figure}
 
 {\tiny
@@ -138,7 +139,7 @@ do("speed_matrix", "Perturbation-response genes")
 @
 }
 
-\subsection{Pathway scores and CNAs}
+\subsection{Pathway scores and CNAs\label{sub:ch4-cna}}
 
 \begin{figure}[h]
 \begin{centering}
@@ -148,6 +149,7 @@ do("speed_matrix", "Perturbation-response genes")
 Volcano plots for pan-cancer associations between pathway scores and GISTIC-filtered gene ampli-
 fications and deletion. Effect size is standard deviations of pathway scores. P-values FDR-corrected. Cancer
 type regressed out. Associations by PRGs are more in line with established literature knowledge.}
+\label{fig:sp2-cna}
 \end{figure}
 
 {\tiny
@@ -169,9 +171,9 @@ do("speed_matrix", "Perturbation-response genes")
 }
 
 
-\subsection{Pathway scores and drugs}
+\subsection{Pathway scores and drugs\label{sub:ch4-drug}}
 
-\subsubsection{Pan-cancer}
+\subsubsection{Pan-cancer\label{sub:ch4-drug-pan}}
 
 \begin{figure}[h]
 \begin{centering}
@@ -182,6 +184,7 @@ Pan-cancer volcano plots for associations between pathway scores and drug respon
 size arbitrary units, p-values FDR-corrected. Pathway-response genes are the only method to recover highly
 significant oncogene addiction associations, the rest of methods show no obvious connection between the
 drug target and pathway.}
+\label{fig:sp2-drug-pancan}
 \end{figure}
 
 {\tiny
@@ -201,7 +204,7 @@ do("speed_matrix", "Perturbation-response genes")
 @
 }
 
-\subsubsection{Tissue specific}
+\subsubsection{Tissue specific\label{sub:ch4-drug-tissue}}
 
 \begin{figure}[h]
 \begin{centering}
@@ -212,6 +215,7 @@ Tissue-specific volcano plots for associations between pathway scores and drug r
 size arbitrary units, p-values FDR-corrected. Pathway-response genes are the only method to recover highly
 significant oncogene addiction associations, the rest of methods show no obvious connection between the
 drug target and pathway.}
+\label{fig:sp2-drug-tissue}
 \end{figure}
 
 {\tiny
@@ -233,9 +237,9 @@ do("speed_matrix", "Perturbation-response genes")
 }
 
 
-\subsection{Pathway scores and survival}
+\subsection{Pathway scores and survival\label{sub:ch4-surv}}
 
-\subsubsection{Pan-cancer}
+\subsubsection{Pan-cancer\label{sub:ch4-surv-pan}}
 
 \begin{figure}[h]
 \begin{centering}
@@ -246,6 +250,7 @@ Volcano plots for pan-cancer survival associations. Effect size arbitrary units,
 corrected. Pathway-response genes provide stronger associations and are the only
 method to separate associations into classical oncogenic and tumor suppressor pathways, calling into question
 the meaning of associations obtained by other methods.}
+\label{fig:sp2-surv-pancan}
 \end{figure}
 
 {\tiny
@@ -265,7 +270,7 @@ do("speed_matrix", "Perturbation-response genes")
 @
 }
 
-\subsubsection{Tissue specific}
+\subsubsection{Tissue specific\label{sub:ch4-surv-tissue}}
 
 \begin{figure}[h]
 \begin{centering}
@@ -276,6 +281,7 @@ Volcano plots for tissue-specific survival associations. Effect size arbitrary u
 corrected. All methods show strongest associations with KIRC and LGG. Pathway-response genes only
 method to separate associations into classical oncogenic and tumor suppressor pathways, calling into question
 the meaning of associations obtained by other methods.}
+\label{fig:sp2-surv-tissue}
 \end{figure}
 
 {\tiny
@@ -296,15 +302,15 @@ do("speed_matrix", "Perturbation-response genes")
 }
 
 \clearpage
-\section{Drug sensitisation (chapter 5)}
+\section{Drug sensitisation (chapter 5)\label{sec:ch5}}
 \setcounter{table}{0}
 \renewcommand{\thetable}{C\arabic{table}}
 \setcounter{figure}{0}
 \renewcommand{\thefigure}{C\arabic{figure}}
 
-\subsection{MANTRA}
+\subsection{MANTRA\label{sub:ch5-mantra}}
 
-\subsubsection{Pan-cancer}
+\subsubsection{Pan-cancer\label{sub:ch5-mantra-pan}}
 
 {\tiny
 <<echo=FALSE>>=
@@ -318,7 +324,7 @@ do("MANTRA (pan-cancer)")
 @
 }
 
-\subsubsection{Tissue specific}
+\subsubsection{Tissue specific\label{sub:ch5-mantra-tissue}}
 
 {\tiny
 <<echo=FALSE>>=
@@ -333,9 +339,9 @@ do("MANTRA (cancer-specific)")
 }
 
 
-\subsection{LINCS Connectivity Map}
+\subsection{LINCS Connectivity Map\label{sub:ch5-lincs}}
 
-\subsubsection{Naive}
+\subsubsection{Naive\label{sub:ch5-lincs-naive}}
 
 {\tiny
 <<echo=FALSE>>=
@@ -349,7 +355,7 @@ do("pan_bing_pancov-", "Drug sensitisation (naive pan-cancer)")
 @
 }
 
-\subsubsection{With added covariate}
+\subsubsection{With added covariate\label{sub:ch5-lincs-covar}}
 
 {\tiny
 <<echo=FALSE>>=
@@ -357,13 +363,14 @@ do("pan_bing_pancov", "Drug sensitisation (pan-cancer with covariate)")
 @
 }
 
-\subsection{Combination screen}
+\subsection{Combination screen\label{sub:ch5-lincs-screen}}
 
 \begin{figure}
 \begin{centering}
 \centerline{\includegraphics[width=0.7\paperwidth]{figures/synergy_sup1}}
 \par\end{centering}
-\caption{Predicted vs. measured synergy for drug combinations\label{fig:syn}}
+\caption{Predicted vs. measured synergy for drug combinations}
+\label{fig:syn}
 \end{figure}
 
 \begin{figure}
