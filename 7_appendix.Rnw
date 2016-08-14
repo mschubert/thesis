@@ -106,7 +106,7 @@ do("gsva_reactome", "Reactome")
 
 \subsection{Pathway scores and mutations}
 
-\begin{figure}
+\begin{figure}[h]
 \begin{centering}
 \centerline{\includegraphics[width=0.7\paperwidth]{figures/mut_volcano_pancan-1} }
 \par\end{centering}
@@ -137,7 +137,7 @@ do("speed_matrix", "Perturbation-response genes")
 
 \subsection{Pathway scores and CNAs}
 
-\begin{figure}
+\begin{figure}[h]
 \begin{centering}
 \centerline{\includegraphics[width=0.78\paperwidth]{figures/cna_volcano_pancan-1} }
 \end{centering}
@@ -170,7 +170,7 @@ do("speed_matrix", "Perturbation-response genes")
 
 \subsubsection{Pan-cancer}
 
-\begin{figure}
+\begin{figure}[h]
 \begin{centering}
 \centerline{\includegraphics[width=0.7\paperwidth]{figures/drug_volcano_pancan-1} }
 \end{centering}
@@ -200,7 +200,7 @@ do("speed_matrix", "Perturbation-response genes")
 
 \subsubsection{Tissue specific}
 
-\begin{figure}
+\begin{figure}[h]
 \begin{centering}
 \centerline{\includegraphics[width=0.7\paperwidth]{figures/drug_volcano_tissue-1} }
 \end{centering}
@@ -234,7 +234,7 @@ do("speed_matrix", "Perturbation-response genes")
 
 \subsubsection{Pan-cancer}
 
-\begin{figure}
+\begin{figure}[h]
 \begin{centering}
 \centerline{\includegraphics[width=0.7\paperwidth]{figures/surv_volcano_pancan-1} }
 \end{centering}
@@ -264,7 +264,7 @@ do("speed_matrix", "Perturbation-response genes")
 
 \subsubsection{Tissue specific}
 
-\begin{figure}
+\begin{figure}[h]
 \begin{centering}
 \centerline{\includegraphics[width=0.7\paperwidth]{figures/surv_volcano_tissue-1} }
 \end{centering}
