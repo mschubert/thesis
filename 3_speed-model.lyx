@@ -1162,7 +1162,7 @@ code{data.frame}
  the metadata of the experiment.
  This was not working for the majority of experiments however, so I rewrote
  parts of the package and gave the patches to the original maintainers (for
- detailed list of changes, see the Bioconductor VCS diff between 1.28.1 and
+ detailed list of changes, see the BioConductor VCS diff between 1.28.1 and
  1.30.1).
  The update package has been downloaded by over 4,000 people since
 \begin_inset Foot
@@ -2365,7 +2365,7 @@ Distribution of the top 100 genes used in the model, as outcome for the
 
 Distribution of the top 100 genes used in the model, as outcome for the
  multiple regression of all pathways.
- Top: Distribution of FDR-correctd p-values for signature genes (double
+ Top: Distribution of FDR-corrected p-values for signature genes (double
  log).
  Genes (horizonal axis) are ordered by significance.
  Dashed line at 5% FDR, dotted line at 
@@ -2494,8 +2494,8 @@ Overlap of signature genes for different pathways.
  The overlap is generally minimal, with the highest numbers between TNFa
  and NFkB (18) and EGFR and MAPK (9).
  As both of these pathway pairs have one component that is directly upstream
- of the other, this is to 8 be exptected.
- This also shows that the response genes are specific to their perturbation
+ of the other, this is to be expected.
+ It also shows that the response genes are specific to their perturbation
  and not a common phenotype like stress response because of any perturbation.
 \end_layout
 
@@ -3872,7 +3872,7 @@ rpkg{SPIA}
 
 \end_inset
 
- Bioconductor package 
+ BioConductor package 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Tarca_undated-ol"
@@ -5689,7 +5689,7 @@ reference "fig:Comparison-to-pathway-perturb"
  (their method tries to construct principal curves from control-experiments
  that need at least three arrays in that condition) and for the remaining
  does not provide any strong associations (with the strongest being the
- upregulation of the hypoxic response upon JAK-STAT stimulation, otherwise
+ up-regulation of the hypoxic response upon JAK-STAT stimulation, otherwise
  all 
 \begin_inset Formula $p>10^{-5}$
 \end_inset
@@ -5821,7 +5821,7 @@ status open
 
 \begin_layout Plain Layout
 \begin_inset Argument 1
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Area under the ROC curve for experiment recall

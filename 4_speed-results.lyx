@@ -1186,7 +1186,7 @@ Volcano plot of pan-cancer associations between driver mutations
 \end_inset
 
 Volcano plot of pan-cancer associations between driver mutations (denoted
- by the superscript mut and green/red color) and copy number aberrations
+ by the superscript mut and green/red colour) and copy number aberrations
  (denoted by amp/del and yellow/purple color) with inferred pathway activity
  using PRGs in basal gene expression of TCGA cohorts.
  Effect sizes larger than zero indicate inferred activation, smaller than
@@ -1347,25 +1347,77 @@ ref{sub:ch4-cna}
 \end_layout
 
 \begin_layout Standard
-In terms of proliferative signaling, I find that EGFR amplifications are
- correlated both with EGFR- and MAPK-responsive genes (
+In terms of proliferative signalling, I find that 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+gene{EGFR}
+\end_layout
+
+\end_inset
+
+ amplifications are correlated both with EGFR- and MAPK-responsive genes
+ (
 \begin_inset Formula $FDR<10^{-20}$
 \end_inset
 
 ), and to a lesser extent PI3K, VEGF, and Hypoxia (FDR<10-9).
- ERBB2 amplifications show an increase in EGFR and PI3K-responsive genes,
- but also a reduction in the Trail signature (
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+gene{ERBB2}
+\end_layout
+
+\end_inset
+
+ amplifications show an increase in EGFR and PI3K-responsive genes, but
+ also a reduction in the Trail signature (
 \begin_inset Formula $FDR<0.05$
 \end_inset
 
 ), suggesting a relatively stronger impact on cell survival.
- KRAS mutations show an increase in inferred EGFR activity, and amplifications
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+gene{KRAS}
+\end_layout
+
+\end_inset
+
+ mutations show an increase in inferred EGFR activity, and amplifications
  additionally for MAPK and PI3K (
 \begin_inset Formula $FDR<10^{-5})$
 \end_inset
 
 .
- BRAF mutations have a positive effect on EGFR and MAPK (
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+gene{BRAF}
+\end_layout
+
+\end_inset
+
+ mutations have a positive effect on EGFR and MAPK (
 \begin_inset Formula $FDR<10^{-9}$
 \end_inset
 
@@ -1377,11 +1429,75 @@ In terms of proliferative signaling, I find that EGFR amplifications are
 \end_layout
 
 \begin_layout Standard
-For TP53 mutations I find a significant reduction in p53/DDR activity (
+For 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+gene{TP53}
+\end_layout
+
+\end_inset
+
+ mutations I find a significant reduction in p53/DDR activity (
 \begin_inset Formula $FDR<10^{-18}$
 \end_inset
 
-) that also explains the associations with MYC, RAD21, NDRG1, and PABPC1
+) that also explains the associations with 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+gene{MYC}
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+gene{RAD21}
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+gene{NDRG1}
+\end_layout
+
+\end_inset
+
+, and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+gene{PABPC1}
+\end_layout
+
+\end_inset
+
  (
 \begin_inset Formula $p>0.04$
 \end_inset
@@ -1393,8 +1509,20 @@ For TP53 mutations I find a significant reduction in p53/DDR activity (
 \end_inset
 
 ).
- This is in contrast to loss of TP53, where I only find a reduction in p53/DDR
- (
+ This is in contrast to loss of 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+gene{TP53}
+\end_layout
+
+\end_inset
+
+, where I only find a reduction in p53/DDR (
 \begin_inset Formula $FDR<10^{-3}$
 \end_inset
 
@@ -1403,10 +1531,35 @@ For TP53 mutations I find a significant reduction in p53/DDR activity (
 \end_inset
 
 ).
- The dual nature of TP53 mutations and CNAs are in line with the recent
- discovery that TP53 mutations can act in an oncogenic manner in addition
- to the protein losing its tumor suppressor activity that has been shown
- for individual cancer types 
+ The dual nature of 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+gene{TP53}
+\end_layout
+
+\end_inset
+
+ mutations and CNAs are in line with the recent discovery that 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+gene{TP53}
+\end_layout
+
+\end_inset
+
+ mutations can act in an oncogenic manner in addition to the protein losing
+ its tumour suppressor activity that has been shown for individual cancer
+ types 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Olive2004-yg,Zhang2013-ka,Weissmueller2014-iu,Zhu2015-jl"
@@ -1414,14 +1567,77 @@ key "Olive2004-yg,Zhang2013-ka,Weissmueller2014-iu,Zhu2015-jl"
 \end_inset
 
 .
- In addition, I can suggest a link between TP53 mutations and genes that
- are specifically induced by activation of canonical oncogenic signaling.
- I find that VHL mutations (which have a high overlap with Kidney Renal
- Carcinoma, KIRC) are associated with a stronger induction of hypoxic genes
- compared to other cancer types.
- More surprisingly, I find that presence of PIK3CA and PIK3CB amplifications
- and PTEN deletions is also more connected to increasing the hypoxic response
- (
+ In addition, I can suggest a link between 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+gene{TP53}
+\end_layout
+
+\end_inset
+
+ mutations and genes that are specifically induced by activation of canonical
+ oncogenic signalling.
+ I find that 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+gene{VHL}
+\end_layout
+
+\end_inset
+
+ mutations (which have a high overlap with Kidney Renal Carcinoma, KIRC)
+ are associated with a stronger induction of hypoxic genes compared to other
+ cancer types.
+ More surprisingly, I find that presence of 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+gene{PIK3CA}
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+gene{PIK3CB}
+\end_layout
+
+\end_inset
+
+ amplifications and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+gene{PTEN}
+\end_layout
+
+\end_inset
+
+ deletions is also more connected to increasing the hypoxic response (
 \begin_inset Formula $FDR<10^{-6}$
 \end_inset
 
@@ -1434,7 +1650,7 @@ key "Olive2004-yg,Zhang2013-ka,Weissmueller2014-iu,Zhu2015-jl"
 \end_inset
 
 ).
- A role of PI3K signaling in hypoxia has been shown before 
+ A role of PI3K signalling in hypoxia has been shown before 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Zhou2004-uu,Yang2009-cp,Kilic-Eren2013-qh"
@@ -1480,9 +1696,60 @@ Comparison of pathway scores across different methods
 
 Comparison of pathway scores (vertical axis) across different methods (horizonta
 l axis).
- TP53 and KRAS mutations within cancer types in top row, EGFR amplification
- bottom left.
- VHL across cancer types.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+gene{TP53}
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+gene{KRAS}
+\end_layout
+
+\end_inset
+
+ mutations within cancer types in top row, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+gene{EGFR}
+\end_layout
+
+\end_inset
+
+ amplification bottom left.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+gene{VHL}
+\end_layout
+
+\end_inset
+
+ across cancer types.
  Wald statistic shown as shades of green for downregulated and red for upregulat
 ed pathways.
  P-value cutoffs shown as indicated.
@@ -2057,16 +2324,103 @@ Comparison of stratification by mutations and pathway scores
 \end_inset
 
 Comparison of stratification by mutations and pathway scores for the MAPK
- pathway (BRAF, NRAS, or KRAS mutations) and Trametinib (top left)/AZ628
- (bottom left), BRAF mutation and Dabrafenib (top right), and p53 pathway/TP53
+ pathway (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+gene{BRAF}
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+gene{NRAS}
+\end_layout
+
+\end_inset
+
+, or 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+gene{KRAS}
+\end_layout
+
+\end_inset
+
+ mutations) and Trametinib (top left)/AZ628 (bottom left), 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+gene{BRAF}
+\end_layout
+
+\end_inset
+
+ mutation and Dabrafenib (top right), and p53 pathway/
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+gene{TP53}
+\end_layout
+
+\end_inset
+
  mutations/Nutlin-3a (bottom right).
  Mutations indicated by colour of the box (from left; blue for mutated,
  green wild-type, white mixed) and pathway scores by colour and shade of
  the violin (from right; pink for MAPK and and yellow for TP53).
- The more sensitive genomic phenotype (middle; mutated for MAPK/BRAF and
- wild-type for TP53) is further stratified by top- and bottom quartiles
- of pathway score (fold change of medians and p-value of Mann-Whitney U
- test indicated).
+ The more sensitive genomic phenotype (middle; mutated for MAPK/
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+gene{BRAF}
+\end_layout
+
+\end_inset
+
+ and wild-type for 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+gene{TP53}
+\end_layout
+
+\end_inset
+
+) is further stratified by top- and bottom quartiles of pathway score (fold
+ change of medians and p-value of Mann-Whitney U test indicated).
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:drug-mut-substrat"
@@ -3213,7 +3567,7 @@ reference "fig:Volcano-drug-tissue"
 \end_inset
 
 ) resulted in 75 significant associations for footprints vs.
- 36 for Reactome and 12 for GO (ANOVA, FDR<10%; associations of different
+ 36 for Reactome and 12 for GO (regression, FDR<10%; associations of different
  methods in figure 
 \begin_inset ERT
 status open
@@ -3258,7 +3612,7 @@ s of BRCA drug response (
 
 ).
  My method is the only one able to recover this association, which is expected
- due to oncogene addiction to a hyperactivated MAPK pathway, or any other
+ due to oncogene addiction to a hyper-activated MAPK pathway, or any other
  associations involving EGFR/MAPK for BRCA.
 \end_layout
 
@@ -4005,7 +4359,8 @@ name "fig:surv-tissue"
 
 \begin_layout Standard
 For individual cancer types, I found a similar separation between oncogenic
- and tumor-suppressor pathways for the associations using PRGs (figure 
+ and tumour-suppressor pathways for the associations using PRGs (figure
+ 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:surv-tissue"

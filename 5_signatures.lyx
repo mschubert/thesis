@@ -1172,7 +1172,7 @@ Potential reason for the association between the QS11 and Trametinib
 
 Potential reason for the association between the QS11-responsive signature
  and the MEK inhibitor Trametinib (GSK1120212): QS11 activates Wnt, which
- corss-activates MAPK.
+ cross-activates MAPK.
  However, the gene expression signature of MAPK is stronger and thus the
  primary readout.
  Expression of this signature is thus correlated with MAPK activation, which
@@ -1306,7 +1306,7 @@ ref{sub:ch5-lincs-covar}
 
 ).
  Top hits now are Trametinib (GSK1120212) with PD-0332991 (a CDK4/6 inhibitor),
- FK866 (Nampt inhibitor) with Sorafenib (a Raf inhibitor) and NPK76-II-72-I
+ FK866 (NAMPT inhibitor) with Sorafenib (a Raf inhibitor) and NPK76-II-72-I
  (NAMPT inhibitor).
  The strongest antagonistic hit is Thapsigargin (SERCA inhibitor) with BMS-75480
 7 (IGF inhibitor).
@@ -3426,7 +3426,7 @@ Screening results and fit of drug-response curves for 72 hours of treatment.
 \begin_inset Formula $E_{max}$
 \end_inset
 
-, steepness of slope and RMSE of fit as indicated.
+, steepness of slope and root mean square error (RMSE) of fit as indicated.
  Starting concentration and dilutions of suggested concentration for combination
  as indicated.
 \begin_inset CommandInset label

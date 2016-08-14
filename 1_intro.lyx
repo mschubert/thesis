@@ -3812,7 +3812,7 @@ To summarise, ensuring that a subsequent study has the possibility to arrive
  written in conjunction with it.
  This is especially true because the maybe best known retraction caused
  by computational irreproducibility handled a topic very similar to the
- one I investigate in this thesis: the effect of signaling pathway signatures
+ one I investigate in this thesis: the effect of signalling pathway signatures
  of different cancers (chapter 3) and their significance (chapter 4).
 \end_layout
 
@@ -3839,7 +3839,7 @@ This is where the scientific software ecosystem comes in.
  And, to a larger extent, the ecosystem of general software.
  For instance, I want to obtain, pre-process, and normalise microarray data
  to then compute differentially expressed genes in two conditions.
- The concepts of obtain, preprocess, and normalise are well enough defined
+ The concepts of obtain, pre-process, and normalise are well enough defined
  that I should not have to worry about their exact implementation.
  I just need to know what these concepts mean and that there is a software
  that abstracts the low-level implementation to a higher-level function
@@ -4033,7 +4033,7 @@ target "https://education.github.com/"
 
 \end_inset
 
- in particular is Github 
+ in particular is GitHub 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Dabbish2012-hw"

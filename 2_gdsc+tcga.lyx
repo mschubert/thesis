@@ -434,7 +434,7 @@ key "Chen2013-da"
 
 \end_inset
 
- and the gene sets the authors assembled in their Github repository
+ and the gene sets the authors assembled in their GitHub repository
 \begin_inset Foot
 status open
 
@@ -504,9 +504,9 @@ Calculation of the running sum statistic for GSEA and GSVA
 
 \end_inset
 
-Calculation of the running sum statistic for GSEA and GSVACalculation of
- the running sum statistic (top left) and absolute deviation for enrichment
- score in case of GSEA vs.
+Calculation of the running sum statistic for GSEA and GSVA.
+ Calculation of the running sum statistic (top left) and absolute deviation
+ for enrichment score in case of GSEA vs.
  the difference in GSVA.
  Genes are ordered, genes that are in the query set are indicated by black
  bars.
@@ -706,7 +706,7 @@ status open
 
 \begin_layout Plain Layout
 \begin_inset Argument 1
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Schema for calculation of 
@@ -1206,7 +1206,7 @@ xenobiotic metabolic process
 
  gives a hint that YM155 may be inactivated by modification of the drug,
  but it does not tell us anything about the mechanism of the drug (it binds
- the promotor of Survivin, suppressing its expression
+ the promoter of Survivin, suppressing its expression
 \begin_inset Foot
 status open
 
@@ -3534,7 +3534,11 @@ key "Kim2007-db"
 \end_layout
 
 \begin_layout Itemize
-TNFalpha 
+TNF
+\begin_inset Formula $\alpha$
+\end_inset
+
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Sleijfer1998-vs"
@@ -3670,7 +3674,7 @@ Pathway-responsive genes
 \begin_layout Standard
 Using pathway-responsive genes instead of pathway expression to infer signalling
  activity makes a lot of sense: we look at the footprint of the actual signallin
-g activity (the expression changes downstream of a signaling pathway) and
+g activity (the expression changes downstream of a signalling pathway) and
  not the potential mediators (protein kinases, among others) by mRNA expression
  level that is a lot further removed from the actual signalling going on
  in a cell.
