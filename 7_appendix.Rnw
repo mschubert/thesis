@@ -30,9 +30,13 @@ load2 = function(filename, subset=FALSE) {
 }
 
 tab = function(obj, caption="", p=0.2, n=150, n_min=10) {
+    keep = rep(TRUE, min(n_min, nrow(obj)))
+    if (nrow(obj) > length(keep))
+        keep = c(keep, rep(FALSE, nrow(obj)-n_min))
+
     obj %>%
         arrange(`P-value`) %>%
-        filter(FDR < p | c(rep(TRUE, n_min), rep(FALSE, nrow(.)-n_min))) %>%
+        filter(FDR < p | keep) %>%
         head(n) %>%
         kable(digits=5, booktabs=TRUE, longtable=TRUE, caption=caption)
 }
