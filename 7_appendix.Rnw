@@ -29,10 +29,10 @@ load2 = function(filename, subset=FALSE) {
         re[[subset]]
 }
 
-tab = function(obj, caption="", p=0.2, n=150) {
+tab = function(obj, caption="", p=0.2, n=150, n_min=10) {
     obj %>%
         arrange(`P-value`) %>%
-        filter(FDR < p) %>%
+        filter(FDR < p | c(rep(TRUE, n_min), rep(FALSE, nrow(.)-n_min))) %>%
         head(n) %>%
         kable(digits=5, booktabs=TRUE, longtable=TRUE, caption=caption)
 }
@@ -42,6 +42,7 @@ mantra = "/home/mschu/Work/MANTRA"
 sig_comb = "/home/mschu/Work/signature-combinations"
 @
 
+\clearpage
 \section{Associations for baseline methods (chapter 2)}
 \setcounter{table}{0}
 \renewcommand{\thetable}{A\arabic{table}}
@@ -96,7 +97,7 @@ do("gsva_reactome", "Reactome")
 %TODO
 
 
-
+\clearpage
 \section{Associations for evaluating perturbation-response signatures (chapter 4)}
 \setcounter{table}{0}
 \renewcommand{\thetable}{B\arabic{table}}
@@ -291,7 +292,7 @@ do("speed_matrix", "Perturbation-response genes")
 @
 }
 
-
+\clearpage
 \section{Drug sensitisation (chapter 5)}
 \setcounter{table}{0}
 \renewcommand{\thetable}{C\arabic{table}}
