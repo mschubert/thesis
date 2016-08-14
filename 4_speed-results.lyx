@@ -651,13 +651,6 @@ status open
 
 \begin_layout Plain Layout
 \align center
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
 \begin_inset Graphics
 	filename figures/4.2_cor_reactome.pdf
 	lyxscale 50
@@ -679,37 +672,6 @@ TODO: move this to suppl?
 \end_layout
 
 \begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Reactome
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:cor-Reactome"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename figures/4.2_cor_biocarta.pdf
@@ -722,66 +684,11 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-BioCarta
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:cor-BioCarta"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename figures/4.2_cor_go.pdf
 	lyxscale 50
 	width 100col%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Gene Ontology
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:cor-Gene-Ontology"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
 
 \end_inset
 
@@ -802,7 +709,8 @@ Correlation of basal pathway scores for gene set methods
 \end_inset
 
 Comparison to pathway member GSEA for TCGA primary tumour data (left) and
- GDSC cell lines (right).
+ GDSC cell lines (right) for Reactome (top), BioCarta (middle) and Gene
+ Ontology (bottom).
  Sign of the correlation indicated by colour of the points (positive correlation
  blue, negative correlation red), strength by colour shade and size of the
  point.
@@ -835,44 +743,16 @@ reference "fig:basal-comparison-methods"
 
 ), the amount of correlation between pathway scores they provide is in the
  same order of the one for pathway-response genes.
- Reactome (figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:cor-Reactome"
-
-\end_inset
-
-) shows increased correlation between EGFR and MAPK (to a lesser extent
- PI3K), and between TNFa and NFkB (and to a lesser extent also JAK-STAT
- and Trail).
- BioCarta (figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:cor-BioCarta"
-
-\end_inset
-
-) has the latter as well but misses the former.
- Gene Ontology (figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:cor-Gene-Ontology"
-
-\end_inset
-
-) is very similar to Reactome.
+ Reactome (top) shows increased correlation between EGFR and MAPK (to a
+ lesser extent PI3K), and between TNFa and NFkB (and to a lesser extent
+ also JAK-STAT and Trail).
+ BioCarta (middle) has the latter as well but misses the former.
+ Gene Ontology (bottom) is very similar to Reactome.
  For all methods, the correlation between pathways is similar from primary
  data (TCGA, left panel of figures) to cell lines (GDSC, right panel).
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
 \begin_inset Float figure
 wide false
 sideways false
@@ -891,37 +771,6 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Signaling Pathway Impact Analysis (SPIA)
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:cor-SPIA"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename figures/4.2_cor_pathifier.pdf
@@ -934,66 +783,11 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Pathifier
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:cor:Pathifier"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename figures/4.2_cor_paradigm.pdf
 	lyxscale 50
 	width 100col%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-PARADIGM
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:cor:PARADIGM"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
 
 \end_inset
 
@@ -1013,7 +807,9 @@ Correlation of basal pathway scores for other pathway methods
 
 \end_inset
 
-Comparison to state of the art pathway methods, legend as in figure 
+Comparison to state of the art pathway methods SPIA (top), Pathifier (middle)
+ and PARADIGM (bottom).
+ Legend as in figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:basal-comparison-methods"
@@ -1027,7 +823,7 @@ name "fig:Comparison-to-state"
 
 \end_inset
 
-
+.
 \end_layout
 
 \end_inset
@@ -1058,32 +854,12 @@ reference "fig:basal-comparison-methods"
 ), SPIA and Pathifier had more data available to compute their scores for
  the TCGA cohorts because they made use of the tissue-matched normals.
  This has a minor impact on the correlation between pathway scores obtained
- by SPIA (both show a high correlation between MAPK, NFkB, and Trail, as
- shown in figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:cor-SPIA"
-
-\end_inset
-
-), but a major impact on the ones obtained by Pathifier (
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:cor:Pathifier"
-
-\end_inset
-
-): here, supplying normals cause all the pathway scores to be highly correlated,
+ by SPIA (both show a high correlation between MAPK, NFkB, and Trail, top
+ panel), but a major impact on the ones obtained by Pathifier (middle):
+ here, supplying normals cause all the pathway scores to be highly correlated,
  while there is almost no correlation to be observed for the cell lines.
- For PARADIGM (figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:cor:PARADIGM"
-
-\end_inset
-
-), there is almost no correlation between the nodes in the inference graph
- that correspond to pathway activity.
+ For PARADIGM (bottom), there is almost no correlation between the nodes
+ in the inference graph that correspond to pathway activity.
 \end_layout
 
 \begin_layout Section

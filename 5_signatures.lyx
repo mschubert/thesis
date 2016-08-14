@@ -1568,6 +1568,9 @@ key "Pezuk2013-xn"
 
 \begin_layout Section
 Tissue-specific synergistic compounds
+\end_layout
+
+\begin_layout Standard
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Tissue-specific-synergistic-comp"
@@ -3964,7 +3967,7 @@ reference "fig:PD+AT"
 
 \end_inset
 
---
+-
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:WZ+PD"
