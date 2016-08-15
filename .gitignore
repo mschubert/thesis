@@ -11,5 +11,5 @@
 *.run.xml
 *.toc
 *.bcf
-*.log
+*.lof
 *.lot
