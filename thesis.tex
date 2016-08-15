@@ -5,15 +5,34 @@
 
 \input{config}
 
-\title{Gene expression signatures for cancer cell line drug sensitivity and patient outcome}
-\author{Michael Schubert}
-
 \begin{document}
 
 % Custom hyphenation rules need to be declared AFTER \begin{document}!
 \hyphenation{ge-nes}
 
+\titlehead{%
+    \parbox{0.5\textwidth}{\includegraphics[height=12mm]{logo-uofc-cmyk}}%
+    \parbox{0.5\textwidth}{\raggedleft%
+        \includegraphics[height=12mm]{logo-embl-ebi-cmyk}}%
+    % Obligatory logo margin
+    \vspace{-1.5\baselineskip}%
+    \vspace{12mm}}
+\title{Gene expression signatures for cancer cell line drug sensitivity and patient outcome}
+\subject{This dissertation is submitted for the degree of Doctor of Philosophy}
+\author{Michael Schubert}
+\date{August 2016}
+\publishers{%
+    %\vfill doesn’t work properly on title page due to excess glue
+    \vspace{6\baselineskip}
+    Corpus Christi College,\\
+    University of Cambridge\\[0.2\baselineskip]
+    EMBL-EBI}
+
+\begin{centering}
 \maketitle
+\end{centering}
+
+\input{declaration}
 
 \begingroup
 %    \hypersetup{linkcolor=thesis@toccolor}
