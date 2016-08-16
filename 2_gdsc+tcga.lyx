@@ -1474,17 +1474,9 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename figures/4.1_correlation_original.jpg
+	filename figures/speed1_correlation.pdf
 	lyxscale 50
-	width 50col%
-
-\end_inset
-
-
-\begin_inset Graphics
-	filename figures/4.1_correlation_optimized.jpg
-	lyxscale 50
-	width 50col%
+	width 100text%
 
 \end_inset
 
@@ -3337,7 +3329,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename figures/2_speed1.pdf
+	filename figures/speed1_volcano.pdf
 	lyxscale 50
 	width 100col%
 
@@ -3577,17 +3569,20 @@ n.
 \end_layout
 
 \begin_layout Standard
-Markers not shown in the plot are listed in table 
-\begin_inset Note Note
+Markers not shown in the plot are listed in the appendix, section 
+\begin_inset ERT
 status open
 
 \begin_layout Plain Layout
-x-ref
+
+
+\backslash
+ref{sub:ch2-speed}
 \end_layout
 
 \end_inset
 
- in the appendix.
+.
 \end_layout
 
 \begin_layout Section
