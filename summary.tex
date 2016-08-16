@@ -1,0 +1,50 @@
+\RequirePackage{nag}
+\documentclass[a4paper, headinclude, footinclude, hidelinks, BCOR=1cm]{scrbook}
+
+\input{config}
+
+\begin{document}
+
+\pagenumbering{gobble}
+
+\chapter*{Summary: Gene expression signatures for cancer cell line drug sensitivity and patient outcome}
+
+\subsection*{Michael Schubert}
+
+\begin{document}
+
+%\input{abstract}
+
+The explanation of phenotypes in cancer, such as cell line drug response or
+patient survival, has largely been focussed on genomic alterations. While this
+approach has generated many profound insights into cancer biology, it does not
+directly make statements about the signaling impact those cellular aberrations
+create. With direct measurements much less widely available than gene
+expression, pathway methods (mostly mapping gene expression onto signalling
+proteins) have so far fallen short on delivering actionable evidence. This may
+in part be due to lack of robustness, but these approaches are fundamentally at
+odds with the notion of tight post-translational control of signal
+transduction. A way to solve this may be to derive consensus signatures of
+pathway activity to make inferences about signalling, or signatures of specific
+drugs to investigate their interactions.
+
+As a baseline (chapter 2), I investigated how well pathway methods compare to
+driver mutations in terms of explaining cell line drug response. I went on to
+analyse the value of gene expression as a downstream signature of signaling
+activity instead of mapping it to the pathway components by means of a
+previously published platform. This improved over mapping pathway members using
+Gene Ontology or Reactome, but it considered only sets of up-regulated genes
+defined by multiple arbitrary cutoffs.  Hence, I extended the data set and
+created a linear model (chapter 3) that compares favourably to gene set as well
+as state of the art pathway methods in terms of recovering driver mutations,
+and provide biomarkers for cell line drug response and patient survival
+(chapter 4). To complement this, I investigate how gene expression signatures
+of drugs can be used in conjunction with viability data to suggest effective
+drug combinations where no pathway information is available (chapter 5).
+
+To the best of my knowledge, this thesis represents the first comprehensive
+analysis of different pathway methods across primary cohorts and cancer cell
+lines, as well as the first large-scale systematic analysis of drug
+sensitisation that could lead to new drug combinations.
+
+\end{document}

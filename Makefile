@@ -5,13 +5,16 @@ TEX = $(LYX:%.lyx=%.tex) 7_appendix.tex
 
 #.INTERMEDIATE: $(TEX)
 
-all: thesis.pdf
+all: thesis.pdf summary.pdf
 
 # Use `print-VARNAME` to print arbitrary variables
 print-%: ; @echo $* = $($*)
 
 thesis.pdf: thesis.tex config.tex references.bib $(TEX)
 	$(LATEXMK) thesis
+
+summary.pdf: summary.tex config.tex abstract.tex
+	$(LATEXMK) summary
 
 %.tex: %.lyx Makefile
 	lyx --force-overwrite --export xetex $<
