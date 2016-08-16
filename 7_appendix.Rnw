@@ -41,6 +41,7 @@ tab = function(obj, caption="", p=0.2, n=150, n_min=10) {
         kable(digits=5, booktabs=TRUE, longtable=TRUE, caption=caption)
 }
 
+speed1 = "/home/mschu/Work/speed/SPEED-GSEA_CV-from-2014/ftp_report"
 speed2 = "/home/mschu/Work/speed2/analyses"
 mantra = "/home/mschu/Work/MANTRA"
 sig_comb = "/home/mschu/Work/signature-combinations"
@@ -91,14 +92,20 @@ do("gsva_reactome", "Reactome")
 
 \subsection{SPEED platform\label{sub:ch2-speed}}
 
-\subsubsection{Original cutoffs}
-
-%TODO: scores in diskstation://Michael/mschu[...]/QnD_SPEED/scores[..].ro
-
-\subsubsection{Distance-optimised cutoffs}
-
-%TODO
-
+<<pan_drug_all_speed1, echo=FALSE>>=
+do = function(fid, caption="", ...) {
+    file.path(speed1, paste0(fid, ".RData")) %>%
+        io$load() %>%
+        transmute(Drug = drug,
+                  Pathway = ifelse(nchar(scores) > 40,
+                                   paste0(substr(scores, 1, 37), "..."),
+                                   scores),
+                  Size=size, Effect=estimate, `Wald stat.`=statistic, `P-value`=p.value, FDR=adj.p) %>%
+        tab(caption=paste(caption, "vs. drugs (pan-cancer)"), p=0.05, ...)
+}
+do("do_assocs", "Optimised SPEED scores")
+@
+}
 
 \clearpage
 \section{Associations for evaluating perturbation-response signatures (chapter 4)\label{sec:ch4}}
