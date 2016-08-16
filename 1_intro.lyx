@@ -671,11 +671,18 @@ Within a therapeutic intervention, our goal is to selectively treat (or
 \begin_layout Standard
 Elaborating on our simplification, it is of course not the case that an
  administered compound will be available to all cells at the same concentration.
- Instead, it first needs to reach the bloodstream (which includes uptake
- and resorption, then modification in the liver [*?] and pancreas if taken
- orally), then be distributed by the flow of blood into all the capillaries
- (which the exception of the brain that has an additional barrier), until
- finally cells are able to absorb it.
+ Instead 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Ruiz-Garcia2008-ep"
+
+\end_inset
+
+, it first needs to reach the bloodstream (which includes uptake and resorption,
+ then modification in the liver and pancreas if taken orally), then be distribut
+ed by the flow of blood into all the capillaries (which the exception of
+ the brain that has an additional barrier), until finally cells are able
+ to absorb it.
  As a rule of thumb whether a drug can be orally absorbed or not, a common
  measure is 
 \begin_inset Quotes eld
