@@ -1524,8 +1524,12 @@ reference "fig:covar-fits"
 
 \end_inset
 
-): CDK inhibitors may act as sensitisers for Trametinib (GSK1120212) in
- multiple tissues (top).
+):
+\end_layout
+
+\begin_layout Itemize
+CDK inhibitors may act as sensitisers for Trametinib (GSK1120212) in multiple
+ tissues (top).
  This has been found in a mouse model of melanoma 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -1534,7 +1538,10 @@ key "Kwong2012-vd"
 \end_inset
 
 , our analysis suggests stronger effects in the tissues listed.
- Combination of Raf (SB590885) and MEK inhibitors in BRCA (middle).
+\end_layout
+
+\begin_layout Itemize
+Combination of Raf (SB590885) and MEK inhibitors in BRCA (middle).
  A synergistic effect has been shown in melanoma 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -1543,7 +1550,10 @@ key "Killock2014-ku"
 \end_inset
 
 .
- Various drugs may act as sensitisers for Temozolomide (DNA alkylating agent)
+\end_layout
+
+\begin_layout Itemize
+Various drugs may act as sensitisers for Temozolomide (DNA alkylating agent)
  in COREAD (bottom).
  This has been shown for Mitomycin C and Rucaparib (PF-01367338, AG014699)
  in metastatic melanoma 

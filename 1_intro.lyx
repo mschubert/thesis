@@ -3668,8 +3668,7 @@ Experimental and computational
 \begin_layout Standard
 Reproducibility of scientific experiments has recently gotten into the spotlight
  when Amgen published a high-profile study that tried to independently validate
- findings of [40?] findings reported by different groups in the journals
- 
+ findings of 53 findings reported by different groups in the journals 
 \begin_inset ERT
 status open
 
@@ -3711,12 +3710,12 @@ journal{Cell}
  
 \begin_inset CommandInset citation
 LatexCommand cite
-key "Baker2016-ng"
+key "Begley2012-pk,Baker2016-ng"
 
 \end_inset
 
 .
- For half of the studies that they investigated, they could not obtain the
+ For 47 of the studies that they investigated, they could not obtain the
  same results that the respective authors reported.
  Needless to say, this raised some concerns about the current paradigm of
  publishing new results quickly instead of thoroughly and over-claiming
