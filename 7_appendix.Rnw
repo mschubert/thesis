@@ -60,9 +60,9 @@ sig_comb = "/home/mschu/Work/signature-combinations"
 
 {\tiny
 <<pan_drug_all_mut, echo=FALSE>>=
-do = function(fid, caption="", ...) {
+do = function(fid, caption="", subset="assocs.pan", ...) {
     file.path(speed2, "drug_assocs/assocs_all", paste0(fid, ".RData")) %>%
-        load2("assocs.pan") %>%
+        load2(subset) %>%
         transmute(Drug = drug,
                   Pathway = ifelse(nchar(scores) > 40,
                                    paste0(substr(scores, 1, 37), "..."),
@@ -92,10 +92,11 @@ do("gsva_reactome", "Reactome")
 
 \subsection{SPEED platform\label{sub:ch2-speed}}
 
+{\tiny
 <<pan_drug_all_speed1, echo=FALSE>>=
 do = function(fid, caption="", ...) {
     file.path(speed1, paste0(fid, ".RData")) %>%
-        io$load() %>%
+        load2() %>%
         transmute(Drug = drug,
                   Pathway = ifelse(nchar(scores) > 40,
                                    paste0(substr(scores, 1, 37), "..."),

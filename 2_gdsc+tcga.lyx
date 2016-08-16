@@ -3568,23 +3568,6 @@ key "Khosravi-Far1995-mk"
 n.
 \end_layout
 
-\begin_layout Standard
-Markers not shown in the plot are listed in the appendix, section 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ref{sub:ch2-speed}
-\end_layout
-
-\end_inset
-
-.
-\end_layout
-
 \begin_layout Section
 Discussion
 \end_layout
