@@ -148,7 +148,17 @@ Significance and epidemiology
 \end_layout
 
 \begin_layout Standard
-The International Agency for Research on Cancer estimates of global incidence
+Cancer is a disease of the genes, given rise by changes in the genome that
+ mediate malignant transformation and hence uncontrolled growth of a cell
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Hanahan2000-is"
+
+\end_inset
+
+.
+ The International Agency for Research on Cancer estimates of global incidence
  of cancer to be 12.7 million new cases on 7.6 million cancer deaths based
  on estimates for 182 countries in 2008 
 \begin_inset CommandInset citation
@@ -182,12 +192,12 @@ key "Jemal2011-ku"
 
 \begin_layout Standard
 Needless to say, the disease is a global health concern and better ways
- of diagnosis and treatment are needed, as well as better understanding
+ of diagnosis and treatment are needed, as well as a better understanding
  of the molecular mechanisms.
 \end_layout
 
 \begin_layout Subsection
-Mutational processes
+Causes of genetic variation
 \end_layout
 
 \begin_layout Subsubsection
@@ -199,21 +209,31 @@ In the human population, there is natural variation in the genome from one
  individual to another, which gets passed down through generations in the
  process of reproduction.
  Each human being has two copies of their DNA, one passed down from their
- mother and the other passed down from their father (excluding mitochondrial
- DNA that is only passed down the maternal lineage 
+ mother and the other passed down from their father.
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+this is excluding mitochondrial DNA that is only passed down the maternal
+ lineage 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Hutchison1974-hh"
 
 \end_inset
 
-).
+
+\end_layout
+
+\end_inset
+
  Disregarding of where the copies that an individual actually inherits came
  from, they may harbour the same sequence (that is, the individual is homozygous
- in a given base or gene) or may be different between those (that is, the
- individual is heterozygous).
- This is (in part) what makes us look different, but also what may cause
- us to be more or less susceptible to a certain disease or treatment thereof.
+ in a given base or gene) or may be different between those so-called alleles
+ (that is, the individual is heterozygous).
+ This together with our environment is what makes us look different, but
+ also what may cause us to be more or less susceptible to a certain disease
+ or treatment thereof.
  Since the genes were assembled in the fertilized egg already that afterwards
  underwent cell divisions (in a process called mitosis), all the cells in
  our body in theory harbour the same DNA sequence, with the exception that
@@ -260,9 +280,8 @@ key "Kunkel2000-ts,McCulloch2008-wm"
 Such an error may manifest itself in multiple ways.
  The replication apparatus (DNA polymerase) may miss the insertion of a
  base or a couple of bases that was in the ancestral in the newly synthesised
- strand, which produces a small deletion.
- In contrast, it also may insert a base that was not in the original strand,
- thereby producing an insertion.
+ strand, which produces a small deletion, or insert a base that was not
+ in the original strand, thereby producing an insertion.
  It may also insert the wrong base, which leads to a substitution 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -271,11 +290,10 @@ key "Loeb1974-hz"
 \end_inset
 
 .
- While discussing theses mutational processes one should keep in mind that
+ While discussing these mutational processes one should keep in mind that
  those errors introduced do manifest itself only on one of the two strands
- in an allele, which will lead to a base not perfectly matching its opposite
- base anymore.
- This means they do not pair as well as they were if there had been no error.
+ in an allele, which will lead to a base no longer matching its opposite
+ pair as well as if there had been no error.
 \end_layout
 
 \begin_layout Subsubsection
@@ -285,7 +303,20 @@ Mutations, copy number alterations, and structural variation
 \begin_layout Standard
 Even when the replication process produced a perfect copy of the ancestral
  strands, there may still be cell-internal or external processes that affect
- the DNA's integrity 
+ the DNA's integrity, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+latin{e.g.}
+\end_layout
+
+\end_inset
+
+ exposure to ultraviolet radiation, , or a host's virus defence system 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Alexandrov2013-qo"
@@ -293,7 +324,8 @@ key "Alexandrov2013-qo"
 \end_inset
 
 .
- This could be single base exchanges (single nucleotide polymorphisms, 
+ This could lead to single base exchanges (single nucleotide polymorphisms,
+ 
 \begin_inset ERT
 status open
 
@@ -316,58 +348,7 @@ key "Jones2012-fc"
 \end_inset
 
 ), or strand breaking and rejoining at different positions (structural rearrange
-ments–from single events that produce gene fusions 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Nowell1960-rh,Mitelman1997-au,Garnett2012-dk"
-
-\end_inset
-
- to 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Korbel2007-nq"
-
-\end_inset
-
- catastrophic DNA shattering and rearrangements 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Rausch2012-mt,Northcott2012-ci"
-
-\end_inset
-
-).
-\end_layout
-
-\begin_layout Subsection
-Consequences
-\begin_inset CommandInset label
-LatexCommand label
-name "subsec:Consequences"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Genes that are relevant for cancer development and progression have long
- been classified in Oncogenes and Tumour Suppressor Genes 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Croce2008-bn"
-
-\end_inset
-
-.
- In broad terms, this classification represents the following: does a mutation
- introduce a gene function that was not there before, or it loses sensitivity
- to an inhibitory signal that kept it in check, this gene is called an Oncogene
- in its active (mutated) form, or Proto-Oncogene in its wild-type form;
- conversely, if a mutation causes a gene to lose its function as e.g.
- a negative regulator of cell growth, it is called a Tumour Suppressor Gene.
- The first Tumour Suppressor Gene that has been found was 
+ments–
 \begin_inset ERT
 status open
 
@@ -375,42 +356,30 @@ status open
 
 
 \backslash
-gene{TP53}
+latin{e.g.}
 \end_layout
 
 \end_inset
 
- in 1979, now termed 
-\begin_inset Quotes eld
-\end_inset
-
-guardian of the genome
-\begin_inset Quotes erd
-\end_inset
-
- for its numerous functions maintaining DNA integrity, managing DNA repair,
- and causing apoptosis or senescence of the former fail 
+ forming gene fusions 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "Levine2009-lo"
+key "Nowell1960-rh,Mitelman1997-au,Garnett2012-dk"
 
 \end_inset
 
-.
- More recently, mutations that actively contribute to either development
- of progression of a cancer have been called drivers, while the mutations
- introduced by e.g.
- a faulty DNA replication machinery (that a cancer may have caused) that
- bear no functional impact on the cell are called passenger mutations.
- Driver genes are usually either activated Oncogenes or Tumour suppressor
- genes, but may also have both functions 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Vogelstein2004-mx"
+).
+\end_layout
+
+\begin_layout Subsection
+Functional impact of mutations
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Consequences"
 
 \end_inset
 
-.
+
 \end_layout
 
 \begin_layout Standard
@@ -467,10 +436,7 @@ key "Burnett1954-bw"
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
-This protein now may be affected by a mutation so that it no longer waits
+ This protein now may be affected by a mutation so that it no longer waits
  for an upstream signal to transduce, but sends the downstream signal to
  grow and divide irrespective of what the upstream input is.
  One such example is the well-known 
@@ -497,13 +463,82 @@ key "Zecchin2013-fn"
 .
 \end_layout
 
+\begin_layout Standard
+Genes that are relevant for cancer development and progression have long
+ been classified in Oncogenes and Tumour Suppressor Genes 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Croce2008-bn"
+
+\end_inset
+
+.
+ In broad terms, this classification represents the following: does a mutation
+ introduce a gene function that was not there before, or it loses sensitivity
+ to an inhibitory signal that kept it in check, this gene is called an Oncogene
+ in its active (mutated) form, or Proto-Oncogene in its wild-type form;
+ conversely, if a mutation causes a gene to lose its function as e.g.
+ a negative regulator of cell growth, it is called a Tumour Suppressor Gene.
+ The first Tumour Suppressor Gene that has been found was 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+gene{TP53}
+\end_layout
+
+\end_inset
+
+ in 1979, now termed 
+\begin_inset Quotes eld
+\end_inset
+
+guardian of the genome
+\begin_inset Quotes erd
+\end_inset
+
+ whose protein is involved in numerous functions maintaining DNA integrity,
+ managing DNA repair, and causing apoptosis or senescence of the former
+ fail 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Levine2009-lo"
+
+\end_inset
+
+.
+ More recently, mutations that actively contribute to either development
+ of progression of a cancer have been called drivers, while the mutations
+ introduced by e.g.
+ a faulty DNA replication machinery (that a cancer may have caused) that
+ bear no functional impact on the cell are called passenger mutations.
+ Driver genes are usually either activated Oncogenes or Tumour suppressor
+ genes, but may also have both functions 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Vogelstein2004-mx"
+
+\end_inset
+
+.
+\end_layout
+
 \begin_layout Subsection
-The path to uncontrolled growth
+Malignant transformation
 \end_layout
 
 \begin_layout Standard
-Mutagenic driving forces are not only all around but also inside us (as
- exemplified by the 
+Mutagenic driving forces 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Alexandrov2013-qo"
+
+\end_inset
+
+ are not only all around but also inside us (as exemplified by the 
 \begin_inset ERT
 status open
 
@@ -516,14 +551,7 @@ gene{APOBEC}
 
 \end_inset
 
- virus defence 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Alexandrov2013-qo"
-
-\end_inset
-
-).
+ virus defence).
  However, most cells do not start to divide uncontrollably, even if they
  acquire a driver mutation.
  For instance, it has been shown that in healthy skin there is a high number
@@ -601,10 +629,10 @@ Tumour heterogeneity
 \end_layout
 
 \begin_layout Standard
-Cells in a tumour are not homogeneous, but it should rather be seen as an
- evolutionary process of diverse clones that compete for a growth advantage
- subjected to positive and negative selection.
- This has implications both cancer growth as well as therapy, so assessing
+Cells in a tumour are not homogeneous, but the latter should rather be seen
+ as an evolutionary process of diverse clones that compete for a growth
+ advantage subjected to positive and negative selection.
+ This has implications for cancer growth as well as therapy, and hence assessing
  this heterogeneity has become an important research topic 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -631,13 +659,12 @@ cc-by timeline figure?
 \begin_layout Standard
 However, there are a couple of challenges when trying to assess the whole
  genetic diversity of a sample.
- It is important to sample not only in one place, but either homogenise
+ It is important to take it not only in one place, but either homogenise
  the tissue or selectively take small samples in different subsections.
  Another challenge is that for detecting very minor frequencies, one needs
- to sequence at a high depth (so that this segment is read by sampling the
- genome) and be sure that the resulting variants are not only due to sequencing
- errors (if there is little enough DNA that it needs to be amplified, errors
- introduced by this process need also be considered).
+ to read the genome many times over and be sure that the resulting variants
+ are not only due to errors in this process, or any other by which the sample
+ is treated after acquisition.
 \end_layout
 
 \begin_layout Section
@@ -658,8 +685,8 @@ Within a therapeutic intervention, our goal is to selectively treat (or
  we want to impact as little as possible.
  If we take the simple example of killing cells, we want a drug that kills
  all the bad cells and leaves the good cells alone.
- An effective drug will work on the bad cells at a lower concentration than
- on the good ones.
+ Hence, an effective drug will work on the bad cells at a lower concentration
+ than on the good ones.
  If the concentration is too high, it will undoubtedly affect other cells
  as well.
  This range of concentration, where a given drug already acts on the target
@@ -783,10 +810,8 @@ reference "subsec:Consequences"
  But there are many more instances where a mutation in a gene yields a gene
  product that is abnormally active- or inactive.
  This often includes members of the MAP kinase pathway (like EGFR, RAS,
- RAF, MEK, or ERK), but frequently - and often strongly correlated with
- the general cell state as is defined by, for instance, the tissue of origin
- - other proteins and pathways that confer a selective advantage in a given
- context.
+ RAF, MEK, or ERK), but frequently also other proteins and pathways that
+ confer a selective advantage in a given context.
  An important aspect in that regard is the concept of oncogene addiction:
  Once a cell, or a population of cells, suffers a molecular lesion that
  causes aberrant signalling, the cell (or cells) become dependent on exactly
@@ -805,11 +830,7 @@ key "Weinstein2002-iw"
 This has an important implication for cancer therapy: if we are able to
  find (or design) a compound that specifically turns off one of those abnormally
  active proteins, we can kill cells that have it active.
- 
-\end_layout
-
-\begin_layout Standard
-Coming back to our example of the 
+ In example of the 
 \begin_inset ERT
 status open
 
@@ -823,13 +844,13 @@ gene{BRAF^{V600E}}
 \end_inset
 
  mutation, computational chemists indeed designed and developed a small-molecule
- inhibitor called Plexicon (more specifically, PLX4720) that proved to bind
- the mutation version of the BRAF protein with a much higher affinity than
- the one found in wild-type cells.
+ inhibitor called Plexicon (more specifically, PLX4720 or nowadays called
+ Vemurafenib) that proved to bind the mutated version of the BRAF protein
+ with a much higher affinity than the one found in wild-type cells.
  This, in some ways, could be considered the perfect drug for cancer therapy,
- because it has it has favourable uptake in the body, and once it is there
- the therapeutic window is much larger compared to other compounds due to
- this difference in binding affinity 
+ because it has it has favourable uptake in the body and afterwards the
+ therapeutic window is much larger compared to other compounds due to this
+ difference in binding affinity 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Chapman2011-jl"
@@ -845,45 +866,6 @@ There are, however, many other kinase inhibitors as well as antibodies that
 \end_layout
 
 \begin_layout Subsection
-Immune therapy
-\end_layout
-
-\begin_layout Standard
-The importance of the immune system in the suppression of cancer has only
- recently been discovered.
- As a consequence, drugs have been developed that target the inhibition
- that cancer cells confer on to immune cells using the PD-1–PD-L1 ligand-recepto
-r pair 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Blank2005-cc,Zou2016-qz"
-
-\end_inset
-
-.
- This has shown immense promise in the clinic 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Brahmer2012-kv,Ott2013-eh"
-
-\end_inset
-
-, however, the field is still in its infancy.
- When the President of the United States announced the so-called Moonshot
- effort that promised funding for developing and improving personalised
- cancer treatment by targeted therapies, immune therapies were set to play
- a profound role in it 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Kaiser2016-jz"
-
-\end_inset
-
-.
- These therapies, however, are not a focus of this work.
-\end_layout
-
-\begin_layout Subsection
 Development of resistance
 \end_layout
 
@@ -893,14 +875,13 @@ Unfortunately, targeted therapies often can not kill all cells before they
  cells were resistant to begin with and then outgrow their competitors.
  This is one of the reasons why targeting mutations in driver genes is a
  good start, but it needs to be augmented with knowledge of the dynamic
- changes it induces in the cellular signalling network and the evolutionary
- paths for a cell to respond.
+ changes mutations induce in the cellular signalling network and the evolutionar
+y paths for a cell to respond.
 \end_layout
 
 \begin_layout Standard
 Let us revisit one of the most well-known examples in targeted therapies,
- the inhibitor Plexicon (PLX4720; later marketed under the name Vemurafenib)
- specifically targeted to 
+ the inhibition of 
 \begin_inset ERT
 status open
 
@@ -925,27 +906,19 @@ key "Chapman2011-jl"
 
 , which could be hailed as a success for identifying a target and rationally
  designing an inhibitor that abrogates oncogenic signalling.
- However, there was one drawback: after a couple more weeks after the initial
- success, the tumour cells were able to overcome the effects of the inhibitor,
- start to grow again, and ultimately lead to the recurrence of the tumours
- that the patient later died from.
+ However, there was one drawback: after a couple more weeks past the initial
+ success the tumour cells were able to overcome the effects of the inhibitor,
+ leading to the recurrence of tumours that the patient later died from.
 \end_layout
 
 \begin_layout Standard
 This, together with multiple other examples, proved to show that targeted
  therapies work for a while, but they are, in a lot of cases, unable to
- prevent recurrence.
+ permanently suppress tumour growth.
  But how does this work? In order for a tumour to regrow, there need to
  be some cancerous cells left alive after treatment, as this rapid regrowth
- of mass can not be explained by an independent inception, so some cells
- must have survived the process of therapy.
- More specifically, there are two possibilities of these cells that later
- repopulate a tumour can be formed (and a spectrum in between): (1) the
- applied selection pressure (the therapy killing off sensitive cells) caused,
- together with a rapid accumulation new mutations, different pools or cells
- to emerge where a subset was no longer affected by the drug and that could
- later expand, or (2) those resistant cells were there all along, just expanding
- their niche once the predominant clones were gone 
+ of mass can not be explained by an independent inception.
+ Hence, some cells must have survived the process of therapy 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Heppner1983-sw,Reya2001-ay"
@@ -956,8 +929,9 @@ key "Heppner1983-sw,Reya2001-ay"
 \end_layout
 
 \begin_layout Standard
-Many distinct strategies have been suggested to overcome this, most notably
- the combination of a MEK and BRAF inhibitor in melanoma 
+Many distinct strategies have been suggested to more effectively kill cancer
+ cells, most notably the combination of a MEK and BRAF inhibitor in melanoma
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Long2014-uy"
@@ -1004,7 +978,7 @@ It is easy to argue that in order to find better cancer treatments, we first
  that have spun out of the normal biological control that cells of an organism
  exert on each other.
  In order to improve our understanding, it is required to collect data about
- the different types, stages, treatments, and similar.
+ the different types, stages, and treatments of the disease.
 \end_layout
 
 \begin_layout Standard
@@ -1012,27 +986,27 @@ This poses a problem: it is not possible to perform all of the assays required
  on the actual patients.
  There is just no justification for a patient to undergo surgery if we want
  to know if protein A interacts with protein B.
- Also with treatments, we can not try new treatments not having a strong
- indication that this might be the best known possibility of curing a patient,
- as this would be highly unethical.
+ Also, we can not try new treatments without a strong indication that this
+ might be the best known possibility of curing a patient, as this would
+ be highly unethical.
  It follows that there is a requirement for some biological system that
  mirrors the disease while, at the same time, is easy to handle in the laborator
 y.
- Therein, the points mentioned involve a trade-off: a system that mirrors
- the disease perfectly and is easy to handle does not exist, but there are
- multiple systems (outlined in the sections below) that are closer to one
- or the other.
+ In choosing such a system, the points mentioned involve a trade-off: one
+ that mirrors the disease perfectly and is easy to handle does not exist,
+ but there are multiple systems (outlined in the sections below) that are
+ closer to one or the other.
  Which one to use must be decided in each experiment individually - considering
  its goals, effort, conclusiveness and applicability to the question studied.
 \end_layout
 
 \begin_layout Standard
-However, if there is a strong indication given those model systems that
- a certain treatment approach is truly beneficial to a certain patient or
- patient group, this needs to be thoroughly tested to make sure that those
- indications previously shown using a model system - that are known to mirror
- a lot of aspects of the actual disease, but never all - actually hold in
- humans as well 
+If these disease models provide a strong indication that a certain treatment
+ approach is truly beneficial to a certain patient or patient group, this
+ needs to be thoroughly tested to make sure that those indications previously
+ shown using a model system - that are known to mirror a lot of aspects
+ of the actual disease, but never all - actually hold in humans as well
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Fields2005-tb"
@@ -1042,49 +1016,24 @@ key "Fields2005-tb"
 .
 \end_layout
 
-\begin_layout Standard
-All drug screening experiments and analysis based thereon in this work,
- while there are potentially many drawbacks associated with it, have been
- carried out on data that was derived from cell lines.
- This can easily be explained by the fact that the amount that needed to
- be generated in order to make general statements about perturbed gene expressio
-n and especially drug response is not feasible with any other model system.
-\end_layout
-
-\begin_layout Standard
-For cancer-specific gene expression, I used either the same cell lines,
- or patient data directly from a consortium whose aim it is to molecularly
- characterise a multitude of cancers 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Cancer_Genome_Atlas_Network2012-ll"
-
-\end_inset
-
-.
- It is also the latter where I obtained survival data from, as more thoroughly
- described in section 4.
-\end_layout
-
 \begin_layout Subsection
-Cell Lines
+Cell lines
 \end_layout
 
 \begin_layout Standard
-One of the easiest model systems that provide a reasonable accurate mirror
+One of the easiest model systems that provide a reasonably accurate mirror
  of a lot of the biology involved in the disease are cell lines, which is
  basically taking a number of cells from a tumour, and growing them in a
  petri dish for multiple generations (passages).
- An obvious advantage of this method is that the biological material that
- assays can be performed on is virtually unlimited, easy to produce and
- maintain.
+ An advantage of this method is that the biological material that assays
+ can be performed on is virtually unlimited, easy to produce and maintain.
  This is because cells grow in the dishes as long as they are supplied with
  nutrients and potentially growth factors or cytokines, while still reflecting
  a lot of the properties that cells in a tumour would.
  However, by passaging cells consecutively in petri dishes for many generations,
  the evolutionary pressure that they are selected by is essentially the
- growth rate on the dish, which will not reflect the proportions that one
- would find in a real tumour.
+ growth rate on the dish, which will not reflect the forces one would find
+ in a real tumour.
  In fact, the fastest growing clone will outcompete all others in a couple
  of generations - which gives a relatively uniform molecular phenotype across
  all cells, but in turn also loses the heterogeneity found in a primary
@@ -1102,12 +1051,12 @@ key "Gey1952-qc"
 
  that was derived from a patient of cervical cancer in 1951, named Henrietta
  Lacks.
- This cell line, however, with how long it has been kept in culture as well
- as its high mutation rate have produced a genotype that no longer resembles
- primary cancer samples in many ways.
+ This cell line, however, considering how long it has been kept in culture
+ as well as its high mutation rate, has produced a genotype that no longer
+ resembles primary cancer samples in many ways.
  One property is that a normal human cell has two copies of the genome (the
- two alleles), whereas HeLa cells have four copies, and the HeLa genome
- revealed more extensive aberrations 
+ two alleles), whereas HeLa cells have four copies, and its genome revealed
+ more extensive aberrations 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Landry2013-sk"
@@ -1115,28 +1064,18 @@ key "Landry2013-sk"
 \end_inset
 
 .
+ In most cases however, experimentally used cell lines are more closely
+ tied their origin: they have, albeit with aberrations, a genome that resembles
+ primary tumours and they hence in many ways still resemble their tissue
+ of origin in molecular terms.
 \end_layout
 
 \begin_layout Standard
-However, experimentally used cell lines are usually more closely tied their
- origin: they have, albeit with aberrations, a genome that somewhat resembles
- primary tumours; they also in many cases still resemble their tissue of
- origin in terms of gene expression patterns and transcription factor activities.
- However, there are biological dynamics involved in a real tumour that can
- not be recapitulated by cell lines.
- These include interactions with other cell types (where a co-culture is
- possible, but not anywhere close in complexity), interactions with the
- extracellular matrix (remember the flat plastic dishes they are grown in).
- Another one, which can be seen as a special case of the former, is the
- lacking interaction with immune cells.
-\end_layout
-
-\begin_layout Subsection
-Organoids
-\end_layout
-
-\begin_layout Standard
-While the overall number of available cell lines is vast, there are limits.
+However, there are biological dynamics involved in a real tumour that can
+ not be recapitulated by cell lines, like their interactions with other
+ cells (especially immune cells) or with their surroundings (the extracellular
+ matrix).
+ Also, their number is limited.
  With the approximately 1,000 cell lines that the Genomics of Drug Sensitivity
  in Cancer (GDSC, cf.
  section 
@@ -1154,9 +1093,9 @@ key "Iorio2016-gh"
 \end_inset
 
 , it is time to think about how many more cell lines would be needed to
- gain enough statistical power for the long tail of rare mutations and whether
- the required amount of diversity can theoretically be generated with cell
- lines 
+ gain enough statistical power for the high number of rare mutations and
+ whether the required amount of diversity can theoretically be generated
+ with cell lines 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Francies2015-fs"
@@ -1164,23 +1103,8 @@ key "Francies2015-fs"
 \end_inset
 
 .
- While every xenografted mouse model is different, it is very time consuming
- and expensive to investigate cancers this way.
- Hence, there is a need for a model system that is simpler and easier to
- handle than animal models, but provides more diversity and numbers than
- cell lines 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Kamb2005-zq"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-One answer that resolves this issue could be organoid cultures: these are
- small assemblies of primary cells taken out of a tumour and grown in matrigel,
+ One way to resolve this issue could be organoid cultures: these are small
+ assemblies of primary cells taken out of a tumour and grown in matrigel,
  where the spatial separation of mini-cultures retains much of the tumour
  heterogeneity 
 \begin_inset CommandInset citation
@@ -1218,23 +1142,8 @@ Animal models
 \end_layout
 
 \begin_layout Standard
-Of course, there are aspects missing when relying on models that handle
- individual cells or the interaction of a couple of cell of the same type
- when trying to assess either mechanisms of pathogenesis or 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-latin{in vivo}
-\end_layout
-
-\end_inset
-
- response to a compound, which makes it necessary to perform experiments
- in a whole organism.
+For some kinds of experiments, it is necessary to model the effects of a
+ certain process in a whole organism.
  For this purpose animals have long been used, down from a simple multicellular
  worm (
 \begin_inset ERT
@@ -1263,21 +1172,22 @@ species{Xenopus}
 
 \end_inset
 
-, for induced pluripotency), up to mammals (mice, rats, and chimps).
+, for induced pluripotency), up to mammals (mice, rats, and chimps; often
+ for diseases).
  Just as the complexity of these organisms increases, they also mirror more
  and more aspects of human physiology.
- However, experiments performed in the latter organisms also takes much
- more time, they are more difficult (and expensive) to set up, and there
- are ethical concerns on keeping, handling, and killing animals for the
- purpose of ultimately saving human lives.
- Still, none of the animals mentioned is human, so there the unknown factors
- as to whether a certain drug that has been shown to work in cell lines
- and mice does indeed have the same effect in humans remains.
- Looking at the number of articles published about a specific molecular
- mechanism or the detailed characterisation of a compound and its usability
- as a drug, mice seem to be considered a reasonable trade-off between providing
- a close enough match of human biology and being not too difficult to keep
- 
+ However, experiments performed in higher organisms also requires more time,
+ they are more difficult (and expensive) to set up, and there are ethical
+ concerns on keeping, handling, and killing animals for the purpose of ultimatel
+y saving human lives.
+\end_layout
+
+\begin_layout Standard
+In terms of cancer, looking at the number of articles published about a
+ specific molecular mechanism or the detailed characterisation of a compound
+ and its usability as a drug, mice seem to be considered a reasonable trade-off
+ between providing a close enough match of human biology and being not too
+ difficult to keep 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Fields2005-tb"
@@ -1285,36 +1195,26 @@ key "Fields2005-tb"
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
-One line of experiments that can be done with mice but not humans is to
- edit genes in their germline, and then breed them with a reporter or until
- their offspring is homozygous for a desired mutation.
- The gene introduced can either be a reporter, to see where a it is expressed,
- or for instance a mutated version of a human gene that is known to induce
- the formation of tumours 
+ To gain insights, a mouse's genome can be engineered to include for instance
+ a mutated version of a human gene that is known to induce the formation
+ of tumours 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Talmadge2007-tr"
 
 \end_inset
 
-.
-\end_layout
-
-\begin_layout Standard
-Another method of investigation are xenografts, where an immunodeficient
- 
+, or an immunodeficient 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Fogh2014-ah"
 
 \end_inset
 
- mouse is inoculated with cancerous cells derived from either a cell line
- or a patient, to study effects like how cancerous cells influence and modify
- the microenvironment around them, how they can sustain themselves and grow,
+ mouse can be inoculated with cancerous cells derived from either a cell
+ line or a patient (xenograft).
+ Mouse models have taught us how cancerous cells influence and modify the
+ microenvironment around them, how they can sustain themselves and grow,
  attract the formation of blood vessels, and ultimately metastasise 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -1335,7 +1235,7 @@ Role of molecular data
 
 \begin_layout Standard
 One of the issues of both understanding as well as preventing or treating
- cancer development and progression is that it is a process in such complexity
+ cancer development and progression is that it is a process with such complexity
  that a simple observation of patients with the disease will not suffice
  to come up with effective models of disease inception and progression,
  or treatments for that matter.
@@ -1345,7 +1245,7 @@ One of the issues of both understanding as well as preventing or treating
  of DNA, but also the expression of RNA or proteins, including modifications.
  These different layers, able to quantify different projections of a cell's
  state, have provided us with an unprecedented opportunity to truly understand
- many molecular mechanisms that govern the processes running in both a normal
+ many molecular mechanisms that govern the processes active in both a normal
  and a diseased cell, and the differences between them.
 \end_layout
 
@@ -1362,10 +1262,10 @@ key "Sanger1977-mb"
 \end_inset
 
  that one could read DNA by supplying a minor fraction of di-deoxynucleotides
- in addition to deoxynucleotides that are normally incorporated into DNA
- during replication, in turn halting the replication chain and revealing
- the sequence, it was clear that this was a major improvement upon the previous
- method published in the same year 
+ in addition to labelled deoxynucleotides that are normally incorporated
+ into DNA during replication, in turn halting the replication chain and
+ revealing the sequence, it was clear that this was a major improvement
+ upon the previous method published in the same year 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Maxam1977-to"
