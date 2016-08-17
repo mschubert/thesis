@@ -88,8 +88,8 @@ Gene set methods for drug response
 \end_layout
 
 \begin_layout Standard
-Pathway methods have been used for a while in a cancer context, both for
- cell lines an primary tumours.
+Pathway methods are often used in a cancer context, both for cell lines
+ an primary tumours.
  Most of the time, the method of choice is to take a gene set from either
  Gene Ontology (GO) 
 \begin_inset CommandInset citation
@@ -180,12 +180,12 @@ s.
 \end_layout
 
 \begin_layout Standard
-GSEA using GO gene sets is ubiquitous: usually, a (for instance) differential
- expression analysis yields a list of genes, yet it is not clear which higher-le
-vel function they mediate.
+GSEA using GO gene sets is ubiquitous, often following a differential expression
+ analysis to see which higher-level function the differentially expressed
+ genes mediate.
  After computing the enrichment scores, our list of genes is condensed down
- to a list of significantly enriched GO categories, that may be related
- to the phenotype we are observing.
+ to a list of significantly enriched GO categories that may be related to
+ the phenotype we are observing.
  This may work very well in some cases.
  There are, however, a couple of caveats to observe: (1) a gene does not
  exclusively belong to one process; we might very well get a significant
@@ -206,7 +206,7 @@ makes sense
 \end_inset
 
 .
- Taken this selection of desired categories on its head, we may also be
+ Taking this selection of desired categories on its head, we may also be
  inclined to overlook a category that we don't want to see, e.g.
  because the involved process is already known in literature and we could
  not publish our new findings in a high-impact journal.
@@ -371,8 +371,6 @@ query of Ensembl Biomart on March 1st 2016
 \end_inset
 
 .
- I performed the subsequent analyses using gene sets from the biological
- process category only.
  For Reactome 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -451,7 +449,7 @@ target "https://github.com/yokuyuki/Enrichr"
 \end_inset
 
 .
- They encompassed gene sets for 35 pathway and pathway-related sources,
+ They encompassed gene sets for 35 pathway and pathway-related resources,
  including Gene Ontology, Reactome (where I queried the original databases
  to obtain more up-to-date gene lists), as well as KEGG 
 \begin_inset CommandInset citation
@@ -508,8 +506,8 @@ Calculation of the running sum statistic for GSEA and GSVA.
  Calculation of the running sum statistic (top left) and absolute deviation
  for enrichment score in case of GSEA vs.
  the difference in GSVA.
- Genes are ordered, genes that are in the query set are indicated by black
- bars.
+ Genes are ordered by differential expression, genes that are in the query
+ set are indicated by black bars.
  The red line indicates the running sum score where a score is added each
  time there is a hit and subtracted otherwise.
  GSEA hence produces a bimodal distribution of scores (left), while GSVA
@@ -764,7 +762,7 @@ name "fig:IC50schema"
 
 \begin_layout Standard
 The original GDSC data set contained different dilutions of drugs that the
- cell lines in the panel were subjected, measuring how much it interfered
+ cell lines in the panel were subjected to, measuring how much it interfered
  with their growth.
  Since I have got a pathway score for each cell line, I also need a single
  value corresponding to the sensitivity to a given drug.
@@ -807,7 +805,11 @@ x=IC_{50}\left(\frac{y-E_{min}}{E_{max}-y}\right)^{-slope}
 
 \begin_layout Standard
 I obtained already processed gene expression matrix from the GDSC cell lines
- and their fitted IC50 values to 265 public drugs from 
+ and their fitted 
+\begin_inset Formula $IC_{50}$
+\end_inset
+
+ values to 265 public drugs from 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Iorio2016-gh"
@@ -1183,8 +1185,11 @@ ref{sub:ch2-go}
 
 \end_inset
 
-)).
- Among the the top drugs, there are MEK inhibitors (Trametinib, RDEA119),
+).
+\end_layout
+
+\begin_layout Standard
+Among the the top drugs, there are MEK inhibitors (Trametinib, RDEA119),
  p53-stabiliser Nutlin-3a, and the multi-kinase inhibitor WZ3105.
  The biological processes that they are involved in have no obvious connection
  with their mechanism of action: While the 
@@ -1360,7 +1365,7 @@ ref{sub:ch2-reactome}
 
 \end_inset
 
-)).
+).
  The MEK inhibitors Trametinib and RDEA119 associate most strongly with
  fibrin clot dissolution and laminin interactions (a fibrous protein present
  in the basal lamina of the epithelia).
@@ -1395,6 +1400,13 @@ name "sec:Pathway-responsive-genes-SPEED"
 
 \end_inset
 
+Another possibility is to start off with fewer gene sets that we know we
+ are interested in.
+ In the case of cancer signalling and drug response, these could be the
+ signalling pathways that we know are involved.
+\end_layout
+
+\begin_layout Standard
 The original SPEED platform 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -1407,9 +1419,10 @@ key "Parikh2010-uj"
  and a perturbed condition).
  They use a consensus gene signature across multiple experiments, perturbing
  agents, and other conditions to arrive at a gene list that corresponds
- to pathway activation in a wide condition.
+ to pathway activation in a wide range of conditions.
  These consensus signatures of pathway perturbations are distinct from the
- expression level of pathway members, as described above.
+ expression level of pathway members that I described above, as they are
+ a downstream readout and not the expression status of the signalling molecules.
 \end_layout
 
 \begin_layout Subsection
@@ -1458,8 +1471,8 @@ target "http://speed.sys-bio.net/SPEED_db.zip"
 
 \end_inset
 
- and Python query tools the authors provided, I extracted gene lists with
- the given cutoff.
+ and Python query tools the authors provided, I extracted gene lists using
+ the above parameters.
  First, I used the default parameters in their implementation, which was
  to include all genes that were top 5% of up-regulated genes by z-score,
  overall top 50% of expressed genes, in at least 20% of the experiments
@@ -1473,7 +1486,7 @@ reference "fig:speed1_cor"
 
 \end_inset
 
-.
+ (left).
 \end_layout
 
 \begin_layout Standard
@@ -1509,7 +1522,7 @@ Correlation plots for GSEA scores per pathway across cell lines for the
 \end_inset
 
 Correlation plots for GSEA scores per pathway across cell lines for the
- original SPEED lists (left) and our separation-optimized version (right).
+ original SPEED lists (left) and my separation-optimized version (right).
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:speed1_cor"
@@ -1531,7 +1544,7 @@ name "fig:speed1_cor"
 
 \begin_layout Standard
 To counteract this problem, I extracted gene lists for different combinations
- of those four parameters and Python query tools the authors provided:
+ of the four parameters:
 \end_layout
 
 \begin_layout Itemize
@@ -1552,10 +1565,9 @@ Uniqueness: True or False
 \end_layout
 
 \begin_layout Standard
-For each combination, I performed a scan of the four adjustable platform
- parameters to optimize the order obtained by GSEA scores between control
- and stimulated experiments.
- For combination of parameters, 
+For each combination, I optimised the order obtained by GSEA scores between
+ control and stimulated experiments.
+ For each combination of parameters, 
 \begin_inset ERT
 status open
 
@@ -1570,7 +1582,8 @@ latin{i.e.}
 
  for each of the 4950 gene lists, I calculated the raw enrichment score
  for each pathway and cell line, yielding a total of 55 million enrichment
- scores.
+ scores (as the ordering is non-parametric, the raw GSEA score is good to
+ use here while being quicker to compute).
  I then went on to, for each pathway, construct a precision-recall curve
  that quantified how well the GSEA scores were able assign lower pathway
  activation scores to the control arrays than the perturbed arrays (where,
@@ -1579,8 +1592,8 @@ latin{i.e.}
 
 \begin_layout Standard
 The set of control arrays comprised all the un-stimulated arrays in the
- database, and the stimulated set all arrays in the database where a certain
- pathway was perturbed.
+ database, and the stimulated set of all arrays in the database where a
+ certain pathway was perturbed.
  I used as a measure of performance the area under the precision-recall
  curve.
  A perfect ordering (that is, all control arrays and then all stimulated
@@ -1591,25 +1604,27 @@ The set of control arrays comprised all the un-stimulated arrays in the
 
 \begin_layout Standard
 By using not only the matched control arrays to the perturbed arrays but
- all arrays present in the data set, we allow cross-activation of pathways
- while minimizing the fit to random differences in gene expression by different
- initial conditions.
+ all arrays present in the data set, I allow in my resulting signature the
+ cross-activation of pathways while minimizing the fit to random differences
+ in gene expression by different initial conditions.
 \end_layout
 
 \begin_layout Standard
 I split the data set (both control and perturbed arrays) in five different
  subsets, where four of the five were the designated training set and the
- fifth the designed test set.
+ fifth the test set.
  I calculated the prAUC for all the parameters described in the previous
  section, and chose the set with the highest score.
  I then went on to the part that was not used in training and quantified
  the prAUC there as well.
  I performed the whole process five times, with another subset functioning
  as the test set each time.
- I then chose the set that the highest prAUC.
+ I then chose the set that the highest prAUC in the test set, or in the
+ training set if it was lower than in the test set.
  I did not simply select the highest highest AUC in the test set because
  I would not want to select a model that performed badly on the training
  set to begin with.
+ This selection procedure can be represented using the following formula:
 \end_layout
 
 \begin_layout Standard
@@ -1632,7 +1647,7 @@ reference "fig:speed1_cor"
 
 \end_inset
 
-).
+, right).
  The values for the different gene list cutoff parameters that I selected
  after optimisation are listed in table 
 \begin_inset CommandInset ref
@@ -1644,8 +1659,8 @@ reference "tab:Parameter-selection-overview"
 , including the number of genes in the signature and prAUC (training and
  test set) compared between the original cutoffs used in the query tool
  and my selection.
- For all the pathways the optimisation of parameters yielded a better separation
- of control- vs.
+ For all the pathways, the optimisation of parameters yielded a better separatio
+n of control- vs.
  perturbed arrays.
 \end_layout
 
@@ -1669,11 +1684,11 @@ Parameter selection overview for each pathway
 \end_inset
 
 Parameter selection overview for each pathway.
- Z: Z-value cutoff (0.25-20), O: array overlap (20-80); E: overall expression
- cutoff (5-100), U: unique (+) or all (-) genes considered.
- Gene lists had to be between 50 and 250 genes to be considered, values
- for optimized and original lists are shown.
- Precision-recall AUC shown for training, cross-training for optimized lists
+ Z: Z-value cutoff (0.25-20%), O: array overlap (20-80%); E: overall expression
+ cutoff (5-100%), U: unique (+) or all (-) genes considered.
+ Gene lists had to be between 50 and 250 genes to be considered.
+ Values for optimized and original lists are shown.
+ Precision-recall AUC shown for training, cross-training for optimized lists,
  and whole data set for optimized lists vs.
  the one obtained by using the original lists.
 \begin_inset CommandInset label
@@ -3084,22 +3099,9 @@ Associations between Pathway Scores and Tissues
 \begin_layout Standard
 As a control, I compared the inferred pathway activation scores between
  different tissues.
- If the assigned scores per tissue are biologically meaningful, we would
- expect to find well-established literature evidence for backing them up.
- A heatmap overview of pathway activation scores is shown in figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:tissue-heatmap"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-An overview of up- and down-regulated pathways (in terms of the inferred
- pathway scores by the SPEED platform with my modifications) is shown in
- figure 
+ If the assigned scores per tissue are biologically meaningful, I would
+ expect to find well-established literature evidence supporting them.
+ An overview heatmap of pathway activation scores is shown in figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:tissue-heatmap"
@@ -3142,7 +3144,11 @@ Heatmap of inferred pathway activation scores for different tissues
 
 \end_inset
 
-Heatmap of inferred pathway activation scores for different tissues
+Heatmap of inferred pathway activation scores for different tissues.
+ Pathways in rows, TCGA tissue labels in columns, relative pathway activation
+ indicated by colour.
+ Rows and columns are clustered so that similar tissues and pathways are
+ shown close to each other, with branch lengths indicating distance.
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:tissue-heatmap"
@@ -3202,7 +3208,7 @@ key "Gupta2012-zp"
 .
  This correlates well with the inferred activity scores for JAK-STAT signalling.
  Similarly, TLR signalling has been shown to be induced by CpG oxydinucleotides
- in B- (DLBC, MM) and dendritic myeloid, but not T-cells 
+ in B-(DLBC, MM) and dendritic myeloid, but not T-cells 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Rothenfusser2002-gi"
@@ -3273,11 +3279,12 @@ key "Rajabi2012-fj,Gajanin2010-ff"
 \end_layout
 
 \begin_layout Itemize
-MAPK_only/MAPK_PI3K signalling seems to evenly distributed among non-blood
+MAPK_only/MAPK_PI3K signalling seems to be evenly distributed among non-blood
  cancer tissues.
  We found the highest activity of MAPK and MAPK_PI3K can be found in KIRC
  and BLCA/PAAD, respectively.
- However, the difference was a lot less apparent than for other pathways.
+ However, the difference was a lot less apparent than for other pathways,
+ suggesting that MAPK and EGFR pathway are important for all solid cancers.
 \end_layout
 
 \begin_layout Subsection
@@ -3290,14 +3297,10 @@ I calculated a linear regression between the obtained pathway scores and
 \begin_inset Formula $IC_{50}$
 \end_inset
 
-s for all cell lines and each pathway while correcting for tissues (used
+s for all cell lines and pathways while correcting for tissue labels (used
  as covariate).
  I adjusted p-values by controlling the false discovery rate and visualized
  the result as volcano plots and individual fits.
- For separate fits between tissues, I only calculated associations that
- had at least two sensitive cell lines (defined as it being in the top 10%
- of responders, not 100x less sensitive than the most sensitive overall,
- and having an IC50 below 1 uM).
 \end_layout
 
 \begin_layout Standard
@@ -3325,10 +3328,18 @@ ref{sub:ch2-speed}
 ).
  Negative regression slopes (left side of the graph, green) indicate sensitivity
  markers, i.e.
- a higher pathway activation score correlates with a lower IC50.
+ a higher pathway activation score correlates with a lower 
+\begin_inset Formula $IC_{50}$
+\end_inset
+
+.
  Positive regression slopes (right side, red) indicate resistance markers,
  i.e.
- higher activation scores correlate with higher IC50s.
+ higher activation scores correlate with higher 
+\begin_inset Formula $IC_{50}$
+\end_inset
+
+s.
 \end_layout
 
 \begin_layout Standard
@@ -3369,10 +3380,18 @@ Volcano plot of linear associations of inferred pathway activity within
  P-values FDR-adjusted.
  Negative regression slopes (left side of the graph, green) indicate sensitivity
  markers, i.e.
- a higher pathway activation score correlates with a lower IC50.
+ a higher pathway activation score correlates with a lower 
+\begin_inset Formula $IC_{50}$
+\end_inset
+
+.
  Positive regression slopes (right side, red) indicate resistance markers,
  i.e.
- higher activation scores correlate with higher IC50s.
+ higher activation scores correlate with higher 
+\begin_inset Formula $IC_{50}$
+\end_inset
+
+s.
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:pancan-volcano"
@@ -3445,6 +3464,8 @@ key "Jeannot2014-av"
 
 , this result is surprising because the association is stronger than with
  MAPK_only or MAPK_PI3K.
+ It may be because the authors of the SPEED platform chose to include MEK
+ inhibition as condition for PI3K activation.
 \end_layout
 
 \begin_layout Itemize
@@ -3525,8 +3546,8 @@ key "Kloo2011-ut"
 
 \end_inset
 
- and the combination of PI3K inhibition and active TNFa causes apoptosis
- in vitiligous keratinocytes 
+ and the combination of PI3K inhibition and active TNFa is known to cause
+ apoptosis in vitiligous keratinocytes 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Kim2007-db"
@@ -3575,8 +3596,9 @@ key "Khosravi-Far1995-mk"
 
 \end_inset
 
-, so cells with a higher MAPK activity may be less susceptible to Rac1 inhibitio
-n.
+.
+ Hence, cells with a higher MAPK activity may be less susceptible to Rac1
+ inhibition.
 \end_layout
 
 \begin_layout Section
@@ -3640,17 +3662,20 @@ T cell receptor
 \end_inset
 
  in Head and Neck Squamous Carcinoma (HNSC)? There are no immune cells involved
- in the culturing of HNSC cell lines.
+ in the culturing of HNSC cell lines, for example.
 \end_layout
 
 \begin_layout Standard
-We thus have two options: we either need to link seemingly unrelated gene
- sets back to the process that actually caused a difference in drug response,
- or we need to pre-select gene sets that may be relevant for drug response.
- Needless to say, the first approach may in most cases prove impossible,
- as we can not easily follow the chain of causality between a biological
- process that mediates differential drug response and its downstream readout
- as change of gene expression.
+Hence, we have two options: we either need to link seemingly unrelated gene
+ sets back to the process that actually caused a difference in drug response
+ by looking for evidence that may support it, or we need to pre-select gene
+ sets that may be relevant for drug response.
+\end_layout
+
+\begin_layout Standard
+For the first case, we can not easily follow the chain of causality between
+ a biological process that mediates differential drug response and its downstrea
+m readout as change of gene expression.
  The second alternative does not solve this, but leads to a much higher
  probability to catch causative gene sets when we already select candidates
  of exactly this by prior knowledge.
@@ -3664,27 +3689,27 @@ Pathway-responsive genes
 Using pathway-responsive genes instead of pathway expression to infer signalling
  activity makes a lot of sense: we look at the footprint of the actual signallin
 g activity (the expression changes downstream of a signalling pathway) and
- not the potential mediators (protein kinases, among others) by mRNA expression
- level that is a lot further removed from the actual signalling going on
- in a cell.
+ not the potential mediators (protein kinases, among others) by means of
+ mRNA expression level that is a lot further removed from the actual signalling
+ going on in a cell.
  However, the SPEED platform has some issues in terms of the level in which
- its pathways are correlated to one another: If we did calculate drug associatio
-ns with the original scores, hits would be groups where a given drug is
- correlated with all pathways in about the same extent.
+ its pathways correlated to one another: If we did calculate drug associations
+ with the original scores, hits would be groups where a given drug is correlated
+ with all pathways in about the same extent.
  This is likely due to how they only evaluated gene lists by their overlap
  with Gene Ontology categories, and not how well its enrichment scores are
  able to differentiate between microarrays where a given pathway perturbation
  is present and those where it is absent.
- And it is not useful for our purposes.
+ The original version was hence useful for my purposes.
 \end_layout
 
 \begin_layout Standard
-We thus have a need for scores that are more potent in distinguishing the
- gene expression footprints from one pathway to another.
- A way to do this in the existing platform is to no longer require that
- the signature genes from all pathways are obtained using the same cutoffs
- of the author's 4 parameters, but instead optimise them in way so that
- they are best able to tell apart the pathways one from another.
+There is a need for scores that are more potent in distinguishing the gene
+ expression footprints from one pathway to another.
+ A way to do this in the existing platform is what I did: no longer require
+ that the signature genes from all pathways are obtained using the same
+ cutoffs of the author's 4 parameters, but instead optimise them in way
+ so that they are best able to tell apart the pathways one from another.
  Looking at the correlations between the original cutoffs and the ones I
  suggest after the cross-validated optimisation, I know that this worked
  at least on those terms.
@@ -3692,30 +3717,42 @@ We thus have a need for scores that are more potent in distinguishing the
 
 \begin_layout Standard
 The next question to answer is whether we get more meaningful drug associations.
- Looking at the volcano plot for both pan-cancer and individual tissues,
- associations are, for one, not between a drug and all pathways, and for
- the other much better supported when searching for literature corresponding
- to the top hits.
+ Looking at the volcano plot, associations are, for one, not between a drug
+ and all pathways, and for the other much better supported when searching
+ for literature corresponding to the top hits.
 \end_layout
 
 \begin_layout Standard
 However, there is still a number of potential issues with the current model,
- many of which can be traced back to using the original platform: (1) The
- authors use raw microarray data as well as processed data.
+ many of which can be traced back to using the original platform:
+\end_layout
+
+\begin_layout Itemize
+The authors use raw microarray data as well as processed data.
  For the processed data, we have no idea of what the original authors did
  with their data to arrive at the expression levels they report.
  Sometimes they report this in their respective experimental or data analysis
  procedures, but often they don't.
- There is a potential of all sorts of biases that we can not control for.
- (2) The platform as it currently stands needs four parameters to be specified,
+ There is a potential of a variety of biases that we can not control for.
+\end_layout
+
+\begin_layout Itemize
+The platform as it currently stands needs four parameters to be specified,
  each of which corresponds to a somewhat arbitrary cutoff.
- Even if we ignore this, they limit that method in a way that does not support
- down-regulated genes at all (as the z-scores are filtered by top percentile
- only).
- (3) We bias the selection of genes to the ones most commonly found in microarra
-ys.
+ Even if we ignore this, they limit the number of signature genes in a way
+ that does not support down-regulated genes at all (as the z-scores are
+ filtered by top percentile only).
+\end_layout
+
+\begin_layout Itemize
+We bias the selection of genes to the ones most commonly found in microarrays.
  If a gene is highly upregulated but not present in arrays and thus failing
  the overlap cutoff, we would lose it.
+\end_layout
+
+\begin_layout Itemize
+MAPK inhibition was in the curated set of PI3K activators.
+ This is an error in curation and could explain many PI3K associations.
 \end_layout
 
 \begin_layout Standard
@@ -3724,7 +3761,7 @@ ts in terms of correlatedness of scores and resulting drug associations,
  it still has enough drawbacks to suggest that a different approach keeping
  the overall idea of using pathway-responsive genes as signature for pathway
  activity may be worth exploring.
- I describe this in chapter 3.
+ I describe the approach I developed in the next chapter.
 \end_layout
 
 \begin_layout Standard

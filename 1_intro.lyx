@@ -372,7 +372,7 @@ key "Nowell1960-rh,Mitelman1997-au,Garnett2012-dk"
 \end_layout
 
 \begin_layout Subsection
-Functional impact of mutations
+Functional impact of mutations: the central dogma
 \begin_inset CommandInset label
 LatexCommand label
 name "subsec:Consequences"
@@ -387,11 +387,23 @@ A gene that has an erroneous sequence somewhere on the DNA is, by itself,
  not a cause for a cell to alter its function.
  Instead, genes only store the information, like having a template, that
  is required to form an active compound from it.
- This may be a regulatory RNA, or a messenger RNA (mRNA; both derived from
- DNA by a process called transcription) that is later used by the Ribosome
- to chain amino acids together to a functional protein in a process called
- translation.
- The path from mRNA to protein may involve additional steps, such as cutting
+ Genes can be transcribed in regulatory RNA, or messenger RNA (mRNA; both
+ derived from DNA by a process called transcription) that is later used
+ by the Ribosome to chain amino acids together to a functional protein in
+ a process called translation.
+ The process of transcription and translation is referred to the central
+ dogma of molecular biology 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Crick1958-vv"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The path from mRNA to protein may involve additional steps, such as cutting
  out unneeded parts or pasting together different building blocks (splicing),
  or covalently attaching sugars or other chemical groups (post-translational
  modifications) to yield the functional protein and/or to regulate its activity
@@ -403,6 +415,24 @@ key "Crick1958-vv"
 \end_inset
 
 .
+ Proteins are involved in the transduction of a signal from a molecular
+ cue binding to a receptor on a cell's surface is how a cell responds to
+ changes in its environment.
+ In turn, this signal is relayed through the network of kinases and phosphatases
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+there are other chemical modifications, but those are the best studied
+\end_layout
+
+\end_inset
+
+ until it reaches the terminal nodes that are the transcription factors,
+ acting in conjunction with polymerase III and other co-factors to initiate
+ changes in gene expression.
+ Those genes are in turn transcribed into RNA, and if they are protein-coding
+ consequently translated into those.
 \end_layout
 
 \begin_layout Standard
@@ -784,6 +814,12 @@ Targeted therapies
 \end_layout
 
 \begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:targeted-therapies"
+
+\end_inset
+
 A recurrent theme of cancer development and progression is the aberrant
  activation of specific molecular cues in cell signalling.
  An example of this is the well-known 
@@ -1142,9 +1178,9 @@ Animal models
 \end_layout
 
 \begin_layout Standard
-For some kinds of experiments, it is necessary to model the effects of a
- certain process in a whole organism.
- For this purpose animals have long been used, down from a simple multicellular
+For some kinds of experiments, it is necessary to model the effects on a
+ whole organism.
+ For this purpose animals have long been used, from a simple multicellular
  worm (
 \begin_inset ERT
 status open
@@ -1172,11 +1208,11 @@ species{Xenopus}
 
 \end_inset
 
-, for induced pluripotency), up to mammals (mice, rats, and chimps; often
+, for induced pluripotency), and mammals (mice, rats, and chimps; often
  for diseases).
  Just as the complexity of these organisms increases, they also mirror more
- and more aspects of human physiology.
- However, experiments performed in higher organisms also requires more time,
+ closely aspects of human physiology.
+ However, experiments performed in higher organisms also require more time,
  they are more difficult (and expensive) to set up, and there are ethical
  concerns on keeping, handling, and killing animals for the purpose of ultimatel
 y saving human lives.
@@ -1204,18 +1240,19 @@ key "Talmadge2007-tr"
 
 \end_inset
 
-, or an immunodeficient 
+, or can be inoculated with cancerous cells derived from either a cell line
+ or a patient 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Fogh2014-ah"
 
 \end_inset
 
- mouse can be inoculated with cancerous cells derived from either a cell
- line or a patient (xenograft).
+.
  Mouse models have taught us how cancerous cells influence and modify the
- microenvironment around them, how they can sustain themselves and grow,
- attract the formation of blood vessels, and ultimately metastasise 
+ microenvironment around them and how the cells can sustain themselves and
+ grow, attract the formation of blood vessels, and ultimately metastasise
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Talmadge2007-tr"
@@ -1264,15 +1301,8 @@ key "Sanger1977-mb"
  that one could read DNA by supplying a minor fraction of di-deoxynucleotides
  in addition to labelled deoxynucleotides that are normally incorporated
  into DNA during replication, in turn halting the replication chain and
- revealing the sequence, it was clear that this was a major improvement
- upon the previous method published in the same year 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Maxam1977-to"
-
-\end_inset
-
-.
+ revealing the sequence, it was soon clear that this technology would revolution
+ise biology and medicine.
  Further incremental improvements and then the switch to next-generation
  sequencing has enabled the scientific community to read DNA on an unprecedented
  scale 
@@ -1305,18 +1335,16 @@ name "subsec:assay_RNA"
 \end_layout
 
 \begin_layout Standard
-In contrast to DNA, which is stable in sequence, the RNA that is transcribed
- represents more the state a cell is currently in and functions that need
- to be performed at a given time and in a given context.
- While there are housekeeping genes whose expression will not change fundamental
-ly between different tissue types and situations that a cell is in, the
- specific RNAs whose proteins will mediate specific functions such as cell
- division or response to a stimulus will.
- It can thus be argued that the sum of RNAs (the transcriptome), or more
+All healthy cells contain roughly the same genome, yet the functions they
+ perform in the body is vastly different.
+ This is why in contrast to DNA, the RNA that is transcribed represents
+ more the state a cell is currently in and functions that need to be performed
+ at a given time and in a given context.
+ It can hence be argued that the sum of RNAs (the transcriptome), or more
  specifically mRNAs provides an overview of the state a cell is currently
  in.
- Hence, measuring those RNAs will allow us to get a picture of the processes
- going on in a cell at a given time.
+ Measuring those RNAs will allow us to get a picture of the processes going
+ on in a cell at a given time.
  The two ways by which this is usually done are either microarrays or RNA
  sequencing, as outlined below.
 \end_layout
@@ -1335,9 +1363,9 @@ key "Brown1999-mc,Debouck1999-ec"
 
 .
  These are, in the simplest case, a carrier matrix (glass can be used but
- the more recent chips all feature a polymer matrix) that has fixed single-stran
-ded oligonucleotides spotted on them.
- For our sample, we would then extract and clean the RNA while simultaneously
+ the more recent chips use a polymer matrix) that has fixed single-stranded
+ oligonucleotides spotted on them.
+ From our sample, we would then extract and clean the RNA while simultaneously
  degrading any DNA that it contains, and label the RNA either with one dye
  
 \begin_inset CommandInset citation
@@ -1377,9 +1405,9 @@ An obvious drawback of this technology is that we need to know in advance
  before carrying out an experiment.
  Another possible issue is their detection threshold.
  As the readout is fluorescence based and there will always be a base-line
- level of it, it is hard to quantify the amount of RNA bound on a spot of
- the total number of molecules are so low that a few molecules do not significan
-tly change the readout.
+ level of it, and it is hard to quantify the amount of RNA bound on a spot
+ of the total number of molecules are so low that a few molecules do not
+ significantly change the readout.
  Turning this argument around, RNA binding to spots also has its point of
  saturation, where it does not matter if there is more RNA present or not
  once all probes bind to their complementary sequence and thus produce a
@@ -1398,17 +1426,17 @@ RNA sequencing
 \end_layout
 
 \begin_layout Standard
-An alternative approach 
+An alternative approach that has become more popular recently with the falling
+ costs of DNA sequencing is to apply this technology to RNA as well 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Marioni2008-lb,Wang2009-ge"
 
 \end_inset
 
- that has become more popular recently with the falling costs of DNA sequencing
- is to apply this technology to RNA as well.
+.
  In this case, we can use the RNA that we isolated from a sample, reverse-transc
-ribe it into DNA, and sequence this DNA like we would normally.
+ribe it into DNA, and sequence the DNA like we would normally.
  This has got the advantage that it can be used even if there is no genome
  sequence or chip available and as a consequence we are also not biasing
  our selection of genes by previously knowing what to look at 
@@ -1436,9 +1464,9 @@ latin{i.e.}
 , the differences in transcript numbers it can detect) is much higher than
  it is for microarrays, both on the lower as well as on the upper bound:
  we can detect a single read, but also having a lot of reads won't saturate
- our reads the same way that spots on the microarray do (although if a large
- proportion of the reads is from a highly abundant molecule, this will decrease
- sensitivity for detecting other RNAs).
+ our signal the same way that spots on the microarray do (although if a
+ large proportion of the reads is from a highly abundant molecule, this
+ will decrease sensitivity for detecting other RNAs).
 \end_layout
 
 \begin_layout Standard
@@ -1500,7 +1528,7 @@ key "Bray2016-gx"
 The data produced by RNA-sequencing is different to the one from microarrays,
  as it is based on read numbers that thus counts (so discrete data) instead
  of the continuous fluorescence signal that microarrays provide.
- These counts are well-known to be negatively binomially distributed 
+ These counts are negatively binomially distributed 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Anders2010-pd"
@@ -1617,18 +1645,19 @@ It can easily be argued that in order to get an appropriate picture of what
  their activity, yet mRNA measurements are one more step removed from the
  functional process than proteins, and measuring post-translational modification
 s (PTMs) that modify activity already gives us a lot of functional information
- - as long as we know how to interpret them.
+ - as long as we know how to interpret it.
 \end_layout
 
 \begin_layout Standard
-Taking these facts together, one might want to look at proteins instead
- of gene expression.
+Taking these facts together, we might want to look at proteins instead of
+ gene expression.
  Yet, gene expression is a lot cheaper and easier to measure, as well as
  providing more coverage than the proteomic methods currently can.
  Also, the publicly available gene expression data far exceeds the one of
  proteomic data.
  There are different experimental methods for quantifying proteins and their
  state, the most well-known are listed below.
+ This thesis, however, is focussed on gene expression.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1665,7 +1694,7 @@ key "Domon2006-au,Bensimon2012-iy"
 \end_inset
 
  is based on fragmenting proteins into peptides that are then ionized and
- sprayed into an electrical field in vacuum tube, where their mass-to-charge
+ sprayed into an electrical field in a vacuum tube, where their mass-to-charge
  ratio causes them to behave in a certain way.
  For instance, in Time of Flight (
 \begin_inset ERT
@@ -1770,9 +1799,8 @@ key "Brazma2001-ro"
 
 , played a pivotal role to ensure that experiments where one could not only
  measure one gene but the entire transcriptome remained interpretable.
- Both of these are synchronised, which means that if you submit to one the
- other will import the data set and make it available on their platform
- as well.
+ Both of these are synchronised, which means that submissions one will be
+ imported and made available on the other as well.
  More recently, ArrayExpress also started collecting RNA-seq and ChIP-seq
  experiments.
 \end_layout
@@ -1790,12 +1818,12 @@ reference "subsec:assay_RNA"
 
 \end_inset
 
-, it is important to put genes together into functional groups for several
- reasons: (1) groups of higher level processes are more interpretable, (2)
- gene level measurements in microarrays (and to a lesser extent RNA-sequencing)
- are inherently noisy and the more measurements we combine the clearer the
- signal gets, and (3) it may be possible to solve statistical problems where
- the number of observations per sample is greater than the number of samples.
+, it is important to put genes into functional groups for several reasons:
+ (1) groups of higher level processes are more interpretable, (2) gene level
+ measurements in microarrays (and to a lesser extent RNA-sequencing) are
+ inherently noisy and the more measurements we combine the clearer the signal
+ gets, and (3) it may be possible to solve statistical problems where the
+ number of observations per sample is greater than the number of samples.
 \end_layout
 
 \begin_layout Standard
@@ -1841,10 +1869,10 @@ a major bioinformatics initiative to develop a computational representation
 
 .
  It has encoded over 40,000 biological concepts based on experiments reported
- in over 100,000 publications according to its web portal at h
+ in over 100,000 publications according to its web portal at 
 \begin_inset CommandInset href
 LatexCommand href
-target "ttp://geneontology.org/"
+target "http://geneontology.org/"
 
 \end_inset
 
@@ -1880,7 +1908,7 @@ key "Kanehisa2000-mp"
  (query 25th February 2016) reported 6863 publications that cited the original
  article.
  However, in 2011 the platform went commercial, allowing access only via
- a subscription-based portal
+ a subscription-based portal.
 \begin_inset Foot
 status open
 
@@ -1890,11 +1918,10 @@ http://www.pathway.jp/
 
 \end_inset
 
-.
  While the authors removed public access also to earlier versions of the
- database, its pre-commercial license (OICR by Pathway Solutions, Inc) allowed
+ database, its pre-commercial license (OICR by Pathway Solutions, Inc.) allowed
  it to still be used.
- The public version, however, will not receive any more updates.
+ It will, however, not receive any more updates.
 \end_layout
 
 \begin_layout Subsubsection
@@ -2016,7 +2043,7 @@ key "Gao2013-wp"
 
 \end_inset
 
-, which also includes data from other projects.
+, the latter of which also includes data from other projects.
 \end_layout
 
 \begin_layout Subsubsection
@@ -2141,8 +2168,8 @@ key "Barretina2012-of"
 
 \begin_layout Standard
 In contrast to the GDSC, they did not chose concentration ranges of the
- screened drugs in order to detect the few cell lines that are truly sensitive
- to a given drug.
+ screened drugs in order to detect the few cell lines that are sensitive
+ to a given drug, but rather a generally applicable range.
  The resulting differences compared the the GDSC caused a number of inconsistenc
 ies 
 \begin_inset CommandInset citation
@@ -2170,7 +2197,7 @@ Original Connectivity Map using microarrays
 \end_layout
 
 \begin_layout Standard
-That first large-scale project providing signatures of drug-perturbed gene
+The first large-scale project providing signatures of drug-perturbed gene
  expression changes in the MCF-7 cell line was the Connectivity Map 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -2190,7 +2217,7 @@ reference "subsec:Signature-Matching"
 \end_inset
 
 ), the method of using gene expression changes upon drug treatment to match
- both drugs with drugs for finding similarities and drugs with diseases
+ either drugs with drugs for finding similarities or drugs with diseases
  for a potential treatment indication 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -2272,7 +2299,7 @@ reference "fig:LINCS-projections"
 \end_inset
 
 ), and compute z-scores (number of standard deviations of a perturbed condition
- over the mean of the control) for each signature
+ over the mean of the control) for each perturbation
 \begin_inset Foot
 status open
 
@@ -2358,23 +2385,10 @@ file{.gctx}
  At this time, no one knew about the quality of the data (the authors claimed
  it to be equal with microarrays; my own tries and conversations with other
  people using the data have indicated that it is below that).
- The main publication is still not out today (June 2016), and they refused
+ The main publication is still not out today (August 2016), and they refused
  to share e.g.
  the linear transformation matrix they used to obtain the projected gene
  space.
-\end_layout
-
-\begin_layout Standard
-Nonetheless, the sheer size of the new dataset will make it very valuable
- for signature matching (cf.
- section 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "subsec:Signature-Matching"
-
-\end_inset
-
-) approaches–more on this in chapter 5.
 \end_layout
 
 \begin_layout Section
@@ -2390,7 +2404,7 @@ name "sec:Computational-methods"
 
 Over the last decades and years, biology moved from an observational, qualitativ
 e science to a very much quantitative one.
- This can largely be attributed by high throughput assays, led by the advance
+ This can largely be attributed to high throughput assays, led by the advance
  of DNA sequencing and followed by its derivatives as well as other approaches,
  like high-content phenotypic screening - each allowing for measuring not
  one data point, but hundreds and sometimes thousands at a time.
@@ -2428,7 +2442,7 @@ key "Friedberg2008-cn"
 ), a biomedical scientist's skill requirements have moved from knowing,
  for instance, as many details about a given gene as possible to understanding
  how to set up reproducible assays, generate reliable data, but especially
- treating the resulting data in a way that yielded biological insights.
+ treating the resulting data in a way that yields biological insights.
 \end_layout
 
 \begin_layout Standard
@@ -2439,11 +2453,11 @@ There are two crucial parts to this: one is algorithms, that transform the
  I will outline some very successful ideas that in turn led to algorithms
  and usable software packages for investigating molecular data, both in
  terms of cancer as well as in general, in the sections of this and the
- next chapter.
+ next section.
 \end_layout
 
 \begin_layout Standard
-However, first let us reconsider the goal we are trying to achieve in terms
+However, let us first reconsider the goal we are trying to achieve in terms
  of this thesis as well as a lot of the related work: we ultimately want
  to improve how cancer is diagnosed and treated for patients, and those
  algorithms help us to define markers of their pathogenesis or how they
@@ -2455,7 +2469,7 @@ key "Rubio-Perez2015-ep"
 \end_inset
 
 .
- We thus want to transform the numbers comprising the molecular data we
+ We thus want to transform the numbers reflecting the molecular data we
  have in a meaningful way so they connect to this endeavour.
 \end_layout
 
@@ -2464,9 +2478,10 @@ Patterns of mutations
 \end_layout
 
 \begin_layout Standard
-When looking at sets of mutations instead of individual ones, the occurrence
- of those patterns has been quantified by a couple of approaches, identifying
- modules that are either co-occurring or mutually exclusive 
+When looking at sets of mutations instead of individual ones distinct patterns
+ emerge.
+ One such pattern is that there are modules that are either co-occurring
+ or mutually exclusive 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Babur2015-ap"
@@ -2478,40 +2493,59 @@ key "Babur2015-ap"
  is not sufficient to obtain a certain trait and thus a second mutation
  is necessary to confer it.
  In the case of mutual exclusivity, a second mutation is not conferring
- a growth advantage after the first arose.
+ a growth advantage after the first one arose.
  This may be due to evolutionary parsimony or a fitness defect.
  In the first case, a second mutation that inactivates, for example, an
  already inactivated tumour suppressor pathway is unlikely to happen on
- the population-level by the pure fact that it is not selected for, as the
- required trait has already been acquired by the cell.
+ the population-level because there is no selective pressure, as the required
+ trait has already been acquired by the cell.
  In the second case, the growth advantage conferred by one mutation might
  be cancelled out or counteracted by the presence of a second one, thereby
  mediating a selection growth disadvantage (fitness defect) of the cells
  carrying both mutations as opposed to either one of them.
- Much focus has been on identifying driver mutations in different cancer
- types, that, combined with oncogene addition (i.e., the tendency of a transformed
- cell to become dependent on sustained impact of the lesion it first obtained)
- forms the basis of many targeted therapies: if you can inhibit signalling
- stemming from a mutation that drives a cancer's development and progression,
- the affected cells' growth will be severely inhibited.
 \end_layout
 
 \begin_layout Standard
-The concept of a cell being unable to acquire two mutations that together
- have a damaging effect up to the level of cell death has been termed synthetic
- lethality and has been used to study genetic interactions in model organisms
- for a long time 
+Much focus has devoted to identifying driver mutations in different cancer
+ types that, combined with oncogene addiction
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+the tendency of a transformed cell to become dependent on sustained impact
+ of the lesion it first obtained, see section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:targeted-therapies"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ forms the basis of many targeted therapies: if you can inhibit signalling
+ stemming from a mutation that drives a cancer's development and progression,
+ the affected cells' growth will be severely abrogated.
+\end_layout
+
+\begin_layout Standard
+The concept that a second mutation kills a cell with a given mutation has
+ been termed synthetic lethality.
+ It has been used to study genetic interactions in model organisms for a
+ long time 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Nijman2011-zf"
 
 \end_inset
 
-, where the loss of both genes in a synthetic lethal pair is, as the name
- suggests, lethal to the organism, but the loss of each individual gene
- is not.
- More recently, these interactions have been used to identify si/sh-RNA
- probes that are purified from a starting population 
+.
+ The loss of both genes in a synthetic lethal pair is, as the name suggests,
+ lethal to the organism, but the loss of each individual gene is not.
+ More recently, these interactions have been used to identify probes interfering
+ with RNA that are purified from a starting population 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Cheung2011-be"
@@ -2527,39 +2561,18 @@ key "Ciriello2012-hc,Gobbi2014-xz"
 \end_inset
 
 .
- These interactions can then be transformed in a network of synthetic lethal
- pairs 
+ These interactions can then be transformed in a network 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Jerby-Arnon2014-fn"
 
 \end_inset
 
-], which can then be used to predict sensitivity of cancer cell lines to
+, which can then be used to predict sensitivity of cancer cell lines to
  a certain drug treatment, as well as clinical outcome given the level of
- co- expression of its pairs.
- Examples of such pairs are a 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-gene{VHL}
-\end_layout
-
-\end_inset
-
- Loss of Function (LoF) mutation that is associated with increased sensitivity
- to not previously associated with cancer 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Bommi-Reddy2008-nc"
-
-\end_inset
-
-, or the well-known 
+ co-expression of its pairs.
+ An example of a synthetic lethal pair that can be therapeutically exploited
+ are loss of function mutations in 
 \begin_inset ERT
 status open
 
@@ -2572,7 +2585,7 @@ gene{BRCA1/2}
 
 \end_inset
 
- loss of function and PARP inhibitors 
+ and treatment with PARP inhibitors 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Farmer2005-cp"
@@ -2582,39 +2595,26 @@ key "Farmer2005-cp"
 .
 \end_layout
 
+\begin_layout Standard
+Including those sorts of analyses is an interest and future goal in my research,
+ but has not contributed significant results to this thesis.
+\end_layout
+
 \begin_layout Subsection
 Gene expression clustering
 \end_layout
 
 \begin_layout Standard
 Cancer is known to be a heterogeneous disease, with individual tumours forming
- different subtypes within the same tissue.
- In turn, cells in the same tumour mediate different functions essential
- to its survival and growth.
+ different subtypes even if it arose from the same tissue.
  One of the arguably most effective ways of elucidating the state of individual
- tumours and cell populations therein is its transcriptome, where transcription
- of individual genes and regulatory 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-abbrv{RNA}s
-\end_layout
-
-\end_inset
-
- can be assessed using methods such as microarrays or RNA sequencing.
+ tumours and cell populations therein is quantifying its using methods such
+ as microarrays or RNA sequencing.
 \end_layout
 
 \begin_layout Standard
-Disregarding the effect of different cell types (by making the assumption
- that we sampled a tumour evenly and uniformly while excluding neighbouring
- non-cancerous cells, which is not really the case), we can use the global
- pattern of gene expression to identify different subtypes of the disease
- in a given tissue (or even between tissues).
+We can use the global pattern of gene expression to identify different subtypes
+ of the disease in a given tissue (or even between tissues).
  A challenge with this is is that the transcriptome could be comprised of
  up to 22,000 genes without even considering most regulatory or ribosomal
  
@@ -2631,11 +2631,10 @@ abbrv{RNA}s
 \end_inset
 
 .
- This space needs to be reduced to something more manageable for visual
- inspection, as well as different subgroups within assigned that have prognostic
- or therapeutic relevance.
- Approaches the allow for visual inspection of a high-dimensional data set
- are called dimensionality reduction techniques, while methods assigning
+ This space needs to be reduced to something more manageable for inspection,
+ which may reveal subgroups that have prognostic or therapeutic relevance.
+ Approaches that allow for visual inspection of a high-dimensional data
+ set are called dimensionality reduction techniques, while methods assigning
  the different samples to different subtypes are called clustering algorithms
  
 \begin_inset CommandInset citation
@@ -2765,13 +2764,11 @@ key "Van_der_Maaten2008-kt"
 \end_inset
 
 , instead of relying on the most variable global structures, visualises
- local structures in a given data set: Starting from a point in space (the
+ local structures in a given data set: starting from a point in space (a
  sample), additional samples are distributed in its vicinity depending on
  their distance to the original sample, as well as the other points considered
  (that are a subset of the total number of points).
- Using this method, one can only trust the points neighbouring each other
- up to a number specified by the perplexity parameter.
- This method has been adapted and branded 
+ This method provides much better resolution than 
 \begin_inset ERT
 status open
 
@@ -2779,56 +2776,23 @@ status open
 
 
 \backslash
-abbrv{viSNE}
+abbrv{PCA}
 \end_layout
 
 \end_inset
 
- 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Amir2013-od"
-
-\end_inset
-
- in their 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-name{cyt}
-\end_layout
-
-\end_inset
-
- software tool
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "http://www.c2b2.columbia.edu/danapeerlab/html/cyt-download.html"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-, and later extended by the original author to use the Barnes-Hut method
- 
+, but one can only trust the points neighbouring each other up to a number
+ specified by the perplexity parameter.
+ It has later been extended by the original author to use the Barnes-Hut
+ method 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Van_der_Maaten2013-io"
 
 \end_inset
 
- that is usually used in large N-body simulation in astrophysics.
+ that is usually used in large N-body simulation in astrophysics (and chapter
+ 4).
 \end_layout
 
 \begin_layout Subsubsection
@@ -2836,7 +2800,7 @@ Clustering
 \end_layout
 
 \begin_layout Standard
-This is one of the simplest clustering algorithms is K-means 
+One of the simplest clustering algorithms is K-means 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Hartigan1979-pe"
@@ -2866,7 +2830,6 @@ latin{a priori}
  In turn, which samples are associated with which clusters is also updated
  after each time clusters get new samples assigned, until the process converges
  and further updating steps do not change cluster assignments anymore.
- This method is not used in this work.
 \end_layout
 
 \begin_layout Standard
@@ -2926,84 +2889,108 @@ key "Blei2003-oi"
 
 \end_inset
 
-–a modern, Bayesian method for clustering that is an active research topic)
- but they are not used in this work.
+–a modern, Bayesian method for clustering that is an active research topic.
+ I have worked with 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbrv{NMF}
+\end_layout
+
+\end_inset
+
+ clustering to investigate cancer cell line drug sensitivity, but the results
+ have not made it into this thesis.
 \end_layout
 
 \begin_layout Subsection
-Differentially expressed subnetworks
+Gene expression signatures
+\end_layout
+
+\begin_layout Subsubsection
+Signature definition
 \end_layout
 
 \begin_layout Standard
-Instead of or in addition to investigating global differences in the patterns
- of gene expression, we might be interested in how a subset of interacting
- proteins differs between known groups of samples.
- So if, for instance, we know that global gene expression clustering is
- partitioning our samples in two groups, we might be interested in which
- genes may be the mediating effectors in a differential phenotype like drug
- response.
- We could of course just compute differential expression for each gene separatel
-y and then look at our ranked list (by p-value and effect size of each gene)
- to determine which are the genes that are most deregulated.
- This, however, may miss a group of interacting genes (or proteins, after
- translation) that all change moderately by themselves, but in combination
- will give a stronger signal than any one gene itself 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+TODO
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+pathway sigs: 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "Ideker2002-iz"
+key "Bild2005-tk,Gatza2010-fq,Parikh2010-uj"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Signature Matching
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Signature-Matching"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+When investigating the effect small molecules (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+latin{i.e.}
+\end_layout
+
+\end_inset
+
+, drugs) have on a system, we might not want to look at the mechanism by
+ which this happens at all, but instead rely on the changes of gene expression
+ upon treatment 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Lamb2007-dg"
 
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
-In this case we require an algorithm that summarises differential expression
- within a group of interacting genes (or proteins), while providing us with
- a combined score for a given subnetwork.
- If we are looking at gene regulatory networks we would use those interactions
- to map gene expression on.
- If we are looking for likely effector complexes of interacting proteins
- we would ideally use proteomics data, but since it has been shown that
- most variability in protein expression can be explained by variability
- in the 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-abbrv{mRNA}
-\end_layout
-
-\end_inset
-
- of the corresponding gene 
+ Then we could use the downstream genes that are changing as a signature
+ of treatment with that drug.
+ This has got two applications that have indeed been used, which are: (1)
+ matching a drug's signature with another drug's signature, and if they
+ are a close match but have e.g.
+ different indications, suggest that each drug may be used for the other
+ indication (where directionality may be limited by additional factors),
+ or (2) matching a drug's signature with the inverse gene expression changes
+ that a disease exhibits over normal controls, we can suggest that this
+ drug may be used to counteract the effects of the disease 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "Gry2009-ig,Maier2009-zc"
+key "Iorio2009-ji,Pacini2013-xn"
 
 \end_inset
 
-, we could also make a good case for looking for the gene expression level
- of interacting proteins.
-\end_layout
-
-\begin_layout Subsubsection
-Minimum spanning trees
-\end_layout
-
-\begin_layout Standard
-The problem of finding a differentially expressed connected subnetwork in
- the network of interacting proteins is similar to the problem of a Minimum
- Spanning Tree, that is, selecting only edges and nodes in a graph that
- maximise a score where each nodes adds to and each edge subtracts from
- it.
- As the exhaustive search for an exact solution to this problem is NP-hard,
- there are several approximate solutions that were developed to solve that
- problem.
- One of those is an algorithm called the Prize Collecting Steiner Tree (
+, 
 \begin_inset ERT
 status open
 
@@ -3011,74 +2998,29 @@ status open
 
 
 \backslash
-abbrv{PCST}
+latin{i.e.}
 \end_layout
 
 \end_inset
 
-), which expands and shrinks the tree base on an initial assessment of connected
- scores, and whether or not it adds or subtracts a score (the prize) by
- doing that.
- An example of an implementation that uses a 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-abbrv{PCST}
-\end_layout
-
-\end_inset
-
- on interacting proteins is the 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-rpkg{BioNet}
-\end_layout
-
-\end_inset
-
- R package 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Beisser2010-wa"
-
-\end_inset
-
-, initially used to analyse deregulated subnetworks in Diffuse Large B Cell
- Lymphoma (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-abbrv{DLBC}
-\end_layout
-
-\end_inset
-
-).
+ be a potential treatment if the disease is indeed caused by the gene expression
+ changes that the drug reverses.
+ However, those matches should rather be seen as hypothesis generators than
+ definite indications for repurposing and treatment.
+ Of course, this kind of approach relies on the availability of signatures
+ of the drugs we look at, or of a given drug and disease, respectively.
 \end_layout
 
 \begin_layout Subsection
-Gene regulatory networks
+Networks
 \end_layout
 
 \begin_layout Standard
-An important aspect of gene expression is that its patterns are not randomly
- but hierarchically organised.
- On perturbations on a cell's surface or its interior a signal is propagated
- from its origin up to proteins that bind to DNA and change their expression
- as a response to the stimulus (more on this in the next section).
+An important consequence of the central dogma is that gene expression patterns
+ are not randomly but hierarchically organised.
+ Starting with perturbations on a cell's surface or its interior, a signal
+ is propagated from its origin up to proteins that bind to DNA and change
+ their expression as a response to the stimulus.
  The terminal nodes of this signal transduction are called transcription
  factors, that upon binding on the DNA mediate and direct (either in a promoting
  or in an inhibiting fashion) binding of DNA-dependent RNA polymerase (
@@ -3103,11 +3045,14 @@ key "Watson1987-mw"
 \end_inset
 
 .
- The genes transcribed upon activation of transcription factors may in turn
+\end_layout
+
+\begin_layout Standard
+The genes transcribed upon activation of transcription factors may in turn
  be transcription factors themselves that cause increased or decreased transcrip
 tion of other genes.
  These interactions between different transcription factors are usually
- referred to as a Transcription Factor Network or Gene Regulatory Network
+ referred to as a transcription factor network or gene regulatory network
  
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -3116,16 +3061,156 @@ key "Bansal2007-rb"
 \end_inset
 
 .
+ There are multiple ways these can be investigated: by characterising which
+ transcription factors bind to which genes (either experimentally or computation
+ally by looking at which sequence of nucleotides a given factor is likely
+ to bind), by finding genes that change in a coordinated fashion and hypothesise
+ that those might be regulated by the same set of factors, or by inferring
+ which combination of which factors is required for a certain gene to be
+ transcribed.
+\end_layout
+
+\begin_layout Subsubsection
+Pathways and signalling
 \end_layout
 
 \begin_layout Standard
-There are multiple ways these can be investigated: by characterising which
- transcription factors bind to which genes (which can be done either experimenta
-lly or computationally by looking at which sequence of nucleotides a given
- factor is likely to bind), by finding genes that change in a coordinated
- fashion and hypothesise that those might be regulated by the same set of
- factors, or by inferring which combination of which factors is required
- for a certain gene to be transcribed.
+Cell signalling is deregulated in many diseases, including cancer that I
+ focus on here because of the sheer wealth of available data.
+ But how to best quantify the signalling activity? The closest proxy we
+ have would be to quantify post-translational modifications that are known
+ to confer activity.
+ In the simplest case this could be a phosphate group on a certain position
+ that is known to make a kinase active, that is that it in turn phosphorylates
+ its downstream targets.
+ But phosphorylation data, and to a lesser extent protein data in general
+ is much harder to come by than sequencing data.
+ Mass spectrometry and Reverse Phase Protein Arrays just do not produce
+ the same clarity that a DNA sequence or RNA level provides, plus is much
+ harder to generate because the technology that could do it with the same
+ throughput as sequencing technologies just does not exist.
+\end_layout
+
+\begin_layout Standard
+We can thus argue that computational methods are required to make statements
+ about cell signalling, starting from DNA and RNA instead of protein and
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbrv{PTM}
+\end_layout
+
+\end_inset
+
+ data.
+ The simplest approach to this is looking how much mRNA of signalling molecules
+ are expressed that comprise a pathway, and designate a high expression
+ a high activity and vice versa (using algorithms like Gene Set Enrichment
+ Analysis 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Subramanian2005-pd"
+
+\end_inset
+
+, more in chapter 2).
+ This, however, is at odds with the way cell signalling works and is regulated.
+ Inferring the protein levels from mRNA levels may indeed be viable 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Gry2009-ig,Maier2009-zc"
+
+\end_inset
+
+, but two steps removed from the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbrv{PTM}s
+\end_layout
+
+\end_inset
+
+.
+ Methods have been developed to address the issue of taking the expression
+ level of a gene set as activity proxy by considering the structure and
+ signs of the different pathway molecules, e.g.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+name{Signaling Pathway Impact Analysis}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Tarca2008-ey"
+
+\end_inset
+
+ or 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+name{Pathifier}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Drier2013-vn"
+
+\end_inset
+
+.
+ They, however, do still not distinguish between expression level and activity.
+ Another method, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbrv{PARADIGM}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Vaske2010-zn"
+
+\end_inset
+
+ could in theory support it, depending the pathway structure supplied for
+ inference.
+ Yet, the focus has never been to tell apart activity from expression.
+ I elaborate on these issues further in chapter 2-4, with a possible way
+ to resolve them.
 \end_layout
 
 \begin_layout Subsubsection
@@ -3356,212 +3441,13 @@ key "Wang2009-ui"
 
 .
  The idea here is to look at the upper and lower third of the modulator
- expression, and calculate mutual information for both of theses sets.
+ expression, and calculate mutual information for both of these sets.
  Afterwards, instead of inferring the network, the authors look for the
  strongest changes in mutual information between the two subsets: if that
  is the case, the modulator can be seen as a co-factor required for transcriptio
 n factor regulation.
  If a high modulator expression correlates with an increase of mutual informatio
-n it will likely be activating, or inactivating for a decrease.
-\end_layout
-
-\begin_layout Subsection
-Pathways and signalling
-\end_layout
-
-\begin_layout Standard
-The transduction of a signal from a cue binding to a receptor on a cell's
- surface is how a cell responds to changes in its environment.
- In turn, this signal is relayed through the network of kinases and phosphatases
- (there are other chemical modifications, but those are the best studied)
- until it reaches the terminal nodes that are the transcription factors,
- acting in conjunction with polymerase III and other co-factors to initiate
- changes in gene expression.
- Those genes are in turn transcribed into RNA, and if they are protein-coding
- consequently translated into those.
- The process of transcription and translation is referred to the central
- dogma of molecular biology 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Crick1958-vv"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-Cell signalling is deregulated in many diseases, including cancer that we
- focus on here because of the sheer wealth of available data.
- But how to best quantify the signalling activity? The closest proxy we
- have would be to quantify post-translational modifications that are known
- to confer activity.
- In the simplest case this could be a phosphate group on a certain position
- that is known to make a kinase active, that is that it in turn phosphorylates
- its downstream targets.
- But phosphorylation data, and to a lesser extent protein data in general
- is much harder to come by than sequencing data.
- Mass spectrometry and Reverse Phase Protein Arrays just do not produce
- the same clarity that a DNA sequence or RNA level provides, plus is much
- harder to generate because the technology that could do it with the same
- throughput as sequencing technologies just does not exist.
-\end_layout
-
-\begin_layout Standard
-We can thus argue that computational methods are required to make statements
- about cell signalling, starting from DNA and RNA instead of protein and
- PTM data.
- The simplest approach to this is looking how much mRNA of signalling molecules
- are expressed that comprise a pathway, and designate a high expression
- a high activity and vice versa (using algorithms like Gene Set Enrichment
- Analysis 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Subramanian2005-pd"
-
-\end_inset
-
-, more in chapter 2).
- This, however, is at odds with the way cell signalling works and is regulated.
- Inferring the protein levels from mRNA levels may indeed be viable 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Gry2009-ig,Maier2009-zc"
-
-\end_inset
-
-, but two steps removed from the 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-abbrv{PTM}s
-\end_layout
-
-\end_inset
-
-.
- Methods have been developed to address the issue of taking the expression
- level of a gene set as activity proxy by considering the structure and
- signs of the different pathway molecules, e.g.
- 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-name{Signaling Pathway Impact Analysis}
-\end_layout
-
-\end_inset
-
- 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Tarca2008-ey"
-
-\end_inset
-
- or 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-name{Pathifier}
-\end_layout
-
-\end_inset
-
- 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Drier2013-vn"
-
-\end_inset
-
-.
- They, however, do still not distinguish between expression level and activity.
- Another method, 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-abbrv{PARADIGM}
-\end_layout
-
-\end_inset
-
- 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Vaske2010-zn"
-
-\end_inset
-
- could in theory support it, depending the pathway structure supplied for
- inference.
- Yet, the focus has never been to tell apart activity from expression.
- I elaborate on these issues further in chapter 2-4, with a possible way
- to resolve them.
-\end_layout
-
-\begin_layout Subsection
-Signature Matching
-\begin_inset CommandInset label
-LatexCommand label
-name "subsec:Signature-Matching"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-When investigating the effect small molecules (i.e., drugs) have on a system,
- we might not want to look at the mechanism by which this happens at all,
- but instead rely on the changes of gene expression upon treatment with
- it 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Lamb2007-dg"
-
-\end_inset
-
-.
- Then we could use the downstream genes that are changing as a signature
- of treatment with that drug.
- This has got two applications that have indeed been used, which are the
- following: (1) matching a drug's signature with another drug's signature,
- and if they are a close match but have e.g.
- different indications, suggest that each drug may be used for the other
- indication (where directionality may be limited by additional factors),
- or (2) matching a drug's signature with the inverse gene expression changes
- that a disease exhibits over normal controls, we can suggest that this
- drug may be used to counteract the effects of the disease 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Iorio2009-ji,Pacini2013-xn"
-
-\end_inset
-
-, i.e.
- be a potential treatment if the disease is indeed caused by the gene expression
- changes that the drug reverses.
- However, those matches should rather be seen as hypothesis generators than
- definite indications for repurposing and treating diseases.
- Of course, this kind of approach relies on the availability of signatures
- of the drugs we look at, or of a given drug and disease, respectively.
+n it will likely be activating, or inactivating in case of a decrease.
 \end_layout
 
 \begin_layout Section
@@ -3574,7 +3460,7 @@ Experimental and computational
 
 \begin_layout Standard
 Reproducibility of scientific experiments has recently gotten into the spotlight
- when Amgen published a high-profile study that tried to independently validate
+ when Amgen published a high-profile study trying to independently validate
  findings of 53 findings reported by different groups in the journals 
 \begin_inset ERT
 status open
@@ -3637,8 +3523,8 @@ key "Baker2015-vi"
 \end_inset
 
  that did not always show the affinity and specificity to their target as
- the vendors claimed, which has resulted in the creation of a registry for
- validated antibodies at 
+ the vendors claimed that resulted in the creation of a registry for validated
+ antibodies at 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Bradbury2015-is"
@@ -3654,8 +3540,9 @@ It is easy to argue that experimental reproducibility is a hard issue to
  hardly ever have the resources to account for all of them.
  In general, good study design, that is proper controls and randomisation,
  should go a long way (especially in the case of clinical trials), but even
- then, there may be confounding effects unknown to the experimenters and
- not properly controlled for, as has been shown in the case where male vs.
+ then, there may be confounding effects unknown to the experimenters that
+ can not properly be controlled for, as has later been shown in the case
+ where male vs.
  female stewards in a mouse facility produced different reactions of the
  animals, potentially influencing the results obtained from a very large
  number of studies 
@@ -3681,7 +3568,7 @@ Apart from experimental reproducibility, computational reproducibility should
  employed, are getting more and more complex.
  However, even if the potential confounding factors are smaller than for
  experimental scientists, computational analysis also has its high-profile
- fraught with issues.
+ cases fraught with issues.
  The most well-known example of this are maybe Anil Potti's cancer gene
  signatures
 \begin_inset Foot
@@ -3743,7 +3630,7 @@ With computational analyses getting more complex, it is no longer enough
  No one scientist can perform all of these tasks completely independently,
  as some of them may detailed knowledge of all the algorithms involved,
  up to an extent that is prohibitory.
- It is thus required to package repeated steps together in a higher-order
+ It is thus required to package repeated steps together in higher-order
  functionality.
 \end_layout
 
@@ -3840,7 +3727,7 @@ key "Wickham2011-qn"
 
 \end_inset
 
-, used extensively in the analyses) and 
+, used extensively in the analyses I performed) and 
 \begin_inset ERT
 status open
 
@@ -3856,8 +3743,8 @@ abbrv{PyPI}
 , respectively.
  Without those tools, performing analysis like I do to obtain the results
  shown later would not be possible.
- Note that there are others, but they do not play a similarly important
- role in contemporary data analysis.
+ Note that there are tools, but they do not play a similarly important role
+ in contemporary data analysis.
 \end_layout
 
 \begin_layout Subsection
@@ -3897,14 +3784,14 @@ key "Thomas2003-ga"
 
 \end_inset
 
-, later subversion 
+, later Subversion 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Pilato2008-bp"
 
 \end_inset
 
- and now mostly git 
+ and now mostly Git 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Loeliger2012-sf"
@@ -3962,12 +3849,12 @@ Defining workflows with a single entry point
 
 \begin_layout Standard
 A challenge that often is underestimated is that even when all of the code
- that was used in order to generate the is provided, it is often not trivial
- know which script generates which part of the analysis, which other scripts,
- analyses, or data it depends on.
- Thus it is not only important to provide the code as it is, but also informatio
-n on how to run it, so to not only have all the bits and pieces but to connect
- them to a workflow from the data to the results.
+ that was used in order to generate the result is provided, it is often
+ not trivial know which script generates which part of the analysis, and
+ which other scripts, analyses, or data it depends on.
+ Hence it is not only important to provide the code as it is, but also informati
+on on how to run it, so to not only have all the bits and pieces but a way
+ to connect them to a workflow from the data to the results.
  Some tools have been proposed to manage scientific workflows like KNIME
  
 \begin_inset CommandInset citation
@@ -4040,20 +3927,7 @@ While the above tools take care of performing and keeping track of analyses,
  the crucial point that is missing for reproducible research is integration
  with reporting.
  A tool to do combine R code with written text and annotation (as opposed
- to technical/
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-abbrv{API}
-\end_layout
-
-\end_inset
-
- documentation) is 
+ to technical documentation) is 
 \begin_inset ERT
 status open
 
@@ -4091,7 +3965,7 @@ http://blog.jupyter.org/2016/07/14/jupyter-lab-alpha/
 
 \end_inset
 
-) has seen a wide adoption 
+) has seen wide adoption 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Shen2014-of"
@@ -4103,6 +3977,24 @@ key "Shen2014-of"
 
 \begin_layout Section
 Motivation and outlook
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+this could be improved; use summary text for after 
+\begin_inset Quotes eld
+\end_inset
+
+.
+\begin_inset Quotes erd
+\end_inset
+
+?
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -4115,9 +4007,8 @@ key "The_Cancer_Genome_Atlas_Research_Network2013-bi,International_Cancer_Genome
 
  are giving us an unprecedented view on the mutational landscape of human
  cancers.
- In addition, this information is augmented by genomic and general molecular
- characterisation of cell lines and their responses to anticancer compounds
- 
+ This information is augmented by genomic and general molecular characterisation
+ of cell lines and their responses to anticancer compounds 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Garnett2012-dk,Barretina2012-of,Iorio2016-gh"
@@ -4132,9 +4023,10 @@ key "Cheung2011-be"
 \end_inset
 
 .
- These projects have led us to believe that, while this landscape is vast,
- mutations tend to occur in a limited set of pathways, often exhibiting
- a pattern different from the ones one would expect by random chance.
+ These projects have led us to believe that, while this landscape of genomic
+ alterations is vast, they tend to occur in a limited set of pathways, often
+ exhibiting a pattern different from the ones one would expect by random
+ chance.
  As these modules deviate from a randomly expected distributions, it is
  commonly accepted that they represent the pattern of evolutionary adaption
  that enabled a cancer to obtain its hallmarks 
@@ -4145,10 +4037,6 @@ key "Hanahan2000-is,Hanahan2011-he"
 \end_inset
 
 .
- Mutations that are generally selected for and often functionally characterised
- to be tumorigenic are often referred to as driver mutations, while those
- following the background pattern are likely to occur just by amplified
- replication- and DNA repair defects.
 \end_layout
 
 \begin_layout Standard
@@ -4158,12 +4046,16 @@ One of the major challenges is how to use the available molecular data in
  as binary features), it gets much more challenging for higher content readouts
  like gene expression or DNA methylation.
  Specifically, expression-derived biomarkers that were able to separate
- distinct populations in a given conditions have often failed to replicate
- their function once the conditions are altered.
+ distinct populations in a given set of conditions have often failed to
+ replicate their function once the conditions are altered.
  As DNA methylation is dynamic, it will likely offer the same challenges.
- There is still a tremendous amount of information that should be used to
- decide on the optimal treatment, but most approaches have fallen short
- of that promise.
+ Still, there is a tremendous amount of information that can and should
+ be used to decide on the optimal treatment of patients, but most approaches
+ have fallen short of that promise.
+\end_layout
+
+\begin_layout Standard
+.
 \end_layout
 
 \begin_layout Standard
@@ -4272,10 +4164,10 @@ abbrv{mRNA}
  To date, it is largely unexplored how much those pathway-expression-based
  methods are able to make statements about the signal transmission in a
  protein network.
- I followed different strategy: use a large body of publicly available perturbat
-ion experiments to quantify gene expression responses to a specified set
- of stimuli, and then use those genes to infer the upstream signal required
- to change their expression 
+ This is why I later followed different strategy: use a large body of publicly
+ available perturbation experiments to quantify gene expression responses
+ to a specified set of stimuli, and then use those genes to infer the upstream
+ signal required to change their expression 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Bild2005-tk,Gatza2010-fq,Parikh2010-uj"
