@@ -3998,60 +3998,41 @@ this could be improved; use summary text for after
 \end_layout
 
 \begin_layout Standard
-Cancer sequencing projects 
+With sequencing technologies becoming more and more commonplace for cancer
+ diagnosis in both the clinical 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "The_Cancer_Genome_Atlas_Research_Network2013-bi,International_Cancer_Genome_Consortium2010-bn"
 
 \end_inset
 
- are giving us an unprecedented view on the mutational landscape of human
- cancers.
- This information is augmented by genomic and general molecular characterisation
- of cell lines and their responses to anticancer compounds 
+ and preclinical setting 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Garnett2012-dk,Barretina2012-of,Iorio2016-gh"
 
 \end_inset
 
-, or by selection viable genotypes under a selective constraint 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Cheung2011-be"
-
-\end_inset
-
-.
- These projects have led us to believe that, while this landscape of genomic
- alterations is vast, they tend to occur in a limited set of pathways, often
- exhibiting a pattern different from the ones one would expect by random
- chance.
- As these modules deviate from a randomly expected distributions, it is
- commonly accepted that they represent the pattern of evolutionary adaption
- that enabled a cancer to obtain its hallmarks 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Hanahan2000-is,Hanahan2011-he"
-
-\end_inset
-
-.
+, there is a wealth of molecular data available that likely harbours yet
+ undiscovered disease markers and treatment opportunities.
+ Efforts like the TCGA/ICGC have pioneered this characterization on a large
+ scale, offering the opportunity to derive large amounts of information
+ about individual tumours.
+ This represents a step forward over basing the treatment of an individual
+ on the tissue of tumour origin alone, with mutational screens and sensitivity
+ markers providing a first glimpse of the direction that personalized medicine
+ is going to take.
 \end_layout
 
 \begin_layout Standard
-One of the major challenges is how to use the available molecular data in
- an efficient and reproducible manner.
- While this is relatively straightforward for mutational data (mostly used
- as binary features), it gets much more challenging for higher content readouts
- like gene expression or DNA methylation.
- Specifically, expression-derived biomarkers that were able to separate
- distinct populations in a given set of conditions have often failed to
- replicate their function once the conditions are altered.
- As DNA methylation is dynamic, it will likely offer the same challenges.
- Still, there is a tremendous amount of information that can and should
- be used to decide on the optimal treatment of patients, but most approaches
- have fallen short of that promise.
+Investigations of cancer drug response and survival are mostly focussed
+ on DNA mutations.
+ This has yielded multiple markers, however, they are rarely put in functional
+ context of the signalling aberrations they create.
+ Because the amount of phosphorylation data available lags behind the one
+ of genomic data, I created a platform which infers signalling activity
+ by identifying publicly available perturbation experiments and the genes
+ responsive to a certain pathway.
 \end_layout
 
 \begin_layout Standard

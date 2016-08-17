@@ -88,101 +88,24 @@ Functional Evaluation of Pathway Methods in basal Gene Expression
 \end_layout
 
 \begin_layout Standard
-With sequencing technologies becoming more and more commonplace for cancer
- diagnosis in both the clinical and preclinical setting, there is a wealth
- of molecular data available that likely harbours yet undiscovered treatment
- opportunities.
- Efforts like the TCGA/ICGC have pioneered this characterization on a large
- scale, offering the opportunity to derive large amounts of information
- about individual tumours.
- This represents a step forward over basing the treatment of an individual
- on the tissue of tumour origin alone, with mutational screens and sensitivity
- markers providing a first glimpse of the direction that personalized medicine
- is going to take.
+This chapter represents the evaluation of the model proposed in the previous
+ one.
+ It aims to investigate the functional relevance of pathway-responsive genes
+ (PRGs) compared to other pathway methods.
+ In terms of outcomes, I am interested in how well the available platform
+ is able to explain:
 \end_layout
 
-\begin_layout Standard
-Investigations of cancer drug response and survival are mostly focussed
- on DNA mutations.
- This has yielded multiple markers, however, they are rarely put in functional
- context of the signaling aberrations they create.
- Because the amount of phosphorylation data available lags behind the one
- of genomic data, I created a platform which infers signalling activity
- by identifying publicly available perturbation experiments and the genes
- responsive to a certain pathway.
+\begin_layout Itemize
+The signalling activity mediated by driver mutations and copy number aberrations
 \end_layout
 
-\begin_layout Standard
-I will use this chapter to provide a baseline of using Gene Set Enrichment
- Analysis in order to figure out which processes are involved in: (1) making
- cancer cell lines sensitive or resistant to different drugs in the GDSC
- panel 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Garnett2012-dk,Iorio2016-gh"
-
-\end_inset
-
-, and (2) causing improved or diminished survival in cancer patients in
- the TCGA cohorts 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "The_Cancer_Genome_Atlas_Research_Network2013-bi"
-
-\end_inset
-
-.
- I will not filter the gene sets I use, and well represented signalling
- pathways are among the top hits for (1) - where signalling pathways are
- known to play a pivotal role for targeted therapies 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Garnett2012-dk,Iorio2016-gh,Yap2012-mi"
-
-\end_inset
-
- and (2) - where signalling pathways are at the core of disease development
- and progression 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Hanahan2000-is,Hanahan2011-he,Hanahan2012-im"
-
-\end_inset
-
-.
+\begin_layout Itemize
+How this affects sensitivity to targeted therapies
 \end_layout
 
-\begin_layout Standard
-To my knowledge, such an approach has only been taken by 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Parikh2010-uj"
-
-\end_inset
-
-, where the authors did not focus on cancer, and 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Bild2005-tk,Gatza2010-fq,Gatza2014-as"
-
-\end_inset
-
- that derived their signatures using a single cell line and perturbation
- agent concentration only.
-\end_layout
-
-\begin_layout Standard
-Taking our method and previously published approaches, we investigated how
- the different pathway scores, derived from mRNA expression, relate to or
- are able to explain drug sensitivity in cancer cell lines and survival
- in primary tumors using the Genomics of Drug Sensitivity in Cancer (GDSC)
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Garnett2012-dk,Iorio2016-gh"
-
-\end_inset
-
- and TCGA data, respectively.
+\begin_layout Itemize
+Which implications pathways have on patient survival
 \end_layout
 
 \begin_layout Standard
@@ -278,9 +201,15 @@ rpkg{corplot}
 \end_inset
 
  for GDSC and TCGA data separately.
- The correlation between a pathway and itself is 1 by definition, all other
- values range from -1 (where the values are identical except for a constant
- factor 
+ The correlation between a pathway and itself is 
+\begin_inset Formula $1$
+\end_inset
+
+ by definition, all other values range from 
+\begin_inset Formula $-1$
+\end_inset
+
+ (where the values are identical except for a constant factor 
 \begin_inset Formula $x_{1}=k*x_{2}+\varepsilon$
 \end_inset
 
@@ -292,7 +221,11 @@ rpkg{corplot}
 \begin_inset Formula $\varepsilon=0$
 \end_inset
 
-) to 1 (same for 
+) to 
+\begin_inset Formula $1$
+\end_inset
+
+ (same for 
 \begin_inset Formula $k>1$
 \end_inset
 
@@ -335,8 +268,65 @@ latin{e.g.}
 \end_layout
 
 \begin_layout Standard
-What I can show, however, is how well known pathway cross-talk and structure
- (as is known in literature and I have shown in figures 
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/4.2_cor_speed-matrix.pdf
+	lyxscale 50
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Correlation for TCGA primary tumour data and GDSC cell lines
+\end_layout
+
+\end_inset
+
+Correlation for TCGA primary tumour data (left) and GDSC cell lines (right)
+ for perturbation-response genes in basal expression.
+ Positive correlation in blue, negative in red.
+ Circle size and shade correspond to correlation strength.
+ Pathways that showed cross-activation with pathway perturbations are more
+ highly correlated in basal expression as well.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Correlation-speed"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+What I can more easily show, however, is how well known pathway cross-talk
+ and structure (as is known in literature and I have shown in figures 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Modelled-pathway-crosstalk"
@@ -399,61 +389,8 @@ reference "fig:sp2-exp-heatmap"
 ).
 \end_layout
 
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename figures/4.2_cor_speed-matrix.pdf
-	lyxscale 50
-	width 100col%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status collapsed
-
-\begin_layout Plain Layout
-Correlation for TCGA primary tumour data and GDSC cell lines
-\end_layout
-
-\end_inset
-
-Correlation for TCGA primary tumour data (left) and GDSC cell lines (right)
- for perturbation-response genes in basal expression.
- Positive correlation in blue, negative in red.
- Circle size and shade correspond to correlation strength.
- Pathways that showed cross-activation in point b are more highly correlated
- in basal expression as well.
- 
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Correlation-speed"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
+\begin_layout Subsection
+Dependence on input experiments
 \end_layout
 
 \begin_layout Standard
@@ -462,10 +399,6 @@ At this point I found strong indications that the gene expression changes
  a linear consensus signature whose score reflects pathway activation and
  this signature is translatable to basal pathway activity in non-perturbed
  gene expression.
-\end_layout
-
-\begin_layout Subsection
-Dependence on input experiments
 \end_layout
 
 \begin_layout Standard
@@ -480,7 +413,7 @@ reference "subsec:Building-the-Model"
 
 \end_inset
 
-, using the GDSC basal expression and yielding a 3-dimensional scores matrix
+, using the GDSC basal expression and yielding a 3-dimensional scores tensor
  with a score for each cell line, pathway, and bootstrap.
  I regressed out either the effect of the individual cell lines or the effect
  of the bootstraps, and quantified the relative remaining variance in the
@@ -540,7 +473,7 @@ Stability of basal pathway scores when bootstrapping input experiments
 \end_inset
 
 Stability of basal pathway scores when bootstrapping input experiments.
- The variance of pathway scores in cell lines given bootstraps more than
+ The variance of pathway scores in cell lines given bootstraps is more than
  five times as high compared to the variance of bootstraps given cell lines
  for all pathways except two (Trail and VEGF), where it is roughly twice
  as high.
@@ -572,13 +505,20 @@ reference "fig:bootstraps-basal"
 \end_inset
 
 .
- Here, a value smaller than 1 indicates that the experiment selection has
- a bigger effect than the cell line I apply the model to (i.e., we can not
- observe a biological effect because it is hidden by the noise of input
- experiments) and values bigger than 1 indicate the times the biological
- context is more influential for providing the score than the input selection
- (i.e, the biological context outweighs the exact selection of perturbation
- input).
+ Here, a value smaller than 
+\begin_inset Formula $1$
+\end_inset
+
+ indicates that the experiment selection has a bigger effect than the cell
+ line I apply the model to (i.e., we can not observe a biological effect because
+ it is hidden by the noise of input experiments) and values bigger than
+ 
+\begin_inset Formula $1$
+\end_inset
+
+ indicate the times the biological context is more influential for providing
+ the score than the input selection (i.e, the biological context outweighs
+ the exact selection of perturbation input).
  For most pathways (TNFa, NFkB, MAPK, JAK-STAT, Hypoxia, and EGFR) the variance
  of the input experiments was only a negligible influence (smaller than
  10%) on the final scores.
@@ -613,6 +553,160 @@ Pathway scores for other methods
 \end_layout
 
 \begin_layout Standard
+I used the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+name{Firehose}
+\end_layout
+
+\end_inset
+
+ tool
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://gdac.broadinstitute.org/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ (release 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+code{2016
+\backslash
+_01
+\backslash
+_28}
+\end_layout
+
+\end_inset
+
+) from the BROAD institute to download data labelled level 3 RNA-seq version
+ 2 (files names including 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+file{RSEM
+\backslash
+_genes
+\backslash
+_
+\backslash
+_data.Level
+\backslash
+_3}
+\end_layout
+
+\end_inset
+
+, unpacked them, selected all files contained in the archive that contained
+ the name 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+file{rnaseqv2}
+\end_layout
+
+\end_inset
+
+) for all cancer types for which it was available.
+ I extracted the raw counts from each of the text files for each gene.
+ I then performed a 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+code{voom}
+\end_layout
+
+\end_inset
+
+ transformation (R package 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+rpkg{limma}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Smyth2005-mw"
+
+\end_inset
+
+) for each TCGA study separately.
+ The result of this transformation are expression values that I can use
+ linear modelling techniques on, unlike the raw RNA-seq read counts.
+ With the resulting expression matrix, I selected only genes that had an
+ HGNC symbol associated with them.
+ I used the function 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+code{avereps}
+\end_layout
+
+\end_inset
+
+ (R package 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+rpkg{limma}
+\end_layout
+
+\end_inset
+
+) to average rows that had the same gene symbol.
+ This resulted in one expression matrix per TCGA tissue, for a total of
+ 34 tissues including 9179 tumour and 661 matched normal samples.
+\end_layout
+
+\begin_layout Standard
 I computed the pathway scores for perturbation-response genes as well as
  all other method using the subset of tissues in the TCGA gene expression
  data that had 30 or more normals in the same tissue (TCGA identifier 
@@ -637,8 +731,8 @@ reference "fig:Comparison-to-state"
 \end_inset
 
 ).
- For the cell lines in the GDSC, we do not have tissue-matched normals,
- so this is not possible and I calculate the scores for the cell lines alone
+ For the cell lines in the GDSC, I do not have tissue-matched normals, so
+ this is not possible and I calculate the scores for the cell lines alone
  or comparing one cell line to the rest of the tissue if the method requires
  it (SPIA and Pathifier).
 \end_layout
@@ -674,18 +768,6 @@ TODO: move this to suppl?
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename figures/4.2_cor_biocarta.pdf
-	lyxscale 50
-	width 100col%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
 	filename figures/4.2_cor_go.pdf
 	lyxscale 50
 	width 100col%
@@ -709,8 +791,7 @@ Correlation of basal pathway scores for gene set methods
 \end_inset
 
 Comparison to pathway member GSEA for TCGA primary tumour data (left) and
- GDSC cell lines (right) for Reactome (top), BioCarta (middle) and Gene
- Ontology (bottom).
+ GDSC cell lines (right) for Reactome (top) and Gene Ontology (bottom).
  Sign of the correlation indicated by colour of the points (positive correlation
  blue, negative correlation red), strength by colour shade and size of the
  point.
@@ -746,9 +827,8 @@ reference "fig:basal-comparison-methods"
  Reactome (top) shows increased correlation between EGFR and MAPK (to a
  lesser extent PI3K), and between TNFa and NFkB (and to a lesser extent
  also JAK-STAT and Trail).
- BioCarta (middle) has the latter as well but misses the former.
  Gene Ontology (bottom) is very similar to Reactome.
- For all methods, the correlation between pathways is similar from primary
+ For both methods, the correlation between pathways is similar from primary
  data (TCGA, left panel of figures) to cell lines (GDSC, right panel).
 \end_layout
 
@@ -872,24 +952,7 @@ Pathway scores and mutations/CNAs
 
 \begin_layout Standard
 I computed pathway scores for TCGA cohorts where there were tissue-matched
- normals available in the Firebrowse-processed run 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-code{2016
-\backslash
-_01
-\backslash
-_28}
-\end_layout
-
-\end_inset
-
-.
+ normals available.
  For mutated genes, I considered all genes that had a change of coding sequence
  (SNP, small indels in MAF files) as mutated and all others as not mutated.
  For copy number alterations, I used the thresholded GISTIC scores, where
@@ -914,10 +977,10 @@ _28}
 \end_inset
 
 ) from my analysis.
- I focussed our analysis of the mutations and copy number alterations on
- the subset of 464 driver genes that were also used in the GDSC.
+ I focussed on the subset of 464 driver genes that were also used in the
+ GDSC.
  I used the sets of mutations and CNAs to compute the linear associations
- between samples for all different methods we looked at.
+ between samples for all different methods I looked at.
  I did not regress out the cancer type in order to keep associations where
  mutations/CNAs are highly correlated with it, but highlighted all associations
  that passed the significance threshold of 
@@ -961,10 +1024,10 @@ Volcano plot of pan-cancer associations between driver mutations
 
 \end_inset
 
-Volcano plot of pan-cancer associations between driver mutations (denoted
- by the superscript mut and green/red colour) and copy number aberrations
- (denoted by amp/del and yellow/purple color) with inferred pathway activity
- using PRGs in basal gene expression of TCGA cohorts.
+Volcano plot of associations between driver mutations (denoted by the superscrip
+t mut and green/red colour) and copy number aberrations (denoted by amp/del
+ and yellow/purple colour) with inferred pathway activity using PRGs in
+ basal gene expression of TCGA cohorts.
  Effect sizes larger than zero indicate inferred activation, smaller than
  zero inferred inhibition of a pathway.
  P-values FDR-adjusted with a significance threshold of 5%.
@@ -1358,7 +1421,10 @@ gene{TP53}
 
  mutations and genes that are specifically induced by activation of canonical
  oncogenic signalling.
- I find that 
+\end_layout
+
+\begin_layout Standard
+I find that 
 \begin_inset ERT
 status open
 
@@ -1470,8 +1536,8 @@ Comparison of pathway scores across different methods
 
 \end_inset
 
-Comparison of pathway scores (vertical axis) across different methods (horizonta
-l axis).
+Comparison of pathway score (vertical axis) associations across different
+ methods (horizontal axis).
  
 \begin_inset ERT
 status open
@@ -1529,7 +1595,7 @@ gene{VHL}
  Wald statistic shown as shades of green for downregulated and red for upregulat
 ed pathways.
  P-value cutoffs shown as indicated.
- White squares where pathway could not be used for a method.
+ White squares if a pathway could not be used for a method.
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Comparison-CNA/drivers"
@@ -1550,9 +1616,14 @@ name "fig:Comparison-CNA/drivers"
 \end_layout
 
 \begin_layout Standard
-Comparing different methods (Fig.
- 2b and Supplementary Fig.
- 6), I found that for 
+Comparing different methods (figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Comparison-CNA/drivers"
+
+\end_inset
+
+), I found that for 
 \begin_inset ERT
 status open
 
@@ -1599,7 +1670,7 @@ gene{EGFR}
 \end_inset
 
  amplifications (bottom left panel).
- Across tissues, our method is the only one to recover hypoxia as the expected
+ Across tissues, my method is the only one to recover hypoxia as the expected
  
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -1632,8 +1703,43 @@ Drug associations using GDSC cell lines
 \end_layout
 
 \begin_layout Standard
-I performed drug association using a linear model between 265 drug IC50s
- and 11 inferred pathway scores (
+The next question I tried to answer is how well our pathway-responsive genes
+ are able to explain drug sensitivity in cancer cell lines.
+ I took 
+\begin_inset Formula $IC_{50}$
+\end_inset
+
+ values from the GDSC project 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Iorio2016-gh"
+
+\end_inset
+
+ and calculated statistical associations with our method, and GSEA using
+ the same pathways in Reactome 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Croft2011-po"
+
+\end_inset
+
+ or Gene Ontology 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Gene_Ontology_Consortium2004-sn"
+
+\end_inset
+
+, both for a pan-cancer and a tissue-specific condition.
+\end_layout
+
+\begin_layout Standard
+I performed drug association using a linear model between 265 drug 
+\begin_inset Formula $IC50$
+\end_inset
+
+s and 11 inferred pathway scores (
 \begin_inset ERT
 status open
 
@@ -1646,20 +1752,24 @@ code{lm}
 
 \end_inset
 
- function, R stats package), doing a total of 2915 comparisons for which
- I correct the p-values using the false discovery rate.
+ function, R 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+rpkg{stats}
+\end_layout
+
+\end_inset
+
+ package), doing a total of 2915 comparisons for which I correct the p-values
+ using the false discovery rate.
  For pan-cancer associations, I used the cancer type as a covariate in order
  to discard the effect that different tissues have on the observed drug
  response.
- While this will also remove genuine differences in pathway activation between
- different cancer types, I would not be able to distinguish between those
- and other confounders that impact the sensitivity of a certain cell line
- from a given tissue to a drug.
- My pan-cancer association are thus correcting for different tissues when
- computing differences in drug response explained by inferred (our method,
- GO, or Reactome) pathway scores.
- For tissue-specific associations, I fit the linear model and correct p-values
- for the false discovery rate for each cancer type separately.
 \end_layout
 
 \begin_layout Standard
@@ -1713,82 +1823,15 @@ name "fig:drug-cell-schema"
 \end_layout
 
 \begin_layout Standard
-In order to distinguish between Reactome/GO associations that are genuinely
- dependent on pathway expression and those that can be fully explained by
- pathway-responsive genes, I condition each association for those two methods
- by the score of our method that provides the strongest association with
- a given drug.
- Associations that fall under our threshold for significance (5% FDR for
- pan-cancer and 10% FDR for tissue-specific associations) can be explained
- by pathway-response genes and are likely caused by those rather than pathway
- expression (because the former are higher up on the chain of causality,
- cf.
- figure 2b).
- For selected tissue-specific hits, I show linear fits between drug response
- and inferred pathway score using the same model that was used to derive
- the associations (reported p-values in figure 3c are not FDR-corrected,
- but they are in 3b).
-\end_layout
-
-\begin_layout Standard
-I also selected two of our strongest associations to investigate whether
- they provide additional information of what is known by mutation data.
- For two MEK inhibitors, I show the difference between wild-type and mutant
- MAPK pathway (defined is a mutation in either 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-gene{MAP2K1}
-\end_layout
-
-\end_inset
-
-, 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-gene{N-Ras}
-\end_layout
-
-\end_inset
-
-, 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-gene{K-Ras}
-\end_layout
-
-\end_inset
-
-, or 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-gene{B-Raf}
-\end_layout
-
-\end_inset
-
-) with a discretised pathway score (upper and lower quartile vs.
- the rest), as well as the combination between the upper quartile of tissue-spec
-ific pathway scores and presence of a MAPK mutation.
+While this will also remove genuine differences in pathway activation between
+ different cancer types, I would not be able to distinguish between those
+ and other confounders that impact the sensitivity of a certain cell line
+ from a given tissue to a drug.
+ My pan-cancer association are thus correcting for different tissues when
+ computing differences in drug response explained by inferred (our method,
+ GO, or Reactome) pathway scores.
+ For tissue-specific associations, I fit the linear model and correct p-values
+ for the false discovery rate for each cancer type separately.
 \end_layout
 
 \begin_layout Subsection
@@ -1827,7 +1870,11 @@ Volcano plot of pan-cancer associations between PRGs in GDSC cell lines
 \end_inset
 
 Volcano plot of pan-cancer associations between PRGs in GDSC cell lines
- and drug response (IC50), corrected for cancer type.
+ and drug response (
+\begin_inset Formula $IC_{50}$
+\end_inset
+
+), corrected for cancer type.
  Effect sizes of smaller than zero indicate sensitivity markers (shown in
  green) and greater than zero resistance markers (shown in red).
  P-values FDR-corrected.
@@ -1851,31 +1898,70 @@ name "fig:Volcano-drug-pancan"
 \end_layout
 
 \begin_layout Standard
-The next question I tried to answer is how well our pathway-responsive genes
- are able to explain drug sensitivity in cancer cell lines.
- I took IC50 values from the GDSC project 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Iorio2016-gh"
+I found that for the pan-cancer setting, there were 199 significant associations
+ (FDR<10%, conditioned on tissue of origin) for my method and 27 and 66
+ for Gene Ontology and Reactome pathways, respectively.
+ The top hit using my method was the associations between Nutlin-3a and
+ p53-responsive genes.
+ Nutlin-3a is an MDM2-inhibitor that in turn stabilizes p53, where it has
+ also previously been shown that a mutation in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+gene{TP53}
+\end_layout
 
 \end_inset
 
- and calculated statistical associations with our method, and GSEA using
- the same pathways in Reactome 
+ is strongly associated with increased resistance to Nutlin-3a 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "Croft2011-po"
+key "Garnett2012-dk"
 
 \end_inset
 
- or Gene Ontology 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Gene_Ontology_Consortium2004-sn"
+.
+ This is thus a well-understood mechanism of sensitivity (presence) or resistanc
+e (absence of TP53 activity) to this drug that our method recovers but neither
+ GO or Reactome pathways do.
+\end_layout
+
+\begin_layout Standard
+I also find strong association between different MEK inhibitors (Trametinib,
+ RDEA119, CI-1040, etc.) and MAPK/EGFR activation, but also a Raf (AZ628)
+ or TAK1 (7-Oxozeaonol) inhibitor.
+ These are all associations that the other methods miss or associate with
+ a different pathway (figure 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{fig:sp2-drug-pancan}
+\end_layout
 
 \end_inset
 
-, both for a pan-cancer and a tissue-specific condition.
+ and tables in appendix 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{sub:ch4-drug-pan}
+\end_layout
+
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Standard
@@ -1935,44 +2021,6 @@ name "fig:drug-assoc-strength-compare"
 \end_layout
 
 \begin_layout Standard
-I found that for the pan-cancer setting, there were 199 significant associations
- (FDR<10%, conditioned on tissue of origin) for our method and 27 and 66
- for Gene Ontology and Reactome pathways, respectively.
- The top hit using our method was the associations between Nutlin-3a and
- p53-responsive genes.
- Nutlin-3a is an MDM2-inhibitor that in turn stabilizes p53, where it has
- also previously been shown that a mutation in 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-gene{TP53}
-\end_layout
-
-\end_inset
-
- is strongly associated with increased resistance to Nutlin-3a 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Garnett2012-dk"
-
-\end_inset
-
-.
- This is thus a well-understood mechanism of sensitivity (presence) or resistanc
-e (absence of TP53 activity) to this drug that our method recovers but neither
- GO or Reactome pathways do.
- I also find strong association between different MEK inhibitors (Trametinib,
- RDEA119, CI-1040, etc.) and MAPK/EGFR activation, but also a Raf (AZ628)
- or TAK1 (7-Oxozeaonol) inhibitor.
- These are all associations that the other methods miss or associate with
- a different pathway.
-\end_layout
-
-\begin_layout Standard
 The other pathway methods showed a much lower number of associations across
  the range of significance (figure 
 \begin_inset CommandInset ref
@@ -1981,20 +2029,7 @@ reference "fig:drug-assoc-strength-compare"
 
 \end_inset
 
-; associations in figure 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ref{fig:sp2-drug-pancan}
-\end_layout
-
-\end_inset
-
- and tables in appendix 
+ and appendix 
 \begin_inset ERT
 status open
 
@@ -2010,7 +2045,7 @@ ref{sub:ch4-drug-pan}
 ).
  Using the same significance threshold (10% FDR) mutated driver genes only
  yield 136 associations.
- Mutated driver genes provide stronger associations only for 
+ They provide stronger associations only for 
 \begin_inset ERT
 status open
 
@@ -2196,7 +2231,7 @@ gene{TP53}
 \end_inset
 
 ) is further stratified by top- and bottom quartiles of pathway score (fold
- change of medians and p-value of Mann-Whitney U test indicated).
+ change of medians and p-value of Mann-Whitney U test as indicated).
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:drug-mut-substrat"
@@ -2402,7 +2437,7 @@ reference "fig:drug-mut-substrat"
  blank (any).
  Inferred pathway activity is indicated by + (top quartile) − (bottom quartile)
  or blank (any).
- Distance reported as a fold change of medians.
+ Distance reported as a fold change (FC) of medians.
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:PRG_subset_strat"
@@ -3304,7 +3339,7 @@ Volcano plot of tissue-specific associations between pathway activity and
 \end_inset
 
 Volcano plot of tissue-specific associations between pathway activity and
- drug response to clinical drugs only.
+ drug response for clinical drugs only.
  Horizontal axis shows the regression slope, vertical axis the per-tissue
  FDR-adjusted p-values.
  Dots with black circles are shown in more detail below.
@@ -3328,8 +3363,8 @@ name "fig:Volcano-drug-tissue"
 \end_layout
 
 \begin_layout Standard
-I performed the same analysis on the tissue-specific level.
- However, by dividing my dataset into the different cancer types we lose
+I performed drug associations also on the tissue-specific level.
+ However, by dividing my dataset into the different cancer types I lose
  statistical power, so I chose in the first instance to only look at the
  subset of clinically approved drugs for the already stratified populations.
 \end_layout
@@ -3342,7 +3377,7 @@ reference "fig:Volcano-drug-tissue"
 
 \end_inset
 
-) resulted in 75 significant associations for footprints vs.
+) resulted in 75 significant associations for PRGs vs.
  36 for Reactome and 12 for GO (regression, FDR<10%; associations of different
  methods in figure 
 \begin_inset ERT
@@ -3422,14 +3457,11 @@ EGFR activity mediates resistance to Rapamycin in Esophageal Carcinoma
 
 \end_inset
 
-EGFR activity mediates resistance to Rapamycin (macrolide antibiotic) in
- Esophageal Carcinoma (ESCA).
- Stratifications compared to differences in drug response of other tissues.
+EGFR activity may mediate resistance to Rapamycin (macrolide antibiotic)
+ in Esophageal Carcinoma (ESCA).
  Coloured boxes show the drug response of a certain tissue and the stratificatio
 n achieved by negative and positive scores for a given pathway, white boxes
  indicate range of drug response for other tissues.
- In all cases, the stratified population is more sensitive by median than
- any other tissue.
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:strat_ESCA"
@@ -3447,43 +3479,6 @@ name "fig:strat_ESCA"
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-Perhaps more interestingly, I found two associations to drugs with strong
- effect sizes.
- The inferred activity of Trail correlates with increased sensitivity to
- Docetaxel in Low-Grade Glioma (LGG), where an increased response to Docetaxel
- (figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:strat_ESCA"
-
-\end_inset
-
-) in combination with a Bcl-2 inhibitor has been previously shown in BRCA
- 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Lyseng-Williamson2005-pn"
-
-\end_inset
-
-.
- Also, EGFR activity correlates with increased resistance in Esophageal
- Carcinoma (ESCA) cell lines treated with Rapamycin (figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:strat-LGG"
-
-\end_inset
-
-).
- While BRCA and ESCA are already more sensitive to these drugs than most
- other tissues (unlike the case above of BRCA for Trametinib), the additional
- stratification by pathway scores identifies a subset comprised of half
- the cell lines per tissue with a more sensitive median response compared
- to all tissues, including those where the drug is in clinical use.
 \end_layout
 
 \begin_layout Standard
@@ -3545,6 +3540,43 @@ name "fig:strat-LGG"
 
 \end_layout
 
+\begin_layout Standard
+Perhaps more interestingly, I found two associations to drugs with strong
+ effect sizes.
+ The inferred activity of Trail correlates with increased sensitivity to
+ Docetaxel in Low-Grade Glioma (LGG), where an increased response to Docetaxel
+ (figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:strat_ESCA"
+
+\end_inset
+
+) in combination with a Bcl-2 inhibitor has been previously shown in BRCA
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Lyseng-Williamson2005-pn"
+
+\end_inset
+
+.
+ Also, EGFR activity correlates with increased resistance in Esophageal
+ Carcinoma (ESCA) cell lines treated with Rapamycin (figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:strat-LGG"
+
+\end_inset
+
+).
+ While BRCA and ESCA are already more sensitive to these drugs than most
+ other tissues (unlike the case above of BRCA for Trametinib), the additional
+ stratification by pathway scores identifies a subset comprised of half
+ the cell lines per tissue with a more sensitive median response compared
+ to all tissues, including those where the drug is in clinical use.
+\end_layout
+
 \begin_layout Section
 Patient survival using the TCGA
 \end_layout
@@ -3562,148 +3594,11 @@ The implications of inferred pathway activity compared to pathway expression
 \end_layout
 
 \begin_layout Subsection
-Obtaining patient data from the TCGA
+Clinical data and methods
 \end_layout
 
 \begin_layout Standard
-I used the 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-name{Firehose}
-\end_layout
-
-\end_inset
-
- tool
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset href
-LatexCommand href
-target "http://gdac.broadinstitute.org/"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
- from the BROAD institute to download data labelled level 3 RNA-seq version
- 2 (files names including 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-file{RSEM
-\backslash
-_genes
-\backslash
-_
-\backslash
-_data.Level
-\backslash
-_3}
-\end_layout
-
-\end_inset
-
-, unpacked them, selected all files contained in the archive that contained
- the name 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-file{rnaseqv2}
-\end_layout
-
-\end_inset
-
-) for all cancer types for which it was available.
- I extracted the raw counts from each of the text files for each gene.
- I then performed a 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-code{voom}
-\end_layout
-
-\end_inset
-
- transformation (R package 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-rpkg{limma}
-\end_layout
-
-\end_inset
-
- 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Smyth2005-mw"
-
-\end_inset
-
-) for each TCGA study separately.
- The result of this transformation are expression values that I can use
- linear modelling techniques on, unlike the raw RNA-seq read counts.
- With the resulting expression matrix, I selected only genes that had an
- HGNC symbol associated with them.
- I used the function 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-code{avereps}
-\end_layout
-
-\end_inset
-
- (R package 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-rpkg{limma}
-\end_layout
-
-\end_inset
-
-) to average rows that had the same gene symbol.
- This resulted in one expression matrix per TCGA tissue, for a total of
- 34 tissues including 9179 tumour and 661 matched normal samples.
-\end_layout
-
-\begin_layout Standard
-Also using the 
+Using the 
 \begin_inset ERT
 status open
 
@@ -3900,10 +3795,6 @@ TODO_SUBSECTION: Survival associations using the Cox Proportional Hazard
 
 \end_layout
 
-\begin_layout Subsection
-Association with pathway scores
-\end_layout
-
 \begin_layout Standard
 Starting from the pathway scores derived with GO/Reactome GSEA, SPIA, Pathifier,
  PARADIGM, and my method on the TCGA data as described above, I used Cox
@@ -3923,30 +3814,16 @@ rpkg{survival}
 ) to calculate survival associations for pan-cancer and each tissue-specific
  cohort.
  For the pan-cancer cohort, I regressed out the effect of the study and
- age of the patient, and fitted the more for each pathway and method used.
+ age of the patient, and fitted the model for each pathway and method used.
  For the tissue-specific cohorts, I regressed out the age of the patients.
  I adjusted the p-values using the FDR for each method and for each method
  and study separately.
  I selected a significance threshold of 5 and 10% for the pan-cancer and
- cancer-specific associations for which I show a matrix plot and a volcano
- plot of associations, respectively.
+ cancer-specific associations respectively.
 \end_layout
 
-\begin_layout Standard
-For Kaplan-Meier survival curves (figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:surv-curves"
-
-\end_inset
-
-) it is only straightforward to plot discrete classes of input and not the
- continuous pathway scores I obtained using the different methods.
- In order to get distinct classes needed for interpretable survival curves,
- I split all obtained pathway scores in upper, the two middle, and lower
- quartile and respectively assigned the classes “up”, “unknown”, and “down”
- to show for the three examples of associations found.
- 
+\begin_layout Subsection
+Pan-cancer associations with survival
 \end_layout
 
 \begin_layout Standard
@@ -4078,6 +3955,10 @@ gene{TP53}
 ) with a weaker effect size.
 \end_layout
 
+\begin_layout Subsection
+Tissue-specific associations with survival
+\end_layout
+
 \begin_layout Standard
 \begin_inset Float figure
 wide false
@@ -4177,8 +4058,9 @@ ref{sub:ch4-surv-tissue}
 \begin_inset Formula $FDR<10^{-3}$
 \end_inset
 
-) but none of the samples harbours a reported gain-of-function TP53 variants
- 
+).
+ It is interesting that in this case also none of the samples harbours a
+ reported gain-of-function TP53 variants 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Zhu2015-jl"
@@ -4186,10 +4068,37 @@ key "Zhu2015-jl"
 \end_inset
 
 .
- Kidney Renal Clear Cell Carcinoma (KIRC) and Low-Grade Glioma (LGG) show
- decreased survival with TNFa and the latter with JAK-STAT, pathways where
- activating mutations are much less well established than for EGFR/MAPK.
- For these associations, we found a difference in one-year survival of over
+\end_layout
+
+\begin_layout Subsection
+Kaplan-Meier survival curves for specific hits
+\end_layout
+
+\begin_layout Standard
+For Kaplan-Meier survival curves (figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:surv-curves"
+
+\end_inset
+
+) it is only straightforward to plot discrete classes of input and not the
+ continuous pathway scores I obtained using the different methods.
+ In order to get distinct classes needed for interpretable survival curves,
+ I split all obtained pathway scores in upper, the two middle, and lower
+ quartile and respectively assigned the classes “up”, “unknown”, and “down”
+ to show for the three examples of associations found.
+\end_layout
+
+\begin_layout Standard
+As already found with the tissue-specific associations, Kidney Renal Clear
+ Cell Carcinoma (KIRC) and Low-Grade Glioma (LGG) show decreased survival
+ with TNFa and the latter with JAK-STAT, pathways where activating mutations
+ are much less well established than for EGFR/MAPK.
+\end_layout
+
+\begin_layout Standard
+For these associations, I found a difference in one-year survival of over
  25% between the top and bottom quartiles of the assigned pathway scores
  (figure 
 \begin_inset CommandInset ref
@@ -4298,11 +4207,7 @@ Discussion
 The functional context in terms of cancer hallmarks that mutations create
  are similar despite obvious differences in the exact mode, as exemplified
  by the long tail of different variants seen in cancer genomes.
- 
-\end_layout
-
-\begin_layout Standard
-For cancer diagnosis in both the clinical and preclinical setting, efforts
+ For cancer diagnosis in both the clinical and preclinical setting, efforts
  like The Cancer Genome Atlas
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -4314,8 +4219,11 @@ key "The_Cancer_Genome_Atlas_Research_Network2013-bi"
  characterization on a large scale, offering the opportunity to derive large
  amounts of information about individual tumours and in turn likely harbours
  yet undiscovered treatment opportunities.
- While the recent focus on linking outcomes with mutations represents a
- step forward over basing treatment of an individual on the tissue of tumour
+\end_layout
+
+\begin_layout Standard
+While the recent focus on linking outcomes with mutations represents a step
+ forward over basing treatment of an individual on the tissue of tumour
  origin alone, putting mutations in a functional context with the signalling
  aberrations that they create may provide additional insight in mechanisms
  of pathogenesis and treatment opportunities.
@@ -4323,53 +4231,17 @@ key "The_Cancer_Genome_Atlas_Research_Network2013-bi"
 \end_layout
 
 \begin_layout Standard
-I compared how Gene Ontology, pathway expression, and signalling footprints
- performed for predicting cell line drug response and patient survival,
- and found that the latter outperformed the other two on both accounts.
- Using both my method and pathway expression mapping, I are beginning to
- understand how signalling activity and pathway expression are interlinked
- in both cell lines and tumours.
-\end_layout
-
-\begin_layout Standard
-Taken together, our results suggest that mutation-based biomarkers should
- be augmented by consensus gene expression signatures in order to improve
- preclinical and clinical performance.
-\end_layout
-
-\begin_layout Standard
-The explanation of phenotypes in cancer, such as cell line drug response
- or patient survival has largely been focussed on genomic mutations in recent
- years, where gene expression signatures did not play a significant part
- in biomarker discovery.
- The latter have held an unfavourable reputation: they have been shown to
- more strongly correlate with the lab they were derived in than the actual
- phenotype, strongly depend on the experimental setup and exact conditions
- they were created, or featured in high-profile papers that later had to
- be retracted.
-\end_layout
-
-\begin_layout Standard
-Here I showed progress to overcome these limitations by leveraging a large
- compendium of pathway-responsive gene signatures derived from a wide range
- of different conditions.
- These pathway perturbation signatures can recover the impact of known driver
- mutations, but also identify cases where a pathway is active without the
- corresponding mutation.
- Pathway mapping only recovers known associations where this effect is mediated
- by expression changes, such as copy number aberrations.
- 
-\end_layout
-
-\begin_layout Standard
-In terms of drug associations, I have shown that our method outperforms
- the associations obtained by using GSEA on either pathway expression or
- GO modules, that strong tissue-specific associations are able to explain
- a significant part of the overall variability in the response to some drugs,
+In terms of drug associations, I have shown that my method outperforms the
+ associations obtained by using GSEA on either pathway expression or GO
+ modules, that strong tissue-specific associations are able to explain a
+ significant part of the overall variability in the response to some drugs,
  and that pathway associations can be used to refine mutational biomarkers,
  or act as biomarkers themselves when there is no known associated mutation
- for a given drug (in the case of TNFa-related associations).
- I expect that this method of deriving signatures for pathway activity will
+ for a given drug.
+\end_layout
+
+\begin_layout Standard
+I expect that this method of deriving signatures for pathway activity will
  also in other contexts be able to discover both oncogene addiction footprints
  to support available mutational biomarkers, as well as provide insights
  into pathway activation patterns that mediate sensitivity or resistance

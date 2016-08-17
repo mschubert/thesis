@@ -298,15 +298,6 @@ So far, it is unknown how well it is possible to derive consensus signatures
 \end_layout
 
 \begin_layout Standard
-In terms of outcomes, I am interested in how well the available platform
- is able to explain drug sensitivity in the GDSC cell line panel, with the
- aim of providing an improved approach that satisfies the stability requirement.
- In terms of the inferred pathway activity itself, I am interested in how
- it compares to readily available pathway methods that map mRNA to signalling
- molecules.
-\end_layout
-
-\begin_layout Standard
 \begin_inset VSpace defskip
 \end_inset
 

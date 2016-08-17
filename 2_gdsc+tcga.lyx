@@ -214,6 +214,29 @@ makes sense
 \end_layout
 
 \begin_layout Standard
+I will use this chapter to examine which processes are involved in making
+ cancer cell lines sensitive or resistant to different drugs in the GDSC
+ panel 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Garnett2012-dk,Iorio2016-gh"
+
+\end_inset
+
+.
+ I will not filter the gene sets I use, to see how well represented signalling
+ pathways are among the top hits for drug sensitivity, where they are known
+ to play a pivotal role for targeted therapies 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Garnett2012-dk,Iorio2016-gh,Yap2012-mi"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
 \begin_inset VSpace defskip
 \end_inset
 
