@@ -157,9 +157,8 @@ On the technical side, the signatures I have worked with were largely based
  Genome Wide Association Studies (GWAS) and eQTLs (genomic variants with
  impact on gene expression, or expression quantitative trait loci) more
  into generally applicable analyses of gene expression, because it enables
- to used to apply many more techniques and tools to solve problems such
- as confounding variables, batch correction, latent variable extraction,
- etc.
+ us to apply many more techniques and tools to solve problems such as confoundin
+g variables, batch correction, latent variable extraction, etc.
  A good example of a tool that performs theses tasks is PEER 
 \begin_inset CommandInset citation
 LatexCommand cite
