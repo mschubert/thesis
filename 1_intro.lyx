@@ -2916,27 +2916,46 @@ Signature definition
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-TODO
-\end_layout
+Maybe the simplest way to investigate a biological system using gene expression
+ data is to not make any assumptions concerning translation, protein activity,
+ signalling, or pathways.
+ Instead, one could use the transcriptional state of a cell as a black box
+ entirely and just treat it as a readout of its phenotype.
+ This has the advantage that many of the assumptions that we normally make
+ that are not quite correct (mRNA expression corresponds to protein level
+ or activity, exactly those genes in a set have that function and there
+ is no overlap or partial membership, etc.) no longer have an impact on the
+ result we obtain - we can just use the gene expression readout of a disease,
+ a drug treatment, or really anything else that produces gene expression
+ changes and use it as a signature for the phenotype (reviewed in 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Iorio2013-pv"
 
 \end_inset
 
-
+).
 \end_layout
 
 \begin_layout Standard
-pathway sigs: 
+Hence, a signature is able to transform gene expression as an input into
+ a relevant phenotype.
+ One example of such a phenotype is pathway activity, for which signatures
+ have previously been derived in the MCF10A cell line 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "Bild2005-tk,Gatza2010-fq,Parikh2010-uj"
+key "Bild2005-tk,Gatza2010-fq"
 
 \end_inset
 
+ and using a consensus model 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Parikh2010-uj"
 
+\end_inset
+
+ (both of which have drawbacks that I will discuss later).
 \end_layout
 
 \begin_layout Subsubsection

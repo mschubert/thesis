@@ -88,28 +88,6 @@ Modelling Drug Interactions
 \end_layout
 
 \begin_layout Standard
-Maybe the simplest way to investigate a biological system using gene expression
- data is to not make any assumptions concerning translation, protein activity,
- signalling, or pathways.
- Instead, one could use the transcriptional state of a cell as a black box
- entirely and just treat it as a readout of its phenotype.
- This has the advantage that many of the assumptions that we normally make
- that are not quite correct (mRNA expression corresponds to protein level
- or activity, exactly those genes in a set have that function and there
- is no overlap or partial membership, etc.) no longer have an impact on the
- result we obtain - we can just use the gene expression readout of a disease,
- a drug treatment, or really anything else that produces gene expression
- changes and match them to another phenotype (reviewed in 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Iorio2013-pv"
-
-\end_inset
-
-).
-\end_layout
-
-\begin_layout Standard
 At the time I started this project, the 
 \begin_inset ERT
 status open
@@ -156,7 +134,7 @@ apps
  baseline expression and drug response curves, but also lower coverage/quality
  drug-perturbed gene for a lot of different compounds, including 150 drug
  that are overlapping between the GDSC and the LINCS project, for which
- we could use Signature Matching methods (in terms of tissues, see figure
+ we could use signature matching methods (in terms of tissues, see figure
  
 \begin_inset CommandInset ref
 LatexCommand ref
