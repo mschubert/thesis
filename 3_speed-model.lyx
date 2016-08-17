@@ -95,7 +95,8 @@ There are numerous examples of using Gene Set Enrichment Analysis (GSEA)
  My hypothesis is that using this footprint of signalling activity is a
  better proxy than assuming that it is proportional to the expression of
  the proteins involved in the signal transduction pathway, which assumes
- the latter accurately represent not only the protein levels but their activity.
+ the latter accurately represents not only the protein levels but also their
+ activity.
  To my knowledge, the only similar efforts are the SPEED database 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -111,11 +112,17 @@ key "Bild2005-tk,Bild2006-vt,Gatza2010-fq,Gatza2011-wd,Gatza2014-as"
 \end_inset
 
 .
- Whereas the former used a smaller but still significant set of publicly
+\end_layout
+
+\begin_layout Standard
+Whereas the former used a smaller but still significant set of publicly
  available experiments, the only analysis they did using their signatures
  was to compute the overlap between genes present in their signatures and
  Gene Ontology categories, and genes between their pathways.
- In the latter article the authors experimentally derived pathway-response
+\end_layout
+
+\begin_layout Standard
+In the latter article the authors experimentally derived pathway-response
  signatures for a single condition (MCF10A cell line, one perturbation/time
  point per experiment).
  Without claiming a direct connection, one of the involved authors later
@@ -208,17 +215,16 @@ key "Gatza2014-as"
  behaviour of cells without cancer-causing molecular alterations.
  While the data in general seems to be of high quality, I am not confident
  to make any statements about the genes responsive in this cell line can
- be extrapolated to other tissues.
- It has also previously been shown that signatures generated in a certain
- lab correlate more with the lab they were produced in than the biological
- condition 
+ be extrapolated to other tissues, especially because it has previously
+ been shown that signatures generated in a certain lab can correlate more
+ with the lab they were produced in than the biological condition 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Chibon2013-rl"
 
 \end_inset
 
-, which we can not control for if there is only one lab producing them.
+, which I can not control for if there is only one lab producing them.
 \end_layout
 
 \begin_layout Standard
@@ -283,7 +289,8 @@ So far, it is unknown how well it is possible to derive consensus signatures
  that provide meaningful estimates of pathway activity across different
  conditions.
  Only SPEED computed them, and the authors did not do a detailed investigation
- of either this, or any functional association with the pathway scores obtained.
+ of either this, or any large-scale functional association with the pathway
+ scores they obtained.
  It also relies on a framework that applies multiple arbitrary cutoffs in
  order to obtain signature sets, even though a simple linear model would
  abrogate the requirement for such cutoffs, while being able to take into
@@ -291,12 +298,12 @@ So far, it is unknown how well it is possible to derive consensus signatures
 \end_layout
 
 \begin_layout Standard
-In terms of outcomes, we are interested in how well the available platform
+In terms of outcomes, I am interested in how well the available platform
  is able to explain drug sensitivity in the GDSC cell line panel, with the
  aim of providing an improved approach that satisfies the stability requirement.
- In terms of the inferred pathway activity itself, we are interested in
- how it compares to readily available pathway methods that map mRNA to signallin
-g molecules.
+ In terms of the inferred pathway activity itself, I am interested in how
+ it compares to readily available pathway methods that map mRNA to signalling
+ molecules.
 \end_layout
 
 \begin_layout Standard
@@ -365,14 +372,14 @@ name "subsec:Defining-Relevant-Pathways"
 \begin_layout Standard
 Because the experiments in the SPEED database were curated in a first iteration
  in 2009 and other pathways were added in 2012, it is quite likely that
- there are many more relevant experiments that were deposited after the
- data was curated.
+ there are many more relevant experiments that were deposited in ArrayExpress
+ or GEO after the data was curated.
  Also, previous efforts made no distinction based on the availability of
  raw data or how many arrays were indeed available in a given contrast.
- For the latter, the requirement was at least two arrays in the control
- condition to be able to obtain an estimate of the variability of the expressed
- genes without a pathway perturbation, and one perturbed array to compare
- to the controls.
+ For the latter, I set the requirement to have at least two arrays in the
+ control condition to be able to obtain an estimate of the variability of
+ the expressed genes without a pathway perturbation, and one perturbed array
+ to compare to the controls.
  I kept the requirement of the original SPEED for the perturbation to last
  24 hours or less in order to focus the analysis on primary pathway responses
  and not long-term rewiring.
@@ -464,11 +471,10 @@ key "Ben-Kiki2005-jo"
 
  to create index files for all the curated experiments.
  This has the advantage over a simple tabular format in that it supports
- structured data, including field names and comments, and being easily machine-
- and human-readable (unlike XML).
- It can thus easily be reused by other projects for which a curation of
- perturbation-response experiments on the resolution of pathways is of interest
- (unlike the flat files used in the extended curation of the original SPEED).
+ structured data, including field names and comments.
+ It has the advantage over XML that it is easily machine- and human-readable.
+ It can hence easily be reused by other projects for which a curation of
+ perturbation-response experiments on the resolution of pathways is of interest.
  An overview of the format structure is shown in table 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -498,7 +504,8 @@ Structured data in the YAML file format
 
 \end_inset
 
-Structured data in the YAML file format
+Structured data in the YAML file format that I used from experiment curation
+ for different pathway perturbation experiments in ArrayExpress
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:yaml-format"
@@ -955,8 +962,8 @@ Comparison of dataset size between SPEED, Gatza (2009), and Pathway-responsive
 
 \end_inset
 
-Comparison of dataset size between SPEED, Gatza (2009), and Pathway-responsive
- genes (PRGs).
+Comparison of dataset size between SPEED, Gatza (2009), and my Pathway-responsiv
+e genes (PRGs).
  
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -985,14 +992,14 @@ key "Parikh2010-uj"
 
  assembled consensus signatures for for 11 pathways using 69 GEO submissions,
  215 different conditions and 572 arrays.
- Our data set consists of 11 pathways, 217 GEO submissions, 568 different
+ My data set consists of 11 pathways, 217 GEO submissions, 568 different
  experiments and a total of 2687 arrays.
- This means we use more evidence per pathway and cover a broader set of
- experimental conditions, but also reflects the imposed limitation of only
- considering experiments if there are at least two unperturbed arrays available
- in order to estimate the basal variability.
- In addition, all our expression values are derived from raw data and not
- preprocessed data that we can not reproduce.
+ This means I use more evidence per pathway and cover a broader set of experimen
+tal conditions, but also reflects the imposed limitation of only considering
+ experiments if there are at least two unperturbed arrays available in order
+ to estimate the basal variability.
+ In addition, all my expression values are derived from raw data and not
+ preprocessed data that I can not reproduce.
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Size-of-the"
@@ -1017,8 +1024,8 @@ Those searches yielded between 30 and 650 results in the database, the majority
  of which had nothing to do with the perturbation I was looking for but
  the search term was rather mentioned in the experiment description.
  I read the description, sample attributes, metadata files, and if required
- the associated article to fill in the following information about each
- experiment (listed in table 
+ the associated article to fill in the required information about each experimen
+t (listed in table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:yaml-format"
@@ -1026,23 +1033,11 @@ reference "tab:yaml-format"
 \end_inset
 
 ).
- Using these searches and data, I defined a set of cancer-relevant pathways
- (methods section 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "subsec:Defining-Relevant-Pathways"
+\end_layout
 
-\end_inset
-
-) the database search using ArrayExpress (methods section 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "subsec:Finding-suitable-Experiments"
-
-\end_inset
-
-) and curation of a total of 208 submissions encompassing 11 pathways, 580
- experiments, and a total of 2352 arrays.
+\begin_layout Standard
+I found a total of 208 submissions encompassing 11 pathways, 572 experiments,
+ and a total of 2687 arrays.
  This is the same number of pathways in the SPEED platform 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -1051,7 +1046,7 @@ key "Parikh2010-uj"
 \end_inset
 
 , but about three times as many experiments and more than four times as
- many microarrays that were used to derived the signature.
+ many microarrays than were used to derived their signatures.
  Because the collection of 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -1060,8 +1055,8 @@ key "Gatza2010-fq"
 \end_inset
 
  is breast cancer only and only consists of a single experiment per signature,
- our number of pathway signatures is smaller but the number of overall experimen
-tal data much bigger (for a comparison, see figure 
+ my number of pathway signatures is smaller but the number of overall experiment
+al data much bigger (for a comparison, see figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Size-of-the"
@@ -1129,9 +1124,9 @@ name "subsec:From-Experiments-to"
 \end_layout
 
 \begin_layout Standard
-To go from an experiment accession in the ArrayExpress database to the actual
- expression values of the arrays referenced in the curated data set, I planned
- to use the 
+To go from an experiment accession identifier in the ArrayExpress database
+ to the actual expression values of the arrays referenced in the curated
+ data set, I planned to use the 
 \begin_inset ERT
 status open
 
@@ -1977,7 +1972,7 @@ code{RLE}
 
 \end_inset
 
- scores for each array.
+ quality control scores for each array.
  Arrays that had a 
 \begin_inset ERT
 status open
@@ -2004,9 +1999,9 @@ code{RLE}
 
 \end_inset
 
- over 0.1 were discarded as quality control failures.
- If less than two control and one perturbed array were remaining after QC,
- I removed the whole contrast.
+ over 0.1 I discarded as quality control failures.
+ If less than two control and one perturbed array were remaining, I removed
+ the whole experiment.
  If there were enough, I performed background correction, normalisation,
  and probe summarisation using the 
 \begin_inset ERT
@@ -2126,14 +2121,14 @@ rpkg{limma}
 
 \end_inset
 
- 
+ package 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Smyth2005-mw"
 
 \end_inset
 
- package.
+.
  After processing and quality control, a total of 568 experiments and 2867
  arrays remained, with a total of over 64 million single-gene measurements.
 \end_layout
@@ -2192,7 +2187,7 @@ Structure of the perturbation-response model
 \end_inset
 
 Structure of the perturbation-response model.
- For the multiple linear regression, we set the coefficients or perturbed
+ For the multiple linear regression, I set the coefficients or perturbed
  pathways to 1 if a pathway was perturbed, 0 otherwise.
  In addition, EGFR perturbation also had MAPK and PI3K coefficients set,
  and TNFa had NFkB set.
@@ -2245,7 +2240,7 @@ where
 \end_inset
 
  is the obtained z-score, 
-\begin_inset Formula $\bar{x_{i}}$
+\begin_inset Formula $\bar{x}_{i}$
 \end_inset
 
  is the mean perturbed expression level, 
@@ -2412,8 +2407,8 @@ Where
 \begin_inset Formula $M$
 \end_inset
 
- is a coefficients matrix (rows are experiments, columns pathways, cf.
- figure 1b) that has the coefficient 
+ is a coefficients matrix (rows are experiments, columns pathways) that
+ has the coefficient 
 \begin_inset Formula $1$
 \end_inset
 
@@ -2489,14 +2484,15 @@ Overlap of signature genes for different pathways
 \end_inset
 
 Overlap of signature genes for different pathways.
- For the 100 genes we selected for each individual pathway, this shows how
+ For the 100 genes I selected for each individual pathway, this shows how
  many of those signature genes are present in another pathway as well.
  The overlap is generally minimal, with the highest numbers between TNFa
- and NFkB (18) and EGFR and MAPK (9).
+ and NFkB (18 of 100) and EGFR and MAPK (9 of 100).
  As both of these pathway pairs have one component that is directly upstream
  of the other, this is to be expected.
  It also shows that the response genes are specific to their perturbation
- and not a common phenotype like stress response because of any perturbation.
+ and not a common phenotype like stress response that happens with any perturbat
+ion.
 \end_layout
 
 \end_inset
@@ -2515,7 +2511,15 @@ From the result of the linear model, I selected the top 100 genes per pathway
  as coefficient.
  I set all other gene coefficients to 0, so this yielded a matrix with HGNC
  symbols in rows and pathways in columns, where each pathway had 100 non-zero
- gene coefficients.
+ gene coefficients (cf.
+ figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Workflow-of-obtaining"
+
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Subsection
@@ -2530,17 +2534,17 @@ name "subsec:method:speed-scores"
 \end_layout
 
 \begin_layout Standard
-Each pathway signature I obtain is an 
+Each pathway signature I obtain is the 
 \begin_inset Formula $N$
 \end_inset
 
--dimensional vector in gene expression space, 
+-dimensional vector in gene expression space 
 \begin_inset Formula $Z_{i}$
 \end_inset
 
 .
  This vector defines not only a direction, but also a plane on the origin
- whose normal it represents.
+ of a coordinate system whose normal it represents.
  The distance of each sample (
 \begin_inset Formula $A$
 \end_inset
@@ -2703,11 +2707,7 @@ P=E*Z
 \end_layout
 
 \begin_layout Standard
-As I am more interested in the relative activation status between samples
- than the absolute values that are not particularly meaningful, I scaled
- each pathway or gene set score to have a mean of zero and standard deviation
- of one.
- This approach is vastly simpler and more computationally efficient than
+This approach is vastly simpler and more computationally efficient than
  any other way of computing scores for other pathway methods that I compare
  in section 
 \begin_inset CommandInset ref
@@ -2717,6 +2717,10 @@ reference "subsec:Methods:pathway-scores"
 \end_inset
 
 .
+ As I am more interested in the relative activation status between samples
+ than the absolute values that are not particularly meaningful, I scaled
+ each pathway or gene set score to have a mean of zero and standard deviation
+ of one across all samples.
 \end_layout
 
 \begin_layout Subsection
@@ -2760,8 +2764,8 @@ T-SNE plots for separation of perturbation experiments
 
 \end_inset
 
-T-SNE plots for separation of perturbation experiments with different pathway
- perturbations in different colours.
+T-SNE plots for separation of perturbation experiments with different pathways
+ in different colours.
  Fold changes of genes in individual perturbation experiments (10% FDR)
  do not cluster by pathway (left).
  Using a consensus signature of genes whose z-score is most consistently
@@ -2793,26 +2797,23 @@ Each experiment in my data set consisted of between 3 and 30 arrays, measuring
  differential expression between the basal and perturbed condition and selected
  all fold changes that were significant at 10% FDR.
  If the pathway was inhibited, I took the negative fold changes.
- This yielded between 1 and 14,014 significantly changing genes, reflecting
- the strength of the perturbation, experimental design and number of genes
- on the array.
+ This yielded between 1 and 14,014 z-scores of significantly changing genes,
+ reflecting the strength of the perturbation, experimental design and number
+ of genes on the array.
  I assembled a matrix of significant fold changes by setting all non-significant
- or non-existent gene coefficients to 0, and use t-SNE for dimensionality
- reduction on that matrix.
-\end_layout
-
-\begin_layout Standard
-Looking at the fold changes in each perturbation experiment using the non-linear
- dimensionality reduction technique t-distribution stochastic neighbour
- embedding (t-SNE) 
+ or non-existent gene coefficients to 0, and use t-SNE 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Van_der_Maaten2008-kt,Van_der_Maaten2013-io"
 
 \end_inset
 
- I do not see an obvious clustering in which pathway was perturbed (figure
- 
+ for dimensionality reduction on that matrix.
+\end_layout
+
+\begin_layout Standard
+Looking at the fold changes in each perturbation experiment, I do not see
+ an obvious clustering in which pathway was perturbed (figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:t-SNE-plots-of"
@@ -2841,16 +2842,6 @@ reference "subsec:Transformation-of-Z-scores"
  I can obtain activation scores (my inferred pathway activity) by a matrix
  multiplication between the model matrix and gene expression values from
  samples, as long as the identifiers are in the same order.
- Using a model derived from those average z-scores alone, I start to see
- that some pathways produce activation patterns distinct from other perturbation
-s (figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:t-SNE-plots-of"
-
-\end_inset
-
-, centre), like NFkB/TNFa, and a proper separation of Hypoxia and JAK-STAT.
  Using only the top 100 significant genes (figure 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -2858,8 +2849,12 @@ reference "fig:Distribution-of-significance"
 
 \end_inset
 
-), the separation of those gets larger and I see almost all pathways in
- groups, albeit the ones in the centre are still overlapping.
+), I can show a separation of all pathways in groups (and some weak perturbation
+s overlapping in the centre).
+ However, these clusters only tell us that across all scores, individual
+ pathways produce patterns distinct from others.
+ It does not tell us the obtained scores actually correspond to the perturbed
+ pathway.
 \end_layout
 
 \begin_layout Standard
@@ -2876,11 +2871,22 @@ code{lm}
 
 \end_inset
 
- function in R between a pathway coefficients matrix (of the shape experiments
- x pathways, with the value 1 where a pathway was activated, -1 where a
- pathway was inhibited, and 0 otherwise; here, no cross-talk was modelled
- explicitly) and the pathway scores obtained by using the different methods
- as described in sections 
+ function in R between a pathway coefficients matrix (experiments in rows
+ and pathways in columns, with the value 
+\begin_inset Formula $1$
+\end_inset
+
+ where a pathway was activated, 
+\begin_inset Formula $-1$
+\end_inset
+
+ where a pathway was inhibited, and 
+\begin_inset Formula $0$
+\end_inset
+
+ otherwise; here, no cross-talk was modelled explicitly) and the pathway
+ scores obtained by using the different methods as described in sections
+ 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "subsec:method:speed-scores"
@@ -2895,41 +2901,37 @@ reference "subsec:Methods:pathway-scores"
 \end_inset
 
 .
- I then plot the result of the associations as a heatmap (figure 
+ I then plot the result of the associations as a matrix (figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:sp2-exp-heatmap"
 
 \end_inset
 
-) where the perturbed pathway and the obtained pathway score are on the
- axes, and the colour (blue for positive and red for negative correlation)
+, left) where the perturbed pathway and the obtained pathway score are on
+ the axes, and the colour (blue for positive and red for negative correlation)
  indicates the Wald statistic between them.
 \end_layout
 
 \begin_layout Standard
-As a method for inspection of the pathway scores of the individual experiments,
- I plot a heatmap using the R package 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-rpkg{pheatmap}
-\end_layout
+With the linear model I use for this purpose (implementation details in
+ section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Perturbation-Associations"
 
 \end_inset
 
- with the pathways scores in rows, experiments in columns, and the colour
- indicates the relative (column-scaled) activation of each pathway.
- In order to make activations and inhibitions more comparable, I take the
- negative pathway score for each inhibition and annotate the columns separately
- indicating which pathway was perturbed, and which kind of perturbation
- it was.
- This way, we can see clusters of similar pathway activation patterns that
- should correspond to the pathways that were perturbed.
+), I find that all pathway scores are strongly associated with the perturbation
+ they were derived from (figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:sp2-exp-heatmap"
+
+\end_inset
+
+, left), and some for a perturbation with a known pathway cross-talk (e.g.
+ EGFR activating MAPK or TNFa activating NFkB).
 \end_layout
 
 \begin_layout Standard
@@ -2965,8 +2967,8 @@ Recovery of the perturbations using the consensus signature
 
 Recovery of the perturbations across pathways (left) and for individual
  experiments (right) using the consensus signature.
- Associations between perturbed pathways and the scores obtained by the
- model of pathway-response genes (PRGs).
+ Left: Associations calculated between perturbed pathways and the scores
+ obtained by the model of pathway-response genes (PRGs).
  Along the diagonal each pathway is strongly (
 \begin_inset Formula $p<10^{-10}$
 \end_inset
@@ -2978,7 +2980,7 @@ Recovery of the perturbations across pathways (left) and for individual
 \end_inset
 
 ) between EGFR/PI3K and MAPK/TNFa.
- Heatmap of relative pathway scores in each perturbation experiment.
+ Right: Heatmap of relative pathway scores in each perturbation experiment.
  523 experiments in columns, annotated with the perturbation effect (green
  for activation, orange for inhibition) and pathway perturbed (same order
  as b).
@@ -2986,7 +2988,7 @@ Recovery of the perturbations across pathways (left) and for individual
  PI3K, and TNFa/NFkB.
  Colour indicates activation or inhibition strength.
  Order of pathways: EGFR, H2O2, Hypoxia, JAK-STAT, MAPK, NFkB, PI3K, TGFb,
- TNFa, Trail, VEGF, p53.
+ TNFa, Trail, VEGF, and p53.
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:sp2-exp-heatmap"
@@ -3007,37 +3009,36 @@ name "fig:sp2-exp-heatmap"
 \end_layout
 
 \begin_layout Standard
-The above clusters of input experiments only tell us that across all scores,
- individual pathways produce patterns distinct from others.
- It does not tell us the obtained scores actually correspond to the perturbed
- pathway.
-\end_layout
+As a method for inspection of the pathway scores of the individual experiments,
+ I plot a heatmap using the R package 
+\begin_inset ERT
+status open
 
-\begin_layout Standard
-The first test I decided to run here is whether the the pathway scores assigned
- to a perturbation correspond to this pathway being perturbed on average.
- To this end, I compared the difference of scores for all pathway perturbations,
- and checked if the pathway scores assigned to the gene expression differences
- in the input experiments are systematically higher (for activation) or
- lower (for inhibition) between the two conditions.
- With the linear model I use for this purpose (implementation details in
- section 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "subsec:Perturbation-Associations"
+\begin_layout Plain Layout
+
+
+\backslash
+rpkg{pheatmap}
+\end_layout
 
 \end_inset
 
-), I find that all pathway scores are strongly associated with the perturbation
- they were derived from (figure 
+ with the pathways scores in rows, experiments in columns, and the colour
+ indicates the relative (column-scaled) activation of each pathway (figure
+ 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:sp2-exp-heatmap"
 
 \end_inset
 
-, left), and some for a perturbation with a known pathway cross-talk (e.g.
- EGFR activating MAPK or TNFa activating NFkB).
+, right).
+ In order to make activations and inhibitions more comparable, I take the
+ negative pathway score for each inhibition and annotate the columns separately
+ indicating which pathway was perturbed, and which kind of perturbation
+ it was.
+ This way, I can show clusters of similar pathway activation patterns that
+ should correspond to the pathways that were perturbed.
 \end_layout
 
 \begin_layout Standard
@@ -3072,7 +3073,7 @@ reference "fig:sp2-exp-heatmap"
 Taken together, those two approaches imply that the perturbation-response
  signature is both correct on average, as well as in the majority of individual
  cases.
- For the remaining cases, we do not know if this is something our (admittedly
+ For the remaining cases, I do not know if this is something my (admittedly
  very simple) model misses or the pathway was not sufficiently perturbed
  with the given parameters the experimentalists used (e.g.
  a low concentration of the perturbing agent, too little time for genes
@@ -3181,14 +3182,23 @@ name "fig:gene-VENN"
 \end_layout
 
 \begin_layout Standard
-Notwithstanding the differences outlined above and that we already defined
- Gene Ontology sets that correspond to signalling pathways, computing which
- unfiltered GO gene sets are over-represented in our signature genes may
- give us additional insight into which lower-level processes (and not signalling
- pathways) are activated upon pathway stimulation.
- For this, I performed a GSEA analysis of the signed p-value of the consensus
- model and computed enrichment of Gene Ontology categories using a Fisher's
- exact test and all gene sets that had between 5 and 500 members.
+But are those really different? Maybe the genes expressed upon pathway perturbat
+ion are feedback regulators of the same pathway.
+ In this case, pathway mapping could very well identify perturbations because
+ those are already incorporated in the pathway structure.
+\end_layout
+
+\begin_layout Standard
+However, I find that the overlap of my pathway-responsive genes and known
+ Gene Ontology categories or Reactome pathways is either small or non-existent,
+ as shown in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:gene-VENN"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3242,10 +3252,22 @@ name "fig:sig-GO-enrichment"
 \end_layout
 
 \begin_layout Standard
+Notwithstanding these differences, computing which unfiltered GO gene sets
+ are over-represented in our signature genes may still give us additional
+ insight into which lower-level processes (and not signalling pathways)
+ are activated upon pathway stimulation.
+ For this, I computed enrichment of Gene Ontology categories using a Fisher's
+ exact test and all gene sets that had between 5 and 500 members.
+\end_layout
+
+\begin_layout Standard
 What I find is largely expected, but it also goes to show that modulation
  of signalling pathways mainly triggers biological processes related to
- the pathway, but not the corresponding pathway or pathway category itself.
- For instance (figure 
+ the pathway and not the corresponding pathway or pathway category itself.
+\end_layout
+
+\begin_layout Standard
+For instance (figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:sig-GO-enrichment"
@@ -3321,8 +3343,8 @@ Pathway and Gene Ontology scores
 \end_layout
 
 \begin_layout Standard
-I matched our defined set of pathways to the publicly available pathway
- databases Reactome 
+I matched my defined set of pathways to the publicly available pathway databases
+ Reactome 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Croft2011-po"
@@ -3343,14 +3365,11 @@ key "Ashburner2000-xl,Gene_Ontology_Consortium2004-sn"
 
 \end_inset
 
- categories (for the detailed mapping, see table S0), to obtain a uniform
- set across pathway resources that makes them comparable.
- I calculated pathway scores as normalized gene set enrichment (GSEA) scores
- that I transformed into a uniform distribution (
-\begin_inset Formula $x_{u}$
-\end_inset
-
-) using a kernel density estimator (R package 
+ categories.
+ In order to make them comparable, I selected the same set of pathways across
+ different resources.
+ I calculated pathway scores for these sets using GSVA as described in section
+ 
 \begin_inset ERT
 status open
 
@@ -3358,28 +3377,38 @@ status open
 
 
 \backslash
-rpkg{sROC}
+ref{subsec:GSVA}
 \end_layout
 
 \end_inset
 
-) followed by the normal transformation (
-\begin_inset Formula $x_{n}$
-\end_inset
-
-):
-\begin_inset Separator latexpar
-\end_inset
-
-
+.
 \end_layout
 
 \begin_layout Standard
-\align center
-\begin_inset Formula $x_{n}=log(x_{u}(1-x_{u}))$
+The pathways I used are shown in table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Mapping-go"
+
 \end_inset
 
+ for Gene Ontology, table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Mapping-reactome"
 
+\end_inset
+
+ for Reactome (used in Reactome enrichment and Pathifier), and KEGG in table
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Mapping-spia"
+
+\end_inset
+
+ (used in Signaling Pathway Impact Analysis).
 \end_layout
 
 \begin_layout Standard
@@ -3851,9 +3880,9 @@ key "Tarca2008-ey"
 
  is a method that utilizes the directionality and signs in a KEGG pathway
  graph to determine if in a given pathway structure the available species
- are more or less available to transduce a signal.
+ are more or less able to transduce a signal.
  As the species considered for a pathway are usually mRNAs of genes, this
- method infers signalling activity by the proxy of gene expression.
+ method still infers signalling activity by proxy of gene expression.
  In order to do this, SPIA scores require the comparison with a normal condition
  in order to compute both their scores and their significance.
 \end_layout
@@ -3879,10 +3908,10 @@ key "Tarca_undated-ol"
 
 \end_inset
 
- in our analyses that implements an updated version of the 2008 algorithm.
- I calculated our scores either for each cell line compared to the rest
- of a given tissue (for the GDSC and drug response data) or compared to
- the tissue-matched normals (for the TCGA data used in driver and survival
+ in my analyses that implements an updated version of the 2008 algorithm.
+ I calculated my pathway scores either for each cell line compared to the
+ rest of a given tissue (for the GDSC and drug response data) or compared
+ to the tissue-matched normals (for the TCGA data used in driver and survival
  associations).
 \end_layout
 
@@ -4354,18 +4383,14 @@ key "Drier2013-vn"
 
 \end_inset
 
- requires the comparison with a normal condition in order to compute their
+ requires the comparison with a normal condition in order to compute its
  scores.
  The difference is that it infers pathway structure from gene expression
  data itself instead of relying on prior knowledge.
- For this, I took the combined data set of the GDSC and TCGA, performed
- batch correction using ComBat with the GDSC as one batch, TCGA is one batch
- per project, and tissue as a covariate in either case.
- In addition, I included whether the same is a tumour or normal in the TCGA
- as an additional covariate.
- I then computed the pathway scores for each method using an individual
- cell line or tumour sample and using all non-cancerous tissue controls
- as baseline using the BioConductor packages 
+\end_layout
+
+\begin_layout Standard
+I used the 
 \begin_inset ERT
 status open
 
@@ -4373,43 +4398,23 @@ status open
 
 
 \backslash
-rpkg{pathifier}
+rpkg{Pathifier}
 \end_layout
 
 \end_inset
 
- and 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-rpkg{SPIA}
-\end_layout
+ BioConductor package 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Drier2013-vn"
 
 \end_inset
 
-.
- For this, I used Reactome and KEGG pathways as described in the previous
- section, respectively.
- Sample-pathway combinations where scores could not be computed (000 of
- 000, or 0.00% total) were imputed using the five nearest neighbours (R package
- 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-rpkg{impute}
-\end_layout
-
-\end_inset
-
-).
+ in my analyses.
+ I calculated pathway scores either for each cell line compared to the rest
+ of a given tissue (for the GDSC and drug response data) or compared to
+ the tissue-matched normals (for the TCGA data used in driver and survival
+ associations).
 \end_layout
 
 \begin_layout Standard
@@ -4915,7 +4920,7 @@ target "https://tcga-data.nci.nih.gov/docs/publications/coadread_2012/"
 \end_inset
 
 .
- I used our 
+ I used my 
 \begin_inset ERT
 status open
 
@@ -4930,7 +4935,7 @@ code{voom}
 
 -transformed RNA-seq gene expression data that I normalized using ranks
  to assign equally spaced values between 0 and 1 for each sample within
- a given tissue.
+ a given tissue, as recommended in the manual.
  I then ran PARADIGM inference using the same options as in the above publicatio
 n for each sample separately.
  I used nodes in the network representing pathway activity to our set of
@@ -5302,18 +5307,6 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename figures/4.2_recall_biocarta.pdf
-	lyxscale 50
-	width 100col%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
 	filename figures/4.2_recall_go.pdf
 	lyxscale 50
 	width 100col%
@@ -5336,7 +5329,7 @@ Perturbation recall for pathway member GSEA
 
 \end_inset
 
-Comparison to pathway member GSEA.
+Comparison to pathway member GSVA.
  Significant associations (marked with 
 \begin_inset Formula $*$
 \end_inset
@@ -5374,11 +5367,15 @@ name "fig:Comparison-to-pathway-perturb"
 
 \begin_layout Standard
 My first investigation is to which extent pathway expression is correlated
- with known perturbations, as would be the case for feedback cycles where
- stimulation (or inhibition) of a pathway will lead to changes in the expression
- of some of its own components, such as inhibitors in the case of a negative
- loop.
- But is this enough of a change to determine pathway activity from the gene
+ with known perturbations.
+ They would be if the perturbation causes feedback cycles where stimulation
+ (or inhibition) of a pathway will lead to changes in the expression of
+ some of its own components, such as inhibitors in the case of negative
+ feedback.
+\end_layout
+
+\begin_layout Standard
+But is this enough of a change to determine pathway activity from the gene
  expression of its components? If so, it would enable the expression to
  be used as an actionable biomarker for modulating the pathway's activity,
  e.g.
@@ -5399,8 +5396,7 @@ reference "fig:Comparison-to-pathway-perturb"
 \end_inset
 
 ) are very much different from the pathway scores obtained from the consensus
- of the response itself (cf.
- figure 
+ of the response itself (figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:sp2-exp-heatmap"
@@ -5413,11 +5409,6 @@ reference "fig:sp2-exp-heatmap"
  expression upon NFkB perturbation).
  Gene Ontology shows strong self-associations for Hypoxia and NFkB, and
  NFkB expression changes upon TNFa stimulation.
- BioCarta does not have any associations below the p-value of 
-\begin_inset Formula $10^{-10}$
-\end_inset
-
-.
 \end_layout
 
 \begin_layout Standard
@@ -5582,11 +5573,11 @@ Comparison across perturbation experiments
 \end_layout
 
 \begin_layout Standard
-While the previous section focussed on pathway activation in relative terms
- (whether, given a pathway perturbation, the score assigned to any one pathway
- is higher or lower compared to other pathways), I am now interested in
- how well pathway methods are able to assign activity scores across different
- experiments.
+The previous section focussed on pathway activation in relative terms (whether,
+ given a pathway perturbation, the score assigned to any one pathway is
+ higher or lower compared to other pathways).
+ I am now interested in how well pathway methods are able to assign activity
+ scores across different experiments.
  I use as input data the fold changes (difference in 
 \begin_inset Formula $log$
 \end_inset
@@ -5657,7 +5648,7 @@ Perturbation recall on input experiments as a comparison across methods
  pathway score.
  Pathway-response genes (PRGs) show better performance for all pathways
  except JAK-STAT and NFkB, where other methods are equal.
- Gene Ontology and Reactome scores obtained by Gene Set Variation Analysis
+ Gene Ontology and Reactome scores are obtained by Gene Set Variation Analysis
  (GSVA).
  Pathifier using Reactome gene sets.
  Performance is indicated with the area under each curve, values indicated
@@ -5709,7 +5700,7 @@ Area under the ROC curve for experiment recall
 
 \end_inset
 
-Area under the curve (AUC) for methods and pathways in figure 
+Area under the ROC curve (AUC) for methods and pathways in figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:ROC"
@@ -6530,9 +6521,22 @@ status open
 \end_layout
 
 \begin_layout Standard
-The standard non-parametric (i.e., only based on order rather than value)
- of quantifying this are the area under Receiver-Operator (ROC) curves,
- the results of which are shown in figure 
+The standard non-parametric (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+latin{i.e.}
+\end_layout
+
+\end_inset
+
+, only based on order rather than value) of quantifying this is the area
+ under Receiver-Operator (ROC) curves, the results of which is shown in
+ figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:ROC"
@@ -6583,8 +6587,8 @@ As I have outlined already in the discussion of chapter 2, the original
 Also the results that I obtained in terms of drug associations were significant
  but not stellar.
  This, combined with the fact that the original database was curated in
- 2010 where there were fewer perturbation experiments available, suggests
- that building a new database could result in a much improved model.
+ 2010 where there were fewer perturbation experiments available, is an indicatio
+n that building a new database could result in a much improved model.
 \end_layout
 
 \begin_layout Subsection
@@ -6614,11 +6618,11 @@ key "Parkinson2007-bf,Parkinson2009-ej"
 
 , but it also requires a much higher level of curation than the experiments
  that are just deposited in the database and hence the number of experiments
- that made it into Atlas is much smaller.
+ that made it into the Atlas is much smaller.
  In order to interrogate cellular systems (as those provided by the GDSC
- and the TCGA in this study), I need a high number of perturbation experiments
- that are not available in the Atlas yet, hence the need for a focussed
- curation of those pathways.
+ and the TCGA in this study), I needed a high number of perturbation experiments
+ that are not available in the Atlas yet.
+ This required a focussed curation of those pathways.
 \end_layout
 
 \begin_layout Standard
@@ -6643,20 +6647,26 @@ Seeing how my model compares to other pathway methods that map mRNA expression
  graph.
  Pathway expression alone does not tell us much about the involved biology
  (a more expressed pathway likely only has an impact on the cell if it is
- more active as well - but this is a jump in reasoning that we can not make
- for the reasons outlined above) and it is not actionable by itself (because
- there is no straightforward way to change the expression of a pathway that
- was found to be associated with e.g.
- drug response; this only makes sense if we interpret the obtained pathway
- scores as activity).
+ more active as well.
 \end_layout
 
 \begin_layout Standard
-It can of course be argued that there of course exists feedback loops where
- the stimulation of a pathway triggers changes in expression in its components
- (as I find with JAK-STAT and Hypoxia), either in the same (positive feedback)
- or the opposite (negative feedback) direction.
- This way of thinking makes sense only for positive feedback on the same
+However, this is a jump in reasoning that we can not make for the reasons
+ outlined above.
+ Also, pathway expression is not actionable by itself, because there is
+ no straightforward way to change the expression of a pathway instead of
+ its activity (as does a drug, for instance).
+\end_layout
+
+\begin_layout Standard
+It can of course be argued that there are feedback loops where the stimulation
+ of a pathway triggers changes in expression in its components (as I find
+ with JAK-STAT and Hypoxia), either in the same (positive feedback) or the
+ opposite (negative feedback) direction.
+\end_layout
+
+\begin_layout Standard
+This way of thinking makes sense only for positive feedback on the same
  pathway: if it is negative feedback we would see an incorrect decrease
  of expression or a increase of associated inhibitors (I see this kind of
  correlation using SPIA and how it incorrectly orders experiments in figure
@@ -6673,7 +6683,7 @@ reference "fig:ROC"
 \end_layout
 
 \begin_layout Standard
-Of course, I can not claim that my model will always find causal aberrations.
+I can not claim that my model will always find causal aberrations.
  But I do argue that it is more likely for it to find them compared to other
  pathway methods, because the way it infers pathway activity from gene expressio
 n is closer to the actual activity by definition.
@@ -6692,8 +6702,8 @@ reference "fig:Comparison-to-other"
 
 \end_inset
 
-) but also provide more insight into which pathways driver mutations activate
- and drug sensitivity due to oncogene addiction.
+) but also provide more insight into which pathways driver activate mutations
+ and influence drug sensitivity due to oncogene addiction.
  Now that I have a model that I know corresponds to pathway perturbations
  in a wide range of conditions I can actually put those statements to the
  test.
