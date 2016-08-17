@@ -3977,24 +3977,6 @@ key "Shen2014-of"
 
 \begin_layout Section
 Motivation and outlook
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-this could be improved; use summary text for after 
-\begin_inset Quotes eld
-\end_inset
-
-.
-\begin_inset Quotes erd
-\end_inset
-
-?
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -4030,13 +4012,7 @@ Investigations of cancer drug response and survival are mostly focussed
  This has yielded multiple markers, however, they are rarely put in functional
  context of the signalling aberrations they create.
  Because the amount of phosphorylation data available lags behind the one
- of genomic data, I created a platform which infers signalling activity
- by identifying publicly available perturbation experiments and the genes
- responsive to a certain pathway.
-\end_layout
-
-\begin_layout Standard
-.
+ of genomic data, gene expression may be a valuable substitute.
 \end_layout
 
 \begin_layout Standard
@@ -4061,8 +4037,8 @@ abbrv{GSEA}
 \end_inset
 
  scores - that has been reported in numerous publications, but also more
- sophisticated methods that attempt to quantify the signal flow, such as
- 
+ sophisticated pathway methods that attempt to quantify the signal flow,
+ such as 
 \begin_inset ERT
 status open
 
@@ -4128,7 +4104,7 @@ key "Drier2013-vn"
 \begin_layout Standard
 These methods, however, stand at odds with the notion that signalling in
  animal - and thus human - cells is tightly post-translationally regulated,
- since they are based on the 
+ since they are based on mapping the 
 \begin_inset ERT
 status open
 
@@ -4145,10 +4121,16 @@ abbrv{mRNA}
  To date, it is largely unexplored how much those pathway-expression-based
  methods are able to make statements about the signal transmission in a
  protein network.
- This is why I later followed different strategy: use a large body of publicly
- available perturbation experiments to quantify gene expression responses
- to a specified set of stimuli, and then use those genes to infer the upstream
- signal required to change their expression 
+ 
+\end_layout
+
+\begin_layout Standard
+This is why, after establishing a baseline for gene set methods to explain
+ drug response (chapter 2), I followed different strategy: use a large body
+ of publicly available perturbation experiments to quantify gene expression
+ responses to a specified set of stimuli (chapter 3), and then use those
+ genes to infer the upstream signal required to change their expression
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Bild2005-tk,Gatza2010-fq,Parikh2010-uj"
@@ -4170,8 +4152,8 @@ abbrv{mRNA}
 
 \end_inset
 
- expression, as well as apply similar signatures for potentially synergistic
- drug combinations.
+ expression (chapter 4), as well as apply similar signatures for potentially
+ synergistic drug combinations (chapter 5).
 \end_layout
 
 \begin_layout Standard
