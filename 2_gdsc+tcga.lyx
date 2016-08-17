@@ -703,6 +703,13 @@ TODO_SUBSECTION: Linear associations –> describe OLS (maybe I can get away
 
 \begin_layout Subsection
 Drug associations using the half-maximum inhibitory concentration (IC50)
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Drug-associations"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard

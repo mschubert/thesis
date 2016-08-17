@@ -128,44 +128,31 @@ apps
 
  that did signature matching based on GSEA without actually exposing the
  data to its users.
- Now, it would be of enormous interest to combine this data set with what
- we are already working on with the GDSC: this way, we have for the same
- cancer tissue (sometimes even the same cell line) not only high-quality
- baseline expression and drug response curves, but also lower coverage/quality
- drug-perturbed gene for a lot of different compounds, including 150 drug
- that are overlapping between the GDSC and the LINCS project, for which
- we could use signature matching methods (in terms of tissues, see figure
- 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:LINCS-tissues"
-
-\end_inset
-
-).
 \end_layout
 
 \begin_layout Standard
-Even more interesting, we could generate a signature between cells that
+Despite the drawbacks of the only 978 genes measured and the lack of a publicati
+on, it would be of enormous interest to combine this data set with what
+ I am already working on with the GDSC: this way, I have for the same cancer
+ tissue (sometimes even the same cell line) not only high-quality baseline
+ expression and drug response curves, but also lower coverage/quality drug-pertu
+rbed gene for a lot of different compounds, including 150 drug that are
+ overlapping between the GDSC and the LINCS project.
+\end_layout
+
+\begin_layout Standard
+I could use these signature matching methods.
+ Even more interesting, I could generate a signature between cells that
  are sensitive and those that are resistant to a certain kind of drug, and
  then match this signature with another drug that potentially converts the
  cells from a resistant to a sensitive phenotype.
- If this interaction is causal, we would expect the two drugs to work better
- in combination than any single treatment suggests, 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-latin{i.e.}
+ If this interaction is causal, I would expect the two drugs to work better
+ in combination than any single treatment suggests, hence providing a synergisti
+c effect between the two.
 \end_layout
 
-\end_inset
-
- a synergistic effect between the two.
- This has been shown to work when trying to overcome glutocorticoid resistance
+\begin_layout Standard
+This has been shown to work when trying to overcome glutocorticoid resistance
  in acute lymphoblastic leukaemia (
 \begin_inset ERT
 status open
@@ -188,8 +175,8 @@ key "Wei2006-ne"
 
 , where the authors identified Rapamycin as a modulator of the resistance
  phenotype.
- But now, we could do it systematically with the 150x150 drugs overlapping
- between the 
+ Now, I could do it systematically with the 150x150 drugs overlapping between
+ the 
 \begin_inset ERT
 status open
 
@@ -233,9 +220,9 @@ reference "sec:Tissue-specific-synergistic-comp"
 
 \end_inset
 
- were performed by Ole Pless, Bernhard Ellinger, and Milena Kalmer (Department
- ScreeningPort, Fraunhofer Institute for Molecular Biology and Applied Ecology
- IME, Hamburg).
+ was produced by and obtained from Ole Pless, Bernhard Ellinger, and Milena
+ Kalmer (Department ScreeningPort, Fraunhofer Institute for Molecular Biology
+ and Applied Ecology IME, Hamburg).
 \end_layout
 
 \begin_layout Section
@@ -266,9 +253,18 @@ key "Iorio2010-ux"
 \end_inset
 
  ordered differentially expressed genes by their fold change for each drug,
- and then merged those inversely weighted by distance (so different conditions
- are weighted equally and over-representation of one condition, like the
- experiments performed in the MCF-7 cell line, do not bias the data set)
+ and then merged those inversely weighted by distance
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+so different conditions are weighted equally and over-representation of
+ one condition, like the experiments performed in the MCF-7 cell line, do
+ not bias the data set
+\end_layout
+
+\end_inset
+
  to arrive at what they call a Prototype Ranked List (
 \begin_inset ERT
 status open
@@ -283,7 +279,7 @@ abbrv{PRL}
 \end_inset
 
 ) that corresponds to a consensus signature across different conditions
- for a given drug–using a method called Mode of action by Network Analysis
+ for a given drug–using a method called Mode of Action by Network Analysis
  (MANTRA).
 \end_layout
 
@@ -317,9 +313,21 @@ abbrv{HGNC}
 \end_inset
 
  symbols.
- From the 250 most up- and downregulated genes I took those that are uniquely
- present in the respective subset, leaving approximately 100 genes per drug
- signature.
+ From the 250 most up- and downregulated genes in the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbrv{PRL}
+\end_layout
+
+\end_inset
+
+s I took those that are uniquely present in the respective subset, leaving
+ approximately 100 genes per drug signature.
  I performed a two-tailed GSVA (details section 2.2.2) in the basal expression
  of the GDSC cell lines and thus obtained a drug-responsive signature expression
  score for each drug that has a 
@@ -349,36 +357,6 @@ ES=ES^{up}-ES^{down}
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-In comparison to GSVA, GSEA scores and signature-scaled GSEA scores are
- bimodally distributed around zero.
- One could argue that with the up- and downregulated parts of the signature,
- a combination of the two would yield a unimodally distributed score again
- and thus GSEA scores can be used in conjunction with tests that assume
- a normal distribution of scores.
- This is not true because scores that are above zero with one signature
- can be either above or below zero in the other signature.
- In practice, combining GSEA scores yields a trimodal distribution (figure
- 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Distributions-GSEA"
-
-\end_inset
-
-, left panel).
- In contrast, GSVA scores are normally distributed for each individual score
- as well as for the combined score (figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Distributions-GSEA"
-
-\end_inset
-
-, right panel), which explains the choice of GSVA over GSEA also in this
- context.
 \end_layout
 
 \begin_layout Standard
@@ -496,6 +474,49 @@ name "fig:Distributions-GSEA"
 
 \end_layout
 
+\begin_layout Standard
+In comparison to GSVA, GSEA scores and signature-scaled GSEA scores are
+ bimodally distributed around zero (cf.
+ section 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{subsec:GSVA}
+\end_layout
+
+\end_inset
+
+).
+ One could argue that with the up- and downregulated parts of the signature,
+ a combination of the two would yield a unimodally distributed score again
+ and thus GSEA scores can be used in conjunction with tests that assume
+ a normal distribution of scores.
+ This is not true because scores that are above zero with one signature
+ can be either above or below zero in the other signature.
+ In practice, combining GSEA scores yields a trimodal distribution (figure
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Distributions-GSEA"
+
+\end_inset
+
+, left panel).
+ In contrast, GSVA scores are normally distributed for each individual score
+ as well as for the combined score (figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Distributions-GSEA"
+
+\end_inset
+
+, right panel), which is which I chose GSVA over GSEA also in this context.
+\end_layout
+
 \begin_layout Subsection
 Pan-cancer associations
 \end_layout
@@ -580,7 +601,20 @@ name "fig:mantra-pan"
 \end_layout
 
 \begin_layout Standard
-Associations calculated as in section 2.2.3.
+I calculated associations as described in section 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{subsec:Drug-associations}
+\end_layout
+
+\end_inset
+
+.
  Results of associations between the expression of a drug-response signature
  (the sensitiser) and drug sensitivity to a second drug (the treatment drug)
  are shown as volcano plot in figure 
@@ -617,7 +651,7 @@ ref{sub:ch5-mantra-pan}
  Furthermore, the concentration of all drugs in the Connectivity Map is
  10 uM, which is much higher than the actual bodily concentration in most
  cases.
- We have no indication that the associations we found should indeed be causal
+ I have no indication that the associations I found should indeed be causal
  and act synergistically or antagonistically 
 \begin_inset ERT
 status open
@@ -760,7 +794,7 @@ latin{a priori}
 
 .
  While these associations could hint at possible synergistic or antagonistic
- combinations, we can not easily make sense of them.
+ combinations, I can not easily make sense of them.
  One of the strongest associations, for instance, is a drug targeted at
  BRAF (PLX4720), a mutation that does usually not occur in liver cancer.
  After discussions with our collaborators at the Sanger, we decided that
@@ -788,7 +822,7 @@ What would be far more interesting is to investigate how drugs specifically
  designed or used in cancer interact in terms of synergies or antagonism.
  With the new LINCS Connectivity Map, that has become possible.
  There is a total of 150 drugs that are both in the GDSC and the LINCS,
- enabling us to do a comprehensive characterisation of signature matching.
+ enabling me to do a comprehensive characterisation of signature matching.
  I derive models for each drug separately, with a linear model of LINCS-provided
  projected z-scores mapped to HGNC symbols in experiments where the drug
  was used vs.
@@ -819,8 +853,21 @@ could add some ROC curves here
 
 \begin_layout Standard
 Analogous to the model of pathway-responsive genes (chapter 3, implementation
- in section 3.3.2), I calculated the expression level of a drug-responsive
- signature using the linear transformation:
+ in section 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{subsec:method:speed-scores}
+\end_layout
+
+\end_inset
+
+), I calculated the expression level of a drug-responsive signature using
+ the linear transformation:
 \end_layout
 
 \begin_layout Standard
@@ -1213,10 +1260,9 @@ name "fig:QS11-Problem-schematic"
 \end_layout
 
 \begin_layout Standard
-From our results above, it seems that MEK inhibitors in general produce
- good signatures, or otherwise we would not expect as many MEK inhibitors
- as we see in our associations (GSK1120212, CI-1040, PD-0325901 in figure
- 
+From my results above, it seems that MEK inhibitors in general produce good
+ signatures, or otherwise I would not expect as many MEK inhibitors as I
+ see in my associations (GSK1120212, CI-1040, PD-0325901 in figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Matrix-of-naive"
@@ -1258,7 +1304,7 @@ reference "fig:QS11-Problem-schematic"
  the sensitiser and the treatment drug, also for two-drug pairs that have
  the same target or are indeed the same drug.
  If the above association stays significant despite the added covariate,
- we can reject the model proposed in figure 
+ I can reject the model proposed in figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:QS11-Problem-schematic"
@@ -1266,7 +1312,7 @@ reference "fig:QS11-Problem-schematic"
 \end_inset
 
 .
- Otherwise, this would be a valid explanation of the effect we see.
+ Otherwise, this would be a valid explanation of the effect I see.
 \end_layout
 
 \begin_layout Subsection
@@ -1327,7 +1373,7 @@ ref{sub:ch5-lincs-covar}
  (NAMPT inhibitor).
  The strongest antagonistic hit is Thapsigargin (SERCA inhibitor) with BMS-75480
 7 (IGF inhibitor).
- It also corrects for all associations of a drug with itself.
+ This approach also no longer yields associations of a drug with itself.
 \end_layout
 
 \begin_layout Standard
@@ -1515,7 +1561,7 @@ key "Kwong2012-vd"
 
 \end_inset
 
-, our analysis suggests stronger effects in the tissues listed.
+, my analysis suggests stronger effects in the tissues listed.
 \end_layout
 
 \begin_layout Itemize
@@ -1578,7 +1624,7 @@ While pan-cancer associations can uncover far-reaching implications of treatment
  experimental follow-up on those must be more restricted in order to suggest
  a feasible setup with clear hypotheses.
  This is where tissue- or cancer-specific models come in: using signature
- matching, I derive hypotheses of potential synergies or antagonisms that
+ matching, I derived hypotheses of potential synergies or antagonisms that
  can actually be tested in one or a few cell lines.
  Compared to pan-cancer associations, I would expect them to be more likely
  to be true for this particular cell line or small set of cell lines.
@@ -1593,7 +1639,7 @@ However, tissue-specific models of drug synergies are tricky.
  certain tissue for which I derive a signature this may or may not change
  the outcome.
  Second, there are fewer cell lines with drug sensitivity data and thus
- we are much closer to the significance threshold.
+ the associations are much closer to the significance threshold.
 \end_layout
 
 \begin_layout Standard
@@ -1604,7 +1650,7 @@ In addition, there is a lot of choices to make about the model: Which tissue
  Use a covariate to correct for pathway cross-talk or does it take away
  too much statistical power? These are all questions that could be answered
  in iterative cycle of predictions and experimental readout.
- Unfortunately, we can not do this.
+ Unfortunately, I can not do this.
 \end_layout
 
 \begin_layout Standard
@@ -2960,9 +3006,9 @@ Models of synergy
 \end_layout
 
 \begin_layout Standard
-Before we go on and try some of the predicted combinations, we first need
- to decide on how we expect two drugs to act in combination if there is
- no interaction effect, and then to quantify the interaction effect if there
+Before I go on and try some of the predicted combinations, I first need
+ to decide on how I expect two drugs to act in combination if there is no
+ interaction effect, and then to quantify the interaction effect if there
  is one.
  Fortunately, there are common methods available to calculate synergy, the
  best-known of which are Highest Single Agent, Bliss Independence and Loewe
@@ -3043,7 +3089,7 @@ key "Loewe1926-xx,Greco1995-xk"
  If we consider this assumption stringently, it means that the model should
  be used if two drugs share the same mechanism of action.
  Nevertheless, it is not prone to errors as the ones above and was the model
- of choice for the DREAM drug synergy prediction challenge
+ of choice for the DREAM drug synergy prediction challenge.
 \begin_inset Foot
 status open
 
@@ -3053,7 +3099,7 @@ https://www.synapse.org/#!Synapse:syn4231880/wiki/235645
 
 \end_inset
 
-.
+
 \end_layout
 
 \begin_layout Subsubsection
@@ -3098,7 +3144,7 @@ Given that we know which concentration
 \end_inset
 
  are usually for the minimum and maximum effect instead of relative viability.
- We can use them for viability here because both range between 
+ I can use them for viability here because both range between 
 \begin_inset Formula $0$
 \end_inset
 
@@ -3106,7 +3152,7 @@ Given that we know which concentration
 \begin_inset Formula $1$
 \end_inset
 
-, the only difference is that our curve is that in this case we are modelling
+, the only difference is that my curve is that in this case I am modelling
  a sigmoid decrease instead of increase, so the only different is that the
  slope parameter has a different sign.
  The relationship 
@@ -3116,7 +3162,7 @@ key "Yadav2015-bu"
 
 \end_inset
 
- between our drug response parameters is:
+ between my drug response parameters is:
 \end_layout
 
 \begin_layout Standard
@@ -3365,11 +3411,11 @@ S=\sum_{x_{1}}\sum_{x_{2}}\Delta x_{1}\Delta x_{2}
 \end_layout
 
 \begin_layout Standard
-And obtain the overall synergy score 
+And (optionally) obtain the overall synergy score 
 \begin_inset Formula $S$
 \end_inset
 
- by (optionally) dividing the volume by the area
+ by dividing the volume by the area
 \end_layout
 
 \begin_layout Standard
@@ -3569,9 +3615,8 @@ reference "tab:combined-score"
 
 \end_inset
 
-, our collaborators Ole Pless, Bernhard Ellinger, and Milena Kalmer (Department
- ScreeningPort, Fraunhofer Institute for Molecular Biology and Applied Ecology
- IME, Hamburg) agreed to screen their efficacy in the MFC-7 cell line.
+, our collaborators in Hamburg agreed to screen their efficacy in the MFC-7
+ cell line.
  This first requires single-agents measurements to be able to fit the Hill
  parameters for each drug in this cell line, as we would expect them not
  to be identical with the GDSC due to a different experimental setup.
@@ -4100,11 +4145,12 @@ Using the original Connectivity Map for predicting a drug that could sensitise
 \end_layout
 
 \begin_layout Standard
-What speaks for the original Connectivity Map is that with MANTRA, the compound-
-level signatures have been merged using informative distances (that is,
- weighted by the gene expression distance between several experiments, to
- for instance not have an overly strong contribution of the MCF-7 signature
- if there were three experiments using MCF-7 and one in PC-3).
+What speaks for the original Connectivity Map is that with MANTRA 22,000
+ genes were measured and the compound-level signatures have been merged
+ using informative distances (that is, weighted by the gene expression distance
+ between several experiments, to for instance not have an overly strong
+ contribution of the MCF-7 signature if there were three experiments using
+ MCF-7 and one in PC-3).
 \end_layout
 
 \begin_layout Subsection
