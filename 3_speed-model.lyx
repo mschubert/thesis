@@ -3189,7 +3189,19 @@ reference "fig:gene-VENN"
 
 \end_inset
 
+.
+ Interestingly, I find that for the only pathway signature that is strongly
+ tied to a specific inhibitor (MAPK and MEK inhibitors), the one gene to
+ overlap between all methods is MEK itself.
+ This effect of an inhibitor on the expression of its target gene has been
+ shown before 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Iskar2010-zq"
 
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
