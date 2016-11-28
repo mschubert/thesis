@@ -102,7 +102,7 @@ Signalling pathways have long been studied in the context of cancer as well
  sets of Gene Ontology categories and Reactome pathways.
  I showed that one needs to be cautious when interpreting the top associations
  with drug response, as the process depicted will often likely not be the
- process that causes sensitivity to resistance to a given drug.
+ process that causes sensitivity or resistance to a given drug.
  As a way to solve this, I showed the advantage of pre-selecting interesting
  gene sets that are changing upon pathway stimulation using the SPEED platform
  

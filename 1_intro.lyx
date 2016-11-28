@@ -737,7 +737,7 @@ key "Ruiz-Garcia2008-ep"
 
 , it first needs to reach the bloodstream (which includes uptake and resorption,
  then modification in the liver and pancreas if taken orally), then be distribut
-ed by the flow of blood into all the capillaries (which the exception of
+ed by the flow of blood into all the capillaries (with the exception of
  the brain that has an additional barrier), until finally cells are able
  to absorb it.
  As a rule of thumb whether a drug can be orally absorbed or not, a common
@@ -884,9 +884,9 @@ gene{BRAF^{V600E}}
  Vemurafenib) that proved to bind the mutated version of the BRAF protein
  with a much higher affinity than the one found in wild-type cells.
  This, in some ways, could be considered the perfect drug for cancer therapy,
- because it has it has favourable uptake in the body and afterwards the
- therapeutic window is much larger compared to other compounds due to this
- difference in binding affinity 
+ because it has favourable uptake in the body and afterwards the therapeutic
+ window is much larger compared to other compounds due to this difference
+ in binding affinity 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Chapman2011-jl"
@@ -2215,7 +2215,7 @@ key "Lamb2006-mp"
 \end_inset
 
 .
- In comprised a total of 1,309 compounds, yet most of them were not anti-cancer
+ It comprised a total of 1,309 compounds, yet most of them were not anti-cancer
  compounds.
  It has introduced and enabled the paradigm of signature matching (section
  
@@ -2629,16 +2629,15 @@ Gene expression clustering
 Cancer is known to be a heterogeneous disease, with individual tumours forming
  different subtypes even if it arose from the same tissue.
  One of the arguably most effective ways of elucidating the state of individual
- tumours and cell populations therein is quantifying its using methods such
- as microarrays or RNA sequencing.
+ tumours and cell populations therein is quantifying its transcriptome using
+ methods such as microarrays or RNA sequencing.
 \end_layout
 
 \begin_layout Standard
 We can use the global pattern of gene expression to identify different subtypes
  of the disease in a given tissue (or even between tissues).
- A challenge with this is is that the transcriptome could be comprised of
- up to 22,000 genes without even considering most regulatory or ribosomal
- 
+ A challenge with this is that the transcriptome could be comprised of up
+ to 22,000 genes without even considering most regulatory or ribosomal 
 \begin_inset ERT
 status open
 
@@ -2946,7 +2945,7 @@ Maybe the simplest way to investigate a biological system using gene expression
  that are not quite correct (mRNA expression corresponds to protein level
  or activity, exactly those genes in a set have that function and there
  is no overlap or partial membership, etc.) no longer have an impact on the
- result we obtain - we can just use the gene expression readout of a disease,
+ result we obtain - we can just use the induced gene expression of a disease,
  a drug treatment, or really anything else that produces gene expression
  changes and use it as a signature for the phenotype (reviewed in 
 \begin_inset CommandInset citation
@@ -3872,7 +3871,7 @@ key "Loeliger2012-sf"
 \end_inset
 
 .
- A company that was been widely successful in promoting the use of git both
+ A company that has been widely successful in promoting the use of git both
  in general and academia
 \begin_inset Foot
 status open
@@ -3999,8 +3998,8 @@ Generating reports directly from the analysis
 While the above tools take care of performing and keeping track of analyses,
  the crucial point that is missing for reproducible research is integration
  with reporting.
- A tool to do combine R code with written text and annotation (as opposed
- to technical documentation) is 
+ A tool to combine R code with written text and annotation (as opposed to
+ technical documentation) is 
 \begin_inset ERT
 status open
 

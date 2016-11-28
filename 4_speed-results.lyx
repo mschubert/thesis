@@ -105,7 +105,7 @@ How this affects sensitivity to targeted therapies
 \end_layout
 
 \begin_layout Itemize
-Which implications pathways have on patient survival
+Which pathways have implications for patient survival
 \end_layout
 
 \begin_layout Standard
@@ -214,7 +214,7 @@ rpkg{corplot}
 \end_inset
 
  where 
-\begin_inset Formula $k<1$
+\begin_inset Formula $k<0$
 \end_inset
 
  and residual 
@@ -226,7 +226,7 @@ rpkg{corplot}
 \end_inset
 
  (same for 
-\begin_inset Formula $k>1$
+\begin_inset Formula $k>0$
 \end_inset
 
 ).
@@ -402,7 +402,19 @@ At this point I found strong indications that the gene expression changes
 \end_layout
 
 \begin_layout Standard
-What I have not shown yet is how stable the whole process is, i.e.
+What I have not shown yet is how stable the whole process is, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+latin{i.e.}
+\end_layout
+
+\end_inset
+
  much the selection of input experiments influences the scores in basal
  expression.
  In order to investigate this, I bootstrapped the experiment selection 1,000
@@ -510,9 +522,21 @@ reference "fig:bootstraps-basal"
 \end_inset
 
  indicates that the experiment selection has a bigger effect than the cell
- line I apply the model to (i.e., we can not observe a biological effect because
- it is hidden by the noise of input experiments) and values bigger than
- 
+ line I apply the model to (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+latin{i.e.}
+\end_layout
+
+\end_inset
+
+, we can not observe a biological effect because it is hidden by the noise
+ of input experiments) and values bigger than 
 \begin_inset Formula $1$
 \end_inset
 

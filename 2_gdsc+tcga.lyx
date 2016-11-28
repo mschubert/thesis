@@ -847,8 +847,20 @@ key "Iorio2016-gh"
 \end_inset
 
 .
- I performed a linear regression using the gene set score as an independent
- variable (
+ I performed a linear regression using the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+code{lm}
+\end_layout
+
+\end_inset
+
+ function in R between the gene set score as an independent variable (
 \begin_inset Formula $S_{j}$
 \end_inset
 
@@ -3330,13 +3342,20 @@ Pan-Cancer Drug Associations
 \end_layout
 
 \begin_layout Standard
-I calculated a linear regression between the obtained pathway scores and
+I performed a linear regression between the obtained pathway scores and
  the 
 \begin_inset Formula $IC_{50}$
 \end_inset
 
 s for all cell lines and pathways while correcting for tissue labels (used
- as covariate).
+ as covariate; details section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Drug-associations"
+
+\end_inset
+
+).
  I adjusted p-values by controlling the false discovery rate and visualized
  the result as volcano plots and individual fits.
 \end_layout
@@ -3365,14 +3384,38 @@ ref{sub:ch2-speed}
 
 ).
  Negative regression slopes (left side of the graph, green) indicate sensitivity
- markers, i.e.
+ markers, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+latin{i.e.}
+\end_layout
+
+\end_inset
+
  a higher pathway activation score correlates with a lower 
 \begin_inset Formula $IC_{50}$
 \end_inset
 
 .
  Positive regression slopes (right side, red) indicate resistance markers,
- i.e.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+latin{i.e.}
+\end_layout
+
+\end_inset
+
  higher activation scores correlate with higher 
 \begin_inset Formula $IC_{50}$
 \end_inset
@@ -3417,14 +3460,38 @@ Volcano plot of linear associations of inferred pathway activity within
  Tissue of origin used as a covariate in the regression.
  P-values FDR-adjusted.
  Negative regression slopes (left side of the graph, green) indicate sensitivity
- markers, i.e.
+ markers, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+latin{i.e.}
+\end_layout
+
+\end_inset
+
  a higher pathway activation score correlates with a lower 
 \begin_inset Formula $IC_{50}$
 \end_inset
 
 .
  Positive regression slopes (right side, red) indicate resistance markers,
- i.e.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+latin{i.e.}
+\end_layout
+
+\end_inset
+
  higher activation scores correlate with higher 
 \begin_inset Formula $IC_{50}$
 \end_inset

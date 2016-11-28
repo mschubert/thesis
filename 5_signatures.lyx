@@ -3658,7 +3658,19 @@ reference "subsec:Defining-synergy-for"
 \begin_inset Formula $E_{max}$
 \end_inset
 
- in the above formulas) is 1, i.e.
+ in the above formulas) is 1, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+latin{i.e.}
+\end_layout
+
+\end_inset
+
  the drug should not have an effect on the viability of the cell given in
  an infinite dilution.
  Based on this, I suggested dilutions to use in the combination screening

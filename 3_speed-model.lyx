@@ -3253,8 +3253,8 @@ Notwithstanding these differences, computing which unfiltered GO gene sets
 
 \begin_layout Standard
 What I find is largely expected, but it also goes to show that modulation
- of signalling pathways mainly triggers biological processes related to
- the pathway and not the corresponding pathway or pathway category itself.
+ of signalling pathways mainly triggers expression changes in biological
+ processes related to the pathway and not the pathway members itself.
 \end_layout
 
 \begin_layout Standard
@@ -5532,7 +5532,7 @@ reference "tab:Mapping-go"
 SPIA (figure 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:Comparison-to-pathway-perturb"
+reference "fig:Comparison-to-other"
 
 \end_inset
 
