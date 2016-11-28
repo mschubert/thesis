@@ -136,12 +136,12 @@ on, it would be of enormous interest to combine this data set with what
  I am already working on with the GDSC: this way, I have for the same cancer
  tissue (sometimes even the same cell line) not only high-quality baseline
  expression and drug response curves, but also lower coverage/quality drug-pertu
-rbed gene for a lot of different compounds, including 150 drug that are
- overlapping between the GDSC and the LINCS project.
+rbed gene expression for a lot of different compounds, including 150 drug
+ that are overlapping between the GDSC and the LINCS project.
 \end_layout
 
 \begin_layout Standard
-I could use these signature matching methods.
+I could use these for signature matching methods.
  Even more interesting, I could generate a signature between cells that
  are sensitive and those that are resistant to a certain kind of drug, and
  then match this signature with another drug that potentially converts the
@@ -415,8 +415,8 @@ Distributions of GSEA and GSVA scores
 
 Distributions of GSEA (left panel) and GSVA (right panel) scores for up-
  and downregulated genes as well as the combined score of both.
- GSEA: Combining up- and downregulated score of the yields scores yields
- a distribution around zero (if 
+ GSEA: Combining up- and downregulated score yields a distribution around
+ zero (if 
 \begin_inset Formula $ES^{up}$
 \end_inset
 
@@ -514,7 +514,7 @@ reference "fig:Distributions-GSEA"
 
 \end_inset
 
-, right panel), which is which I chose GSVA over GSEA also in this context.
+, right panel), which is why I chose GSVA over GSEA also in this context.
 \end_layout
 
 \begin_layout Subsection
@@ -835,9 +835,10 @@ What would be far more interesting is to investigate how drugs specifically
 \begin_inset Formula $N$
 \end_inset
 
- to maximise the area under the precision-recall curve.
- I kept all drugs signatures that have an AUC of over 0.7 recovering the
- experiments where the same drug as used and discard the rest.
+ to maximise the area under the precision-recall curve of the current vs.
+ all other perturbations.
+ I kept all drug signatures that have an AUC of over 0.7 recovering the experimen
+ts where the same drug as I used and discard the rest.
  For the pan-cancer cohort, this leaves 123 out of 150 signatures.
 \begin_inset Note Note
 status open
@@ -973,7 +974,7 @@ Matrix of naive drug sensitisation associations
 
 Matrix of naive drug sensitisation associations.
  Predicted synergies in green, antagonisms in red.
- Effect size shown if 
+ Effect size corresponds to the regression slope and is shown if 
 \begin_inset Formula $FDR<0.2$
 \end_inset
 
@@ -1301,8 +1302,8 @@ reference "fig:QS11-Problem-schematic"
 
 ).
  This, in more general terms, would correct for pathway cross-talk between
- the sensitiser and the treatment drug, also for two-drug pairs that have
- the same target or are indeed the same drug.
+ the sensitiser and the treatment drug, but also for two-drug pairs that
+ have the same target or are indeed the same drug.
  If the above association stays significant despite the added covariate,
  I can reject the model proposed in figure 
 \begin_inset CommandInset ref
@@ -4020,7 +4021,8 @@ ref{sub:ch5-lincs-screen}
 
 \end_inset
 
-), I show the results of the screening experiment (left) vs.
+), I show representative examples of the results of the screening experiment
+ (left) vs.
  the calculated viability if the drugs did not interact (middle) and their
  difference (right).
  There are multiple aspects to these plots.
@@ -4047,7 +4049,7 @@ reference "fig:WZ+PD"
 ) but not others (figure 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:WZ+PD"
+reference "fig:PD+AT"
 
 \end_inset
 
@@ -4082,7 +4084,8 @@ Finally, my predictions are about synergistic combinations so I would expect
  the expected null model of interaction.
  This will of course not always happen, but it should happen more often
  than expected by random chance.
- Also for this difference, I find some examples where this is the case (
+ Also for this difference, I find some examples where this is the case (figure
+ 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:PD+AT"
@@ -4215,15 +4218,15 @@ Unfortunately, the actual experimental setup seems a lot more error-prone
 \begin_inset Formula $IC_{50}$
 \end_inset
 
- that I can best estimate along a dilution series of a drug while looking
- at the minimal concentration of the other, does often not fit well to the
- previously estimated single-agent curves.
+ that I can best estimate along a dilution series of a drug by looking at
+ the minimal concentration of the other does often not fit well to the previousl
+y estimated single-agent curves.
  The only way I see to fix this is to assess stability of the assay and
  influencing factors of the Hill parameters first in order to minimise the
  batch effect.
  We might still get another batch of experimental results that takes this
  into account.
- This will however be past the submission date of this thesis.
+ This will, however, be past the submission date of this thesis.
 \end_layout
 
 \begin_layout Standard

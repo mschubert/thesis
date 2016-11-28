@@ -316,7 +316,7 @@ latin{e.g.}
 
 \end_inset
 
- exposure to ultraviolet radiation, , or a host's virus defence system 
+ exposure to ultraviolet radiation, or a host's virus defence system 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Alexandrov2013-qo"
@@ -526,13 +526,13 @@ gene{TP53}
 \begin_inset Quotes eld
 \end_inset
 
-guardian of the genome
+guardian of the genome,
 \begin_inset Quotes erd
 \end_inset
 
- whose protein is involved in numerous functions maintaining DNA integrity,
- managing DNA repair, and causing apoptosis or senescence of the former
- fail 
+ whose protein is involved in numerous functions like maintaining DNA integrity,
+ managing DNA repair, or causing apoptosis or senescence if the former fail
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Levine2009-lo"
@@ -541,7 +541,7 @@ key "Levine2009-lo"
 
 .
  More recently, mutations that actively contribute to either development
- of progression of a cancer have been called drivers, while the mutations
+ or progression of a cancer have been called drivers, while the mutations
  introduced by e.g.
  a faulty DNA replication machinery (that a cancer may have caused) that
  bear no functional impact on the cell are called passenger mutations.
@@ -844,7 +844,7 @@ reference "subsec:Consequences"
 
 .
  But there are many more instances where a mutation in a gene yields a gene
- product that is abnormally active- or inactive.
+ product that is abnormally active or inactive.
  This often includes members of the MAP kinase pathway (like EGFR, RAS,
  RAF, MEK, or ERK), but frequently also other proteins and pathways that
  confer a selective advantage in a given context.
@@ -908,7 +908,8 @@ Development of resistance
 \begin_layout Standard
 Unfortunately, targeted therapies often can not kill all cells before they
  acquire a resistance mechanism to the treatment, or a sub-population of
- cells were resistant to begin with and then outgrow their competitors.
+ cells were resistant to begin with.
+ These cells then outgrow their competitors.
  This is one of the reasons why targeting mutations in driver genes is a
  good start, but it needs to be augmented with knowledge of the dynamic
  changes mutations induce in the cellular signalling network and the evolutionar
@@ -932,8 +933,8 @@ gene{BRAF^{V600E}}
 
  mutants.
  This example of targeted therapy works with the intended effect in such
- that it kills cancer cells to an extent that makes multiple from the outside
- clearly visible tumours completely disappear for months 
+ that it kills cancer cells to an extent that makes multiple, from the outside
+ clearly visible, tumours completely disappear for months 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Chapman2011-jl"
@@ -985,7 +986,7 @@ key "Hata2016-cg"
 
 \end_inset
 
- 
+
 \begin_inset Note Note
 status open
 
@@ -1062,7 +1063,8 @@ One of the easiest model systems that provide a reasonably accurate mirror
  basically taking a number of cells from a tumour, and growing them in a
  petri dish for multiple generations (passages).
  An advantage of this method is that the biological material that assays
- can be performed on is virtually unlimited, easy to produce and maintain.
+ can be performed on is virtually unlimited, as well as easy to produce
+ and maintain.
  This is because cells grow in the dishes as long as they are supplied with
  nutrients and potentially growth factors or cytokines, while still reflecting
  a lot of the properties that cells in a tumour would.
@@ -1091,8 +1093,8 @@ key "Gey1952-qc"
  as well as its high mutation rate, has produced a genotype that no longer
  resembles primary cancer samples in many ways.
  One property is that a normal human cell has two copies of the genome (the
- two alleles), whereas HeLa cells have four copies, and its genome revealed
- more extensive aberrations 
+ two alleles), whereas HeLa cells have four copies, and its genome sequence
+ revealed more extensive aberrations 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Landry2013-sk"
@@ -1103,7 +1105,14 @@ key "Landry2013-sk"
  In most cases however, experimentally used cell lines are more closely
  tied their origin: they have, albeit with aberrations, a genome that resembles
  primary tumours and they hence in many ways still resemble their tissue
- of origin in molecular terms.
+ of origin in molecular terms 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Iorio2016-gh"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -1341,8 +1350,7 @@ All healthy cells contain roughly the same genome, yet the functions they
  more the state a cell is currently in and functions that need to be performed
  at a given time and in a given context.
  It can hence be argued that the sum of RNAs (the transcriptome), or more
- specifically mRNAs provides an overview of the state a cell is currently
- in.
+ specifically mRNAs, provides an overview of that state.
  Measuring those RNAs will allow us to get a picture of the processes going
  on in a cell at a given time.
  The two ways by which this is usually done are either microarrays or RNA
@@ -1446,8 +1454,9 @@ key "Trapnell2010-le"
 
 \end_inset
 
-, with the exception of sections in the RNA that can be more or easily transcrib
-ed into DNA (like GC-rich regions that also pose challenges for sequencing).
+, with the exception of sections in the RNA that can be more less easily
+ transcribed into DNA (like GC-rich regions that also pose challenges for
+ sequencing).
  Another advantage is that the dynamic range of this technology (
 \begin_inset ERT
 status open
@@ -1498,7 +1507,7 @@ key "Patro2014-wf"
 
 \end_inset
 
-, Salmon 
+, Salmon
 \begin_inset Foot
 status open
 
@@ -1643,21 +1652,21 @@ It can easily be argued that in order to get an appropriate picture of what
  most functions, as opposed to the mRNA levels of genes.
  The latter will in many cases be translated into proteins that then exert
  their activity, yet mRNA measurements are one more step removed from the
- functional process than proteins, and measuring post-translational modification
-s (PTMs) that modify activity already gives us a lot of functional information
- - as long as we know how to interpret it.
+ functional process than proteins, and two steps from measuring post-translation
+al modifications (PTMs) that modify activity already gives us a lot of functiona
+l information - as long as we know how to interpret it.
 \end_layout
 
 \begin_layout Standard
 Taking these facts together, we might want to look at proteins instead of
  gene expression.
- Yet, gene expression is a lot cheaper and easier to measure, as well as
- providing more coverage than the proteomic methods currently can.
- Also, the publicly available gene expression data far exceeds the one of
- proteomic data.
+ Yet, gene expression is a lot cheaper and easier to measure and provides
+ more coverage than the proteomic methods currently can.
+ In addition, the publicly available gene expression data far exceeds the
+ one of proteomic data.
  There are different experimental methods for quantifying proteins and their
  state, the most well-known are listed below.
- This thesis, however, is focussed on gene expression.
+ This thesis, however, is focussed on gene expression for the reasons outlined.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1810,8 +1819,8 @@ Gene sets and pathways
 \end_layout
 
 \begin_layout Standard
-With about 22,000 human genes whose transcription can be all measured simultaneo
-usly using the methods described in section 
+With about 22,000 human genes whose transcription can be measured simultaneously
+ using the methods described in section 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "subsec:assay_RNA"
@@ -2066,7 +2075,7 @@ abbrv{ICGC}
 \begin_layout Standard
 The International Cancer Genome consortium is an umbrella effort with the
  same goals, yet it incorporates many more studies from different countries
- and thus represents a superset of the TCGA data
+ and thus represents a superset of the TCGA data 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "International_Cancer_Genome_Consortium2010-bn"
@@ -2189,7 +2198,7 @@ key "Cancer_Cell_Line_Encyclopedia_Consortium2015-df"
 \end_layout
 
 \begin_layout Subsection
-The Connectivity Map
+Drug-induced transcriptional changes
 \end_layout
 
 \begin_layout Subsubsection
@@ -2216,7 +2225,7 @@ reference "subsec:Signature-Matching"
 
 \end_inset
 
-), the method of using gene expression changes upon drug treatment to match
+), a method of using gene expression changes upon drug treatment to match
  either drugs with drugs for finding similarities or drugs with diseases
  for a potential treatment indication 
 \begin_inset CommandInset citation
@@ -2386,7 +2395,19 @@ file{.gctx}
  it to be equal with microarrays; my own tries and conversations with other
  people using the data have indicated that it is below that).
  The main publication is still not out today (August 2016), and they refused
- to share e.g.
+ to share 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+latin{e.g.}
+\end_layout
+
+\end_inset
+
  the linear transformation matrix they used to obtain the projected gene
  space.
 \end_layout
@@ -2403,7 +2424,7 @@ name "sec:Computational-methods"
 \end_inset
 
 Over the last decades and years, biology moved from an observational, qualitativ
-e science to a very much quantitative one.
+e to a very much quantitative science.
  This can largely be attributed to high throughput assays, led by the advance
  of DNA sequencing and followed by its derivatives as well as other approaches,
  like high-content phenotypic screening - each allowing for measuring not
@@ -2525,7 +2546,7 @@ reference "subsec:targeted-therapies"
 
 \end_inset
 
- forms the basis of many targeted therapies: if you can inhibit signalling
+, forms the basis of many targeted therapies: if you can inhibit signalling
  stemming from a mutation that drives a cancer's development and progression,
  the affected cells' growth will be severely abrogated.
 \end_layout
@@ -2955,7 +2976,8 @@ key "Parikh2010-uj"
 
 \end_inset
 
- (both of which have drawbacks that I will discuss later).
+.
+ However, both of these have drawbacks that I will discuss later.
 \end_layout
 
 \begin_layout Subsubsection
@@ -2970,7 +2992,7 @@ name "subsec:Signature-Matching"
 \end_layout
 
 \begin_layout Standard
-When investigating the effect small molecules (
+When investigating the effect small bioactive molecules (
 \begin_inset ERT
 status open
 
@@ -3081,12 +3103,34 @@ key "Bansal2007-rb"
 
 .
  There are multiple ways these can be investigated: by characterising which
- transcription factors bind to which genes (either experimentally or computation
-ally by looking at which sequence of nucleotides a given factor is likely
- to bind), by finding genes that change in a coordinated fashion and hypothesise
- that those might be regulated by the same set of factors, or by inferring
- which combination of which factors is required for a certain gene to be
- transcribed.
+ transcription factors bind to which genes.
+ This can be done either experimentally 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Lachmann2010-hx,Chen2011-ln,Auerbach2013-tb"
+
+\end_inset
+
+ or computationally by looking at which sequence of nucleotides a given
+ factor is likely to bind 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Bailey1995-hs,Bailey2009-ej,Matys2003-ea,Portales-Casamar2009-nd,Mathelier2013-mo"
+
+\end_inset
+
+.
+ An alternative approach is to find genes that change in a coordinated fashion
+ and hypothesise that those might be regulated by the same set of factors,
+ or by inferring which combination of which factors is required for a certain
+ gene to be transcribed 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Langfelder2008-jh,Margolin2006-gw"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsubsection
@@ -3099,9 +3143,9 @@ Cell signalling is deregulated in many diseases, including cancer that I
  But how to best quantify the signalling activity? The closest proxy we
  have would be to quantify post-translational modifications that are known
  to confer activity.
- In the simplest case this could be a phosphate group on a certain position
- that is known to make a kinase active, that is that it in turn phosphorylates
- its downstream targets.
+ In the simplest case this could be a phosphate group attached to a certain
+ position that is known to make a kinase active, that is that it in turn
+ phosphorylates its downstream targets.
  But phosphorylation data, and to a lesser extent protein data in general
  is much harder to come by than sequencing data.
  Mass spectrometry and Reverse Phase Protein Arrays just do not produce
@@ -3706,7 +3750,12 @@ key "Gentleman2004-oc"
 
 \end_inset
 
- (including 
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+including 
 \begin_inset ERT
 status open
 
@@ -3746,7 +3795,12 @@ key "Wickham2011-qn"
 
 \end_inset
 
-, used extensively in the analyses I performed) and 
+, used extensively in the analyses I performed
+\end_layout
+
+\end_inset
+
+ and 
 \begin_inset ERT
 status open
 
@@ -3762,8 +3816,8 @@ abbrv{PyPI}
 , respectively.
  Without those tools, performing analysis like I do to obtain the results
  shown later would not be possible.
- Note that there are tools, but they do not play a similarly important role
- in contemporary data analysis.
+ Note that there are other tools, but they do not play a similarly important
+ role in contemporary data analysis.
 \end_layout
 
 \begin_layout Subsection

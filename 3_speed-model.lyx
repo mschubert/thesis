@@ -2525,7 +2525,7 @@ name "subsec:method:speed-scores"
 \end_layout
 
 \begin_layout Standard
-Each pathway signature I obtain is the 
+For each pathway signature I obtain an 
 \begin_inset Formula $N$
 \end_inset
 
@@ -2650,7 +2650,7 @@ While the above only explains how to calculate the score for one pathway
 \end_inset
 
 ).
- For samples, I have a matrix 
+ For samples, I have a gene expression matrix 
 \begin_inset Formula $E$
 \end_inset
 

@@ -89,7 +89,7 @@ Gene set methods for drug response
 
 \begin_layout Standard
 Pathway methods are often used in a cancer context, both for cell lines
- an primary tumours.
+ and primary tumours.
  Most of the time, the method of choice is to take a gene set from either
  Gene Ontology (GO) 
 \begin_inset CommandInset citation
@@ -114,7 +114,7 @@ key "Croft2011-po"
 
 , and calculate a combined expression score using either a Fisher's exact
  test (e.g.
- by a tool called DAVID 
+ by a tool called DAVID
 \begin_inset Foot
 status open
 
@@ -132,8 +132,8 @@ key "Wadi2016-wc"
 
 \end_inset
 
-) if one is to test one set against another, or some variant of Gene Set
- Enrichment Analysis (GSEA) 
+) if one is to test gene sets against differentially expressed genes, or
+ some variant of Gene Set Enrichment Analysis (GSEA) 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Subramanian2005-pd"
@@ -593,7 +593,7 @@ latin{e.g.}
 \end_inset
 
  fold changes).
- It them computes the running sum of a set of interest by starting at the
+ It then computes the running sum of a set of interest by starting at the
  beginning of this list and adding a score if the current gene is in the
  set, or subtracts a score otherwise.
  This can be summarised like the following:
@@ -839,7 +839,7 @@ I obtained already processed gene expression matrix from the GDSC cell lines
 \begin_inset Formula $IC_{50}$
 \end_inset
 
- values to 265 public drugs from 
+ values to 265 public drugs from the GDSC publication 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Iorio2016-gh"
@@ -847,8 +847,8 @@ key "Iorio2016-gh"
 \end_inset
 
 .
- I performed an regression using the gene set score as an independent variable
- (
+ I performed a linear regression using the gene set score as an independent
+ variable (
 \begin_inset Formula $S_{j}$
 \end_inset
 
@@ -856,7 +856,7 @@ key "Iorio2016-gh"
 \begin_inset Formula $j$
 \end_inset
 
- is the index of the cell line from 
+ is the index of the pathway from 
 \begin_inset Formula $1$
 \end_inset
 
@@ -864,7 +864,15 @@ key "Iorio2016-gh"
 \begin_inset Formula $k$
 \end_inset
 
-) and the log10 of the IC50 in micro-molar as the response variable (
+) and the 
+\begin_inset Formula $log_{10}$
+\end_inset
+
+ of the 
+\begin_inset Formula $IC50$
+\end_inset
+
+ in micro-molar as the response variable (
 \begin_inset Formula $D_{i}$
 \end_inset
 
@@ -1622,8 +1630,8 @@ latin{i.e.}
 
 \begin_layout Standard
 The set of control arrays comprised all the un-stimulated arrays in the
- database, and the stimulated set of all arrays in the database where a
- certain pathway was perturbed.
+ database, and the stimulated set of all unperturbed arrays in the database
+ where a certain pathway was perturbed.
  I used as a measure of performance the area under the precision-recall
  curve.
  A perfect ordering (that is, all control arrays and then all stimulated
@@ -3730,7 +3738,7 @@ g activity (the expression changes downstream of a signalling pathway) and
  with Gene Ontology categories, and not how well its enrichment scores are
  able to differentiate between microarrays where a given pathway perturbation
  is present and those where it is absent.
- The original version was hence useful for my purposes.
+ The original version was hence not very useful for my purposes.
 \end_layout
 
 \begin_layout Standard
