@@ -3836,6 +3836,7 @@ Combination of PD-0325901 and AT-7519
 \end_inset
 
 Combination of PD-0325901 as sensitiser and AT-7519 as treatment drug.
+ Both axes represent drug concentrations in micro-molar.
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:PD+AT"
@@ -3911,6 +3912,7 @@ Combination of AUY922 and VX-680
 \end_inset
 
 Combination of AUY922 as sensitiser and VX-680 as treatment drug.
+ Both axes represent drug concentrations in micro-molar.
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:AUY+VX"
@@ -3986,6 +3988,7 @@ Combination of WZ3105 and PD-0325901
 \end_inset
 
 Combination of WZ3105 as sensitiser and PD-0325901 as treatment drug.
+ Both axes represent drug concentrations in micro-molar.
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:WZ+PD"
