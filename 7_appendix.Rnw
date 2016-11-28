@@ -60,7 +60,7 @@ sig_comb = "/home/mschu/Work/signature-combinations"
 
 {\tiny
 <<pan_drug_all_mut, echo=FALSE>>=
-do = function(fid, caption="", subset="assocs.pan", ...) {
+do = function(fid, caption="", subset="pan", ...) {
     file.path(speed2, "drug_assocs/assocs_all", paste0(fid, ".RData")) %>%
         load2(subset) %>%
         transmute(Drug = drug,
@@ -377,7 +377,9 @@ do("pan_bing_pancov", "Drug sensitisation (pan-cancer with covariate)")
 \begin{centering}
 \centerline{\includegraphics[width=0.7\paperwidth]{figures/synergy_sup1}}
 \par\end{centering}
-\caption{Predicted vs. measured synergy for drug combinations}
+\caption{Predicted vs. measured synergy for drug combinations. Experimental
+result on the left, Loewe-additive model in the middle. Difference between
+the two on the right. Both axes represent micro-molar drug concentrations.}
 \label{fig:syn}
 \end{figure}
 
