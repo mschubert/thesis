@@ -425,7 +425,7 @@ do = function(fid, caption="", ...) {
                   `Wald stat.` = sprintf("%.3f", statistic),
                   `P-value` = sprintf("%.2g", p.value),
                   FDR = sprintf("%.2g", adj.p)) %>%
-        tab(caption=caption, p=0.1, n=60)
+        tab(caption=caption, p=0.1, n=75)
 }
 do("pan_bing_pancov-", "Drug sensitisation (naive pan-cancer)")
 @
