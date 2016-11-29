@@ -1,7 +1,16 @@
 \chapter{Appendix}
 
 <<setup, include=FALSE>>=
+library(knitr)
 library(dplyr)
+opts_chunk$set(
+  cache = TRUE,
+  echo = FALSE,
+  warning = FALSE,
+  error = FALSE,
+  message = FALSE,
+  concordance = TRUE
+)
 
 load2 = function(filename, subset=FALSE) {
     get_contents = function(fpath) {
@@ -58,7 +67,7 @@ sig_comb = "/home/mschu/Work/signature-combinations"
 \subsubsection{Associations for mutations\label{sub:ch2-mut}}
 
 {\tiny
-<<pan_drug_all_mut, echo=FALSE>>=
+<<pan_drug_all_mut>>=
 do = function(fid, caption="", subset="pan", ...) {
     file.path(speed2, "drug_assocs/assocs_all", paste0(fid, ".RData")) %>%
         load2(subset) %>%
@@ -80,7 +89,7 @@ do("mutation", "Mutations")
 \subsubsection{Associations for Gene Ontology\label{sub:ch2-go}}
 
 {\tiny
-<<pan_drug_all_go, echo=FALSE>>=
+<<pan_drug_all_go>>=
 do("gsva_go", "Gene Ontology")
 @
 }
@@ -88,7 +97,7 @@ do("gsva_go", "Gene Ontology")
 \subsubsection{Associations for Reactome\label{sub:ch2-reactome}}
 
 {\tiny
-<<pan_drug_all_reactome, echo=FALSE>>=
+<<pan_drug_all_reactome>>=
 do("gsva_reactome", "Reactome")
 @
 }
@@ -96,7 +105,7 @@ do("gsva_reactome", "Reactome")
 \subsection{SPEED platform\label{sub:ch2-speed}}
 
 {\tiny
-<<pan_drug_all_speed1, echo=FALSE>>=
+<<pan_drug_all_speed1>>=
 do = function(fid, caption="", ...) {
     file.path(speed1, paste0(fid, ".RData")) %>%
         load2() %>%
@@ -218,7 +227,7 @@ drug target and pathway.}
 <<echo=FALSE>>=
 do = function(fid, caption="", ...) {
     file.path(speed2, "drug_assocs/assocs_mapped", paste0(fid, ".RData")) %>%
-        load2("assocs.pan") %>%
+        load2("pan") %>%
         transmute(Drug = drug,
                   Pathway = scores,
                   Size = size,
@@ -255,8 +264,8 @@ drug target and pathway.}
 <<echo=FALSE>>=
 do = function(fid, caption="", ...) {
     file.path(speed2, "drug_assocs/assocs_mapped", paste0(fid, ".RData")) %>%
-        load2("assocs.tissue") %>%
-        filter(subset == "noexp") %>%
+        load2("tissue") %$%
+        `[[`(., "noexp") %>%
         transmute(Drug = drug,
                   Pathway = scores,
                   Size = size,
