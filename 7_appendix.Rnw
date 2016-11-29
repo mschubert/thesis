@@ -69,8 +69,8 @@ do = function(fid, caption="", subset="pan", ...) {
                   Size = size,
                   Effect = sprintf("%.3f", estimate),
                   `Wald stat.` = sprintf("%.3f", statistic),
-                  `P-value` = sprintf("%.3g", p.value),
-                  FDR = sprintf("%.3g", adj.p)) %>%
+                  `P-value` = sprintf("%.2g", p.value),
+                  FDR = sprintf("%.2g", adj.p)) %>%
         tab(caption=paste(caption, "vs. drugs (pan-cancer)"), p=0.05, ...)
 }
 do("mutation", "Mutations")
