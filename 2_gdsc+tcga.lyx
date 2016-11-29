@@ -868,7 +868,7 @@ code{lm}
 \begin_inset Formula $j$
 \end_inset
 
- is the index of the pathway from 
+ corresponds to each different phenotype from 
 \begin_inset Formula $1$
 \end_inset
 
@@ -876,7 +876,20 @@ code{lm}
 \begin_inset Formula $k$
 \end_inset
 
-) and the 
+; this could 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+latin{e.g.}
+\end_layout
+
+\end_inset
+
+ be pathways or the presence of a mutation) and the 
 \begin_inset Formula $log_{10}$
 \end_inset
 
@@ -904,7 +917,45 @@ code{lm}
 \begin_layout Standard
 \begin_inset Formula 
 \[
-D_{i}\sim T_{j=1..k}+S_{j=1..k}|_{i=1..m}
+D_{i}\sim T+S_{j}\qquad\forall i\in drugs,\forall j\in phenotypes
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In other words, for each drug 
+\begin_inset Formula $D_{i}$
+\end_inset
+
+, I fit the following model for all cell lines 
+\begin_inset Formula $c$
+\end_inset
+
+ in the GDSC panel.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{c}
+D_{i}^{c_{1}}\\
+D_{i}^{c_{2}}\\
+D_{i}^{c_{3}}\\
+\vdots
+\end{array}\sim\begin{array}{c}
+T^{c_{1}}\\
+T^{c_{2}}\\
+T^{c_{3}}\\
+\vdots
+\end{array}+\begin{array}{c}
+S_{j}^{c_{1}}\\
+S_{j}^{c_{2}}\\
+S_{j}^{c_{3}}\\
+\vdots
+\end{array}
 \]
 
 \end_inset
@@ -931,7 +982,7 @@ key "Benjamini1995-rj"
 \begin_layout Standard
 \begin_inset Formula 
 \[
-D_{i}\sim S_{t}|_{i=1..m,t\forall T}
+D_{i}\sim S_{j}\qquad\forall i\in drugs,\forall j\in phenotypes\mid T^{c}=t
 \]
 
 \end_inset
@@ -940,29 +991,40 @@ D_{i}\sim S_{t}|_{i=1..m,t\forall T}
 \end_layout
 
 \begin_layout Standard
-In this formula, the scores 
-\begin_inset Formula $S$
+In this case, I only include cell lines 
+\begin_inset Formula $c$
 \end_inset
 
- have a different index from 
-\begin_inset Formula $1$
-\end_inset
-
- to 
-\begin_inset Formula $l$
-\end_inset
-
-, where 
-\begin_inset Formula $t$
-\end_inset
-
- corresponds to all cell lines that are in tissue 
+ whose tissue 
 \begin_inset Formula $T$
 \end_inset
 
-.
- In this case, I corrected the p-values using the FDR methods for each subset
- of tissues separately.
+equals 
+\begin_inset Formula $t$
+\end_inset
+
+ and build models for each tissue separately.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{c}
+D_{i}^{c_{1}}\\
+D_{i}^{c_{2}}\\
+D_{i}^{c_{3}}\\
+\vdots
+\end{array}\sim\begin{array}{c}
+S_{j}^{c_{1}}\\
+S_{j}^{c_{2}}\\
+S_{j}^{c_{3}}\\
+\vdots
+\end{array}\qquad
+\]
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section

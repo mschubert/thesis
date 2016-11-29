@@ -2297,7 +2297,91 @@ key "Parikh2010-uj"
 \begin_layout Standard
 \begin_inset Formula 
 \[
-Z_{g}\sim M\,...\,\forall g
+Z_{g}\sim M\qquad\forall g\in genes
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Where 
+\begin_inset Formula $Z_{g}$
+\end_inset
+
+ is the z-score for a given gene 
+\begin_inset Formula $g$
+\end_inset
+
+ across all input experiments (as a column vector of experiments).
+ 
+\begin_inset Formula $M$
+\end_inset
+
+ is a coefficients matrix (rows are experiments, columns pathways) that
+ has the coefficient 
+\begin_inset Formula $1$
+\end_inset
+
+ if the the experiment had a pathway activated, 
+\begin_inset Formula $-1$
+\end_inset
+
+ if inhibited, and 
+\begin_inset Formula $0$
+\end_inset
+
+ otherwise.
+ For instance, the Hypoxia pathway had experiments with low oxygen conditions
+ set as 
+\begin_inset Formula $1$
+\end_inset
+
+, HIF1A knockdown as 
+\begin_inset Formula $-1$
+\end_inset
+
+, and all other experiments as 
+\begin_inset Formula $0$
+\end_inset
+
+.
+ The same is true for EGFR and EGF treatment vs.
+ EGFR inhibitors respectively, with the additional coefficients of MAPK
+ and PI3K pathways set to 
+\begin_inset Formula $1$
+\end_inset
+
+ because of known pathway cross-talk.
+ An overview of all modelled cross-talk is shown in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Modelled-pathway-crosstalk"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{c}
+z_{g}^{E_{1}}\\
+z_{g}^{E_{2}}\\
+z_{g}^{E_{3}}\\
+z_{g}^{E_{4}}\\
+z_{g}^{E_{5}}\\
+\vdots
+\end{array}\sim\stackrel{pathway\thinspace index}{\begin{array}{cccc}
+1 & 0 & 0 & \cdots\\
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 1 & 1\\
+0 & 0 & 1\\
+\vdots &  &  & \ddots
+\end{array}}\qquad\forall g\in genes
 \]
 
 \end_inset
@@ -2385,62 +2469,20 @@ name "fig:Distribution-of-significance"
 \end_layout
 
 \begin_layout Standard
-Where 
-\begin_inset Formula $Z_{g}$
-\end_inset
-
- is the z-score for a given gene 
-\begin_inset Formula $g$
-\end_inset
-
- across all input experiments (as a column vector of experiments).
- 
-\begin_inset Formula $M$
-\end_inset
-
- is a coefficients matrix (rows are experiments, columns pathways) that
- has the coefficient 
-\begin_inset Formula $1$
-\end_inset
-
- if the the experiment had a pathway activated, 
-\begin_inset Formula $-1$
-\end_inset
-
- if inhibited, and 
-\begin_inset Formula $0$
-\end_inset
-
- otherwise.
- For instance, the Hypoxia pathway had experiments with low oxygen conditions
- set as 
-\begin_inset Formula $1$
-\end_inset
-
-, HIF1A knockdown as 
-\begin_inset Formula $-1$
-\end_inset
-
-, and all other experiments as 
-\begin_inset Formula $0$
-\end_inset
-
-.
- The same is true for EGFR and EGF treatment vs.
- EGFR inhibitors respectively, with the additional coefficients of MAPK
- and PI3K pathways set to 
-\begin_inset Formula $1$
-\end_inset
-
- because of known pathway cross-talk.
- An overview of all modelled cross-talk is shown in figure 
+From the result of the linear model, I selected the top 100 genes per pathway
+ according to their p-value and took their estimate (the fitted z-scores)
+ as coefficient.
+ I set all other gene coefficients to 0, so this yielded a matrix with HGNC
+ symbols in rows and pathways in columns, where each pathway had 100 non-zero
+ gene coefficients (cf.
+ figure 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:Modelled-pathway-crosstalk"
+reference "fig:Workflow-of-obtaining"
 
 \end_inset
 
-.
+).
 \end_layout
 
 \begin_layout Standard
@@ -2494,23 +2536,6 @@ ion.
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-From the result of the linear model, I selected the top 100 genes per pathway
- according to their p-value and took their estimate (the fitted z-scores)
- as coefficient.
- I set all other gene coefficients to 0, so this yielded a matrix with HGNC
- symbols in rows and pathways in columns, where each pathway had 100 non-zero
- gene coefficients (cf.
- figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Workflow-of-obtaining"
-
-\end_inset
-
-).
 \end_layout
 
 \begin_layout Subsection

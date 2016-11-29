@@ -951,8 +951,8 @@ Where
 \begin_inset Formula $S$
 \end_inset
 
- the resulting expression of drug-response signatures with cell lines in
- rows and drugs in columns.
+ the resulting expression of drug-response signatures of the GDSC cell lines
+ with cell lines in rows and drugs in columns.
  I scaled 
 \begin_inset Formula $S$
 \end_inset
@@ -1130,13 +1130,14 @@ name "fig:fit-Tram+QS11"
 \end_layout
 
 \begin_layout Standard
-For the pan-cancer drug associations, I use the formula:
+For the pan-cancer drug associations, I check for the correlation between
+ drug sensitivity and signature expression using the following linear model:
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \[
-D_{i}\sim T+S_{j}\,...\,\forall i,j
+D_{i}\sim T+S_{j}\qquad\forall i\in GDSC\thinspace drugs,\forall j\in LINCS\thinspace signatures
 \]
 
 \end_inset
@@ -1177,7 +1178,40 @@ Where
 \end_inset
 
 ), adjusting the resulting p-values by the false discovery method.
- An overview of significant hits is shown in figure 
+ However, note that because all signature scores are computed on the GDSC
+ panel the LINCS signatures are used to provide scores for all GDSC cell
+ lines.
+ Hence, the cell lines indexed for building the model are all of the GDSC:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{c}
+D_{i}^{c_{1}}\\
+D_{i}^{c_{2}}\\
+D_{i}^{c_{3}}\\
+\vdots
+\end{array}\sim\begin{array}{c}
+T^{c_{1}}\\
+T^{c_{2}}\\
+T^{c_{3}}\\
+\vdots
+\end{array}+\begin{array}{c}
+S_{j}^{c_{1}}\\
+S_{j}^{c_{2}}\\
+S_{j}^{c_{3}}\\
+\vdots
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+An overview of significant hits is shown in figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Matrix-of-naive"
@@ -1198,10 +1232,7 @@ ref{sub:ch5-lincs-naive}
 \end_inset
 
 ).
-\end_layout
-
-\begin_layout Standard
-The strongest potentially synergistic hit I obtain is Trametinib (GSK1120212)
+ The strongest potentially synergistic hit I obtain is Trametinib (GSK1120212)
  to act as a sensitiser for QS11 (
 \begin_inset Formula $FDR<10^{-5}$
 \end_inset
@@ -1383,7 +1414,7 @@ As I am only looking at the drugs that are present in both the GDSC and
 \begin_layout Standard
 \begin_inset Formula 
 \[
-D_{i}\sim T+S_{i}+S_{j}\,...\,\forall i,j
+D_{i}\sim T+S_{i}+S_{j}\qquad\forall i\in GDSC\thinspace drugs,\forall j\in LINCS\thinspace signatures
 \]
 
 \end_inset
@@ -1401,8 +1432,57 @@ Where the addition of
 \end_inset
 
 .
- This takes the significance of the Trametinib-QS11 pair away, as shown
- in the resulting association matrix in figure 
+ Following the model fit, I discard all coefficients of tissue or covariate
+ signature, only looking at the results between 
+\begin_inset Formula $D_{i}$
+\end_inset
+
+ and 
+\begin_inset Formula $S_{j}$
+\end_inset
+
+.
+ Here again, the cell line 
+\begin_inset Formula $c$
+\end_inset
+
+ indexes GDSC cell lines and their expression of the LINCS-derived signatures:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{c}
+D_{i}^{c_{1}}\\
+D_{i}^{c_{2}}\\
+D_{i}^{c_{3}}\\
+\vdots
+\end{array}\sim\begin{array}{c}
+T^{c_{1}}\\
+T^{c_{2}}\\
+T^{c_{3}}\\
+\vdots
+\end{array}+\begin{array}{c}
+S_{i}^{c_{1}}\\
+S_{i}^{c_{2}}\\
+S_{i}^{c_{3}}\\
+\vdots
+\end{array}+\begin{array}{c}
+S_{j}^{c_{1}}\\
+S_{j}^{c_{2}}\\
+S_{j}^{c_{3}}\\
+\vdots
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This takes the significance of the Trametinib-QS11 pair away, as shown in
+ the resulting association matrix in figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:covar-assocs-matrix"
