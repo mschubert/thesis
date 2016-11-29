@@ -4,7 +4,7 @@
 library(knitr)
 library(dplyr)
 opts_chunk$set(
-  cache = TRUE,
+  cache = FALSE,
   echo = FALSE,
   warning = FALSE,
   error = FALSE,
@@ -146,7 +146,7 @@ pathways.}
 \end{figure}
 
 {\tiny
-<<echo=FALSE>>=
+<<speed2_tcga_mut>>=
 do = function(fid, caption="", ...) {
     file.path(speed2, "tcga_pathway_per_mutation/assocs_driver_mapped", paste0(fid, ".RData")) %>%
         load2() %>%
@@ -183,7 +183,7 @@ type regressed out. Associations by PRGs are more in line with established liter
 \end{figure}
 
 {\tiny
-<<echo=FALSE>>=
+<<speed2_tcga_cna>>=
 do = function(fid, caption="", ...) {
     file.path(speed2, "tcga_pathway_per_mutation/assocs_cna_mapped", paste0(fid, ".RData")) %>%
         load2() %>%
@@ -224,7 +224,7 @@ drug target and pathway.}
 \end{figure}
 
 {\tiny
-<<echo=FALSE>>=
+<<speed2_drug_pancan>>=
 do = function(fid, caption="", ...) {
     file.path(speed2, "drug_assocs/assocs_mapped", paste0(fid, ".RData")) %>%
         load2("pan") %>%
@@ -261,7 +261,7 @@ drug target and pathway.}
 \end{figure}
 
 {\tiny
-<<echo=FALSE>>=
+<<speed2_drug_tissue>>=
 do = function(fid, caption="", ...) {
     file.path(speed2, "drug_assocs/assocs_mapped", paste0(fid, ".RData")) %>%
         load2("tissue") %$%
@@ -302,7 +302,7 @@ the meaning of associations obtained by other methods.}
 \end{figure}
 
 {\tiny
-<<echo=FALSE>>=
+<<speed2_surv_pancan>>=
 do = function(fid, caption="", ...) {
     file.path(speed2, "tcga_survival/assocs_cont_mapped", paste0(fid, ".RData")) %>%
         load2("pan_cov") %>%
@@ -338,7 +338,7 @@ the meaning of associations obtained by other methods.}
 \end{figure}
 
 {\tiny
-<<echo=FALSE>>=
+<<speed2_surv_tissue>>=
 do = function(fid, caption="", ...) {
     file.path(speed2, "tcga_survival/assocs_cont_mapped", paste0(fid, ".RData")) %>%
         load2("tissue") %>%
@@ -372,7 +372,7 @@ do("speed_matrix", "Perturbation-response genes")
 \subsubsection{Pan-cancer\label{sub:ch5-mantra-pan}}
 
 {\tiny
-<<echo=FALSE>>=
+<<mantra_pancan>>=
 do = function(caption="", ...) {
     file.path(mantra, "assocs.RData") %>%
         load2("pan") %>%
@@ -392,7 +392,7 @@ do("MANTRA (pan-cancer)")
 \subsubsection{Tissue specific\label{sub:ch5-mantra-tissue}}
 
 {\tiny
-<<echo=FALSE>>=
+<<mantra_tissue>>=
 do = function(caption="", ...) {
     file.path(mantra, "assocs.RData") %>%
         load2("tissue") %>%
@@ -415,7 +415,7 @@ do("MANTRA (cancer-specific)")
 \subsubsection{Naive\label{sub:ch5-lincs-naive}}
 
 {\tiny
-<<echo=FALSE>>=
+<<lincs_pancan>>=
 do = function(fid, caption="", ...) {
     file.path(sig_comb, "drug_tissue/assocs", paste0(fid, ".RData")) %>%
         load2() %>%
@@ -425,7 +425,7 @@ do = function(fid, caption="", ...) {
                   `Wald stat.` = sprintf("%.3f", statistic),
                   `P-value` = sprintf("%.2g", p.value),
                   FDR = sprintf("%.2g", adj.p)) %>%
-        tab(caption=caption, p=0.1, n=50)
+        tab(caption=caption, p=0.1, n=60)
 }
 do("pan_bing_pancov-", "Drug sensitisation (naive pan-cancer)")
 @
@@ -434,7 +434,7 @@ do("pan_bing_pancov-", "Drug sensitisation (naive pan-cancer)")
 \subsubsection{With added covariate\label{sub:ch5-lincs-covar}}
 
 {\tiny
-<<echo=FALSE>>=
+<<lincs_pancan_covar>>=
 do("pan_bing_pancov", "Drug sensitisation (pan-cancer with covariate)")
 @
 }
