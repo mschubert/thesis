@@ -2947,28 +2947,109 @@ Maybe the simplest way to investigate a biological system using gene expression
  is no overlap or partial membership, etc.) no longer have an impact on the
  result we obtain - we can just use the induced gene expression of a disease,
  a drug treatment, or really anything else that produces gene expression
- changes and use it as a signature for the phenotype (reviewed in 
+ changes and use it as a signature for the phenotype.
+ These gene expression signatures can then be used for different purposes
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Iorio2013-pv"
 
 \end_inset
 
-).
+, some of which are listed below.
 \end_layout
 
 \begin_layout Standard
-Hence, a signature is able to transform gene expression as an input into
- a relevant phenotype.
- One example of such a phenotype is pathway activity, for which signatures
- have previously been derived in the MCF10A cell line 
+Hence, we can define a gene expression signature 
+\begin_inset Formula $S$
+\end_inset
+
+ as a function that takes the gene expression levels 
+\begin_inset Formula $E$
+\end_inset
+
+ as input and transforms then into an inferred phenotype 
+\begin_inset Formula $\hat{P}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S(E)=\hat{P}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The signature 
+\begin_inset Formula $S$
+\end_inset
+
+ itself is most commonly derived from differences in gene expression 
+\begin_inset Formula $\varDelta E$
+\end_inset
+
+ of a certain perturbation compared to a control or different sample conditions.
+ It represents a model of transformation (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+latin{e.g.}
+\end_layout
+
+\end_inset
+
+ a linear model of coefficients or GSEA on a gene list) that can then be
+ applied to gene expression levels in a different sample 
+\begin_inset Formula $E$
+\end_inset
+
+ to infer the phenotype 
+\begin_inset Formula $\hat{P}$
+\end_inset
+
+ (which is a different experiment than was used to infer 
+\begin_inset Formula $\varDelta E$
+\end_inset
+
+).
+ It is important to note that the inferred phenotype 
+\begin_inset Formula $\hat{P}$
+\end_inset
+
+ may not be the same as the actual phenotype 
+\begin_inset Formula $P$
+\end_inset
+
+ but is only an approximation.
+\end_layout
+
+\begin_layout Standard
+Such a phenotype could be drug treatment (section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Signature-Matching"
+
+\end_inset
+
+) or pathway activity for a single condition 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Bild2005-tk,Gatza2010-fq"
 
 \end_inset
 
- and using a consensus model 
+ or using a consensus model 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Parikh2010-uj"
@@ -2976,7 +3057,8 @@ key "Parikh2010-uj"
 \end_inset
 
 .
- However, both of these have drawbacks that I will discuss later.
+ However, both of these published approaches have drawbacks that I will
+ discuss later.
 \end_layout
 
 \begin_layout Subsubsection

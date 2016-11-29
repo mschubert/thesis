@@ -807,6 +807,60 @@ A pan-cancer view of drug sensitisation using LINCS
 \end_layout
 
 \begin_layout Subsection
+Data quality of the LINCS
+\end_layout
+
+\begin_layout Standard
+The fact that the paper about the LINCS data has not yet been published,
+ combined with the concerns raised about data quality makes it necessary
+ to point out that in fact we do not yet know its use and limits of applicabilit
+y.
+ While a comprehensive evaluation of the data is beyond the score of this
+ thesis, it is important to perform quality control measurements to make
+ sure the changes in gene expression reported via z-scores are indeed biological
+ly meaningful.
+ I did this in the following ways: (1) generate the same signatures as in
+ chapter 3 and see how well they agree on drug associations, (2) for each
+ drug perturbation I look at here quantify how well its signature is able
+ to recover the same perturbation compared to other perturbations.
+ Together, they provide evidence that the data is noisy but usable for the
+ purpose of signature matching.
+\end_layout
+
+\begin_layout Standard
+In terms of oncogene addiction associations, I find very similar results
+ to the ones obtained in section 4.3.2.
+ The most significant association is the p53 pathway with Nutlin-3a, followed
+ by MAPK activity and MEK (and related) inhibitors.
+ However, even with many more experiments used to generate the signature
+ on either the 978 landmark genes or the projected set, the associations
+ I obtain are a lot weaker (
+\begin_inset Formula $p<10^{-5}$
+\end_inset
+
+ instead of 
+\begin_inset Formula $p<10^{-20}$
+\end_inset
+
+) for the strongest and all following associations.
+\end_layout
+
+\begin_layout Standard
+In terms of how well signatures can recover the same drug that was used
+ to generate them, I scored all input experiments with with the signature
+ I obtained and quantified the area under the Receiver Operator (ROC) curve.
+ I discarded all drugs that did not yield an AUC of 
+\begin_inset Formula $>0.7$
+\end_inset
+
+.
+ This threshold is not very stringent and might still include drugs that
+ have a relatively weak signature.
+ However, we will only know whether this was a good cutoff once the proposed
+ experiments in the later sections have been validated.
+\end_layout
+
+\begin_layout Subsection
 Creating drug signatures and scoring GDSC cell lines
 \begin_inset CommandInset label
 LatexCommand label
