@@ -1137,7 +1137,7 @@ For the pan-cancer drug associations, I check for the correlation between
 \begin_layout Standard
 \begin_inset Formula 
 \[
-D_{i}\sim T+S_{j}\qquad\forall i\in GDSC\thinspace drugs,\forall j\in LINCS\thinspace signatures
+D_{i}\sim T+S_{j}\qquad\forall i\in GDSC\thinspace drugs\;\forall j\in LINCS\thinspace signatures
 \]
 
 \end_inset
@@ -1414,7 +1414,7 @@ As I am only looking at the drugs that are present in both the GDSC and
 \begin_layout Standard
 \begin_inset Formula 
 \[
-D_{i}\sim T+S_{i}+S_{j}\qquad\forall i\in GDSC\thinspace drugs,\forall j\in LINCS\thinspace signatures
+D_{i}\sim T+S_{i}+S_{j}\qquad\forall i\in GDSC\thinspace drugs\;\forall j\in LINCS\thinspace signatures
 \]
 
 \end_inset

@@ -917,7 +917,7 @@ latin{e.g.}
 \begin_layout Standard
 \begin_inset Formula 
 \[
-D_{i}\sim T+S_{j}\qquad\forall i\in drugs,\forall j\in phenotypes
+D_{i}\sim T+S_{j}\qquad\forall i\in drugs\;\forall j\in phenotypes
 \]
 
 \end_inset
@@ -982,7 +982,7 @@ key "Benjamini1995-rj"
 \begin_layout Standard
 \begin_inset Formula 
 \[
-D_{i}\sim S_{j}\qquad\forall i\in drugs,\forall j\in phenotypes\mid T^{c}=t
+D_{i}\sim S_{j}\qquad\forall i\in drugs\;\forall j\in phenotypes\mid T^{c}=t;\quad\forall t\in tissues
 \]
 
 \end_inset
