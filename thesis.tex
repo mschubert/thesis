@@ -39,7 +39,10 @@
 \begingroup
 %    \hypersetup{linkcolor=thesis@toccolor}
     \tableofcontents
+    \cleardoublepage
 %    \listofabbrevs
+    \input{abbreviations}
+    \addcontentsline{toc}{chapter}{List of Abbreviations}
     \cleardoublepage
     \phantomsection
     \addcontentsline{toc}{chapter}{\listfigurename}
@@ -51,8 +54,6 @@
 \endgroup
 
 \input{abstract}
-
-%\printnomenclature
 
 \input{1_intro}
 

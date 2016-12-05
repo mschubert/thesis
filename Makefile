@@ -10,7 +10,7 @@ all: thesis.pdf summary.pdf
 # Use `print-VARNAME` to print arbitrary variables
 print-%: ; @echo $* = $($*)
 
-thesis.pdf: thesis.tex config.tex references.bib $(TEX)
+thesis.pdf: thesis.tex config.tex references.bib $(TEX) abstract.tex abbreviations.tex
 	$(LATEXMK) thesis
 
 summary.pdf: summary.tex config.tex abstract.tex

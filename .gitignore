@@ -13,3 +13,5 @@
 *.bcf
 *.lof
 *.lot
+*.glo
+*.ist

@@ -10,8 +10,10 @@
 \usepackage{appendix}
 \usepackage{booktabs}
 \usepackage{longtable}
-
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
 %\usepackage[unicode=true]{hyperref}
+%\usepackage{glossaries}
 
 \setdefaultlanguage[variant=uk]{english}
 %\setmainfont[Mapping=tex-text, Numbers=OldStyle]{TeX Gyre Pagella}
@@ -40,3 +42,5 @@
 
 \newcommand*\protein[1]{#1}
 \newcommand*\gene[1]{$#1$}
+
+%\newcommand*\mkabbrv[2]{{\textsc{#1}}\>{#2}\hfill}
