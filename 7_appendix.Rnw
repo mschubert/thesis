@@ -148,7 +148,7 @@ pathways.}
 {\tiny
 <<speed2_tcga_mut>>=
 do = function(fid, caption="", ...) {
-    file.path(speed2, "tcga_pathway_per_mutation/assocs_driver_mapped", paste0(fid, ".RData")) %>%
+    file.path(speed2, "tcga_mutation/assocs_driver_mapped", paste0(fid, ".RData")) %>%
         load2() %>%
         filter(subset == "pan") %>%
         transmute(Mutation = m,
@@ -185,7 +185,7 @@ type regressed out. Associations by PRGs are more in line with established liter
 {\tiny
 <<speed2_tcga_cna>>=
 do = function(fid, caption="", ...) {
-    file.path(speed2, "tcga_pathway_per_mutation/assocs_cna_mapped", paste0(fid, ".RData")) %>%
+    file.path(speed2, "tcga_mutation/assocs_cna_mapped", paste0(fid, ".RData")) %>%
         load2() %>%
         filter(subset == "pan") %>%
         transmute(CNA = m,
