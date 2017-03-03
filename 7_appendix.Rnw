@@ -125,7 +125,7 @@ do("do_assocs", "Optimised SPEED scores")
 }
 
 \clearpage
-\section{Associations for evaluating perturbation-response signatures (chapter 4)\label{sec:ch4}}
+\section{Associations for evaluating signatures (chapter 4)\label{sec:ch4}}
 \setcounter{table}{0}
 \renewcommand{\thetable}{B\arabic{table}}
 \setcounter{figure}{0}
